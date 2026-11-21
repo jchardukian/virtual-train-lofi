@@ -4,6 +4,7 @@
 Usage: python3 pipeline/fetch_source.py scenes/chicago.json
 """
 import hashlib
+import os
 import json
 import pathlib
 import subprocess
@@ -11,7 +12,7 @@ import sys
 import time
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-UA = "TrainFootagePipeline/0.1 (single-file fetch)"
+UA = os.environ.get("FETCH_USER_AGENT", "TrainFootagePipeline/0.1 (single-file fetch)")
 
 
 def sha1(path):
