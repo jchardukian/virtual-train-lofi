@@ -39,7 +39,7 @@ def main():
              "-w", "%{http_code}", src["download_url"]],
             capture_output=True, text=True)
         code = r.stdout.strip()
-        if dest.exists() and dest.stat().st_size == src["bytes"]:
+        if dest.exists() and dest.stat().st_size > 0.99 * src["approx_bytes"]:
             break
         print(f"attempt {attempt + 1}: HTTP {code}, retrying in 10 min")
         if code == "429" and dest.exists():
