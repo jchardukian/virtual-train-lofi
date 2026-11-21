@@ -1,0 +1,41 @@
+{
+  "file": "output/chicago_loop_3d_anime.mp4",
+  "probe": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "pix_fmt": "yuv420p",
+    "duration_s": 24.0,
+    "bytes": 80552385,
+    "mbps": 26.85
+  },
+  "black_intervals": [],
+  "freeze_starts": [],
+  "motion": {
+    "frames_analysed": 719,
+    "mean_flow_px_per_frame": [
+      -0.25,
+      -0.61
+    ],
+    "jitter_rms_px": [
+      19.23,
+      18.32
+    ],
+    "jitter_p99_px": 165.06,
+    "rotation_jitter_rms_deg": 1.233,
+    "max_frame_jump_px": 420.49
+  },
+  "checks": {
+    "h264": true,
+    "1920x1080": true,
+    "fps>=30": true,
+    "yuv420p": true,
+    "no_black_frames_mid_clip": true,
+    "no_frozen_frames": true,
+    "jitter_rms<1.5px": false,
+    "rotation_jitter<0.05deg": false
+  },
+  "pass": false,
+  "contact_sheet": "output/chicago_loop_3d_anime.contact.jpg"
+}

@@ -23,10 +23,10 @@ STYLES = {
     "clean": "eq=contrast=1.04:saturation=1.08",
     # Style B - cinematic lo-fi: warm light, lifted soft blacks, bloom, vignette, fine grain
     "lofi": (
-        "curves=r='0/0.05 0.5/0.56 1/1':g='0/0.035 0.5/0.50 1/0.95':b='0/0.05 0.5/0.40 1/0.78',"
+        "curves=r='0/0.045 0.5/0.55 1/1':g='0/0.04 0.5/0.51 1/0.96':b='0/0.035 0.5/0.42 1/0.80',"
         "eq=contrast=1.05:saturation=1.05,"
         "split[a][b];[b]gblur=sigma=20[bl];[a][bl]blend=all_mode=screen:all_opacity=0.16,"
-        "eq=brightness=-0.03,vignette=angle=PI/6,noise=alls=4:allf=t"
+        "eq=brightness=-0.03,vignette=angle=PI/6,noise=alls=3:allf=t"
     ),
     # Style C - anime/realism hybrid: flattened colour fields, saturated palette, ink outlines
     "anime": (
@@ -50,7 +50,7 @@ def overlay(scene, dur):
     rem = f"max(0\\,ceil({dur}-t))"
     count = (f"%{{eif\\:floor({rem}/60)\\:d\\:2}}\\:%{{eif\\:mod({rem}\\,60)\\:d\\:2}}")
     return ",".join([
-        f"drawbox=x={x - 22}:y={y - 18}:w=380:h=132:color=black@0.34:t=fill",
+        f"drawbox=x={x - 22}:y={y - 18}:w=452:h=132:color=black@0.34:t=fill",
         f"drawtext=fontfile={FONT_B}:text='{esc(o['title'].upper())}':fontsize=30:fontcolor=white@0.95:{common}:x={x}:y={y}",
         f"drawtext=fontfile={FONT_R}:text='{esc('Next destination: ' + o['next'])}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 44}",
         f"drawtext=fontfile={FONT_R}:text='Next journey in {count}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 74}",
