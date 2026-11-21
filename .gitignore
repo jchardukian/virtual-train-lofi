@@ -1,7 +1,8 @@
-# Large media is never committed; it is reproducible from scenes/*.json
+# Large or reproducible files are never committed
 footage/
+work/
+data/osm_raw/
 output/*
 !output/samples/
-work/
 __pycache__/
 *.trf
