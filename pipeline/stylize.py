@@ -50,10 +50,10 @@ def overlay(scene, dur):
     rem = f"max(0\\,ceil({dur}-t))"
     count = (f"%{{eif\\:floor({rem}/60)\\:d\\:2}}\\:%{{eif\\:mod({rem}\\,60)\\:d\\:2}}")
     return ",".join([
-        f"drawbox=x={x - 22}:y={y - 18}:w=336:h=132:color=black@0.34:t=fill",
+        f"drawbox=x={x - 22}:y={y - 18}:w=380:h=132:color=black@0.34:t=fill",
         f"drawtext=fontfile={FONT_B}:text='{esc(o['title'].upper())}':fontsize=30:fontcolor=white@0.95:{common}:x={x}:y={y}",
-        f"drawtext=fontfile={FONT_R}:text='{esc('Next: ' + o['next'])}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 44}",
-        f"drawtext=fontfile={FONT_R}:text='Departing in {count}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 74}",
+        f"drawtext=fontfile={FONT_R}:text='{esc('Next destination: ' + o['next'])}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 44}",
+        f"drawtext=fontfile={FONT_R}:text='Next journey in {count}':fontsize=22:fontcolor=white@0.85:{common}:x={x}:y={y + 74}",
     ])
 
 
