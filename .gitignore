@@ -1,0 +1,7 @@
+# Large media is never committed; it is reproducible from scenes/*.json
+footage/
+output/*
+!output/samples/
+work/
+__pycache__/
+*.trf

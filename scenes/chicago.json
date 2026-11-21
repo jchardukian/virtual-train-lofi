@@ -1,0 +1,25 @@
+{
+  "id": "chicago_green_line",
+  "label": "Chicago, Illinois",
+  "conditions": "sunny afternoon",
+  "source": {
+    "title": "Leaving Chicago downtown by CTA green line train 4K",
+    "author": "rollingnet",
+    "license": "CC BY 3.0",
+    "license_url": "https://creativecommons.org/licenses/by/3.0/",
+    "page_url": "https://commons.wikimedia.org/wiki/File:Leaving_Chicago_downtown_by_CTA_green_line_train_4K.webm",
+    "download_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Leaving_Chicago_downtown_by_CTA_green_line_train_4K.webm",
+    "original_url": "https://www.youtube.com/watch?v=dpXtglg6iu8",
+    "recorded": "2016-06-26",
+    "sha1": "b7f84bbb61cc7f45d2c0312b05271a20fed9f80c",
+    "bytes": 0,
+    "local_path": "footage/source/chicago_green_line_rollingnet_4k.webm"
+  },
+  "start": 0,
+  "duration": 300,
+  "preview": { "start": 0, "duration": 24 },
+  "stabilize": { "enabled": true, "work_width": 2560, "work_height": 1440, "shakiness": 6, "smoothing": 45, "zoom_percent": 6 },
+  "grade": { "contrast": 1.03, "saturation": 1.06, "gamma": 1.0 },
+  "fade": 1.5,
+  "output": { "width": 1920, "height": 1080, "fps": 30, "crf": 18, "preset": "slow" }
+}
