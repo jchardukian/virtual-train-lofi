@@ -122,3 +122,23 @@ Extrapolated (not measured): a five-minute segment is 9,000 frames, about
 
 The jitter metric behaved on this clip (it was void on the baseline); the
 frame-difference check agrees with it.
+
+---
+
+# v3 combined option (6 s motion test)
+
+Scene: `scenes/chicago_v3_combined.json` (55 degree view, 80 degree lens,
+three-window carriage, low sun, illustrated finish).
+
+| Item | Measured |
+|---|---|
+| Frames | 180 (6 s, 1920x1080, 30 fps), 0 failed, 0 log errors |
+| Render wall time | 2,309 s (38.5 min), two processes |
+| Per frame | 12.8 s effective |
+| Encode | 38 s; 15.0 MB, 19.9 Mbps |
+| Jitter | 0.17 px RMS, rotation 0.006 deg |
+| Frame-to-frame difference | 4.0-5.1; largest step 1.07x its neighbours |
+| Cost | $0 |
+
+Option stills (A forward POV, B illustrated, combined) are in
+`output/samples/options/`.
