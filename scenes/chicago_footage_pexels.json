@@ -1,0 +1,29 @@
+{
+  "id": "chicago_footage_exterior",
+  "note": "Real Chicago 'L' footage shot from outside the train (not passenger POV). Used to compare authentic footage against the 3D route.",
+  "sources": [
+    {
+      "title": "Train Traveling In A City In Slow Motion",
+      "author": "Ricky Esquivel",
+      "page_url": "https://www.pexels.com/video/train-traveling-in-a-city-in-slow-motion-2005976/",
+      "download_url": "https://videos.pexels.com/video-files/2005976/2005976-hd_1920_1080_24fps.mp4",
+      "license": "Pexels License",
+      "local_path": "footage/candidates/2005976.mp4",
+      "start": 3.0, "duration": 8.5
+    },
+    {
+      "title": "A Train Built On An Elevated Railway Above The Street",
+      "author": "Ricky Esquivel",
+      "page_url": "https://www.pexels.com/video/a-train-built-on-an-elevated-railway-above-the-street-3804704/",
+      "download_url": "https://videos.pexels.com/video-files/3804704/3804704-hd_1920_1080_24fps.mp4",
+      "license": "Pexels License",
+      "local_path": "footage/candidates/3804704.mp4",
+      "start": 1.0, "duration": 8.5
+    }
+  ],
+  "crossfade": 1.0,
+  "fade": 1.0,
+  "render": { "fps": 30 },
+  "camera": { "duration_s": 16 },
+  "overlay": { "title": "Chicago, Illinois", "next": "Barcelona, Spain", "x": 110, "y": 830, "scale": 1.5 }
+}

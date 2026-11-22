@@ -24,3 +24,14 @@ Suggested description line:
 
 If it is used later: credit "rollingnet, CC BY 3.0" with a link, state that it
 was modified, and keep this record.
+
+## Used in the real-footage sample (`scenes/chicago_footage_pexels.json`)
+
+| Asset | Source | Licence | Obligation |
+|---|---|---|---|
+| "Train Traveling In A City In Slow Motion" by Ricky Esquivel | https://www.pexels.com/video/train-traveling-in-a-city-in-slow-motion-2005976/ | Pexels License (free commercial use, modification allowed, attribution not required) | Do not redistribute unmodified as stock; no implied endorsement by people or brands shown. Credit is courteous, not required. |
+| "A Train Built On An Elevated Railway Above The Street" by Ricky Esquivel | https://www.pexels.com/video/a-train-built-on-an-elevated-railway-above-the-street-3804704/ | Pexels License | Same. Storefront trademarks are legible in frame. |
+
+Licence terms above are as understood from Pexels' published licence; re-read
+https://www.pexels.com/license/ before publishing, since this machine cannot
+load the page.
