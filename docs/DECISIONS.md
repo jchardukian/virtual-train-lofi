@@ -26,6 +26,18 @@ replaces; nothing here is reversed silently.
 * **Durability:** full-resolution masters are on a temporary build disk and in the
   files sent to the owner; no durable storage is approved.
 
+## HARD publishing limit — 2026-11-22 21:35 UTC (relayed on PR #1, comment 7086149051)
+
+* At most **three regular YouTube uploads per calendar day in total: one
+  long-form city video and two Shorts.** Never more long-form because
+  production is ahead; extra cities wait in a backlog, one per day.
+* TikTok, if connected: at most two posts per day, the same two vertical clips.
+* Livestreams (target about 2 December 2026, 8 to 10 hours) are in addition and
+  need separate authorisation; they do not change the three-upload limit.
+* Machine-readable copy: `publish/limits.json`. Any scheduling must check it.
+* Still required before anything is posted: the LofiTrain channels connected and
+  named by the owner, and an explicit go-live.
+
 ## Chicago visually approved — 2026-11-22 21:35 UTC (relayed on PR #1, comment 7086115277)
 
 Relayed as the owner's words after watching the corrected video: "Chicago looks
