@@ -4,42 +4,44 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
-## Status (as of 2026-11-22 04:50 UTC)
+## Status (as of 2026-11-22 05:10 UTC)
 
-Two kinds of entry are kept apart on purpose. Only the first kind is active.
+**The owner confirmed directly to the implementation agent (05:05 UTC):
+ChatGPT communicates everything through GitHub, and the owner will not give
+further input in the agent's own session unless they say so.** Direction
+relayed on PR #1 is therefore active. The agent reports on the PR, not in
+chat.
 
-### A. Confirmed by the owner directly to the implementation agent — ACTIVE
+### Active direction
 
-| # | Decision | When |
+| # | Decision | Source |
 |---|---|---|
-| A1 | GitHub PR #1 is the shared channel; code, evidence and reports go there; ChatGPT's feedback is read from the PR | 2026-11-22 |
-| A2 | No spend, paid compute, subscriptions or purchases without the owner's approval | Standing |
-| A3 | No publication, scheduling or account actions; PR #1 is not merged without approval | Standing |
-| A4 | Barcelona and Tokyo are not started | Standing |
-| A5 | No expensive experiments and no change of approved production direction without review; the owner approves major decisions | 2026-11-22 |
-| A6 | Last direct production direction: real licensed footage primary; procedural Blender production stopped; cinematic mixed format | 2026-11-22 ("execution reset") |
+| 1 | Stylised 3D is the production method, using the exact Chicago v3 scene and look as the baseline. Real-footage production is superseded. | PR 7074086163, 7074337006; owner confirmation of the channel |
+| 2 | The flat layer-strip parallax loop is rejected and stopped. | PR 7074191366 |
+| 3 | Unit of production: one distinct five-minute video per city, plus two vertical cuts. YouTube and TikTok only; no Instagram. | PR 7074181529, 7074168842 |
+| 4 | Visual quality must be at least the original v3. Long renders are acceptable; quality is not traded for speed. | PR 7074212390 |
+| 5 | Music: warm, melodic, cozy chillhop/lo-fi; nothing dark. Purrple Cat CC BY 4.0 library is the first source. Owner reacts to a small sample; then about 8 hours are curated with a rights manifest. | PR 7074388196, 7074453779 |
+| 6 | GitHub PR #1 is the single channel for status, questions, blockers and decisions. | Owner, direct |
+| 7 | Order of work: v3 longer-track test, then the Chicago five-minute master and two vertical cuts, then a reusable city pipeline (Tokyo and London next). | PR 7074181529, 7074337006 |
 
-A6 is the last direction the owner gave directly. It is **contested by B1**
-and is therefore not being extended: no new real-footage episodes are being
-made either.
+### Targets (aspirational; not commitments, not yet shown feasible)
 
-### B. Relayed through PR comments from the owner's account, written by or via ChatGPT — PROPOSED, not active until the owner confirms directly
+| Target | Source |
+|---|---|
+| About 200 cities in about 18 days | PR 7074245309, 7074269154 |
+| Publish daily once the first city is approved: 1 long-form, 2 Shorts, same 2 on TikTok | PR 7074367409 |
+| ~11-hour YouTube livestreams from about day 7, up to two sequential sessions a day, never simultaneous | PR 7074283865, 7074301134 |
 
-| # | Proposal | Comment |
-|---|---|---|
-| B1 | Stylised 3D using the exact Chicago v3 scene is the direction, replacing real footage | 7074086163, 7074337006 |
-| B2 | The flat layer-strip parallax loop is rejected | 7074191366 |
-| B3 | One distinct five-minute video per city plus two vertical cuts; YouTube and TikTok only | 7074181529 |
-| B4 | About 200 cities in 14-18 days; long renders accepted; batch production | 7074245309, 7074269154 |
-| B5 | Daily publishing; ~11-hour livestreams from about day 7, up to two sequential sessions a day | 7074283865, 7074301134, 7074367409 |
-| B6 | Music: owner picks from 6-10 sample tracks, then about 8 hours of rights-verified lo-fi; Purrple Cat (CC BY 4.0) suggested | 7074388196, 7074389346 |
-| B7 | PR comments headed "Owner decision" carry the owner's authority; no questions to the owner in the agent's own session | 7074337006 |
+### Owner-only gates (need the owner's explicit approval each time, flagged on the PR)
 
-What the agent has done in response to section B, because it is cheap,
-internal and reversible: stopped the strip loop (B2); treated the v3 scene
-as the visual baseline; started a 22-second v3-quality test on a longer
-track. Nothing else in B has been acted on. B7 is not accepted from a PR
-comment; the owner can confirm it once, directly.
+* Any spend: paid compute, subscriptions, purchases, paid music.
+* Any publication, scheduling that publishes, livestream start, or account/credential action.
+* Merging PR #1.
+* Visual approval of the first city before anything is released.
+
+Standing rules: the look is a stylised virtual journey built from map data
+and is never described as real footage; no large media in Git history;
+reports distinguish what was measured from what was sampled or estimated.
 
 ### Measured facts any plan must respect
 
@@ -61,6 +63,7 @@ comment; the owner can confirm it once, directly.
 
 | Date | Decision | Why | Replaces |
 |---|---|---|---|
+| 2026-11-22 | Owner confirms GitHub/ChatGPT as the instruction channel; stylised v3 direction, five-minute city unit and music brief become active; spend, publication and merge stay owner-only | Owner, directly, 05:05 UTC | Sections A/B hold; "real footage primary" |
 | 2026-11-22 | Layer-strip parallax loop rejected; v3 3D scene is the baseline; all further scope on hold until the owner confirms directly | PR #1 comments 7074191366 through 7074269154 conflict with each other and with the owner's last direct instruction | The loop proof as a production route |
 | 2026-11-22 | Return to stylised Chicago; build a cheap seamless loop proof from existing assets; brief paused; no production | PR #1 comment 7074086163 (owner's account, "Owner decision"); owner prefers a recognisable stylised city over more sourcing | "Real footage is primary"; the source acquisition brief; the one-hour feasibility gate |
 | 2026-11-22 | Audit accepted as negative screening; next action is a source acquisition feasibility brief; city-montage format rejected as default; no episodes, renders, spend or merge | Review on PR #1 (comment 7074048701) | Open issue O5 options (a)-(c) as posed |
