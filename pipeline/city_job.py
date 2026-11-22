@@ -25,6 +25,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 BLENDER = os.environ.get("BLENDER", str(ROOT / "work/tools/blender-3.6.23-linux-x64/blender"))
 CHUNK = int(os.environ.get("CHUNK_FRAMES", "60"))
 RETRIES = 2
+ENCODE_VERSION = "2-no-overlay"   # bump to force every shot to be re-encoded (never re-rendered)
 
 
 def now():
@@ -45,7 +46,7 @@ def save_state(st):
 def fingerprint(shot):
     """Hash of the scene file plus the frame set (name, size). A changed scene or
     re-rendered frames invalidate anything encoded from the old ones."""
-    h = hashlib.sha256((ROOT / shot["scene"]).read_bytes())
+    h = hashlib.sha256((ROOT / shot["scene"]).read_bytes() + ENCODE_VERSION.encode())
     d = ROOT / shot["frames_dir"]
     for f in sorted(d.glob("f_*.png")) if d.exists() else []:
         h.update(f"{f.name}:{f.stat().st_size}".encode())
@@ -140,9 +141,9 @@ def finish(city, shot, st_shot):
     out_dir = ROOT / "output" / "cities" / city["id"]
     out_dir.mkdir(parents=True, exist_ok=True)
     subprocess.run(["python3", str(ROOT / "pipeline/stylize.py"), str(ROOT / shot["scene"]), "--frames", str(d / "f_%04d.png"),
-                    "--styles", shot.get("style", "illustrated"), "--outdir", str(out_dir.relative_to(ROOT))], check=True)
+                    "--styles", shot.get("style", "illustrated"), "--outdir", str(out_dir.relative_to(ROOT)), "--no-overlay"], check=True)
     mp4 = out_dir / f"{scene['id']}_{shot.get('style', 'illustrated')}.mp4"
-    qc = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(mp4), "--sheet-every", "3", "--fade", str(scene.get("fade", 1.0))],
+    qc = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(mp4), "--sheet-every", "3", "--fade", "0"],
                         capture_output=True, text=True)
     rep = json.loads(mp4.with_suffix(".qc.json").read_text())
     passed = qc.returncode == 0 and rep.get("pass") is True and mp4.exists()

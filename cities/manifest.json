@@ -26,6 +26,16 @@
      "style": "illustrated",
      "frames_dir": "work/frames/lake_south"
     }
+   ],
+   "edit_order": [
+    "scenes/chicago_v3_lake.json",
+    "scenes/chicago_v3_wells_south.json",
+    "scenes/chicago_v3_lake_south.json",
+    "scenes/chicago_v3_combined.json"
+   ],
+   "music": [
+    "https://purrplecat-audio.pages.dev/audio/mellow-skies/01-warm-horizon.mp3",
+    "https://purrplecat-audio.pages.dev/audio/happy-place/01-daydreams.mp3"
    ]
   },
   {

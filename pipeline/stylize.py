@@ -80,6 +80,7 @@ def main():
     ap.add_argument("--styles", default="clean,lofi,anime")
     ap.add_argument("--outdir", default="output")
     ap.add_argument("--limit", type=int, help="only encode the first N frames")
+    ap.add_argument("--no-overlay", action="store_true", help="shot intermediate: no text overlay and no fades; added once at city assembly")
     ap.add_argument("--still", help="write one styled PNG of the first frame here instead of a video")
     ap.add_argument("--start-number", type=int, default=0)
     a = ap.parse_args()
@@ -95,6 +96,8 @@ def main():
         out = out_dir / f"{scene['id']}_{style}.mp4"
         graph = (f"[0:v]{STYLES[style]},format=yuv420p,{overlay(scene, dur)},"
                  f"fade=t=in:st=0:d={fade},fade=t=out:st={dur - fade}:d={fade}[v]")
+        if a.no_overlay:
+            graph = f"[0:v]{STYLES[style]},format=yuv420p[v]"
         if a.still:
             g2 = f"[0:v]{STYLES[style]},format=yuv420p,{overlay(scene, scene['camera']['duration_s'])}[v]"
             dest = a.still.replace("{style}", style)
