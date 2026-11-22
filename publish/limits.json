@@ -15,7 +15,7 @@
  "queue": [
   {
    "city": "chicago",
-   "status": "visually approved; awaiting channel and go-live"
+   "status": "visually approved; channel connected; awaiting master hosting and owner go-live"
   },
   {
    "city": "denver",
@@ -33,5 +33,14 @@
  "platforms": {
   "youtube": "launch platform",
   "tiktok": "deferred; not a launch requirement; no TikTok posting until the owner asks"
+ },
+ "channel": {
+  "expected_handle": "@lofitrainpov",
+  "buffer_channel_id": "6b037e988541f09ecb6cd063",
+  "buffer_name": "Lofi Train POV",
+  "youtube_channel_url": "https://www.youtube.com/channel/UCLjE-J4o5HSXz1cCokDdZbQ",
+  "timezone": "America/Chicago",
+  "verified": "2026-11-22: present and connected in the owner's Buffer organisation; no posts scheduled or sent. The handle itself is not shown by the tool; the owner should confirm the URL is @lofitrainpov.",
+  "go_live": false
  }
 }
