@@ -296,6 +296,7 @@ class Shot:
         k1 = k0 + self.step                     # keys run to frame n inclusive, one past the last output frame
         c0, z0, e0, l0, p0 = self.key(k0)
         if f == k0:
+            self.last_depth = z0
             return c0, 0
         c1, z1, e1, l1, p1 = self.key(k1)
         pf = self.movers(f)[0] if self.nm else None
@@ -314,6 +315,7 @@ class Shot:
         out = np.empty((self.H, self.W, 3), np.uint8)
         hole = np.empty((self.H, self.W), np.uint8)
         blend(outs[0][0], outs[1][0], outs[0][1], outs[1][1], (f - k0) / (k1 - k0), out, hole)
+        self.last_depth = zbuf                  # depth of the synthesised frame, for depth-aware styling
         return fill_holes(out, hole, lbuf), int((hole > 0).sum())
 
 
