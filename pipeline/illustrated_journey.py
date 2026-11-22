@@ -109,14 +109,20 @@ class Journey:
             for i, L in enumerate(layers):
                 self.mid.append((L, section, section * SECT + (i + 0.5) / n * SECT, base))
         place(0, [rgba(KIT / f"{n}.png", f) for n, f in (("glassL", 1.45), ("deco", 1.7), ("marina", 1.4), ("tower", 1.75), ("brick", 1.3))], 722)
-        lo = [rgba(CHI / f"loop_{i}.png", 0.92) for i in (1, 4, 2, 0, 3, 5, 6)]              # Wrigley, 333 Wacker, Tribune, Willis, Board of Trade, brick block, L station
+        lo = [rgba(CHI / f"loop_{i}.png", 0.92) for i in (1, 4, 2, 0, 3, 5)]                 # Wrigley, 333 Wacker, Tribune, Willis, Board of Trade, brick block
+        # (the elevated station sprite is not used: a station with no track leading to it is impossible in a train video)
         place(1, lo, 722)
         wheel = cv2.imread(str(CHI / "lake_0.png"), cv2.IMREAD_UNCHANGED)
         col = (wheel[..., 3] > 128).sum(0)
         cut = int(wheel.shape[1] * 0.35 + np.argmin(col[int(wheel.shape[1] * 0.35):int(wheel.shape[1] * 0.65)]))
         cv2.imwrite(str(CHI / "lake_0a.png"), wheel[:, :cut]); cv2.imwrite(str(CHI / "lake_0b.png"), wheel[:, cut:])
-        place(2, [rgba(CHI / f"lake_{n}.png", 1.55) for n in ("0a", "2", "0b", "1")], 775)   # Navy Pier wheel, Field Museum, Buckingham Fountain, Adler Planetarium
-        self.lake_far = [(rgba(CHI / "lake_3.png", 0.85), 2 * SECT + 18, 668), (rgba(CHI / "lake_4.png", 0.8), 2 * SECT + 42, 690)]
+        place(2, [rgba(CHI / f"lake_{n}.png", 1.55) for n in ("2", "0b", "1")], 775)         # Field Museum, Buckingham Fountain, Adler Planetarium
+        # Navy Pier's wheel belongs out on its pier, not on the shore: it stands in the lake band on a stone pier
+        # (the balustrade from the park strip) that runs off towards the shore side of the window.
+        pier = cv2.imread(str(CHI / "strip_0.png"), cv2.IMREAD_UNCHANGED)[-40:, 60:1260]
+        cv2.imwrite(str(CHI / "pier.png"), pier)
+        self.lake_far = [(rgba(CHI / "pier.png", 0.9), 2 * SECT + 9.0, 676), (rgba(CHI / "lake_0a.png", 0.95), 2 * SECT + 22.0, 668),
+                         (rgba(CHI / "lake_3.png", 0.85), 2 * SECT + 36, 668), (rgba(CHI / "lake_4.png", 0.8), 2 * SECT + 50, 690)]
         place(3, [rgba(CHI / f"hood_{i}.png", 1.12) for i in (0, 2, 4, 1, 3, 6, 5)], 775)
         place(4, [rgba(CHI / f"edge_{i}.png", 1.3) for i in (1, 0, 2, 3)], 775)
         # One bascule bridge, on the far bank: it springs from two bridge houses standing on the quay and is
