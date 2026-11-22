@@ -4,25 +4,30 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
-## CURRENT STATUS — 2026-11-22 20:00 UTC (read this first)
+## CURRENT STATUS — 2026-11-22 22:10 UTC (read this first)
 
 * **Active production method: illustrated 2.5D "destination mood journey".** Painted
   artwork in depth bands scrolling behind a fixed train window; a curated, stylised
-  journey, never presented as a real route or real footage. The owner approved the
-  illustrated look (18:05 entry) and confirmed the Chicago budget in the agent session.
-* **Superseded, kept only as history:** stylised 3D (every-frame render and the
-  keyframe fast path), the colour-grade restyle, and real footage. Flat multi-layer
-  parallax was rejected earlier as a loop of 3D-rendered strips; with painted
-  artwork and a non-repeating route it is now the approved direction.
-* **Chicago:** a 300 s illustrated master and two 25 s verticals exist and pass the
-  automated audio and video gates. Visually approved by the owner at 21:35 UTC (entry below). Publishing
-  still needs a channel and go-live; rights closeout is incomplete (see
-  `data/illustrated/chicago_rights_manifest.json`). Cities visually approved: 1. Published: 0.
-* **Spend:** 7 image calls, 1.25 USD computed, of a one-time 4 USD ceiling. Billed
-  amount unverified. Plus the 4 earlier test calls (about 0.70 USD computed).
+  journey, never presented as a real route or real footage. Stylised 3D, the
+  colour-grade restyle and real footage are history only.
+* **Chicago:** final 300 s master and two verticals; visually approved by the owner
+  (21:35 entry). Frozen. Not published.
+* **Denver and Tokyo:** 300 s masters and two verticals each built, all gates passed,
+  previews in `output/samples/`. Awaiting owner review.
+* **Paris:** video rendered; first soundtrack attempt failed the audio gate (a silent
+  track ending); being re-finished.
+* **Spend (computed from API usage; billed amounts unverified):** first style test
+  about 0.70 USD; Chicago 1.25 USD of a 4 USD ceiling; Denver, Paris and Tokyo
+  2.14 USD of a combined 3 USD ceiling. Both ceilings were confirmed by the owner
+  in the agent session. No further spend is authorised.
+* **Publishing:** nothing published or scheduled. Hard limit of one long-form and
+  two Shorts per day (`publish/limits.json`); `pipeline/publish_preflight.py` is a
+  tested check that any scheduler must call, but no scheduler exists yet, so the
+  limit is not yet enforced by running code. Needs the owner's LofiTrain channels
+  and an explicit go-live.
 * **Hard gates, unchanged:** no further spend, no paid infrastructure, no merge, no
-  publication, scheduling or livestream, no repository visibility change, no second
-  city, without the owner's explicit approval.
+  publication, scheduling or livestream, no repository visibility change, without
+  the owner's explicit approval.
 * **Durability:** full-resolution masters are on a temporary build disk and in the
   files sent to the owner; no durable storage is approved.
 

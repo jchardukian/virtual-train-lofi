@@ -8,8 +8,15 @@ C=$1; A=$2; B=$3; V1=$4; V2=$5
 D=output/cities/$C/illustrated; O=output/samples; mkdir -p "$D"
 [ "${REUSE_VIDEO:-0}" = "1" ] || rm -f "$D/${C}_illustrated_video.mp4"; rm -f "$D/${C}_illustrated_master.mp4" "$D"/${C}_illustrated_vertical_?.mp4 "$D"/*.part*.mp4
 T0=$(date +%s)
-if [ "${REUSE_VIDEO:-0}" != "1" ]; then   # REUSE_VIDEO=1 keeps an already verified render and redoes only sound, cuts and checks
-python3 pipeline/illustrated_city.py cities/illustrated/$C.json "$D/${C}_illustrated_video.mp4" 2> >(grep -v libpng >&2)
+# REUSE_VIDEO=1 redoes only sound, cuts and checks, and only if the existing render's manifest proves it was made
+# from exactly today's settings, code and artwork. Anything else forces a full render.
+if [ "${REUSE_VIDEO:-0}" = "1" ] && python3 pipeline/render_manifest.py verify cities/illustrated/$C.json "$D/${C}_illustrated_video.mp4"; then
+  echo "$C: reusing verified render"
+else
+  rm -f "$D/${C}_illustrated_video.mp4" "$D/${C}_illustrated_video.render.json"
+  python3 pipeline/illustrated_city.py cities/illustrated/$C.json "$D/${C}_illustrated_video.mp4" 2> >(grep -v libpng >&2)
+  [ -s "$D/${C}_illustrated_video.mp4" ] || { echo "RENDER FAILED for $C"; exit 1; }
+  python3 pipeline/render_manifest.py write cities/illustrated/$C.json "$D/${C}_illustrated_video.mp4"
 fi
 [ -s "$D/${C}_illustrated_video.mp4" ] || { echo "RENDER FAILED for $C"; exit 1; }
 N=$(ffprobe -v error -count_packets -select_streams v -show_entries stream=nb_read_packets -of csv=p=0 "$D/${C}_illustrated_video.mp4")
