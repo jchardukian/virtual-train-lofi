@@ -8,11 +8,29 @@
    "render_s": 904.5,
    "invalidated": [
     "2026-11-22T08:47:03Z scene or frames changed since encode"
-   ]
+   ],
+   "qc_checks": {
+    "h264": true,
+    "1920x1080": true,
+    "fps>=30": true,
+    "yuv420p": true,
+    "no_black_frames_mid_clip": true,
+    "no_frozen_frames": true,
+    "jitter_rms<1.5px": true,
+    "rotation_jitter<0.05deg": true
+   },
+   "qc_pass": true,
+   "encoded": "output/cities/chicago/chicago_v3_lake_illustrated.mp4",
+   "bytes": 46510530,
+   "duration_s": 22.0,
+   "fingerprint": "9ff1f14c10434a93"
   },
   "scenes/chicago_v3_combined.json": {
    "frames_done": 180,
    "frames_total": 180,
+   "invalidated": [
+    "2026-11-22T08:49:36Z scene or frames changed since encode"
+   ],
    "qc_checks": {
     "h264": true,
     "1920x1080": true,
@@ -25,15 +43,18 @@
    },
    "qc_pass": true,
    "encoded": "output/cities/chicago/chicago_v3_combined_illustrated.mp4",
-   "bytes": 14951961,
+   "bytes": 16976407,
    "duration_s": 6.0,
-   "fingerprint": "dbe6fe5cc5996bf1"
+   "fingerprint": "7cccd09381065145"
   },
   "scenes/chicago_v3_wells_south.json": {
    "frames_done": 390,
    "frames_total": 390,
    "retries": {},
    "render_s": 5696.2,
+   "invalidated": [
+    "2026-11-22T08:50:23Z scene or frames changed since encode"
+   ],
    "qc_checks": {
     "h264": true,
     "1920x1080": true,
@@ -46,20 +67,25 @@
    },
    "qc_pass": true,
    "encoded": "output/cities/chicago/chicago_v3_wells_south_illustrated.mp4",
-   "bytes": 37755675,
+   "bytes": 40986941,
    "duration_s": 13.0,
-   "fingerprint": "10d7686fbbb70742"
+   "fingerprint": "79c1033f58753387"
   },
   "scenes/chicago_v3_lake_south.json": {
-   "frames_done": 0,
-   "frames_total": 240
+   "frames_done": 130,
+   "frames_total": 240,
+   "retries": {},
+   "render_s": 1573.0
   }
  },
  "log": [
   "2026-11-22T07:04:07Z finished scenes/chicago_v3_lake.json",
   "2026-11-22T07:04:51Z finished scenes/chicago_v3_combined.json",
-  "2026-11-22T08:41:21Z finished scenes/chicago_v3_wells_south.json"
+  "2026-11-22T08:41:21Z finished scenes/chicago_v3_wells_south.json",
+  "2026-11-22T08:49:36Z finished scenes/chicago_v3_lake.json",
+  "2026-11-22T08:50:23Z finished scenes/chicago_v3_combined.json",
+  "2026-11-22T08:52:00Z finished scenes/chicago_v3_wells_south.json"
  ],
- "status": "finishing scenes/chicago_v3_lake.json",
- "updated": "2026-11-22T08:47:03Z"
+ "status": "rendering scenes/chicago_v3_lake_south.json",
+ "updated": "2026-11-22T09:18:13Z"
 }

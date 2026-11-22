@@ -88,11 +88,26 @@ def release_blockers(city, st):
         out.append("master visual QC not passed")
     if not rel.get("master_audio_gate"):
         out.append("master audio gate not passed")
-    vs = rel.get("verticals", [])
-    if len([v for v in vs if v.get("audio_gate") and v.get("visual_qc") and (ROOT / v["file"]).exists()]) < 2:
-        out.append("fewer than 2 vertical cuts with audio and QC passed")
-    if not rel.get("rights_manifest") or not (ROOT / rel["rights_manifest"]).exists():
-        out.append("no rights and attribution manifest")
+    if rel.get("missing_shots"):
+        out.append("master was assembled without planned shots")
+    if master and not rel.get("transitions_clean", False):
+        out.append("edit transitions not verified clean")
+    good = 0
+    for v in rel.get("verticals", []):
+        f = ROOT / v.get("file", "")
+        reports = [ROOT / v.get(k, "missing") for k in ("qc_report", "audio_report")]
+        if (v.get("audio_gate") and v.get("visual_qc") and f.is_file() and all(r.is_file() for r in reports)
+                and v.get("sha256") and hashlib.sha256(f.read_bytes()).hexdigest() == v["sha256"]):
+            good += 1
+    if good < 2:
+        out.append("fewer than 2 vertical cuts that exist, match their recorded hash, and passed audio and visual QC with reports")
+    rm = ROOT / rel["rights_manifest"] if rel.get("rights_manifest") else None
+    try:
+        rj = json.loads(rm.read_text()) if rm and rm.is_file() else None
+    except ValueError:
+        rj = None
+    if not rj or not rj.get("music") or not rj.get("required_credits") or not all(m.get("licence_evidence") and (ROOT / m["licence_evidence"]).is_file() for m in rj["music"]):
+        out.append("rights manifest missing, unreadable, or without licence evidence")
     return out
 
 

@@ -57,12 +57,35 @@ class Cache(unittest.TestCase):
                           "verticals": [], "rights_manifest": "out.mp4"}}
         b = cj.release_blockers({"id": "c"}, st)
         self.assertIn("master is not 300 s", b)
-        self.assertIn("fewer than 2 vertical cuts with audio and QC passed", b)
+        self.assertTrue(any(x.startswith("fewer than 2 vertical cuts") for x in b))
+
+    def full(self):
+        import hashlib
+        (self.root / "q.json").write_text("{}")
+        (self.root / "lic.html").write_text("x")
+        (self.root / "rights.json").write_text(json.dumps({"music": [{"licence_evidence": "lic.html"}], "required_credits": ["c"]}))
+        h = hashlib.sha256((self.root / "out.mp4").read_bytes()).hexdigest()
+        v = {"file": "out.mp4", "audio_gate": True, "visual_qc": True, "sha256": h, "qc_report": "q.json", "audio_report": "q.json"}
+        return {"release": {"master": "out.mp4", "sha256": h, "master_duration_s": 300.0, "master_visual_qc": True,
+                            "master_audio_gate": True, "transitions_clean": True, "verticals": [v, dict(v)], "rights_manifest": "rights.json"}}
 
     def test_release_passes_only_when_everything_holds(self):
-        st = {"release": {"master": "out.mp4", "master_duration_s": 300.0, "master_visual_qc": True, "master_audio_gate": True,
-                          "verticals": [{"file": "out.mp4", "audio_gate": True, "visual_qc": True}] * 2, "rights_manifest": "out.mp4"}}
-        self.assertEqual(cj.release_blockers({"id": "c"}, st), [])
+        self.assertEqual(cj.release_blockers({"id": "c"}, self.full()), [])
+
+    def test_replaced_vertical_is_rejected(self):
+        st = self.full()
+        st["release"]["verticals"][0]["sha256"] = "0" * 64
+        self.assertTrue(any("vertical" in b for b in cj.release_blockers({"id": "c"}, st)))
+
+    def test_bad_rights_manifest_is_rejected(self):
+        st = self.full()
+        (self.root / "rights.json").write_text("not json")
+        self.assertTrue(any("rights" in b for b in cj.release_blockers({"id": "c"}, st)))
+
+    def test_missing_planned_shot_blocks(self):
+        st = self.full()
+        st["release"]["missing_shots"] = ["scenes/x.json"]
+        self.assertTrue(any("planned shots" in b for b in cj.release_blockers({"id": "c"}, st)))
 
 
 if __name__ == "__main__":
