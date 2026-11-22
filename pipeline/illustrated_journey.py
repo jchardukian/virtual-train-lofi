@@ -119,8 +119,10 @@ class Journey:
         self.lake_far = [(rgba(CHI / "lake_3.png", 0.85), 2 * SECT + 18, 668), (rgba(CHI / "lake_4.png", 0.8), 2 * SECT + 42, 690)]
         place(3, [rgba(CHI / f"hood_{i}.png", 1.12) for i in (0, 2, 4, 1, 3, 6, 5)], 775)
         place(4, [rgba(CHI / f"edge_{i}.png", 1.3) for i in (1, 0, 2, 3)], 775)
-        self.bridge = [(rgba(KIT / "bridge.png", 1.5), 32.0, 805), (rgba(KIT / "house.png", 1.5), 30.3, 795), (rgba(KIT / "house.png", 1.5), 43.4, 795),
-                       (rgba(KIT / "bridge.png", 1.5, flip=True), 94.0, 805), (rgba(KIT / "house.png", 1.5, flip=True), 82.6, 795), (rgba(KIT / "house.png", 1.5, flip=True), 95.7, 795)]
+        # One bascule bridge, on the far bank: it springs from two bridge houses standing on the quay and is
+        # drawn behind the water's edge, so it never floats in the open river. (A second, mid-river
+        # bridge at 1:34 was removed after the owner's review: it had no banks to stand on.)
+        self.bridge = [(rgba(KIT / "bridge.png", 1.25), 32.0, 752), (rgba(KIT / "house.png", 1.25), 25.4, 748), (rgba(KIT / "house.png", 1.25, flip=True), 38.6, 748)]
         # window frame
         fr = cv2.resize(cv2.imread(str(ILL / "frame.png")), (W, 1280), interpolation=cv2.INTER_LANCZOS4).astype(np.float32)
         g = fr[..., 1] - np.maximum(fr[..., 0], fr[..., 2])
@@ -177,11 +179,11 @@ class Journey:
         riv = max(w[0], w[1])
         if riv > 0:
             strip(img, self.trees, 150 + BAND * t, 742 + bob, riv)                   # riverwalk trees on the far bank
+            for (rgb, a), tau, base in self.bridge:                                # on the far bank, same speed as the bank
+                over(img, rgb, a, int(round(960 + BAND * (tau - t) - a.shape[1] / 2)), base - a.shape[0] + bob, riv)
             y0 = 730 + bob
             rv = self.water(self.river, t, 62, H - y0)
             img[y0:] = img[y0:] * (1 - riv) + rv * riv
-            for (rgb, a), tau, base in self.bridge:
-                over(img, rgb, a, int(round(960 + BRIDGE * (tau - t) - a.shape[1] / 2)), base - a.shape[0] + bob, riv)
         if w[2] > 0:
             strip(img, self.trees, 900 + BAND * t, 850 + bob, w[2])                  # park trees
         if w[3] > 0:
