@@ -26,6 +26,24 @@ replaces; nothing here is reversed silently.
 * **Durability:** full-resolution masters are on a temporary build disk and in the
   files sent to the owner; no durable storage is approved.
 
+## Channel cadence and livestream window — 2026-11-22 20:45 UTC (relayed on PR #1, comments 7085461103 and 7085486398)
+
+* **Cadence target:** one 5-minute city video and two Shorts per day, the Shorts
+  cut from that city. Building several cities ahead is to hold a buffer, not to
+  post them at once. Every format carries continuous melodic lofi audio.
+* **Livestream target:** first 8 to 10 hour stream around 2 to 6 December 2026,
+  built from a varied library of finished cities and a music rotation, not one
+  5-minute loop repeated. Rights for live use of the music, channel live
+  eligibility and stream infrastructure are still to be checked; nothing paid
+  is provisioned.
+* **Chicago:** to be published after the station and wheel fixes pass. Publishing
+  still needs the owner's explicit go-live and choice of channel in the agent
+  session; a PR comment alone does not publish.
+* **Next cities:** plan in `data/illustrated/next_cities_plan.json` (Denver, Paris,
+  Tokyo; 12 calls, about 2.14 USD). No image call until the owner approves a
+  combined cap. The 1 USD per city figure is a target, not an authorisation.
+* These are targets, not commitments. Supersedes the earlier 200-cities-in-18-days target.
+
 ## Illustrated Chicago built under the 4 USD ceiling — 2026-11-22 19:45 UTC
 
 The owner confirmed the one-time 4 USD ceiling in the agent session. Stage 1 only
