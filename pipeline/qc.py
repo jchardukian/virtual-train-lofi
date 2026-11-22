@@ -108,6 +108,9 @@ def main():
     ap.add_argument("--sheet-every", type=float, default=2.0)
     ap.add_argument("--fade", type=float, default=1.5)
     ap.add_argument("--motion-seconds", type=float, default=None)
+    ap.add_argument("--width", type=int, default=1920)
+    ap.add_argument("--height", type=int, default=1080)
+    ap.add_argument("--no-jitter", action="store_true", help="edited output containing cuts or crossfades: the camera-jitter metric only means something on a continuous shot, where it is checked separately")
     ap.add_argument("--no-spec", action="store_true", help="skip output-spec assertions (for source files)")
     a = ap.parse_args()
     path = pathlib.Path(a.video)
@@ -121,7 +124,7 @@ def main():
 
     checks = {
         "h264": p["codec"] == "h264",
-        "1920x1080": (p["width"], p["height"]) == (1920, 1080),
+        f"{a.width}x{a.height}": (p["width"], p["height"]) == (a.width, a.height),
         "fps>=30": p["fps"] >= 30,
         "yuv420p": p["pix_fmt"] == "yuv420p",
         "no_black_frames_mid_clip": not inner_black,
@@ -129,6 +132,8 @@ def main():
         "jitter_rms<1.5px": max(m["jitter_rms_px"]) < 1.5,
         "rotation_jitter<0.05deg": m["rotation_jitter_rms_deg"] < 0.05,
     }
+    if a.no_jitter:
+        checks = {k: v for k, v in checks.items() if not k.startswith(("jitter", "rotation"))}
     if a.no_spec:
         checks = {k: v for k, v in checks.items() if k.startswith(("no_", "jitter", "rotation"))}
     report = {"file": str(path), "probe": p, "black_intervals": black, "freeze_starts": freeze,

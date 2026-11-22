@@ -42,8 +42,10 @@
    "fingerprint": "dbe6fe5cc5996bf1"
   },
   "scenes/chicago_v3_wells_south.json": {
-   "frames_done": 0,
-   "frames_total": 390
+   "frames_done": 360,
+   "frames_total": 390,
+   "retries": {},
+   "render_s": 4888.7
   }
  },
  "log": [
@@ -51,5 +53,5 @@
   "2026-11-22T07:04:51Z finished scenes/chicago_v3_combined.json"
  ],
  "status": "rendering scenes/chicago_v3_wells_south.json",
- "updated": "2026-11-22T07:04:51Z"
+ "updated": "2026-11-22T08:26:20Z"
 }

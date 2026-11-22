@@ -12,6 +12,7 @@ is named and recorded as a partial; it never satisfies the release gate.
 """
 import argparse
 import datetime
+import hashlib
 import json
 import pathlib
 import subprocess
@@ -28,15 +29,25 @@ def run(cmd):
     subprocess.run(cmd, check=True)
 
 
+def sha256(path):
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1 << 22), b""):
+            h.update(chunk)
+    return h.hexdigest()
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("city")
     ap.add_argument("--partial", action="store_true")
     ap.add_argument("--crossfade", type=float, default=1.0)
+    ap.add_argument("--state-file", help="read/write this state file instead of state/<city>.json (testing)")
+    ap.add_argument("--tag", default="", help="suffix for output names (testing)")
     a = ap.parse_args()
     man = json.loads((ROOT / "cities/manifest.json").read_text())
     city = next(c for c in man["cities"] if c["id"] == a.city)
-    st_path = ROOT / "state" / f"{a.city}.json"
+    st_path = pathlib.Path(a.state_file) if a.state_file else ROOT / "state" / f"{a.city}.json"
     st = json.loads(st_path.read_text())
     order = city.get("edit_order") or [s["scene"] for s in city["shots"]]
     shots = [(k, st["shots"][k]) for k in order if st["shots"].get(k, {}).get("qc_pass") and (ROOT / st["shots"][k]["encoded"]).exists()]
@@ -44,10 +55,12 @@ def main():
         sys.exit("no QC-passed shots to assemble")
     xf = a.crossfade
     total = sum(s["duration_s"] for _, s in shots) - xf * (len(shots) - 1)
-    if total < 299.0 and not a.partial:
-        sys.exit(f"only {total:.1f} s of footage; a city master is 300 s. Use --partial to build a labelled partial.")
-    label = "partial" if total < 299.0 else "master"
+    is_master = abs(total - 300.0) <= 1.0
+    if not is_master and not a.partial:
+        sys.exit(f"cut would be {total:.1f} s; a city master is 300 s +/- 1 of distinct footage. Use --partial to build a labelled partial.")
+    label = ("master" if is_master else "partial") + a.tag
     out_dir = ROOT / "output" / "cities" / a.city
+    out_dir.mkdir(parents=True, exist_ok=True)
     out = out_dir / f"{a.city}_{label}.mp4"
     fade = 1.5
 
@@ -63,7 +76,7 @@ def main():
             run(["curl", "-s", "-L", "-A", "Mozilla/5.0", "-o", str(f), url])
         d = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(f)],
                                  capture_output=True, text=True).stdout)
-        tracks.append((t, f, d))
+        tracks.append((dict(t, file_sha256=sha256(f), file_bytes=f.stat().st_size), f, d))
         have += d - (3.0 if len(tracks) > 1 else 0)
         if have >= total + 1:
             break
@@ -93,8 +106,9 @@ def main():
          "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30", "-g", "60",
          "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", f"{total}", "-movflags", "+faststart", str(out)])
 
-    vq = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(out), "--sheet-every", "4", "--fade", str(fade)], capture_output=True, text=True)
+    vq = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(out), "--sheet-every", "4", "--fade", str(fade), "--no-jitter"], capture_output=True, text=True)
     ag = audio_gate.check(str(out))
+    (out.with_suffix(".audio.json")).write_text(json.dumps(ag, indent=1) + "\n")
     verticals = []
     for k, (start, x) in enumerate(city.get("verticals", [[2, 0.5], [max(2, total / 2), 0.55]]), 1):
         vf = out_dir / f"{a.city}_{label}_vertical_{k}.mp4"
@@ -102,30 +116,51 @@ def main():
         run(["python3", str(ROOT / "pipeline/vertical_cut.py"), str(out), str(vf), "--start", str(start), "--duration", str(dur),
              "--x", str(x), "--title", city["name"].upper()])
         vag = audio_gate.check(str(vf))
-        pr = json.loads(subprocess.run(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,r_frame_rate",
-                                        "-of", "json", str(vf)], capture_output=True, text=True).stdout)["streams"][0]
-        verticals.append({"file": str(vf.relative_to(ROOT)), "duration_s": dur, "audio_gate": vag["pass"],
-                          "visual_qc": (pr["width"], pr["height"]) == (1080, 1920), "lufs": vag.get("integrated_lufs")})
+        vf.with_suffix(".audio.json").write_text(json.dumps(vag, indent=1) + "\n")
+        # the real visual QC, at the vertical size: spec, black frames, frozen frames, jitter
+        vvq = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(vf), "--width", "1080", "--height", "1920",
+                              "--sheet-every", "5", "--fade", "0.6", "--no-jitter"], capture_output=True, text=True)
+        verticals.append({"file": str(vf.relative_to(ROOT)), "sha256": sha256(vf), "duration_s": dur, "audio_gate": vag["pass"],
+                          "visual_qc": vvq.returncode == 0, "lufs": vag.get("integrated_lufs"),
+                          "qc_report": str(vf.with_suffix(".qc.json").relative_to(ROOT)),
+                          "audio_report": str(vf.with_suffix(".audio.json").relative_to(ROOT))})
+    snap = sorted((ROOT / "licenses/snapshots").glob("freelofi.com_*.html"))
     rights = out_dir / f"{a.city}_{label}_rights.json"
     rights.write_text(json.dumps({
         "city": city["name"], "kind": label, "built": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "visuals": {"description": "Stylised 3D render built from map data. Not real footage.",
-                    "sources": [{"asset": "OpenStreetMap geometry", "licence": "ODbL 1.0", "credit": "© OpenStreetMap contributors"},
-                                {"asset": "Poly Haven sky HDRI and textures", "licence": "CC0"}]},
-        "music": [{"title": t["title"], "artist": "Purrple Cat", "record": t["album"], "source": t["mp3_url"], "licence": "CC BY 4.0",
-                   "licence_statement_source": "https://www.freelofi.com/ (read 2026-11-22: CC BY 4.0, not in Content ID, credit required)"}
+                    "sources": [{"asset": "OpenStreetMap geometry", "licence": "ODbL 1.0", "credit": "© OpenStreetMap contributors",
+                                 "local": "data/chicago_loop_geometry.json", "fetched_by": "pipeline/fetch_osm.py"},
+                                {"asset": "Poly Haven sky HDRI and wall textures", "licence": "CC0", "fetched_by": "pipeline/fetch_assets.py",
+                                 "ids": ["kloofendal_48d_partly_cloudy_puresky", "red_brick_03", "brick_wall_001", "concrete_wall_008",
+                                         "concrete_tile_facade", "asphalt_01"]}]},
+        "music": [{"title": t["title"], "artist": "Purrple Cat", "record": t["album"], "downloaded_from": t["mp3_url"],
+                   "file_sha256": t["file_sha256"], "file_bytes": t["file_bytes"], "licence": "CC BY 4.0",
+                   "licence_evidence": str(snap[-1].relative_to(ROOT)) if snap else None,
+                   "note": "The source site states the music is not in Content ID. That is the publisher's statement, not a guarantee that no claim can occur."}
                   for t, _, _ in tracks],
         "required_credits": ["Scenery built from map data © OpenStreetMap contributors (ODbL).",
                              "Music by Purrple Cat (purrplecat.com), licensed under CC BY 4.0: creativecommons.org/licenses/by/4.0/"],
-        "shots": [k for k, _ in shots]}, indent=1) + "\n")
-    rel = {"kind": label, "master": str(out.relative_to(ROOT)) if label == "master" else None, "file": str(out.relative_to(ROOT)),
+        "upload_description_block": "Scenery built from map data © OpenStreetMap contributors (ODbL). A stylised virtual journey, not real footage.\n"
+                                    "Music by Purrple Cat (purrplecat.com), licensed under CC BY 4.0: creativecommons.org/licenses/by/4.0/",
+        "shots": [{"scene": k, "encoded": s_["encoded"], "sha256": sha256(ROOT / s_["encoded"])} for k, s_ in shots]}, indent=1) + "\n")
+    rel = {"kind": label, "file": str(out.relative_to(ROOT)), "sha256": sha256(out), "bytes": out.stat().st_size,
            "master_duration_s": round(total, 2), "master_visual_qc": vq.returncode == 0, "master_audio_gate": ag["pass"],
-           "lufs": ag.get("integrated_lufs"), "true_peak_dbfs": ag.get("true_peak_dbfs"), "verticals": verticals,
-           "rights_manifest": str(rights.relative_to(ROOT)), "bytes": out.stat().st_size}
-    st["release"] = rel if label == "master" else {}
-    st["partial"] = rel if label == "partial" else st.get("partial")
+           "lufs": ag.get("integrated_lufs"), "true_peak_dbfs": ag.get("true_peak_dbfs"), "silences": ag.get("silences"),
+           "qc_report": str(out.with_suffix(".qc.json").relative_to(ROOT)), "audio_report": str(out.with_suffix(".audio.json").relative_to(ROOT)),
+           "verticals": verticals, "rights_manifest": str(rights.relative_to(ROOT)),
+           "input_shots": {k: s_.get("fingerprint") for k, s_ in shots}}
+    all_ok = rel["master_visual_qc"] and rel["master_audio_gate"] and len(verticals) >= 2 and all(v["audio_gate"] and v["visual_qc"] for v in verticals)
+    rel["all_gates_passed"] = all_ok
+    # fail closed: release state is only written for a 300 s master whose every gate passed
+    st["release"] = dict(rel, master=rel["file"]) if (is_master and all_ok and not a.tag) else {}
+    if not is_master:
+        st["partial"] = rel
+    elif not all_ok:
+        st["last_failed_master"] = rel
     st_path.write_text(json.dumps(st, indent=1) + "\n")
     print(json.dumps(rel, indent=1))
+    sys.exit(0 if all_ok else 2)
 
 
 if __name__ == "__main__":

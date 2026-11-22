@@ -78,6 +78,10 @@ def release_blockers(city, st):
     master = rel.get("master")
     if not master or not (ROOT / master).exists():
         out.append("no assembled city master")
+    elif rel.get("sha256") and hashlib.sha256((ROOT / master).read_bytes()).hexdigest() != rel["sha256"]:
+        out.append("master file does not match the hash recorded at assembly")
+    elif rel.get("input_shots") and any(st.get("shots", {}).get(k, {}).get("fingerprint") != fp for k, fp in rel["input_shots"].items()):
+        out.append("master is stale: a shot changed after assembly")
     elif abs(rel.get("master_duration_s", 0) - 300) > 1.0:
         out.append("master is not 300 s")
     if not rel.get("master_visual_qc"):
