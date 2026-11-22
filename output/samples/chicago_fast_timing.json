@@ -1,0 +1,52 @@
+{
+ "step": 30,
+ "shots": {
+  "scenes/chicago_v3_lake_south.json": {
+   "frames": 240,
+   "carriage_s": 10.3,
+   "keys_rendered": 9,
+   "keys_s": 111.4,
+   "keys_total": 9,
+   "synth_encode_s": 83.7,
+   "qc_s": 9.3
+  },
+  "scenes/chicago_v3_lake.json": {
+   "frames": 660,
+   "carriage_s": 11.0,
+   "keys_rendered": 23,
+   "keys_s": 328.4,
+   "keys_total": 23,
+   "synth_encode_s": 272.4,
+   "qc_s": 34.9
+  },
+  "scenes/chicago_v3_riverfront.json": {
+   "frames": 7650,
+   "keys_rendered": 219,
+   "keys_s": 2045.6,
+   "keys_total": 256,
+   "synth_encode_s": 1954.4,
+   "qc_s": 251.9
+  },
+  "scenes/chicago_v3_wells_south.json": {
+   "frames": 390,
+   "carriage_s": 13.9,
+   "keys_rendered": 14,
+   "keys_s": 295.9,
+   "keys_total": 14,
+   "synth_encode_s": 102.4,
+   "qc_s": 15.4
+  },
+  "scenes/chicago_v3_combined.json": {
+   "frames": 180,
+   "carriage_s": 12.2,
+   "keys_rendered": 7,
+   "keys_s": 92.0,
+   "keys_total": 7,
+   "synth_encode_s": 46.1,
+   "qc_s": 7.0
+  }
+ },
+ "assemble_s": 1403.9,
+ "assemble_exit": 0,
+ "total_s": 7102.1
+}

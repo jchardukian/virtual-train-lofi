@@ -35,6 +35,47 @@ def have_key(d, k):
     return p.exists() and z.exists() and p.stat().st_size > 100_000 and z.stat().st_size > 10_000
 
 
+def motion_checks(d, mp4, step):
+    """Stability checks that are valid for a reprojected shot.
+
+    qc.py's optical-flow jitter figure is dominated by near objects sweeping past the window (the
+    every-frame render of the same 39 s of riverfront scores 15.8 px on it, the fast path 1.9 px), so
+    it says nothing about camera shake here. The camera path is known exactly, so it is checked
+    directly; and the one artefact specific to this method, a visible pulse where one keyframe hands
+    over to the next, is measured from the encoded video.
+    """
+    import numpy as np
+    P = json.loads((d / "poses.json").read_text())
+    M = np.array(P["cam_to_world"])
+    fwd = -M[:, :3, 2]
+    ang = np.degrees(np.arccos(np.clip((fwd[1:] * fwd[:-1]).sum(1), -1, 1)))
+    fps = P["fps"]
+    k = np.ones(fps) / fps
+    res = (ang - np.convolve(ang, k, "same"))[fps:-fps]
+    rot_rms = float(np.sqrt((res ** 2).mean())) if len(res) else 0.0
+    W, H = 320, 180
+    raw = subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", str(mp4), "-vf", f"scale={W}:{H},format=gray",
+                          "-f", "rawvideo", "-"], capture_output=True).stdout
+    a = np.frombuffer(raw, np.uint8).reshape(-1, H, W).astype(np.float32)
+    dif = np.abs(np.diff(a, axis=0)).mean((1, 2))
+
+    def ratios(first):
+        out = []
+        for kf in range(first, len(dif) - 9, step):
+            nb = np.concatenate([dif[kf - 9:kf - 1], dif[kf:kf + 8]])
+            out.append(dif[kf - 1] / max(float(np.median(nb)), 1e-6))
+        return np.array(out) if out else np.array([1.0])
+    b, c = ratios(step), ratios(step + step // 2)
+    rep = {"camera_rotation_residual_rms_deg": round(rot_rms, 4), "keyframe_boundaries": int(len(b)),
+           "boundary_change_ratio_median": round(float(np.median(b)), 3), "boundary_change_ratio_p95": round(float(np.percentile(b, 95)), 3),
+           "boundary_change_ratio_max": round(float(b.max()), 3), "boundaries_over_1.5": int((b > 1.5).sum()),
+           "mid_interval_ratio_median": round(float(np.median(c)), 3), "mid_interval_ratio_max": round(float(c.max()), 3)}
+    checks = {"camera_rotation_residual<0.05deg": rot_rms < 0.05,
+              "keyframe_pulse_median<1.15": rep["boundary_change_ratio_median"] < 1.15,
+              "keyframe_pulse_over_1.5<=2%": rep["boundaries_over_1.5"] <= max(1, 0.02 * len(b))}
+    return rep, checks
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("city")
@@ -82,19 +123,26 @@ def main():
         t0 = time.time()
         style = shot.get("style", "illustrated")
         mp4 = out_dir / f"{scene['id']}_{style}.mp4"
-        r = subprocess.run(["python3", str(ROOT / "pipeline/fast_shot.py"), str(d), "--step", str(a.step), "--out", str(mp4),
-                            "--carriage", str(d / "carriage_0000.png"), "--style", style], capture_output=True, text=True)
-        if r.returncode != 0:
-            sys.exit(f"{key}: synthesis failed\n{r.stderr[-2000:]}")
-        T["synth_encode_s"] = round(time.time() - t0, 1)
+        newest_key = max(p.stat().st_mtime for p in d.glob("k_*.png"))
+        if not (mp4.exists() and mp4.with_suffix(".fast.json").exists() and mp4.stat().st_mtime > newest_key):
+            r = subprocess.run(["python3", str(ROOT / "pipeline/fast_shot.py"), str(d), "--step", str(a.step), "--out", str(mp4),
+                                "--carriage", str(d / "carriage_0000.png"), "--style", style], capture_output=True, text=True)
+            if r.returncode != 0:
+                sys.exit(f"{key}: synthesis failed\n{r.stderr[-2000:]}")
+            T["synth_encode_s"] = round(time.time() - t0, 1)
         t0 = time.time()
-        qc = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(mp4), "--sheet-every", "3", "--fade", "0"],
+        qc = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(mp4), "--sheet-every", "3", "--fade", "0", "--no-jitter"],
                             capture_output=True, text=True)
         rep = json.loads(mp4.with_suffix(".qc.json").read_text())
+        mrep, mchecks = motion_checks(d, mp4, a.step)
+        rep["checks"].update(mchecks)
+        rep["fast_motion"] = mrep
+        rep["pass"] = bool(rep.get("pass") is True and all(mchecks.values()))
+        mp4.with_suffix(".qc.json").write_text(json.dumps(rep, indent=1) + "\n")
         T["qc_s"] = round(time.time() - t0, 1)
-        passed = qc.returncode == 0 and rep.get("pass") is True
+        passed = qc.returncode == 0 and rep["pass"]
         state["shots"][key] = {"frames_done": n, "frames_total": n, "qc_checks": rep["checks"], "qc_pass": passed,
-                               "fast": json.loads(mp4.with_suffix(".fast.json").read_text())}
+                               "fast_motion": mrep, "fast": json.loads(mp4.with_suffix(".fast.json").read_text())}
         if passed:
             state["shots"][key].update({"encoded": str(mp4.relative_to(ROOT)), "bytes": mp4.stat().st_size,
                                         "duration_s": rep["probe"]["duration_s"]})
