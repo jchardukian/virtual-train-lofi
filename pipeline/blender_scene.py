@@ -31,6 +31,8 @@ ap.add_argument("--save-blend")
 ap.add_argument("--no-render", action="store_true")
 ap.add_argument("--layers", action="store_true", help="render the orthographic depth-layer strips for the parallax loop")
 ap.add_argument("--engine", default=None, choices=["CYCLES", "EEVEE"])
+ap.add_argument("--keys", action="store_true", help="fast path: sharp world-only keyframes + depth EXR + poses.json (no carriage, blur or DOF)")
+ap.add_argument("--carriage-only", action="store_true", help="fast path: the static carriage interior alone, RGBA")
 A = ap.parse_args(argv)
 S = json.loads(pathlib.Path(A.scene).read_text())
 R = S["render"]
@@ -590,7 +592,7 @@ rail_z = path["rail_top_z"]
 _wanted = set()
 for _f in range(f0, f1 + 1, max(1, A.step)):
     _wanted.update((_f - 1, _f, _f + 1))
-for f in sorted(_wanted):
+def car_pose(f):
     t = f / fps
     s = s0 + C["speed_mps"] * t
     p = at(s)
@@ -599,8 +601,12 @@ for f in sorted(_wanted):
     sway = C.get("sway", 1.0)
     z = rail_z + FLOOR + sway * (0.005 * math.sin(2 * math.pi * 0.9 * t) + 0.003 * math.sin(2 * math.pi * 0.37 * t + 1))
     roll = math.radians(sway * (0.09 * math.sin(2 * math.pi * 0.31 * t) + 0.04 * math.sin(2 * math.pi * 0.83 * t + 2)))
-    car.location = (p[0], p[1], z)
-    car.rotation_euler = (roll, 0.0, heading)
+    return (p[0], p[1], z), (roll, 0.0, heading)
+
+
+for f in sorted(_wanted):
+    t = f / fps
+    car.location, car.rotation_euler = car_pose(f)
     car.keyframe_insert("location", frame=f)
     car.keyframe_insert("rotation_euler", frame=f)
     for root, a, uvec, nvec, L, lane, direction, ph, spd in CARS:
@@ -629,7 +635,7 @@ for ob in [car] + [c[0] for c in CARS] + [b[0] for b in BOATS]:
 
 # ------------------------------------------------------------------ carriage interior
 W = S.get("window", {})
-if W.get("enabled", True):
+if W.get("enabled", True) and not A.keys:
     wall_y = side * (HALF - 0.05)          # inner face of the car side
     out_y = side * (HALF + 0.03)           # outer skin
     x0, x1 = W.get("x0", 0.03), W.get("x1", 1.30)
@@ -770,6 +776,42 @@ ct.link(fac2.outputs[0], hz.inputs[0])
 ct.link(rl.outputs["Image"], hz.inputs[1])
 comp = ct.n("CompositorNodeComposite")
 ct.link(hz.outputs[0], comp.inputs[0])
+
+if A.keys:
+    # Fast path (pipeline/fast_shot.py): a sharp world-only keyframe with its depth, plus the camera
+    # pose of every frame of the shot, so the in-between frames can be synthesised by reprojection.
+    from mathutils import Euler, Matrix
+    r.use_motion_blur = ee.use_motion_blur = False
+    cam_data.dof.use_dof = False
+    cam_data.clip_start = 0.75   # nothing nearer than the window glass: the carriage wall would hide it
+    vl.use_pass_z = True
+    fo = ct.n("CompositorNodeOutputFile")
+    fo.base_path = str((ROOT / A.out).parent)
+    fo.format.file_format, fo.format.color_depth, fo.format.color_mode = "OPEN_EXR", "32", "RGB"
+    fo.file_slots[0].path = "z_"
+    ct.link(rl.outputs["Depth"], fo.inputs[0])
+    local = Matrix.Translation(cam.location) @ cam.rotation_euler.to_matrix().to_4x4()
+    poses = []
+    for f in range(n_total + 1):
+        loc, rot = car_pose(f)
+        poses.append([list(row) for row in (Matrix.Translation(loc) @ Euler(rot).to_matrix().to_4x4() @ local)])
+    (ROOT / A.out).parent.mkdir(parents=True, exist_ok=True)
+    ((ROOT / A.out).parent / "poses.json").write_text(json.dumps({
+        "fps": fps, "frames": n_total, "width": R["width"], "height": R["height"], "hfov_deg": C["hfov_deg"],
+        "shift_y": C.get("shift_y", 0.0), "cam_to_world": poses,
+        "cars": [{"a": list(map(float, a)), "u": list(map(float, u)), "n": list(map(float, nv)), "L": float(L), "lane": float(lane),
+                  "dir": float(d), "phase": ph, "speed": spd} for _, a, u, nv, L, lane, d, ph, spd in CARS],
+        "boats": [b for _, b in BOATS]}))
+
+if A.carriage_only:
+    # The interior is rigid with the camera, so one RGBA still of it serves the whole shot.
+    for ob in scn.objects:
+        if ob.parent is not car and ob not in (car, cam, sun):
+            ob.hide_render = True
+    r.film_transparent = True
+    r.image_settings.color_mode = "RGBA"
+    r.use_motion_blur = ee.use_motion_blur = False
+    ct.link(rl.outputs["Image"], comp.inputs[0])
 
 if A.layers:
     # Orthographic elevation strips, one per depth slab, with alpha. They are
