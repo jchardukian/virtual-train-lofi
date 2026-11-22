@@ -22,6 +22,7 @@ chat.
 | 4 | Visual quality must be at least the original v3. Long renders are acceptable; quality is not traded for speed. | PR 7074212390 |
 | 5 | Music: warm, melodic, cozy chillhop/lo-fi; nothing dark. Purrple Cat CC BY 4.0 library is the first source. Owner reacts to a small sample; then about 8 hours are curated with a rights manifest. | PR 7074388196, 7074453779 |
 | 6 | GitHub PR #1 is the single channel for status, questions, blockers and decisions. | Owner, direct |
+| 8 | **Audio is mandatory on every public asset** (long-form, Shorts, TikTok, livestream). No silent file is ever scheduled or published. `pipeline/audio_gate.py` must pass on each exported file, including each vertical cut separately. | PR 7074627370 |
 | 7 | Order of work: v3 longer-track test, then the Chicago five-minute master and two vertical cuts, then a reusable city pipeline (Tokyo and London next). | PR 7074181529, 7074337006 |
 
 ### Delegation (PR 7074614476, under the owner's direct confirmation of this channel)
