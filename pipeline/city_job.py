@@ -25,6 +25,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 BLENDER = os.environ.get("BLENDER", str(ROOT / "work/tools/blender-3.6.23-linux-x64/blender"))
 CHUNK = int(os.environ.get("CHUNK_FRAMES", "60"))
 RETRIES = 2
+PERSIST = False
 ENCODE_VERSION = "2-no-overlay"   # bump to force every shot to be re-encoded (never re-rendered)
 
 
@@ -194,6 +195,8 @@ def run(city, parallel):
         if len(have) < n:
             st["status"] = f"rendering {key}"
             save_state(st)
+            if PERSIST:      # each worker start is a checkpoint: record it without leaving the tree dirty
+                persist(f"State: {city['id']} checkpoint, {key.split('/')[-1]} {ss['frames_done']}/{ss['frames_total']} frames")
             for _ in render_missing(shot, ss, parallel):
                 save_state(st, live=True)
             _, n, _, have = shot_info(shot)
@@ -236,6 +239,8 @@ def main():
     ap.add_argument("--persist", action="store_true", help="git commit+push state/ after each city pass")
     a = ap.parse_args()
     cities = json.loads((ROOT / "cities/manifest.json").read_text())["cities"]
+    global PERSIST
+    PERSIST = bool(a.persist)
     if a.worker:
         t_end = time.time() + a.max_hours * 3600
         while time.time() < t_end:
