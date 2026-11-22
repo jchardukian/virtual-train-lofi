@@ -40,7 +40,10 @@ def main():
     ky = 110540.0
 
     nodes, ways, rels = {}, {}, {}
-    for f in sorted(glob.glob(str(ROOT / cfg["raw_dir"] / "*.osm"))):
+    files = []
+    for rd in cfg.get("raw_dirs", [cfg["raw_dir"]]):   # several fetched areas can be merged into one scene
+        files += sorted(glob.glob(str(ROOT / rd / "*.osm")))
+    for f in files:
         for el in ET.parse(f).getroot():
             if el.tag == "node":
                 nodes[el.get("id")] = (round((float(el.get("lon")) - lon0) * kx, 2),
