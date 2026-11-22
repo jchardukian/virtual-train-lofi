@@ -57,6 +57,7 @@ replaces; nothing here is reversed silently.
 | Item | Path | Status |
 |---|---|---|
 | Chicago journey v1, 5:00, real footage + music | `output/masters/chicago_journey_v1/`, `output/samples/chicago_journey_v1_720p.mp4` | Not approved for publication |
+| Ten-destination supply audit | `docs/SUPPLY_AUDIT.md`, `data/audit/` | Complete; direction decision pending |
 | Chicago source library | `docs/CHICAGO_SOURCE_LIBRARY.md` | Current |
 | Real-footage feasibility | `docs/REAL_FOOTAGE_FEASIBILITY.md` | Current |
 | Benchmarks, all methods | `docs/BENCHMARKS.md` | Current |
@@ -67,6 +68,7 @@ replaces; nothing here is reversed silently.
 
 | ID | Issue | Options |
 |---|---|---|
+| O5 | Direction after the supply audit: free stock has zero verified landscape passenger view in ten cities | (a) city-scenery format with trains as a motif; (b) paid or commissioned passenger-view footage (needs quotes); (c) stylised generated look |
 | O2 | Passenger-view footage supply. The only long Chicago rides found are on Wikimedia, whose file host blocks the build machine. | Owner downloads and supplies the files; or free Pexels/Pixabay API keys for full catalogue search; or paid/commissioned footage (unpriced) |
 | O3 | Monetisation risk for stock-based episodes under YouTube's reused-content policy | Needs a policy read by a person and probably a small live test; not resolvable from the build machine |
 | O4 | Music: v1 uses a CC BY library track as a placeholder | Keep as placeholder; or original/licensed lo-fi before publishing |

@@ -1,0 +1,202 @@
+[
+ {
+  "city": "Bangkok",
+  "viewed": 14,
+  "wrong": 5,
+  "unver": 11,
+  "pov": 0,
+  "ext": 33.3,
+  "lm": 53.2,
+  "vpov": 0,
+  "vext": 0,
+  "vlm": 24.9,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 33.3,
+   "landmark": 53.2
+  },
+  "mins": 30,
+  "searches": 10,
+  "unusable": 0
+ },
+ {
+  "city": "Barcelona",
+  "viewed": 18,
+  "wrong": 10,
+  "unver": 15,
+  "pov": 0,
+  "ext": 0,
+  "lm": 150.6,
+  "vpov": 0,
+  "vext": 0,
+  "vlm": 33.4,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 0,
+   "landmark": 150.6
+  },
+  "mins": 15,
+  "searches": 10,
+  "unusable": 0
+ },
+ {
+  "city": "Hong Kong",
+  "viewed": 17,
+  "wrong": 5,
+  "unver": 12,
+  "pov": 0,
+  "ext": 68.3,
+  "lm": 105.6,
+  "vpov": 0,
+  "vext": 30.4,
+  "vlm": 42.5,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 68.3,
+   "landmark": 105.6
+  },
+  "mins": 30,
+  "searches": 10,
+  "unusable": 0
+ },
+ {
+  "city": "istanbul",
+  "viewed": 19,
+  "wrong": 5,
+  "unver": 29,
+  "pov": 0,
+  "ext": 10.1,
+  "lm": 93.1,
+  "vpov": 0,
+  "vext": 33.8,
+  "vlm": 147.1,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 10.1,
+   "landmark": 93.1
+  },
+  "mins": 35,
+  "searches": 10,
+  "unusable": 21.7
+ },
+ {
+  "city": "London",
+  "viewed": 20,
+  "wrong": 12,
+  "unver": 20,
+  "pov": 0,
+  "ext": 21.7,
+  "lm": 263.7,
+  "vpov": 0,
+  "vext": 0,
+  "vlm": 0,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 21.7,
+   "landmark": 263.7
+  },
+  "mins": 35,
+  "searches": 10,
+  "unusable": 3.7
+ },
+ {
+  "city": "New York City",
+  "viewed": 22,
+  "wrong": 8,
+  "unver": 13,
+  "pov": 0,
+  "ext": 44.7,
+  "lm": 187.2,
+  "vpov": 0,
+  "vext": 7.3,
+  "vlm": 10.1,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 44.7,
+   "landmark": 187.2
+  },
+  "mins": 35,
+  "searches": 10,
+  "unusable": 20.3
+ },
+ {
+  "city": "paris",
+  "viewed": 21,
+  "wrong": 10,
+  "unver": 24,
+  "pov": 0,
+  "ext": 21.2,
+  "lm": 76.9,
+  "vpov": 17.5,
+  "vext": 0,
+  "vlm": 13.9,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 21.2,
+   "landmark": 76.9
+  },
+  "mins": 35,
+  "searches": 10,
+  "unusable": 14.5
+ },
+ {
+  "city": "Rio de Janeiro",
+  "viewed": 17,
+  "wrong": 6,
+  "unver": 18,
+  "pov": 0,
+  "ext": 0,
+  "lm": 283.9,
+  "vpov": 0,
+  "vext": 0,
+  "vlm": 15.9,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 0,
+   "landmark": 283.9
+  },
+  "mins": 30,
+  "searches": 10,
+  "unusable": 0
+ },
+ {
+  "city": "Sydney",
+  "viewed": 17,
+  "wrong": 12,
+  "unver": 20,
+  "pov": 0,
+  "ext": 0,
+  "lm": 20.0,
+  "vpov": 0,
+  "vext": 0,
+  "vlm": 16.5,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 0,
+   "landmark": 20.0
+  },
+  "mins": 30,
+  "searches": 10,
+  "unusable": 20.0
+ },
+ {
+  "city": "Tokyo",
+  "viewed": 27,
+  "wrong": 12,
+  "unver": 20,
+  "pov": 0,
+  "ext": 24.8,
+  "lm": 282.4,
+  "vpov": 0,
+  "vext": 18.9,
+  "vlm": 15.0,
+  "rep": {
+   "pov": 0,
+   "exterior_train": 63.8,
+   "landmark": 243.3
+  },
+  "mins": 20,
+  "searches": 10,
+  "unusable": 148.2
+ }
+]
