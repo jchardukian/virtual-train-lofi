@@ -1,0 +1,109 @@
+{
+ "city": "Chicago, Illinois",
+ "build": "illustrated destination mood journey",
+ "built": "2026-11-22",
+ "status": "NOT cleared for release",
+ "outputs": {
+  "master": "e80a073142b3fc1770e22b86a1f6c09f10f27e7754a51ecf9fc06e2e24055e57",
+  "vertical_1": "140fa2b53c3df52f8b4c4a363dcb1447b436f7b71789d49d6d5db658fc59353e",
+  "vertical_2": "58c25460d5615b4a71d26afa7917740c6851e828cc0870cc0c20ab3c118ab5a1"
+ },
+ "visuals": {
+  "kind": "AI-generated illustration, composited by pipeline/illustrated_journey.py",
+  "provider": "OpenAI images API, model gpt-image-2",
+  "assets": [
+   {
+    "file": "assets_illustrated/chicago/edge.png",
+    "sha256": "bec62f413c8fd5c13040376078a3fe0e4112e3ced3459d6b3498215e12b8088a",
+    "category": "reusable library"
+   },
+   {
+    "file": "assets_illustrated/chicago/hood.png",
+    "sha256": "01ba6c9e6876002430ce4b0aed7e67c87d1d3b5efe7eb99e9139101b491da323",
+    "category": "chicago-specific (reusable for other brick Midwest cities)"
+   },
+   {
+    "file": "assets_illustrated/chicago/lake.png",
+    "sha256": "09791ba8e7102b1fcb1f008036943698ef82ad1511845d105ac3fad082fb4b1a",
+    "category": "chicago-specific"
+   },
+   {
+    "file": "assets_illustrated/chicago/loop.png",
+    "sha256": "9f534c74bc848f297f0e919c62591a45a4870a2fcfe5a2c242a63bc84c6cabe9",
+    "category": "chicago-specific"
+   },
+   {
+    "file": "assets_illustrated/chicago/sky.png",
+    "sha256": "c751aba2059812e853c58eebdac3d317c779cd9cb22a8ebd0d72564059e64168",
+    "category": "reusable library"
+   },
+   {
+    "file": "assets_illustrated/chicago/skyline.png",
+    "sha256": "064427c0210bc31d5bd33b0f8f59b79af109fa98726c5dfbfba4e08e1e9ad872",
+    "category": "chicago-specific"
+   },
+   {
+    "file": "assets_illustrated/chicago/strips.png",
+    "sha256": "9391bcf4d1aba0471c7a146c62b7d2def217d4dc83780dc5f80e2ce98b25bbc2",
+    "category": "reusable library"
+   },
+   {
+    "file": "assets_illustrated/chicago/plate1.png",
+    "sha256": "04656208bf769e01f39d14abc80f57833a33556e209b84f249adb263139feef4",
+    "category": "earlier test call; see chicago_style_c_provenance.json"
+   },
+   {
+    "file": "assets_illustrated/chicago/scene.png",
+    "sha256": "48e538ff68e03a04a9e5d1fc073585607e60059b007cfef02d3a59a40395dccb",
+    "category": "earlier test call; see chicago_style_c_provenance.json"
+   },
+   {
+    "file": "assets_illustrated/chicago/frame.png",
+    "sha256": "05968fe803e0fc0500a6bbb928abf2d773a4d90f9d687a218421ebfc1412c853",
+    "category": "earlier test call; see chicago_style_c_provenance.json"
+   }
+  ],
+  "prompts_and_usage": [
+   "data/illustrated/chicago_generation_ledger.json",
+   "data/illustrated/chicago_style_c_provenance.json"
+  ],
+  "reference_images": "The owner's photo of a TV was a quality reference only; it was never sent to the API. The only image inputs were our own generated plate.",
+  "output_ownership": "OpenAI Services Agreement (effective 2025-05-01) is summarised as assigning Output to the customer to the extent permitted by law. Read via search summaries on 2026-11-22, NOT in full. Outputs may not be unique; copyright in AI-generated images is unsettled.",
+  "third_party_considerations": "Depicts real buildings (Marina City, Willis Tower, Wrigley Building, Tribune Tower, Chicago Board of Trade, 333 Wacker, Navy Pier Centennial Wheel, Buckingham Fountain, Field Museum, Adler Planetarium). No logos or signage text are intended; not checked frame by frame. Building-image and trademark questions have not been reviewed by a person."
+ },
+ "music": [
+  {
+   "title": "Warm Horizon",
+   "album": "Mellow Skies",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/mellow-skies/",
+   "used": "0:00 to about 2:51"
+  },
+  {
+   "title": "Daydreams",
+   "album": "Happy Place",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/happy-place/",
+   "used": "about 2:51 to 5:00, cross-faded 4 s"
+  }
+ ],
+ "music_licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html (site statement: all music CC BY 4.0, not in Content ID, credit 'Music by Purrple Cat')",
+ "music_changes": "Tracks trimmed, cross-faded, loudness-normalised and faded. CC BY 4.0 requires indicating that changes were made.",
+ "required_credits": "Music: 'Warm Horizon' and 'Daydreams' by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.",
+ "platform_ai_disclosure": {
+  "youtube": "Help page 'Disclosing use of altered or synthetic content' (support.google.com/youtube/answer/14328491), read via search summary 2026-11-22: disclosure is required for realistic altered or synthetic content; clearly unrealistic or animated content is described as exempt. This build is plainly illustrated, so disclosure appears not to be mandatory, but it depicts real places; voluntary disclosure in the description is the cautious choice.",
+  "tiktok": "Support page 'About AI-generated content', read via search summary: labelling is required for AI-generated content showing realistic images, audio or video. Nothing found addressing stylised animation directly. Recommend applying the AI-generated label anyway.",
+  "verified_in_full": false
+ },
+ "labelling": "Describe as a stylised, AI-illustrated journey inspired by Chicago. Never as a real route or real footage.",
+ "blockers_before_release": [
+  "owner watch-through and approval",
+  "provider terms read in full by a person",
+  "platform policies read in full",
+  "actual billed amount confirmed",
+  "landmark check by someone who knows Chicago",
+  "durable storage of the masters"
+ ]
+}

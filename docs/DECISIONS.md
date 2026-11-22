@@ -4,6 +4,28 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## CURRENT STATUS — 2026-11-22 20:00 UTC (read this first)
+
+* **Active production method: illustrated 2.5D "destination mood journey".** Painted
+  artwork in depth bands scrolling behind a fixed train window; a curated, stylised
+  journey, never presented as a real route or real footage. The owner approved the
+  illustrated look (18:05 entry) and confirmed the Chicago budget in the agent session.
+* **Superseded, kept only as history:** stylised 3D (every-frame render and the
+  keyframe fast path), the colour-grade restyle, and real footage. Flat multi-layer
+  parallax was rejected earlier as a loop of 3D-rendered strips; with painted
+  artwork and a non-repeating route it is now the approved direction.
+* **Chicago:** a 300 s illustrated master and two 25 s verticals exist and pass the
+  automated audio and video gates. **Not release-ready:** the owner has not yet
+  watched it through, and rights closeout is incomplete (see
+  `data/illustrated/chicago_rights_manifest.json`). Cities approved for release: 0.
+* **Spend:** 7 image calls, 1.25 USD computed, of a one-time 4 USD ceiling. Billed
+  amount unverified. Plus the 4 earlier test calls (about 0.70 USD computed).
+* **Hard gates, unchanged:** no further spend, no paid infrastructure, no merge, no
+  publication, scheduling or livestream, no repository visibility change, no second
+  city, without the owner's explicit approval.
+* **Durability:** full-resolution masters are on a temporary build disk and in the
+  files sent to the owner; no durable storage is approved.
+
 ## Illustrated Chicago built under the 4 USD ceiling — 2026-11-22 19:45 UTC
 
 The owner confirmed the one-time 4 USD ceiling in the agent session. Stage 1 only
@@ -115,7 +137,7 @@ holds unless listed here.
 8. **Unchanged owner-only gates**: no spend or paid services, no merge, no publication,
    scheduling or livestream, no repository visibility change.
 
-## Status (as of 2026-11-22 12:00 UTC)
+## SUPERSEDED status as of 2026-11-22 12:00 UTC (history only; the stylised 3D direction below is no longer active)
 
 **The owner confirmed directly to the implementation agent (05:05 UTC):
 ChatGPT communicates everything through GitHub, and the owner will not give
