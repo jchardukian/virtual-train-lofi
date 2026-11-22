@@ -4,6 +4,22 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Proposed product definition — 2026-11-22 18:35 UTC (awaiting owner approval of motion quality)
+
+Relayed on PR #1 (comment 7083659998): a five-minute video does not have to
+depict the whole city or stay downtown. It needs a compelling, recognisable
+selection of what the destination is known for, mixed with fitting scenery.
+
+* Recommended product: a **destination mood journey**, not an exact route
+  reconstruction. Design and estimates: `docs/DESTINATION_JOURNEY_DESIGN.md`.
+* Must be labelled as a stylised journey. Never presented as a real route or
+  real footage. No invented landmarks, no scenery the place does not have.
+* City-specific art is reserved for a handful of landmark moments; scenic
+  environments come from a shared library.
+* This replaces the earlier estimate that each city needs about 28 unique
+  buildings. Cost gate and approved look are unchanged.
+* Documentation only. No paid images, builds, renders or new cities.
+
 ## Owner cost gate — 2026-11-22 18:15 UTC
 
 Relayed on PR #1 (comment 7083431537): the owner rejects 5 USD per city, and so
