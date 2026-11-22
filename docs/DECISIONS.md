@@ -4,6 +4,18 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Illustrated Chicago built under the 4 USD ceiling — 2026-11-22 19:45 UTC
+
+The owner confirmed the one-time 4 USD ceiling in the agent session. Stage 1 only
+was used: 7 image calls, 1.25 USD computed from API usage at published rates
+(billing page not read), no rejects. Ledger: `data/illustrated/chicago_generation_ledger.json`.
+Source art: `assets_illustrated/chicago/`. Composer: `pipeline/illustrated_journey.py`.
+
+* Built: a 300 s master and two 25 s verticals, all passing the audio and video gates.
+* Status: **awaiting the owner's watch-through.** Not approved for release, not published.
+* Stage 2 budget (2.75 USD) is unspent and stays unspent unless the owner asks for changes that need it.
+* No second city, merge or publication.
+
 ## Proposed product definition — 2026-11-22 18:35 UTC (awaiting owner approval of motion quality)
 
 Relayed on PR #1 (comment 7083659998): a five-minute video does not have to
