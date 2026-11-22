@@ -72,10 +72,25 @@
    "fingerprint": "79c1033f58753387"
   },
   "scenes/chicago_v3_lake_south.json": {
-   "frames_done": 130,
+   "frames_done": 240,
    "frames_total": 240,
    "retries": {},
-   "render_s": 1573.0
+   "render_s": 3276.8,
+   "qc_checks": {
+    "h264": true,
+    "1920x1080": true,
+    "fps>=30": true,
+    "yuv420p": true,
+    "no_black_frames_mid_clip": true,
+    "no_frozen_frames": true,
+    "jitter_rms<1.5px": true,
+    "rotation_jitter<0.05deg": true
+   },
+   "qc_pass": true,
+   "encoded": "output/cities/chicago/chicago_v3_lake_south_illustrated.mp4",
+   "bytes": 16059475,
+   "duration_s": 8.0,
+   "fingerprint": "8da22b1517054503"
   }
  },
  "log": [
@@ -84,8 +99,17 @@
   "2026-11-22T08:41:21Z finished scenes/chicago_v3_wells_south.json",
   "2026-11-22T08:49:36Z finished scenes/chicago_v3_lake.json",
   "2026-11-22T08:50:23Z finished scenes/chicago_v3_combined.json",
-  "2026-11-22T08:52:00Z finished scenes/chicago_v3_wells_south.json"
+  "2026-11-22T08:52:00Z finished scenes/chicago_v3_wells_south.json",
+  "2026-11-22T09:47:31Z finished scenes/chicago_v3_lake_south.json"
  ],
- "status": "rendering scenes/chicago_v3_lake_south.json",
- "updated": "2026-11-22T09:18:13Z"
+ "status": "shots complete; NOT a finished city: no assembled city master; master visual QC not passed; master audio gate not passed; fewer than 2 vertical cuts with audio and QC passed; no rights and attribution manifest",
+ "updated": "2026-11-22T09:47:31Z",
+ "footage_seconds_passed_qc": 49.0,
+ "release_blockers": [
+  "no assembled city master",
+  "master visual QC not passed",
+  "master audio gate not passed",
+  "fewer than 2 vertical cuts with audio and QC passed",
+  "no rights and attribution manifest"
+ ]
 }
