@@ -1,0 +1,64 @@
+{
+ "city": "Paris, France",
+ "build": "illustrated destination mood journey",
+ "built": "2026-11-22",
+ "status": "NOT cleared for release; awaiting owner review",
+ "outputs": {
+  "master": "a37a354b9e509b17ca2bb85ebf96b1b00582fe0f2509ef08bcc4183719b2a80c",
+  "vertical_1": "524c4e418fb0e074fc806468cdf4f6a6bc7b8206d82d463eebd4b9d42e0fe235",
+  "vertical_2": "dd98ec3ae4f5a3e8e04939b61faca409e74a53f328dbb1d63666942b1cd9ce07"
+ },
+ "visuals": {
+  "provider": "OpenAI images API, model gpt-image-2",
+  "city_assets": [
+   {
+    "file": "assets_illustrated/paris/landmarks.png",
+    "sha256": "ec55e39bb361fdd7cd4ed75eed775cd7d1b92fde25e0970b084cf6cea4b1c016"
+   },
+   {
+    "file": "assets_illustrated/paris/local.png",
+    "sha256": "ebb9eba521ce396c636d08f46f74d497918a688f1b70c125109366fb44e5a95b"
+   },
+   {
+    "file": "assets_illustrated/paris/skyline.png",
+    "sha256": "58ed2f385f2fd435cb7042d61d73ff8e36987c1208046a1a3599f04f4d10a2f1"
+   },
+   {
+    "file": "assets_illustrated/paris/strips.png",
+    "sha256": "0dc20454cdc31192ed03aa9b1011fc09ed797b239bb344ee1b36173d5cd50ee0"
+   }
+  ],
+  "shared_library": "assets_illustrated/chicago/ (sky, scenery strips, city-edge sheet, window frame, first plate for water)",
+  "prompts_and_usage": "data/illustrated/three_city_generation_ledger.json",
+  "settings": "cities/illustrated/paris.json",
+  "third_party_considerations": "Depicts real landmarks. No readable signage intended; not checked frame by frame. Building-image and trademark questions not reviewed by a person."
+ },
+ "music": [
+  {
+   "title": "Bookworm",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/a-good-book/",
+   "album": "A Good Book",
+   "file_sha256": "23ad1c037db702ee6c9467a58d7239505a2aaecc6b9ba5a39f8ec9cb6e7ce9ff"
+  },
+  {
+   "title": "Crescent Moon",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/city-nights/",
+   "album": "City Nights",
+   "file_sha256": "23f1bde202c34e0da7d5a374b2f06b3b818e805ba4cce2d8a6a682725718bdf0"
+  }
+ ],
+ "music_licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html",
+ "music_changes": "Silent ends trimmed, tracks cross-faded, loudness-normalised and faded.",
+ "required_credits": "Music: 'Bookworm' and 'Crescent Moon' by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.",
+ "labelling": "A stylised, AI-illustrated journey inspired by Paris. Never a real route or real footage.",
+ "blockers_before_release": [
+  "owner review and approval",
+  "provider terms and platform AI-content policies read in full",
+  "landmark check by someone who knows the city",
+  "durable storage of the masters"
+ ]
+}

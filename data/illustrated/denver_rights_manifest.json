@@ -1,0 +1,64 @@
+{
+ "city": "Denver, Colorado",
+ "build": "illustrated destination mood journey",
+ "built": "2026-11-22",
+ "status": "NOT cleared for release; awaiting owner review",
+ "outputs": {
+  "master": "3129bc620a0a240761b798e0d738e33c9c2516c420881dca15680c2d4e13daa1",
+  "vertical_1": "5101785dccfc30d265bedd8fc08ea4d15cdb21a43299b45969283700a419e273",
+  "vertical_2": "1d841a6f3f656c05fc9f59a8449cc55f08f9de17db82e09d5e1ef3d069e82078"
+ },
+ "visuals": {
+  "provider": "OpenAI images API, model gpt-image-2",
+  "city_assets": [
+   {
+    "file": "assets_illustrated/denver/landmarks.png",
+    "sha256": "1013354e6694aa511a100eee199cde11cb25cbdaea48f445c2d41e3ad6f2f23e"
+   },
+   {
+    "file": "assets_illustrated/denver/local.png",
+    "sha256": "4d7a06fa74d766ac31559f84d5f0cca95ffac9637d40252d43608183ac44bbc8"
+   },
+   {
+    "file": "assets_illustrated/denver/mountains.png",
+    "sha256": "c59817e71783a67d081dd6ff8d73947f0fa08585b15700c598561c3770a84935"
+   },
+   {
+    "file": "assets_illustrated/denver/skyline.png",
+    "sha256": "d0cc675ec655e6a6169cbc7a3260b082e7c8788687658ebafb46ca27fe049957"
+   }
+  ],
+  "shared_library": "assets_illustrated/chicago/ (sky, scenery strips, city-edge sheet, window frame, first plate for water)",
+  "prompts_and_usage": "data/illustrated/three_city_generation_ledger.json",
+  "settings": "cities/illustrated/denver.json",
+  "third_party_considerations": "Depicts real landmarks. No readable signage intended; not checked frame by frame. Building-image and trademark questions not reviewed by a person."
+ },
+ "music": [
+  {
+   "title": "Flying",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/above-the-clouds/",
+   "album": "Above the Clouds",
+   "file_sha256": "dad140f2e353b4e226ab806d22cb475fde212c398bbed2f45c3ecaf603baff5c"
+  },
+  {
+   "title": "Serenity Now",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/tranquil-trails/",
+   "album": "Tranquil Trails",
+   "file_sha256": "b2c94459841eb744d1af6d0bd73f81ae5cc6f0f3267346b73312b62923f843d7"
+  }
+ ],
+ "music_licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html",
+ "music_changes": "Silent ends trimmed, tracks cross-faded, loudness-normalised and faded.",
+ "required_credits": "Music: 'Flying' and 'Serenity Now' by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.",
+ "labelling": "A stylised, AI-illustrated journey inspired by Denver. Never a real route or real footage.",
+ "blockers_before_release": [
+  "owner review and approval",
+  "provider terms and platform AI-content policies read in full",
+  "landmark check by someone who knows the city",
+  "durable storage of the masters"
+ ]
+}

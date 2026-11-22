@@ -1,0 +1,64 @@
+{
+ "city": "Tokyo, Japan",
+ "build": "illustrated destination mood journey",
+ "built": "2026-11-22",
+ "status": "NOT cleared for release; awaiting owner review",
+ "outputs": {
+  "master": "18ba23a047bd5a49ed830f67d7ed39f78085e76f79fbe093caf626d703993efa",
+  "vertical_1": "902ebe1d350e0680ef4353b49da583d63c763e87522b29b9c327089f2ab6ac47",
+  "vertical_2": "c1d82549a61c6e7e8346e32df5bbc5ec4c4570d630ad86c3e8cb6e09de3e7071"
+ },
+ "visuals": {
+  "provider": "OpenAI images API, model gpt-image-2",
+  "city_assets": [
+   {
+    "file": "assets_illustrated/tokyo/landmarks.png",
+    "sha256": "0edf4dd50620cd2c27dff7e3f17ef9b7c3e36b10fe21cc642497be5d584a54bb"
+   },
+   {
+    "file": "assets_illustrated/tokyo/local.png",
+    "sha256": "cee68996257815ad4577dc6fa415748a1667ec2f81129ac082b02cb437fd5c32"
+   },
+   {
+    "file": "assets_illustrated/tokyo/skyline.png",
+    "sha256": "13d20ade376474f9a5f4bf76b5dd8032c38488342d3fc775354168bd8556d95b"
+   },
+   {
+    "file": "assets_illustrated/tokyo/strips.png",
+    "sha256": "48d87c545a1e46bb867ebec1759eb5a1ce7a1de58ee9b60afddc28ae1e98d05f"
+   }
+  ],
+  "shared_library": "assets_illustrated/chicago/ (sky, scenery strips, city-edge sheet, window frame, first plate for water)",
+  "prompts_and_usage": "data/illustrated/three_city_generation_ledger.json",
+  "settings": "cities/illustrated/tokyo.json",
+  "third_party_considerations": "Depicts real landmarks. No readable signage intended; not checked frame by frame. Building-image and trademark questions not reviewed by a person."
+ },
+ "music": [
+  {
+   "title": "Twilight Market",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/city-nights-2/",
+   "album": "City Nights 2",
+   "file_sha256": "afce47e201a89c041332b1d7b4c3f2629b71975203ba55facf424a71b3a23a11"
+  },
+  {
+   "title": "Night Train",
+   "artist": "Purrple Cat",
+   "licence": "CC BY 4.0",
+   "source": "https://freelofi.com/albums/night-train/",
+   "album": "Night Train",
+   "file_sha256": "d9ecc96aafa05894c57492c92f8d1f6ac3d32921f16b36ffcbc2f10e133dc73c"
+  }
+ ],
+ "music_licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html",
+ "music_changes": "Silent ends trimmed, tracks cross-faded, loudness-normalised and faded.",
+ "required_credits": "Music: 'Twilight Market' and 'Night Train' by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.",
+ "labelling": "A stylised, AI-illustrated journey inspired by Tokyo. Never a real route or real footage.",
+ "blockers_before_release": [
+  "owner review and approval",
+  "provider terms and platform AI-content policies read in full",
+  "landmark check by someone who knows the city",
+  "durable storage of the masters"
+ ]
+}
