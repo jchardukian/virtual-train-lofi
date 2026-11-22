@@ -4,6 +4,18 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Owner cost gate — 2026-11-22 18:15 UTC
+
+Relayed on PR #1 (comment 7083431537): the owner rejects 5 USD per city, and so
+also the 7 / 21 / 53 USD projections. The proposed 2 USD two-plate test was
+**not approved** and will not be run.
+
+* No paid image calls, renders on paid machines, or subscriptions.
+* Design target: well under 5 USD incremental generation cost per city, ideally
+  near zero in API charges. Not asserted achievable until demonstrated.
+* The approved illustrated look stands; no return to the blocky 3D look.
+* Options and the cheapest no-spend proof: `docs/LOW_COST_OPTIONS.md`. Awaiting review.
+
 ## Illustrated 2.5D aesthetic approved; production animation NOT approved — 2026-11-22 18:05 UTC
 
 Relayed on PR #1 (comments 7083241979 and 7083276874) as the owner's verdict after
