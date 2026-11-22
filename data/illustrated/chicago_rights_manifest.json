@@ -4,9 +4,9 @@
  "built": "2026-11-22",
  "status": "NOT cleared for release",
  "outputs": {
-  "master": "fa4409b2aab23cde3b20d8386b07170739871543c507aa0e06b375f69306401c",
-  "vertical_1": "86aa9312329de445782caa8dd0f60df5b492cf7530308ae5b17e5bb5e8375b10",
-  "vertical_2": "58c25460d5615b4a71d26afa7917740c6851e828cc0870cc0c20ab3c118ab5a1"
+  "master": "a2b52ffd78d4d1947cbf2d47913ebb7a4e663fe2a8ea17bd2d58921686d15adc",
+  "vertical_1": "744f9e65d9bc91b006f65843c0e10dfac39702a0a452077fa92da6429630ca5c",
+  "vertical_2": "ddd221ea3761cd6df66d43647e047c6738dd5c5f19a84b964124fea98528b599"
  },
  "visuals": {
   "kind": "AI-generated illustration, composited by pipeline/illustrated_journey.py",
