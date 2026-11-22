@@ -107,7 +107,7 @@
   "2026-11-22T09:47:31Z finished scenes/chicago_v3_lake_south.json"
  ],
  "status": "rendering scenes/chicago_v3_riverfront.json",
- "updated": "2026-11-22T10:32:32Z",
+ "updated": "2026-11-22T10:33:21Z",
  "footage_seconds_passed_qc": 49.0,
  "release_blockers": [
   "no assembled city master",
