@@ -24,6 +24,19 @@ chat.
 | 6 | GitHub PR #1 is the single channel for status, questions, blockers and decisions. | Owner, direct |
 | 7 | Order of work: v3 longer-track test, then the Chicago five-minute master and two vertical cuts, then a reusable city pipeline (Tokyo and London next). | PR 7074181529, 7074337006 |
 
+### Delegation (PR 7074614476, under the owner's direct confirmation of this channel)
+
+Routine strategic, creative, production and prioritisation decisions are
+made by ChatGPT on this PR when the owner is unavailable: city order, queue
+management, render optimisation that keeps v3-or-better visuals, QA against
+the baseline, music selection within the stated taste and licence rules,
+edits, titles, thumbnails, upload *preparation*. The agent proceeds on those
+without asking the owner again.
+
+Not delegated: the owner-only gates below. No platform authorisation has
+been given to the implementation agent by the owner, so nothing is
+published or scheduled by it.
+
 ### Targets (aspirational; not commitments, not yet shown feasible)
 
 | Target | Source |
