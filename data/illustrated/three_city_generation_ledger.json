@@ -1,0 +1,305 @@
+{
+ "date": "2026-11-22",
+ "approval": "Owner confirmed in the agent session: one combined 3 USD ceiling for Denver, Paris and Tokyo image generation",
+ "pricing_source": "https://developers.openai.com/api/docs/pricing (gpt-image-2: 30 USD/1M image output tokens, 8 image input, 5 text input)",
+ "note": "Computed from API-reported tokens; billed amount not read from the billing page.",
+ "cap_usd": 3.0,
+ "calls_made": 12,
+ "computed_spend_usd": 2.141,
+ "remaining_under_cap_usd": 0.859,
+ "per_city_usd": {
+  "denver": 0.7136,
+  "paris": 0.7137,
+  "tokyo": 0.7137
+ },
+ "calls": [
+  {
+   "city": "denver",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Denver landmarks standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) Denver Union Station, the beaux-arts stone station with three tall arched windows and a canopy, 2) the Colorado State Capitol with its gold dome, 3) the tall slim Daniels and Fisher clock tower, 4) the angular titanium Hamilton Building of the Denver Art Museum, 5) the red-brick Coors Field ballpark entrance with its clock, 6) the Wells Fargo Center 'cash register' skyscraper with curved top, 7) the giant blue bear sculpture leaning against a glass convention centre wall.",
+   "usage": {
+    "input_tokens": 1857,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 321
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7345
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "1013354e6694aa511a100eee199cde11cb25cbdaea48f445c2d41e3ad6f2f23e"
+  },
+  {
+   "city": "denver",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Denver elements standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a red-brick LoDo warehouse loft with arched windows, 2) a second brick warehouse with a rooftop water tank and faded painted wall, 3) a Victorian 'Denver Square' brick house with a porch, 4) a small craftsman bungalow, 5) a cluster of three golden autumn aspen trees with white trunks, 6) a cluster of three tall dark green pine trees, 7) a tall red sandstone rock formation.",
+   "usage": {
+    "input_tokens": 1842,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 306
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7330
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "4d7a06fa74d766ac31559f84d5f0cca95ffac9637d40252d43608183ac44bbc8"
+  },
+  {
+   "city": "denver",
+   "name": "mountains",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): a long distant range of the Rocky Mountains Front Range, rugged snow-capped peaks in soft blue-violet haze with warm sunlit snow. STRIP 2 (bottom): nearer rolling foothills covered in dark green pines and golden autumn aspens, with red sandstone rock outcrops like Red Rocks.",
+   "usage": {
+    "input_tokens": 1800,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 264
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7288
+   },
+   "est_cost_usd": 0.1782,
+   "sha256": "c59817e71783a67d081dd6ff8d73947f0fa08585b15700c598561c3770a84935"
+  },
+  {
+   "city": "denver",
+   "name": "skyline",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. One continuous, very wide panorama strip spanning the full width of the canvas, softened and slightly hazy with distance, with lower buildings filling between the tall ones so the strip has no gaps. Its bottom edge is a straight level line placed in the lower third of the canvas; below it and above the rooftops is flat green. The strip shows the downtown Denver, Colorado skyline: Republic Plaza (tall plain slab), the Wells Fargo Center with its distinctive curved 'cash register' top, 1801 California Street with its stepped crown, the Four Seasons tower with a thin spire, and many mid-rise office blocks.",
+   "usage": {
+    "input_tokens": 1823,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 287
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7311
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "d0cc675ec655e6a6169cbc7a3260b082e7c8788687658ebafb46ca27fe049957"
+  },
+  {
+   "city": "paris",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate Paris landmarks standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Eiffel Tower (tallest), 2) the west facade of Notre-Dame cathedral with its two towers and rose window, 3) the Arc de Triomphe, 4) the white Sacre-Coeur basilica with its domes, 5) the Louvre glass pyramid in front of a palace wing, 6) the red Moulin Rouge windmill building.",
+   "usage": {
+    "input_tokens": 1827,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 291
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7315
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "ec55e39bb361fdd7cd4ed75eed775cd7d1b92fde25e0970b084cf6cea4b1c016"
+  },
+  {
+   "city": "paris",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Paris street elements standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a six-storey cream Haussmann apartment building with wrought-iron balconies and a grey mansard roof, 2) a narrower Haussmann building with a corner turret, 3) a third apartment building with a ground-floor cafe with a red awning and small tables, 4) a ground-floor bakery shopfront with flats above, 5) an art-nouveau green iron Metro entrance with two lamp stalks, 6) a tall plane tree with autumn leaves beside a classic Paris lamp post, 7) a green Wallace fountain beside a green newspaper kiosk with a domed roof.",
+   "usage": {
+    "input_tokens": 1872,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 336
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7360
+   },
+   "est_cost_usd": 0.1786,
+   "sha256": "ebb9eba521ce396c636d08f46f74d497918a688f1b70c125109366fb44e5a95b"
+  },
+  {
+   "city": "paris",
+   "name": "skyline",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. One continuous, very wide panorama strip spanning the full width of the canvas, softened and slightly hazy with distance, with lower buildings filling between the tall ones so the strip has no gaps. Its bottom edge is a straight level line placed in the lower third of the canvas; below it and above the rooftops is flat green. The strip shows the low roofline of Paris, France: continuous cream Haussmann buildings with grey zinc mansard roofs and chimney pots, and rising above them the Eiffel Tower, the white domes of Sacre-Coeur on its hill, the dark Montparnasse Tower, the golden dome of Les Invalides and the dome of the Pantheon.",
+   "usage": {
+    "input_tokens": 1837,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 301
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7325
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "58ed2f385f2fd435cb7042d61d73ff8e36987c1208046a1a3599f04f4d10a2f1"
+  },
+  {
+   "city": "paris",
+   "name": "strips",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): a continuous row of pollarded plane trees in autumn gold with classic lamp posts and green benches along a pale stone parapet. STRIP 2 (bottom): a continuous pale limestone Seine quay wall with iron mooring rings, stone steps, a few moored houseboats and barges, and green bookseller boxes on top of the wall.",
+   "usage": {
+    "input_tokens": 1807,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 271
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7295
+   },
+   "est_cost_usd": 0.1783,
+   "sha256": "0dc20454cdc31192ed03aa9b1011fc09ed797b239bb344ee1b36173d5cd50ee0"
+  },
+  {
+   "city": "tokyo",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate Tokyo landmarks standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) Tokyo Skytree (tallest, slender white lattice tower), 2) Tokyo Tower (red and white lattice tower), 3) the red five-storey pagoda of Senso-ji temple, 4) the red Kaminarimon temple gate with a giant red paper lantern (no characters on the lantern), 5) the Tokyo Metropolitan Government Building with its twin towers, 6) the cocoon-shaped Mode Gakuen Cocoon Tower.",
+   "usage": {
+    "input_tokens": 1843,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 307
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7331
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "0edf4dd50620cd2c27dff7e3f17ef9b7c3e36b10fe21cc642497be5d584a54bb"
+  },
+  {
+   "city": "tokyo",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Tokyo neighbourhood elements standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a narrow two-storey Japanese house with a tiled roof and a small balcony with laundry, 2) a three-storey apartment block with external stairs, 3) a small corner convenience shop with a striped awning and a glowing window, 4) a small Shinto shrine with a red torii gate and stone lanterns, 5) a pair of drink vending machines beside a utility pole with tangled wires, 6) a railway level crossing signal with striped barrier, 7) a ginkgo tree in bright autumn yellow beside a red maple.",
+   "usage": {
+    "input_tokens": 1863,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 327
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7351
+   },
+   "est_cost_usd": 0.1786,
+   "sha256": "cee68996257815ad4577dc6fa415748a1667ec2f81129ac082b02cb437fd5c32"
+  },
+  {
+   "city": "tokyo",
+   "name": "skyline",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. One continuous, very wide panorama strip spanning the full width of the canvas, softened and slightly hazy with distance, with lower buildings filling between the tall ones so the strip has no gaps. Its bottom edge is a straight level line placed in the lower third of the canvas; below it and above the rooftops is flat green. The strip shows the Tokyo, Japan skyline: the very tall slender Tokyo Skytree, the red-and-white lattice Tokyo Tower, the twin-towered Tokyo Metropolitan Government Building, the cocoon-shaped Mode Gakuen Cocoon Tower, and a dense mass of varied office and apartment towers.",
+   "usage": {
+    "input_tokens": 1822,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 286
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7310
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "13d20ade376474f9a5f4bf76b5dd8032c38488342d3fc775354168bd8556d95b"
+  },
+  {
+   "city": "tokyo",
+   "name": "strips",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): a distant view of snow-capped Mount Fuji rising above a long line of low blue-violet hills, softened by haze. STRIP 2 (bottom): a continuous row of ginkgo and maple trees in autumn yellow and red along a concrete canal wall with a simple railing.",
+   "usage": {
+    "input_tokens": 1794,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 258
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7282
+   },
+   "est_cost_usd": 0.1782,
+   "sha256": "48d87c545a1e46bb867ebec1759eb5a1ce7a1de58ee9b60afddc28ae1e98d05f"
+  }
+ ]
+}
