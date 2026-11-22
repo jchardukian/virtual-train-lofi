@@ -4,7 +4,7 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
-## Status (as of 2026-11-22 05:10 UTC)
+## Status (as of 2026-11-22 12:00 UTC)
 
 **The owner confirmed directly to the implementation agent (05:05 UTC):
 ChatGPT communicates everything through GitHub, and the owner will not give
@@ -75,9 +75,10 @@ reports distinguish what was measured from what was sampled or estimated.
 * v3 renders at 12.8 s per 1080p frame on the 4-vCPU build machine: about
   32 hours per five-minute city. No 200-city schedule is feasible on that
   basis, and none is committed to.
-* Building Chicago's scene by hand took most of a working day. Nothing yet
+* Building Chicago's scene by hand took most of a working day; finding a route that reaches 300 s took a further 31 minutes and two candidates. Nothing yet
   shows a second city can be built faster.
-* There is no five-minute camera path in the Chicago scene yet.
+* A 300 s Chicago plan now exists (five shots; see the dated status table). 45 s of it is rendered and QC-passed; the 255 s riverfront shot is rendering and unreviewed in motion. Finished cities: 0.
+* Restart-loss exposure: rendered frames and any local compressed checkpoints live only on the build session's disk. If the session is reclaimed, the riverfront render (about 23 h) is lost; only `state/` and committed files survive. Git LFS and GitHub Actions are **not** enabled (decided on PR 7078729192).
 * The look is a stylised virtual journey built from map data and must never
   be described as real footage.
 * No large media in Git history; the journey v1 master parts stay as they
@@ -117,7 +118,9 @@ reports distinguish what was measured from what was sampled or estimated.
 | Licence records | `licenses/ATTRIBUTION.md` | Current |
 | Blender scenes v1-v3 | `scenes/chicago_3d.json`, `chicago_river_v2.json`, `chicago_v3_combined.json` | Paused, preserved |
 
-## Open issues needing a decision
+## Historic open issues (superseded; kept for the record)
+
+O2, O3, O4 and O5 below were written while real footage was the direction. They are superseded by the Active direction and Owner-only gates above. O3 (reused-content risk) no longer applies to stylised renders in the same way; O4 (music) is replaced by active decision 5.
 
 | ID | Issue | Options |
 |---|---|---|
