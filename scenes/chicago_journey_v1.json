@@ -1,0 +1,29 @@
+{
+  "id": "chicago_journey_v1",
+  "note": "Five-minute Chicago virtual train journey cut from real, commercially usable footage. Train shots recur as the spine; city scenery sits between them. Afternoon to night.",
+  "library": "docs/CHICAGO_SOURCE_LIBRARY.md",
+  "clips": [
+    {"src": "2005976", "start": 2.0,  "duration": 20.0},
+    {"src": "18927059", "start": 0.2, "duration": 17.5},
+    {"src": "20670689", "start": 8.0, "duration": 15.0, "vertical_crop_y": 0.40, "stabilize": true},
+    {"src": "11795121", "start": 1.0, "duration": 15.0},
+    {"src": "2005977", "start": 0.2,  "duration": 22.5},
+    {"src": "1826654", "start": 0.5,  "duration": 41.5},
+    {"src": "1826179", "start": 0.0,  "duration": 8.0},
+    {"src": "2005976", "start": 22.0, "duration": 22.0},
+    {"src": "1826896", "start": 0.5,  "duration": 36.0},
+    {"src": "3804704", "start": 0.3,  "duration": 18.5},
+    {"src": "1826896", "start": 36.5, "duration": 37.0},
+    {"src": "mixkit_1773", "start": 1.0, "duration": 28.0},
+    {"src": "2005976", "start": 44.0, "duration": 15.5},
+    {"src": "1826720", "start": 0.2,  "duration": 16.5}
+  ],
+  "crossfade": 1.0,
+  "fade": 1.5,
+  "music": {"file": "footage/music/Vibing_Over_Venus.mp3", "title": "Vibing Over Venus", "artist": "Kevin MacLeod",
+            "url": "https://incompetech.com/music/royalty-free/mp3-royaltyfree/Vibing%20Over%20Venus.mp3",
+            "license": "CC BY 4.0", "target_lufs": -16, "fade_in": 2.0, "fade_out": 4.0},
+  "render": {"fps": 30, "crf": 19},
+  "camera": {"duration_s": 300},
+  "overlay": {"title": "Chicago, Illinois", "next": "Barcelona, Spain", "x": 110, "y": 830, "scale": 1.5}
+}

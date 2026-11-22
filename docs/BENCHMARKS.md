@@ -142,3 +142,17 @@ three-window carriage, low sun, illustrated finish).
 
 Option stills (A forward POV, B illustrated, combined) are in
 `output/samples/options/`.
+
+---
+
+# Real-footage journey (5:00) — `scenes/chicago_journey_v1.json`
+
+| Item | Measured |
+|---|---|
+| Output | 1920x1080, 30 fps, H.264 + AAC stereo 48 kHz, 300.0 s, 316.9 MB (8.4 Mbps) |
+| Processing | 754 s (12.6 min) on 4 vCPU for 14 clips, 13 crossfades, grade, overlay, music |
+| Audio | -16.0 LUFS integrated, -1.4 dBFS peak, no silence gaps |
+| Video checks | no frozen frames; black only in the final fade-out |
+| Cost | $0 |
+
+Compare: the 3D route needed about 32 hours of rendering for the same length.
