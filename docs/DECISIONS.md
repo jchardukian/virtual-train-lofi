@@ -4,6 +4,32 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Proposed direction awaiting owner approval — 2026-11-22 18:00 UTC
+
+**Style C, illustrated 2.5D, is a candidate under visual review. It is not the
+production method.** Nothing below takes effect until the owner approves the
+look after watching the clip at playback speed.
+
+* What exists: one 10-second Chicago proof (`output/samples/style_C_illustrated_2p5d_10s.mp4`),
+  made from one generated painting plus three layer edits, after the owner
+  authorised image generation in the agent session. Provenance:
+  `data/illustrated/chicago_style_c_provenance.json`. Feasibility, cost ranges,
+  rights and audio status: `docs/ILLUSTRATED_FEASIBILITY.md`.
+* What it does not show: continuous forward travel with new scenery, a
+  five-minute city, verified landmark accuracy, or 200-city economics.
+* If the owner approves the look, the next step is one bounded continuity test
+  under a cost ceiling agreed first. Approval of the look does not authorise a
+  city queue, spend beyond that ceiling, merge, scheduling or publication.
+* If the owner rejects it, the 15:00 UTC fast-3D entry below remains the
+  working method and the first fast-path Chicago master
+  (`work/fast/v1/`, previews in `output/samples/`) stands as built.
+* Stopped by owner instruction on 2026-11-22 about 17:05 UTC: the Chicago
+  rebuild (vehicle motion, two buildings removed), tunnel handoff work, and any
+  second city. Code for these is committed; none of it is running.
+* Also on the record: comparison B (colour and outline restyle of the 3D frames)
+  was judged not a valid illustrated comparison. The actual image-generation
+  charge is unknown until confirmed from billing.
+
 ## Direction update — 2026-11-22 15:00 UTC (replaces "render every frame" as the production method)
 
 Given by the owner directly in the agent session (about 14:50 UTC) and on PR #1
