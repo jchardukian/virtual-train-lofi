@@ -4,6 +4,25 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Illustrated 2.5D aesthetic approved; production animation NOT approved — 2026-11-22 18:05 UTC
+
+Relayed on PR #1 (comments 7083241979 and 7083276874) as the owner's verdict after
+watching Style C at playback speed: "Yes the new 2.5 is so much better. Besides
+the random tree/leaves that pop up and disappear at the bottom everything else
+looks great." This replaces the "candidate awaiting visual verdict" status in the
+18:00 entry below, which is kept for the record.
+
+* **Approved:** the illustrated 2.5D look (plate, palette, lighting, window frame).
+  Clean reference: `output/samples/style_C2_illustrated_no_foliage_10s.mp4`.
+  No return to the blocky 3D look or to filters over it.
+* **Not approved:** the animation technique, continuous forward travel, a
+  five-minute city, any spend, scaling, merge, scheduling or publication.
+* Foreground foliage layer removed (it popped in and out).
+* `style_C3_traverse_25s.mp4` is a motion diagnostic on the one existing painting.
+  It does not prove joins, depth separation, fresh scenery or five-minute routes.
+* Next gate: a two-plate continuity test. No paid image call until the owner
+  sets a cost ceiling.
+
 ## Proposed direction awaiting owner approval — 2026-11-22 18:00 UTC
 
 **Style C, illustrated 2.5D, is a candidate under visual review. It is not the
