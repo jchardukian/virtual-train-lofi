@@ -4,6 +4,7 @@ work/
 data/osm_raw/
 output/*
 !output/samples/
+!output/masters/
 __pycache__/
 *.trf
 assets/

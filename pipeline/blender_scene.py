@@ -534,6 +534,7 @@ sun = bpy.data.objects.new("Sun", bpy.data.lights.new("Sun", "SUN"))
 sun.data.energy = R.get("sun_strength", 3.0)
 sun.data.angle = math.radians(1.0)
 sun.data.color = R.get("sun_colour", (1.0, 0.95, 0.88))
+sun_el = math.radians(R["sun_elevation_deg"]) if R.get("sun_elevation_deg") else sun_el
 to_sun = Vector((math.sin(sun_az) * math.cos(sun_el), math.cos(sun_az) * math.cos(sun_el), math.sin(sun_el)))
 sun.rotation_euler = to_sun.to_track_quat("Z", "Y").to_euler()
 ENGINE = A.engine or R.get("engine", "CYCLES")
@@ -649,18 +650,22 @@ if W.get("enabled", True):
     panel = simple("car_panel", tuple(W.get("panel_colour", (0.58, 0.56, 0.52))), 0.55)
     rubber = simple("car_rubber", (0.012, 0.012, 0.012), 0.6)
     trim = simple("car_trim", tuple(W.get("trim_colour", (0.30, 0.30, 0.31))), 0.35, 0.6)
-    inner = rrect(x0, x1, zb, zt, rad)
-    m_ = len(inner)
-    X0, X1, Z0, Z1 = -2.5, 5.0, 0.0, 2.45
-    outer = [(X1 if x > (x0 + x1) / 2 else X0, Z1 if z > (zb + zt) / 2 else Z0) for x, z in inner]
-    ring = [(i, (i + 1) % m_, m_ + (i + 1) % m_, m_ + i) for i in range(m_)]
-    obj("wall", [(x, wall_y, z) for x, z in inner] + [(x, wall_y, z) for x, z in outer], ring, panel)
-    # reveal: the thickness of the car side around the glass
-    obj("reveal", [(x, wall_y, z) for x, z in inner] + [(x, out_y, z) for x, z in inner], ring, rubber)
+    X0, X1, Z0, Z1 = -2.5, 6.5, 0.0, 2.45
+    wins = W.get("windows") or [[x0, x1]]
     g = 0.022
-    gasket = rrect(x0 - g, x1 + g, zb - g, zt + g, rad + g)
     lift = wall_y - side * 0.006
-    obj("trim", [(x, lift, z) for x, z in inner] + [(x, lift, z) for x, z in gasket], ring, trim)
+    for wi, (wa, wb) in enumerate(wins):
+        inner = rrect(wa, wb, zb, zt, rad)
+        m_ = len(inner)
+        ca = X0 if wi == 0 else (wins[wi - 1][1] + wa) / 2       # each window owns a cell of wall
+        cb = X1 if wi == len(wins) - 1 else (wb + wins[wi + 1][0]) / 2
+        outer = [(cb if x > (wa + wb) / 2 else ca, Z1 if z > (zb + zt) / 2 else Z0) for x, z in inner]
+        ring = [(i, (i + 1) % m_, m_ + (i + 1) % m_, m_ + i) for i in range(m_)]
+        obj(f"wall{wi}", [(x, wall_y, z) for x, z in inner] + [(x, wall_y, z) for x, z in outer], ring, panel)
+        obj(f"reveal{wi}", [(x, wall_y, z) for x, z in inner] + [(x, out_y, z) for x, z in inner], ring, rubber)
+        gasket = rrect(wa - g, wb + g, zb - g, zt + g, rad + g)
+        obj(f"trim{wi}", [(x, lift, z) for x, z in inner] + [(x, lift, z) for x, z in gasket], ring, trim)
+    x0, x1 = wins[0][0], wins[-1][1]
     # sill ledge
     sy0, sy1 = wall_y, wall_y - side * 0.075
     sv = [(x0 - 0.06, sy0, zb - 0.03), (x1 + 0.06, sy0, zb - 0.03), (x1 + 0.06, sy1, zb - 0.03), (x0 - 0.06, sy1, zb - 0.03),
