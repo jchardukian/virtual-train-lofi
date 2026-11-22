@@ -189,5 +189,10 @@
       ],
       "width": 21
     }
-  ]
+  ],
+  "exclude_buildings": [
+    862,
+    1349
+  ],
+  "exclude_buildings_note": "Indices into the geometry file. 862: unnamed 21.6 m building the invented riverfront alignment passes through; 1349: small unnamed structure 2 m from the window. Removed rather than rerouting; no landmark is affected."
 }

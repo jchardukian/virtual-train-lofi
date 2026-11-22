@@ -503,6 +503,7 @@ for bi, b in enumerate(bl):
             ln, ht = (11.0, 2.9) if bus else (4.5, 1.25)
             box_obj("body", (ln, 2.5 if bus else 1.85, ht * 0.62), (0, 0, 0.45 + ht * 0.31), car_mats[int(crng.integers(len(car_mats)))], root)
             box_obj("cab", (ln * (0.92 if bus else 0.52), 2.3 if bus else 1.65, ht * 0.4), (-0.2, 0, 0.45 + ht * 0.62 + ht * 0.2), glass_m, root)
+            root["bus"] = bool(bus)
             CARS.append((root, a, uvec, nvec, L, lane, direction, float(crng.uniform(0, 1)), float(crng.uniform(7.0, 11.0))))
 
 # ------------------------------------------------------------------ light
@@ -800,8 +801,8 @@ if A.keys:
         "fps": fps, "frames": n_total, "width": R["width"], "height": R["height"], "hfov_deg": C["hfov_deg"],
         "shift_y": C.get("shift_y", 0.0), "cam_to_world": poses,
         "cars": [{"a": list(map(float, a)), "u": list(map(float, u)), "n": list(map(float, nv)), "L": float(L), "lane": float(lane),
-                  "dir": float(d), "phase": ph, "speed": spd} for _, a, u, nv, L, lane, d, ph, spd in CARS],
-        "boats": [b for _, b in BOATS]}))
+                  "dir": float(d), "phase": ph, "speed": spd, "bus": bool(root_["bus"])} for root_, a, u, nv, L, lane, d, ph, spd in CARS],
+        "boats": [b for _, b in BOATS], "river_centre": [list(map(float, q)) for q in rc] if len(rc) else None}))
 
 if A.carriage_only:
     # The interior is rigid with the camera, so one RGBA still of it serves the whole shot.

@@ -168,6 +168,8 @@ def main():
     # ---------------- buildings ----------------
     items = []
     for i, b in enumerate(geo["buildings"]):
+        if i in scene.get("exclude_buildings", []):      # footprints the fictional track would cut through
+            continue
         p = poly(b["p"])
         if p is not None:
             items.append((i, b, p))

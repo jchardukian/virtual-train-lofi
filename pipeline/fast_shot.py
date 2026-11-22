@@ -35,9 +35,48 @@ def read_depth(p):
     return np.ascontiguousarray(z[..., 0] if z.ndim == 3 else z, dtype=np.float32)
 
 
+@njit(parallel=True, cache=True)
+def label_movers(depth, M, fx, cx, cy, pos, fwd, half, label):
+    """Which moving object (car, boat) each keyframe pixel belongs to: its 3D point lies inside that object's box."""
+    H, W = depth.shape
+    nm = pos.shape[0]
+    for v in prange(H):
+        for u in range(W):
+            label[v, u] = -1
+            d = depth[v, u]
+            if d > 900.0:
+                continue
+            x = (u - cx) / fx * d
+            y = -(v - cy) / fx * d
+            z = -d
+            wz = M[2, 0] * x + M[2, 1] * y + M[2, 2] * z + M[2, 3]
+            if wz < -4.0 or wz > 4.2:
+                continue
+            wx = M[0, 0] * x + M[0, 1] * y + M[0, 2] * z + M[0, 3]
+            wy = M[1, 0] * x + M[1, 1] * y + M[1, 2] * z + M[1, 3]
+            for m in range(nm):
+                dz = wz - pos[m, 2]
+                if dz < half[m, 2] or dz > half[m, 3]:
+                    continue
+                ex = wx - pos[m, 0]
+                ey = wy - pos[m, 1]
+                al = ex * fwd[m, 0] + ey * fwd[m, 1]
+                if abs(al) > half[m, 0]:
+                    continue
+                ac = -ex * fwd[m, 1] + ey * fwd[m, 0]
+                if abs(ac) > half[m, 1]:
+                    continue
+                label[v, u] = m
+                break
+
+
 @njit(cache=True)
-def splat(depth, T, fx, cx, cy, zbuf):
-    """Forward-project one keyframe's depth into the target view (z-buffer, 2x2 footprint)."""
+def splat(depth, label, T, D, fx, cx, cy, zbuf, lbuf):
+    """Forward-project one keyframe's depth into the target view (z-buffer, 2x2 footprint).
+
+    Pixels on a moving object are carried by that object's own displacement D (target camera space);
+    a displacement of NaN means the object jumped (wrapped round) and is left out.
+    """
     H, W = depth.shape
     for v in range(H):
         for u in range(W):
@@ -48,6 +87,13 @@ def splat(depth, T, fx, cx, cy, zbuf):
             X = T[0, 0] * x + T[0, 1] * y + T[0, 2] * z + T[0, 3]
             Y = T[1, 0] * x + T[1, 1] * y + T[1, 2] * z + T[1, 3]
             Z = T[2, 0] * x + T[2, 1] * y + T[2, 2] * z + T[2, 3]
+            m = label[v, u]
+            if m >= 0:
+                if D[m, 0] != D[m, 0]:
+                    continue
+                X += D[m, 0]
+                Y += D[m, 1]
+                Z += D[m, 2]
             if Z > -0.5:
                 continue
             dt = -Z
@@ -63,10 +109,11 @@ def splat(depth, T, fx, cx, cy, zbuf):
                     uu = u0 + du
                     if 0 <= uu < W and dt < zbuf[vv, uu]:
                         zbuf[vv, uu] = dt
+                        lbuf[vv, uu] = m
 
 
 @njit(parallel=True, cache=True)
-def pull(zbuf, T, fx, cx, cy, src_depth, mapx, mapy, vis):
+def pull(zbuf, lbuf, T, D, fx, cx, cy, src_depth, src_label, mapx, mapy, vis):
     """For every target pixel: where it sits in a keyframe, and whether that keyframe really sees it."""
     H, W = zbuf.shape
     for v in prange(H):
@@ -83,6 +130,13 @@ def pull(zbuf, T, fx, cx, cy, src_depth, mapx, mapy, vis):
             X = T[0, 0] * x + T[0, 1] * y + T[0, 2] * z + T[0, 3]
             Y = T[1, 0] * x + T[1, 1] * y + T[1, 2] * z + T[1, 3]
             Z = T[2, 0] * x + T[2, 1] * y + T[2, 2] * z + T[2, 3]
+            m = lbuf[v, u]
+            if m >= 0:                       # a moving object: undo its own travel to find it in the keyframe
+                if D[m, 0] != D[m, 0]:
+                    continue
+                X += D[m, 0]
+                Y += D[m, 1]
+                Z += D[m, 2]
             if Z > -0.5:
                 continue
             ds = -Z
@@ -96,6 +150,8 @@ def pull(zbuf, T, fx, cx, cy, src_depth, mapx, mapy, vis):
             ui = int(us)
             vi = int(vs)
             if src_depth[int(vs + 0.5), int(us + 0.5)] < 0:      # anti-aliased silhouette pixel: colour is a mix
+                continue
+            if src_label[int(vs + 0.5), int(us + 0.5)] != m:     # road must not borrow a car's colour, nor a car the road's
                 continue
             tol = 0.04 * ds + 0.25
             ok = False
@@ -131,11 +187,11 @@ def blend(c0, c1, v0, v1, a, out, hole):
                     out[v, u, k] = np.uint8((w0 * c0[v, u, k] + w1 * c1[v, u, k]) / s + 0.5)
 
 
-def fill_holes(img, hole):
-    """Push-pull fill for the few pixels neither keyframe sees."""
+def fill_holes(img, hole, lbuf):
+    """Push-pull fill for the few pixels neither keyframe sees (vehicles never lend their colour to it)."""
     if not hole.any():
         return img
-    w = (hole == 0).astype(np.float32)
+    w = ((hole == 0) & (lbuf < 0)).astype(np.float32)
     c = img.astype(np.float32) * w[..., None]
     cs, ws = [c], [w]
     for _ in range(7):
@@ -165,6 +221,46 @@ class Shot:
         self.M = np.array(P["cam_to_world"], dtype=np.float64)
         self.step = step
         self.cache = {}
+        rc = P.get("river_centre")
+        if rc is None and P.get("boats") and (ROOT / "work/meshes/river_centre.json").exists():
+            rc = json.loads((ROOT / "work/meshes/river_centre.json").read_text())
+        self.rc = np.array(rc) if rc else None
+        self.nm = len(P.get("cars", [])) + (len(P.get("boats", [])) if self.rc is not None else 0)
+
+    def movers(self, f):
+        """World position, heading and box of every car and boat at frame f (same formulas as blender_scene.py)."""
+        t = f / self.fps
+        pos, fwd, half = np.zeros((self.nm, 3)), np.zeros((self.nm, 2)), np.zeros((self.nm, 4))
+        i = 0
+        crng = np.random.default_rng(11)             # replays blender_scene.py's draws to recover which cars are buses
+        for c in self.P.get("cars", []):
+            bus = c["bus"] if "bus" in c else bool(crng.random() < 0.12)
+            if "bus" not in c:
+                crng.integers(7)
+                assert abs(crng.uniform(0, 1) - c["phase"]) < 1e-9, "car list out of step with blender_scene.py"
+                crng.uniform(7.0, 11.0)
+            ln, wd, ht = (11.0, 2.5, 2.9) if bus else (4.5, 1.85, 1.25)
+            span = c["L"] + 160.0
+            d = ((c["phase"] * span + c["speed"] * t) % span) - 80.0
+            if c["dir"] < 0:
+                d = c["L"] - d
+            a, u, n = np.array(c["a"]), np.array(c["u"]), np.array(c["n"])
+            q = a + u * d + n * c["lane"] * -c["dir"]
+            pos[i] = (q[0], q[1], 0.12)
+            fwd[i] = u
+            half[i] = (ln / 2 + 0.2, wd / 2 + 0.12, 0.42, 0.45 + ht * 1.02 + 0.08)   # along, across, z from, z to
+            i += 1
+        if self.rc is not None:
+            for b in self.P.get("boats", []):
+                x = b["x0"] + b["speed_mps"] * t
+                y = float(np.interp(x, self.rc[:, 0], self.rc[:, 1])) + b.get("offset", 0.0)
+                y2 = float(np.interp(x + 5, self.rc[:, 0], self.rc[:, 1])) + b.get("offset", 0.0)
+                h = math.atan2(y2 - y, 5.0)
+                pos[i] = (x, y, -4.0)
+                fwd[i] = (math.cos(h), math.sin(h))
+                half[i] = (b.get("length", 24) / 2 + 1.0, 3.3, 0.25, 3.9)   # stops below bridge decks the boat passes under
+                i += 1
+        return pos, fwd, half
 
     def key(self, k):
         if k not in self.cache:
@@ -178,31 +274,47 @@ class Shot:
             lo = cv2.erode(z, np.ones((3, 3), np.uint8))
             zc = z.copy()
             zc[(z - lo) > 0.08 * lo + 0.3] = -1.0
-            self.cache[k] = (cv2.imread(str(self.d / f"k_{k:04d}.png")), z, zc)
+            label = np.full(z.shape, -1, np.int16)
+            pos = None
+            if self.nm:
+                pos, fwd, half = self.movers(k)
+                label_movers(z, self.M[k], self.fx, self.cx, self.cy, pos, fwd, half, label)
+            self.cache[k] = (cv2.imread(str(self.d / f"k_{k:04d}.png")), z, zc, label, pos)
         return self.cache[k]
+
+    def shift(self, pos_from, pos_to, cam):
+        """Each mover's travel between two instants, expressed in a camera's axes; NaN if it wrapped round."""
+        if pos_from is None:
+            return np.zeros((1, 3))
+        dw = pos_to - pos_from
+        D = dw @ self.M[cam][:3, :3]
+        D[np.linalg.norm(dw, axis=1) > 25.0] = np.nan
+        return D
 
     def frame(self, f):
         k0 = (f // self.step) * self.step
         k1 = k0 + self.step                     # keys run to frame n inclusive, one past the last output frame
-        c0, z0, e0 = self.key(k0)
+        c0, z0, e0, l0, p0 = self.key(k0)
         if f == k0:
             return c0, 0
-        c1, z1, e1 = self.key(k1)
+        c1, z1, e1, l1, p1 = self.key(k1)
+        pf = self.movers(f)[0] if self.nm else None
         Mt_inv = np.linalg.inv(self.M[f])
         zbuf = np.full((self.H, self.W), np.inf, dtype=np.float32)
-        splat(z0, Mt_inv @ self.M[k0], self.fx, self.cx, self.cy, zbuf)
-        splat(z1, Mt_inv @ self.M[k1], self.fx, self.cx, self.cy, zbuf)
+        lbuf = np.full((self.H, self.W), -1, np.int16)
+        splat(z0, l0, Mt_inv @ self.M[k0], self.shift(p0, pf, f), self.fx, self.cx, self.cy, zbuf, lbuf)
+        splat(z1, l1, Mt_inv @ self.M[k1], self.shift(p1, pf, f), self.fx, self.cx, self.cy, zbuf, lbuf)
         outs = []
-        for k, c, z in ((k0, c0, e0), (k1, c1, e1)):
+        for k, c, z, lk, pk in ((k0, c0, e0, l0, p0), (k1, c1, e1, l1, p1)):
             mx = np.empty((self.H, self.W), np.float32)
             my = np.empty_like(mx)
             vis = np.empty_like(mx)
-            pull(zbuf, np.linalg.inv(self.M[k]) @ self.M[f], self.fx, self.cx, self.cy, z, mx, my, vis)
-            outs.append((cv2.remap(c, mx, my, cv2.INTER_LINEAR, borderMode=cv2.BORDER_REPLICATE), vis))
+            pull(zbuf, lbuf, np.linalg.inv(self.M[k]) @ self.M[f], self.shift(pf, pk, k), self.fx, self.cx, self.cy, z, lk, mx, my, vis)
+            outs.append((cv2.remap(c, mx, my, cv2.INTER_CUBIC, borderMode=cv2.BORDER_REPLICATE), vis))
         out = np.empty((self.H, self.W, 3), np.uint8)
         hole = np.empty((self.H, self.W), np.uint8)
         blend(outs[0][0], outs[1][0], outs[0][1], outs[1][1], (f - k0) / (k1 - k0), out, hole)
-        return fill_holes(out, hole), int((hole > 0).sum())
+        return fill_holes(out, hole, lbuf), int((hole > 0).sum())
 
 
 def main():
