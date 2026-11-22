@@ -82,3 +82,43 @@ needs replacing for synthetic scenes; treat its pass/fail here as void.
   frame picks up a purple cast.
 - No cars, people, signage or station detail; boats are simple boxes.
 - No reflections or dirt on the train glass; the frame is a flat dark shape.
+
+---
+
+# v2 scene (10 s) — rebuilt Chicago River view
+
+Same machine (4 vCPU, 15 GB, no GPU). Scene: `scenes/chicago_river_v2.json`.
+
+| Item | Measured |
+|---|---|
+| Frames | 300 (10 s, 1920x1080, 30 fps), 0 failed, 0 errors in logs |
+| Render wall time | 3,636 s (60.6 min), two Blender processes |
+| Per frame | 12.1 s effective; 16.5 s single process |
+| Settings | EEVEE, 8 samples, 2 motion-blur steps, SSR, AO, 4096 shadow cascades, DOF |
+| Peak Blender memory | 543 MB per process |
+| Frame store | 768 MB PNG |
+| Encode | 34 s; 22.7 MB, 18.1 Mbps (CRF 17) |
+| Cost | $0 |
+
+Engine comparison on one frame of this scene:
+
+| Engine | Time | Note |
+|---|---|---|
+| Cycles, 960x540, 24 samples + denoise | 27 s | ~3-4 min at full res and usable samples: ~17 h per 10 s. Rejected. |
+| EEVEE 1080p, 8 samples | 16.5 s | Selected |
+| EEVEE 1080p, 3 samples, 1 blur step | 7.2 s | Preview quality |
+
+Extrapolated (not measured): a five-minute segment is 9,000 frames, about
+30 hours at 12.1 s/frame. Not viable for 200 segments on this machine.
+
+## Automated checks (v2)
+
+| Check | Result |
+|---|---|
+| H.264, 1920x1080, 30 fps, yuv420p | pass |
+| Black / frozen frames | none |
+| Jitter (optical flow) | 0.19 px RMS both axes, rotation 0.005 deg — pass |
+| Frame-to-frame difference | 3.2-4.3 (mean 3.7); largest change 1.10x its neighbours; no seam at frames 149/150 |
+
+The jitter metric behaved on this clip (it was void on the baseline); the
+frame-difference check agrees with it.
