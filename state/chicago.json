@@ -6,21 +6,9 @@
    "frames_total": 660,
    "retries": {},
    "render_s": 904.5,
-   "qc_checks": {
-    "h264": true,
-    "1920x1080": true,
-    "fps>=30": true,
-    "yuv420p": true,
-    "no_black_frames_mid_clip": true,
-    "no_frozen_frames": true,
-    "jitter_rms<1.5px": true,
-    "rotation_jitter<0.05deg": true
-   },
-   "qc_pass": true,
-   "encoded": "output/cities/chicago/chicago_v3_lake_illustrated.mp4",
-   "bytes": 44742225,
-   "duration_s": 22.0,
-   "fingerprint": "22652da805a828db"
+   "invalidated": [
+    "2026-11-22T08:47:03Z scene or frames changed since encode"
+   ]
   },
   "scenes/chicago_v3_combined.json": {
    "frames_done": 180,
@@ -42,16 +30,36 @@
    "fingerprint": "dbe6fe5cc5996bf1"
   },
   "scenes/chicago_v3_wells_south.json": {
-   "frames_done": 360,
+   "frames_done": 390,
    "frames_total": 390,
    "retries": {},
-   "render_s": 4888.7
+   "render_s": 5696.2,
+   "qc_checks": {
+    "h264": true,
+    "1920x1080": true,
+    "fps>=30": true,
+    "yuv420p": true,
+    "no_black_frames_mid_clip": true,
+    "no_frozen_frames": true,
+    "jitter_rms<1.5px": true,
+    "rotation_jitter<0.05deg": true
+   },
+   "qc_pass": true,
+   "encoded": "output/cities/chicago/chicago_v3_wells_south_illustrated.mp4",
+   "bytes": 37755675,
+   "duration_s": 13.0,
+   "fingerprint": "10d7686fbbb70742"
+  },
+  "scenes/chicago_v3_lake_south.json": {
+   "frames_done": 0,
+   "frames_total": 240
   }
  },
  "log": [
   "2026-11-22T07:04:07Z finished scenes/chicago_v3_lake.json",
-  "2026-11-22T07:04:51Z finished scenes/chicago_v3_combined.json"
+  "2026-11-22T07:04:51Z finished scenes/chicago_v3_combined.json",
+  "2026-11-22T08:41:21Z finished scenes/chicago_v3_wells_south.json"
  ],
- "status": "rendering scenes/chicago_v3_wells_south.json",
- "updated": "2026-11-22T08:26:20Z"
+ "status": "finishing scenes/chicago_v3_lake.json",
+ "updated": "2026-11-22T08:47:03Z"
 }
