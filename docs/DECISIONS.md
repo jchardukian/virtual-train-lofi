@@ -12,6 +12,15 @@ further input in the agent's own session unless they say so.** Direction
 relayed on PR #1 is therefore active. The agent reports on the PR, not in
 chat.
 
+### Dated status
+
+| When (UTC) | Status |
+|---|---|
+| 2026-11-22 09:40 | Chicago **partial** delivered: 46 s, music, two vertical cuts, all gates passing. Internal artifact, not publish-ready. Finished cities: 0. |
+| 2026-11-22 10:30 | Route to 300 s chosen: a **fictional** riverfront alignment along the south bank (255 s shot). Permitted by the 2026-11-21 fictionalised-route decision; always described as a stylised virtual journey, never as a CTA service. Southern approach on real track tested and rejected (walls). |
+| 2026-11-22 10:35 | 255 s riverfront render started on the build machine: 7,650 frames, about 23 h. Optimisation adopted for this shot: 2048 shadow maps (46.8 dB PSNR against 4096 on a matched frame, about 12% faster); 6 and 4 samples rejected as visibly different. Provisional pending multi-frame checks. |
+| 2026-11-22 11:20 | **The repository is public**, not private as originally stated. Raised as an owner-only decision. |
+
 ### Active direction
 
 | # | Decision | Source |
@@ -52,6 +61,7 @@ published or scheduled by it.
 * Any publication, scheduling that publishes, livestream start, or account/credential action.
 * Merging PR #1.
 * Visual approval of the first city before anything is released.
+* Repository visibility (currently public).
 
 Standing rules: the look is a stylised virtual journey built from map data
 and is never described as real footage; no large media in Git history;
