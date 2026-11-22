@@ -158,5 +158,20 @@
     "offset": 1300
    }
   }
- ]
+ ],
+ "grade": {
+  "shadows": [
+   1.1,
+   0.94,
+   1.03
+  ],
+  "highlights": [
+   1.05,
+   0.95,
+   1.04
+  ],
+  "saturation": 0.9,
+  "gamma": 0.97,
+  "note": "soft rose and lavender late afternoon"
+ }
 }

@@ -130,10 +130,6 @@
      "scale": 1.15
     },
     {
-     "src": "work/cities/tokyo/sprites/local_5a.png",
-     "scale": 1.0
-    },
-    {
      "src": "work/cities/tokyo/sprites/local_1.png",
      "scale": 1.0,
      "flip": true
@@ -183,5 +179,20 @@
     "base": 860
    }
   }
- ]
+ ],
+ "grade": {
+  "shadows": [
+   1.24,
+   1.0,
+   0.8
+  ],
+  "highlights": [
+   1.12,
+   0.99,
+   0.86
+  ],
+  "saturation": 0.94,
+  "gamma": 1.1,
+  "note": "cool blue-hour city mood, still readable"
+ }
 }

@@ -24,6 +24,7 @@ HAZE = (196, 208, 250)
 class City:
     def __init__(self, cfg):
         self.cfg = cfg
+        self.no_grade = False
         self.n = len(cfg["sections"])
         self.sect = SEC / self.n
         S = cv2.imread(str(ILL / "scene.png"))
@@ -147,7 +148,22 @@ class City:
             x = int(W + 150 - 620 * (t - (k * self.sect - 3.4)))
             if -self.treewall[1].shape[1] < x < W:
                 over(img, *self.treewall, x, H + 60 - self.treewall[1].shape[0])
+        img = self.grade(img)
         return np.clip(img * (1 - self.fa) + self.frame, 0, 255).astype(np.uint8)
+
+    def grade(self, img):
+        """Per-city light and colour, applied to the scenery only: the window frame stays the same in every city."""
+        g = self.cfg.get("grade")
+        if not g or self.no_grade:
+            return img
+        x = np.clip(img, 0, 255) / 255.0
+        L = (0.114 * x[..., 0] + 0.587 * x[..., 1] + 0.299 * x[..., 2])[..., None]
+        sh, hi = np.array(g.get("shadows", [1, 1, 1]), np.float32), np.array(g.get("highlights", [1, 1, 1]), np.float32)
+        x = x * (sh * (1 - L) + hi * L)
+        L2 = (0.114 * x[..., 0] + 0.587 * x[..., 1] + 0.299 * x[..., 2])[..., None]
+        x = L2 + (x - L2) * g.get("saturation", 1.0)
+        x = np.clip(x, 0, 1) ** g.get("gamma", 1.0)
+        return x * 255.0
 
 
 def main():
@@ -157,12 +173,14 @@ def main():
     ap.add_argument("--frames")
     ap.add_argument("--jobs", type=int, default=3)
     ap.add_argument("--still", type=int, nargs="*")
+    ap.add_argument("--no-grade", action="store_true", help="ignore the city's grade (for before/after samples)")
     a = ap.parse_args()
     cfg = json.loads(pathlib.Path(a.config).read_text())
     f0, f1 = (int(x) for x in a.frames.split("-")) if a.frames else (0, SEC * FPS - 1)
     t0 = time.time()
     if a.still:
         C = City(cfg)
+        C.no_grade = a.no_grade
         for f in a.still:
             cv2.imwrite(f"{a.out}_{f:05d}.jpg", C.render(f), [cv2.IMWRITE_JPEG_QUALITY, 92])
         print("stills", round(time.time() - t0, 1), "s")
@@ -195,6 +213,7 @@ def main():
         print(json.dumps({"frames": f1 - f0 + 1, "wall_s": round(time.time() - t0, 1)}))
         return
     C = City(cfg)
+    C.no_grade = a.no_grade
     ff = subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS),
                            "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "17", "-pix_fmt", "yuv420p", "-g", "60", str(out)], stdin=subprocess.PIPE)
     for f in range(f0, f1 + 1):
