@@ -14,6 +14,7 @@ at durable storage to make the job survive that.
 """
 import argparse
 import datetime
+import hashlib
 import json
 import os
 import pathlib
@@ -39,6 +40,55 @@ def save_state(st):
     (ROOT / "state").mkdir(exist_ok=True)
     st["updated"] = now()
     (ROOT / "state" / f"{st['city']}.json").write_text(json.dumps(st, indent=1) + "\n")
+
+
+def fingerprint(shot):
+    """Hash of the scene file plus the frame set (name, size). A changed scene or
+    re-rendered frames invalidate anything encoded from the old ones."""
+    h = hashlib.sha256((ROOT / shot["scene"]).read_bytes())
+    d = ROOT / shot["frames_dir"]
+    for f in sorted(d.glob("f_*.png")) if d.exists() else []:
+        h.update(f"{f.name}:{f.stat().st_size}".encode())
+    return h.hexdigest()[:16]
+
+
+def validate_cached(shot, ss):
+    """Drop a recorded encode that is missing, failed QC, or was made from other inputs."""
+    enc = ss.get("encoded")
+    if not enc:
+        return
+    why = None
+    if not (ROOT / enc).exists():
+        why = "encoded file missing"
+    elif not ss.get("qc_pass"):
+        why = "QC did not pass"
+    elif ss.get("fingerprint") != fingerprint(shot):
+        why = "scene or frames changed since encode"
+    if why:
+        ss.setdefault("invalidated", []).append(f"{now()} {why}")
+        for k in ("encoded", "qc_pass", "qc_checks", "bytes", "duration_s", "fingerprint"):
+            ss.pop(k, None)
+
+
+def release_blockers(city, st):
+    """Everything that must be true before a city may be called finished. Fail closed."""
+    out = []
+    rel = st.get("release", {})
+    master = rel.get("master")
+    if not master or not (ROOT / master).exists():
+        out.append("no assembled city master")
+    elif abs(rel.get("master_duration_s", 0) - 300) > 1.0:
+        out.append("master is not 300 s")
+    if not rel.get("master_visual_qc"):
+        out.append("master visual QC not passed")
+    if not rel.get("master_audio_gate"):
+        out.append("master audio gate not passed")
+    vs = rel.get("verticals", [])
+    if len([v for v in vs if v.get("audio_gate") and v.get("visual_qc") and (ROOT / v["file"]).exists()]) < 2:
+        out.append("fewer than 2 vertical cuts with audio and QC passed")
+    if not rel.get("rights_manifest") or not (ROOT / rel["rights_manifest"]).exists():
+        out.append("no rights and attribution manifest")
+    return out
 
 
 def shot_info(shot):
@@ -95,8 +145,14 @@ def finish(city, shot, st_shot):
     qc = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(mp4), "--sheet-every", "3", "--fade", str(scene.get("fade", 1.0))],
                         capture_output=True, text=True)
     rep = json.loads(mp4.with_suffix(".qc.json").read_text())
-    st_shot.update({"encoded": str(mp4.relative_to(ROOT)), "bytes": mp4.stat().st_size, "duration_s": rep["probe"]["duration_s"],
-                    "qc_pass": qc.returncode == 0, "qc_checks": rep["checks"]})
+    passed = qc.returncode == 0 and rep.get("pass") is True and mp4.exists()
+    st_shot["qc_checks"] = rep["checks"]
+    st_shot["qc_pass"] = passed
+    if passed:   # an encode is only recorded when it exists AND passed; otherwise it will be redone
+        st_shot.update({"encoded": str(mp4.relative_to(ROOT)), "bytes": mp4.stat().st_size,
+                        "duration_s": rep["probe"]["duration_s"], "fingerprint": fingerprint(shot)})
+    else:
+        st_shot["qc_failures"] = st_shot.get("qc_failures", 0) + 1
 
 
 def run(city, parallel):
@@ -108,6 +164,7 @@ def run(city, parallel):
     for shot in city["shots"]:
         key = shot["scene"]
         ss = st["shots"].setdefault(key, {})
+        validate_cached(shot, ss)
         _, n, _, have = shot_info(shot)
         ss["frames_done"], ss["frames_total"] = len(have), n
         if len(have) < n:
@@ -116,19 +173,32 @@ def run(city, parallel):
             for _ in render_missing(shot, ss, parallel):
                 save_state(st)
             _, n, _, have = shot_info(shot)
-        if len(have) == n and not ss.get("encoded"):
+        if len(have) == n and not ss.get("encoded") and ss.get("qc_failures", 0) <= RETRIES:
             st["status"] = f"finishing {key}"
             save_state(st)
             finish(city, shot, ss)
             st["log"].append(f"{now()} finished {key}")
         save_state(st)
-    done = all(s.get("encoded") for s in st["shots"].values()) and len(st["shots"]) == len(city["shots"])
-    secs = sum(s.get("duration_s", 0) for s in st["shots"].values())
-    st["master_seconds_available"] = secs
-    st["status"] = ("shots complete; city master needs %.0f s more footage" % (300 - secs)) if done and secs < 300 else \
-                   ("ready to assemble" if done else st.get("status", "in progress"))
+    shots_ok = len(st["shots"]) == len(city["shots"]) and all(x.get("encoded") and x.get("qc_pass") for x in st["shots"].values())
+    secs = sum(x.get("duration_s", 0) for x in st["shots"].values() if x.get("qc_pass"))
+    st["footage_seconds_passed_qc"] = secs
+    st["release_blockers"] = release_blockers(city, st)
+    if not st["release_blockers"]:
+        st["status"] = "RELEASE-READY (still needs owner visual approval before any publication)"
+    elif shots_ok:
+        st["status"] = "shots complete; NOT a finished city: " + "; ".join(st["release_blockers"])
+    elif any(x.get("qc_failures", 0) > RETRIES for x in st["shots"].values()):
+        st["status"] = "stopped: a shot failed QC repeatedly"
     save_state(st)
     return st
+
+
+def persist(msg):
+    """Commit and push state/ so progress survives this machine. Frames are not included."""
+    subprocess.run(["git", "-C", str(ROOT), "add", "state"], check=False)
+    if subprocess.run(["git", "-C", str(ROOT), "diff", "--cached", "--quiet"]).returncode != 0:
+        subprocess.run(["git", "-C", str(ROOT), "commit", "-q", "-m", msg], check=False)
+        subprocess.run(["git", "-C", str(ROOT), "push", "-q"], check=False)
 
 
 def main():
@@ -137,8 +207,26 @@ def main():
     ap.add_argument("--run")
     ap.add_argument("--run-next", action="store_true")
     ap.add_argument("--parallel", type=int, default=2)
+    ap.add_argument("--worker", action="store_true", help="keep advancing cities in queue order until none can progress")
+    ap.add_argument("--max-hours", type=float, default=24.0)
+    ap.add_argument("--persist", action="store_true", help="git commit+push state/ after each city pass")
     a = ap.parse_args()
     cities = json.loads((ROOT / "cities/manifest.json").read_text())["cities"]
+    if a.worker:
+        t_end = time.time() + a.max_hours * 3600
+        while time.time() < t_end:
+            progressed = False
+            for c in cities:
+                if not c["shots"]:
+                    continue                     # blocked city: skip, do not halt the queue
+                before = json.dumps(load_state(c["id"]).get("shots", {}), sort_keys=True)
+                st = run(c, a.parallel)
+                if a.persist:
+                    persist(f"State: {c['id']} - {st.get('status', '')[:60]}")
+                progressed |= json.dumps(st.get("shots", {}), sort_keys=True) != before
+            if not progressed:
+                break
+        return
     if a.status or not (a.run or a.run_next):
         for c in cities:
             st = load_state(c["id"])
