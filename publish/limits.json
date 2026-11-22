@@ -1,16 +1,37 @@
 {
  "_comment": "HARD publishing limits set by the owner (PR #1, 2026-11-22). Any scheduling code or agent must refuse to exceed these. Nothing is published without the owner's explicit go-live for an identified channel.",
- "per_calendar_day": {"youtube_long_form_max": 1, "youtube_shorts_max": 2, "youtube_regular_uploads_total_max": 3, "tiktok_posts_max": 2},
+ "per_calendar_day": {
+  "youtube_long_form_max": 1,
+  "youtube_shorts_max": 2,
+  "youtube_regular_uploads_total_max": 3,
+  "tiktok_posts_max": 0
+ },
  "rules": [
   "Extra finished cities wait in the backlog; one city per day.",
-  "The two TikTok posts are the same two vertical clips as that day's Shorts.",
   "Livestreams are additional and need their own authorisation; they never replace or add to the three regular uploads.",
-  "Only the owner's LofiTrain channels, once connected and named by the owner. Never an unrelated account."
+  "Only the owner's LofiTrain channels, once connected and named by the owner. Never an unrelated account.",
+  "TikTok is deferred: zero TikTok posts until the owner re-enables it. The two vertical clips per city are YouTube Shorts."
  ],
  "queue": [
-  {"city": "chicago", "status": "visually approved; awaiting channel and go-live"},
-  {"city": "denver", "status": "built; awaiting owner review"},
-  {"city": "paris", "status": "building"},
-  {"city": "tokyo", "status": "building"}
- ]
+  {
+   "city": "chicago",
+   "status": "visually approved; awaiting channel and go-live"
+  },
+  {
+   "city": "denver",
+   "status": "built; awaiting owner review"
+  },
+  {
+   "city": "paris",
+   "status": "building"
+  },
+  {
+   "city": "tokyo",
+   "status": "building"
+  }
+ ],
+ "platforms": {
+  "youtube": "launch platform",
+  "tiktok": "deferred; not a launch requirement; no TikTok posting until the owner asks"
+ }
 }

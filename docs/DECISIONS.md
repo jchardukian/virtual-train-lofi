@@ -31,6 +31,15 @@ replaces; nothing here is reversed silently.
 * **Durability:** full-resolution masters are on a temporary build disk and in the
   files sent to the owner; no durable storage is approved.
 
+## YouTube-only launch; TikTok deferred — 2026-11-22 23:40 UTC (relayed on PR #1, comment 7087747366)
+
+* Launch on YouTube only. TikTok is deferred and is not a launch blocker; no
+  TikTok account, integration or posting until the owner asks for it.
+* The two vertical clips per city are YouTube Shorts.
+* Daily maximum unchanged: one long-form and two Shorts. `publish/limits.json`
+  now sets the TikTok limit to zero.
+* Livestream target (about 2 December) and all publishing gates unchanged.
+
 ## HARD publishing limit — 2026-11-22 21:35 UTC (relayed on PR #1, comment 7086149051)
 
 * At most **three regular YouTube uploads per calendar day in total: one

@@ -43,7 +43,7 @@ Next stop: coming soon.
 **Title:** Lofi train window: Chicago's lakefront at sunset 🌇 #lofi #chicago #shorts
 **Description:** Field Museum, Buckingham Fountain and the lake from a train window. Stylised, AI-illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
 
-(TikTok: same two clips and captions; switch on the AI-generated content label.)
+(TikTok is deferred; these two clips are YouTube Shorts only for now.)
 
 ## Open before publishing
 - [ ] Owner's explicit go-live in the agent session

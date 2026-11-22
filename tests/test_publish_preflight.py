@@ -11,7 +11,7 @@ def post(kind, due, ch=None):
 
 
 DAY = [post("youtube_long", "2026-11-24T09:00:00-06:00"), post("youtube_short", "2026-11-24T12:00:00-06:00"),
-       post("youtube_short", "2026-11-24T18:00:00-06:00"), post("tiktok", "2026-11-24T12:00:00-06:00"), post("tiktok", "2026-11-24T18:00:00-06:00")]
+       post("youtube_short", "2026-11-24T18:00:00-06:00")]
 
 
 class T(unittest.TestCase):
@@ -36,7 +36,7 @@ class T(unittest.TestCase):
         v = P.check(DAY, [post("youtube_long", "2026-11-24T07:00:00-06:00")], CH, TZ, go_live=True)
         self.assertTrue(v)
 
-    def test_third_tiktok_blocks(self):
+    def test_any_tiktok_blocks_while_deferred(self):
         v = P.check([post("tiktok", "2026-11-24T22:00:00-06:00")], DAY, CH, TZ, go_live=True)
         self.assertTrue(any("TikTok" in x for x in v))
 
