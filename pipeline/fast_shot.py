@@ -215,9 +215,42 @@ def main():
     ap.add_argument("--carriage", help="RGBA still of the carriage interior to lay over every frame")
     ap.add_argument("--style", default="illustrated")
     ap.add_argument("--preset", default="slow")
+    ap.add_argument("--jobs", type=int, default=3, help="encode the shot as this many parallel segments, then join them")
     a = ap.parse_args()
     sh = Shot(a.dir, a.step)
     f0, f1 = (int(x) for x in a.frames.split("-")) if a.frames else (0, sh.n - 1)
+    gop = sh.fps * 2
+    if a.out and a.jobs > 1 and (f1 - f0 + 1) >= a.jobs * gop:
+        # Segments start on GOP boundaries and are encoded with identical settings, so they join without re-encoding.
+        t0 = time.time()
+        per = -(-(f1 - f0 + 1) // a.jobs // gop) * gop
+        parts, procs = [], []
+        for i, s0 in enumerate(range(f0, f1 + 1, per)):
+            part = pathlib.Path(a.out).with_suffix(f".part{i}.mp4")
+            parts.append(part)
+            cmd = [sys.executable, __file__, a.dir, "--step", str(a.step), "--frames", f"{s0}-{min(s0 + per - 1, f1)}",
+                   "--out", str(part), "--style", a.style, "--preset", a.preset, "--jobs", "1"]
+            if a.carriage:
+                cmd += ["--carriage", a.carriage]
+            procs.append(subprocess.Popen(cmd, stdout=subprocess.DEVNULL))
+        if any(p.wait() for p in procs):
+            sys.exit("a segment failed")
+        lst = pathlib.Path(a.out).with_suffix(".parts.txt")
+        lst.write_text("".join(f"file '{p.resolve()}'\n" for p in parts))
+        subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "concat", "-safe", "0", "-i", str(lst),
+                        "-c", "copy", "-movflags", "+faststart", a.out], check=True)
+        reps = [json.loads(p.with_suffix(".fast.json").read_text()) for p in parts]
+        for p in parts:
+            p.unlink()
+            p.with_suffix(".fast.json").unlink()
+        lst.unlink()
+        n = f1 - f0 + 1
+        rep = {"frames": n, "seconds": round(time.time() - t0, 1), "s_per_frame": round((time.time() - t0) / n, 3),
+               "hole_px_mean": float(np.mean([r["hole_px_mean"] for r in reps])), "hole_px_max": max(r["hole_px_max"] for r in reps),
+               "step": a.step, "jobs": len(parts)}
+        print(json.dumps(rep))
+        pathlib.Path(a.out).with_suffix(".fast.json").write_text(json.dumps(rep, indent=1) + "\n")
+        return
     car = None
     if a.carriage:
         rgba = cv2.imread(a.carriage, cv2.IMREAD_UNCHANGED).astype(np.float32)

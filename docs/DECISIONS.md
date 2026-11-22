@@ -4,6 +4,32 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
+## Direction update — 2026-11-22 15:00 UTC (replaces "render every frame" as the production method)
+
+Given by the owner directly in the agent session (about 14:50 UTC) and on PR #1
+(comments 7080403379 to 7080633490). Everything in "Active direction" below still
+holds unless listed here.
+
+1. **The every-frame Blender CPU render (24 to 32 hours per city) is no longer the
+   production method.** Its 1,182 riverfront frames are kept on disk; the job is not
+   the critical path and is not to consume another day.
+2. **Production method under proof: keyframes + depth reprojection** (`pipeline/fast_city.py`,
+   `pipeline/fast_shot.py`). Same scene, route, window and "illustrated" look. One sharp
+   keyframe per second is rendered with depth; in-between frames are synthesised through
+   the true scene depth. This machine has no GPU (4 vCPU, software OpenGL), so no
+   real-time renderer is available here.
+3. **One art direction for the whole catalogue**: stylised, cinematic, slightly
+   anime-influenced 3D, identical engine, grade, window and camera for every city.
+   An anime/lofi restyle is permitted only if 3D cannot meet speed; it is not needed so far.
+4. **It must be a genuine moving train view**: continuous forward travel, true parallax,
+   city-specific recognisable scenery, no slideshow, no loop, no static picture.
+5. **City handoff for compilations and livestreams**: a reusable 5 to 10 second tunnel with a
+   "NEXT STOP: [CITY]" sign, continuous motion and music. Built after the Chicago master.
+6. **End product**: an 11-hour continuous journey assembled from 5-minute city masters.
+7. **Autonomy**: routine creative and technical choices are the agent's; no per-city approval.
+8. **Unchanged owner-only gates**: no spend or paid services, no merge, no publication,
+   scheduling or livestream, no repository visibility change.
+
 ## Status (as of 2026-11-22 12:00 UTC)
 
 **The owner confirmed directly to the implementation agent (05:05 UTC):
