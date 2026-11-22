@@ -1,12 +1,44 @@
 {
-  "note": "Production queue. A city is a list of shots (scene files); each shot is rendered in resumable frame chunks, finished, then the shots are assembled into the city master. Order = priority. Only cities whose scenes exist can run.",
-  "cities": [
-    {"id": "chicago", "name": "Chicago, Illinois", "next": "Tokyo, Japan",
-     "shots": [
-       {"scene": "scenes/chicago_v3_lake.json", "style": "illustrated", "frames_dir": "work/frames/lake"},
-       {"scene": "scenes/chicago_v3_combined.json", "style": "illustrated", "frames_dir": "work/frames/v3"}
-     ]},
-    {"id": "tokyo", "name": "Tokyo, Japan", "next": "London, United Kingdom", "shots": []},
-    {"id": "london", "name": "London, United Kingdom", "next": "Chicago, Illinois", "shots": []}
-  ]
+ "note": "Production queue. A city is a list of shots (scene files); each shot is rendered in resumable frame chunks, finished, then the shots are assembled into the city master. Order = priority. Only cities whose scenes exist can run.",
+ "cities": [
+  {
+   "id": "chicago",
+   "name": "Chicago, Illinois",
+   "next": "Tokyo, Japan",
+   "shots": [
+    {
+     "scene": "scenes/chicago_v3_lake.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/lake"
+    },
+    {
+     "scene": "scenes/chicago_v3_combined.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/v3"
+    },
+    {
+     "scene": "scenes/chicago_v3_wells_south.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/wells_south"
+    },
+    {
+     "scene": "scenes/chicago_v3_lake_south.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/lake_south"
+    }
+   ]
+  },
+  {
+   "id": "tokyo",
+   "name": "Tokyo, Japan",
+   "next": "London, United Kingdom",
+   "shots": []
+  },
+  {
+   "id": "london",
+   "name": "London, United Kingdom",
+   "next": "Chicago, Illinois",
+   "shots": []
+  }
+ ]
 }
