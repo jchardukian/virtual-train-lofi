@@ -68,13 +68,6 @@ for i in ([only] if only is not None else range(N)):
     tw = 0.5 + 0.5 * np.sin(gx * 0.9 + gy * 1.3 + t * 9)          # sun sparkle on the water
     lum = img.mean(-1)
     img += (wv * np.clip((lum - 150) / 60, 0, 1) * tw * 38)[..., None]
-    # foreground treetops sweep past, much faster than everything behind them
-    fx = int(-250 + 1150 * (u + 0.5))
-    crop = slice(fx, fx + W)
-    yy = H - 780
-    a = gab[:780, crop]; c = fgb[:780, crop]
-    if a.shape[1] == W:
-        img[yy:yy + 780] = img[yy:yy + 780] * (1 - a) + c
     out = img * (1 - fa) + frame * fa
     ff.stdin.write(np.clip(out, 0, 255).astype(np.uint8).tobytes())
     if only is not None:
