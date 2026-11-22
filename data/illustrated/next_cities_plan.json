@@ -1,0 +1,35 @@
+{
+ "status": "PLAN ONLY. No image calls made. Needs one owner approval for a combined cap before any call.",
+ "written": "2026-11-22",
+ "price_per_call_usd": 0.178,
+ "price_basis": "gpt-image-2, high, 1536x1024, edit with style reference; measured 5,488 output tokens per call at 30 USD per million",
+ "reused_from_library_at_no_cost": ["sky", "park tree strip", "fence strip", "prairie strip", "embankment strip", "city-edge sheet (factory, water tower, silos, station, farm)", "window frame", "river water", "composer, soundtrack handling, checks"],
+ "cities": [
+  {"city": "Denver, Colorado",
+   "sections": ["Union Station and LoDo", "downtown towers", "park (City Park, lake)", "foothills", "Front Range"],
+   "new_sheets": [
+    "skyline strip: downtown Denver skyline incl. Republic Plaza, the 'cash register' Wells Fargo Center, Four Seasons spire",
+    "landmark sheet: Union Station with its sign canopy, Colorado State Capitol (gold dome), Daniels & Fisher clock tower, Denver Art Museum (angular Hamilton Building), Coors Field facade, 'cash register' tower",
+    "mountain strips (2 stacked): distant snow-capped Front Range panorama; nearer foothills with red rock outcrops and pines",
+    "local sheet: brick LoDo warehouses, Victorian houses, aspen and pine clusters"],
+   "calls": 4, "est_cost_usd": 0.71},
+  {"city": "Paris, France",
+   "sections": ["the Seine and its bridges", "Haussmann boulevards", "Eiffel Tower and Champ de Mars", "Montmartre", "edge of the city"],
+   "new_sheets": [
+    "skyline strip: low Paris roofline with Eiffel Tower, Sacre-Coeur on its hill, Montparnasse tower, domes",
+    "landmark sheet A: Eiffel Tower, Notre-Dame, Arc de Triomphe, Sacre-Coeur, Louvre pyramid with palace wing, Pont Alexandre III (side view on its banks)",
+    "local sheet: Haussmann apartment blocks with zinc roofs and balconies, a cafe with awning, Metro entrance, plane trees, a bouquiniste stall",
+    "strip sheet (2 stacked): Seine quay wall with moored houseboats; row of pollarded plane trees with lamp posts"],
+   "calls": 4, "est_cost_usd": 0.71},
+  {"city": "Tokyo, Japan",
+   "sections": ["Sumida River and Skytree", "Shinjuku towers", "Tokyo Tower and temples", "low-rise neighbourhoods", "suburbs with Mount Fuji"],
+   "new_sheets": [
+    "skyline strip: Tokyo skyline with Skytree, Tokyo Tower, Shinjuku cluster incl. Tokyo Metropolitan Government Building and Cocoon Tower",
+    "landmark sheet: Tokyo Skytree, Tokyo Tower, Senso-ji pagoda and gate, Tokyo Metropolitan Government Building, Cocoon Tower, Asahi Beer Hall with its golden flame",
+    "local sheet: narrow houses with tiled roofs, a konbini-style corner shop without readable text, a small shrine with torii, vending machines, utility poles, a level crossing",
+    "strip sheet (2 stacked): distant Mount Fuji with low hills; cherry/ginkgo tree row along a canal wall"],
+   "calls": 4, "est_cost_usd": 0.71}
+ ],
+ "batch_total": {"calls": 12, "est_cost_usd": 2.14, "allowance_for_two_rejects_usd": 0.36, "proposed_combined_cap_usd": 3.0, "per_city_cap_usd": 1.0},
+ "caveats": ["Per-city cost is unproven until one is built.", "Autumn palette of the shared strips suits Denver and Paris; Tokyo may want ginkgo/maple autumn, which the tree strip already resembles.", "Signage text must be avoided or checked; generated lettering is unreliable.", "Landmarks need a check by someone who knows each city."]
+}
