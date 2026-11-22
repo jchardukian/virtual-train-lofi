@@ -1,0 +1,12 @@
+{
+ "city": "chicago",
+ "shots": {
+  "scenes/chicago_v3_lake.json": {
+   "frames_done": 586,
+   "frames_total": 660
+  }
+ },
+ "log": [],
+ "status": "rendering scenes/chicago_v3_lake.json",
+ "updated": "2026-11-22T06:46:43Z"
+}
