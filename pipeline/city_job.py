@@ -37,10 +37,14 @@ def load_state(cid):
     return json.loads(p.read_text()) if p.exists() else {"city": cid, "shots": {}, "log": []}
 
 
-def save_state(st):
-    (ROOT / "state").mkdir(exist_ok=True)
+def save_state(st, live=False):
+    """Committed state (state/) changes only at shot boundaries. Frame-by-frame
+    progress goes to work/state_live/, which is not tracked, so a long render
+    does not leave the repository permanently dirty."""
     st["updated"] = now()
-    (ROOT / "state" / f"{st['city']}.json").write_text(json.dumps(st, indent=1) + "\n")
+    d = ROOT / ("work/state_live" if live else "state")
+    d.mkdir(parents=True, exist_ok=True)
+    (d / f"{st['city']}.json").write_text(json.dumps(st, indent=1) + "\n")
 
 
 def fingerprint(shot):
@@ -191,7 +195,7 @@ def run(city, parallel):
             st["status"] = f"rendering {key}"
             save_state(st)
             for _ in render_missing(shot, ss, parallel):
-                save_state(st)
+                save_state(st, live=True)
             _, n, _, have = shot_info(shot)
         if len(have) == n and not ss.get("encoded") and ss.get("qc_failures", 0) <= RETRIES:
             st["status"] = f"finishing {key}"
