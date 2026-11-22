@@ -41,6 +41,8 @@ scn = bpy.context.scene
 
 # ------------------------------------------------------------------ helpers
 def load(name, mat):
+    if not (MESH / f"{name}.npz").exists():
+        return None
     d = np.load(MESH / f"{name}.npz")
     n = len(d["v"])
     if n == 0:
@@ -56,6 +58,8 @@ def load(name, mat):
     me.polygons.foreach_set("loop_total", sizes)
     me.update(calc_edges=True)
     me.uv_layers.new(name="UVMap").data.foreach_set("uv", d["uv"].ravel())
+    if "uv2" in d.files and len(d["uv2"]) == n:
+        me.uv_layers.new(name="UV2").data.foreach_set("uv", d["uv2"].ravel())
     ca = me.color_attributes.new(name="Col", type="FLOAT_COLOR", domain="CORNER")
     ca.data.foreach_set("color", d["col"].ravel())
     me.validate()
@@ -128,78 +132,196 @@ def simple(name, colour, rough=0.8, metallic=0.0, vcol=False, spec=0.3):
     return m
 
 
+TEX = ROOT / "assets" / "polyhaven"
+
+
+def image(nt, name, uv_socket, scale):
+    """Tiling CC0 texture sampled in facade UV space (bays x floors)."""
+    path = TEX / name
+    if not path.exists():
+        return None
+    mp = nt.n("ShaderNodeMapping")
+    mp.inputs["Scale"].default_value = (*scale, 1.0)
+    nt.link(uv_socket, mp.inputs["Vector"])
+    tex = nt.n("ShaderNodeTexImage")
+    tex.image = bpy.data.images.load(str(path), check_existing=True)
+    nt.link(mp.outputs[0], tex.inputs["Vector"])
+    return tex.outputs["Color"]
+
+
 def facade():
-    """Procedural facade: uv.x counts window bays, uv.y counts floors."""
+    """Procedural facades. uv = (window bays, floors); uv2 = (total floors, per-building random).
+
+    Vertex-colour alpha picks the building type:
+    0 masonry with Chicago windows, 0.12 brick, 0.5 concrete piers + ribbon glass,
+    0.75 Miesian dark grid, 1.0 glass curtain wall.
+    """
     m, nt, out = material("facade")
+    M = nt.math
     att = nt.n("ShaderNodeAttribute", attribute_name="Col")
-    style = att.outputs["Alpha"]
-    uv = nt.n("ShaderNodeUVMap")
-    sep = nt.n("ShaderNodeSeparateXYZ")
+    style, base = att.outputs["Alpha"], att.outputs["Color"]
+    uv = nt.n("ShaderNodeUVMap", uv_map="UVMap")
+    uv2 = nt.n("ShaderNodeUVMap", uv_map="UV2")
+    sep, sep2 = nt.n("ShaderNodeSeparateXYZ"), nt.n("ShaderNodeSeparateXYZ")
     nt.link(uv.outputs[0], sep.inputs[0])
-    u, v = sep.outputs[0], sep.outputs[1]
-    fu, fv = nt.math("FRACT", u), nt.math("FRACT", v)
+    nt.link(uv2.outputs[0], sep2.inputs[0])
+    u, v, total, brand = sep.outputs[0], sep.outputs[1], sep2.outputs[0], sep2.outputs[1]
+    fu, fv = M("FRACT", u), M("FRACT", v)
 
     def band(x, lo, hi):
-        return nt.math("MULTIPLY", nt.math("GREATER_THAN", x, lo), nt.math("LESS_THAN", x, hi))
+        return M("MULTIPLY", M("GREATER_THAN", x, lo), M("LESS_THAN", x, hi))
 
-    punched = nt.math("MULTIPLY", band(fu, 0.24, 0.76), band(fv, 0.30, 0.80))
-    curtain = nt.math("MULTIPLY", band(fu, 0.05, 0.95), band(fv, 0.22, 1.01))
-    mask = nt.math("ADD", nt.math("MULTIPLY", punched, nt.math("SUBTRACT", 1.0, style)),
-                   nt.math("MULTIPLY", curtain, style))
-    # street level: taller dark storefront band on masonry buildings
-    ground = nt.math("LESS_THAN", v, 1.25)
-    mask = nt.math("MAXIMUM", mask, nt.math("MULTIPLY", ground, nt.math("MULTIPLY", band(fu, 0.1, 0.9), band(v, 0.15, 1.05))))
+    def near(x, c, w):
+        return M("LESS_THAN", M("ABSOLUTE", M("SUBTRACT", x, c)), w)
+
+    def AND(a, b):
+        return M("MULTIPLY", a, b)
+
+    def OR(a, b):
+        return M("MAXIMUM", a, b)
+
+    def NOT(a):
+        return M("SUBTRACT", 1.0, a)
+
+    is_brick, is_pier, is_mies = near(style, 0.12, 0.06), near(style, 0.5, 0.1), near(style, 0.75, 0.1)
+    is_glass = M("GREATER_THAN", style, 0.9)
+    is_mas = M("LESS_THAN", style, 0.3)
+    ground = M("LESS_THAN", v, 1.25)
+    cornice = AND(is_mas, M("GREATER_THAN", v, M("SUBTRACT", total, 0.75)))
+
+    w_mas = AND(AND(band(fu, 0.15, 0.85), band(fv, 0.24, 0.80)), NOT(cornice))
+    mull = AND(w_mas, OR(near(fu, 0.36, 0.012), near(fu, 0.64, 0.012)))
+    sill = AND(AND(band(fu, 0.11, 0.89), band(fv, 0.18, 0.24)), is_mas)
+    w_pier = AND(band(fu, 0.17, 0.83), band(fv, 0.34, 0.88))
+    sp_pier = AND(band(fu, 0.17, 0.83), NOT(band(fv, 0.34, 0.88)))
+    w_mies = AND(band(fu, 0.07, 0.93), band(fv, 0.20, 0.96))
+    w_glass = AND(band(fu, 0.035, 0.965), band(fv, 0.27, 1.01))
+    sp_glass = AND(band(fu, 0.035, 0.965), NOT(band(fv, 0.27, 1.01)))
+    w_ground = AND(ground, AND(band(fu, 0.08, 0.92), band(v, 0.14, 1.06)))
+
+    win = OR(OR(AND(is_mas, AND(w_mas, NOT(mull))), AND(is_pier, w_pier)), OR(AND(is_mies, w_mies), AND(is_glass, w_glass)))
+    win = OR(AND(win, NOT(ground)), w_ground)
+    spandrel = AND(OR(AND(is_pier, sp_pier), AND(is_glass, sp_glass)), NOT(ground))
 
     cell = nt.n("ShaderNodeCombineXYZ")
-    nt.link(nt.math("FLOOR", u), cell.inputs[0])
-    nt.link(nt.math("FLOOR", v), cell.inputs[1])
+    nt.link(M("FLOOR", M("ADD", u, 0.0005)), cell.inputs[0])
+    nt.link(M("FLOOR", M("ADD", v, 0.0005)), cell.inputs[1])
+    nt.link(M("FLOOR", M("MULTIPLY", brand, 997.0)), cell.inputs[2])  # quantised: interpolation jitter must not reseed the noise
     wn = nt.n("ShaderNodeTexWhiteNoise", noise_dimensions="3D")
     nt.link(cell.outputs[0], wn.inputs["Vector"])
-    r = wn.outputs["Value"]
+    r, rc = wn.outputs["Value"], wn.outputs["Color"]
+    sepr = nt.n("ShaderNodeSeparateXYZ")
+    nt.link(rc, sepr.inputs[0])
+    r2 = sepr.outputs[1]
 
-    base = att.outputs["Color"]
-    # glass: curtain walls take the building tint; punched windows are dark blue-grey
-    glass_tint = nt.mix(style, (0.07, 0.10, 0.13), base)
-    shade = nt.math("ADD", 0.55, nt.math("MULTIPLY", r, 0.7))
-    glass = nt.mix(1.0, glass_tint, (0, 0, 0))
-    nt.t.nodes[-1].blend_type = "MULTIPLY"
-    mul = nt.n("ShaderNodeVectorMath", operation="SCALE")
-    nt.link(glass_tint, mul.inputs[0])
-    nt.link(shade, mul.inputs["Scale"])
-    glass = mul.outputs[0]
-    # wall: slight large-scale weathering so big facades are not flat colour
-    noise = nt.n("ShaderNodeTexNoise", i_Scale=0.02, i_Detail=3.0)
+    # ---- wall
+    conc = image(nt, "concrete_wall_008_diffuse.jpg", uv.outputs[0], (0.23, 0.31))
+    brick = image(nt, "red_brick_03_diffuse.jpg", uv.outputs[0], (1.7, 1.9))
+
+    def scaled(col, fac):
+        n_ = nt.n("ShaderNodeVectorMath", operation="SCALE")
+        if isinstance(col, tuple):
+            n_.inputs[0].default_value = col
+        else:
+            nt.link(col, n_.inputs[0])
+        if isinstance(fac, (int, float)):
+            n_.inputs["Scale"].default_value = fac
+        else:
+            nt.link(fac, n_.inputs["Scale"])
+        return n_.outputs[0]
+
+    def lum(col):
+        n_ = nt.n("ShaderNodeRGBToBW")
+        nt.link(col, n_.inputs[0])
+        return n_.outputs[0]
+
     geo = nt.n("ShaderNodeNewGeometry")
-    nt.link(geo.outputs["Position"], noise.inputs["Vector"])
-    wall_scale = nt.n("ShaderNodeVectorMath", operation="SCALE")
-    nt.link(base, wall_scale.inputs[0])
-    nt.link(nt.math("ADD", 0.86, nt.math("MULTIPLY", noise.outputs["Fac"], 0.28)), wall_scale.inputs["Scale"])
-    spandrel = nt.mix(nt.math("MULTIPLY", style, 0.35), wall_scale.outputs[0], (0.05, 0.06, 0.07))
-    colour = nt.mix(mask, spandrel, glass)
+    streak = nt.n("ShaderNodeTexNoise", i_Scale=1.0, i_Detail=4.0)
+    smap = nt.n("ShaderNodeMapping")
+    smap.inputs["Scale"].default_value = (0.35, 0.35, 0.012)
+    nt.link(geo.outputs["Position"], smap.inputs["Vector"])
+    nt.link(smap.outputs[0], streak.inputs["Vector"])
+    weather = M("ADD", 0.80, M("MULTIPLY", streak.outputs["Fac"], 0.34))
+    wall = scaled(base, weather)
+    if conc is not None:
+        wall = scaled(wall, M("ADD", 0.55, M("MULTIPLY", lum(conc), 1.0)))
+    if brick is not None:
+        bw = nt.mix(1.0, brick, base)
+        nt.t.nodes[-1].blend_type = "OVERLAY"
+        wall = nt.mix(is_brick, wall, scaled(bw, weather))
+    wall = nt.mix(cornice, wall, scaled(base, 1.18))
+    wall = nt.mix(sill, wall, scaled(base, 1.25))
+    wall = nt.mix(AND(is_mas, mull), wall, (0.10, 0.10, 0.10))
+    alu = nt.mix(is_mies, (0.42, 0.44, 0.46), base)
+    wall = nt.mix(OR(is_glass, is_mies), wall, alu)
+    wall = nt.mix(spandrel, wall, scaled(nt.mix(is_glass, scaled(base, 0.55), scaled(base, 0.5)), 1.0))
 
+    # ---- glazing
+    tint = nt.mix(is_glass, (0.045, 0.06, 0.075), base)
+    tint = nt.mix(is_mies, tint, (0.05, 0.048, 0.042))
+    pane = scaled(tint, M("ADD", 0.80, M("MULTIPLY", r, 0.35)))
+    # lintel shadow at the head of punched windows fakes the reveal depth
+    head = nt.n("ShaderNodeMapRange", clamp=True)
+    head.inputs[1].default_value, head.inputs[2].default_value = 0.62, 0.80
+    head.inputs[3].default_value, head.inputs[4].default_value = 1.0, 0.35
+    nt.link(fv, head.inputs[0])
+    pane = nt.mix(is_mas, pane, scaled(pane, head.outputs[0]))
+    blinds = AND(M("GREATER_THAN", r2, 0.80), OR(is_mas, is_pier))
+    pane = nt.mix(blinds, pane, scaled((0.50, 0.47, 0.41), M("ADD", 0.7, M("MULTIPLY", r, 0.4))))
+    colour = nt.mix(win, wall, pane)
+
+    glassy = AND(win, NOT(blinds))
     b = nt.n("ShaderNodeBsdfPrincipled", i_Specular=0.5)
     nt.link(colour, b.inputs["Base Color"])
-    nt.link(nt.math("SUBTRACT", nt.math("SUBTRACT", 0.85, nt.math("MULTIPLY", style, 0.45)),
-                    nt.math("MULTIPLY", mask, nt.math("SUBTRACT", 0.77, nt.math("MULTIPLY", style, 0.42)))),
-            b.inputs["Roughness"])
-    nt.link(nt.math("MULTIPLY", mask, nt.math("ADD", 0.25, nt.math("MULTIPLY", style, 0.55))), b.inputs["Metallic"])
+    nt.link(M("SUBTRACT", 0.82, M("MULTIPLY", glassy, 0.79)), b.inputs["Roughness"])
+    met_w = M("ADD", 0.55, M("MULTIPLY", OR(is_glass, is_mies), 0.35))
+    nt.link(M("ADD", M("MULTIPLY", glassy, met_w), M("MULTIPLY", AND(spandrel, is_glass), 0.5)), b.inputs["Metallic"])
+    # every pane sits at a slightly different angle, so reflections break up like real curtain wall
+    tilt = nt.n("ShaderNodeVectorMath", operation="SUBTRACT")
+    nt.link(rc, tilt.inputs[0])
+    tilt.inputs[1].default_value = (0.5, 0.5, 0.5)
+    tscale = scaled(tilt.outputs[0], M("MULTIPLY", glassy, R.get("pane_tilt", 0.045)))
+    nadd = nt.n("ShaderNodeVectorMath", operation="ADD")
+    nt.link(geo.outputs["Normal"], nadd.inputs[0])
+    nt.link(tscale, nadd.inputs[1])
+    nn = nt.n("ShaderNodeVectorMath", operation="NORMALIZE")
+    nt.link(nadd.outputs[0], nn.inputs[0])
+    nt.link(nn.outputs[0], b.inputs["Normal"])
+    nt.link(b.outputs[0], out.inputs[0])
+    return m
+
+
+def detail_mat():
+    """Landmark geometry: vertex colour, alpha = glassiness."""
+    m, nt, out = material("detail")
+    a = nt.n("ShaderNodeAttribute", attribute_name="Col")
+    b = nt.n("ShaderNodeBsdfPrincipled", i_Specular=0.4)
+    nt.link(a.outputs["Color"], b.inputs["Base Color"])
+    nt.link(nt.math("SUBTRACT", 0.72, nt.math("MULTIPLY", a.outputs["Alpha"], 0.66)), b.inputs["Roughness"])
+    nt.link(nt.math("MULTIPLY", a.outputs["Alpha"], 0.85), b.inputs["Metallic"])
     nt.link(b.outputs[0], out.inputs[0])
     return m
 
 
 def water():
     m, nt, out = material("water")
-    b = nt.n("ShaderNodeBsdfPrincipled", i_Roughness=0.06, i_Specular=0.6, i_Metallic=0.0)
-    b.inputs["Base Color"].default_value = (*R.get("water_colour", (0.035, 0.12, 0.11)), 1)
+    b = nt.n("ShaderNodeBsdfPrincipled", i_Roughness=R.get("water_roughness", 0.035), i_Specular=R.get("water_spec", 0.65), i_Metallic=0.0)
+    b.inputs["Base Color"].default_value = (*R.get("water_colour", (0.012, 0.045, 0.034)), 1)
     geo = nt.n("ShaderNodeNewGeometry")
-    mp = nt.n("ShaderNodeMapping")
-    mp.inputs["Scale"].default_value = (0.35, 0.12, 1.0)
-    mp.inputs["Rotation"].default_value = (0, 0, 0.2)
-    nt.link(geo.outputs["Position"], mp.inputs["Vector"])
-    noise = nt.n("ShaderNodeTexNoise", i_Scale=1.0, i_Detail=4.0, i_Roughness=0.6)
-    nt.link(mp.outputs[0], noise.inputs["Vector"])
-    bump = nt.n("ShaderNodeBump", i_Strength=0.12, i_Distance=0.4)
-    nt.link(noise.outputs["Fac"], bump.inputs["Height"])
+
+    def waves(scale, detail, rot):
+        mp = nt.n("ShaderNodeMapping")
+        mp.inputs["Scale"].default_value = scale
+        mp.inputs["Rotation"].default_value = (0, 0, rot)
+        nt.link(geo.outputs["Position"], mp.inputs["Vector"])
+        n_ = nt.n("ShaderNodeTexNoise", i_Scale=1.0, i_Detail=detail, i_Roughness=0.62)
+        nt.link(mp.outputs[0], n_.inputs["Vector"])
+        return n_.outputs["Fac"]
+
+    h = nt.math("ADD", nt.math("MULTIPLY", waves((0.22, 0.07, 1.0), 3.0, 0.15), 1.0),
+                nt.math("MULTIPLY", waves((1.3, 0.55, 1.0), 5.0, -0.4), 0.35))
+    bump = nt.n("ShaderNodeBump", i_Strength=R.get("water_bump", 0.22), i_Distance=0.5)
+    nt.link(h, bump.inputs["Height"])
     nt.link(bump.outputs[0], b.inputs["Normal"])
     nt.link(b.outputs[0], out.inputs[0])
     return m
@@ -230,12 +352,12 @@ def flat_emission(name, colour):
 # ------------------------------------------------------------------ scene
 load("walls", facade())
 load("roofs", simple("roof", None, 0.9, vcol=True))
-load("land", ground("sidewalk", (0.50, 0.49, 0.46)))
+load("land", ground("sidewalk", (0.36, 0.355, 0.34)))
 load("quay", ground("quay", (0.36, 0.34, 0.31), scale=0.3))
 load("water", water())
 load("roads", ground("asphalt", (0.085, 0.087, 0.092), 0.85))
 load("parks", ground("park", (0.16, 0.30, 0.09), 0.95, 0.4, 0.15))
-load("bridges", simple("bridge", (0.30, 0.085, 0.07), 0.6))
+load("detail", detail_mat()) if (MESH / "detail.npz").exists() else None
 load("ties", ground("ties", (0.10, 0.075, 0.055), 0.9, 0.3, 1.5))
 load("steel", simple("steel", None, 0.45, 0.5, vcol=True))
 load("deck_edge", simple("deck_edge", None, 0.6, 0.3, vcol=True))
@@ -299,59 +421,131 @@ if rc:
         box_obj("wheel", (L * 0.14, 3.2, 1.5), (L * 0.2, 0, 3.9), cabin_m, root)
         BOATS.append((root, b))
 
-# sun + sky
-sun_el, sun_az = math.radians(R["sun_elevation_deg"]), math.radians(R["sun_azimuth_deg"])
-sun = bpy.data.objects.new("Sun", bpy.data.lights.new("Sun", "SUN"))
-sun.data.energy = R.get("sun_strength", 4.0)
-sun.data.angle = math.radians(R.get("sun_angle_deg", 1.5))
-sun.data.color = R.get("sun_colour", (1.0, 0.93, 0.82))
-to_sun = Vector((math.sin(sun_az) * math.cos(sun_el), math.cos(sun_az) * math.cos(sun_el), math.sin(sun_el)))
-sun.rotation_euler = to_sun.to_track_quat("Z", "Y").to_euler()
-scn.collection.objects.link(sun)
+# flags on the bridge houses (the Chicago municipal flag is public domain)
+def chicago_flag():
+    w, h = 384, 256
+    img = np.ones((h, w, 4), np.float32)
+    yy, xx = np.mgrid[0:h, 0:w]
+    blue = (0.33, 0.62, 0.86)
+    for lo, hi in ((0.12, 0.29), (0.71, 0.88)):
+        img[int(lo * h):int(hi * h), :, :3] = blue
 
+    def tri(cx, cy, r, rot):
+        pts = [(cx + r * math.cos(rot + k * 2 * math.pi / 3), cy + r * math.sin(rot + k * 2 * math.pi / 3)) for k in range(3)]
+        mask = np.ones((h, w), bool)
+        for (x0, y0), (x1, y1) in zip(pts, pts[1:] + pts[:1]):
+            mask &= ((x1 - x0) * (yy - y0) - (y1 - y0) * (xx - x0)) >= 0
+        return mask
+    for k in range(4):
+        cx = w * (0.2 + 0.2 * k)
+        star = tri(cx, h / 2, h * 0.115, math.pi / 2) | tri(cx, h / 2, h * 0.115, -math.pi / 2)
+        img[star, :3] = (0.78, 0.05, 0.08)
+    im = bpy.data.images.new("chicago_flag", w, h)
+    im.pixels.foreach_set(img.ravel())
+    return im
+
+
+fl = json.loads((MESH / "flags.json").read_text()) if (MESH / "flags.json").exists() else []
+if fl:
+    fm, fnt, fout = material("flag")
+    ft = fnt.n("ShaderNodeTexImage")
+    ft.image = chicago_flag()
+    fb = fnt.n("ShaderNodeBsdfPrincipled", i_Roughness=0.8)
+    fnt.link(ft.outputs["Color"], fb.inputs["Base Color"])
+    fnt.link(fb.outputs[0], fout.inputs[0])
+    V, F, UVS = [], [], []
+    for x, y, z in fl:
+        if not (-250 < x < 1300 and -250 < y < 250):
+            continue
+        top, fw, fh, nseg = z + 5.0, 3.0, 2.0, 8
+        base_i = len(V)
+        for k in range(nseg + 1):  # frozen ripple so the cloth is not a flat card
+            t = k / nseg
+            dy = 0.16 * math.sin(t * 7.0 + x) * t
+            V += [(x + fw * t, y + dy, top - fh), (x + fw * t, y + dy, top)]
+            UVS += [(t, 0.0), (t, 1.0)]
+        for k in range(nseg):
+            a = base_i + 2 * k
+            F.append((a, a + 2, a + 3, a + 1))
+    if V:
+        me = bpy.data.meshes.new("flags")
+        me.from_pydata(V, [], F)
+        uvl = me.uv_layers.new(name="UVMap")
+        for poly in me.polygons:
+            for li in poly.loop_indices:
+                uvl.data[li].uv = UVS[me.loops[li].vertex_index]
+        me.materials.append(fm)
+        scn.collection.objects.link(bpy.data.objects.new("flags", me))
+
+# traffic crossing the bridges
+CARS = []
+bl = json.loads((MESH / "bridges.json").read_text()) if (MESH / "bridges.json").exists() else []
+car_cols = [(0.70, 0.70, 0.72), (0.05, 0.05, 0.06), (0.45, 0.05, 0.04), (0.30, 0.32, 0.35), (0.10, 0.17, 0.32),
+            (0.85, 0.85, 0.83), (0.85, 0.62, 0.05)]
+car_mats = [simple(f"car{i}", c, 0.25, 0.3) for i, c in enumerate(car_cols)]
+glass_m = simple("carglass", (0.03, 0.04, 0.05), 0.05, 0.8)
+crng = np.random.default_rng(11)
+for bi, b in enumerate(bl):
+    a, bb = np.array(b["a"]), np.array(b["b"])
+    L = float(np.linalg.norm(bb - a))
+    uvec = (bb - a) / L
+    nvec = np.array([-uvec[1], uvec[0]])
+    for lane, direction in ((2.2, 1), (5.4, 1), (-2.2, -1), (-5.4, -1)):
+        if abs(lane) > b["width"] / 2 - 4.5:
+            continue
+        for k in range(3):
+            root = bpy.data.objects.new(f"car_{bi}_{lane}_{k}", None)
+            scn.collection.objects.link(root)
+            bus = crng.random() < 0.12
+            ln, ht = (11.0, 2.9) if bus else (4.5, 1.25)
+            box_obj("body", (ln, 2.5 if bus else 1.85, ht * 0.62), (0, 0, 0.45 + ht * 0.31), car_mats[int(crng.integers(len(car_mats)))], root)
+            box_obj("cab", (ln * (0.92 if bus else 0.52), 2.3 if bus else 1.65, ht * 0.4), (-0.2, 0, 0.45 + ht * 0.62 + ht * 0.2), glass_m, root)
+            CARS.append((root, a, uvec, nvec, L, lane, direction, float(crng.uniform(0, 1)), float(crng.uniform(7.0, 11.0))))
+
+# ------------------------------------------------------------------ light
+sun_az = math.radians(R["sun_azimuth_deg"])
 world = bpy.data.worlds.new("World")
 scn.world = world
 world.use_nodes = True
 nt = NT(world.node_tree)
 wout = nt.n("ShaderNodeOutputWorld")
-sky = nt.n("ShaderNodeTexSky", sky_type="NISHITA", sun_disc=False, sun_elevation=sun_el,
-           sun_rotation=sun_az, air_density=1.0, dust_density=R.get("dust", 1.5), ozone_density=1.0)
-# painterly cumulus: fbm noise projected on a plane overhead, faded at the horizon
-geo = nt.n("ShaderNodeTexCoord")
-sep = nt.n("ShaderNodeSeparateXYZ")
-nt.link(geo.outputs["Generated"], sep.inputs[0])  # for a world shader this is the view direction
-up = nt.math("MULTIPLY", sep.outputs[2], 1.0)
-inv = nt.math("DIVIDE", 1.0, nt.math("MAXIMUM", nt.math("ADD", up, 0.12), 0.05))
-proj = nt.n("ShaderNodeCombineXYZ")
-nt.link(nt.math("MULTIPLY", sep.outputs[0], inv), proj.inputs[0])
-nt.link(nt.math("MULTIPLY", sep.outputs[1], inv), proj.inputs[1])
-cn = nt.n("ShaderNodeTexNoise", i_Scale=R.get("cloud_scale", 0.55), i_Detail=7.0, i_Roughness=0.55, i_Distortion=0.25)
-nt.link(proj.outputs[0], cn.inputs["Vector"])
-ramp = nt.n("ShaderNodeValToRGB")
-ramp.color_ramp.elements[0].position = R.get("cloud_lo", 0.53)
-ramp.color_ramp.elements[1].position = R.get("cloud_hi", 0.70)
-nt.link(cn.outputs["Fac"], ramp.inputs[0])
-horizon = nt.n("ShaderNodeMapRange", clamp=True)
-horizon.inputs[1].default_value, horizon.inputs[2].default_value = 0.0, 0.14
-nt.link(up, horizon.inputs[0])
-cover = nt.math("MULTIPLY", nt.math("MULTIPLY", ramp.outputs[0], horizon.outputs[0]), R.get("cloud_amount", 0.9))
-# cloud body brighter on top noise, slightly warm
-cloud_col = nt.mix(cn.outputs["Fac"], tuple(R.get("cloud_shadow", (0.55, 0.60, 0.70))), tuple(R.get("cloud_light", (1.0, 0.97, 0.92))))
-cs = nt.n("ShaderNodeVectorMath", operation="SCALE")
-nt.link(cloud_col, cs.inputs[0])
-cs.inputs["Scale"].default_value = R.get("cloud_brightness", 1.6)
-sk = nt.n("ShaderNodeVectorMath", operation="SCALE")
-nt.link(sky.outputs[0], sk.inputs[0])
-sk.inputs["Scale"].default_value = R.get("sky_strength", 0.28)
-final = nt.mix(cover, sk.outputs[0], cs.outputs[0])
+hdr = bpy.data.images.load(str(ROOT / R["hdri"]))
+px = np.empty(hdr.size[0] * hdr.size[1] * 4, np.float32)
+hdr.pixels.foreach_get(px)
+px = px.reshape(hdr.size[1], hdr.size[0], 4)[:, :, :3].sum(axis=2)
+sy, sx = np.unravel_index(int(np.argmax(px)), px.shape)
+phi = (sx / hdr.size[0] - 0.5) * 2 * math.pi
+sun_el = (sy / hdr.size[1] - 0.5) * math.pi
+alpha0 = math.atan2(math.sin(phi), -math.cos(phi))       # where the HDRI's sun sits (Blender equirect)
+alpha1 = math.atan2(math.cos(sun_az), math.sin(sun_az))  # where the scene wants it (compass azimuth)
+tc = nt.n("ShaderNodeTexCoord")
+mp = nt.n("ShaderNodeMapping", vector_type="POINT")
+mp.inputs["Rotation"].default_value = (0, 0, alpha0 - alpha1)
+nt.link(tc.outputs["Generated"], mp.inputs["Vector"])
+env = nt.n("ShaderNodeTexEnvironment")
+env.image = hdr
+nt.link(mp.outputs[0], env.inputs["Vector"])
 bg = nt.n("ShaderNodeBackground")
-nt.link(final, bg.inputs[0])
+bg.inputs["Strength"].default_value = R.get("hdri_strength", 1.0)
+nt.link(env.outputs[0], bg.inputs[0])
 nt.link(bg.outputs[0], wout.inputs[0])
+print(f"HDRI sun elevation {math.degrees(sun_el):.1f} deg, rotated to azimuth {R['sun_azimuth_deg']}")
+sun = bpy.data.objects.new("Sun", bpy.data.lights.new("Sun", "SUN"))
+sun.data.energy = R.get("sun_strength", 3.0)
+sun.data.angle = math.radians(1.0)
+sun.data.color = R.get("sun_colour", (1.0, 0.95, 0.88))
+to_sun = Vector((math.sin(sun_az) * math.cos(sun_el), math.cos(sun_az) * math.cos(sun_el), math.sin(sun_el)))
+sun.rotation_euler = to_sun.to_track_quat("Z", "Y").to_euler()
+ENGINE = A.engine or R.get("engine", "CYCLES")
+if ENGINE != "CYCLES":  # Cycles takes its sun and shadows from the HDRI itself
+    scn.collection.objects.link(sun)
 
-# ------------------------------------------------------------------ camera
+# ------------------------------------------------------------------ camera + carriage
 C = S["camera"]
 path = json.loads((MESH / "camera_path.json").read_text())
-P = np.array(path["points"])
+P = np.array(path.get("tracks", [path["points"]])[C.get("track", 0)])
+if C.get("reverse"):
+    P = P[::-1]
 seg = np.hypot(*np.diff(P, axis=0).T)
 cum = np.concatenate([[0], np.cumsum(seg)])
 s0 = cum[np.argmin(np.hypot(P[:, 0] - C["start_xy"][0], P[:, 1] - C["start_xy"][1]))]
@@ -363,38 +557,57 @@ def at(s):
     return np.array([np.interp(s, cum, P[:, 0]), np.interp(s, cum, P[:, 1])])
 
 
+side = -1.0 if C.get("look", "left") == "right" else 1.0   # car frame: +X forward, +Y left
+FLOOR, EYE, HALF = 1.1, 1.25, 1.40
+seat_y = side * (HALF - 0.05 - C.get("eye_to_glass_m", 0.6))
+car = bpy.data.objects.new("car", None)
+scn.collection.objects.link(car)
 cam_data = bpy.data.cameras.new("Cam")
 cam_data.sensor_width = 36
 cam_data.lens = 18 / math.tan(math.radians(C["hfov_deg"]) / 2)
 cam_data.shift_y = C.get("shift_y", 0.0)
 cam_data.clip_start, cam_data.clip_end = 0.05, 20000
+if C.get("fstop"):
+    cam_data.dof.use_dof = True
+    cam_data.dof.focus_distance = C.get("focus_m", 80.0)
+    cam_data.dof.aperture_fstop = C["fstop"]
 cam = bpy.data.objects.new("Cam", cam_data)
+cam.parent = car
 scn.collection.objects.link(cam)
 scn.camera = cam
-eye_z = path["rail_top_z"] + C["eye_above_rail_m"]
 yaw = math.radians(C["yaw_from_forward_deg"])
+look = Vector((math.cos(yaw), side * math.sin(yaw), 0.0))
+cam.location = (0.0, seat_y, EYE)
+cam.rotation_euler = look.to_track_quat("-Z", "Y").to_euler()
+
 f0, f1 = (int(x) for x in A.frames.split("-"))
 n_total = int(round(C["duration_s"] * fps))
-for f in range(0, n_total + 1):
+rail_z = path["rail_top_z"]
+for f in range(-1, n_total + 2):
     t = f / fps
     s = s0 + C["speed_mps"] * t
     p = at(s)
-    tan = at(s + 7.0) - at(s - 7.0)  # long baseline = no twitch at polyline vertices
-    tan /= np.linalg.norm(tan)
-    left = np.array([-tan[1], tan[0]])
-    side = -1.0 if C.get("look", "left") == "right" else 1.0
-    d = math.cos(yaw) * tan + math.sin(yaw) * left * side
+    tan = at(s + 7.0) - at(s - 7.0)  # long baseline: no twitch at polyline vertices
+    heading = math.atan2(tan[1], tan[0])
     sway = C.get("sway", 1.0)
-    z = eye_z + sway * 0.006 * math.sin(2 * math.pi * 0.9 * t) + sway * 0.004 * math.sin(2 * math.pi * 0.37 * t + 1)
-    roll = math.radians(sway * (0.10 * math.sin(2 * math.pi * 0.31 * t) + 0.05 * math.sin(2 * math.pi * 0.83 * t + 2)))
-    fwd = Vector((d[0], d[1], 0.0))
-    rot = fwd.to_track_quat("-Z", "Y").to_matrix().to_4x4() @ Matrix.Rotation(roll, 4, "Z")
-    off = left * side * C.get("seat_offset_m", 0.9)
-    cam.matrix_world = Matrix.Translation((p[0] + off[0], p[1] + off[1], z)) @ rot
-    cam.keyframe_insert("location", frame=f)
-    cam.keyframe_insert("rotation_euler", frame=f)
+    z = rail_z + FLOOR + sway * (0.005 * math.sin(2 * math.pi * 0.9 * t) + 0.003 * math.sin(2 * math.pi * 0.37 * t + 1))
+    roll = math.radians(sway * (0.09 * math.sin(2 * math.pi * 0.31 * t) + 0.04 * math.sin(2 * math.pi * 0.83 * t + 2)))
+    car.location = (p[0], p[1], z)
+    car.rotation_euler = (roll, 0.0, heading)
+    car.keyframe_insert("location", frame=f)
+    car.keyframe_insert("rotation_euler", frame=f)
+    for root, a, uvec, nvec, L, lane, direction, ph, spd in CARS:
+        span = L + 160.0
+        d = ((ph * span + spd * t) % span) - 80.0
+        if direction < 0:
+            d = L - d
+        q = a + uvec * d + nvec * lane * -direction
+        root.location = (q[0], q[1], 0.12)
+        root.rotation_euler = (0, 0, math.atan2(uvec[1], uvec[0]) + (math.pi if direction < 0 else 0))
+        root.keyframe_insert("location", frame=f)
+        root.keyframe_insert("rotation_euler", frame=f)
 for root, b in BOATS:
-    for f in (0, n_total):
+    for f in (-1, n_total + 1):
         x = b["x0"] + b["speed_mps"] * f / fps
         y = float(np.interp(x, rc[:, 0], rc[:, 1])) + b.get("offset", 0.0)
         y2 = float(np.interp(x + 5, rc[:, 0], rc[:, 1])) + b.get("offset", 0.0)
@@ -402,60 +615,76 @@ for root, b in BOATS:
         root.rotation_euler = (0, 0, math.atan2(y2 - y, 5.0) + (math.pi if b["speed_mps"] < 0 else 0))
         root.keyframe_insert("location", frame=f)
         root.keyframe_insert("rotation_euler", frame=f)
-    for fc in root.animation_data.action.fcurves:
+for ob in [car] + [c[0] for c in CARS] + [b[0] for b in BOATS]:
+    for fc in ob.animation_data.action.fcurves:
         for k in fc.keyframe_points:
             k.interpolation = "LINEAR"
-for fc in cam.animation_data.action.fcurves:
-    for k in fc.keyframe_points:
-        k.interpolation = "LINEAR"
 
-# ------------------------------------------------------------------ train window
+# ------------------------------------------------------------------ carriage interior
 W = S.get("window", {})
 if W.get("enabled", True):
-    dist = 0.6
-    hw = dist * math.tan(math.radians(C["hfov_deg"]) / 2)
-    hh = hw * 9 / 16
-    cy = cam_data.shift_y * 2 * hw  # lens shift moves the frame centre
-    x0, x1 = -hw * (1 - 2 * W.get("side", 0.085)), hw * (1 - 2 * W.get("side", 0.085))
-    y0, y1 = cy - hh * (1 - 2 * W.get("bottom", 0.13)), cy + hh * (1 - 2 * W.get("top", 0.07))
-    rad, n = W.get("radius", 0.075), 14
+    wall_y = side * (HALF - 0.05)          # inner face of the car side
+    out_y = side * (HALF + 0.03)           # outer skin
+    x0, x1 = W.get("x0", 0.03), W.get("x1", 1.30)
+    zb, zt = EYE - W.get("below_eye", 0.40), EYE + W.get("above_eye", 0.66)
+    rad, n = W.get("radius", 0.07), 10
 
-    def rrect(x0, x1, y0, y1, r):
+    def rrect(x0, x1, z0, z1, r):
         pts = []
-        for cx, cy_, a0 in ((x1 - r, y1 - r, 0), (x0 + r, y1 - r, 90), (x0 + r, y0 + r, 180), (x1 - r, y0 + r, 270)):
+        for cx, cz, a0 in ((x1 - r, z1 - r, 0), (x0 + r, z1 - r, 90), (x0 + r, z0 + r, 180), (x1 - r, z0 + r, 270)):
             for k in range(n + 1):
                 a = math.radians(a0 + 90 * k / n)
-                pts.append((cx + r * math.cos(a), cy_ + r * math.sin(a)))
+                pts.append((cx + r * math.cos(a), cz + r * math.sin(a)))
         return pts
 
-    def ring_mesh(name, outer, inner, z, mat):
+    def obj(name, verts, faces, mat):
         me = bpy.data.meshes.new(name)
-        m = len(inner)
-        verts = [(x, y, z) for x, y in inner] + [(x, y, z) for x, y in outer]
-        faces = [(i, (i + 1) % m, m + (i + 1) % m, m + i) for i in range(m)]
         me.from_pydata(verts, [], faces)
         me.materials.append(mat)
         ob = bpy.data.objects.new(name, me)
-        ob.parent = cam
+        ob.parent = car
         scn.collection.objects.link(ob)
-        ob.visible_shadow = False
         return ob
 
-    inner = rrect(x0, x1, y0, y1, rad)
-    big = 3.0
-    # matching vertex count for the outer boundary: project inner ring outward
-    outer = [(x * 1 + (big if x > (x0 + x1) / 2 else -big), y + (big if y > (y0 + y1) / 2 else -big)) for x, y in inner]
-    ring_mesh("win_wall", outer, inner, -dist, flat_emission("car_wall", tuple(W.get("wall_colour", (0.030, 0.027, 0.025)))))
-    g = 0.012
-    gasket_outer = rrect(x0 - g, x1 + g, y0 - g, y1 + g, rad + g)
-    ring_mesh("win_gasket", gasket_outer, inner, -dist + 0.002, flat_emission("gasket", (0.004, 0.004, 0.004)))
-    lip = W.get("lip", 0.014)
-    lip_outer = rrect(x0 - g - lip, x1 + g + lip, y0 - g - lip, y1 + g + lip, rad + g + lip)
-    ring_mesh("win_lip", lip_outer, gasket_outer, -dist + 0.001, flat_emission("lip", tuple(W.get("lip_colour", (0.085, 0.078, 0.07)))))
+    panel = simple("car_panel", tuple(W.get("panel_colour", (0.58, 0.56, 0.52))), 0.55)
+    rubber = simple("car_rubber", (0.012, 0.012, 0.012), 0.6)
+    trim = simple("car_trim", tuple(W.get("trim_colour", (0.30, 0.30, 0.31))), 0.35, 0.6)
+    inner = rrect(x0, x1, zb, zt, rad)
+    m_ = len(inner)
+    X0, X1, Z0, Z1 = -2.5, 5.0, 0.0, 2.45
+    outer = [(X1 if x > (x0 + x1) / 2 else X0, Z1 if z > (zb + zt) / 2 else Z0) for x, z in inner]
+    ring = [(i, (i + 1) % m_, m_ + (i + 1) % m_, m_ + i) for i in range(m_)]
+    obj("wall", [(x, wall_y, z) for x, z in inner] + [(x, wall_y, z) for x, z in outer], ring, panel)
+    # reveal: the thickness of the car side around the glass
+    obj("reveal", [(x, wall_y, z) for x, z in inner] + [(x, out_y, z) for x, z in inner], ring, rubber)
+    g = 0.022
+    gasket = rrect(x0 - g, x1 + g, zb - g, zt + g, rad + g)
+    lift = wall_y - side * 0.006
+    obj("trim", [(x, lift, z) for x, z in inner] + [(x, lift, z) for x, z in gasket], ring, trim)
+    # sill ledge
+    sy0, sy1 = wall_y, wall_y - side * 0.075
+    sv = [(x0 - 0.06, sy0, zb - 0.03), (x1 + 0.06, sy0, zb - 0.03), (x1 + 0.06, sy1, zb - 0.03), (x0 - 0.06, sy1, zb - 0.03),
+          (x0 - 0.06, sy0, zb), (x1 + 0.06, sy0, zb), (x1 + 0.06, sy1, zb), (x0 - 0.06, sy1, zb)]
+    obj("sill", sv, [(4, 5, 6, 7), (3, 2, 6, 7), (0, 1, 2, 3), (1, 2, 6, 5), (0, 3, 7, 4)], trim)
+    # shell: roof, far wall and floor keep direct sun off the interior
+    oy = -side * HALF
+    obj("shell", [(X0, wall_y, Z1), (X1, wall_y, Z1), (X1, oy, Z1), (X0, oy, Z1),
+                  (X0, oy, Z0), (X1, oy, Z0), (X1, wall_y, Z0), (X0, wall_y, Z0),
+                  (X0, wall_y, Z1), (X0, oy, Z1), (X0, oy, Z0), (X0, wall_y, Z0)],
+        [(0, 1, 2, 3), (3, 2, 5, 4), (4, 5, 6, 7), (8, 9, 10, 11)], simple("car_shell", (0.45, 0.44, 0.42), 0.7))
+    lamp = bpy.data.lights.new("cabin", "AREA")
+    lamp.shape, lamp.size, lamp.size_y = "RECTANGLE", 2.4, 0.5
+    lamp.energy = W.get("cabin_light_w", 40.0)
+    lamp.color = (1.0, 0.93, 0.84)
+    lo = bpy.data.objects.new("cabin", lamp)
+    lo.parent = car
+    lo.location = (0.9, wall_y - side * 0.75, 2.3)
+    lo.rotation_euler = Vector((0, side * 0.55, -1)).to_track_quat("-Z", "Y").to_euler()
+    lo.visible_camera = False
+    scn.collection.objects.link(lo)
 
 # ------------------------------------------------------------------ render settings
 r = scn.render
-ENGINE = A.engine or R.get("engine", "CYCLES")
 r.engine = "CYCLES" if ENGINE == "CYCLES" else "BLENDER_EEVEE"
 r.resolution_x, r.resolution_y, r.resolution_percentage = R["width"], R["height"], A.scale
 r.fps = fps
@@ -467,15 +696,15 @@ r.use_motion_blur = R.get("motion_blur", True)
 r.motion_blur_shutter = R.get("shutter", 0.5)
 cy_ = scn.cycles
 cy_.device = "CPU"
-cy_.samples = A.samples or R["samples"]
+cy_.samples = A.samples or R.get("samples", 48)
 cy_.use_adaptive_sampling = True
 cy_.adaptive_threshold = R.get("adaptive_threshold", 0.05)
 cy_.use_denoising = True
 cy_.denoiser = "OPENIMAGEDENOISE"
 cy_.denoising_input_passes = "RGB_ALBEDO_NORMAL"
-cy_.max_bounces = 4
+cy_.max_bounces = 5
 cy_.diffuse_bounces = 2
-cy_.glossy_bounces = 2
+cy_.glossy_bounces = 3
 cy_.transmission_bounces = 0
 cy_.volume_bounces = 0
 cy_.caustics_reflective = cy_.caustics_refractive = False

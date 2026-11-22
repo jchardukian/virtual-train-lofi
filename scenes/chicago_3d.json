@@ -134,5 +134,43 @@
     "x": 150,
     "y": 806
   },
-  "fade": 1.0
+  "fade": 1.0,
+  "extra_bridges": [
+    {
+      "name": "North LaSalle Street",
+      "a": [
+        116,
+        -90
+      ],
+      "b": [
+        114,
+        -21
+      ],
+      "width": 24
+    },
+    {
+      "name": "North State Street",
+      "a": [
+        489,
+        -85
+      ],
+      "b": [
+        483,
+        -17
+      ],
+      "width": 27
+    },
+    {
+      "name": "North Wells Street",
+      "a": [
+        -5,
+        -99
+      ],
+      "b": [
+        -8,
+        -14
+      ],
+      "width": 21
+    }
+  ]
 }

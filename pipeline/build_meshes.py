@@ -21,12 +21,16 @@ from shapely.ops import unary_union
 from shapely.validation import make_valid
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import chicago_landmarks as CL  # noqa: E402
 
 MASONRY = [(0.46, 0.25, 0.18), (0.62, 0.53, 0.42), (0.74, 0.69, 0.60), (0.50, 0.47, 0.44),
            (0.52, 0.30, 0.21), (0.63, 0.60, 0.55), (0.38, 0.24, 0.19), (0.78, 0.75, 0.68)]
 GLASS = [(0.20, 0.33, 0.42), (0.16, 0.26, 0.34), (0.28, 0.40, 0.44), (0.12, 0.14, 0.17),
          (0.30, 0.36, 0.42), (0.22, 0.30, 0.30), (0.36, 0.30, 0.24)]
-# name substring -> (colour, style) ; style 0 = masonry/punched windows, 1 = glass curtain wall
+# name substring -> (colour, style)
+# style: 0 masonry punched windows, 0.12 brick, 0.5 modernist piers + ribbon glass,
+#        0.75 Miesian dark steel-and-glass grid, 1 glass curtain wall
 LANDMARKS = {
     "willis tower": ((0.035, 0.035, 0.04), 1), "trump international": ((0.50, 0.62, 0.70), 1),
     "marina city": ((0.80, 0.76, 0.68), 0), "merchandise mart": ((0.82, 0.78, 0.69), 0),
@@ -39,7 +43,13 @@ LANDMARKS = {
     "110 north wacker": ((0.36, 0.48, 0.56), 1), "lasalle - wacker": ((0.76, 0.72, 0.64), 0),
     "35 east wacker": ((0.84, 0.80, 0.70), 0), "wrigley": ((0.92, 0.90, 0.86), 0),
     "tribune": ((0.74, 0.70, 0.62), 0), "300 north lasalle": ((0.34, 0.44, 0.50), 1),
-    "reid": ((0.60, 0.34, 0.24), 0), "kemper": ((0.20, 0.22, 0.24), 1),
+    "reid": ((0.47, 0.20, 0.14), 0.12), "kemper": ((0.20, 0.22, 0.24), 1),
+    "330 north wabash": ((0.030, 0.030, 0.034), 0.75), "321 north clark": ((0.10, 0.13, 0.17), 0.75),
+    "353 north clark": ((0.30, 0.42, 0.50), 1), "westin": ((0.52, 0.42, 0.33), 0.5),
+    "helene curtis": ((0.62, 0.60, 0.55), 0), "amli": ((0.36, 0.44, 0.50), 1),
+    "london guarantee": ((0.76, 0.72, 0.64), 0), "london house": ((0.76, 0.72, 0.64), 0),
+    "royal sonesta": ((0.40, 0.46, 0.50), 1), "club quarters": ((0.70, 0.66, 0.58), 0),
+    "kinzie hotel": ((0.50, 0.30, 0.22), 0.12), "sterling": ((0.55, 0.52, 0.48), 0.5),
 }
 
 
@@ -75,10 +85,12 @@ class Mesh:
     """Non-indexed polygon soup with per-corner uv and per-corner colour."""
 
     def __init__(self):
-        self.v, self.uv, self.col, self.sizes = [], [], [], []
+        self.v, self.uv, self.col, self.sizes, self.uv2 = [], [], [], [], []
+        self.aux = (0.0, 0.0)  # per-building constants written to the second UV layer
 
     def face(self, verts, uvs=None, col=(1, 1, 1, 1)):
         n = len(verts)
+        self.uv2.extend([self.aux] * n)
         self.v.extend(verts)
         self.uv.extend(uvs if uvs is not None else [(0.0, 0.0)] * n)
         self.col.extend([col] * n)
@@ -121,6 +133,7 @@ class Mesh:
 
     def save(self, path):
         np.savez_compressed(path, v=np.array(self.v, np.float32), uv=np.array(self.uv, np.float32),
+                            uv2=np.array(self.uv2, np.float32),
                             col=np.array(self.col, np.float32), sizes=np.array(self.sizes, np.int32))
         return len(self.sizes)
 
@@ -159,9 +172,23 @@ def main():
         if p is not None:
             items.append((i, b, p))
     parts = [(i, b, p) for i, b, p in items if b["part"]]
-    walls, roofs = Mesh(), Mesh()
+    walls, roofs, detail = Mesh(), Mesh(), Mesh()
     n_b = 0
+    marina, houses, flags = [], [], []
     for i, b, p in items:
+        nm = (b["name"] or "").lower()
+        if "marina city" in nm:
+            marina.append(p)
+        elif "bridgehouse" in nm or (p.area < 70 and (b["h"] or 0) < 26 and not b["part"] and p.distance(water_edge) < 6):
+            houses.append((nm, p))
+    house_ids = {id(q) for _, q in houses}
+    marina_zone = unary_union([q.buffer(3) for q in marina]) if marina else None
+    for i, b, p in items:
+        nm = (b["name"] or "").lower()
+        if "marina city" in nm or id(p) in house_ids:
+            continue
+        if marina_zone is not None and b["part"] and marina_zone.contains(p.representative_point()):
+            continue
         lm = None
         if b["name"]:
             lm = next((v for k, v in LANDMARKS.items() if k in b["name"].lower()), None)
@@ -183,20 +210,34 @@ def main():
         if lm:
             col, style = lm
         elif h > 95 or (h > 40 and h01(i, "s") < 0.45):
-            col, style = GLASS[int(h01(i, "c") * len(GLASS)) % len(GLASS)], 1
+            col, style = GLASS[int(h01(i, "c") * len(GLASS)) % len(GLASS)], (0.75 if h01(i, "m") < 0.2 else 1)
+        elif h > 45 and h01(i, "s") < 0.75:
+            col, style = MASONRY[int(h01(i, "c") * len(MASONRY)) % len(MASONRY)], 0.5
         else:
-            col, style = MASONRY[int(h01(i, "c") * len(MASONRY)) % len(MASONRY)], 0
+            k = int(h01(i, "c") * len(MASONRY)) % len(MASONRY)
+            col, style = MASONRY[k], (0.12 if k in (0, 4, 6) else 0)
         j = 0.92 + 0.16 * h01(i, "j")
         col = tuple(min(1.0, c * j) for c in col)
-        bay = (1.6 if style else 2.6 + 1.2 * h01(i, "b"))
-        floor = 3.9 if style else 3.4 + 0.5 * h01(i, "f")
+        bay = {1: 1.5, 0.75: 1.6, 0.5: 2.4}.get(style, 3.4 + 1.6 * h01(i, "b"))
+        floor = 3.9 if style >= 0.5 else 3.5 + 0.5 * h01(i, "f")
+        walls.aux = ((h - b["mh"]) / floor, h01(i, "r"))
         if p.exterior.is_ccw is False:
             p = Polygon(list(p.exterior.coords)[::-1], [list(r.coords) for r in p.interiors])
         walls.walls(p, b["mh"], h, (*col, float(style)), bay, floor)
         roofs.flat(p, h, (*[c * 0.55 + 0.12 for c in col], 1.0))
         if b["mh"] > 0.5:
             roofs.flat(p, b["mh"], (*[c * 0.5 for c in col], 1.0))
+        if not b["part"]:
+            CL.roof_plant(detail, p, h, h01(i, "p"), col)
+        if "reid" in nm:
+            CL.clock_tower(detail, p.centroid.x, p.bounds[1] + 7.0, h, col)
         n_b += 1
+    for k, q in enumerate(marina):
+        CL.marina_tower(detail, q.centroid.x, q.centroid.y, seed=k)
+    for nm, q in houses:
+        x, y, z = CL.bridge_house(detail, q, ornate=any(t in nm for t in ("lasalle", "clark", "wells", "michigan", "dusable")) or not nm)
+        flags.append([round(x, 2), round(y, 2), round(z, 2)])
+    stats["marina_towers"], stats["bridge_houses"] = len(marina), len(houses)
     stats["buildings"] = n_b
     stats["wall_faces"] = walls.save(out / "walls.npz")
     stats["roof_faces"] = roofs.save(out / "roofs.npz")
@@ -232,21 +273,56 @@ def main():
         ls = LineString(r["p"])
         w = max(W[r["kind"]], (r["lanes"] or 0) * 3.3 + 5)
         roads.append(ls.buffer(w / 2, cap_style=2))
-        if r.get("bridge") and ls.intersects(water):
-            decks.append(ls.buffer(w / 2 + 2.5, cap_style=2))
     roads = unary_union(roads)
     m = Mesh()
     m.flat(roads.intersection(land), 0.06, (1, 1, 1, 1))
     stats["road_faces"] = m.save(out / "roads.npz")
-    deck = unary_union(decks).intersection(water.buffer(4)) if decks else None
-    m = Mesh()
-    if deck is not None and not deck.is_empty:
-        m.flat(deck, 0.08, (1, 1, 1, 1))
-        m.flat(deck, -1.3, (1, 1, 1, 1))
-        m.walls(deck, -1.3, 0.08, (1, 1, 1, 1))
-        # bridge railings read as the dark steel of Chicago's bascule bridges
-        m.walls(deck.buffer(-0.3), 0.08, 1.3, (1, 1, 1, 1))
-    stats["bridge_faces"] = m.save(out / "bridges.npz")
+    from shapely.ops import linemerge
+    by_name = {}
+    for r in geo["roads"]:
+        if not r["name"] or "Lower" in r["name"] or len(r["p"]) < 2 or r["kind"] == "service":
+            continue
+        try:
+            if r.get("layer") and float(r["layer"]) < 0:
+                continue
+        except ValueError:
+            pass
+        by_name.setdefault(r["name"], []).append((LineString(r["p"]), max(W[r["kind"]], (r["lanes"] or 0) * 3.3 + 5)))
+    groups = {}
+    wbuf = water.buffer(5)
+    for name, lst in by_name.items():
+        merged = unary_union([l for l, _ in lst])
+        if merged.geom_type == "MultiLineString":
+            merged = linemerge(merged)
+        cut = merged.intersection(wbuf)
+        for g in (cut.geoms if hasattr(cut, "geoms") else [cut]):
+            if g.geom_type != "LineString" or not 45 < g.length < 140:
+                continue
+            c = list(g.coords)
+            a0, b0 = c[0], c[-1]
+            if (a0[1], a0[0]) > (b0[1], b0[0]):
+                a0, b0 = b0, a0
+            # carriageways of one bridge sit within ~25 m of each other
+            key = next((k for k, v in groups.items() if k[0] == name and math.dist(v[0][0], a0) < 25), (name, len(groups)))
+            groups.setdefault(key, []).append((a0, b0, max(w for _, w in lst)))
+    # spans whose deck way is absent from the extract: endpoints taken from the
+    # ends of the same street's approach ways on each bank
+    for e in scene.get("extra_bridges", []):
+        groups[(e["name"], len(groups))] = [(tuple(e["a"]), tuple(e["b"]), e["width"] - 5.0)]
+    bridge_lines = []
+    for (name, _k), parts_ in groups.items():
+        a0 = np.mean([q[0] for q in parts_], axis=0)
+        b0 = np.mean([q[1] for q in parts_], axis=0)
+        spread = max(math.dist(q[0], a0) for q in parts_)
+        width = min(30.0, max(q[2] for q in parts_) + 2 * spread + 5.0)
+        if math.dist(a0, b0) > 140:
+            continue  # not a river span (long viaduct)
+        CL.bascule_bridge(detail, a0, b0, width, truss="Wacker" not in name)
+        bridge_lines.append({"name": name, "a": [float(a0[0]), float(a0[1])], "b": [float(b0[0]), float(b0[1])], "width": float(width)})
+    (out / "bridges.json").write_text(json.dumps(bridge_lines))
+    (out / "flags.json").write_text(json.dumps(flags))
+    stats["bridges"] = [q["name"] for q in bridge_lines]
+    stats["detail_faces"] = detail.save(out / "detail.npz")
     parks = unary_union([p for p in (poly(x) for x in geo["parks"]) if p is not None])
     m = Mesh()
     m.flat(parks.intersection(land).difference(roads), 0.1, (1, 1, 1, 1))
@@ -371,7 +447,8 @@ def main():
 
     # camera path = first configured track
     path = resample(tracks[0], 0.5)
-    (out / "camera_path.json").write_text(json.dumps({"points": path, "rail_top_z": rz}))
+    (out / "camera_path.json").write_text(json.dumps({"points": path, "rail_top_z": rz,
+                                                      "tracks": [resample(t, 0.5) for t in tracks]}))
     stats["camera_path_m"] = round(LineString(path).length, 1)
     print(json.dumps(stats, indent=1))
 

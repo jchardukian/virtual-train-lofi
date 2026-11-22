@@ -21,6 +21,9 @@ FONT_R = "/usr/share/fonts/opentype/inter/Inter-Regular.otf"
 STYLES = {
     # the render as it comes out of Blender, lightly finished
     "clean": "eq=contrast=1.04:saturation=1.08",
+    # v2 finish: gentle contrast, a touch of afternoon warmth, soft highlight roll-off, no tint
+    "natural": ("curves=r='0/0 0.5/0.515 1/1':b='0/0 0.5/0.49 1/0.985',eq=contrast=1.05:saturation=1.10,"
+                "split[a][b];[b]gblur=sigma=16[bl];[a][bl]blend=all_mode=screen:all_opacity=0.07,vignette=angle=PI/7"),
     # Style B - cinematic lo-fi: warm light, lifted soft blacks, bloom, vignette, fine grain
     "lofi": (
         "curves=r='0/0.045 0.5/0.55 1/1':g='0/0.04 0.5/0.51 1/0.96':b='0/0.035 0.5/0.42 1/0.80',"

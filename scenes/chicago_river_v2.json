@@ -1,0 +1,172 @@
+{
+  "id": "chicago_river_v2",
+  "osm": {
+    "bbox": [
+      -87.646,
+      41.874,
+      -87.616,
+      41.894
+    ],
+    "tile_deg": [
+      0.006,
+      0.004
+    ],
+    "raw_dir": "data/osm_raw/chicago_loop",
+    "origin": [
+      -87.6339,
+      41.888
+    ],
+    "geometry": "data/chicago_loop_geometry.json"
+  },
+  "mesh_dir": "work/meshes",
+  "lake_west_x": 2250,
+  "rail": {
+    "rail_top_z": 7.0,
+    "note": "OSM way ids. First track is the camera path (southbound, west track on Wells St). The Wells Street Bridge span is missing from the extract, so consecutive ways are joined straight across it.",
+    "tracks": [
+      {
+        "ways": [
+          "860243579",
+          "59399791"
+        ]
+      },
+      {
+        "ways": [
+          "-860243580",
+          "-59399797"
+        ]
+      }
+    ]
+  },
+  "camera": {
+    "track": 1,
+    "reverse": true,
+    "start_xy": [
+      -4,
+      -92
+    ],
+    "speed_mps": 5.0,
+    "duration_s": 10,
+    "hfov_deg": 74,
+    "yaw_from_forward_deg": 60,
+    "look": "right",
+    "eye_to_glass_m": 0.6,
+    "shift_y": 0.06,
+    "sway": 1.0,
+    "fstop": 2.8,
+    "focus_m": 80
+  },
+  "window": {
+    "enabled": true,
+    "x0": -0.12,
+    "x1": 1.3,
+    "below_eye": 0.3,
+    "above_eye": 0.62,
+    "radius": 0.07,
+    "cabin_light_w": 6,
+    "panel_colour": [
+      0.34,
+      0.33,
+      0.31
+    ]
+  },
+  "render": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "engine": "CYCLES",
+    "samples": 48,
+    "adaptive_threshold": 0.04,
+    "motion_blur": true,
+    "shutter": 0.5,
+    "hdri": "assets/polyhaven/kloofendal_48d_partly_cloudy_puresky.hdr",
+    "hdri_strength": 1.0,
+    "sun_azimuth_deg": 232,
+    "exposure": 0.0,
+    "look": "Medium High Contrast",
+    "haze_start": 150,
+    "haze_depth": 4000,
+    "haze_amount": 0.35,
+    "haze_colour": [
+      0.66,
+      0.74,
+      0.84
+    ],
+    "water_colour": [
+      0.008,
+      0.032,
+      0.024
+    ],
+    "eevee_samples": 8,
+    "eevee_blur_steps": 2,
+    "pane_tilt": 0.012,
+    "sun_strength": 3.2,
+    "shadow_size": 4096,
+    "water_spec": 0.4
+  },
+  "boats": [
+    {
+      "x0": 300,
+      "speed_mps": -3.5,
+      "offset": -8,
+      "length": 28
+    },
+    {
+      "x0": 150,
+      "speed_mps": 3.0,
+      "offset": 12,
+      "length": 20
+    },
+    {
+      "x0": 520,
+      "speed_mps": -2.5,
+      "offset": 6,
+      "length": 16
+    }
+  ],
+  "overlay": {
+    "title": "Chicago, Illinois",
+    "next": "Barcelona, Spain",
+    "x": 150,
+    "y": 806
+  },
+  "fade": 1.0,
+  "extra_bridges": [
+    {
+      "name": "North LaSalle Street",
+      "a": [
+        116,
+        -90
+      ],
+      "b": [
+        114,
+        -21
+      ],
+      "width": 24
+    },
+    {
+      "name": "North State Street",
+      "a": [
+        489,
+        -85
+      ],
+      "b": [
+        483,
+        -17
+      ],
+      "width": 27
+    },
+    {
+      "name": "North Wells Street",
+      "a": [
+        -5,
+        -99
+      ],
+      "b": [
+        -8,
+        -14
+      ],
+      "width": 21
+    }
+  ]
+}
