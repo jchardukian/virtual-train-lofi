@@ -103,7 +103,7 @@
   "2026-11-22T09:47:31Z finished scenes/chicago_v3_lake_south.json"
  ],
  "status": "shots complete; NOT a finished city: no assembled city master; master visual QC not passed; master audio gate not passed; fewer than 2 vertical cuts with audio and QC passed; no rights and attribution manifest",
- "updated": "2026-11-22T09:47:31Z",
+ "updated": "2026-11-22T09:47:33Z",
  "footage_seconds_passed_qc": 49.0,
  "release_blockers": [
   "no assembled city master",
