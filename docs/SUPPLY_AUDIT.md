@@ -1,5 +1,12 @@
 # Ten-destination footage supply audit
 
+> **Reading note (added after review):** "verified" in this report means
+> downloaded, probed with ffprobe and sampled at four still frames. No clip
+> was watched at speed, so motion quality and whole-shot suitability are
+> unverified. The result is a negative screening, not proof that no free
+> footage exists: 182 candidates were unfetched, Pixabay was unsearched and
+> the Commons candidates were unviewed at the time of writing.
+
 Scope approved on PR #1 (2026-11-22): how many **verified playable** seconds
 of commercial-use footage at 1080p or better exist per city, by category,
 from sources reachable without API keys. No episode was produced.

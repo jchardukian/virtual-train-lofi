@@ -14,8 +14,20 @@ replaces; nothing here is reversed silently.
 3. **Scaling is on hold.** No further stock-compilation episodes, major
    renders or purchases until an affordable, repeatable, visually consistent,
    commercially usable architecture for about 200 destinations is validated.
-   **Approved next step:** a bounded 10-destination supply and consistency
-   audit using sources reachable without keys. Not an episode.
+   The 10-destination audit is complete and accepted as a **negative
+   screening result**, not proof that no free footage exists.
+   **Approved next step (no cost):** a decision-grade source acquisition
+   feasibility brief — the 3-5 most promising Commons ride files inspected as
+   far as possible, 2-3 paid/licensed/commissioned routes with indicative
+   prices and rights, a comparison against the $250/month budget and the
+   ~200-destination vision, and one cheap bounded proof-of-concept test with
+   go/no-go criteria. No vendor contact, no spend.
+3b. **Rejected as defaults:** generic city-scenery montages (abandons the
+   train-window differentiation, keeps the reused-content risk); restarting
+   the CPU Blender route; paying for or commissioning footage *yet*.
+3c. **Wording rule:** audit clips were downloaded, probed and sampled at four
+   still frames each. They were not watched at speed. Reports say "probed and
+   frame-sampled", not "watched" or "verified in motion".
 3a. **Chicago journey v1 is not approved for publication.** 15 s of passenger
    view in 300 s and mixed seasons and light do not make a coherent premium
    train journey. No further compilations by the same approach until the
@@ -42,6 +54,7 @@ replaces; nothing here is reversed silently.
 
 | Date | Decision | Why | Replaces |
 |---|---|---|---|
+| 2026-11-22 | Audit accepted as negative screening; next action is a source acquisition feasibility brief; city-montage format rejected as default; no episodes, renders, spend or merge | Review on PR #1 (comment 7074048701) | Open issue O5 options (a)-(c) as posed |
 | 2026-11-22 | O1 resolved for now: leave the split master in place, no history rewrite, no more large media in Git | Review on PR #1 (comment 7073715437) | Open issue O1 |
 | 2026-11-22 | Approved: bounded 10-destination supply/consistency audit from keyless sources; verified playable seconds only | Review on PR #1 | Proposed audit that depended on keys |
 | 2026-11-22 | Chicago journey v1 not approved for publication; no more compilations pending the audit | Review on PR #1 | "Awaiting owner review" |
