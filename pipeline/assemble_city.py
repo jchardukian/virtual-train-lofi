@@ -119,7 +119,8 @@ def main():
         parts.append(f"[{cur}][v{i}]xfade=transition=fade:duration={xf}:offset={off:.3f}[x{i}]")
         cur = f"x{i}"
     scene = {"overlay": {"title": city["name"], "next": city.get("next", ""), "x": 110, "y": 830, "scale": 1.5}}
-    parts.append(f"[{cur}]{overlay(scene, total)},fade=t=in:st=0:d={fade},fade=t=out:st={total - fade}:d={fade}[v]")
+    parts.append(f"[{cur}]split[c1][c2];[c1]{overlay(scene, total)},fade=t=in:st=0:d={fade},fade=t=out:st={total - fade}:d={fade}[v];"
+                 f"[c2]fade=t=in:st=0:d={fade},fade=t=out:st={total - fade}:d={fade}[vclean]")
     n = len(shots)
     for j, (_, f, _) in enumerate(tracks):
         inputs += ["-i", str(f)]
@@ -127,19 +128,23 @@ def main():
     for j in range(1, len(tracks)):
         parts.append(f"[{acur}][{n + j}:a]acrossfade=d=3:c1=tri:c2=tri[am{j}]")
         acur = f"am{j}"
-    parts.append(f"[{acur}]atrim=0:{total},loudnorm=I=-16:TP=-1.5:LRA=11,afade=t=in:st=0:d=2,afade=t=out:st={total - 3.0}:d=3.0[a]")
+    parts.append(f"[{acur}]atrim=0:{total},loudnorm=I=-16:TP=-1.5:LRA=11,afade=t=in:st=0:d=2,afade=t=out:st={total - 3.0}:d=3.0,asplit[a][a2]")
+    clean = out_dir / f"{a.city}_{label}_clean.mp4"      # same cut without text: the source for vertical cuts
     run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", *inputs, "-filter_complex", ";".join(parts), "-map", "[v]", "-map", "[a]",
          "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "30", "-g", "60",
-         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", f"{total}", "-movflags", "+faststart", str(out)])
+         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", f"{total}", "-movflags", "+faststart", str(out),
+         "-map", "[vclean]", "-map", "[a2]", "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-pix_fmt", "yuv420p", "-r", "30",
+         "-c:a", "aac", "-b:a", "192k", "-ar", "48000", "-t", f"{total}", str(clean)])
 
     vq = subprocess.run(["python3", str(ROOT / "pipeline/qc.py"), str(out), "--sheet-every", "4", "--fade", str(fade), "--no-jitter"], capture_output=True, text=True)
     ag = audio_gate.check(str(out))
     (out.with_suffix(".audio.json")).write_text(json.dumps(ag, indent=1) + "\n")
     verticals = []
-    for k, (start, x) in enumerate(city.get("verticals", [[2, 0.5], [max(2, total / 2), 0.55]]), 1):
+    for k, spec in enumerate(city.get("verticals", [[2, 0.5], [max(2, total / 2), 0.55]]), 1):
+        start, x = spec[0], spec[1]
         vf = out_dir / f"{a.city}_{label}_vertical_{k}.mp4"
-        dur = min(25.0, total - start - 1)
-        run(["python3", str(ROOT / "pipeline/vertical_cut.py"), str(out), str(vf), "--start", str(start), "--duration", str(dur),
+        dur = min(spec[2] if len(spec) > 2 else 25.0, total - start - 0.5)
+        run(["python3", str(ROOT / "pipeline/vertical_cut.py"), str(clean), str(vf), "--start", str(start), "--duration", str(dur),
              "--x", str(x), "--title", city["name"].upper()])
         vag = audio_gate.check(str(vf))
         vf.with_suffix(".audio.json").write_text(json.dumps(vag, indent=1) + "\n")

@@ -36,6 +36,18 @@
    "music": [
     "https://purrplecat-audio.pages.dev/audio/mellow-skies/01-warm-horizon.mp3",
     "https://purrplecat-audio.pages.dev/audio/happy-place/01-daydreams.mp3"
+   ],
+   "verticals": [
+    [
+     2.0,
+     0.42,
+     19.0
+    ],
+    [
+     21.5,
+     0.45,
+     24.0
+    ]
    ]
   },
   {

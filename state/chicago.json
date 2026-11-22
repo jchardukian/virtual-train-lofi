@@ -111,5 +111,79 @@
   "master audio gate not passed",
   "fewer than 2 vertical cuts with audio and QC passed",
   "no rights and attribution manifest"
- ]
+ ],
+ "release": {},
+ "partial": {
+  "kind": "partial",
+  "file": "output/cities/chicago/chicago_partial.mp4",
+  "sha256": "109afaa5a70888287494399de3c8e12bb811a1fc3aafe21a47deeee58db396bd",
+  "bytes": 90449407,
+  "master_duration_s": 46.0,
+  "master_visual_qc": true,
+  "master_audio_gate": true,
+  "lufs": -15.4,
+  "true_peak_dbfs": -1.5,
+  "silences": [],
+  "qc_report": "output/cities/chicago/chicago_partial.qc.json",
+  "audio_report": "output/cities/chicago/chicago_partial.audio.json",
+  "verticals": [
+   {
+    "file": "output/cities/chicago/chicago_partial_vertical_1.mp4",
+    "sha256": "c6b74d9ab0372d4509d050faebd7a39d903042b28edd92cba83a62fd2b4266c8",
+    "duration_s": 19.0,
+    "audio_gate": true,
+    "visual_qc": true,
+    "lufs": -15.1,
+    "qc_report": "output/cities/chicago/chicago_partial_vertical_1.qc.json",
+    "audio_report": "output/cities/chicago/chicago_partial_vertical_1.audio.json",
+    "probe": {
+     "duration_s": 19.0,
+     "bytes": 21501236,
+     "video": "h264 1080x1920 30/1",
+     "audio": "aac 48000 Hz 2ch"
+    },
+    "contact_sheet": "output/cities/chicago/chicago_partial_vertical_1.contact.jpg"
+   },
+   {
+    "file": "output/cities/chicago/chicago_partial_vertical_2.mp4",
+    "sha256": "01ee4c48c851bb490c73f223e8c6d5d74cec6a898f47fb7eec77c56448f792b4",
+    "duration_s": 24.0,
+    "audio_gate": true,
+    "visual_qc": true,
+    "lufs": -15.6,
+    "qc_report": "output/cities/chicago/chicago_partial_vertical_2.qc.json",
+    "audio_report": "output/cities/chicago/chicago_partial_vertical_2.audio.json",
+    "probe": {
+     "duration_s": 24.0,
+     "bytes": 40124282,
+     "video": "h264 1080x1920 30/1",
+     "audio": "aac 48000 Hz 2ch"
+    },
+    "contact_sheet": "output/cities/chicago/chicago_partial_vertical_2.contact.jpg"
+   }
+  ],
+  "rights_manifest": "output/cities/chicago/chicago_partial_rights.json",
+  "input_shots": {
+   "scenes/chicago_v3_lake.json": "9ff1f14c10434a93",
+   "scenes/chicago_v3_wells_south.json": "79c1033f58753387",
+   "scenes/chicago_v3_lake_south.json": "8da22b1517054503",
+   "scenes/chicago_v3_combined.json": "7cccd09381065145"
+  },
+  "missing_shots": [],
+  "excluded_shots": [],
+  "probe": {
+   "duration_s": 46.0,
+   "bytes": 90449407,
+   "video": "h264 1920x1080 30/1",
+   "audio": "aac 48000 Hz 2ch"
+  },
+  "transition_times_s": [
+   21.0,
+   33.0,
+   40.0
+  ],
+  "transitions_clean": true,
+  "transitions_sheet": "output/cities/chicago/chicago_partial_transitions.jpg",
+  "all_gates_passed": true
+ }
 }

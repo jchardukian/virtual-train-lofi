@@ -1,0 +1,79 @@
+{
+ "city": "Chicago, Illinois",
+ "kind": "partial",
+ "built": "2026-11-22T09:59:04Z",
+ "visuals": {
+  "description": "Stylised 3D render built from map data. Not real footage.",
+  "sources": [
+   {
+    "asset": "OpenStreetMap geometry",
+    "licence": "ODbL 1.0",
+    "credit": "\u00a9 OpenStreetMap contributors",
+    "files": [
+     "data/chicago_loop_geometry.json"
+    ],
+    "fetched_by": "pipeline/fetch_osm.py"
+   },
+   {
+    "asset": "Poly Haven sky HDRI",
+    "licence": "CC0",
+    "ids": [
+     "kloofendal_48d_partly_cloudy_puresky"
+    ],
+    "fetched_by": "pipeline/fetch_assets.py"
+   },
+   {
+    "asset": "Poly Haven wall textures",
+    "licence": "CC0",
+    "ids": [
+     "asphalt_01",
+     "brick_wall_001",
+     "concrete_tile_facade",
+     "concrete_wall_008",
+     "red_brick_03"
+    ],
+    "fetched_by": "pipeline/fetch_assets.py"
+   }
+  ]
+ },
+ "music": [
+  {
+   "title": "Warm Horizon",
+   "artist": "Purrple Cat",
+   "record": "Mellow Skies",
+   "downloaded_from": "https://purrplecat-audio.pages.dev/audio/mellow-skies/01-warm-horizon.mp3",
+   "file_sha256": "4f63de4704af7c50758a4a7ea273a3370c7860efe5ea5ab68f2b8e8caae333a0",
+   "file_bytes": 4273235,
+   "licence": "CC BY 4.0",
+   "licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html",
+   "note": "The source site states the music is not in Content ID. That is the publisher's statement, not a guarantee that no claim can occur."
+  }
+ ],
+ "required_credits": [
+  "Scenery built from map data \u00a9 OpenStreetMap contributors (ODbL). A stylised virtual journey, not real footage.",
+  "Music: \"Warm Horizon\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0: creativecommons.org/licenses/by/4.0/"
+ ],
+ "upload_description_block": "Scenery built from map data \u00a9 OpenStreetMap contributors (ODbL). A stylised virtual journey, not real footage.\nMusic: \"Warm Horizon\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0: creativecommons.org/licenses/by/4.0/",
+ "shots": [
+  {
+   "scene": "scenes/chicago_v3_lake.json",
+   "encoded": "output/cities/chicago/chicago_v3_lake_illustrated.mp4",
+   "sha256": "9ec196fb31cd81d450fd8a2bb1797cd2a4ca1854de66838db3454c0ec974c6c8"
+  },
+  {
+   "scene": "scenes/chicago_v3_wells_south.json",
+   "encoded": "output/cities/chicago/chicago_v3_wells_south_illustrated.mp4",
+   "sha256": "c1c93bc3a72bfaa96e7eb0a13b7d64c9a1c76af9da7ccfa2857647502912d0e2"
+  },
+  {
+   "scene": "scenes/chicago_v3_lake_south.json",
+   "encoded": "output/cities/chicago/chicago_v3_lake_south_illustrated.mp4",
+   "sha256": "1a3170e12c179adcaf5457ff504094a5a9218a179c28d430186eddc5c9cdc47c"
+  },
+  {
+   "scene": "scenes/chicago_v3_combined.json",
+   "encoded": "output/cities/chicago/chicago_v3_combined_illustrated.mp4",
+   "sha256": "c19707083a5b93378632b86c03d3b82f30772492f96e201f1fda29d5cf6e3132"
+  }
+ ]
+}
