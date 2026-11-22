@@ -15,9 +15,9 @@ replaces; nothing here is reversed silently.
   parallax was rejected earlier as a loop of 3D-rendered strips; with painted
   artwork and a non-repeating route it is now the approved direction.
 * **Chicago:** a 300 s illustrated master and two 25 s verticals exist and pass the
-  automated audio and video gates. **Not release-ready:** the owner has not yet
-  watched it through, and rights closeout is incomplete (see
-  `data/illustrated/chicago_rights_manifest.json`). Cities approved for release: 0.
+  automated audio and video gates. Visually approved by the owner at 21:35 UTC (entry below). Publishing
+  still needs a channel and go-live; rights closeout is incomplete (see
+  `data/illustrated/chicago_rights_manifest.json`). Cities visually approved: 1. Published: 0.
 * **Spend:** 7 image calls, 1.25 USD computed, of a one-time 4 USD ceiling. Billed
   amount unverified. Plus the 4 earlier test calls (about 0.70 USD computed).
 * **Hard gates, unchanged:** no further spend, no paid infrastructure, no merge, no
@@ -25,6 +25,22 @@ replaces; nothing here is reversed silently.
   city, without the owner's explicit approval.
 * **Durability:** full-resolution masters are on a temporary build disk and in the
   files sent to the owner; no durable storage is approved.
+
+## Chicago visually approved — 2026-11-22 21:35 UTC (relayed on PR #1, comment 7086115277)
+
+Relayed as the owner's words after watching the corrected video: "Chicago looks
+good let's move on to the next. I'll get the channels created so they can get
+the long form and shorts posted."
+
+* **Approved:** the corrected 300 s illustrated Chicago, master SHA-256
+  `a2b52ffd78d4d1947cbf2d47913ebb7a4e663fe2a8ea17bd2d58921686d15adc`, and its two verticals.
+  Chicago is frozen; no further changes.
+* **Not yet authorised:** publishing. That needs the new LofiTrain YouTube and
+  TikTok accounts connected, the channel identified, and an explicit go-live from
+  the owner in the agent session. Nothing goes to existing unrelated channels.
+* Cities approved for visual quality: 1 (Chicago). Published: 0.
+* Next: Denver, Paris, Tokyo (art bought, 2.14 USD computed of a 3 USD ceiling),
+  then a four-city comparison for visual distinctiveness.
 
 ## Channel cadence and livestream window — 2026-11-22 20:45 UTC (relayed on PR #1, comments 7085461103 and 7085486398)
 
