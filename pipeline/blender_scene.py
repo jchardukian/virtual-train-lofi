@@ -585,7 +585,12 @@ cam.rotation_euler = look.to_track_quat("-Z", "Y").to_euler()
 f0, f1 = (int(x) for x in A.frames.split("-"))
 n_total = int(round(C["duration_s"] * fps))
 rail_z = path["rail_top_z"]
-for f in range(-1, n_total + 2):
+# Key only the frames this run renders (plus neighbours for motion blur): keying a whole
+# five-minute shot for every 60-frame chunk would cost minutes per chunk.
+_wanted = set()
+for _f in range(f0, f1 + 1, max(1, A.step)):
+    _wanted.update((_f - 1, _f, _f + 1))
+for f in sorted(_wanted):
     t = f / fps
     s = s0 + C["speed_mps"] * t
     p = at(s)
@@ -609,7 +614,7 @@ for f in range(-1, n_total + 2):
         root.keyframe_insert("location", frame=f)
         root.keyframe_insert("rotation_euler", frame=f)
 for root, b in BOATS:
-    for f in (-1, n_total + 1):
+    for f in (min(_wanted), max(_wanted)):
         x = b["x0"] + b["speed_mps"] * f / fps
         y = float(np.interp(x, rc[:, 0], rc[:, 1])) + b.get("offset", 0.0)
         y2 = float(np.interp(x + 5, rc[:, 0], rc[:, 1])) + b.get("offset", 0.0)

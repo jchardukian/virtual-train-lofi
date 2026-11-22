@@ -332,13 +332,16 @@ def main():
     by_id = {r["id"]: r["p"] for r in geo["rail"]}
     tracks = []
     for spec in scene["rail"]["tracks"]:
+        if "points" in spec:               # an invented alignment (fictional route), given directly in scene metres
+            tracks.append([tuple(q) for q in spec["points"]])
+            continue
         pts = []
         for wid in spec["ways"]:
             seg = by_id[wid.lstrip("-")]
             seg = seg[::-1] if wid.startswith("-") else seg
             pts += seg if not pts or math.dist(pts[-1], seg[0]) > 0.5 else seg[1:]
         tracks.append(pts)
-    used = {w.lstrip("-") for s in scene["rail"]["tracks"] for w in s["ways"]}
+    used = {w.lstrip("-") for s in scene["rail"]["tracks"] for w in s.get("ways", [])}
     others = [r["p"] for r in geo["rail"] if r["kind"] == "subway" and r["bridge"] and r["id"] not in used]
 
     deckm, steel, wood = Mesh(), Mesh(), Mesh()

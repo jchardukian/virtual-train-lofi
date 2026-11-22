@@ -25,30 +25,38 @@
      "scene": "scenes/chicago_v3_lake_south.json",
      "style": "illustrated",
      "frames_dir": "work/frames/lake_south"
+    },
+    {
+     "scene": "scenes/chicago_v3_riverfront.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/riverfront"
     }
    ],
    "edit_order": [
-    "scenes/chicago_v3_lake.json",
-    "scenes/chicago_v3_wells_south.json",
     "scenes/chicago_v3_lake_south.json",
+    "scenes/chicago_v3_lake.json",
+    "scenes/chicago_v3_riverfront.json",
+    "scenes/chicago_v3_wells_south.json",
     "scenes/chicago_v3_combined.json"
    ],
    "music": [
     "https://purrplecat-audio.pages.dev/audio/mellow-skies/01-warm-horizon.mp3",
-    "https://purrplecat-audio.pages.dev/audio/happy-place/01-daydreams.mp3"
+    "https://purrplecat-audio.pages.dev/audio/happy-place/01-daydreams.mp3",
+    "https://purrplecat-audio.pages.dev/audio/above-the-clouds/01-flying.mp3"
    ],
    "verticals": [
     [
-     2.0,
-     0.42,
-     19.0
+     60.0,
+     0.45,
+     25.0
     ],
     [
-     21.5,
+     150.0,
      0.45,
-     24.0
+     25.0
     ]
-   ]
+   ],
+   "route_note": "The long riverfront shot follows an invented elevated alignment along the south bank; no such CTA line exists. Other shots follow real track."
   },
   {
    "id": "tokyo",
