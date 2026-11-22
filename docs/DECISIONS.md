@@ -4,56 +4,41 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
-## Current direction (as of 2026-11-22)
+## Current direction (as of 2026-11-22, late)
 
-1. **Production method:** real, commercially usable footage is the primary
-   method. Procedural Blender city production is paused.
-2. **Format:** a cinematic virtual train journey — passenger view, exterior
-   train shots, landmarks and city scenery — not one continuous five-minute
-   passenger recording.
-3. **Scaling is on hold.** No further stock-compilation episodes, major
-   renders or purchases until an affordable, repeatable, visually consistent,
-   commercially usable architecture for about 200 destinations is validated.
-   The 10-destination audit is complete and accepted as a **negative
-   screening result**, not proof that no free footage exists.
-   **Approved next step (no cost):** a decision-grade source acquisition
-   feasibility brief — the 3-5 most promising Commons ride files inspected as
-   far as possible, 2-3 paid/licensed/commissioned routes with indicative
-   prices and rights, a comparison against the $250/month budget and the
-   ~200-destination vision, and one cheap bounded proof-of-concept test with
-   go/no-go criteria. No vendor contact, no spend.
-3b. **Rejected as defaults:** generic city-scenery montages (abandons the
-   train-window differentiation, keeps the reused-content risk); restarting
-   the CPU Blender route; paying for or commissioning footage *yet*.
-3c. **Wording rule:** audit clips were downloaded, probed and sampled at four
-   still frames each. They were not watched at speed. Reports say "probed and
-   frame-sampled", not "watched" or "verified in motion".
-3a. **Chicago journey v1 is not approved for publication.** 15 s of passenger
-   view in 300 s and mixed seasons and light do not make a coherent premium
-   train journey. No further compilations by the same approach until the
-   audit reports. Reused-content eligibility is unproven whatever the licences.
-4. **Barcelona and Tokyo:** not started.
-5. **Money:** nothing is spent, rented or subscribed without owner approval.
-6. **PR #1:** stays unmerged until the owner approves.
-7. **Coordination:** GitHub is the source of truth. Progress, findings and
-   blockers go on PR #1 as comments; code, evidence, benchmarks and licence
-   records go on the branch.
+**Source of this direction:** PR #1 comment 7074086163, posted from the
+owner's GitHub account and headed "Owner decision". It supersedes the
+feasibility-gate request (comment 7074070619) and pauses the source
+acquisition brief (comment 7074048701). The implementation agent has acted
+on it; the owner has not yet confirmed it to the agent directly.
+
+1. **Production method:** return to the stylised Chicago scene (about 6/10
+   visually) and make it economical. Re-evaluation and a proof are
+   authorised; **production is not.**
+2. **Technique:** a short seamless train-window loop built from a few still
+   layer renders scrolled as parallax, looped at streaming time. Not the
+   12 s/frame 3D render, and not hours of unique frames.
+3. **Paused, preserved:** the source acquisition brief (Commons ride files,
+   paid routes), real-footage episodes, the Chicago journey v1 compilation.
+4. **Not authorised:** new episodes, long renders, GPU rental,
+   subscriptions, purchases, vendor contact, publication, merging PR #1.
+5. **Honesty rule:** the look is described as a stylised virtual journey
+   built from map data, never as real footage.
+6. **Barcelona and Tokyo:** not started.
+7. **Coordination:** GitHub PR #1 is the shared channel; this file is the
+   decision record.
 8. **Large masters:** no more large media in Git history. The four parts of
-   the journey v1 master stay in place for now; history is not rewritten and
-   the parts are not deleted (deleting them in a new commit would not shrink
-   the repository). Storage is revisited only after a separate durable copy
-   is verified. Rebuild: `cat chicago_journey_v1.mp4.part* >
-   chicago_journey_v1.mp4 && sha256sum -c SHA256SUMS` in
-   `output/masters/chicago_journey_v1/`; SHA-256
-   `c5e35d5c8cdd4cc273460952972e8ba8ceeab37da4dac955b8ac3cda43ea45ed`.
-9. **Owner inputs:** API keys or the Wikimedia download are not prerequisites.
-   If one would remove a documented audit blocker, the report says exactly
-   what it unlocks. Credentials are never requested in PR comments.
+   the journey v1 master stay in place; history is not rewritten. Rebuild:
+   `cat chicago_journey_v1.mp4.part* > chicago_journey_v1.mp4 && sha256sum
+   -c SHA256SUMS` in `output/masters/chicago_journey_v1/`.
+9. **Wording rule:** audit clips were probed and frame-sampled, not watched
+   at speed; reports say so.
 
 ## Log
 
 | Date | Decision | Why | Replaces |
 |---|---|---|---|
+| 2026-11-22 | Return to stylised Chicago; build a cheap seamless loop proof from existing assets; brief paused; no production | PR #1 comment 7074086163 (owner's account, "Owner decision"); owner prefers a recognisable stylised city over more sourcing | "Real footage is primary"; the source acquisition brief; the one-hour feasibility gate |
 | 2026-11-22 | Audit accepted as negative screening; next action is a source acquisition feasibility brief; city-montage format rejected as default; no episodes, renders, spend or merge | Review on PR #1 (comment 7074048701) | Open issue O5 options (a)-(c) as posed |
 | 2026-11-22 | O1 resolved for now: leave the split master in place, no history rewrite, no more large media in Git | Review on PR #1 (comment 7073715437) | Open issue O1 |
 | 2026-11-22 | Approved: bounded 10-destination supply/consistency audit from keyless sources; verified playable seconds only | Review on PR #1 | Proposed audit that depended on keys |
@@ -69,6 +54,9 @@ replaces; nothing here is reversed silently.
 
 | Item | Path | Status |
 |---|---|---|
+| Chicago seamless loop v1, 90 s, stylised parallax | `output/samples/chicago_loop_v1_720p.mp4`, `scenes/chicago_loop_v1.json`, `pipeline/parallax_loop.py` | Awaiting owner review of the visual |
+| Paid footage routes research (input to the paused brief) | `docs/paused/PAID_ROUTES_RESEARCH.md` | Paused, not reviewed |
+| Still frames sampled from Commons ride videos | `data/audit/commons_frames/` | Paused; Chicago Green Line file looks promising |
 | Chicago journey v1, 5:00, real footage + music | `output/masters/chicago_journey_v1/`, `output/samples/chicago_journey_v1_720p.mp4` | Not approved for publication |
 | Ten-destination supply audit | `docs/SUPPLY_AUDIT.md`, `data/audit/` | Complete; direction decision pending |
 | Chicago source library | `docs/CHICAGO_SOURCE_LIBRARY.md` | Current |

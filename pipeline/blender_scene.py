@@ -29,6 +29,7 @@ ap.add_argument("--samples", type=int)
 ap.add_argument("--scale", type=int, default=100)
 ap.add_argument("--save-blend")
 ap.add_argument("--no-render", action="store_true")
+ap.add_argument("--layers", action="store_true", help="render the orthographic depth-layer strips for the parallax loop")
 ap.add_argument("--engine", default=None, choices=["CYCLES", "EEVEE"])
 A = ap.parse_args(argv)
 S = json.loads(pathlib.Path(A.scene).read_text())
@@ -764,6 +765,48 @@ ct.link(fac2.outputs[0], hz.inputs[0])
 ct.link(rl.outputs["Image"], hz.inputs[1])
 comp = ct.n("CompositorNodeComposite")
 ct.link(hz.outputs[0], comp.inputs[0])
+
+if A.layers:
+    # Orthographic elevation strips, one per depth slab, with alpha. They are
+    # scrolled at different speeds by pipeline/parallax_loop.py: a handful of
+    # still renders instead of thousands of 3D frames.
+    L = S["layers"]
+    scn.use_nodes = False
+    r.film_transparent = True
+    r.image_settings.color_mode = "RGBA"
+    r.use_motion_blur = False
+    ee.use_motion_blur = False
+    ee.taa_render_samples = L.get("samples", 16)
+    for m_ in bpy.data.materials:
+        m_.use_backface_culling = True
+    x0, x1, cam_y = L["x0"], L["x1"], L["cam_y"]
+    od = bpy.data.cameras.new("ortho")
+    od.type = "ORTHO"
+    oc = bpy.data.objects.new("ortho", od)
+    scn.collection.objects.link(oc)
+    scn.camera = oc
+    oc.rotation_euler = (math.pi / 2, 0, 0)
+    outd = ROOT / L["out_dir"]
+    outd.mkdir(parents=True, exist_ok=True)
+    meta = []
+    for sl in L["slabs"]:
+        ppm = L["focal_px"] / sl["ref_depth"]
+        wpx, hpx = int(round((x1 - x0) * ppm)), int(round((sl["z_max"] - sl["z_min"]) * ppm))
+        r.resolution_x, r.resolution_y, r.resolution_percentage = wpx, hpx, 100
+        od.ortho_scale = max(x1 - x0, sl["z_max"] - sl["z_min"])
+        od.clip_start, od.clip_end = sl["y_lo"] - cam_y, sl["y_hi"] - cam_y
+        oc.location = ((x0 + x1) / 2, cam_y, (sl["z_min"] + sl["z_max"]) / 2)
+        scn.frame_set(0)
+        r.filepath = str(outd / f"layer_{sl['name']}.png")
+        import time as _t
+        t0 = _t.time()
+        bpy.ops.render.render(write_still=True)
+        meta.append({**sl, "px_per_m": ppm, "width": wpx, "height": hpx, "render_s": round(_t.time() - t0, 1),
+                     "file": f"layer_{sl['name']}.png"})
+        print("LAYER", meta[-1], flush=True)
+    (outd / "layers.json").write_text(json.dumps({"x0": x0, "x1": x1, "cam_y": cam_y, "focal_px": L["focal_px"],
+                                                  "eye_z": L["eye_z"], "slabs": meta}, indent=1))
+    sys.exit(0)
 
 if A.save_blend:
     bpy.ops.wm.save_as_mainfile(filepath=str(pathlib.Path(A.save_blend).resolve()))
