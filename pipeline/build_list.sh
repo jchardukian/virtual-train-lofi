@@ -9,5 +9,5 @@ for c in "$@"; do
   if [ "${RENDER_SCALE:-2}" != "1" ]; then U=$(python3 pipeline/upscale_art.py $c 2>&1) || { echo "$c ART UPSCALE FAILED"; continue; }; echo "$U" | tail -1; fi
   read A B < <(python3 -c "import json;u=json.load(open('data/music/used.json'))['$c']['files'];print(u[0],u[1])")
   OUT=$(pipeline/illustrated_build.sh $c $A $B 2 150 2>&1); echo "$OUT" | grep -E "BUILT OK|FAILED|expected"
-  if echo "$OUT" | grep -q "BUILT OK"; then pipeline/archive_city.sh $c | tail -1 | tee /dev/stderr | grep -q " archived$" && rm -f output/cities/$c/illustrated/${c}_illustrated_video.mp4; else echo "$c FAILED"; fi
+  if echo "$OUT" | grep -q "BUILT OK"; then pipeline/archive_city.sh $c | tail -1 | tee /dev/stderr | grep -q " archived$" && rm -f output/cities/$c/illustrated/${c}_illustrated_video.mp4 output/cities/$c/illustrated/${c}_illustrated_master.mp4  # 4K masters live in the archive (disk); else echo "$c FAILED"; fi
 done
