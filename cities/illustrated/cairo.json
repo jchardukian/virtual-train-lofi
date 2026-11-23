@@ -1,0 +1,175 @@
+{
+ "city": "Cairo, Egypt",
+ "next": "Seattle, Washington",
+ "version": 3,
+ "season": "Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless",
+ "sky": "work/cities_v3/cairo/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/cairo/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    105.82683563232422,
+    118.50141906738281,
+    99.49778747558594
+   ],
+   [
+    88.18903350830078,
+    98.75119018554688,
+    82.91482543945312
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/cairo/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 14
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/cairo/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/cairo/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 713,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/cairo/sprites/local_0.png",
+     "scale": 1.0101010101010102,
+     "base": 834
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_0.png",
+     "scale": 1.7,
+     "base": 809
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/local_5.png",
+     "scale": 0.6289308176100629,
+     "base": 834
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_5.png",
+     "scale": 1.0867052023121386,
+     "base": 809
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cairo/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_1.png",
+     "scale": 0.912621359223301,
+     "base": 809
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/local_1.png",
+     "scale": 1.1278195488721805,
+     "base": 834
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cairo/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_2.png",
+     "scale": 1.100702576112412,
+     "base": 809
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/local_2.png",
+     "scale": 1.5544041450777202,
+     "base": 834
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cairo/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_3.png",
+     "scale": 1.2335958005249343,
+     "base": 809
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/local_3.png",
+     "scale": 1.2048192771084338,
+     "base": 834
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cairo/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/cairo/sprites/landmarks_4.png",
+     "scale": 1.0375275938189845,
+     "base": 809
+    },
+    {
+     "src": "work/cities_v3/cairo/sprites/local_4.png",
+     "scale": 0.8571428571428571,
+     "base": 834
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cairo/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

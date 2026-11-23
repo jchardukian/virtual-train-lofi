@@ -1,0 +1,165 @@
+{
+ "city": "Rio de Janeiro, Brazil",
+ "next": "Boston, Massachusetts",
+ "version": 3,
+ "season": "Rio de Janeiro on a bright, hot summer midday, vivid turquoise sea, lush green mountains, strong sunshine and crisp shadows, joyful and tropical",
+ "sky": "work/cities_v3/rio/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/rio/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    169.8735809326172,
+    178.67172241210938,
+    3.0960805416107178
+   ],
+   [
+    141.5613250732422,
+    148.8931121826172,
+    2.5800673961639404
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/rio/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 115
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/rio/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/rio/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 567,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/rio/sprites/landmarks_0a.png",
+     "scale": 1.246684350132626,
+     "base": 754
+    },
+    {
+     "src": "work/cities_v3/rio/sprites/local_0.png",
+     "scale": 0.7334963325183375,
+     "base": 779
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/rio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/rio/sprites/landmarks_0b.png",
+     "scale": 1.3823529411764706,
+     "base": 754
+    },
+    {
+     "src": "work/cities_v3/rio/sprites/local_1.png",
+     "scale": 0.8333333333333334,
+     "base": 779
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/rio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/rio/sprites/landmarks_1.png",
+     "scale": 1.4461538461538461,
+     "base": 754
+    },
+    {
+     "src": "work/cities_v3/rio/sprites/local_2.png",
+     "scale": 1.1111111111111112,
+     "base": 779
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/rio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/rio/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 754
+    },
+    {
+     "src": "work/cities_v3/rio/sprites/local_3.png",
+     "scale": 1.4018691588785046,
+     "base": 779
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/rio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/rio/sprites/landmarks_3.png",
+     "scale": 1.0151187904967602,
+     "base": 754
+    },
+    {
+     "src": "work/cities_v3/rio/sprites/local_4.png",
+     "scale": 0.55,
+     "base": 779
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/rio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

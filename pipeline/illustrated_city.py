@@ -83,7 +83,7 @@ class City:
         # weather: procedural particles between the scenery and the window glass
         self.weather = cfg.get("weather")
         rng = np.random.default_rng(7)
-        n = {"snow": 420, "leaves": 70, "petals": 110}.get(self.weather, 0)
+        n = {"snow": 420, "leaves": 70, "petals": 110, "rain": 260, "fireflies": 60}.get(self.weather, 0)
         self.px, self.py = rng.uniform(0, W, n), rng.uniform(0, H, n)
         self.pz = rng.uniform(0.3, 1.0, n)                   # depth: near flakes are bigger and faster
         self.pph = rng.uniform(0, 6.28, n)
@@ -233,6 +233,17 @@ class City:
             y = (self.py + (38 + 70 * self.pz) * t) % (H + 40) - 20
             for xi, yi, zi in zip(x.astype(int), y.astype(int), self.pz):
                 cv2.circle(img, (xi, yi), int(1 + 3 * zi), (250, 248, 245), -1, lineType=cv2.LINE_AA)
+        elif self.weather == "rain":           # fine slanted streaks, soft and cozy, not a storm
+            x = (self.px - 260 * t * self.pz) % (W + 60) - 30
+            y = (self.py + 900 * t * self.pz) % (H + 60) - 30
+            for xi, yi, zi in zip(x.astype(int), y.astype(int), self.pz):
+                cv2.line(img, (xi, yi), (int(xi - 6 * zi), int(yi + 26 * zi)), (225, 220, 215), 1, lineType=cv2.LINE_AA)
+        elif self.weather == "fireflies":      # warm glowing specks for summer nights
+            x = (self.px - 25 * t * self.pz + 30 * np.sin(t * 0.5 + self.pph)) % W
+            y = 500 + (self.py % 450) + 20 * np.sin(t * 0.8 + self.pph * 2)
+            glow = 0.5 + 0.5 * np.sin(t * 2.5 + self.pph * 3)
+            for xi, yi, g in zip(x.astype(int), y.astype(int), glow):
+                cv2.circle(img, (xi, yi), 3, (120 + 100 * g, 230, 255), -1, lineType=cv2.LINE_AA)
         elif self.weather == "petals":
             x = (self.px - (NEAR * 0.6 * self.pz + 15) * t + 35 * np.sin(t * 0.8 + self.pph)) % (W + 60) - 30
             y = (self.py + (22 + 35 * self.pz) * t + 18 * np.sin(t * 1.1 + self.pph)) % (H + 60) - 30

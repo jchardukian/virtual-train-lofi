@@ -1,0 +1,248 @@
+{
+ "chicago": {
+  "titles": [
+   "Warm Horizon",
+   "Daydreams"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "denver": {
+  "titles": [
+   "Flying",
+   "Sunlit Shore"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "paris": {
+  "titles": [
+   "Bookworm",
+   "Crescent Moon"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "tokyo": {
+  "titles": [
+   "Twilight Market",
+   "Night Train"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "nyc": {
+  "titles": [
+   "Streetlights",
+   "Snow Angels"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "alps": {
+  "titles": [
+   "Chasing Snowflakes",
+   "Snow Pillow"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "kyoto": {
+  "titles": [
+   "Green Tea",
+   "Morning Dew"
+  ],
+  "files": [],
+  "licence": "CC BY 4.0"
+ },
+ "san_francisco": {
+  "titles": [
+   "Spring Showers",
+   "Gentle Breeze"
+  ],
+  "albums": [
+   "Bloom",
+   "Mellow Skies"
+  ],
+  "files": [
+   "work/music_lib/Spring_Showers.mp3",
+   "work/music_lib/Gentle_Breeze.mp3"
+  ],
+  "durations_s": [
+   182.0,
+   196.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "amsterdam": {
+  "titles": [
+   "Wild Strawberry",
+   "Frolic"
+  ],
+  "albums": [
+   "Bloom",
+   "Bloom"
+  ],
+  "files": [
+   "work/music_lib/Wild_Strawberry.mp3",
+   "work/music_lib/Frolic.mp3"
+  ],
+  "durations_s": [
+   160.6,
+   163.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "new_orleans": {
+  "titles": [
+   "Solitude",
+   "Alley Cat"
+  ],
+  "albums": [
+   "City Nights",
+   "City Nights"
+  ],
+  "files": [
+   "work/music_lib/Solitude.mp3",
+   "work/music_lib/Alley_Cat.mp3"
+  ],
+  "durations_s": [
+   149.8,
+   176.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "cairo": {
+  "titles": [
+   "Golden Hour",
+   "Desert Rain"
+  ],
+  "albums": [
+   "Happy Place",
+   "Sands Of Time"
+  ],
+  "files": [
+   "work/music_lib/Golden_Hour.mp3",
+   "work/music_lib/Desert_Rain.mp3"
+  ],
+  "durations_s": [
+   194.7,
+   177.2
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "seattle": {
+  "titles": [
+   "After Hours",
+   "Turbulence"
+  ],
+  "albums": [
+   "Night Train",
+   "Above The Clouds"
+  ],
+  "files": [
+   "work/music_lib/After_Hours.mp3",
+   "work/music_lib/Turbulence.mp3"
+  ],
+  "durations_s": [
+   184.9,
+   201.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "rio": {
+  "titles": [
+   "Beach Bonfire",
+   "Beach Club"
+  ],
+  "albums": [
+   "Pelagic Journey",
+   "Happy Place"
+  ],
+  "files": [
+   "work/music_lib/Beach_Bonfire.mp3",
+   "work/music_lib/Beach_Club.mp3"
+  ],
+  "durations_s": [
+   182.8,
+   134.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "boston": {
+  "titles": [
+   "Nightfall",
+   "Fallen"
+  ],
+  "albums": [
+   "Sea Of Stars 2",
+   "Sea Of Stars 2"
+  ],
+  "files": [
+   "work/music_lib/Nightfall.mp3",
+   "work/music_lib/Fallen.mp3"
+  ],
+  "durations_s": [
+   146.8,
+   199.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "reykjavik": {
+  "titles": [
+   "Freezing Winds",
+   "Supernova"
+  ],
+  "albums": [
+   "Snowbound",
+   "Sea Of Stars"
+  ],
+  "files": [
+   "work/music_lib/Freezing_Winds.mp3",
+   "work/music_lib/Supernova.mp3"
+  ],
+  "durations_s": [
+   159.8,
+   160.1
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "miami": {
+  "titles": [
+   "Starlit Beach",
+   "Thunderous Waves"
+  ],
+  "albums": [
+   "Sea Of Stars 2",
+   "Eye Of The Storm"
+  ],
+  "files": [
+   "work/music_lib/Starlit_Beach.mp3",
+   "work/music_lib/Thunderous_Waves.mp3"
+  ],
+  "durations_s": [
+   173.9,
+   183.9
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "venice": {
+  "titles": [
+   "Cloud Watching",
+   "Dream State"
+  ],
+  "albums": [
+   "Indigo Dreams",
+   "Sleep Tight"
+  ],
+  "files": [
+   "work/music_lib/Cloud_Watching.mp3",
+   "work/music_lib/Dream_State.mp3"
+  ],
+  "durations_s": [
+   168.5,
+   147.4
+  ],
+  "licence": "CC BY 4.0"
+ }
+}

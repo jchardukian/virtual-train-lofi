@@ -1,0 +1,170 @@
+{
+ "city": "San Francisco, California",
+ "next": "Amsterdam, Netherlands",
+ "version": 3,
+ "season": "San Francisco on a fresh spring morning with soft fog lifting off the bay, pastel light, pale blue sky breaking through, green hills, cheerful and airy",
+ "sky": "work/cities_v3/san_francisco/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/san_francisco/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    120.89855194091797,
+    140.80943298339844,
+    160.3284912109375
+   ],
+   [
+    100.74879455566406,
+    117.34119415283203,
+    133.60708618164062
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/san_francisco/sprites/near_0.png",
+  "scale": 0.85,
+  "base": -49
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_francisco/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_francisco/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 732,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_francisco/sprites/local_0.png",
+     "scale": 0.6289308176100629,
+     "base": 841
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_0.png",
+     "scale": 0.8717156105100463,
+     "base": 816
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_5.png",
+     "scale": 1.6433566433566433,
+     "base": 816
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_francisco/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_1.png",
+     "scale": 0.8430493273542601,
+     "base": 816
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/local_1.png",
+     "scale": 0.6507592190889371,
+     "base": 841
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_francisco/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 816
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/local_2.png",
+     "scale": 0.646551724137931,
+     "base": 841
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_francisco/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_3.png",
+     "scale": 1.1691542288557213,
+     "base": 816
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/local_3.png",
+     "scale": 0.8314087759815243,
+     "base": 841
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_francisco/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_francisco/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 816
+    },
+    {
+     "src": "work/cities_v3/san_francisco/sprites/local_4.png",
+     "scale": 0.5703422053231939,
+     "base": 841
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_francisco/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

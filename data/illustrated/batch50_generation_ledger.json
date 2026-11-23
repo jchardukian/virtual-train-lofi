@@ -1,0 +1,937 @@
+{
+ "approval": "Owner approved in the agent session 60 USD for the next 50 cities (2026-11-23)",
+ "cap_usd": 60.0,
+ "computed_spend_usd": 10.6917,
+ "calls": [
+  {
+   "city": "amsterdam",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: a canal lined with tall narrow gabled canal houses, bicycles leaning on a hump-backed bridge with flower boxes, a canal boat gliding by, tulips in the foreground The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1706,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 170
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7194
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "amsterdam",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a breezy spring afternoon sky, bright blue with many puffy white cumulus clouds, a soft light near the bottom. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1700,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 164
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7188
+   },
+   "est_cost_usd": 0.1777
+  },
+  {
+   "city": "amsterdam",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a traditional Dutch windmill with white sails, 2) the Rijksmuseum with its towers, 3) a hump-backed canal bridge with flower boxes, 4) the Westerkerk church tower, 5) a long canal tour boat with glass roof, 6) a houseboat with plants on its deck. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1848,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 312
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7336
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "amsterdam",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a tall narrow canal house with a bell gable, 2) a canal house with a stepped gable, 3) a bicycle rack full of colourful bicycles, 4) a flower stall with tulips in buckets, 5) a cafe with outdoor tables, 6) a barrel organ on wheels, 7) an elm tree in fresh spring leaf. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1860,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 324
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7348
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "amsterdam",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): flat Dutch countryside with striped fields of red, yellow and pink tulips running to the horizon and a few windmills, under a wide sky. STRIP 2 (bottom): a continuous row of tall narrow brick canal houses with stepped and bell gables, white window frames, behind a canal edge with parked bicycles and young trees. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1840,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 304
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7328
+   },
+   "est_cost_usd": 0.1784
+  },
+  {
+   "city": "amsterdam",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Amsterdam, Netherlands: Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, a low railing along a canal with rows of red and yellow tulips and parked bicycles, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1785,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 249
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7273
+   },
+   "est_cost_usd": 0.1782
+  },
+  {
+   "city": "cairo",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Pyramids of Giza glowing gold at sunset beyond green palm groves and the Nile, a white-sailed felucca on the river in the foreground The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1703,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 167
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7191
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "cairo",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a hot hazy sunset sky, soft rose at the top fading into warm amber and gold near the bottom, light desert haze, no clouds. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1702,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 166
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7190
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "cairo",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Great Sphinx of Giza, 2) the Cairo Tower with its lattice shaft, 3) a mosque with a large dome and two slender minarets, 4) a white-sailed felucca boat, 5) the Citadel of Saladin with domes and minarets, 6) a stone obelisk. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1855,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 319
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7343
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "cairo",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a mud-brick house with a flat roof, 2) a market stall with lanterns and woven baskets, 3) a camel standing, 4) a small domed shrine, 5) a palm-shaded cafe with low stools, 6) a water wheel, 7) a tall date palm tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1850,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 314
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7338
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "cairo",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the three Pyramids of Giza and the Sphinx on the desert edge, with sand dunes, under warm sunset haze. STRIP 2 (bottom): a continuous bank of the Nile with tall date palms, green fields, small mud-brick farmhouses and moored feluccas. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1831,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 295
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7319
+   },
+   "est_cost_usd": 0.1784
+  },
+  {
+   "city": "cairo",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Cairo, Egypt: Cairo and the Nile at a hot, hazy golden sunset, warm amber and rose light, palm silhouettes, soft desert haze, calm and timeless. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, tall papyrus reeds and date palm fronds along the riverbank, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1779,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 243
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7267
+   },
+   "est_cost_usd": 0.1781
+  },
+  {
+   "city": "seattle",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Space Needle rising over the city on a misty rainy afternoon, Puget Sound with a green-and-white ferry, snowy Mount Rainier faint in the distance, wet evergreens in the foreground The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1713,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 177
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7201
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "seattle",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a soft rainy autumn sky, layered grey-blue clouds, a faint warm glow near the horizon, gentle drizzle. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1699,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 163
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7187
+   },
+   "est_cost_usd": 0.1777
+  },
+  {
+   "city": "seattle",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Space Needle, 2) a green-and-white Washington State ferry, 3) the Pike Place Market entrance with its clock (no readable text), 4) a tall Douglas fir, 5) the great wheel on the waterfront, 6) a red-brick lighthouse on a point. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1847,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 311
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7335
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "seattle",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a cozy coffee shop with steamy windows, 2) a craftsman house with a porch, 3) a red-brick warehouse, 4) a fishing boat at a dock, 5) an orange maple tree, 6) a totem-style carved wooden post, 7) a tall Douglas fir tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1854,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 318
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7342
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "seattle",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the Seattle skyline with the Space Needle by Puget Sound, and the snowy cone of Mount Rainier faint behind, misty and soft. STRIP 2 (bottom): a continuous waterfront of wooden piers, a ferry terminal, brick warehouses and dark evergreen trees with a few orange maples, wet and glistening. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1841,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 305
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7329
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "seattle",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Seattle, Washington: Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, wet ferns, dark green salal bushes and moss-covered rocks with raindrops, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1787,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 251
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7275
+   },
+   "est_cost_usd": 0.1782
+  },
+  {
+   "city": "reykjavik",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Hallgrimskirkja church tower above a snowy town of colourful houses with glowing windows, green northern lights rippling across the starry sky, the sea and snowy mountains beyond The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1710,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 174
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7198
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "reykjavik",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a deep navy winter night sky full of stars with ribbons of green and violet northern lights rippling across it. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1699,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 163
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7187
+   },
+   "est_cost_usd": 0.1777
+  },
+  {
+   "city": "reykjavik",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Hallgrimskirkja church tower, 2) the Harpa concert hall with glass facets, 3) the Sun Voyager steel ship sculpture, 4) a red-roofed white lighthouse, 5) a tall waterfall in snow, 6) a small wooden church with a red roof. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1849,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 313
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7337
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "reykjavik",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a red corrugated-iron house with a snowy roof, 2) a blue corrugated-iron house with lit windows, 3) a yellow house with lit windows, 4) a fishing boat in snow, 5) an Icelandic horse with a shaggy coat, 6) a stack of firewood under snow, 7) a small snowy birch tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1866,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 330
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7354
+   },
+   "est_cost_usd": 0.1786
+  },
+  {
+   "city": "reykjavik",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): snow-covered volcanic mountains across a dark calm sea under the night sky, softly lit by the aurora. STRIP 2 (bottom): a continuous row of small colourful Icelandic houses with snowy roofs and warm lit windows, on a snowy shore with black lava rocks. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1829,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 293
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7317
+   },
+   "est_cost_usd": 0.1784
+  },
+  {
+   "city": "reykjavik",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Reykjavik, Iceland: Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, snow-covered black lava rocks and tufts of frosted grass, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1782,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 246
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7270
+   },
+   "est_cost_usd": 0.1782
+  },
+  {
+   "city": "venice",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Grand Canal on a misty morning with gondolas moored at striped poles, pastel palazzi on both banks and the dome of Santa Maria della Salute in soft mist The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1705,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 169
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7193
+   },
+   "est_cost_usd": 0.1778
+  },
+  {
+   "city": "venice",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a misty winter morning sky, pearl grey at the top fading to a soft pale gold near the bottom, hazy and calm. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1700,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 164
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7188
+   },
+   "est_cost_usd": 0.1777
+  },
+  {
+   "city": "venice",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Campanile of St Mark's, 2) the Rialto Bridge, 3) Santa Maria della Salute with its dome, 4) a black gondola with a gondolier, 5) the Bridge of Sighs, 6) the Doge's Palace facade. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1844,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 308
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7332
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "venice",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a pink palazzo with arched windows, 2) a yellow palazzo with a balcony, 3) a small arched footbridge, 4) striped gondola mooring poles, 5) a cafe with outdoor tables under an arcade, 6) a street lamp on the waterfront, 7) a cypress tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1853,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 317
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7341
+   },
+   "est_cost_usd": 0.1785
+  },
+  {
+   "city": "venice",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the Venetian lagoon in mist with the bell tower and domes of St Mark's and distant church towers. STRIP 2 (bottom): a continuous row of pastel Gothic palazzi with pointed arched windows and balconies along a canal edge with gondola mooring poles. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1825,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 289
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7313
+   },
+   "est_cost_usd": 0.1784
+  },
+  {
+   "city": "venice",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Venice, Italy: Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, a stone canal edge with striped wooden mooring poles and a moored gondola, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1782,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 246
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7270
+   },
+   "est_cost_usd": 0.1782
+  },
+  {
+   "city": "boston",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "8aedd4ff738ab7da25cb9dc7f65db4470ac602b965905b191cb2661f68c0e966"
+  },
+  {
+   "city": "boston",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "06abfb3f05c5171280b8d8f9cdd32a326c51e02d4d34f3ff995190cac28b7e9c"
+  },
+  {
+   "city": "boston",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "a788d69f4f92b5656687b04bfc416c9e2b724dab26a8f8c948f673ffdad9ba96"
+  },
+  {
+   "city": "boston",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "32c6378245020f1cd3d14c71fb1d2f27f82949ed7c15857b101dedd87937ae49"
+  },
+  {
+   "city": "boston",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "4fba779e181148cc45791f39a4625c82dfed5860e06d618395360ecc4ec74586"
+  },
+  {
+   "city": "boston",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "3ee9cb3eef70f15ea21188babfa909d4900fcf0c96387e24b9c0bfd478cb2a49"
+  },
+  {
+   "city": "miami",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "79b496f8fcf4e1188032fd93aceb3d3b331a65f8200349fb68d5a0f7f88b79d9"
+  },
+  {
+   "city": "miami",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "52aa7983ad9784fa8a5f100e160da78b2b087a7641230d9b6b84523990311c42"
+  },
+  {
+   "city": "miami",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "02c20a4049602ea2d5d416fcd38aaa16df0af83b0c0c80dd1c58e63fe2d7ec7a"
+  },
+  {
+   "city": "miami",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "a59eb1fa719916370c1fa23eb26a376a68ca5c7759ac363c69771262e2928cd0"
+  },
+  {
+   "city": "miami",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "04e956ca013e996d7d20042c1a5341f3a2f856ab1da8050a7c0df53c5c779b15"
+  },
+  {
+   "city": "miami",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "46cf96dd33b3fca7fd8dd76755fac76a359d80243ced8a0aad066fae88c93527"
+  },
+  {
+   "city": "new_orleans",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "7cd0ad5045f34aec81a39f68ec2f238645ec8036048350cbc17575297aa33e73"
+  },
+  {
+   "city": "new_orleans",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "c1955ddc21f90532b1c09ca363432b56f03928a145f07511ec1455ffef5adbea"
+  },
+  {
+   "city": "new_orleans",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "6fb246204509dc9da4388787f7365b3e4b4b9ca1e114445d2ee8617e6a27d9ff"
+  },
+  {
+   "city": "new_orleans",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "b1539427807176e566369f6abdc72228a38b1b727a841c7ef3e322a0d43ad5a2"
+  },
+  {
+   "city": "new_orleans",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "d3d3dba3fec86b6212e663944500f6ee22a3d639ba4e685654225a6affd098dd"
+  },
+  {
+   "city": "new_orleans",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "368612f0d6422bca6f7ccbb0acd701d04a7f71d5e596ab77bd99a5c5d51b3034"
+  },
+  {
+   "city": "rio",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "53e9fe79017ec53e3e0fa1574bfff38b94ee67e73122a4035fdd4f8046bd0b59"
+  },
+  {
+   "city": "rio",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "a7df992a53f5a738a624cc9bf2d10a513324cdd30704703fe36cbd08c23d51f9"
+  },
+  {
+   "city": "rio",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "8fa6c353302fe9fe3f2ddb316e176e66d9cec313237ead7bb032c6ebfbb909c3"
+  },
+  {
+   "city": "rio",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "c16cef50e0a879a331b09e94862cd76c9431bef885d537cd778d9bb031d10a2e"
+  },
+  {
+   "city": "rio",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "efcc31c034be44dff21da0239d61281770af6e3ac6fe893e32d8b052808bed98"
+  },
+  {
+   "city": "rio",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "15986490cbff4952fc691a656dd81f273fccdfea9b89a88eff2fa486a8a39f15"
+  },
+  {
+   "city": "san_francisco",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "33749db64ae7474748c0b61781a1abf64fcbe85df8c0b2b117ce7a24d4fa322c"
+  },
+  {
+   "city": "san_francisco",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "5b219e5d47f22f1e87f36f958e0fdd764c4d3a46605d5fe2b29eeebc6398617a"
+  },
+  {
+   "city": "san_francisco",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "0339f1e038c69fbadd96d7cdda68f675cca757d37b7c746173c8b427b1636274"
+  },
+  {
+   "city": "san_francisco",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "7dfe3fe504ad431e4f6d8844ff0cc8eee9a2ae8d003723e08cac1ea15750af04"
+  },
+  {
+   "city": "san_francisco",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "d4b6357f5c8334bc901002ac7001c1993e1b65eed44963e367468e317333db07"
+  },
+  {
+   "city": "san_francisco",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "usage": null,
+   "est_cost_usd": 0.1782,
+   "note": "entry lost to a concurrent ledger write; call confirmed by the generated file; cost is the measured per-call average",
+   "sha256": "d7cadc6a393830edc6d5559112a29c4a87601ceaea060f8c79afa28e5c8f3584"
+  }
+ ]
+}

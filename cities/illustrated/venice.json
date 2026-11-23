@@ -1,0 +1,185 @@
+{
+ "city": "Venice, Italy",
+ "next": "Los Angeles, California",
+ "version": 3,
+ "season": "Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic",
+ "sky": "work/cities_v3/venice/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/venice/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    136.26805114746094,
+    140.46800231933594,
+    140.88966369628906
+   ],
+   [
+    113.55671691894531,
+    117.05667114257812,
+    117.4080581665039
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/venice/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 105
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/venice/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/venice/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 508,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/venice/sprites/local_0.png",
+     "scale": 0.6132879045996593,
+     "base": 756
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_0.png",
+     "scale": 0.8571428571428571,
+     "base": 731
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/local_5.png",
+     "scale": 0.783289817232376,
+     "base": 756
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_5.png",
+     "scale": 1.4156626506024097,
+     "base": 731
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/venice/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/venice/sprites/local_6.png",
+     "scale": 1.1076923076923078,
+     "base": 756
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_1.png",
+     "scale": 1.7,
+     "base": 731
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/local_1.png",
+     "scale": 0.6338028169014085,
+     "base": 756
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/venice/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/venice/sprites/local_7.png",
+     "scale": 0.861244019138756,
+     "base": 756
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_2.png",
+     "scale": 1.3055555555555556,
+     "base": 731
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 756
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/venice/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 731
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/local_3.png",
+     "scale": 1.2949640287769784,
+     "base": 756
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/venice/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/venice/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 731
+    },
+    {
+     "src": "work/cities_v3/venice/sprites/local_4.png",
+     "scale": 1.2811387900355873,
+     "base": 756
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/venice/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}
