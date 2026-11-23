@@ -1,7 +1,7 @@
 #!/bin/bash
 # Copy a built city's master and Shorts to the private archive bucket, verifying each by download and SHA-256.
 # Files over 290 MB are stored as 200 MB parts (the API route available here rejects larger single uploads);
-# rejoin with cat. Usage: pipeline/archive_city.sh <city>
+# rejoin with cat. Also stores the city's source art. Usage: pipeline/archive_city.sh <city> [--art-only]
 set -uo pipefail
 cd "$(dirname "$0")/.."
 C=$1; D=output/cities/$C/illustrated
@@ -16,7 +16,8 @@ put() {  # local file, object name
   want=$(sha256sum "$1" | cut -d' ' -f1); got=$(curl -sS --retry 3 "$U/$2" -H "$H" | sha256sum | cut -d' ' -f1)
   [ "$code" = "200" ] && [ "$want" = "$got" ] && echo "  $2 ok" || { echo "  $2 FAILED ($code)"; ok=0; }
 }
-for f in "$D"/${C}_illustrated_master.mp4 "$D"/${C}_illustrated_vertical_1.mp4 "$D"/${C}_illustrated_vertical_2.mp4 "$D"/SHA256SUMS; do
+[ "${2:-}" = "--art-only" ] && VIDEOS="" || VIDEOS=1
+for f in ${VIDEOS:+"$D"/${C}_illustrated_master.mp4} ${VIDEOS:+"$D"/${C}_illustrated_vertical_1.mp4 "$D"/${C}_illustrated_vertical_2.mp4 "$D"/SHA256SUMS}; do
   [ -f "$f" ] || { echo "  missing $f"; ok=0; continue; }
   n=$(basename "$f")
   if [ $(stat -c %s "$f") -gt 304087040 ]; then
@@ -24,4 +25,10 @@ for f in "$D"/${C}_illustrated_master.mp4 "$D"/${C}_illustrated_vertical_1.mp4 "
     for p in "$T"/*; do put "$p" "$(basename "$p")"; done; rm -rf "$T"
   else put "$f" "$n"; fi
 done
+# the city's generated source art (paid images, cut sprites), so it can be re-composed later
+if [ -d work/cities_v3/$C ]; then
+  T=$(mktemp -d); tar -czf "$T/${C}_source_art.tar.gz" --exclude='*.bak.png' -C work/cities_v3 "$C" || { echo "  source art tar FAILED"; ok=0; }
+  [ $(stat -c %s "$T/${C}_source_art.tar.gz") -gt 100000 ] || { echo "  source art too small"; ok=0; }
+  put "$T/${C}_source_art.tar.gz" "${C}_source_art.tar.gz"; rm -rf "$T"
+fi
 [ $ok = 1 ] && echo "$C archived" || echo "$C ARCHIVE INCOMPLETE"
