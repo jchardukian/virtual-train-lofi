@@ -5,11 +5,14 @@
   "buffer_post_id": "6b0384d9d5eabfb8ccee6db4",
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-22T20:30:00-06:00",
-  "status": "scheduled",
+  "status": "published",
   "media_sha256": "744f9e65d9bc91b006f65843c0e10dfac39702a0a452077fa92da6429630ca5c",
-  "delivery_object": "lofitrain-delivery/<random prefix>/chicago-short-1.mp4 (to delete after YouTube ingestion is confirmed)",
+  "delivery_object": "deleted after publication was confirmed",
   "authorised": "owner, in the agent session: 'Yes to storage and yes to posting tonight'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "youtube_url": "https://www.youtube.com/shorts/7NQ5o5gZOtI",
+  "sent_at": "2026-11-23T02:30:13Z",
+  "verified": "YouTube API: public, processed, 26 s, channel UCLjE-J4o5HSXz1cCokDdZbQ"
  },
  {
   "city": "chicago",
