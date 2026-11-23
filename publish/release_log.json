@@ -37,5 +37,40 @@
   "thumbnail": "NOT set: 403, the channel is not yet allowed custom thumbnails (YouTube phone verification)",
   "authorised": "owner, in the agent session: 'get the other short and long form scheduled tomorrow'",
   "preflight": "passed"
+ },
+ {
+  "city": "london",
+  "item": "short_1",
+  "buffer_post_id": "6b04b94bf72f10e188383e00",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-11-24T11:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "859589c444cb9d160ccaa39e024d3cd55cd0287a1071ed96f100342e624122ed",
+  "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
+  "preflight": "passed"
+ },
+ {
+  "city": "london",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/youtube_upload.py), direct upload",
+  "youtube_video_id": "YHUYkbEgrHo",
+  "url": "https://youtu.be/YHUYkbEgrHo",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-24T18:00:00-06:00",
+  "media_sha256": "9d270908343924f28229232d83f7f6a7395407d7a902ba61e033e9312a87ba38",
+  "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
+  "preflight": "passed"
+ },
+ {
+  "city": "london",
+  "item": "short_2",
+  "buffer_post_id": "6b04b94e18db0405bdaa4d36",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-11-24T20:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "52dbbbb7a5a742c45df00f1d7a8f02821daaee308099e42bb086442770f4647a",
+  "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
+  "preflight": "passed"
  }
 ]

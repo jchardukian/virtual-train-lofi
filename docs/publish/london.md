@@ -1,4 +1,4 @@
-# London — publish package (draft, NOT scheduled)
+# London — publish package (SCHEDULED 2026-11-23: Short 1 Tue 11:30 CT, long-form YHUYkbEgrHo Tue 18:00 CT, Short 2 Tue 20:30 CT)
 
 Proposed: Tue 24 Nov 2026 — Short 1 11:30 CT, long-form 18:00 CT, Short 2 20:30 CT. Needs the owner's go.
 
