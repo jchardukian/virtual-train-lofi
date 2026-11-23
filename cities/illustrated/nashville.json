@@ -27,8 +27,8 @@
  },
  "near": {
   "src": "work/cities_v3/nashville/sprites/near_0.png",
-  "scale": 0.85,
-  "base": 116
+  "scale": 1.62,
+  "base": -5
  },
  "treewall_cfg": {
   "src": "work/cities_v3/nashville/sprites/local_0.png",

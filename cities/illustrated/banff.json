@@ -27,7 +27,7 @@
  },
  "near": {
   "src": "work/cities_v3/banff/sprites/near_0.png",
-  "scale": 0.893,
+  "scale": 1.353,
   "base": -5
  },
  "treewall_cfg": {
