@@ -55,4 +55,5 @@ def build_day(record, existing, limits):
     payloads = [{"channelId": ch["buffer_channel_id"], "schedulingType": "automatic", "mode": "customScheduled", "dueAt": it["due_at"],
                  "text": it["description"], "assets": [{"video": {"url": it["media_url"]}}],
                  "metadata": {"youtube": {"title": it["title"], "categoryId": "10", "privacy": "public", "madeForKids": False,
-                                          "isAiGenerated": False, return {"ok": True, "violations": [], "payloads": payloads}
+                                          "isAiGenerated": False, "license": "youtube"}}} for it in record["items"]]
+    return {"ok": True, "violations": [], "payloads": payloads}
