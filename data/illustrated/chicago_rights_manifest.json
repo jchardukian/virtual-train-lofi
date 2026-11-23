@@ -97,7 +97,7 @@
   "tiktok": "Support page 'About AI-generated content', read via search summary: labelling is required for AI-generated content showing realistic images, audio or video. Nothing found addressing stylised animation directly. Recommend applying the AI-generated label anyway.",
   "verified_in_full": false
  },
- "labelling": "Describe as a stylised, AI-illustrated journey inspired by Chicago. Never as a real route or real footage.",
+ "labelling": "Describe as a stylised, illustrated journey inspired by Chicago. Never as a real route or real footage.",
  "blockers_before_release": [
   "owner watch-through and approval",
   "provider terms read in full by a person",
@@ -105,5 +105,6 @@
   "actual billed amount confirmed",
   "landmark check by someone who knows Chicago",
   "durable storage of the masters"
- ]
+ ],
+ "public_wording": "Owner decision 2026-11-22: no AI label on videos and no mention of AI in titles or descriptions, until the owner says otherwise. Descriptions still say the artwork is illustrated and not real footage."
 }

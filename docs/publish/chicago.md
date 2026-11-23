@@ -14,7 +14,7 @@ agent session, and the open items at the bottom closed.
 ```
 Settle into a window seat for a slow, golden-hour train ride through an illustrated Chicago: the river and Marina City, the towers of the Loop, the lakefront, brick neighbourhoods and out to the edge of the city, with warm chillhop the whole way.
 
-This is a stylised, illustrated journey inspired by Chicago. It is not a real route or real footage, and the artwork was created with AI image tools.
+This is a stylised, illustrated journey inspired by Chicago. It is not a real route or real footage.
 
 0:00 Riverfront and Marina City
 1:00 The Loop: Wrigley Building, Tribune Tower, Willis Tower
@@ -37,11 +37,11 @@ Next stop: coming soon.
 
 ## Short 1 (0:25, 1080x1920) — riverfront
 **Title:** Golden hour train ride past Marina City 🚆 #lofi #chicago #shorts
-**Description:** A cozy illustrated train-window ride along the Chicago River. Stylised, AI-illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
+**Description:** A cozy illustrated train-window ride along the Chicago River. Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
 
 ## Short 2 (0:25, 1080x1920) — lakefront
 **Title:** Lofi train window: Chicago's lakefront at sunset 🌇 #lofi #chicago #shorts
-**Description:** Field Museum, Buckingham Fountain and the lake from a train window. Stylised, AI-illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
+**Description:** Field Museum, Buckingham Fountain and the lake from a train window. Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
 
 (TikTok is deferred; these two clips are YouTube Shorts only for now.)
 

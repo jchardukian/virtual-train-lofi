@@ -30,8 +30,9 @@ replaces; nothing here is reversed silently.
 ## No on-video AI label — 2026-11-23 00:25 UTC
 
 The owner said in the agent session that they do not want the AI label shown on the video;
-the description may say what it likes. YouTube's altered/synthetic-content flag is therefore
-off on all uploads. Basis as understood from a summary of YouTube's help page (not read in
+and then that descriptions should not say AI either, on any video, until they change their mind.
+YouTube's altered/synthetic-content flag is therefore off on all uploads and titles and
+descriptions do not mention AI. Basis as understood from a summary of YouTube's help page (not read in
 full): the flag is required for realistic content and clearly animated content is exempt.
 Descriptions keep a line saying the artwork is illustrated and not real footage. Applied to
 the scheduled Chicago Short 1.

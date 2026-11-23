@@ -54,11 +54,12 @@
  "music_licence_evidence": "licenses/snapshots/freelofi.com_2026-11-22.html",
  "music_changes": "Silent ends trimmed, tracks cross-faded, loudness-normalised and faded.",
  "required_credits": "Music: 'Bookworm' and 'Crescent Moon' by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.",
- "labelling": "A stylised, AI-illustrated journey inspired by Paris. Never a real route or real footage.",
+ "labelling": "A stylised, illustrated journey inspired by Paris. Never a real route or real footage.",
  "blockers_before_release": [
   "owner review and approval",
   "provider terms and platform AI-content policies read in full",
   "landmark check by someone who knows the city",
   "durable storage of the masters"
- ]
+ ],
+ "public_wording": "Owner decision 2026-11-22: no AI label on videos and no mention of AI in titles or descriptions, until the owner says otherwise. Descriptions still say the artwork is illustrated and not real footage."
 }
