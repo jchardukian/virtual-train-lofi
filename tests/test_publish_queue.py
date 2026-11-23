@@ -39,6 +39,14 @@ class T(unittest.TestCase):
         rec = copy.deepcopy(REC); rec["items"][0]["description"] = "no credit here"
         self.assertFalse(Q.build_day(rec, [], LIM)["ok"])
 
+    def test_missing_blurb(self):
+        lim = copy.deepcopy(LIM); lim["channel_blurb"] = "Lofi Train POV: cozy rides."
+        self.assertFalse(Q.build_day(REC, [], lim)["ok"])
+
+    def test_ai_wording_refused(self):
+        rec = copy.deepcopy(REC); rec["items"][0]["description"] = DESC + " AI-illustrated artwork."
+        self.assertFalse(Q.build_day(rec, [], LIM)["ok"])
+
     def test_duplicate_of_existing(self):
         ex = [{"kind": "youtube_long", "channel_id": "yt1", "due_at": "2026-11-20T18:00:00-06:00", "title": "t2"}]
         self.assertFalse(Q.build_day(REC, ex, LIM)["ok"])

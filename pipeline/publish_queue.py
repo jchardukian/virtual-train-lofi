@@ -43,6 +43,10 @@ def build_day(record, existing, limits):
             bad.append(f"{label}: missing title or description")
         elif "Purrple Cat" not in it["description"] or "CC BY 4.0" not in it["description"]:
             bad.append(f"{label}: description lacks the music credit")
+        elif limits.get("channel_blurb") and limits["channel_blurb"] not in it["description"]:
+            bad.append(f"{label}: description lacks the channel blurb")
+        elif "AI" in it["description"].split() or "AI" in it["title"].split() or "AI-" in it["description"]:
+            bad.append(f"{label}: title or description mentions AI (owner rule)")
         if it.get("title") in seen_titles or url in seen_urls:
             bad.append(f"{label}: duplicate of a post already scheduled or sent")
         seen_titles.add(it.get("title")); seen_urls.add(url)

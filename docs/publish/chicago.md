@@ -16,6 +16,8 @@ Settle into a window seat for a slow, golden-hour train ride through an illustra
 
 This is a stylised, illustrated journey inspired by Chicago. It is not a real route or real footage.
 
+Lofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.
+
 0:00 Riverfront and Marina City
 1:00 The Loop: Wrigley Building, Tribune Tower, Willis Tower
 2:00 Lakefront: Navy Pier, Field Museum, Buckingham Fountain, Adler Planetarium
@@ -37,11 +39,11 @@ Next stop: coming soon.
 
 ## Short 1 (0:25, 1080x1920) — riverfront
 **Title:** Golden hour train ride past Marina City 🚆 #lofi #chicago #shorts
-**Description:** A cozy illustrated train-window ride along the Chicago River. Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
+**Description:** A golden-hour train ride along the Chicago River, past Marina City and the river bridges, with warm lofi beats. [channel blurb] Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
 
 ## Short 2 (0:25, 1080x1920) — lakefront
 **Title:** Lofi train window: Chicago's lakefront at sunset 🌇 #lofi #chicago #shorts
-**Description:** Field Museum, Buckingham Fountain and the lake from a train window. Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
+**Description:** Chicago's lakefront at sunset from a train window: the Field Museum, Buckingham Fountain and Lake Michigan, with warm lofi beats. [channel blurb] Stylised illustrated artwork; not real footage. Music: "Warm Horizon" by Purrple Cat (purrplecat.com), CC BY 4.0, trimmed.
 
 (TikTok is deferred; these two clips are YouTube Shorts only for now.)
 
@@ -85,3 +87,6 @@ Settings: category Music (10), public, not made for kids, AI-generated flag off 
 **Limit enforcement:** `pipeline/publish_preflight.py` passes for this plan only once go-live is set
 and the channel id above is supplied; it refuses a second long-form, a third Short, any TikTok post,
 or any other channel. It is called by hand; there is no automatic scheduler.
+
+
+**Channel blurb, included in every description:** Lofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.
