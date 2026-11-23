@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 566,
+   "base": 634,
    "alpha": 1.0
   }
  ],
@@ -86,11 +86,6 @@
   {
    "name": "part 2",
    "mid": [
-    {
-     "src": "work/cities_v3/seattle/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 753
-    },
     {
      "src": "work/cities_v3/seattle/sprites/local_1.png",
      "scale": 0.78125,
@@ -134,11 +129,6 @@
      "src": "work/cities_v3/seattle/sprites/landmarks_3.png",
      "scale": 0.9276315789473685,
      "base": 753
-    },
-    {
-     "src": "work/cities_v3/seattle/sprites/local_3.png",
-     "scale": 0.635593220338983,
-     "base": 778
     }
    ],
    "band": {

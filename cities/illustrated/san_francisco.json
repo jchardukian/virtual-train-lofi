@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 732,
+   "base": 818,
    "alpha": 1.0
   }
  ],
@@ -102,18 +102,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/san_francisco/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 816
-    },
-    {
-     "src": "work/cities_v3/san_francisco/sprites/local_2.png",
-     "scale": 0.646551724137931,
-     "base": 841
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/san_francisco/sprites/far_1.png",
     "scale": 0.95,
@@ -151,11 +140,6 @@
      "src": "work/cities_v3/san_francisco/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 816
-    },
-    {
-     "src": "work/cities_v3/san_francisco/sprites/local_4.png",
-     "scale": 0.5703422053231939,
-     "base": 841
     }
    ],
    "band": {

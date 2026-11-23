@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 547,
+   "base": 613,
    "alpha": 1.0
   }
  ],
@@ -68,11 +68,6 @@
      "src": "work/cities_v3/pittsburgh/sprites/local_5.png",
      "scale": 0.974025974025974,
      "base": 771
-    },
-    {
-     "src": "work/cities_v3/pittsburgh/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 746
     }
    ],
    "band": {

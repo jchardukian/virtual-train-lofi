@@ -90,11 +90,6 @@
      "src": "work/cities_v3/cairo/sprites/landmarks_1.png",
      "scale": 0.912621359223301,
      "base": 809
-    },
-    {
-     "src": "work/cities_v3/cairo/sprites/local_1.png",
-     "scale": 1.1278195488721805,
-     "base": 834
     }
    ],
    "band": {
@@ -112,11 +107,6 @@
      "src": "work/cities_v3/cairo/sprites/landmarks_2.png",
      "scale": 1.100702576112412,
      "base": 809
-    },
-    {
-     "src": "work/cities_v3/cairo/sprites/local_2.png",
-     "scale": 1.5544041450777202,
-     "base": 834
     }
    ],
    "band": {
@@ -130,11 +120,6 @@
   {
    "name": "part 4",
    "mid": [
-    {
-     "src": "work/cities_v3/cairo/sprites/landmarks_3.png",
-     "scale": 1.2335958005249343,
-     "base": 809
-    },
     {
      "src": "work/cities_v3/cairo/sprites/local_3.png",
      "scale": 1.2048192771084338,

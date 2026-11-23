@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 561,
+   "base": 630,
    "alpha": 1.0
   }
  ],
@@ -144,11 +144,6 @@
      "src": "work/cities_v3/philadelphia/sprites/landmarks_3.png",
      "scale": 1.587837837837838,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_3a.png",
-     "scale": 1.7,
-     "base": 776
     }
    ],
    "band": {
@@ -161,18 +156,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/philadelphia/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 751
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_3b.png",
-     "scale": 1.5384615384615385,
-     "base": 776
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/philadelphia/sprites/far_1.png",
     "scale": 0.95,

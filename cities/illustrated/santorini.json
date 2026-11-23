@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 675,
+   "base": 720,
    "alpha": 1.0
   }
  ],
@@ -152,11 +152,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/santorini/sprites/landmarks_4.png",
-     "scale": 1.3428571428571427,
-     "base": 794
-    },
     {
      "src": "work/cities_v3/santorini/sprites/local_4.png",
      "scale": 0.9036144578313253,

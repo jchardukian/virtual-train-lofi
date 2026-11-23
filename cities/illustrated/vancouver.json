@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 562,
+   "base": 631,
    "alpha": 1.0
   }
  ],
@@ -107,18 +107,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/vancouver/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 751
-    },
-    {
-     "src": "work/cities_v3/vancouver/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 776
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/vancouver/sprites/far_1.png",
     "scale": 0.95,
@@ -134,11 +123,6 @@
      "src": "work/cities_v3/vancouver/sprites/landmarks_3.png",
      "scale": 1.4329268292682926,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/vancouver/sprites/local_3.png",
-     "scale": 1.477832512315271,
-     "base": 776
     }
    ],
    "band": {
@@ -156,11 +140,6 @@
      "src": "work/cities_v3/vancouver/sprites/landmarks_4.png",
      "scale": 1.165289256198347,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/vancouver/sprites/local_4.png",
-     "scale": 1.0909090909090908,
-     "base": 776
     }
    ],
    "band": {

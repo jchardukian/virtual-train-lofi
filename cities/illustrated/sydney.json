@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 697,
+   "base": 887,
    "alpha": 1.0
   }
  ],
@@ -117,11 +117,6 @@
      "src": "work/cities_v3/sydney/sprites/landmarks_1b.png",
      "scale": 1.7,
      "base": 803
-    },
-    {
-     "src": "work/cities_v3/sydney/sprites/local_2.png",
-     "scale": 1.36986301369863,
-     "base": 828
     }
    ],
    "band": {
@@ -134,18 +129,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/sydney/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 803
-    },
-    {
-     "src": "work/cities_v3/sydney/sprites/local_3.png",
-     "scale": 0.8695652173913043,
-     "base": 828
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/sydney/sprites/far_1.png",
     "scale": 0.95,

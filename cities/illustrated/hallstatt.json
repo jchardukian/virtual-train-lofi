@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 588,
+   "base": 657,
    "alpha": 1.0
   }
  ],
@@ -68,11 +68,6 @@
      "src": "work/cities_v3/hallstatt/sprites/local_5.png",
      "scale": 1.0909090909090908,
      "base": 787
-    },
-    {
-     "src": "work/cities_v3/hallstatt/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 762
     }
    ],
    "band": {
@@ -92,11 +87,6 @@
      "base": 787
     },
     {
-     "src": "work/cities_v3/hallstatt/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 762
-    },
-    {
      "src": "work/cities_v3/hallstatt/sprites/local_1.png",
      "scale": 0.8902077151335311,
      "base": 787
@@ -113,11 +103,6 @@
   {
    "name": "part 3",
    "mid": [
-    {
-     "src": "work/cities_v3/hallstatt/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 762
-    },
     {
      "src": "work/cities_v3/hallstatt/sprites/local_2.png",
      "scale": 1.1235955056179776,
@@ -139,11 +124,6 @@
      "src": "work/cities_v3/hallstatt/sprites/landmarks_3.png",
      "scale": 1.227154046997389,
      "base": 762
-    },
-    {
-     "src": "work/cities_v3/hallstatt/sprites/local_3.png",
-     "scale": 1.7,
-     "base": 787
     }
    ],
    "band": {
@@ -161,11 +141,6 @@
      "src": "work/cities_v3/hallstatt/sprites/landmarks_4.png",
      "scale": 1.1633663366336633,
      "base": 762
-    },
-    {
-     "src": "work/cities_v3/hallstatt/sprites/local_4.png",
-     "scale": 1.7,
-     "base": 787
     }
    ],
    "band": {

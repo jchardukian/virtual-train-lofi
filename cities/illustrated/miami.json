@@ -102,11 +102,6 @@
      "src": "work/cities_v3/miami/sprites/landmarks_2a.png",
      "scale": 1.3428571428571427,
      "base": 819
-    },
-    {
-     "src": "work/cities_v3/miami/sprites/local_2.png",
-     "scale": 1.3333333333333333,
-     "base": 844
     }
    ],
    "band": {
@@ -124,11 +119,6 @@
      "src": "work/cities_v3/miami/sprites/landmarks_2b.png",
      "scale": 1.7,
      "base": 819
-    },
-    {
-     "src": "work/cities_v3/miami/sprites/local_3.png",
-     "scale": 1.7,
-     "base": 844
     }
    ],
    "band": {
@@ -146,11 +136,6 @@
      "src": "work/cities_v3/miami/sprites/landmarks_3.png",
      "scale": 1.010752688172043,
      "base": 819
-    },
-    {
-     "src": "work/cities_v3/miami/sprites/local_4.png",
-     "scale": 0.55,
-     "base": 844
     }
    ],
    "band": {

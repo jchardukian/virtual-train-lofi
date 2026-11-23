@@ -63,11 +63,6 @@
      "src": "work/cities_v3/marrakech/sprites/landmarks_0.png",
      "scale": 0.9478991596638655,
      "base": 847
-    },
-    {
-     "src": "work/cities_v3/marrakech/sprites/landmarks_4b.png",
-     "scale": 1.7,
-     "base": 847
     }
    ],
    "band": {
@@ -107,11 +102,6 @@
      "src": "work/cities_v3/marrakech/sprites/landmarks_2.png",
      "scale": 1.5460526315789473,
      "base": 847
-    },
-    {
-     "src": "work/cities_v3/marrakech/sprites/local_2.png",
-     "scale": 0.9836065573770492,
-     "base": 872
     }
    ],
    "band": {
@@ -129,11 +119,6 @@
      "src": "work/cities_v3/marrakech/sprites/landmarks_3.png",
      "scale": 1.2737127371273713,
      "base": 847
-    },
-    {
-     "src": "work/cities_v3/marrakech/sprites/local_3.png",
-     "scale": 1.0638297872340425,
-     "base": 872
     }
    ],
    "band": {

@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 555,
+   "base": 669,
    "alpha": 1.0
   }
  ],
@@ -95,11 +95,6 @@
      "src": "work/cities_v3/lake_bled/sprites/landmarks_1.png",
      "scale": 1.217616580310881,
      "base": 749
-    },
-    {
-     "src": "work/cities_v3/lake_bled/sprites/local_1.png",
-     "scale": 1.2396694214876034,
-     "base": 774
     }
    ],
    "band": {
@@ -112,18 +107,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/lake_bled/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 749
-    },
-    {
-     "src": "work/cities_v3/lake_bled/sprites/local_2.png",
-     "scale": 1.4285714285714286,
-     "base": 774
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/lake_bled/sprites/far_1.png",
     "scale": 0.95,

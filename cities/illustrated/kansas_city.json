@@ -68,11 +68,6 @@
      "src": "work/cities_v3/kansas_city/sprites/local_5.png",
      "scale": 0.6818181818181818,
      "base": 818
-    },
-    {
-     "src": "work/cities_v3/kansas_city/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 793
     }
    ],
    "band": {
@@ -156,11 +151,6 @@
      "src": "work/cities_v3/kansas_city/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 793
-    },
-    {
-     "src": "work/cities_v3/kansas_city/sprites/local_4.png",
-     "scale": 1.7,
-     "base": 818
     }
    ],
    "band": {

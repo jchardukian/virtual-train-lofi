@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 508,
+   "base": 635,
    "alpha": 1.0
   }
  ],
@@ -139,18 +139,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/venice/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 731
-    },
-    {
-     "src": "work/cities_v3/venice/sprites/local_3.png",
-     "scale": 1.2949640287769784,
-     "base": 756
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/venice/sprites/far_1.png",
     "scale": 0.95,
@@ -166,11 +155,6 @@
      "src": "work/cities_v3/venice/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 731
-    },
-    {
-     "src": "work/cities_v3/venice/sprites/local_4.png",
-     "scale": 1.2811387900355873,
-     "base": 756
     }
    ],
    "band": {

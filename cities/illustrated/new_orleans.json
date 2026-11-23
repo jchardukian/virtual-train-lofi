@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 544,
+   "base": 617,
    "alpha": 1.0
   }
  ],
@@ -87,11 +87,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/new_orleans/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 745
-    },
-    {
      "src": "work/cities_v3/new_orleans/sprites/local_1.png",
      "scale": 0.7072691552062869,
      "base": 770
@@ -109,11 +104,6 @@
    "name": "part 3",
    "mid": [
     {
-     "src": "work/cities_v3/new_orleans/sprites/landmarks_2a.png",
-     "scale": 1.7,
-     "base": 745
-    },
-    {
      "src": "work/cities_v3/new_orleans/sprites/local_2.png",
      "scale": 1.1214953271028036,
      "base": 770
@@ -130,11 +120,6 @@
   {
    "name": "part 4",
    "mid": [
-    {
-     "src": "work/cities_v3/new_orleans/sprites/landmarks_2b.png",
-     "scale": 1.3544668587896254,
-     "base": 745
-    },
     {
      "src": "work/cities_v3/new_orleans/sprites/local_3.png",
      "scale": 0.7481296758104738,

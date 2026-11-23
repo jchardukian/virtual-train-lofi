@@ -131,11 +131,6 @@
    "name": "part 4",
    "mid": [
     {
-     "src": "work/cities_v3/boston/sprites/landmarks_3.png",
-     "scale": 1.598639455782313,
-     "base": 789
-    },
-    {
      "src": "work/cities_v3/boston/sprites/local_3.png",
      "scale": 0.8108108108108109,
      "base": 814

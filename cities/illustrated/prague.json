@@ -85,11 +85,6 @@
      "src": "work/cities_v3/prague/sprites/landmarks_1.png",
      "scale": 0.8453237410071942,
      "base": 815
-    },
-    {
-     "src": "work/cities_v3/prague/sprites/local_1.png",
-     "scale": 1.1904761904761905,
-     "base": 840
     }
    ],
    "band": {
@@ -107,11 +102,6 @@
      "src": "work/cities_v3/prague/sprites/landmarks_2.png",
      "scale": 1.0951456310679613,
      "base": 815
-    },
-    {
-     "src": "work/cities_v3/prague/sprites/local_2.png",
-     "scale": 1.1764705882352942,
-     "base": 840
     }
    ],
    "band": {
@@ -151,11 +141,6 @@
      "src": "work/cities_v3/prague/sprites/landmarks_4.png",
      "scale": 1.4387755102040816,
      "base": 815
-    },
-    {
-     "src": "work/cities_v3/prague/sprites/local_4.png",
-     "scale": 0.6912442396313364,
-     "base": 840
     }
    ],
    "band": {

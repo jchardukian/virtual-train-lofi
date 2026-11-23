@@ -39,17 +39,7 @@
    1.0
   ]
  },
- "backdrop": [
-  {
-   "src": "work/cities_v3/portland_maine/sprites/far_0.png",
-   "scale": 1.5,
-   "tile": true,
-   "speed": 5,
-   "haze": 0.15,
-   "base": 690,
-   "alpha": 1.0
-  }
- ],
+ "backdrop": [],
  "sections": [
   {
    "name": "part 1",
@@ -90,11 +80,6 @@
      "src": "work/cities_v3/portland_maine/sprites/landmarks_1.png",
      "scale": 1.7,
      "base": 800
-    },
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_1.png",
-     "scale": 1.7,
-     "base": 825
     }
    ],
    "band": {
@@ -108,11 +93,6 @@
   {
    "name": "part 3",
    "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 800
-    },
     {
      "src": "work/cities_v3/portland_maine/sprites/local_2.png",
      "scale": 0.9646302250803859,

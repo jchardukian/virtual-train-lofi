@@ -90,11 +90,6 @@
      "src": "work/cities_v3/istanbul/sprites/landmarks_1.png",
      "scale": 1.7,
      "base": 806
-    },
-    {
-     "src": "work/cities_v3/istanbul/sprites/local_1.png",
-     "scale": 1.530612244897959,
-     "base": 831
     }
    ],
    "band": {
@@ -112,11 +107,6 @@
      "src": "work/cities_v3/istanbul/sprites/landmarks_2.png",
      "scale": 1.5932203389830508,
      "base": 806
-    },
-    {
-     "src": "work/cities_v3/istanbul/sprites/local_2.png",
-     "scale": 0.746268656716418,
-     "base": 831
     }
    ],
    "band": {
@@ -152,11 +142,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/istanbul/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 806
-    },
     {
      "src": "work/cities_v3/istanbul/sprites/local_4.png",
      "scale": 0.6896551724137931,

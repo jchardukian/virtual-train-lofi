@@ -107,11 +107,6 @@
      "src": "work/cities_v3/barcelona/sprites/landmarks_2.png",
      "scale": 0.7110438729198184,
      "base": 790
-    },
-    {
-     "src": "work/cities_v3/barcelona/sprites/local_2.png",
-     "scale": 0.7672634271099744,
-     "base": 815
     }
    ],
    "band": {
@@ -129,11 +124,6 @@
      "src": "work/cities_v3/barcelona/sprites/landmarks_3.png",
      "scale": 1.346704871060172,
      "base": 790
-    },
-    {
-     "src": "work/cities_v3/barcelona/sprites/local_3.png",
-     "scale": 1.2552301255230125,
-     "base": 815
     }
    ],
    "band": {
@@ -151,11 +141,6 @@
      "src": "work/cities_v3/barcelona/sprites/landmarks_4.png",
      "scale": 1.036764705882353,
      "base": 790
-    },
-    {
-     "src": "work/cities_v3/barcelona/sprites/local_4.png",
-     "scale": 1.4285714285714286,
-     "base": 815
     }
    ],
    "band": {

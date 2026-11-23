@@ -117,11 +117,6 @@
      "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_2.png",
      "scale": 1.540983606557377,
      "base": 854
-    },
-    {
-     "src": "work/cities_v3/phoenix_sedona/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 879
     }
    ],
    "band": {

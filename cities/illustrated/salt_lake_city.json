@@ -156,11 +156,6 @@
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_4.png",
      "scale": 1.3742690058479532,
      "base": 866
-    },
-    {
-     "src": "work/cities_v3/salt_lake_city/sprites/local_4.png",
-     "scale": 1.7,
-     "base": 891
     }
    ],
    "band": {

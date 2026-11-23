@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 567,
+   "base": 662,
    "alpha": 1.0
   }
  ],
@@ -102,11 +102,6 @@
      "src": "work/cities_v3/rio/sprites/landmarks_1.png",
      "scale": 1.4461538461538461,
      "base": 754
-    },
-    {
-     "src": "work/cities_v3/rio/sprites/local_2.png",
-     "scale": 1.1111111111111112,
-     "base": 779
     }
    ],
    "band": {
@@ -124,11 +119,6 @@
      "src": "work/cities_v3/rio/sprites/landmarks_2.png",
      "scale": 1.7,
      "base": 754
-    },
-    {
-     "src": "work/cities_v3/rio/sprites/local_3.png",
-     "scale": 1.4018691588785046,
-     "base": 779
     }
    ],
    "band": {
@@ -146,11 +136,6 @@
      "src": "work/cities_v3/rio/sprites/landmarks_3.png",
      "scale": 1.0151187904967602,
      "base": 754
-    },
-    {
-     "src": "work/cities_v3/rio/sprites/local_4.png",
-     "scale": 0.55,
-     "base": 779
     }
    ],
    "band": {

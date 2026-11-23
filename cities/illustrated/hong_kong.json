@@ -27,8 +27,8 @@
  },
  "near": {
   "src": "work/cities_v3/hong_kong/sprites/near_0.png",
-  "scale": 0.85,
-  "base": 138
+  "scale": 1.917,
+  "base": -5
  },
  "treewall_cfg": {
   "src": "work/cities_v3/hong_kong/sprites/local_0.png",
@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 556,
+   "base": 624,
    "alpha": 1.0
   }
  ],
@@ -87,11 +87,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/hong_kong/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 749
-    },
-    {
      "src": "work/cities_v3/hong_kong/sprites/local_1.png",
      "scale": 0.8595988538681948,
      "base": 774
@@ -107,18 +102,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/landmarks_2.png",
-     "scale": 1.5932203389830508,
-     "base": 749
-    },
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 774
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/hong_kong/sprites/far_1.png",
     "scale": 0.95,
@@ -134,11 +118,6 @@
      "src": "work/cities_v3/hong_kong/sprites/landmarks_3.png",
      "scale": 1.1270983213429258,
      "base": 749
-    },
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_3.png",
-     "scale": 1.3888888888888888,
-     "base": 774
     }
    ],
    "band": {
@@ -152,11 +131,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/landmarks_4.png",
-     "scale": 1.6151202749140894,
-     "base": 749
-    },
     {
      "src": "work/cities_v3/hong_kong/sprites/local_4a.png",
      "scale": 0.6423982869379015,

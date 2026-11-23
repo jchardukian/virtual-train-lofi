@@ -60,19 +60,9 @@
      "base": 854
     },
     {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 829
-    },
-    {
      "src": "work/cities_v3/anchorage/sprites/local_5.png",
      "scale": 0.7957559681697612,
      "base": 854
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 829
     }
    ],
    "band": {
@@ -100,11 +90,6 @@
      "src": "work/cities_v3/anchorage/sprites/local_6.png",
      "scale": 0.6394316163410302,
      "base": 854
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 829
     }
    ],
    "band": {
@@ -118,16 +103,6 @@
   {
    "name": "part 3",
    "mid": [
-    {
-     "src": "work/cities_v3/anchorage/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 854
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_2a.png",
-     "scale": 1.7,
-     "base": 829
-    },
     {
      "src": "work/cities_v3/anchorage/sprites/landmarks_6.png",
      "scale": 1.7,
@@ -144,18 +119,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_2b.png",
-     "scale": 1.7,
-     "base": 829
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/local_3.png",
-     "scale": 1.7,
-     "base": 854
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/anchorage/sprites/far_1.png",
     "scale": 0.95,
@@ -171,11 +135,6 @@
      "src": "work/cities_v3/anchorage/sprites/landmarks_3.png",
      "scale": 1.7,
      "base": 829
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/local_4.png",
-     "scale": 1.7,
-     "base": 854
     }
    ],
    "band": {

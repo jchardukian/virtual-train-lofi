@@ -55,11 +55,6 @@
    "name": "part 1",
    "mid": [
     {
-     "src": "work/cities_v3/san_antonio/sprites/local_0.png",
-     "scale": 0.9259259259259259,
-     "base": 808
-    },
-    {
      "src": "work/cities_v3/san_antonio/sprites/landmarks_0.png",
      "scale": 1.7,
      "base": 783
@@ -68,11 +63,6 @@
      "src": "work/cities_v3/san_antonio/sprites/local_5.png",
      "scale": 0.6896551724137931,
      "base": 808
-    },
-    {
-     "src": "work/cities_v3/san_antonio/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 783
     }
    ],
    "band": {
@@ -114,11 +104,6 @@
    "name": "part 3",
    "mid": [
     {
-     "src": "work/cities_v3/san_antonio/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 783
-    },
-    {
      "src": "work/cities_v3/san_antonio/sprites/local_2.png",
      "scale": 1.6981132075471699,
      "base": 808
@@ -139,11 +124,6 @@
      "src": "work/cities_v3/san_antonio/sprites/landmarks_3.png",
      "scale": 1.2566844919786095,
      "base": 783
-    },
-    {
-     "src": "work/cities_v3/san_antonio/sprites/local_3.png",
-     "scale": 1.4150943396226414,
-     "base": 808
     }
    ],
    "band": {
@@ -161,11 +141,6 @@
      "src": "work/cities_v3/san_antonio/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 783
-    },
-    {
-     "src": "work/cities_v3/san_antonio/sprites/local_4.png",
-     "scale": 1.3888888888888888,
-     "base": 808
     }
    ],
    "band": {

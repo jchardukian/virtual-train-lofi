@@ -68,11 +68,6 @@
      "src": "work/cities_v3/detroit/sprites/local_5.png",
      "scale": 0.8356545961002786,
      "base": 849
-    },
-    {
-     "src": "work/cities_v3/detroit/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 824
     }
    ],
    "band": {
@@ -117,11 +112,6 @@
      "src": "work/cities_v3/detroit/sprites/landmarks_2.png",
      "scale": 1.0284463894967177,
      "base": 824
-    },
-    {
-     "src": "work/cities_v3/detroit/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 849
     }
    ],
    "band": {

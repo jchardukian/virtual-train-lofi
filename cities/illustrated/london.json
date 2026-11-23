@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 629,
+   "base": 645,
    "alpha": 1.0
   }
  ],
@@ -68,11 +68,6 @@
      "src": "work/cities_v3/london/sprites/local_5.png",
      "scale": 0.6772009029345373,
      "base": 802
-    },
-    {
-     "src": "work/cities_v3/london/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 777
     }
    ],
    "band": {
@@ -135,11 +130,6 @@
   {
    "name": "part 4",
    "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 777
-    },
     {
      "src": "work/cities_v3/london/sprites/local_3.png",
      "scale": 1.7,

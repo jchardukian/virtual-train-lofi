@@ -107,11 +107,6 @@
      "src": "work/cities_v3/mexico_city/sprites/landmarks_2.png",
      "scale": 1.2401055408970976,
      "base": 785
-    },
-    {
-     "src": "work/cities_v3/mexico_city/sprites/local_2.png",
-     "scale": 1.3761467889908257,
-     "base": 810
     }
    ],
    "band": {
@@ -124,18 +119,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/mexico_city/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 785
-    },
-    {
-     "src": "work/cities_v3/mexico_city/sprites/local_3.png",
-     "scale": 1.5228426395939085,
-     "base": 810
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/mexico_city/sprites/far_1.png",
     "scale": 0.95,
@@ -151,11 +135,6 @@
      "src": "work/cities_v3/mexico_city/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 785
-    },
-    {
-     "src": "work/cities_v3/mexico_city/sprites/local_4.png",
-     "scale": 0.847457627118644,
-     "base": 810
     }
    ],
    "band": {

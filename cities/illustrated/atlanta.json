@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 607,
+   "base": 673,
    "alpha": 1.0
   }
  ],
@@ -117,11 +117,6 @@
      "src": "work/cities_v3/atlanta/sprites/landmarks_2.png",
      "scale": 1.1809045226130652,
      "base": 769
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 794
     }
    ],
    "band": {
@@ -157,11 +152,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 769
-    },
     {
      "src": "work/cities_v3/atlanta/sprites/local_4.png",
      "scale": 1.4423076923076923,

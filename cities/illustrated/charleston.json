@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 555,
+   "base": 815,
    "alpha": 1.0
   }
  ],
@@ -62,16 +62,6 @@
     {
      "src": "work/cities_v3/charleston/sprites/landmarks_0.png",
      "scale": 1.0425138632162663,
-     "base": 749
-    },
-    {
-     "src": "work/cities_v3/charleston/sprites/local_4.png",
-     "scale": 0.55,
-     "base": 774
-    },
-    {
-     "src": "work/cities_v3/charleston/sprites/landmarks_5.png",
-     "scale": 1.3782991202346042,
      "base": 749
     }
    ],
@@ -112,11 +102,6 @@
      "src": "work/cities_v3/charleston/sprites/landmarks_2.png",
      "scale": 1.6725978647686832,
      "base": 749
-    },
-    {
-     "src": "work/cities_v3/charleston/sprites/local_2a.png",
-     "scale": 1.7,
-     "base": 774
     }
    ],
    "band": {
@@ -134,11 +119,6 @@
      "src": "work/cities_v3/charleston/sprites/landmarks_3.png",
      "scale": 1.7,
      "base": 749
-    },
-    {
-     "src": "work/cities_v3/charleston/sprites/local_2b.png",
-     "scale": 1.4634146341463414,
-     "base": 774
     }
    ],
    "band": {

@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 562,
+   "base": 632,
    "alpha": 1.0
   }
  ],
@@ -63,11 +63,6 @@
      "src": "work/cities_v3/savannah/sprites/landmarks_0.png",
      "scale": 1.7,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/savannah/sprites/local_5.png",
-     "scale": 0.7075471698113207,
-     "base": 776
     },
     {
      "src": "work/cities_v3/savannah/sprites/landmarks_5.png",
@@ -90,11 +85,6 @@
      "src": "work/cities_v3/savannah/sprites/landmarks_1.png",
      "scale": 1.1662531017369726,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/savannah/sprites/local_1.png",
-     "scale": 1.7,
-     "base": 776
     }
    ],
    "band": {
@@ -112,11 +102,6 @@
      "src": "work/cities_v3/savannah/sprites/landmarks_2.png",
      "scale": 1.4417177914110428,
      "base": 751
-    },
-    {
-     "src": "work/cities_v3/savannah/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 776
     }
    ],
    "band": {
@@ -129,18 +114,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/savannah/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 751
-    },
-    {
-     "src": "work/cities_v3/savannah/sprites/local_3.png",
-     "scale": 1.171875,
-     "base": 776
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/savannah/sprites/far_1.png",
     "scale": 0.95,

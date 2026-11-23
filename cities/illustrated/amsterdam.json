@@ -68,11 +68,6 @@
      "src": "work/cities_v3/amsterdam/sprites/local_5.png",
      "scale": 0.55,
      "base": 831
-    },
-    {
-     "src": "work/cities_v3/amsterdam/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 806
     }
    ],
    "band": {
@@ -112,11 +107,6 @@
      "src": "work/cities_v3/amsterdam/sprites/landmarks_2.png",
      "scale": 1.7,
      "base": 806
-    },
-    {
-     "src": "work/cities_v3/amsterdam/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 831
     }
    ],
    "band": {
@@ -134,11 +124,6 @@
      "src": "work/cities_v3/amsterdam/sprites/landmarks_3.png",
      "scale": 1.2260869565217392,
      "base": 806
-    },
-    {
-     "src": "work/cities_v3/amsterdam/sprites/local_3.png",
-     "scale": 1.1320754716981132,
-     "base": 831
     }
    ],
    "band": {
@@ -151,18 +136,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/amsterdam/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 806
-    },
-    {
-     "src": "work/cities_v3/amsterdam/sprites/local_4.png",
-     "scale": 0.656934306569343,
-     "base": 831
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/amsterdam/sprites/far_1.png",
     "scale": 0.95,

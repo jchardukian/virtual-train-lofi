@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 611,
+   "base": 681,
    "alpha": 1.0
   }
  ],
@@ -63,11 +63,6 @@
      "src": "work/cities_v3/lisbon/sprites/landmarks_0.png",
      "scale": 1.4156626506024097,
      "base": 770
-    },
-    {
-     "src": "work/cities_v3/lisbon/sprites/local_4b.png",
-     "scale": 0.8356545961002786,
-     "base": 795
     },
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_5.png",
@@ -108,11 +103,6 @@
   {
    "name": "part 3",
    "mid": [
-    {
-     "src": "work/cities_v3/lisbon/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 770
-    },
     {
      "src": "work/cities_v3/lisbon/sprites/local_2.png",
      "scale": 0.9523809523809523,
@@ -156,11 +146,6 @@
      "src": "work/cities_v3/lisbon/sprites/landmarks_4.png",
      "scale": 1.5932203389830508,
      "base": 770
-    },
-    {
-     "src": "work/cities_v3/lisbon/sprites/local_4a.png",
-     "scale": 0.635593220338983,
-     "base": 795
     }
    ],
    "band": {
