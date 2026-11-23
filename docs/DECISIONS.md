@@ -112,6 +112,17 @@ The owner said in the agent session: "Yes to storage and yes to posting tonight.
 * Still required before anything is posted: the LofiTrain channels connected and
   named by the owner, and an explicit go-live.
 
+## City mix and quality rules — 2026-11-23 04:45 UTC (owner, in the agent session)
+
+* **Target library about 150 cities, roughly 40% U.S. (about 60) and 60% international (about 90).**
+  The audience is mostly U.S., but the list should be well-known, popular destinations only, in both groups;
+  no smaller cities.
+* Status: 57 cities set up (Chicago, Denver, New York + 25 U.S. in the batch of 50 = 28 U.S.; 29 international).
+  The remaining ~93 should be about 32 U.S. and 61 international, all major names.
+* Every city must differ visibly from its neighbours in landmarks, buildings, scenery (water, mountains,
+  trees, desert), time of day and season. Layers must not read as separate bands: feathered edges, distance
+  mist, sharp foreground. Each finished city is checked on stills before release.
+
 ## Chicago visually approved — 2026-11-22 21:35 UTC (relayed on PR #1, comment 7086115277)
 
 Relayed as the owner's words after watching the corrected video: "Chicago looks
