@@ -9,7 +9,7 @@
   "train ride",
   "cozy",
   "rainy night",
-  "rain sounds",
+  "rainy evening",
   "study music",
   "relaxing music",
   "illustrated",
@@ -18,5 +18,5 @@
   "lofi train"
  ],
  "publish_at": "2026-11-24T18:00:00-06:00",
- "expected_sha256": "(set after the rebuild)"
+ "expected_sha256": "6e3b7aea779ba04b57e3c3c5e40e9ee702737d0e8a1d5890ad05d7cde25229c5"
 }
