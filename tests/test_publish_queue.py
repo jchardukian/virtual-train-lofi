@@ -20,7 +20,7 @@ class T(unittest.TestCase):
     def test_good_day(self):
         r = Q.build_day(REC, [], LIM)
         self.assertTrue(r["ok"], r["violations"]); self.assertEqual(len(r["payloads"]), 3)
-        self.assertTrue(all(p["channelId"] == "yt1" and p["metadata"]["youtube"]["isAiGenerated"] for p in r["payloads"]))
+        self.assertTrue(all(p["channelId"] == "yt1" and p["metadata"]["youtube"]["isAiGenerated"] is False for p in r["payloads"]))
 
     def test_no_go_live_returns_nothing(self):
         lim = copy.deepcopy(LIM); lim["channel"]["go_live"] = False

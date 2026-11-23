@@ -31,7 +31,7 @@ Next stop: coming soon.
 
 **Tags:** lofi, chillhop, chicago, train window, train ride, cozy, study music, relaxing music, illustrated, anime style, golden hour, chicago river, marina city, virtual train
 
-**Settings:** category Music; not made for kids; altered/synthetic content: disclose "yes" (voluntary; depicts real places).
+**Settings:** category Music; not made for kids; altered/synthetic content flag: off (owner decision, 2026-11-22). The description states the artwork is illustrated and not real footage.
 
 **Thumbnail:** `output/samples/chicago_thumbnail.jpg` (frame at 0:32, Marina City and the bridge, with title text).
 
@@ -80,7 +80,7 @@ sent to the owner. It is too large for Git and no hosting is approved. The two f
 | Mon 23 Nov 2026, 18:00 | Chicago long-form |
 | Mon 23 Nov 2026, 20:30 | Short 2 (lakefront) |
 
-Settings: category Music (10), public, not made for kids, AI-generated flag on, standard YouTube licence.
+Settings: category Music (10), public, not made for kids, AI-generated flag off (owner decision), standard YouTube licence.
 
 **Limit enforcement:** `pipeline/publish_preflight.py` passes for this plan only once go-live is set
 and the channel id above is supplied; it refuses a second long-form, a third Short, any TikTok post,
