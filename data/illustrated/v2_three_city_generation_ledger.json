@@ -1,0 +1,419 @@
+{
+ "date": "2026-11-23",
+ "approval": "Owner approved in the agent session a bounded 3.50 USD for New York, the Swiss Alps and Kyoto",
+ "cap_usd": 3.5,
+ "calls_made": 17,
+ "computed_spend_usd": 3.0287,
+ "remaining_usd": 0.4713,
+ "note": "Computed from API-reported tokens at published rates; billed amount not read.",
+ "calls": [
+  {
+   "city": "alps",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): a long panorama of snowy Alpine peaks including the Matterhorn, glaciers, crisp and bright, with soft blue haze at their feet. STRIP 2 (bottom): a continuous snowy valley floor: smooth snowfields, a frozen stream, wooden fences, scattered snowy fir trees and small hay huts. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1791,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 255
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7279
+   },
+   "est_cost_usd": 0.1782,
+   "sha256": "4e6c3c36df656a94e85eeb9efb7b9f957f7067fd81b50ed987a6960e7d22d3d0"
+  },
+  {
+   "city": "alps",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate alpine landmarks in the Swiss Alps on a bright, crisp winter morning: fresh deep snow, clear pale-blue sky, cool blue shadows on the snow and warm low sunlight, cozy and cheerful. standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Landwasser stone railway viaduct with tall arches, 2) a white village church with an onion-dome steeple, 3) a grand old timber-and-stone mountain hotel with snowy roof, 4) a small alpine hut, 5) a red cable-car gondola hanging on its cable with a pylon, 6) a tall snowy pine tree cluster. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1859,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 323
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7347
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "544546ed87ce589cf9e65244e3c4bcb87790481df86c54ce04e49eccfffb51b9"
+  },
+  {
+   "city": "alps",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate alpine village elements in the Swiss Alps on a bright, crisp winter morning: fresh deep snow, clear pale-blue sky, cool blue shadows on the snow and warm low sunlight, cozy and cheerful. standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a large dark-wood chalet with flower boxes and deep snow on the roof, 2) a smaller chalet with a stone base, 3) a wooden barn with stacked firewood, 4) a wooden village fountain with icicles, 5) a snowy wooden fence segment with a gate, 6) a snowman with a scarf, 7) a cluster of three snow-laden fir trees. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1864,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 328
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7352
+   },
+   "est_cost_usd": 0.1786,
+   "sha256": "314b353b076056fc6480bb0765c14aa999a6b03bda7379e71d7443d23458b6c2"
+  },
+  {
+   "city": "alps",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: the snowy railway embankment right beside the train: deep snow, snow-laden young fir trees and bushes, wooden snow fence posts, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1749,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 213
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7237
+   },
+   "est_cost_usd": 0.178,
+   "sha256": "9634cc9ee682ae4b2d473189ab32cbc4395ea5a2a38c83461c284495b80cd3c5"
+  },
+  {
+   "city": "alps",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. A wide illustrated view of the Swiss Alps on a bright, crisp winter morning: fresh deep snow, clear pale-blue sky, cool blue shadows on the snow and warm low sunlight, cozy and cheerful. seen from a train window high on a mountainside: a snowy valley with a small village of wooden chalets and a stone church with a slender spire, a frozen lake, a curved stone railway viaduct, snowy pine forests, and the pyramid-shaped Matterhorn rising above. The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1718,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 182
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7206
+   },
+   "est_cost_usd": 0.1778,
+   "sha256": "62315ad72a9c2830b5fec95f3f1200485f9aa06753057d05773b9ce0decc69bd"
+  },
+  {
+   "city": "alps",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. A very wide sky only, filling the entire canvas edge to edge: a crisp clear winter morning in the Alps, clean pale blue at the top fading to a soft warm cream near the bottom, a few small bright white clouds. No land, no mountains, no sun disc. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1667,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 131
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7155
+   },
+   "est_cost_usd": 0.1776,
+   "sha256": "c0faf7557f9504093bd3e411343e31d5d85dc51dfb3acf9b4607c3ff321af2b9"
+  },
+  {
+   "city": "kyoto",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the forested Higashiyama hills of Kyoto in autumn, a patchwork of red, orange and dark green with a few temple roofs and a pagoda peeking out, soft haze. STRIP 2 (bottom): a continuous low stone wall with moss and a clipped hedge, behind it a raked gravel and moss garden edge with small maples and stone lanterns. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1809,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 273
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7297
+   },
+   "est_cost_usd": 0.1783,
+   "sha256": "188f24ddca5d2bc7394c7cc7ca06c309c4654f99cc6a199d45f01d6807c456d4"
+  },
+  {
+   "city": "kyoto",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate Kyoto landmarks in Kyoto, Japan on a late-autumn golden afternoon: blazing red and orange Japanese maples, soft warm light, traditional wooden architecture, peaceful. standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) Kinkaku-ji, the golden pavilion, on its pond with its reflection, 2) a row of vermilion Fushimi Inari torii gates, 3) the five-storey Yasaka pagoda, 4) the wooden stage of Kiyomizu-dera on its tall pillars, 5) the large red Heian Shrine torii gate, 6) a dense bamboo grove. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1859,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 323
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7347
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "b48e714522ba8007e5052f8e8ee1c725a3a92d9af19e8ab25c0c4b4da86a2c66"
+  },
+  {
+   "city": "kyoto",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Kyoto elements in Kyoto, Japan on a late-autumn golden afternoon: blazing red and orange Japanese maples, soft warm light, traditional wooden architecture, peaceful. standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a two-storey wooden machiya townhouse with lattice windows, 2) a tea house with a cloth noren curtain and paper lanterns (no characters), 3) a stone lantern with moss, 4) a small temple gate with a tiled roof, 5) a large red Japanese maple tree, 6) a golden ginkgo tree, 7) a cluster of tall green bamboo. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1855,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 319
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7343
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "37c05cef4986bfaba74cf5fe518f6b8e141509188afae429c8919ee2ad185edb"
+  },
+  {
+   "city": "kyoto",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, a woven bamboo fence with bright red and orange maple branches hanging over it and fallen leaves, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1744,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 208
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7232
+   },
+   "est_cost_usd": 0.178,
+   "sha256": "65790e1dcbfd6fae1ad96d89a8255f8dda9fb16903383840897185da372c6621"
+  },
+  {
+   "city": "kyoto",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. A wide illustrated view of Kyoto, Japan on a late-autumn golden afternoon: blazing red and orange Japanese maples, soft warm light, traditional wooden architecture, peaceful. seen from a train window: a sloping Higashiyama stone-paved lane with wooden machiya houses and tiled roofs, the five-storey Yasaka pagoda rising above, forested hills behind with temple roofs, and red maples everywhere. The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1706,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 170
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7194
+   },
+   "est_cost_usd": 0.1778,
+   "sha256": "dcede068167e6ba5c6cce65801858bccf666fad4b311f39b965df2afc560bc62"
+  },
+  {
+   "city": "nyc",
+   "name": "far",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the long Manhattan skyline at winter blue hour, hundreds of towers with warm lit windows, softened by distance and light haze. STRIP 2 (bottom): a continuous row of snowy Brooklyn rooftops seen from an elevated train: flat roofs with snow, chimneys, wooden water tanks, skylights, low parapets, warm lit windows below. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1801,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 265
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7289
+   },
+   "est_cost_usd": 0.1783,
+   "sha256": "5b9c991039d524e74de25770a7fafbf5ddd65f79a707fee7a0115f4a9f732f72"
+  },
+  {
+   "city": "nyc",
+   "name": "landmarks",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate New York City on a snowy winter evening at blue hour: deep blue and violet sky, warm yellow lit windows, snow on ledges, roofs and streets, cozy and calm, not dark or scary. landmarks standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Empire State Building with its lit spire, 2) the Chrysler Building with its lit art-deco crown, 3) the Flatiron Building, 4) One World Trade Center, 5) one stone Gothic tower of the Brooklyn Bridge with its cables, 6) the Statue of Liberty on her pedestal. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1849,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 313
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7337
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "ff237456667f433a99d8d147bb7c0986bebf89e9f86eb678fe70621d4711df47"
+  },
+  {
+   "city": "nyc",
+   "name": "local",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate New York City on a snowy winter evening at blue hour: deep blue and violet sky, warm yellow lit windows, snow on ledges, roofs and streets, cozy and calm, not dark or scary. street elements standing side by side in one row with a clear green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a brownstone rowhouse with a snowy stoop and warm windows, 2) a red-brick walk-up with black fire escapes, 3) a corner deli with a green awning and glowing window, 4) a tall building with a wooden water tower on the roof, 5) a yellow taxi cab with snow on its roof, 6) an old cast-iron street lamp glowing, 7) a bare street tree with snow on its branches and string lights. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1883,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 347
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7371
+   },
+   "est_cost_usd": 0.1787,
+   "sha256": "3e39c545e07df9216ea332da76d2f372ccb8ca002a2f4641d3c89d86bd076513"
+  },
+  {
+   "city": "nyc",
+   "name": "near",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: the steel structure right beside an elevated subway track seen up close on a snowy winter evening: riveted dark-green steel girders and railing with snow along the top, occasional signal lamp glowing, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+   "usage": {
+    "input_tokens": 1759,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 223
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7247
+   },
+   "est_cost_usd": 0.178,
+   "sha256": "ecd9dc9a288fde18ba037ba7b53c47acd613a6b10f7c2afa58a62a5ca518173b"
+  },
+  {
+   "city": "nyc",
+   "name": "opening",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. A wide illustrated view of New York City on a snowy winter evening at blue hour: deep blue and violet sky, warm yellow lit windows, snow on ledges, roofs and streets, cozy and calm, not dark or scary. seen from an elevated subway line in Brooklyn: snowy brownstone rooftops with wooden water tanks in the foreground, the East River and the Brooklyn Bridge in the middle distance, and the Manhattan skyline with the lit Empire State Building and the Chrysler Building beyond, gentle snowfall. The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1720,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 184
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7208
+   },
+   "est_cost_usd": 0.1778,
+   "sha256": "c032d5efb97916a4b5e5c40c677835303b30557682b8561685e8a8df201dbb06"
+  },
+  {
+   "city": "nyc",
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting; follow the lighting and season described here. A very wide sky only, filling the entire canvas edge to edge: a calm snowy winter evening at blue hour, deep blue at the top fading to soft violet and a faint warm pink glow near the bottom, a few soft clouds, light snowflakes drifting. No land, no buildings, no moon disc. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+   "usage": {
+    "input_tokens": 1673,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 137
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7161
+   },
+   "est_cost_usd": 0.1776,
+   "sha256": "0f9694edcec8ccb6ed06fbca5c9af14a997436d6938f7994b664d0eede494af9"
+  }
+ ]
+}

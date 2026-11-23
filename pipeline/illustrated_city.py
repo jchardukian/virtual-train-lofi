@@ -28,23 +28,58 @@ class City:
         self.n = len(cfg["sections"])
         self.sect = SEC / self.n
         S = cv2.imread(str(ILL / "scene.png"))
-        sky = cv2.resize(cv2.imread(str(ROOT / "work/chi/sky.png")), None, fx=1.9, fy=1.9, interpolation=cv2.INTER_CUBIC)
+        # sky: a city's own painted sky if given, otherwise the shared golden one
+        sky_src = ROOT / cfg.get("sky", "work/chi/sky.png")
+        sky = cv2.imread(str(sky_src))
+        sky = cv2.resize(sky, None, fx=3000 / sky.shape[1], fy=3000 / sky.shape[1], interpolation=cv2.INTER_CUBIC)
         if cfg.get("sky_flip"):
             sky = sky[:, ::-1]
-        self.sky = np.ascontiguousarray(sky[560:560 + 760]).astype(np.float32)
+        y0 = max(0, min(sky.shape[0] - 760, int(sky.shape[0] * cfg.get("sky_top", 0.33))))
+        self.sky = np.ascontiguousarray(sky[y0:y0 + 760]).astype(np.float32)
         wt = cv2.resize(S[775:1010, 505:775], (1300, 420), interpolation=cv2.INTER_LANCZOS4)
         self.river = loop((wt.astype(np.float32), np.ones(wt.shape[:2] + (1,), np.float32)), 200)
-        g = cv2.imread(str(CHI / "strip_3.png"), cv2.IMREAD_UNCHANGED)[70:135, :, :3]
-        lawn = cv2.resize(g, (1536, 420), interpolation=cv2.INTER_CUBIC).astype(np.float32)
+        # ground plane: a band cropped from one of the city's own strips, or the shared lawn
+        gcfg = cfg.get("ground_src", {"src": "work/chi/sprites/strip_3.png", "rows": [70, 135]})
+        if "colour" in gcfg:              # a plain field (fresh snow, sand): two colours, top to bottom, with faint texture
+            c0, c1 = np.array(gcfg["colour"][0], np.float32), np.array(gcfg["colour"][1], np.float32)
+            yy = np.linspace(0, 1, 420, dtype=np.float32)[:, None, None]
+            lawn = np.repeat(c0 + (c1 - c0) * yy, 1536, axis=1)
+            lawn += cv2.GaussianBlur(np.random.default_rng(3).normal(0, 4, (420, 1536)).astype(np.float32), (0, 0), 2)[..., None]
+        else:
+            g = cv2.imread(str(ROOT / gcfg["src"]), cv2.IMREAD_UNCHANGED)
+            r0, r1 = gcfg["rows"]
+            g = g[r0:r1, :, :3]
+            lawn = cv2.resize(g, (1536, 420), interpolation=cv2.INTER_CUBIC).astype(np.float32)
         self.lawn = loop((lawn, np.ones(lawn.shape[:2] + (1,), np.float32)), 200)
-        emb = rgba(CHI / "strip_3.png", 1.7)
+        # the line's own trackside, right below the window
+        ncfg = cfg.get("near", {"src": "work/chi/sprites/strip_3.png", "scale": 1.7, "base": 40})
+        emb = rgba(ROOT / ncfg["src"], ncfg.get("scale", 1.7))
         self.near = loop((cv2.blur(emb[0], (11, 1)), cv2.blur(emb[1], (11, 1))[..., None]))
-        tw = cv2.imread(str(ROOT / cfg.get("treewall", "work/chi/sprites/strip_0.png")), cv2.IMREAD_UNCHANGED)
-        tw = tw[:int(tw.shape[0] * 0.76), 20:470]
+        self.near_base = ncfg.get("base", 40)
+        # close objects that sweep past at each change of scenery
+        tcfg = cfg.get("treewall_cfg", {"src": cfg.get("treewall", "work/chi/sprites/strip_0.png"), "crop": [20, 470, 0, 0.76]})
+        tw = cv2.imread(str(ROOT / tcfg["src"]), cv2.IMREAD_UNCHANGED)
+        x0, x1, ya, yb = tcfg["crop"]
+        tw = tw[int(tw.shape[0] * ya):int(tw.shape[0] * yb), x0:x1]
         tw = cv2.resize(tw, None, fx=5.2 * 175 / tw.shape[0], fy=5.2 * 175 / tw.shape[0], interpolation=cv2.INTER_CUBIC).astype(np.float32)
         ramp = np.clip(np.minimum(np.arange(tw.shape[1]), tw.shape[1] - 1 - np.arange(tw.shape[1])) / 520.0, 0, 1).astype(np.float32)
         ramp = (ramp * ramp * (3 - 2 * ramp))[None, :, None]
         self.treewall = (cv2.blur(tw[..., :3] * (tw[..., 3:] / 255.0), (41, 9)) * 0.8 * ramp, cv2.blur(tw[..., 3:] / 255.0, (41, 9))[..., None] * ramp)
+        # opening scene: a city-specific full painting for the first seconds, panning slowly, then dissolving into the ride
+        self.opening = None
+        if cfg.get("opening"):
+            o = cfg["opening"]
+            op = cv2.imread(str(ROOT / o["src"]))
+            op = cv2.resize(op, None, fx=2200 / op.shape[1], fy=2200 / op.shape[1], interpolation=cv2.INTER_CUBIC).astype(np.float32)
+            self.opening = (op, o.get("hold", 6.0), o.get("fade", 3.0))
+        # weather: procedural particles between the scenery and the window glass
+        self.weather = cfg.get("weather")
+        rng = np.random.default_rng(7)
+        n = {"snow": 420, "leaves": 70}.get(self.weather, 0)
+        self.px, self.py = rng.uniform(0, W, n), rng.uniform(0, H, n)
+        self.pz = rng.uniform(0.3, 1.0, n)                   # depth: near flakes are bigger and faster
+        self.pph = rng.uniform(0, 6.28, n)
+        self.pcol = rng.choice(np.array([[40, 70, 220], [30, 110, 235], [40, 150, 240], [60, 60, 190]], np.float32), n)
         fr = cv2.resize(cv2.imread(str(ILL / "frame.png")), (W, 1280), interpolation=cv2.INTER_LANCZOS4).astype(np.float32)
         gg = fr[..., 1] - np.maximum(fr[..., 0], fr[..., 2])
         fa = 1 - np.clip((gg - 40) / 70, 0, 1)
@@ -143,13 +178,38 @@ class City:
             if w[k] > 0 and sc["ground"] != "river" and sc["band"]:
                 lp, base, speed, off = sc["band"]
                 strip(img, lp, off + speed * t, base + bob, w[k])
-        strip(img, self.near, 400 + NEAR * t, H + 40, 1.0)
+        strip(img, self.near, 400 + NEAR * t, H + self.near_base, 1.0)
         for k in range(1, self.n):
             x = int(W + 150 - 620 * (t - (k * self.sect - 3.4)))
             if -self.treewall[1].shape[1] < x < W:
                 over(img, *self.treewall, x, H + 60 - self.treewall[1].shape[0])
+        if self.opening is not None:
+            op, hold, fade = self.opening
+            if t < hold + fade:
+                k = 1.0 if t < hold else 1.0 - (t - hold) / fade
+                k = k * k * (3 - 2 * k)
+                ox = int(min(op.shape[1] - W, 40 + 26 * t))          # the same slow drift as the ride
+                oy = max(0, (op.shape[0] - H) // 2)
+                view = op[oy:oy + H, ox:ox + W]
+                img[:view.shape[0]] = img[:view.shape[0]] * (1 - k) + view * k
+        self.particles(img, t)
         img = self.grade(img)
         return np.clip(img * (1 - self.fa) + self.frame, 0, 255).astype(np.uint8)
+
+    def particles(self, img, t):
+        if not self.weather:
+            return
+        if self.weather == "snow":
+            x = (self.px - (NEAR * 0.55 * self.pz + 8) * t + 14 * np.sin(t * 0.7 + self.pph)) % (W + 40) - 20
+            y = (self.py + (38 + 70 * self.pz) * t) % (H + 40) - 20
+            for xi, yi, zi in zip(x.astype(int), y.astype(int), self.pz):
+                cv2.circle(img, (xi, yi), int(1 + 3 * zi), (250, 248, 245), -1, lineType=cv2.LINE_AA)
+        elif self.weather == "leaves":
+            x = (self.px - (NEAR * 0.7 * self.pz + 20) * t + 30 * np.sin(t * 0.9 + self.pph)) % (W + 80) - 40
+            y = (self.py + (30 + 45 * self.pz) * t + 20 * np.sin(t * 1.3 + self.pph)) % (H + 80) - 40
+            for xi, yi, zi, ph, c in zip(x.astype(int), y.astype(int), self.pz, self.pph, self.pcol):
+                ang = int((ph * 57 + t * 120 * zi) % 360)
+                cv2.ellipse(img, (xi, yi), (int(4 + 9 * zi), int(2 + 4 * zi)), ang, 0, 360, tuple(float(v) for v in c), -1, lineType=cv2.LINE_AA)
 
     def grade(self, img):
         """Per-city light and colour, applied to the scenery only: the window frame stays the same in every city."""
