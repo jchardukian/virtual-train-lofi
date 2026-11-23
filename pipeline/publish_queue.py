@@ -51,8 +51,8 @@ def build_day(record, existing, limits):
                                    go_live=bool(ch.get("go_live")))
     if bad:
         return {"ok": False, "violations": bad, "payloads": []}
+    # isAiGenerated is False by owner decision (2026-11-22): no on-video AI label; descriptions say the art is illustrated.
     payloads = [{"channelId": ch["buffer_channel_id"], "schedulingType": "automatic", "mode": "customScheduled", "dueAt": it["due_at"],
                  "text": it["description"], "assets": [{"video": {"url": it["media_url"]}}],
                  "metadata": {"youtube": {"title": it["title"], "categoryId": "10", "privacy": "public", "madeForKids": False,
-                                          "isAiGenerated": False,   # owner decision 2026-11-22: no on-video AI label; the description says the art is illustrated and not real footage "license": "youtube"}}} for it in record["items"]]
-    return {"ok": True, "violations": [], "payloads": payloads}
+                                          "isAiGenerated": False, return {"ok": True, "violations": [], "payloads": payloads}
