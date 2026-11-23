@@ -4,32 +4,28 @@ The canonical current direction for Virtual Train Lofi. Newest decision
 first. A decision is changed only by a new dated entry that names the one it
 replaces; nothing here is reversed silently.
 
-## CURRENT STATUS — 2026-11-22 22:10 UTC (read this first)
+## CURRENT STATUS — 2026-11-23 00:15 UTC (read this first)
 
-* **Active production method: illustrated 2.5D "destination mood journey".** Painted
-  artwork in depth bands scrolling behind a fixed train window; a curated, stylised
-  journey, never presented as a real route or real footage. Stylised 3D, the
-  colour-grade restyle and real footage are history only.
-* **Chicago:** final 300 s master and two verticals; visually approved by the owner
-  (21:35 entry). Frozen. Not published.
-* **Denver and Tokyo:** 300 s masters and two verticals each built, all gates passed,
-  previews in `output/samples/`. Awaiting owner review.
-* **Paris:** video rendered; first soundtrack attempt failed the audio gate (a silent
-  track ending); being re-finished.
-* **Spend (computed from API usage; billed amounts unverified):** first style test
-  about 0.70 USD; Chicago 1.25 USD of a 4 USD ceiling; Denver, Paris and Tokyo
-  2.14 USD of a combined 3 USD ceiling. Both ceilings were confirmed by the owner
-  in the agent session. No further spend is authorised.
-* **Publishing:** nothing published or scheduled. Hard limit of one long-form and
-  two Shorts per day (`publish/limits.json`); `pipeline/publish_preflight.py` is a
-  tested check that any scheduler must call, but no scheduler exists yet, so the
-  limit is not yet enforced by running code. Needs the owner's LofiTrain channels
-  and an explicit go-live.
-* **Hard gates, unchanged:** no further spend, no paid infrastructure, no merge, no
-  publication, scheduling or livestream, no repository visibility change, without
-  the owner's explicit approval.
-* **Durability:** full-resolution masters are on a temporary build disk and in the
-  files sent to the owner; no durable storage is approved.
+* **Method:** illustrated 2.5D "destination mood journey"; stylised, never presented as
+  a real route or real footage. Earlier 3D and real-footage work is history only.
+* **Built, all automated gates passed:** Chicago, Denver, Paris, Tokyo. Each has a 300 s
+  1080p master and two 25 s vertical Shorts.
+* **Approved by the owner:** Chicago only (frozen). Denver, Paris and Tokyo await review.
+* **Per-city looks:** graded samples exist for Denver (softened v2), Paris and Tokyo
+  (cool overcast day, not blue hour). Rail-piece fixes for Denver and Tokyo are in their
+  settings. No rebuild until the owner approves the looks; current masters are kept.
+* **Platform:** YouTube only at launch; TikTok deferred (limit zero). Channel: Buffer
+  destination "Lofi Train POV", YouTube channel `UCLjE-J4o5HSXz1cCokDdZbQ`, confirmed by the
+  owner as @LofiTrainPOV. Limit: one long-form and two Shorts per day.
+* **Publishing:** nothing scheduled or published. Blocked on (1) a public link for the
+  master, see `docs/MEDIA_ORIGIN.md` (proposal, nothing created), (2) the owner's explicit
+  go-live, (3) rights closeout. `pipeline/publish_queue.py` and `publish_preflight.py` are
+  tested gates; there is no unattended scheduler.
+* **Spend (computed, billed amounts unverified):** style test about 0.70 USD; Chicago
+  1.25 of 4 USD; Denver, Paris, Tokyo 2.14 of 3 USD. No further spend authorised.
+* **Durability:** masters are on a temporary build disk and in files sent to the owner.
+* **Hard gates:** no spend, paid or public infrastructure, merge, scheduling, publication
+  or livestream without the owner's explicit approval.
 
 ## YouTube-only launch; TikTok deferred — 2026-11-22 23:40 UTC (relayed on PR #1, comment 7087747366)
 
