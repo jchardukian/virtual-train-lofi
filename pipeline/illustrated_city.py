@@ -49,7 +49,13 @@ class City:
             g = cv2.imread(str(ROOT / gcfg["src"]), cv2.IMREAD_UNCHANGED)
             r0, r1 = gcfg["rows"]
             g = g[r0:r1, :, :3]
-            lawn = cv2.resize(g, (1536, 420), interpolation=cv2.INTER_CUBIC).astype(np.float32)
+            if gcfg.get("tile"):              # repeat the texture downwards at its own scale instead of stretching it
+                g = cv2.resize(g, None, fx=gcfg.get("scale", 1.0), fy=gcfg.get("scale", 1.0), interpolation=cv2.INTER_CUBIC)
+                g = np.concatenate([g, g[::-1]], axis=0)
+                lawn = np.tile(g, (420 // g.shape[0] + 1, 1, 1))[:420]
+                lawn = cv2.resize(lawn, (1536, 420), interpolation=cv2.INTER_AREA).astype(np.float32)
+            else:
+                lawn = cv2.resize(g, (1536, 420), interpolation=cv2.INTER_CUBIC).astype(np.float32)
         self.lawn = loop((lawn, np.ones(lawn.shape[:2] + (1,), np.float32)), 200)
         # the line's own trackside, right below the window
         ncfg = cfg.get("near", {"src": "work/chi/sprites/strip_3.png", "scale": 1.7, "base": 40})
@@ -75,7 +81,7 @@ class City:
         # weather: procedural particles between the scenery and the window glass
         self.weather = cfg.get("weather")
         rng = np.random.default_rng(7)
-        n = {"snow": 420, "leaves": 70}.get(self.weather, 0)
+        n = {"snow": 420, "leaves": 70, "petals": 110}.get(self.weather, 0)
         self.px, self.py = rng.uniform(0, W, n), rng.uniform(0, H, n)
         self.pz = rng.uniform(0.3, 1.0, n)                   # depth: near flakes are bigger and faster
         self.pph = rng.uniform(0, 6.28, n)
@@ -204,6 +210,12 @@ class City:
             y = (self.py + (38 + 70 * self.pz) * t) % (H + 40) - 20
             for xi, yi, zi in zip(x.astype(int), y.astype(int), self.pz):
                 cv2.circle(img, (xi, yi), int(1 + 3 * zi), (250, 248, 245), -1, lineType=cv2.LINE_AA)
+        elif self.weather == "petals":
+            x = (self.px - (NEAR * 0.6 * self.pz + 15) * t + 35 * np.sin(t * 0.8 + self.pph)) % (W + 60) - 30
+            y = (self.py + (22 + 35 * self.pz) * t + 18 * np.sin(t * 1.1 + self.pph)) % (H + 60) - 30
+            for xi, yi, zi, ph in zip(x.astype(int), y.astype(int), self.pz, self.pph):
+                ang = int((ph * 57 + t * 90 * zi) % 360)
+                cv2.ellipse(img, (xi, yi), (int(2 + 5 * zi), int(1 + 3 * zi)), ang, 0, 360, (205, 190, 250), -1, lineType=cv2.LINE_AA)
         elif self.weather == "leaves":
             x = (self.px - (NEAR * 0.7 * self.pz + 20) * t + 30 * np.sin(t * 0.9 + self.pph)) % (W + 80) - 40
             y = (self.py + (30 + 45 * self.pz) * t + 20 * np.sin(t * 1.3 + self.pph)) % (H + 80) - 40
