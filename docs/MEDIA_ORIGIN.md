@@ -60,3 +60,22 @@ Livestream files would add to this and are not included.
   It has tests. It does not upload files and does not call the scheduling tool.
 - Not built: the upload step (needs the buckets), and anything that runs unattended. A person or agent still
   triggers each day's release. Automated daily publishing is **not** solved.
+
+## Archive contents and the split Denver master (2026-11-23)
+
+Created with the owner's approval: `lofitrain-archive` (private) and `lofitrain-delivery` (public read).
+The API route available to the build session rejects single uploads above about 300 MB (HTTP 413), so
+Denver's original 319 MB master is stored as two parts in `denver/original/`:
+
+| Object | SHA-256 |
+|---|---|
+| `denver_illustrated_master.mp4.part00` | 8b3d9684da6485e9dd4d18663a628f3dcee762d14066ad3be0d6c884a8b04eec |
+| `denver_illustrated_master.mp4.part01` | a5711674c8ccfbdb01b935b12c1c8877e1acfe229fef7914d38b590c1605ceba |
+
+Reassemble: download both and run `cat denver_illustrated_master.mp4.part00 denver_illustrated_master.mp4.part01 > denver_illustrated_master.mp4`.
+Result must hash to `3129bc620a0a240761b798e0d738e33c9c2516c420881dca15680c2d4e13daa1`. Verified by downloading
+both parts, joining and probing (300.000 s) on 2026-11-23. Proper multipart upload needs the S3 route and its
+own access keys, which the owner would have to create; until then any master over 300 MB is split this way.
+
+Delivery cleanup is manual for the first post only: the file is deleted after a public YouTube watch page is
+confirmed, never on "sent" alone, and kept for retry if the upload fails. Automated retention is not built.
