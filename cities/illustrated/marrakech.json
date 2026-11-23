@@ -1,0 +1,170 @@
+{
+ "city": "Marrakech, Morocco",
+ "next": "Austin, Texas",
+ "version": 3,
+ "season": "Marrakech on a warm late spring afternoon, red-ochre walls glowing in low sun, deep blue sky, palm groves, snowy Atlas peaks far away, warm and inviting",
+ "sky": "work/cities_v3/marrakech/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/marrakech/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    64.61347961425781,
+    115.79649353027344,
+    214.21278381347656
+   ],
+   [
+    53.84457015991211,
+    96.49708557128906,
+    178.5106658935547
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/marrakech/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 40
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/marrakech/sprites/local_1.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/marrakech/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 813,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/marrakech/sprites/local_0.png",
+     "scale": 0.6976744186046512,
+     "base": 872
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_0.png",
+     "scale": 0.9478991596638655,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_4b.png",
+     "scale": 1.7,
+     "base": 847
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/marrakech/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_1.png",
+     "scale": 1.540983606557377,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/local_1.png",
+     "scale": 0.6622516556291391,
+     "base": 872
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/marrakech/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_2.png",
+     "scale": 1.5460526315789473,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/local_2.png",
+     "scale": 0.9836065573770492,
+     "base": 872
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/marrakech/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_3.png",
+     "scale": 1.2737127371273713,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/local_3.png",
+     "scale": 1.0638297872340425,
+     "base": 872
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/marrakech/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/marrakech/sprites/landmarks_4a.png",
+     "scale": 1.7,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/marrakech/sprites/local_4.png",
+     "scale": 0.55,
+     "base": 872
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/marrakech/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

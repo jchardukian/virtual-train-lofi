@@ -244,5 +244,195 @@
    147.4
   ],
   "licence": "CC BY 4.0"
+ },
+ "los_angeles": {
+  "titles": [
+   "This Feeling",
+   "Walking To The Park At 3 A M"
+  ],
+  "albums": [
+   "Indigo Dreams",
+   "Indigo Dreams"
+  ],
+  "files": [
+   "work/music_lib/This_Feeling.mp3",
+   "work/music_lib/Walking_To_The_Park_At_3_A_M.mp3"
+  ],
+  "durations_s": [
+   166.0,
+   201.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "edinburgh": {
+  "titles": [
+   "Bliss",
+   "Box Of Kittens"
+  ],
+  "albums": [
+   "Above The Clouds",
+   "Brain Fog"
+  ],
+  "files": [
+   "work/music_lib/Bliss.mp3",
+   "work/music_lib/Box_Of_Kittens.mp3"
+  ],
+  "durations_s": [
+   180.4,
+   197.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "nashville": {
+  "titles": [
+   "Still Of The Night",
+   "Time To Think"
+  ],
+  "albums": [
+   "Sleep Tight",
+   "City Nights"
+  ],
+  "files": [
+   "work/music_lib/Still_Of_The_Night.mp3",
+   "work/music_lib/Time_To_Think.mp3"
+  ],
+  "durations_s": [
+   160.5,
+   179.5
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "hong_kong": {
+  "titles": [
+   "Rainy Streets",
+   "Fog Blanket"
+  ],
+  "albums": [
+   "City Nights 2",
+   "City Nights 3"
+  ],
+  "files": [
+   "work/music_lib/Rainy_Streets.mp3",
+   "work/music_lib/Fog_Blanket.mp3"
+  ],
+  "durations_s": [
+   168.5,
+   178.8
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "washington_dc": {
+  "titles": [
+   "Saturday Morning",
+   "Deja Vu"
+  ],
+  "albums": [
+   "Indigo Dreams",
+   "Sea Of Stars"
+  ],
+  "files": [
+   "work/music_lib/Saturday_Morning.mp3",
+   "work/music_lib/Deja_Vu.mp3"
+  ],
+  "durations_s": [
+   108.0,
+   212.2
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "marrakech": {
+  "titles": [
+   "Seashells",
+   "Whispers in the Dark"
+  ],
+  "albums": [
+   "Oasis",
+   "Whispers in the Dark"
+  ],
+  "files": [
+   "work/music_lib/Seashells.mp3",
+   "work/music_lib/Whispers_in_the_Dark.mp3"
+  ],
+  "durations_s": [
+   178.9,
+   174.5
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "austin": {
+  "titles": [
+   "Night Owls",
+   "Strike Of Midnight"
+  ],
+  "albums": [
+   "City Nights 2",
+   "Cypress Manor"
+  ],
+  "files": [
+   "work/music_lib/Night_Owls.mp3",
+   "work/music_lib/Strike_Of_Midnight.mp3"
+  ],
+  "durations_s": [
+   160.5,
+   154.1
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "sydney": {
+  "titles": [
+   "Heart of the Ocean",
+   "The Portal"
+  ],
+  "albums": [
+   "Oasis",
+   "Sands Of Time"
+  ],
+  "files": [
+   "work/music_lib/Heart_of_the_Ocean.mp3",
+   "work/music_lib/The_Portal.mp3"
+  ],
+  "durations_s": [
+   175.5,
+   173.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "philadelphia": {
+  "titles": [
+   "Frigid",
+   "Festival of Lights"
+  ],
+  "albums": [
+   "Snowbound",
+   "Snowbound"
+  ],
+  "files": [
+   "work/music_lib/Frigid.mp3",
+   "work/music_lib/Festival_of_Lights.mp3"
+  ],
+  "durations_s": [
+   164.5,
+   195.5
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "santorini": {
+  "titles": [
+   "Glowing Tides",
+   "Lost At Sea"
+  ],
+  "albums": [
+   "Sea Of Stars 2",
+   "Eye Of The Storm"
+  ],
+  "files": [
+   "work/music_lib/Glowing_Tides.mp3",
+   "work/music_lib/Lost_At_Sea.mp3"
+  ],
+  "durations_s": [
+   208.5,
+   160.3
+  ],
+  "licence": "CC BY 4.0"
  }
 }

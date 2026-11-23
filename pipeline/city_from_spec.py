@@ -144,6 +144,29 @@ def sky_key(path):
     return True
 
 
+def trim_flat_top(path):
+    """A strip whose top is painted, featureless sky (gradients the flood fill could not follow): find the first
+    row with real detail (edges) and fade the strip in from just above it."""
+    im = cv2.imread(str(path), cv2.IMREAD_UNCHANGED)
+    a = im[..., 3]
+    h = a.shape[0]
+    if (a[: max(3, h // 10)] > 128).mean() < 0.9:
+        return False
+    g = cv2.cvtColor(im[..., :3], cv2.COLOR_BGR2GRAY).astype(np.float32)
+    e = np.abs(cv2.Sobel(g, cv2.CV_32F, 1, 0, ksize=3)) + np.abs(cv2.Sobel(g, cv2.CV_32F, 0, 1, ksize=3))
+    row = cv2.blur(e, (31, 9)).mean(1)
+    thr = 0.45 * np.median(row[h // 3:])
+    detail = np.where(row > thr)[0]
+    y = int(detail[0]) if len(detail) else 0
+    if y < 0.08 * h:
+        return False
+    y = max(0, y - 10)
+    ramp = np.clip((np.arange(h) - y) / 14.0, 0, 1)[:, None]
+    im[..., 3] = (a.astype(np.float32) * ramp).astype(np.uint8)
+    cv2.imwrite(str(path), im[max(0, y - 2):])
+    return True
+
+
 def cut(sp):
     d = ART / sp["id"]
     subprocess.run([sys.executable, str(ROOT / "pipeline/illustrated_cut.py"), str(d), "--sheets", "landmarks", "local", "--strips", "far", "near"],
@@ -152,6 +175,8 @@ def cut(sp):
     for f in sorted((d / "sprites").glob("far_*.png")) + [d / "sprites/near_0.png"]:
         if f.exists() and sky_key(f):
             print(sp["id"], "keyed painted sky out of", f.name)
+        if f.exists() and trim_flat_top(f):
+            print(sp["id"], "trimmed flat painted sky from", f.name)
 
 
 def dense_top(path):

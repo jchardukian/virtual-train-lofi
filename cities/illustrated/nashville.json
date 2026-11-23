@@ -1,0 +1,180 @@
+{
+ "city": "Nashville, Tennessee",
+ "next": "Hong Kong",
+ "version": 3,
+ "season": "Nashville on a warm spring evening, violet dusk sky, neon-like warm glows (no readable text), lit honky-tonk windows, the Cumberland River, cozy and musical",
+ "sky": "work/cities_v3/nashville/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/nashville/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "fireflies",
+ "ground_src": {
+  "colour": [
+   [
+    48.94905090332031,
+    52.03306198120117,
+    92.23434448242188
+   ],
+   [
+    40.79087829589844,
+    43.36088562011719,
+    76.86195373535156
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/nashville/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 116
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/nashville/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/nashville/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 747,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/nashville/sprites/local_0.png",
+     "scale": 0.7792207792207793,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_0.png",
+     "scale": 0.9185667752442996,
+     "base": 822
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/local_5.png",
+     "scale": 1.0273972602739727,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 822
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/nashville/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/nashville/sprites/local_1.png",
+     "scale": 0.6912442396313364,
+     "base": 847
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_1.png",
+     "scale": 1.4199395770392749,
+     "base": 822
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 822
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/nashville/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_2a.png",
+     "scale": 1.7,
+     "base": 822
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/local_2.png",
+     "scale": 1.5075376884422111,
+     "base": 847
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/nashville/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_2b.png",
+     "scale": 1.7,
+     "base": 822
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/local_3.png",
+     "scale": 1.2765957446808511,
+     "base": 847
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/nashville/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/nashville/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 822
+    },
+    {
+     "src": "work/cities_v3/nashville/sprites/local_4.png",
+     "scale": 1.1450381679389312,
+     "base": 847
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/nashville/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

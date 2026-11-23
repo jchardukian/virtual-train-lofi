@@ -1,0 +1,175 @@
+{
+ "city": "Edinburgh, Scotland",
+ "next": "Nashville, Tennessee",
+ "version": 3,
+ "season": "Edinburgh on a late-summer afternoon with soft drizzle and sun breaking through, silver and gold light, dark stone, green hills, moody but cozy",
+ "sky": "work/cities_v3/edinburgh/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/edinburgh/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    46.002506256103516,
+    83.3154067993164,
+    76.483154296875
+   ],
+   [
+    38.335426330566406,
+    69.42950439453125,
+    63.7359619140625
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/edinburgh/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 23
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/edinburgh/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/edinburgh/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 756,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_0.png",
+     "scale": 0.5834683954619124,
+     "base": 850
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_0.png",
+     "scale": 1.6491228070175439,
+     "base": 825
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_5.png",
+     "scale": 0.683371298405467,
+     "base": 850
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 825
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/edinburgh/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_1.png",
+     "scale": 1.1823899371069182,
+     "base": 825
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_1.png",
+     "scale": 0.7263922518159807,
+     "base": 850
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/edinburgh/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_2.png",
+     "scale": 1.5309446254071661,
+     "base": 825
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 850
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/edinburgh/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_3.png",
+     "scale": 1.172069825436409,
+     "base": 825
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_3.png",
+     "scale": 0.55,
+     "base": 850
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/edinburgh/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/edinburgh/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 825
+    },
+    {
+     "src": "work/cities_v3/edinburgh/sprites/local_4.png",
+     "scale": 1.7,
+     "base": 850
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/edinburgh/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

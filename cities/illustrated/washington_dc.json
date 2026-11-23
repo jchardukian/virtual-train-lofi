@@ -1,0 +1,175 @@
+{
+ "city": "Washington, D.C.",
+ "next": "Marrakech, Morocco",
+ "version": 3,
+ "season": "Washington, D.C. on a fresh spring morning in cherry-blossom season, soft blue sky, white marble glowing, pink blossoms everywhere, calm and dignified",
+ "sky": "work/cities_v3/washington_dc/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/washington_dc/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "petals",
+ "ground_src": {
+  "colour": [
+   [
+    132.48281860351562,
+    113.14616394042969,
+    92.86344909667969
+   ],
+   [
+    110.40235137939453,
+    94.2884750366211,
+    77.38621520996094
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/washington_dc/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 25
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/washington_dc/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/washington_dc/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 685,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_0.png",
+     "scale": 0.6754221388367729,
+     "base": 823
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_0.png",
+     "scale": 1.6491228070175439,
+     "base": 798
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_4b.png",
+     "scale": 0.6122448979591837,
+     "base": 823
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 798
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/washington_dc/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_1.png",
+     "scale": 1.3492822966507176,
+     "base": 798
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_1.png",
+     "scale": 0.7331975560081466,
+     "base": 823
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/washington_dc/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 798
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_2.png",
+     "scale": 0.8426966292134831,
+     "base": 823
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/washington_dc/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 798
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_3.png",
+     "scale": 0.8470588235294118,
+     "base": 823
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/washington_dc/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/washington_dc/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 798
+    },
+    {
+     "src": "work/cities_v3/washington_dc/sprites/local_4a.png",
+     "scale": 0.7299270072992701,
+     "base": 823
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/washington_dc/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}
