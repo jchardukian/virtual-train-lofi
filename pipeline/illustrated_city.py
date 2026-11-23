@@ -50,7 +50,8 @@ class City:
         self.sky = np.ascontiguousarray(sky[y0:y0 + 760 * S]).astype(np.float32)
         self.horizon = self.sky[-40:].reshape(-1, 3).mean(axis=0)
         wt = cv2.resize(SC[775:1010, 505:775], (1300 * S, 420 * S), interpolation=cv2.INTER_LANCZOS4)
-        self.river = loop((wt.astype(np.float32), np.ones(wt.shape[:2] + (1,), np.float32)), 200 * S)
+        self.river = loop((wt.astype(np.float32), np.ones(wt.shape[:2] + (1,), np.float32)), 200 * S) \
+            if any(sc.get("ground") == "river" for sc in cfg["sections"]) else None
         # ground plane: a band cropped from one of the city's own strips, or the shared lawn
         gcfg = cfg.get("ground_src", {"src": "work/chi/sprites/strip_3.png", "rows": [70, 135]})
         if "colour" in gcfg:              # a plain field (fresh snow, sand): two colours, top to bottom, with faint texture
@@ -123,8 +124,10 @@ class City:
             band = None
             if sc.get("band"):
                 b = sc["band"]
-                band = (loop(self.feather(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False)), b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S),
-                        b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)
+                bkey = ("band", b["src"], b.get("scale", 1.0), b.get("flip", False), b.get("feather_top", 90), b.get("feather_bottom", 45))
+                if bkey not in self.cache:            # sections that share a strip share one copy of it (4K memory)
+                    self.cache[bkey] = loop(self.feather(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False)), b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S)
+                band = (self.cache[bkey], b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)
             self.sections.append({"ground": sc.get("ground", "lawn"), "far": far, "band": band})
             items = sc.get("mid", [])
             for i, m in enumerate(items):
@@ -350,7 +353,8 @@ def main():
     C = City(cfg)
     C.no_grade = a.no_grade
     ff = subprocess.Popen(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-f", "rawvideo", "-pix_fmt", "bgr24", "-s", f"{W}x{H}", "-r", str(FPS),
-                           "-i", "-", "-c:v", "libx264", "-preset", "medium", "-crf", "17", "-pix_fmt", "yuv420p", "-g", "60", str(out)], stdin=subprocess.PIPE)
+                           "-i", "-", "-c:v", "libx264", *(["-preset", "medium", "-crf", "17"] if S == 1 else ["-preset", "veryfast", "-crf", "14"]),
+                           "-pix_fmt", "yuv420p", "-g", "60", str(out)], stdin=subprocess.PIPE)       # 4K: a fast near-lossless intermediate; the master is the quality encode
     for f in range(f0, f1 + 1):
         ff.stdin.write(C.render(f).tobytes())
     ff.stdin.close()

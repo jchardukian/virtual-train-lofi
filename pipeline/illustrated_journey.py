@@ -44,7 +44,7 @@ def loop(layer, ov=140):
     out_rgb, out_a = rgb[:, :w - ov].copy(), a[:, :w - ov].copy()
     out_rgb[:, :ov] = rgb[:, w - ov:] * (1 - r) + rgb[:, :ov] * r
     out_a[:, :ov] = a[:, w - ov:] * (1 - r) + a[:, :ov] * r
-    reps = math.ceil((W * 2) / out_rgb.shape[1]) + 1
+    reps = math.ceil(W / out_rgb.shape[1]) + 1                 # enough for any window of width W starting inside one period
     return np.tile(out_rgb, (1, reps, 1)), np.tile(out_a, (1, reps, 1)), out_rgb.shape[1]
 
 
