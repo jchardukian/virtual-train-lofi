@@ -27,6 +27,21 @@ replaces; nothing here is reversed silently.
 * **Hard gates:** no spend, paid or public infrastructure, merge, scheduling, publication
   or livestream without the owner's explicit approval.
 
+## First four cities as V1; differentiation gate from city five — 2026-11-23 02:15 UTC
+
+Relayed on PR #1 (comment 7089753102) as the owner's view: the first four cities are passable but share
+too much scenery. They are not to be remade or held back for that; they are the V1 baseline.
+(Approval to publish Denver, Paris and Tokyo still to be given by the owner in the agent session.)
+
+From city five, a city is accepted only if it is meaningfully distinct in scene composition, not just colour:
+* a city-specific opening 5 to 10 seconds, with a landmark silhouette early;
+* its own season, time of day, weather, terrain and architecture where the art supports it;
+* its own foreground elements and camera rhythm; no reused rivers, tree lines or lawns that make no sense there;
+* same channel identity: illustrated train window, cozy melodic music.
+A 10 to 20 second preview of each new city is reviewed before its full build. Low-cost reusable environment
+families are allowed. No paid image generation without the owner's approval of a cost.
+Reason recorded: YouTube's spam policy targets mass-produced, repetitive content.
+
 ## Long-form route: YouTube Data API — 2026-11-23 01:05 UTC
 
 The owner asked for automatic daily long-form uploads, set up a Google OAuth client in their existing
