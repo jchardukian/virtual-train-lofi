@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/las_vegas/sprites/local_0.png",
      "scale": 0.7751937984496124,
-     "base": 849
+     "base": 900
     },
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_0.png",
      "scale": 0.962457337883959,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/las_vegas/sprites/local_4.png",
      "scale": 0.9771986970684039,
-     "base": 849
+     "base": 900
     },
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 824
+     "base": 900
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_1.png",
      "scale": 1.6785714285714286,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/las_vegas/sprites/local_1.png",
      "scale": 1.5706806282722514,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -111,7 +111,7 @@
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_2.png",
      "scale": 1.0217391304347827,
-     "base": 824
+     "base": 900
     }
    ],
    "band": {
@@ -128,7 +128,7 @@
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_3.png",
      "scale": 1.4641744548286604,
-     "base": 824
+     "base": 900
     }
    ],
    "band": {
@@ -145,12 +145,12 @@
     {
      "src": "work/cities_v3/las_vegas/sprites/landmarks_4.png",
      "scale": 1.2433862433862435,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/las_vegas/sprites/local_3.png",
      "scale": 1.1501597444089458,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

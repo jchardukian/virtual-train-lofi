@@ -57,17 +57,12 @@
     {
      "src": "work/cities_v3/san_diego/sprites/local_0.png",
      "scale": 1.0344827586206897,
-     "base": 853
+     "base": 895
     },
     {
      "src": "work/cities_v3/san_diego/sprites/landmarks_0.png",
      "scale": 1.0763358778625953,
-     "base": 828
-    },
-    {
-     "src": "work/cities_v3/san_diego/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 828
+     "base": 895
     }
    ],
    "band": {
@@ -84,12 +79,12 @@
     {
      "src": "work/cities_v3/san_diego/sprites/landmarks_1.png",
      "scale": 1.4329268292682926,
-     "base": 828
+     "base": 895
     },
     {
      "src": "work/cities_v3/san_diego/sprites/local_1.png",
      "scale": 1.675977653631285,
-     "base": 853
+     "base": 895
     }
    ],
    "band": {
@@ -104,14 +99,9 @@
    "name": "part 3",
    "mid": [
     {
-     "src": "work/cities_v3/san_diego/sprites/landmarks_2.png",
-     "scale": 1.4461538461538461,
-     "base": 828
-    },
-    {
      "src": "work/cities_v3/san_diego/sprites/local_2.png",
      "scale": 1.7,
-     "base": 853
+     "base": 895
     }
    ],
    "band": {
@@ -128,7 +118,7 @@
     {
      "src": "work/cities_v3/san_diego/sprites/landmarks_3.png",
      "scale": 1.5359477124183007,
-     "base": 828
+     "base": 895
     }
    ],
    "band": {
@@ -145,12 +135,12 @@
     {
      "src": "work/cities_v3/san_diego/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 828
+     "base": 895
     },
     {
      "src": "work/cities_v3/san_diego/sprites/local_4.png",
      "scale": 0.6224066390041494,
-     "base": 853
+     "base": 895
     }
    ],
    "band": {
@@ -161,5 +151,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

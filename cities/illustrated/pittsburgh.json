@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_0.png",
      "scale": 0.7157057654075547,
-     "base": 771
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/landmarks_0.png",
      "scale": 1.407185628742515,
-     "base": 746
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_5.png",
      "scale": 0.974025974025974,
-     "base": 771
+     "base": 900
     }
    ],
    "band": {
@@ -84,17 +84,17 @@
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_6.png",
      "scale": 1.079136690647482,
-     "base": 771
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/landmarks_1.png",
      "scale": 1.3202247191011236,
-     "base": 746
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_1.png",
      "scale": 0.9230769230769231,
-     "base": 771
+     "base": 900
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/pittsburgh/sprites/landmarks_2.png",
      "scale": 0.8506787330316742,
-     "base": 746
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_2.png",
      "scale": 1.0169491525423728,
-     "base": 771
+     "base": 900
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/pittsburgh/sprites/landmarks_3.png",
      "scale": 0.8867924528301887,
-     "base": 746
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_3.png",
      "scale": 0.7468879668049793,
-     "base": 771
+     "base": 900
     }
    ],
    "band": {
@@ -155,12 +155,12 @@
     {
      "src": "work/cities_v3/pittsburgh/sprites/landmarks_4.png",
      "scale": 1.5309446254071661,
-     "base": 746
+     "base": 900
     },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_4.png",
      "scale": 0.684931506849315,
-     "base": 771
+     "base": 900
     }
    ],
    "band": {
@@ -171,5 +171,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

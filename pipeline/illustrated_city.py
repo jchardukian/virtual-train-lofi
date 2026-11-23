@@ -100,6 +100,8 @@ class City:
         self.backdrop = [self.far_layer(L) for L in cfg.get("backdrop", [])]        # shown for the whole ride (e.g. mountains)
         self.sections = []
         self.mid = []
+        self.mid_front = cfg.get("mid_front", False)
+        self.ground_first = cfg.get("ground_first", False)
         for k, sc in enumerate(cfg["sections"]):
             far = [self.far_layer(L) for L in sc.get("far", [])]
             band = None
@@ -112,6 +114,20 @@ class City:
             for i, m in enumerate(items):
                 tau = k * self.sect + (i + 0.5) / len(items) * self.sect
                 self.mid.append((self.load(m["src"], m.get("scale", 1.0), m.get("flip", False)), tau, m.get("base", 775 if sc.get("ground", "lawn") != "river" else 722)))
+
+    def draw_ground(self, img, t, bob, w):
+        land = min(sum(w[k] for k, sc in enumerate(self.sections) if sc["ground"] == "lawn"), 1.0)
+        if land > 0:
+            rgb, _, period = self.lawn
+            o = int(110 * t) % period
+            y0 = 745 + bob
+            img[y0:] = img[y0:] * (1 - land) + rgb[:H - y0, o:o + W] * land
+
+    def draw_mids(self, img, t, bob):
+        for (rgb, a), tau, base in self.mid:
+            x = int(round(960 + MID * (tau - t) - a.shape[1] / 2))
+            if -a.shape[1] < x < W:
+                over(img, rgb, a, x, base - a.shape[0] + bob)
 
     def load(self, src, scale=1.0, flip=False, haze=0.0):
         key = (src, scale, flip, haze)
@@ -176,24 +192,19 @@ class City:
         o = int(40 + 3 * t)
         img[:760] = self.sky[:, o:o + W]
         img[760:] = self.sky[-1:, o:o + W]
+        if self.ground_first:                # ground lies behind the distant layers, which stand on it
+            self.draw_ground(img, t, bob, w)
         for lay in self.backdrop:
             self.draw_far(img, lay, t, 0.0, bob, 1.0)
         for k, sc in enumerate(self.sections):
             if w[k] > 0:
                 for lay in sc["far"]:
                     self.draw_far(img, lay, t, k * self.sect, bob, w[k])
-        land = sum(w[k] for k, sc in enumerate(self.sections) if sc["ground"] == "lawn")
-        riv = sum(w[k] for k, sc in enumerate(self.sections) if sc["ground"] == "river")
-        land, riv = min(land, 1.0), min(riv, 1.0)
-        if land > 0:
-            rgb, _, period = self.lawn
-            o = int(110 * t) % period
-            y0 = 745 + bob
-            img[y0:] = img[y0:] * (1 - land) + rgb[:H - y0, o:o + W] * land
-        for (rgb, a), tau, base in self.mid:
-            x = int(round(960 + MID * (tau - t) - a.shape[1] / 2))
-            if -a.shape[1] < x < W:
-                over(img, rgb, a, x, base - a.shape[0] + bob)
+        riv = min(sum(w[k] for k, sc in enumerate(self.sections) if sc["ground"] == "river"), 1.0)
+        if not self.ground_first:
+            self.draw_ground(img, t, bob, w)
+        if not self.mid_front:
+            self.draw_mids(img, t, bob)
         # river sections: the strip stands on the far bank, then the water in front of it
         for k, sc in enumerate(self.sections):
             if w[k] > 0 and sc["ground"] == "river" and sc["band"]:
@@ -207,6 +218,8 @@ class City:
             if w[k] > 0 and sc["ground"] != "river" and sc["band"]:
                 lp, base, speed, off = sc["band"]
                 strip(img, lp, off + speed * t, base + bob, w[k])
+        if self.mid_front:                 # landmarks stand on the street in front of the row, not perched behind it
+            self.draw_mids(img, t, bob)
         strip(img, self.near, 400 + NEAR * t, H + self.near_base, 1.0)
         for k in range(1, self.n):
             x = int(W + 150 - 620 * (t - (k * self.sect - 3.4)))

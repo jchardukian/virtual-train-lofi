@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/seattle/sprites/local_0.png",
      "scale": 0.7978723404255319,
-     "base": 778
+     "base": 860
     },
     {
      "src": "work/cities_v3/seattle/sprites/landmarks_0.png",
      "scale": 0.8481203007518797,
-     "base": 753
+     "base": 860
     },
     {
      "src": "work/cities_v3/seattle/sprites/local_5.png",
      "scale": 0.5778491171749599,
-     "base": 778
+     "base": 860
     },
     {
      "src": "work/cities_v3/seattle/sprites/landmarks_4b.png",
      "scale": 1.309192200557103,
-     "base": 753
+     "base": 860
     }
    ],
    "band": {
@@ -89,7 +89,7 @@
     {
      "src": "work/cities_v3/seattle/sprites/local_1.png",
      "scale": 0.78125,
-     "base": 778
+     "base": 860
     }
    ],
    "band": {
@@ -106,12 +106,12 @@
     {
      "src": "work/cities_v3/seattle/sprites/landmarks_2.png",
      "scale": 1.46875,
-     "base": 753
+     "base": 860
     },
     {
      "src": "work/cities_v3/seattle/sprites/local_2.png",
      "scale": 0.8256880733944955,
-     "base": 778
+     "base": 860
     }
    ],
    "band": {
@@ -128,7 +128,7 @@
     {
      "src": "work/cities_v3/seattle/sprites/landmarks_3.png",
      "scale": 0.9276315789473685,
-     "base": 753
+     "base": 860
     }
    ],
    "band": {
@@ -145,12 +145,12 @@
     {
      "src": "work/cities_v3/seattle/sprites/landmarks_4a.png",
      "scale": 1.1547911547911547,
-     "base": 753
+     "base": 860
     },
     {
      "src": "work/cities_v3/seattle/sprites/local_4.png",
      "scale": 0.6923076923076923,
-     "base": 778
+     "base": 860
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

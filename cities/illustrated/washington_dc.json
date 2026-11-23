@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/washington_dc/sprites/local_0.png",
      "scale": 0.6754221388367729,
-     "base": 823
+     "base": 850
     },
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_0.png",
      "scale": 1.6491228070175439,
-     "base": 798
+     "base": 850
     },
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 798
+     "base": 850
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_1.png",
      "scale": 1.3492822966507176,
-     "base": 798
+     "base": 850
     },
     {
      "src": "work/cities_v3/washington_dc/sprites/local_1.png",
      "scale": 0.7331975560081466,
-     "base": 823
+     "base": 850
     }
    ],
    "band": {
@@ -106,12 +106,12 @@
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_2.png",
      "scale": 1.7,
-     "base": 798
+     "base": 850
     },
     {
      "src": "work/cities_v3/washington_dc/sprites/local_2.png",
      "scale": 0.8426966292134831,
-     "base": 823
+     "base": 850
     }
    ],
    "band": {
@@ -128,12 +128,12 @@
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 798
+     "base": 850
     },
     {
      "src": "work/cities_v3/washington_dc/sprites/local_3.png",
      "scale": 0.8470588235294118,
-     "base": 823
+     "base": 850
     }
    ],
    "band": {
@@ -150,7 +150,7 @@
     {
      "src": "work/cities_v3/washington_dc/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 798
+     "base": 850
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

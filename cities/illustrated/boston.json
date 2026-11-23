@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/boston/sprites/local_0.png",
      "scale": 0.6521739130434783,
-     "base": 814
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/landmarks_0.png",
      "scale": 1.2702702702702702,
-     "base": 789
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/local_5.png",
      "scale": 0.7957559681697612,
-     "base": 814
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/landmarks_5.png",
      "scale": 1.1604938271604939,
-     "base": 789
+     "base": 890
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/boston/sprites/landmarks_1.png",
      "scale": 1.113744075829384,
-     "base": 789
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/local_1.png",
      "scale": 0.7659574468085106,
-     "base": 814
+     "base": 890
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/boston/sprites/landmarks_2.png",
      "scale": 1.2234273318872018,
-     "base": 789
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/local_2.png",
      "scale": 0.9836065573770492,
-     "base": 814
+     "base": 890
     }
    ],
    "band": {
@@ -133,7 +133,7 @@
     {
      "src": "work/cities_v3/boston/sprites/local_3.png",
      "scale": 0.8108108108108109,
-     "base": 814
+     "base": 890
     }
    ],
    "band": {
@@ -150,12 +150,12 @@
     {
      "src": "work/cities_v3/boston/sprites/landmarks_4.png",
      "scale": 1.3019390581717452,
-     "base": 789
+     "base": 890
     },
     {
      "src": "work/cities_v3/boston/sprites/local_4.png",
      "scale": 0.55,
-     "base": 814
+     "base": 890
     }
    ],
    "band": {
@@ -166,5 +166,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

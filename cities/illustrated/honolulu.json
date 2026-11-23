@@ -57,12 +57,12 @@
     {
      "src": "work/cities_v3/honolulu/sprites/landmarks_0.png",
      "scale": 1.7,
-     "base": 821
+     "base": 830
     },
     {
      "src": "work/cities_v3/honolulu/sprites/local_0.png",
      "scale": 0.967741935483871,
-     "base": 846
+     "base": 830
     }
    ],
    "band": {
@@ -79,7 +79,7 @@
     {
      "src": "work/cities_v3/honolulu/sprites/landmarks_1.png",
      "scale": 1.4596273291925466,
-     "base": 821
+     "base": 830
     }
    ],
    "band": {
@@ -96,7 +96,7 @@
     {
      "src": "work/cities_v3/honolulu/sprites/local_2.png",
      "scale": 1.1904761904761905,
-     "base": 846
+     "base": 830
     }
    ],
    "band": {
@@ -113,12 +113,12 @@
     {
      "src": "work/cities_v3/honolulu/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 821
+     "base": 830
     },
     {
      "src": "work/cities_v3/honolulu/sprites/local_3.png",
      "scale": 1.5720524017467248,
-     "base": 846
+     "base": 830
     }
    ],
    "band": {
@@ -135,7 +135,7 @@
     {
      "src": "work/cities_v3/honolulu/sprites/local_4.png",
      "scale": 1.7,
-     "base": 846
+     "base": 830
     }
    ],
    "band": {
@@ -146,5 +146,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

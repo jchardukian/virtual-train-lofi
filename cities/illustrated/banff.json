@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/banff/sprites/local_0.png",
      "scale": 0.8287292817679558,
-     "base": 839
+     "base": 830
     },
     {
      "src": "work/cities_v3/banff/sprites/landmarks_0.png",
      "scale": 1.1111111111111112,
-     "base": 814
+     "base": 830
     },
     {
      "src": "work/cities_v3/banff/sprites/local_5.png",
      "scale": 0.994475138121547,
-     "base": 839
+     "base": 830
     },
     {
      "src": "work/cities_v3/banff/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 814
+     "base": 830
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/banff/sprites/local_6.png",
      "scale": 0.7392197125256673,
-     "base": 839
+     "base": 830
     },
     {
      "src": "work/cities_v3/banff/sprites/local_1.png",
      "scale": 1.1494252873563218,
-     "base": 839
+     "base": 830
     }
    ],
    "band": {
@@ -122,7 +122,7 @@
     {
      "src": "work/cities_v3/banff/sprites/landmarks_3.png",
      "scale": 1.2303664921465969,
-     "base": 814
+     "base": 830
     }
    ],
    "band": {
@@ -139,12 +139,12 @@
     {
      "src": "work/cities_v3/banff/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 814
+     "base": 830
     },
     {
      "src": "work/cities_v3/banff/sprites/local_4.png",
      "scale": 1.0033444816053512,
-     "base": 839
+     "base": 830
     }
    ],
    "band": {
@@ -155,5 +155,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

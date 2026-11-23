@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_5.png",
      "scale": 1.7,
-     "base": 891
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_0.png",
      "scale": 1.070615034168565,
-     "base": 866
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_0.png",
      "scale": 1.2,
-     "base": 891
+     "base": 860
     }
    ],
    "band": {
@@ -84,17 +84,17 @@
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_6.png",
      "scale": 0.7692307692307693,
-     "base": 891
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_1.png",
      "scale": 1.3165266106442577,
-     "base": 866
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_1.png",
      "scale": 1.3157894736842106,
-     "base": 891
+     "base": 860
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_2.png",
      "scale": 1.3864306784660767,
-     "base": 866
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_2.png",
      "scale": 1.7,
-     "base": 891
+     "base": 860
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 866
+     "base": 860
     },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_3.png",
      "scale": 1.7,
-     "base": 891
+     "base": 860
     }
    ],
    "band": {
@@ -155,7 +155,7 @@
     {
      "src": "work/cities_v3/salt_lake_city/sprites/landmarks_4.png",
      "scale": 1.3742690058479532,
-     "base": 866
+     "base": 860
     }
    ],
    "band": {
@@ -166,5 +166,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

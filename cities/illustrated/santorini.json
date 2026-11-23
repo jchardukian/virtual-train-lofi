@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/santorini/sprites/local_0.png",
      "scale": 1.0344827586206897,
-     "base": 819
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/landmarks_0.png",
      "scale": 1.4199395770392749,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/local_5.png",
      "scale": 1.1627906976744187,
-     "base": 819
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 794
+     "base": 900
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/santorini/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/local_1.png",
      "scale": 1.1811023622047243,
-     "base": 819
+     "base": 900
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/santorini/sprites/landmarks_2.png",
      "scale": 1.6987951807228916,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/local_2.png",
      "scale": 0.8746355685131195,
-     "base": 819
+     "base": 900
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/santorini/sprites/landmarks_3.png",
      "scale": 1.4029850746268657,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/santorini/sprites/local_3.png",
      "scale": 1.7,
-     "base": 819
+     "base": 900
     }
    ],
    "band": {
@@ -155,7 +155,7 @@
     {
      "src": "work/cities_v3/santorini/sprites/local_4.png",
      "scale": 0.9036144578313253,
-     "base": 819
+     "base": 900
     }
    ],
    "band": {
@@ -166,5 +166,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/singapore/sprites/local_0.png",
      "scale": 0.8450704225352113,
-     "base": 784
-    },
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_0.png",
-     "scale": 1.236842105263158,
-     "base": 759
+     "base": 900
     },
     {
      "src": "work/cities_v3/singapore/sprites/local_5a.png",
      "scale": 1.7,
-     "base": 784
+     "base": 900
     },
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 759
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_0.png",
+     "scale": 1.236842105263158,
+     "base": 900
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/singapore/sprites/local_5b.png",
      "scale": 1.0135135135135136,
-     "base": 784
+     "base": 900
     },
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_1a.png",
      "scale": 1.637630662020906,
-     "base": 759
+     "base": 900
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_1b.png",
      "scale": 1.7,
-     "base": 759
+     "base": 900
     },
     {
      "src": "work/cities_v3/singapore/sprites/local_2.png",
      "scale": 1.1857707509881423,
-     "base": 784
+     "base": 900
     }
    ],
    "band": {
@@ -133,7 +133,7 @@
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_2.png",
      "scale": 1.7,
-     "base": 759
+     "base": 900
     }
    ],
    "band": {
@@ -150,7 +150,7 @@
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_3.png",
      "scale": 1.3544668587896254,
-     "base": 759
+     "base": 900
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

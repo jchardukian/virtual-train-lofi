@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/detroit/sprites/local_0.png",
      "scale": 0.8955223880597015,
-     "base": 849
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_0.png",
      "scale": 0.8752327746741154,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/local_5.png",
      "scale": 0.8356545961002786,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -84,17 +84,17 @@
     {
      "src": "work/cities_v3/detroit/sprites/local_6.png",
      "scale": 0.8595988538681948,
-     "base": 849
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_1.png",
      "scale": 1.1628865979381444,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/local_1.png",
      "scale": 1.639344262295082,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -111,7 +111,7 @@
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_2.png",
      "scale": 1.0284463894967177,
-     "base": 824
+     "base": 900
     }
    ],
    "band": {
@@ -128,12 +128,12 @@
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_3.png",
      "scale": 1.3505747126436782,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/local_3.png",
      "scale": 1.1904761904761905,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -150,12 +150,12 @@
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 824
+     "base": 900
     },
     {
      "src": "work/cities_v3/detroit/sprites/local_4.png",
      "scale": 1.2903225806451613,
-     "base": 849
+     "base": 900
     }
    ],
    "band": {
@@ -166,5 +166,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/austin/sprites/local_0.png",
      "scale": 1.7,
-     "base": 805
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/landmarks_0.png",
      "scale": 1.3165266106442577,
-     "base": 780
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/local_5.png",
      "scale": 1.0909090909090908,
-     "base": 805
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 780
+     "base": 900
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/austin/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 780
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/local_1.png",
      "scale": 1.2765957446808511,
-     "base": 805
+     "base": 900
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/austin/sprites/landmarks_2.png",
      "scale": 1.6785714285714286,
-     "base": 780
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/local_2.png",
      "scale": 1.492537313432836,
-     "base": 805
+     "base": 900
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/austin/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 780
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/local_3.png",
      "scale": 1.7,
-     "base": 805
+     "base": 900
     }
    ],
    "band": {
@@ -155,12 +155,12 @@
     {
      "src": "work/cities_v3/austin/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 780
+     "base": 900
     },
     {
      "src": "work/cities_v3/austin/sprites/local_4.png",
      "scale": 1.180327868852459,
-     "base": 805
+     "base": 900
     }
    ],
    "band": {
@@ -171,5 +171,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

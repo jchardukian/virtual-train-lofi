@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/philadelphia/sprites/local_0.png",
      "scale": 0.7725321888412017,
-     "base": 776
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/landmarks_0.png",
      "scale": 0.8703703703703703,
-     "base": 751
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/local_4.png",
      "scale": 1.4423076923076923,
-     "base": 776
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/landmarks_5.png",
      "scale": 1.146341463414634,
-     "base": 751
+     "base": 895
     }
    ],
    "band": {
@@ -89,17 +89,17 @@
     {
      "src": "work/cities_v3/philadelphia/sprites/local_5.png",
      "scale": 0.9009009009009009,
-     "base": 776
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/landmarks_1.png",
      "scale": 1.0053475935828877,
-     "base": 751
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/local_1.png",
      "scale": 0.7481296758104738,
-     "base": 776
+     "base": 895
     }
    ],
    "band": {
@@ -116,17 +116,17 @@
     {
      "src": "work/cities_v3/philadelphia/sprites/local_6.png",
      "scale": 0.6622516556291391,
-     "base": 776
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/landmarks_2.png",
      "scale": 1.7,
-     "base": 751
+     "base": 895
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/local_2.png",
      "scale": 0.9549071618037135,
-     "base": 776
+     "base": 895
     }
    ],
    "band": {
@@ -143,7 +143,7 @@
     {
      "src": "work/cities_v3/philadelphia/sprites/landmarks_3.png",
      "scale": 1.587837837837838,
-     "base": 751
+     "base": 895
     }
    ],
    "band": {
@@ -165,5 +165,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

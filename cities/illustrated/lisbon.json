@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/lisbon/sprites/local_0.png",
      "scale": 0.782608695652174,
-     "base": 795
+     "base": 900
     },
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_0.png",
      "scale": 1.4156626506024097,
-     "base": 770
+     "base": 900
     },
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_5.png",
      "scale": 1.2239583333333333,
-     "base": 770
+     "base": 900
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_1.png",
      "scale": 1.2806539509536785,
-     "base": 770
+     "base": 900
     },
     {
      "src": "work/cities_v3/lisbon/sprites/local_1.png",
      "scale": 0.7741935483870968,
-     "base": 795
+     "base": 900
     }
    ],
    "band": {
@@ -106,7 +106,7 @@
     {
      "src": "work/cities_v3/lisbon/sprites/local_2.png",
      "scale": 0.9523809523809523,
-     "base": 795
+     "base": 900
     }
    ],
    "band": {
@@ -123,12 +123,12 @@
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_3.png",
      "scale": 1.1533742331288344,
-     "base": 770
+     "base": 900
     },
     {
      "src": "work/cities_v3/lisbon/sprites/local_3.png",
      "scale": 0.7741935483870968,
-     "base": 795
+     "base": 900
     }
    ],
    "band": {
@@ -145,7 +145,7 @@
     {
      "src": "work/cities_v3/lisbon/sprites/landmarks_4.png",
      "scale": 1.5932203389830508,
-     "base": 770
+     "base": 900
     }
    ],
    "band": {
@@ -156,5 +156,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

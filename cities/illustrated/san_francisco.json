@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/san_francisco/sprites/local_0.png",
      "scale": 0.6289308176100629,
-     "base": 841
+     "base": 875
     },
     {
      "src": "work/cities_v3/san_francisco/sprites/landmarks_0.png",
      "scale": 0.8717156105100463,
-     "base": 816
+     "base": 875
     },
     {
      "src": "work/cities_v3/san_francisco/sprites/landmarks_5.png",
      "scale": 1.6433566433566433,
-     "base": 816
+     "base": 875
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/san_francisco/sprites/landmarks_1.png",
      "scale": 0.8430493273542601,
-     "base": 816
+     "base": 875
     },
     {
      "src": "work/cities_v3/san_francisco/sprites/local_1.png",
      "scale": 0.6507592190889371,
-     "base": 841
+     "base": 875
     }
    ],
    "band": {
@@ -117,12 +117,12 @@
     {
      "src": "work/cities_v3/san_francisco/sprites/landmarks_3.png",
      "scale": 1.1691542288557213,
-     "base": 816
+     "base": 875
     },
     {
      "src": "work/cities_v3/san_francisco/sprites/local_3.png",
      "scale": 0.8314087759815243,
-     "base": 841
+     "base": 875
     }
    ],
    "band": {
@@ -139,7 +139,7 @@
     {
      "src": "work/cities_v3/san_francisco/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 816
+     "base": 875
     }
    ],
    "band": {
@@ -150,5 +150,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

@@ -57,12 +57,12 @@
     {
      "src": "work/cities_v3/anchorage/sprites/local_0.png",
      "scale": 0.8064516129032258,
-     "base": 854
+     "base": 840
     },
     {
      "src": "work/cities_v3/anchorage/sprites/local_5.png",
      "scale": 0.7957559681697612,
-     "base": 854
+     "base": 840
     }
    ],
    "band": {
@@ -79,17 +79,12 @@
     {
      "src": "work/cities_v3/anchorage/sprites/local_1.png",
      "scale": 1.4423076923076923,
-     "base": 854
-    },
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_1.png",
-     "scale": 1.3352272727272727,
-     "base": 829
+     "base": 840
     },
     {
      "src": "work/cities_v3/anchorage/sprites/local_6.png",
      "scale": 0.6394316163410302,
-     "base": 854
+     "base": 840
     }
    ],
    "band": {
@@ -106,7 +101,7 @@
     {
      "src": "work/cities_v3/anchorage/sprites/landmarks_6.png",
      "scale": 1.7,
-     "base": 829
+     "base": 840
     }
    ],
    "band": {
@@ -134,7 +129,7 @@
     {
      "src": "work/cities_v3/anchorage/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 829
+     "base": 840
     }
    ],
    "band": {
@@ -145,5 +140,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

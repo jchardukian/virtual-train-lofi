@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/seoul/sprites/local_0.png",
      "scale": 1.3392857142857142,
-     "base": 857
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_0.png",
      "scale": 1.7,
-     "base": 832
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/local_5.png",
      "scale": 0.9174311926605505,
-     "base": 857
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 832
+     "base": 895
     }
    ],
    "band": {
@@ -89,17 +89,17 @@
     {
      "src": "work/cities_v3/seoul/sprites/local_6.png",
      "scale": 0.9230769230769231,
-     "base": 857
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_1.png",
      "scale": 1.128,
-     "base": 832
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/local_1.png",
      "scale": 1.023890784982935,
-     "base": 857
+     "base": 895
     }
    ],
    "band": {
@@ -116,7 +116,7 @@
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_2.png",
      "scale": 1.2533333333333334,
-     "base": 832
+     "base": 895
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 832
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/local_3.png",
      "scale": 1.3432835820895523,
-     "base": 857
+     "base": 895
     }
    ],
    "band": {
@@ -155,12 +155,12 @@
     {
      "src": "work/cities_v3/seoul/sprites/landmarks_4.png",
      "scale": 1.0972762645914398,
-     "base": 832
+     "base": 895
     },
     {
      "src": "work/cities_v3/seoul/sprites/local_4.png",
      "scale": 1.675977653631285,
-     "base": 857
+     "base": 895
     }
    ],
    "band": {
@@ -171,5 +171,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

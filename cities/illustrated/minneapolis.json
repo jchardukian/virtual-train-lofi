@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/minneapolis/sprites/local_0.png",
      "scale": 0.7792207792207793,
-     "base": 849
+     "base": 815
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_0.png",
      "scale": 1.7,
-     "base": 824
+     "base": 815
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
      "scale": 0.8071748878923767,
-     "base": 849
+     "base": 815
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 824
+     "base": 815
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 824
+     "base": 815
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/local_1.png",
      "scale": 0.7751937984496124,
-     "base": 849
+     "base": 815
     }
    ],
    "band": {
@@ -111,7 +111,7 @@
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_2.png",
      "scale": 1.4461538461538461,
-     "base": 824
+     "base": 815
     }
    ],
    "band": {
@@ -128,12 +128,12 @@
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_3.png",
      "scale": 1.3202247191011236,
-     "base": 824
+     "base": 815
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/local_3.png",
      "scale": 1.530612244897959,
-     "base": 849
+     "base": 815
     }
    ],
    "band": {
@@ -150,7 +150,7 @@
     {
      "src": "work/cities_v3/minneapolis/sprites/local_4a.png",
      "scale": 0.7317073170731707,
-     "base": 849
+     "base": 815
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/atlanta/sprites/local_0.png",
      "scale": 1.2295081967213115,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/landmarks_0.png",
      "scale": 0.9096774193548387,
-     "base": 769
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/local_5.png",
      "scale": 1.2195121951219512,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/landmarks_5.png",
      "scale": 1.119047619047619,
-     "base": 769
+     "base": 900
     }
    ],
    "band": {
@@ -80,7 +80,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 300,
-    "feather_top": 35
+    "feather_top": 12
    }
   },
   {
@@ -89,17 +89,17 @@
     {
      "src": "work/cities_v3/atlanta/sprites/local_6.png",
      "scale": 0.9900990099009901,
-     "base": 794
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/landmarks_1.png",
      "scale": 0.9161793372319688,
-     "base": 769
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/local_1.png",
      "scale": 0.9036144578313253,
-     "base": 794
+     "base": 900
     }
    ],
    "band": {
@@ -107,7 +107,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1000,
-    "feather_top": 35
+    "feather_top": 12
    }
   },
   {
@@ -116,7 +116,7 @@
     {
      "src": "work/cities_v3/atlanta/sprites/landmarks_2.png",
      "scale": 1.1809045226130652,
-     "base": 769
+     "base": 900
     }
    ],
    "band": {
@@ -124,7 +124,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1700,
-    "feather_top": 35
+    "feather_top": 12
    }
   },
   {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/atlanta/sprites/landmarks_3.png",
      "scale": 1.143552311435523,
-     "base": 769
+     "base": 900
     },
     {
      "src": "work/cities_v3/atlanta/sprites/local_3.png",
      "scale": 1.3574660633484164,
-     "base": 794
+     "base": 900
     }
    ],
    "band": {
@@ -146,7 +146,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 2400,
-    "feather_top": 35
+    "feather_top": 12
    }
   },
   {
@@ -155,7 +155,7 @@
     {
      "src": "work/cities_v3/atlanta/sprites/local_4.png",
      "scale": 1.4423076923076923,
-     "base": 794
+     "base": 900
     }
    ],
    "band": {
@@ -163,8 +163,10 @@
     "scale": 0.95,
     "base": 905,
     "offset": 3100,
-    "feather_top": 35
+    "feather_top": 12
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

@@ -57,12 +57,12 @@
     {
      "src": "work/cities_v3/bangkok/sprites/local_0.png",
      "scale": 0.7556675062972292,
-     "base": 824
+     "base": 840
     },
     {
      "src": "work/cities_v3/bangkok/sprites/landmarks_0.png",
      "scale": 0.8362989323843416,
-     "base": 799
+     "base": 840
     }
    ],
    "band": {
@@ -79,7 +79,7 @@
     {
      "src": "work/cities_v3/bangkok/sprites/landmarks_1.png",
      "scale": 1.3505747126436782,
-     "base": 799
+     "base": 840
     }
    ],
    "band": {
@@ -96,7 +96,7 @@
     {
      "src": "work/cities_v3/bangkok/sprites/landmarks_2.png",
      "scale": 1.6491228070175439,
-     "base": 799
+     "base": 840
     }
    ],
    "band": {
@@ -113,7 +113,7 @@
     {
      "src": "work/cities_v3/bangkok/sprites/local_3a.png",
      "scale": 0.8982035928143712,
-     "base": 824
+     "base": 840
     }
    ],
    "band": {
@@ -130,12 +130,12 @@
     {
      "src": "work/cities_v3/bangkok/sprites/landmarks_4.png",
      "scale": 1.1628865979381444,
-     "base": 799
+     "base": 840
     },
     {
      "src": "work/cities_v3/bangkok/sprites/local_3b.png",
      "scale": 0.8982035928143712,
-     "base": 824
+     "base": 840
     }
    ],
    "band": {
@@ -146,5 +146,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

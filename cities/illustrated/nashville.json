@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/nashville/sprites/local_0.png",
      "scale": 0.7792207792207793,
-     "base": 847
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_0.png",
      "scale": 0.9185667752442996,
-     "base": 822
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/local_5.png",
      "scale": 1.0273972602739727,
-     "base": 847
+     "base": 895
     }
    ],
    "band": {
@@ -84,17 +84,17 @@
     {
      "src": "work/cities_v3/nashville/sprites/local_1.png",
      "scale": 0.6912442396313364,
-     "base": 847
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_1.png",
      "scale": 1.4199395770392749,
-     "base": 822
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 822
+     "base": 895
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_2a.png",
      "scale": 1.7,
-     "base": 822
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/local_2.png",
      "scale": 1.5075376884422111,
-     "base": 847
+     "base": 895
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_2b.png",
      "scale": 1.7,
-     "base": 822
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/local_3.png",
      "scale": 1.2765957446808511,
-     "base": 847
+     "base": 895
     }
    ],
    "band": {
@@ -155,12 +155,12 @@
     {
      "src": "work/cities_v3/nashville/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 822
+     "base": 895
     },
     {
      "src": "work/cities_v3/nashville/sprites/local_4.png",
      "scale": 1.1450381679389312,
-     "base": 847
+     "base": 895
     }
    ],
    "band": {
@@ -171,5 +171,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

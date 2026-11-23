@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 774,
+   "base": 819,
    "alpha": 1.0
   }
  ],
@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/local_0.png",
      "scale": 1.1320754716981132,
-     "base": 822
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_0.png",
      "scale": 1.7,
-     "base": 797
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/local_4.png",
      "scale": 0.6109979633401222,
-     "base": 822
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 797
+     "base": 880
     }
    ],
    "band": {
@@ -89,12 +89,12 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 797
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/local_1a.png",
      "scale": 1.3636363636363635,
-     "base": 822
+     "base": 880
     }
    ],
    "band": {
@@ -111,12 +111,12 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_2.png",
      "scale": 1.246684350132626,
-     "base": 797
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/local_1b.png",
      "scale": 1.7,
-     "base": 822
+     "base": 880
     }
    ],
    "band": {
@@ -133,12 +133,12 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_3.png",
      "scale": 1.284738041002278,
-     "base": 797
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/local_2.png",
      "scale": 1.6483516483516483,
-     "base": 822
+     "base": 880
     }
    ],
    "band": {
@@ -155,12 +155,12 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_4.png",
      "scale": 1.5112540192926045,
-     "base": 797
+     "base": 880
     },
     {
      "src": "work/cities_v3/los_angeles/sprites/local_3.png",
      "scale": 1.5228426395939085,
-     "base": 822
+     "base": 880
     }
    ],
    "band": {
@@ -171,5 +171,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

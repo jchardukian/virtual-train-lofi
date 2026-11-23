@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/amsterdam/sprites/local_0.png",
      "scale": 0.6282722513089005,
-     "base": 831
-    },
-    {
-     "src": "work/cities_v3/amsterdam/sprites/landmarks_0.png",
-     "scale": 1.2303664921465969,
-     "base": 806
+     "base": 860
     },
     {
      "src": "work/cities_v3/amsterdam/sprites/local_5.png",
      "scale": 0.55,
-     "base": 831
+     "base": 860
+    },
+    {
+     "src": "work/cities_v3/amsterdam/sprites/landmarks_0.png",
+     "scale": 1.2303664921465969,
+     "base": 860
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/amsterdam/sprites/landmarks_1.png",
      "scale": 1.4826498422712935,
-     "base": 806
+     "base": 860
     },
     {
      "src": "work/cities_v3/amsterdam/sprites/local_1.png",
      "scale": 0.6716417910447762,
-     "base": 831
+     "base": 860
     }
    ],
    "band": {
@@ -106,7 +106,7 @@
     {
      "src": "work/cities_v3/amsterdam/sprites/landmarks_2.png",
      "scale": 1.7,
-     "base": 806
+     "base": 860
     }
    ],
    "band": {
@@ -123,7 +123,7 @@
     {
      "src": "work/cities_v3/amsterdam/sprites/landmarks_3.png",
      "scale": 1.2260869565217392,
-     "base": 806
+     "base": 860
     }
    ],
    "band": {
@@ -145,5 +145,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

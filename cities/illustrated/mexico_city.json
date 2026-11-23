@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/mexico_city/sprites/local_5.png",
      "scale": 0.6696428571428571,
-     "base": 810
+     "base": 780
     },
     {
      "src": "work/cities_v3/mexico_city/sprites/landmarks_0.png",
      "scale": 1.4641744548286604,
-     "base": 785
+     "base": 780
     },
     {
      "src": "work/cities_v3/mexico_city/sprites/local_0.png",
      "scale": 0.7792207792207793,
-     "base": 810
+     "base": 780
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/mexico_city/sprites/landmarks_1.png",
      "scale": 1.2818181818181817,
-     "base": 785
+     "base": 780
     },
     {
      "src": "work/cities_v3/mexico_city/sprites/local_1.png",
      "scale": 0.7775377969762419,
-     "base": 810
+     "base": 780
     }
    ],
    "band": {
@@ -106,7 +106,7 @@
     {
      "src": "work/cities_v3/mexico_city/sprites/landmarks_2.png",
      "scale": 1.2401055408970976,
-     "base": 785
+     "base": 780
     }
    ],
    "band": {
@@ -134,7 +134,7 @@
     {
      "src": "work/cities_v3/mexico_city/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 785
+     "base": 780
     }
    ],
    "band": {
@@ -145,5 +145,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

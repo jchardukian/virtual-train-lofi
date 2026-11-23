@@ -47,22 +47,22 @@
     {
      "src": "work/cities_v3/portland_maine/sprites/local_0.png",
      "scale": 1.1070110701107012,
-     "base": 825
+     "base": 845
     },
     {
      "src": "work/cities_v3/portland_maine/sprites/landmarks_0.png",
      "scale": 1.100702576112412,
-     "base": 800
+     "base": 845
     },
     {
      "src": "work/cities_v3/portland_maine/sprites/local_5.png",
      "scale": 0.8633093525179856,
-     "base": 825
+     "base": 845
     },
     {
      "src": "work/cities_v3/portland_maine/sprites/landmarks_5.png",
      "scale": 1.7,
-     "base": 800
+     "base": 845
     }
    ],
    "band": {
@@ -79,7 +79,7 @@
     {
      "src": "work/cities_v3/portland_maine/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 800
+     "base": 845
     }
    ],
    "band": {
@@ -96,7 +96,7 @@
     {
      "src": "work/cities_v3/portland_maine/sprites/local_2.png",
      "scale": 0.9646302250803859,
-     "base": 825
+     "base": 845
     }
    ],
    "band": {
@@ -113,12 +113,12 @@
     {
      "src": "work/cities_v3/portland_maine/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 800
+     "base": 845
     },
     {
      "src": "work/cities_v3/portland_maine/sprites/local_3.png",
      "scale": 1.0067114093959733,
-     "base": 825
+     "base": 845
     }
    ],
    "band": {
@@ -135,12 +135,12 @@
     {
      "src": "work/cities_v3/portland_maine/sprites/landmarks_4.png",
      "scale": 1.124401913875598,
-     "base": 800
+     "base": 845
     },
     {
      "src": "work/cities_v3/portland_maine/sprites/local_4.png",
      "scale": 0.7731958762886598,
-     "base": 825
+     "base": 845
     }
    ],
    "band": {
@@ -151,5 +151,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

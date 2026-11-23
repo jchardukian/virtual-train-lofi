@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/kansas_city/sprites/local_0.png",
      "scale": 0.7915567282321899,
-     "base": 818
+     "base": 900
     },
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_0.png",
      "scale": 0.9230769230769231,
-     "base": 793
+     "base": 900
     },
     {
      "src": "work/cities_v3/kansas_city/sprites/local_5.png",
      "scale": 0.6818181818181818,
-     "base": 818
+     "base": 900
     }
    ],
    "band": {
@@ -84,12 +84,12 @@
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_1.png",
      "scale": 1.4461538461538461,
-     "base": 793
+     "base": 900
     },
     {
      "src": "work/cities_v3/kansas_city/sprites/local_1.png",
      "scale": 1.3100436681222707,
-     "base": 818
+     "base": 900
     }
    ],
    "band": {
@@ -106,12 +106,12 @@
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_2.png",
      "scale": 1.7,
-     "base": 793
+     "base": 900
     },
     {
      "src": "work/cities_v3/kansas_city/sprites/local_2.png",
      "scale": 0.702576112412178,
-     "base": 818
+     "base": 900
     }
    ],
    "band": {
@@ -128,12 +128,12 @@
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_3.png",
      "scale": 1.7,
-     "base": 793
+     "base": 900
     },
     {
      "src": "work/cities_v3/kansas_city/sprites/local_3.png",
      "scale": 1.2,
-     "base": 818
+     "base": 900
     }
    ],
    "band": {
@@ -150,7 +150,7 @@
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 793
+     "base": 900
     }
    ],
    "band": {
@@ -161,5 +161,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

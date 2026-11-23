@@ -57,17 +57,17 @@
     {
      "src": "work/cities_v3/reykjavik/sprites/local_0.png",
      "scale": 0.79,
-     "base": 885
+     "base": 820
     },
     {
      "src": "work/cities_v3/reykjavik/sprites/landmarks_0.png",
      "scale": 0.83,
-     "base": 885
+     "base": 820
     },
     {
      "src": "work/cities_v3/reykjavik/sprites/landmarks_5.png",
      "scale": 1.37,
-     "base": 885
+     "base": 820
     }
    ],
    "band": {
@@ -84,17 +84,17 @@
     {
      "src": "work/cities_v3/reykjavik/sprites/local_6.png",
      "scale": 1.31,
-     "base": 885
+     "base": 820
     },
     {
      "src": "work/cities_v3/reykjavik/sprites/landmarks_1.png",
      "scale": 1.37,
-     "base": 885
+     "base": 820
     },
     {
      "src": "work/cities_v3/reykjavik/sprites/local_1.png",
      "scale": 0.7,
-     "base": 885
+     "base": 820
     }
    ],
    "band": {
@@ -109,14 +109,9 @@
    "name": "part 3",
    "mid": [
     {
-     "src": "work/cities_v3/reykjavik/sprites/landmarks_2.png",
-     "scale": 1.37,
-     "base": 885
-    },
-    {
      "src": "work/cities_v3/reykjavik/sprites/local_2.png",
      "scale": 0.79,
-     "base": 885
+     "base": 820
     }
    ],
    "band": {
@@ -133,7 +128,7 @@
     {
      "src": "work/cities_v3/reykjavik/sprites/landmarks_3.png",
      "scale": 1.08,
-     "base": 885
+     "base": 820
     }
    ],
    "band": {
@@ -155,5 +150,7 @@
     "feather_top": 45
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

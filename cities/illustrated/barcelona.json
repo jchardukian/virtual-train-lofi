@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 662,
+   "base": 770,
    "alpha": 1.0
   }
  ],
@@ -57,23 +57,23 @@
     {
      "src": "work/cities_v3/barcelona/sprites/local_5.png",
      "scale": 0.5847953216374269,
-     "base": 815
+     "base": 1023
     },
     {
      "src": "work/cities_v3/barcelona/sprites/landmarks_0.png",
      "scale": 0.8162083936324168,
-     "base": 790
+     "base": 1023
     },
     {
      "src": "work/cities_v3/barcelona/sprites/local_0.png",
      "scale": 0.55,
-     "base": 815
+     "base": 1023
     }
    ],
    "band": {
     "src": "work/cities_v3/barcelona/sprites/far_1.png",
     "scale": 0.95,
-    "base": 905,
+    "base": 1028,
     "offset": 300,
     "feather_top": 35
    }
@@ -84,18 +84,18 @@
     {
      "src": "work/cities_v3/barcelona/sprites/landmarks_1.png",
      "scale": 0.8610687022900764,
-     "base": 790
+     "base": 1023
     },
     {
      "src": "work/cities_v3/barcelona/sprites/local_1.png",
      "scale": 0.5616224648985959,
-     "base": 815
+     "base": 1023
     }
    ],
    "band": {
     "src": "work/cities_v3/barcelona/sprites/far_1.png",
     "scale": 0.95,
-    "base": 905,
+    "base": 1028,
     "offset": 1000,
     "feather_top": 35
    }
@@ -106,13 +106,13 @@
     {
      "src": "work/cities_v3/barcelona/sprites/landmarks_2.png",
      "scale": 0.7110438729198184,
-     "base": 790
+     "base": 1023
     }
    ],
    "band": {
     "src": "work/cities_v3/barcelona/sprites/far_1.png",
     "scale": 0.95,
-    "base": 905,
+    "base": 1028,
     "offset": 1700,
     "feather_top": 35
    }
@@ -123,13 +123,13 @@
     {
      "src": "work/cities_v3/barcelona/sprites/landmarks_3.png",
      "scale": 1.346704871060172,
-     "base": 790
+     "base": 1023
     }
    ],
    "band": {
     "src": "work/cities_v3/barcelona/sprites/far_1.png",
     "scale": 0.95,
-    "base": 905,
+    "base": 1028,
     "offset": 2400,
     "feather_top": 35
    }
@@ -140,16 +140,18 @@
     {
      "src": "work/cities_v3/barcelona/sprites/landmarks_4.png",
      "scale": 1.036764705882353,
-     "base": 790
+     "base": 1023
     }
    ],
    "band": {
     "src": "work/cities_v3/barcelona/sprites/far_1.png",
     "scale": 0.95,
-    "base": 905,
+    "base": 1028,
     "offset": 3100,
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }

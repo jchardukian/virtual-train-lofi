@@ -57,22 +57,22 @@
     {
      "src": "work/cities_v3/venice/sprites/local_0.png",
      "scale": 0.6132879045996593,
-     "base": 756
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/landmarks_0.png",
      "scale": 0.8571428571428571,
-     "base": 731
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/local_5.png",
      "scale": 0.783289817232376,
-     "base": 756
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/landmarks_5.png",
      "scale": 1.4156626506024097,
-     "base": 731
+     "base": 880
     }
    ],
    "band": {
@@ -89,17 +89,17 @@
     {
      "src": "work/cities_v3/venice/sprites/local_6.png",
      "scale": 1.1076923076923078,
-     "base": 756
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/landmarks_1.png",
      "scale": 1.7,
-     "base": 731
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/local_1.png",
      "scale": 0.6338028169014085,
-     "base": 756
+     "base": 880
     }
    ],
    "band": {
@@ -116,17 +116,17 @@
     {
      "src": "work/cities_v3/venice/sprites/local_7.png",
      "scale": 0.861244019138756,
-     "base": 756
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/landmarks_2.png",
      "scale": 1.3055555555555556,
-     "base": 731
+     "base": 880
     },
     {
      "src": "work/cities_v3/venice/sprites/local_2.png",
      "scale": 1.7,
-     "base": 756
+     "base": 880
     }
    ],
    "band": {
@@ -154,7 +154,7 @@
     {
      "src": "work/cities_v3/venice/sprites/landmarks_4.png",
      "scale": 1.7,
-     "base": 731
+     "base": 880
     }
    ],
    "band": {
@@ -165,5 +165,7 @@
     "feather_top": 35
    }
   }
- ]
+ ],
+ "mid_front": true,
+ "ground_first": true
 }
