@@ -36,6 +36,7 @@ class City:
             sky = sky[:, ::-1]
         y0 = max(0, min(sky.shape[0] - 760, int(sky.shape[0] * cfg.get("sky_top", 0.33))))
         self.sky = np.ascontiguousarray(sky[y0:y0 + 760]).astype(np.float32)
+        self.horizon = self.sky[-40:].reshape(-1, 3).mean(axis=0)
         wt = cv2.resize(S[775:1010, 505:775], (1300, 420), interpolation=cv2.INTER_LANCZOS4)
         self.river = loop((wt.astype(np.float32), np.ones(wt.shape[:2] + (1,), np.float32)), 200)
         # ground plane: a band cropped from one of the city's own strips, or the shared lawn
@@ -60,7 +61,8 @@ class City:
         # the line's own trackside, right below the window
         ncfg = cfg.get("near", {"src": "work/chi/sprites/strip_3.png", "scale": 1.7, "base": 40})
         emb = rgba(ROOT / ncfg["src"], ncfg.get("scale", 1.7))
-        self.near = loop((cv2.blur(emb[0], (11, 1)), cv2.blur(emb[1], (11, 1))[..., None]))
+        nb = int(ncfg.get("blur", 4)) | 1         # a light motion blur only; heavy blur read as out of focus
+        self.near = loop((cv2.blur(emb[0], (nb, 1)), cv2.blur(emb[1], (nb, 1))[..., None]))
         self.near_base = ncfg.get("base", 40)
         # close objects that sweep past at each change of scenery
         tcfg = cfg.get("treewall_cfg", {"src": cfg.get("treewall", "work/chi/sprites/strip_0.png"), "crop": [20, 470, 0, 0.76]})
@@ -103,7 +105,8 @@ class City:
             band = None
             if sc.get("band"):
                 b = sc["band"]
-                band = (loop(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))), b.get("base", 850), b.get("speed", BAND), b.get("offset", 300))
+                band = (loop(self.feather(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False)), b.get("feather_top", 90), b.get("feather_bottom", 45))),
+                        b.get("base", 850), b.get("speed", BAND), b.get("offset", 300))
             self.sections.append({"ground": sc.get("ground", "lawn"), "far": far, "band": band})
             items = sc.get("mid", [])
             for i, m in enumerate(items):
@@ -117,8 +120,28 @@ class City:
             self.cache[key] = tint(L, HAZE, haze) if haze else L
         return self.cache[key]
 
+    def feather(self, layer, top, bottom):
+        """Soften a strip's straight top and bottom edges so it melts into the layer behind it instead of
+        ending in a ruled line, and mist its top into the sky colour the way distance does."""
+        rgb, a = layer
+        h = a.shape[0]
+        rows = np.arange(h, dtype=np.float32)
+        opaque = np.where(a[..., 0].max(axis=1) > 0.5)[0]
+        t0 = opaque[0] if len(opaque) else 0
+        b1 = opaque[-1] if len(opaque) else h - 1
+        k = np.ones(h, np.float32)
+        if top:
+            k *= np.clip((rows - t0) / top, 0, 1)
+        if bottom:
+            k *= np.clip((b1 - rows) / bottom, 0, 1)
+        k = (k * k * (3 - 2 * k))[:, None, None]
+        mist = np.clip(1 - (rows - t0) / max(1, top * 1.6), 0, 1)[:, None, None] * 0.35
+        rgb = rgb * (1 - mist) + self.horizon * a * mist
+        return rgb * k, a * k
+
     def far_layer(self, L):
         lay = self.load(L["src"], L.get("scale", 1.6), L.get("flip", False), L.get("haze", 0.4))
+        lay = self.feather(lay, 0, L.get("feather_bottom", 60))
         if L.get("tile"):
             return ("tile", loop(lay), L.get("base", 712), L.get("speed", 8), L.get("alpha", 0.9), L.get("offset", 200))
         return ("one", lay, L.get("base", 712), L.get("speed", 5), L.get("alpha", 0.9), L.get("x0", -60))

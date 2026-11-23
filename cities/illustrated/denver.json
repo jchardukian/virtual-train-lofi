@@ -13,7 +13,7 @@
  "ground_src": {
   "src": "work/v2/denver2/sprites/far_1.png",
   "rows": [
-   262,
+   270,
    292
   ],
   "tile": true,
@@ -133,20 +133,24 @@
    "mid": [
     {
      "src": "work/cities/denver/sprites/local_2.png",
-     "scale": 1.0
+     "scale": 1.0,
+     "base": 840
     },
     {
      "src": "work/v2/denver2/sprites/local_1.png",
-     "scale": 0.85
+     "scale": 0.85,
+     "base": 840
     },
     {
      "src": "work/cities/denver/sprites/local_3.png",
-     "scale": 1.25
+     "scale": 1.25,
+     "base": 840
     },
     {
      "src": "work/v2/denver2/sprites/local_3.png",
      "scale": 0.9,
-     "flip": true
+     "flip": true,
+     "base": 840
     }
    ],
    "band": {
