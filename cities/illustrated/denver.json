@@ -194,17 +194,17 @@
  ],
  "grade": {
   "shadows": [
-   1.1,
+   1.09,
    1.0,
-   0.92
+   0.94
   ],
   "highlights": [
-   1.12,
-   1.03,
-   0.9
+   1.07,
+   1.0,
+   0.99
   ],
-  "saturation": 1.04,
-  "gamma": 0.94,
-  "note": "crisp, cooler mountain morning"
+  "saturation": 0.98,
+  "gamma": 0.95,
+  "note": "crisp, cooler mountain morning; highlights kept neutral so clouds stay cream, not green"
  }
 }
