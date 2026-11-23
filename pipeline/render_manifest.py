@@ -4,7 +4,7 @@
   python3 pipeline/render_manifest.py write  <config.json> <video.mp4>   # after a successful render
   python3 pipeline/render_manifest.py verify <config.json> <video.mp4>   # exit 0 only if video and inputs still match
 """
-import hashlib, json, pathlib, sys
+import hashlib, json, os, pathlib, sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 CODE = ["pipeline/illustrated_city.py", "pipeline/illustrated_journey.py"]
@@ -38,7 +38,14 @@ def sources(cfg):
 
 def inputs(config):
     cfg = json.loads(pathlib.Path(config).read_text())
-    return {"config_sha256": sha(config), "code": {c: sha(ROOT / c) for c in CODE}, "art": {s: sha(ROOT / s) for s in sources(cfg)}}
+    scale = int(os.environ.get("RENDER_SCALE", "1"))
+    art = {s: sha(ROOT / s) for s in sources(cfg)}
+    if scale > 1:                                   # the 2x-upscaled art a 4K render reads instead, where it exists
+        for s in sources(cfg):
+            x2 = ROOT / "work/cities_x2" / s[len("work/cities_v3/"):] if s.startswith("work/cities_v3/") else None
+            if x2 is not None and x2.exists():
+                art["x2:" + s] = sha(x2)
+    return {"config_sha256": sha(config), "render_scale": scale, "code": {c: sha(ROOT / c) for c in CODE}, "art": art}
 
 
 def main():
@@ -54,8 +61,8 @@ def main():
     if old.get("video_sha256") != sha(video):
         sys.exit("video file does not match its render manifest")
     new = inputs(config)
-    for k in ("config_sha256", "code", "art"):
-        if old.get(k) != new[k]:
+    for k in ("config_sha256", "render_scale", "code", "art"):
+        if old.get(k, 1 if k == "render_scale" else None) != new[k]:
             sys.exit(f"{k} changed since this video was rendered: it must be rendered again")
     print("render manifest verified")
 

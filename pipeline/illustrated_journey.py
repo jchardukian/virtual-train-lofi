@@ -8,14 +8,15 @@ Artwork: work/illus (first plate and its cut-outs in work/kit) and work/chi/spri
 Every landmark appears once. Strips that repeat (tree lines, grass, water) are joined with a
 blended seam, never mirrored. Video only; music is added afterwards.
 """
-import argparse, json, math, pathlib, subprocess, sys, time
+import argparse, json, math, os, pathlib, subprocess, sys, time
 import cv2
 import numpy as np
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 ILL, KIT, CHI = ROOT / "work/illus", ROOT / "work/kit", ROOT / "work/chi/sprites"
-W, H, FPS, SEC = 1920, 1080, 30, 300
-MID, BAND, BRIDGE, NEAR = 46.0, 58.0, 78.0, 175.0          # px/s of each depth band
+S = int(os.environ.get("RENDER_SCALE", "1"))                 # 1 = 1080p, 2 = 4K (the illustrated cities only)
+W, H, FPS, SEC = 1920 * S, 1080 * S, 30, 300
+MID, BAND, BRIDGE, NEAR = 46.0 * S, 58.0 * S, 78.0 * S, 175.0 * S  # px/s of each depth band
 SECT = 60.0
 
 
@@ -72,6 +73,7 @@ def weight(t, k, fade=3.0):
 
 class Journey:
     def __init__(self):
+        assert W == 1920, "the Chicago route is laid out for 1080p only"
         S = cv2.imread(str(ILL / "scene.png"))
         # sky: one wide painted sky, drifting slowly
         sky = cv2.resize(cv2.imread(str(ROOT / "work/chi/sky.png")), None, fx=1.9, fy=1.9, interpolation=cv2.INTER_CUBIC)
