@@ -24,9 +24,15 @@
  {
   "city": "chicago",
   "item": "long_form",
-  "status": "NOT scheduled: the scheduling tool rejected it",
-  "error": "Invalid post: Video must be no longer than 3 minutes for YouTube Shorts., Video must be vertical (portrait orientation) for YouTube Shorts.",
+  "route": "YouTube Data API (pipeline/youtube_upload.py), direct upload",
+  "youtube_video_id": "OkkV7ZHbda0",
+  "url": "https://youtu.be/OkkV7ZHbda0",
+  "channel": "UCLjE-J4o5HSXz1cCokDdZbQ (@lofitrainpov), verified via the API before upload",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-23T18:00:00-06:00",
   "media_sha256": "a2b52ffd78d4d1947cbf2d47913ebb7a4e663fe2a8ea17bd2d58921686d15adc",
-  "note": "Buffer's YouTube integration accepts Shorts only. Long-form needs YouTube Studio or YouTube's own API with the owner's authorisation. File is staged on the delivery bucket."
+  "thumbnail": "NOT set: 403, the channel is not yet allowed custom thumbnails (YouTube phone verification)",
+  "authorised": "owner, in the agent session: 'get the other short and long form scheduled tomorrow'",
+  "preflight": "passed"
  }
 ]

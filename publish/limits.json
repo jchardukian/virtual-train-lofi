@@ -17,7 +17,7 @@
  "queue": [
   {
    "city": "chicago",
-   "status": "Short 1 scheduled 2026-11-22 20:30 CT; Short 2 scheduled 2026-11-23 20:30 CT; long-form NOT scheduled (the scheduling tool only accepts Shorts for YouTube)"
+   "status": "Short 1 scheduled 2026-11-22 20:30 CT (Buffer); long-form uploaded to YouTube, private, publishes 2026-11-23 18:00 CT (video OkkV7ZHbda0); Short 2 scheduled 2026-11-23 20:30 CT (Buffer)"
   },
   {
    "city": "denver",
@@ -51,5 +51,9 @@
   "monthly_charge_ceiling_usd": 3,
   "approved": "owner, in the agent session, 2026-11-22"
  },
- "channel_blurb": "Lofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like."
+ "channel_blurb": "Lofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.",
+ "routes": {
+  "long_form": "YouTube Data API via pipeline/youtube_upload.py (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN in the environment)",
+  "shorts": "Buffer, from the delivery bucket"
+ }
 }

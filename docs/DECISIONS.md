@@ -27,6 +27,18 @@ replaces; nothing here is reversed silently.
 * **Hard gates:** no spend, paid or public infrastructure, merge, scheduling, publication
   or livestream without the owner's explicit approval.
 
+## Long-form route: YouTube Data API — 2026-11-23 01:05 UTC
+
+The owner asked for automatic daily long-form uploads, set up a Google OAuth client in their existing
+project (In production) and saved `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN` in the Default
+cloud environment. The token was verified to resolve to Lofi Train POV (`UCLjE-J4o5HSXz1cCokDdZbQ`,
+@lofitrainpov) before use.
+
+* Chicago long-form uploaded with `pipeline/youtube_upload.py`: video `OkkV7ZHbda0`, private, YouTube
+  publishes it on 23 November 2026 at 18:00 Central. AI flag not declared, no AI wording.
+* Custom thumbnail refused (403): the channel needs YouTube's phone verification to use custom thumbnails.
+* Shorts stay on Buffer. The unattended daily job is not built yet.
+
 ## Short 2 scheduled; long-form blocked by the scheduling tool — 2026-11-23 00:45 UTC
 
 The owner said in the agent session to schedule the other Short and the long-form for tomorrow.
