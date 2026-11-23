@@ -34,8 +34,11 @@ def sources(cfg):
             for v in x:
                 walk(v)
     walk(cfg)
-    # the composer always uses the shared embankment, lawn and water
-    out |= {"work/chi/sprites/strip_3.png", "work/illus/scene.png#water"}
+    # the composer falls back to the shared embankment and lawn when a city gives no trackside or ground of its own
+    if "near" not in cfg or "ground_src" not in cfg:
+        out.add("work/chi/sprites/strip_3.png")
+    if any(s.get("ground") == "river" for s in cfg.get("sections", [])):
+        out.add("work/illus/scene.png#water")
     return out
 
 
