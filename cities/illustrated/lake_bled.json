@@ -1,0 +1,180 @@
+{
+ "city": "Lake Bled, Slovenia",
+ "next": "Phoenix and Sedona, Arizona",
+ "version": 3,
+ "season": "Lake Bled on a misty autumn morning, gold and orange forests, calm emerald lake, soft mist, Alpine peaks, fairy-tale and peaceful",
+ "sky": "work/cities_v3/lake_bled/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/lake_bled/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "leaves",
+ "ground_src": {
+  "colour": [
+   [
+    86.51075744628906,
+    102.1937026977539,
+    77.11843872070312
+   ],
+   [
+    72.09230041503906,
+    85.16142272949219,
+    64.26537322998047
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/lake_bled/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 144
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/lake_bled/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/lake_bled/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 555,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_0.png",
+     "scale": 0.9345794392523364,
+     "base": 774
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_0.png",
+     "scale": 1.2806539509536785,
+     "base": 749
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_4.png",
+     "scale": 0.821917808219178,
+     "base": 774
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 749
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lake_bled/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_5.png",
+     "scale": 0.8411214953271028,
+     "base": 774
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_1.png",
+     "scale": 1.217616580310881,
+     "base": 749
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_1.png",
+     "scale": 1.2396694214876034,
+     "base": 774
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lake_bled/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 749
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_2.png",
+     "scale": 1.4285714285714286,
+     "base": 774
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lake_bled/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_3.png",
+     "scale": 1.4417177914110428,
+     "base": 749
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_3a.png",
+     "scale": 1.0600706713780919,
+     "base": 774
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lake_bled/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/lake_bled/sprites/landmarks_4.png",
+     "scale": 1.2702702702702702,
+     "base": 749
+    },
+    {
+     "src": "work/cities_v3/lake_bled/sprites/local_3b.png",
+     "scale": 0.9174311926605505,
+     "base": 774
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lake_bled/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

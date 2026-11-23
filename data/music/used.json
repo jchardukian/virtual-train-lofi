@@ -434,5 +434,195 @@
    160.3
   ],
   "licence": "CC BY 4.0"
+ },
+ "las_vegas": {
+  "titles": [
+   "Tunnels",
+   "Crossroads"
+  ],
+  "albums": [
+   "Night Train",
+   "Night Train"
+  ],
+  "files": [
+   "work/music_lib/Tunnels.mp3",
+   "work/music_lib/Crossroads.mp3"
+  ],
+  "durations_s": [
+   164.4,
+   178.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "istanbul": {
+  "titles": [
+   "Forget Me Not",
+   "Just Relax"
+  ],
+  "albums": [
+   "Bloom",
+   "Just Relax"
+  ],
+  "files": [
+   "work/music_lib/Forget_Me_Not.mp3",
+   "work/music_lib/Just_Relax.mp3"
+  ],
+  "durations_s": [
+   160.5,
+   212.8
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "portland_maine": {
+  "titles": [
+   "Sea Of Stars",
+   "Distant Ships"
+  ],
+  "albums": [
+   "Sea Of Stars",
+   "Sea Of Stars 2"
+  ],
+  "files": [
+   "work/music_lib/Sea_Of_Stars.mp3",
+   "work/music_lib/Distant_Ships.mp3"
+  ],
+  "durations_s": [
+   141.2,
+   175.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "banff": {
+  "titles": [
+   "Ice Skating",
+   "Cold Hands"
+  ],
+  "albums": [
+   "Snowbound",
+   "Snowbound"
+  ],
+  "files": [
+   "work/music_lib/Ice_Skating.mp3",
+   "work/music_lib/Cold_Hands.mp3"
+  ],
+  "durations_s": [
+   146.6,
+   178.5
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "san_diego": {
+  "titles": [
+   "Beach Resort",
+   "Sea Foam"
+  ],
+  "albums": [
+   "Just Relax",
+   "Eye Of The Storm"
+  ],
+  "files": [
+   "work/music_lib/Beach_Resort.mp3",
+   "work/music_lib/Sea_Foam.mp3"
+  ],
+  "durations_s": [
+   130.2,
+   185.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "mexico_city": {
+  "titles": [
+   "Silent Wood",
+   "Fourth Dimension"
+  ],
+  "albums": [
+   "House in the Woods",
+   "Multiverse"
+  ],
+  "files": [
+   "work/music_lib/Silent_Wood.mp3",
+   "work/music_lib/Fourth_Dimension.mp3"
+  ],
+  "durations_s": [
+   187.7,
+   177.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "savannah": {
+  "titles": [
+   "Trying Something New",
+   "Signs Of Life"
+  ],
+  "albums": [
+   "Now Or Never",
+   "Signs Of Life"
+  ],
+  "files": [
+   "work/music_lib/Trying_Something_New.mp3",
+   "work/music_lib/Signs_Of_Life.mp3"
+  ],
+  "durations_s": [
+   170.1,
+   149.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "seoul": {
+  "titles": [
+   "Visions",
+   "Fragments"
+  ],
+  "albums": [
+   "City Nights",
+   "City Nights 2"
+  ],
+  "files": [
+   "work/music_lib/Visions.mp3",
+   "work/music_lib/Fragments.mp3"
+  ],
+  "durations_s": [
+   161.5,
+   152.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "honolulu": {
+  "titles": [
+   "Dance Of The Cacti",
+   "Sigh"
+  ],
+  "albums": [
+   "Sands Of Time",
+   "Nostalgia And Moving On"
+  ],
+  "files": [
+   "work/music_lib/Dance_Of_The_Cacti.mp3",
+   "work/music_lib/Sigh.mp3"
+  ],
+  "durations_s": [
+   153.7,
+   165.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "lake_bled": {
+  "titles": [
+   "Whos There",
+   "Whispering Wind"
+  ],
+  "albums": [
+   "Endless Forest",
+   "Endless Forest"
+  ],
+  "files": [
+   "work/music_lib/Whos_There.mp3",
+   "work/music_lib/Whispering_Wind.mp3"
+  ],
+  "durations_s": [
+   188.4,
+   148.4
+  ],
+  "licence": "CC BY 4.0"
  }
 }

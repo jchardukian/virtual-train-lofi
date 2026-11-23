@@ -1,0 +1,180 @@
+{
+ "city": "Seoul, South Korea",
+ "next": "Honolulu, Hawaii",
+ "version": 3,
+ "season": "Seoul on a snowy winter dusk, soft blue light, warm lanterns and windows, snow on curved palace roofs, misty mountains, calm and cozy",
+ "sky": "work/cities_v3/seoul/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/seoul/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    113.56562042236328,
+    97.42011260986328,
+    103.26981353759766
+   ],
+   [
+    94.63802337646484,
+    81.18343353271484,
+    86.05818176269531
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/seoul/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 35
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/seoul/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/seoul/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 773,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/seoul/sprites/local_0.png",
+     "scale": 1.3392857142857142,
+     "base": 857
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_0.png",
+     "scale": 1.7,
+     "base": 832
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/local_5.png",
+     "scale": 0.9174311926605505,
+     "base": 857
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 832
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/seoul/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/seoul/sprites/local_6.png",
+     "scale": 0.9230769230769231,
+     "base": 857
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_1.png",
+     "scale": 1.128,
+     "base": 832
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/local_1.png",
+     "scale": 1.023890784982935,
+     "base": 857
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/seoul/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_2.png",
+     "scale": 1.2533333333333334,
+     "base": 832
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/local_2.png",
+     "scale": 1.3953488372093024,
+     "base": 857
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/seoul/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 832
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/local_3.png",
+     "scale": 1.3432835820895523,
+     "base": 857
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/seoul/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/seoul/sprites/landmarks_4.png",
+     "scale": 1.0972762645914398,
+     "base": 832
+    },
+    {
+     "src": "work/cities_v3/seoul/sprites/local_4.png",
+     "scale": 1.675977653631285,
+     "base": 857
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/seoul/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

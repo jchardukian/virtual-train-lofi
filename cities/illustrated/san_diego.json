@@ -1,0 +1,170 @@
+{
+ "city": "San Diego, California",
+ "next": "Mexico City, Mexico",
+ "version": 3,
+ "season": "San Diego on a sunny spring day, clear blue sky, ocean sparkle, Spanish colonial white walls, purple jacaranda, breezy and bright",
+ "sky": "work/cities_v3/san_diego/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/san_diego/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    78.78617095947266,
+    108.07600402832031,
+    111.37936401367188
+   ],
+   [
+    65.6551513671875,
+    90.06333923339844,
+    92.8161392211914
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/san_diego/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 160
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_diego/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_diego/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 764,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_diego/sprites/local_0.png",
+     "scale": 1.0344827586206897,
+     "base": 853
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_0.png",
+     "scale": 1.0763358778625953,
+     "base": 828
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 828
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_1.png",
+     "scale": 1.4329268292682926,
+     "base": 828
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/local_1.png",
+     "scale": 1.675977653631285,
+     "base": 853
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_2.png",
+     "scale": 1.4461538461538461,
+     "base": 828
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 853
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_3.png",
+     "scale": 1.5359477124183007,
+     "base": 828
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/local_3.png",
+     "scale": 1.7,
+     "base": 853
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_diego/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 828
+    },
+    {
+     "src": "work/cities_v3/san_diego/sprites/local_4.png",
+     "scale": 0.6224066390041494,
+     "base": 853
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

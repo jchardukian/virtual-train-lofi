@@ -1,0 +1,175 @@
+{
+ "city": "Savannah, Georgia",
+ "next": "Seoul, South Korea",
+ "version": 3,
+ "season": "Savannah on a soft spring morning, dappled light through live oaks, Spanish moss, azaleas in bloom, pastel historic houses, gentle and graceful",
+ "sky": "work/cities_v3/savannah/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/savannah/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    75.52030944824219,
+    100.06546783447266,
+    115.02723693847656
+   ],
+   [
+    62.93359375,
+    83.38789367675781,
+    95.85603332519531
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/savannah/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 120
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/savannah/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/savannah/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 562,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/savannah/sprites/local_0.png",
+     "scale": 0.6224066390041494,
+     "base": 776
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_0.png",
+     "scale": 1.7,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/local_5.png",
+     "scale": 0.7075471698113207,
+     "base": 776
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 751
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/savannah/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_1.png",
+     "scale": 1.1662531017369726,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/local_1.png",
+     "scale": 1.7,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/savannah/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_2.png",
+     "scale": 1.4417177914110428,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/savannah/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/local_3.png",
+     "scale": 1.171875,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/savannah/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/savannah/sprites/landmarks_4.png",
+     "scale": 1.309192200557103,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/savannah/sprites/local_4.png",
+     "scale": 1.309090909090909,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/savannah/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}
