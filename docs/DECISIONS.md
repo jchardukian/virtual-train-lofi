@@ -36,7 +36,8 @@ cloud environment. The token was verified to resolve to Lofi Train POV (`UCLjE-J
 
 * Chicago long-form uploaded with `pipeline/youtube_upload.py`: video `OkkV7ZHbda0`, private, YouTube
   publishes it on 23 November 2026 at 18:00 Central. AI flag not declared, no AI wording.
-* Custom thumbnail refused (403): the channel needs YouTube's phone verification to use custom thumbnails.
+* Custom thumbnail refused (403, channel lacks the custom-thumbnail feature). The owner then chose to keep
+  YouTube's automatically picked frame (likes the train-window view), so no custom thumbnails are used.
 * Shorts stay on Buffer. The unattended daily job is not built yet.
 
 ## Short 2 scheduled; long-form blocked by the scheduling tool — 2026-11-23 00:45 UTC
