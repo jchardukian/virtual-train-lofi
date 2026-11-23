@@ -167,6 +167,46 @@ def trim_flat_top(path):
     return True
 
 
+def trim_near_backdrop(path):
+    """Trackside strips sometimes come back with a little distant town or skyline painted above the foreground.
+    Keep only the solid foreground band (rows that are almost fully covered) plus a short soft margin."""
+    im = cv2.imread(str(path), cv2.IMREAD_UNCHANGED)
+    cov = (im[..., 3] > 128).mean(1)
+    solid = np.where(cov > 0.9)[0]
+    if not len(solid):
+        return False
+    h = im.shape[0]
+    y = max(0, int(solid[0] - 0.12 * (h - solid[0])))
+    if y < 0.15 * h:
+        return False
+    ramp = np.clip((np.arange(h) - y) / 20.0, 0, 1)[:, None]
+    im[..., 3] = (im[..., 3].astype(np.float32) * ramp).astype(np.uint8)
+    cv2.imwrite(str(path), im[y:])
+    return True
+
+
+def drop_specks(path, min_frac=0.004):
+    """Remove small disconnected islands left in a strip's alpha (bits of keyed sky, stray clouds)."""
+    im = cv2.imread(str(path), cv2.IMREAD_UNCHANGED)
+    a = (im[..., 3] > 64).astype(np.uint8)
+    n, lab, st, _ = cv2.connectedComponentsWithStats(a, 8)
+    if n <= 2:
+        return False
+    keep = np.zeros(n, bool)
+    keep[1:] = st[1:, cv2.CC_STAT_AREA] >= min_frac * a.size
+    # also drop anything that floats free in the upper half (sky remnants): real scenery touches the strip's base
+    h = a.shape[0]
+    for i in range(1, n):
+        if st[i, cv2.CC_STAT_TOP] + st[i, cv2.CC_STAT_HEIGHT] < 0.6 * h:
+            keep[i] = False
+    mask = keep[lab]
+    if mask.sum() == a.sum():
+        return False
+    im[..., 3] = np.where(mask, im[..., 3], 0).astype(np.uint8)
+    cv2.imwrite(str(path), im)
+    return True
+
+
 def cut(sp):
     d = ART / sp["id"]
     subprocess.run([sys.executable, str(ROOT / "pipeline/illustrated_cut.py"), str(d), "--sheets", "landmarks", "local", "--strips", "far", "near"],
@@ -177,6 +217,12 @@ def cut(sp):
             print(sp["id"], "keyed painted sky out of", f.name)
         if f.exists() and trim_flat_top(f):
             print(sp["id"], "trimmed flat painted sky from", f.name)
+    for f in sorted((d / "sprites").glob("far_*.png")):
+        if drop_specks(f):
+            print(sp["id"], "removed stray specks from", f.name)
+    n0 = d / "sprites/near_0.png"
+    if n0.exists() and trim_near_backdrop(n0):
+        print(sp["id"], "trimmed distant scenery off the trackside strip")
 
 
 def dense_top(path):
