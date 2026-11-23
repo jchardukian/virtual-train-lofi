@@ -10,5 +10,23 @@
   "delivery_object": "lofitrain-delivery/<random prefix>/chicago-short-1.mp4 (to delete after YouTube ingestion is confirmed)",
   "authorised": "owner, in the agent session: 'Yes to storage and yes to posting tonight'",
   "preflight": "passed"
+ },
+ {
+  "city": "chicago",
+  "item": "short_2",
+  "buffer_post_id": "6b038bc4d5eabfb8ccf12944",
+  "due_at": "2026-11-23T20:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "ddd221ea3761cd6df66d43647e047c6738dd5c5f19a84b964124fea98528b599",
+  "authorised": "owner, in the agent session: 'get the other short and long form scheduled tomorrow'",
+  "preflight": "passed"
+ },
+ {
+  "city": "chicago",
+  "item": "long_form",
+  "status": "NOT scheduled: the scheduling tool rejected it",
+  "error": "Invalid post: Video must be no longer than 3 minutes for YouTube Shorts., Video must be vertical (portrait orientation) for YouTube Shorts.",
+  "media_sha256": "a2b52ffd78d4d1947cbf2d47913ebb7a4e663fe2a8ea17bd2d58921686d15adc",
+  "note": "Buffer's YouTube integration accepts Shorts only. Long-form needs YouTube Studio or YouTube's own API with the owner's authorisation. File is staged on the delivery bucket."
  }
 ]

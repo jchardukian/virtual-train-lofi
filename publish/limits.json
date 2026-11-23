@@ -17,7 +17,7 @@
  "queue": [
   {
    "city": "chicago",
-   "status": "Short 1 scheduled for 2026-11-22 20:30 America/Chicago (Buffer post 6b0384d9d5eabfb8ccee6db4). Long-form and Short 2 proposed for 2026-11-23, NOT scheduled."
+   "status": "Short 1 scheduled 2026-11-22 20:30 CT; Short 2 scheduled 2026-11-23 20:30 CT; long-form NOT scheduled (the scheduling tool only accepts Shorts for YouTube)"
   },
   {
    "city": "denver",

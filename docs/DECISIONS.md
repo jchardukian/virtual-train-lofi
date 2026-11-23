@@ -27,6 +27,14 @@ replaces; nothing here is reversed silently.
 * **Hard gates:** no spend, paid or public infrastructure, merge, scheduling, publication
   or livestream without the owner's explicit approval.
 
+## Short 2 scheduled; long-form blocked by the scheduling tool — 2026-11-23 00:45 UTC
+
+The owner said in the agent session to schedule the other Short and the long-form for tomorrow.
+* Chicago Short 2: scheduled for 23 November 2026, 20:30 Central (Buffer post `6b038bc4d5eabfb8ccf12944`).
+* Chicago long-form: **not scheduled.** The tool refused it: its YouTube integration accepts only vertical
+  videos of three minutes or less. Long-form uploads need YouTube Studio or YouTube's own API with the
+  owner's authorisation. This also means daily long-form publishing cannot be automated through this tool.
+
 ## No on-video AI label — 2026-11-23 00:25 UTC
 
 The owner said in the agent session that they do not want the AI label shown on the video;
