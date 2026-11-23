@@ -15,7 +15,7 @@
  "queue": [
   {
    "city": "chicago",
-   "status": "visually approved; channel connected; awaiting master hosting and owner go-live"
+   "status": "Short 1 scheduled for 2026-11-22 20:30 America/Chicago (Buffer post 6b0384d9d5eabfb8ccee6db4). Long-form and Short 2 proposed for 2026-11-23, NOT scheduled."
   },
   {
    "city": "denver",
@@ -41,6 +41,12 @@
   "youtube_channel_url": "https://www.youtube.com/channel/UCLjE-J4o5HSXz1cCokDdZbQ",
   "timezone": "America/Chicago",
   "verified": "2026-11-22: connected in the owner's Buffer organisation, queue empty. Identity confirmed as @LofiTrainPOV by the owner, relayed on PR #1 (comment 7087969125). Not a publishing authorisation.",
-  "go_live": false
+  "go_live": "per release only: the owner approves each first-time action in the agent session"
+ },
+ "storage": {
+  "archive_bucket": "lofitrain-archive (private)",
+  "delivery_bucket": "lofitrain-delivery (public read via r2.dev; release files only, random key prefix)",
+  "monthly_charge_ceiling_usd": 3,
+  "approved": "owner, in the agent session, 2026-11-22"
  }
 }

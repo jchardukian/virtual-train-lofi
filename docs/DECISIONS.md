@@ -27,6 +27,24 @@ replaces; nothing here is reversed silently.
 * **Hard gates:** no spend, paid or public infrastructure, merge, scheduling, publication
   or livestream without the owner's explicit approval.
 
+## Storage created; first post scheduled — 2026-11-23 00:15 UTC
+
+The owner said in the agent session: "Yes to storage and yes to posting tonight."
+
+* **Storage:** `lofitrain-archive` (private) and `lofitrain-delivery` (public read, release
+  files only) created in the owner's Cloudflare account, 3 USD per month ceiling.
+  Archived and fingerprint-verified by download: Chicago final master and both Shorts;
+  the original Denver, Paris and Tokyo masters and Shorts. Denver's master (319 MB) exceeds
+  the 300 MB single-upload limit of the API route available here, so it is stored as two
+  verified parts (join with `cat`).
+* **First post:** Chicago Short 1 scheduled for 22 November 2026, 20:30 Central, public,
+  AI-generated flag on, on Lofi Train POV. Buffer post `6b0384d9d5eabfb8ccee6db4`.
+  Log: `publish/release_log.json`.
+* **Not scheduled:** Chicago long-form and Short 2 (proposed for 23 November). Each needs
+  the owner's go.
+* Rights reading (provider terms, YouTube AI-content policy in full) and the landmark
+  check were still open when this was scheduled; the owner was told before confirming.
+
 ## YouTube-only launch; TikTok deferred — 2026-11-22 23:40 UTC (relayed on PR #1, comment 7087747366)
 
 * Launch on YouTube only. TikTok is deferred and is not a launch blocker; no
