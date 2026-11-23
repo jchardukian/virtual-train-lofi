@@ -100,7 +100,7 @@
    "mid": [
     {
      "src": "work/cities_v3/charleston/sprites/landmarks_2.png",
-     "scale": 1.6725978647686832,
+     "scale": 0.7473,
      "base": 895
     }
    ],
@@ -139,7 +139,7 @@
     },
     {
      "src": "work/cities_v3/charleston/sprites/local_3.png",
-     "scale": 0.8,
+     "scale": 0.3,
      "base": 895
     }
    ],

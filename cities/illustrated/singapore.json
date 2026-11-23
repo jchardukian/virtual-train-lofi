@@ -61,7 +61,7 @@
     },
     {
      "src": "work/cities_v3/singapore/sprites/local_5a.png",
-     "scale": 1.7,
+     "scale": 0.4122,
      "base": 900
     },
     {
@@ -110,7 +110,7 @@
    "mid": [
     {
      "src": "work/cities_v3/singapore/sprites/landmarks_1b.png",
-     "scale": 1.7,
+     "scale": 1.0157,
      "base": 900
     },
     {

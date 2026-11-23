@@ -66,7 +66,7 @@
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/local_4.png",
-     "scale": 1.4423076923076923,
+     "scale": 0.2596,
      "base": 895
     },
     {
@@ -125,7 +125,7 @@
     },
     {
      "src": "work/cities_v3/philadelphia/sprites/local_2.png",
-     "scale": 0.9549071618037135,
+     "scale": 0.3581,
      "base": 895
     }
    ],

@@ -115,7 +115,7 @@
     },
     {
      "src": "work/cities_v3/london/sprites/local_2.png",
-     "scale": 1.6071428571428572,
+     "scale": 0.3482,
      "base": 890
     }
    ],
@@ -132,7 +132,7 @@
    "mid": [
     {
      "src": "work/cities_v3/london/sprites/local_3.png",
-     "scale": 1.7,
+     "scale": 0.3034,
      "base": 890
     }
    ],
@@ -154,7 +154,7 @@
     },
     {
      "src": "work/cities_v3/london/sprites/local_4.png",
-     "scale": 0.9,
+     "scale": 0.3375,
      "base": 890
     }
    ],

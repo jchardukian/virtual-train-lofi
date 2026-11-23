@@ -61,7 +61,7 @@
     },
     {
      "src": "work/cities_v3/savannah/sprites/landmarks_0.png",
-     "scale": 1.7,
+     "scale": 0.7807,
      "base": 895
     },
     {
@@ -133,7 +133,7 @@
     },
     {
      "src": "work/cities_v3/savannah/sprites/local_4.png",
-     "scale": 1.309090909090909,
+     "scale": 0.4909,
      "base": 895
     }
    ],

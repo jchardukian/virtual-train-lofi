@@ -83,7 +83,7 @@
    "mid": [
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_1.png",
-     "scale": 1.4461538461538461,
+     "scale": 0.6462,
      "base": 900
     },
     {
@@ -127,7 +127,7 @@
    "mid": [
     {
      "src": "work/cities_v3/kansas_city/sprites/landmarks_3.png",
-     "scale": 1.7,
+     "scale": 0.782,
      "base": 900
     },
     {

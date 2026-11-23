@@ -88,7 +88,7 @@
    "mid": [
     {
      "src": "work/cities_v3/minneapolis/sprites/landmarks_1.png",
-     "scale": 1.7,
+     "scale": 1.0672,
      "base": 815
     },
     {
@@ -132,7 +132,7 @@
     },
     {
      "src": "work/cities_v3/minneapolis/sprites/local_3.png",
-     "scale": 1.530612244897959,
+     "scale": 0.2755,
      "base": 815
     }
    ],

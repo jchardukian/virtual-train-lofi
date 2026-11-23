@@ -66,7 +66,7 @@
     },
     {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_5.png",
-     "scale": 0.9183673469387755,
+     "scale": 0.3061,
      "base": 900
     },
     {
@@ -137,7 +137,7 @@
     },
     {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_3.png",
-     "scale": 1.408450704225352,
+     "scale": 0.4225,
      "base": 900
     }
    ],
@@ -159,7 +159,7 @@
     },
     {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_4.png",
-     "scale": 1.4851485148514851,
+     "scale": 0.2673,
      "base": 900
     }
    ],

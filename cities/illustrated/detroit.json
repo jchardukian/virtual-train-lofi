@@ -127,7 +127,7 @@
    "mid": [
     {
      "src": "work/cities_v3/detroit/sprites/landmarks_3.png",
-     "scale": 1.3505747126436782,
+     "scale": 0.5172,
      "base": 900
     },
     {
@@ -154,7 +154,7 @@
     },
     {
      "src": "work/cities_v3/detroit/sprites/local_4.png",
-     "scale": 1.2903225806451613,
+     "scale": 0.4839,
      "base": 900
     }
    ],
