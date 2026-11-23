@@ -1,0 +1,175 @@
+{
+ "city": "Cape Town, South Africa",
+ "next": "Pittsburgh, Pennsylvania",
+ "version": 3,
+ "season": "Cape Town on a bright summer day, deep blue sky, flat-topped Table Mountain with a cloud tablecloth, turquoise sea, colourful houses, fresh and vivid",
+ "sky": "work/cities_v3/cape_town/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/cape_town/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    127.22589874267578,
+    141.64759826660156,
+    162.41015625
+   ],
+   [
+    106.02159118652344,
+    118.03966522216797,
+    135.341796875
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/cape_town/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 152
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/cape_town/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/cape_town/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 672,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_0.png",
+     "scale": 0.9063444108761329,
+     "base": 818
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_0.png",
+     "scale": 1.246684350132626,
+     "base": 793
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_5.png",
+     "scale": 0.819672131147541,
+     "base": 818
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 793
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cape_town/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_1.png",
+     "scale": 1.2287581699346406,
+     "base": 793
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_1.png",
+     "scale": 1.1152416356877324,
+     "base": 818
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cape_town/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_2.png",
+     "scale": 1.27313769751693,
+     "base": 793
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_2.png",
+     "scale": 1.2396694214876034,
+     "base": 818
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cape_town/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 793
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_3.png",
+     "scale": 1.7,
+     "base": 818
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cape_town/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/cape_town/sprites/landmarks_4.png",
+     "scale": 1.6491228070175439,
+     "base": 793
+    },
+    {
+     "src": "work/cities_v3/cape_town/sprites/local_4.png",
+     "scale": 1.3392857142857142,
+     "base": 818
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/cape_town/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

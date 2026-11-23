@@ -1,0 +1,175 @@
+{
+ "city": "Vancouver, Canada",
+ "next": "Atlanta, Georgia",
+ "version": 3,
+ "season": "Vancouver on a fresh rainy spring morning, soft green and silver, misty mountains, harbour seaplanes, cherry blossoms, calm and fresh",
+ "sky": "work/cities_v3/vancouver/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/vancouver/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    120.93985748291016,
+    116.94717407226562,
+    88.16036224365234
+   ],
+   [
+    100.78321838378906,
+    97.45597839355469,
+    73.46697235107422
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/vancouver/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 48
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/vancouver/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/vancouver/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 562,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_0.png",
+     "scale": 0.55,
+     "base": 776
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_0.png",
+     "scale": 0.9343936381709742,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_5.png",
+     "scale": 0.55,
+     "base": 776
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_5.png",
+     "scale": 1.3590361445783132,
+     "base": 751
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/vancouver/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_1.png",
+     "scale": 1.165289256198347,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_1.png",
+     "scale": 0.8746355685131195,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/vancouver/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/vancouver/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_3.png",
+     "scale": 1.4329268292682926,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_3.png",
+     "scale": 1.477832512315271,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/vancouver/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/vancouver/sprites/landmarks_4.png",
+     "scale": 1.165289256198347,
+     "base": 751
+    },
+    {
+     "src": "work/cities_v3/vancouver/sprites/local_4.png",
+     "scale": 1.0909090909090908,
+     "base": 776
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/vancouver/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

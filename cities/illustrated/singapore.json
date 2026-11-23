@@ -1,0 +1,180 @@
+{
+ "city": "Singapore",
+ "next": "coming soon",
+ "version": 3,
+ "season": "Singapore on a warm tropical night, deep blue sky, glowing supertrees and skyline, lush greenery, sparkling bay, futuristic and serene",
+ "sky": "work/cities_v3/singapore/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/singapore/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    43.53276824951172,
+    67.32015228271484,
+    79.5858383178711
+   ],
+   [
+    36.277305603027344,
+    56.10013198852539,
+    66.321533203125
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/singapore/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 72
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/singapore/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/singapore/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 581,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/local_0.png",
+     "scale": 0.8450704225352113,
+     "base": 784
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_0.png",
+     "scale": 1.236842105263158,
+     "base": 759
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_5a.png",
+     "scale": 1.7,
+     "base": 784
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 759
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/local_5b.png",
+     "scale": 1.0135135135135136,
+     "base": 784
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_1a.png",
+     "scale": 1.637630662020906,
+     "base": 759
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_1.png",
+     "scale": 1.5957446808510638,
+     "base": 784
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_1b.png",
+     "scale": 1.7,
+     "base": 759
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_2.png",
+     "scale": 1.1857707509881423,
+     "base": 784
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 759
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_3.png",
+     "scale": 1.7,
+     "base": 784
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_3.png",
+     "scale": 1.3544668587896254,
+     "base": 759
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_4.png",
+     "scale": 1.7,
+     "base": 784
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

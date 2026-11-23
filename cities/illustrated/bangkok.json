@@ -1,0 +1,170 @@
+{
+ "city": "Bangkok, Thailand",
+ "next": "Salt Lake City, Utah",
+ "version": 3,
+ "season": "Bangkok at a warm monsoon dusk after a light shower, glowing temples, golden spires, river boats with lights, humid and cozy",
+ "sky": "work/cities_v3/bangkok/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/bangkok/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    60.33899688720703,
+    85.5642318725586,
+    106.55364990234375
+   ],
+   [
+    50.282501220703125,
+    71.30352783203125,
+    88.79470825195312
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/bangkok/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 13
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/bangkok/sprites/local_3b.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/bangkok/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 687,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/bangkok/sprites/local_0.png",
+     "scale": 0.7556675062972292,
+     "base": 824
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_0.png",
+     "scale": 0.8362989323843416,
+     "base": 799
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 799
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/bangkok/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_1.png",
+     "scale": 1.3505747126436782,
+     "base": 799
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/local_1.png",
+     "scale": 1.2820512820512822,
+     "base": 824
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/bangkok/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_2.png",
+     "scale": 1.6491228070175439,
+     "base": 799
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 824
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/bangkok/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_3.png",
+     "scale": 1.7,
+     "base": 799
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/local_3a.png",
+     "scale": 0.8982035928143712,
+     "base": 824
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/bangkok/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/bangkok/sprites/landmarks_4.png",
+     "scale": 1.1628865979381444,
+     "base": 799
+    },
+    {
+     "src": "work/cities_v3/bangkok/sprites/local_3b.png",
+     "scale": 0.8982035928143712,
+     "base": 824
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/bangkok/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

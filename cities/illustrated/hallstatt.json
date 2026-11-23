@@ -1,0 +1,180 @@
+{
+ "city": "Hallstatt, Austria",
+ "next": "San Antonio, Texas",
+ "version": 3,
+ "season": "Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet",
+ "sky": "work/cities_v3/hallstatt/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/hallstatt/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    148.97824096679688,
+    123.38999938964844,
+    98.69465637207031
+   ],
+   [
+    124.1485366821289,
+    102.82500457763672,
+    82.24555206298828
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/hallstatt/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 147
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/hallstatt/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/hallstatt/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 588,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_0.png",
+     "scale": 0.8379888268156425,
+     "base": 787
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_0.png",
+     "scale": 1.032967032967033,
+     "base": 762
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_5.png",
+     "scale": 1.0909090909090908,
+     "base": 787
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 762
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/hallstatt/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_6.png",
+     "scale": 1.0650887573964498,
+     "base": 787
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_1.png",
+     "scale": 1.7,
+     "base": 762
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_1.png",
+     "scale": 0.8902077151335311,
+     "base": 787
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/hallstatt/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 762
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_2.png",
+     "scale": 1.1235955056179776,
+     "base": 787
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/hallstatt/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_3.png",
+     "scale": 1.227154046997389,
+     "base": 762
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_3.png",
+     "scale": 1.7,
+     "base": 787
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/hallstatt/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/hallstatt/sprites/landmarks_4.png",
+     "scale": 1.1633663366336633,
+     "base": 762
+    },
+    {
+     "src": "work/cities_v3/hallstatt/sprites/local_4.png",
+     "scale": 1.7,
+     "base": 787
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/hallstatt/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

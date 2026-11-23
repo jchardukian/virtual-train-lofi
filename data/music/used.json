@@ -624,5 +624,385 @@
    148.4
   ],
   "licence": "CC BY 4.0"
+ },
+ "phoenix_sedona": {
+  "titles": [
+   "Stay With Me",
+   "Please Hold Me"
+  ],
+  "albums": [
+   "Memories",
+   "Please Hold Me"
+  ],
+  "files": [
+   "work/music_lib/Stay_With_Me.mp3",
+   "work/music_lib/Please_Hold_Me.mp3"
+  ],
+  "durations_s": [
+   162.8,
+   272.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "london": {
+  "titles": [
+   "Downtown",
+   "Empty Sidewalks"
+  ],
+  "albums": [
+   "City Nights 3",
+   "City Nights 3"
+  ],
+  "files": [
+   "work/music_lib/Downtown.mp3",
+   "work/music_lib/Empty_Sidewalks.mp3"
+  ],
+  "durations_s": [
+   162.8,
+   170.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "minneapolis": {
+  "titles": [
+   "Lost And Found",
+   "Entering the Dream World"
+  ],
+  "albums": [
+   "Signs Of Life",
+   "Brain Fog"
+  ],
+  "files": [
+   "work/music_lib/Lost_And_Found.mp3",
+   "work/music_lib/Entering_the_Dream_World.mp3"
+  ],
+  "durations_s": [
+   158.8,
+   156.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "prague": {
+  "titles": [
+   "Cant Sleep",
+   "Missing Pieces"
+  ],
+  "albums": [
+   "City Nights",
+   "City Nights 3"
+  ],
+  "files": [
+   "work/music_lib/Cant_Sleep.mp3",
+   "work/music_lib/Missing_Pieces.mp3"
+  ],
+  "durations_s": [
+   172.9,
+   171.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "charleston": {
+  "titles": [
+   "Waiting For The Sun",
+   "Stray"
+  ],
+  "albums": [
+   "House In The Woods",
+   "City Nights 3"
+  ],
+  "files": [
+   "work/music_lib/Waiting_For_The_Sun.mp3",
+   "work/music_lib/Stray.mp3"
+  ],
+  "durations_s": [
+   190.3,
+   185.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "bangkok": {
+  "titles": [
+   "Rooftop Rendezvous",
+   "Sonder"
+  ],
+  "albums": [
+   "City Nights 2",
+   "City Nights 2"
+  ],
+  "files": [
+   "work/music_lib/Rooftop_Rendezvous.mp3",
+   "work/music_lib/Sonder.mp3"
+  ],
+  "durations_s": [
+   184.3,
+   189.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "salt_lake_city": {
+  "titles": [
+   "Summer Crush",
+   "Low Tide"
+  ],
+  "albums": [
+   "A Good Book",
+   "Oasis"
+  ],
+  "files": [
+   "work/music_lib/Summer_Crush.mp3",
+   "work/music_lib/Low_Tide.mp3"
+  ],
+  "durations_s": [
+   140.6,
+   175.6
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "cape_town": {
+  "titles": [
+   "Carousel",
+   "What Lies Beyond"
+  ],
+  "albums": [
+   "Dino Land",
+   "Sands Of Time"
+  ],
+  "files": [
+   "work/music_lib/Carousel.mp3",
+   "work/music_lib/What_Lies_Beyond.mp3"
+  ],
+  "durations_s": [
+   132.7,
+   187.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "pittsburgh": {
+  "titles": [
+   "Serendipity",
+   "Fading"
+  ],
+  "albums": [
+   "Signs Of Life",
+   "Sleep Tight"
+  ],
+  "files": [
+   "work/music_lib/Serendipity.mp3",
+   "work/music_lib/Fading.mp3"
+  ],
+  "durations_s": [
+   168.5,
+   213.8
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "vancouver": {
+  "titles": [
+   "Running Late",
+   "Cold Rainy"
+  ],
+  "albums": [
+   "Night Train",
+   "Up All Night"
+  ],
+  "files": [
+   "work/music_lib/Running_Late.mp3",
+   "work/music_lib/Cold_Rainy.mp3"
+  ],
+  "durations_s": [
+   155.1,
+   163.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "atlanta": {
+  "titles": [
+   "In The Past",
+   "Look On The Bright Side"
+  ],
+  "albums": [
+   "Signs Of Life",
+   "Just Relax"
+  ],
+  "files": [
+   "work/music_lib/In_The_Past.mp3",
+   "work/music_lib/Look_On_The_Bright_Side.mp3"
+  ],
+  "durations_s": [
+   164.3,
+   163.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "barcelona": {
+  "titles": [
+   "Timeless",
+   "Wishes"
+  ],
+  "albums": [
+   "Sea Of Stars",
+   "Sea Of Stars"
+  ],
+  "files": [
+   "work/music_lib/Timeless.mp3",
+   "work/music_lib/Wishes.mp3"
+  ],
+  "durations_s": [
+   189.2,
+   196.0
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "anchorage": {
+  "titles": [
+   "Hot Chocolate",
+   "Disassociate"
+  ],
+  "albums": [
+   "Snowbound",
+   "Just Relax"
+  ],
+  "files": [
+   "work/music_lib/Hot_Chocolate.mp3",
+   "work/music_lib/Disassociate.mp3"
+  ],
+  "durations_s": [
+   148.0,
+   179.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "lisbon": {
+  "titles": [
+   "Siren's Song",
+   "Verdant"
+  ],
+  "albums": [
+   "Eye of the Storm",
+   "Tranquil Trails"
+  ],
+  "files": [
+   "work/music_lib/Siren_s_Song.mp3",
+   "work/music_lib/Verdant.mp3"
+  ],
+  "durations_s": [
+   148.5,
+   199.7
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "detroit": {
+  "titles": [
+   "Passing Time",
+   "In The Moment"
+  ],
+  "albums": [
+   "Night Train",
+   "City Nights 2"
+  ],
+  "files": [
+   "work/music_lib/Passing_Time.mp3",
+   "work/music_lib/In_The_Moment.mp3"
+  ],
+  "durations_s": [
+   165.6,
+   203.3
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "dubai": {
+  "titles": [
+   "Until Dawn",
+   "Lets Go Shopping"
+  ],
+  "albums": [
+   "Endless Forest",
+   "Up All Night"
+  ],
+  "files": [
+   "work/music_lib/Until_Dawn.mp3",
+   "work/music_lib/Lets_Go_Shopping.mp3"
+  ],
+  "durations_s": [
+   220.7,
+   116.2
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "kansas_city": {
+  "titles": [
+   "Moving Landscapes",
+   "Wonderment"
+  ],
+  "albums": [
+   "Mellow Skies",
+   "Signs Of Life"
+  ],
+  "files": [
+   "work/music_lib/Moving_Landscapes.mp3",
+   "work/music_lib/Wonderment.mp3"
+  ],
+  "durations_s": [
+   194.7,
+   181.8
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "hallstatt": {
+  "titles": [
+   "Bird Watching",
+   "Manifestations Of The Heart"
+  ],
+  "albums": [
+   "Cat Nap",
+   "Nostalgia And Moving On"
+  ],
+  "files": [
+   "work/music_lib/Bird_Watching.mp3",
+   "work/music_lib/Manifestations_Of_The_Heart.mp3"
+  ],
+  "durations_s": [
+   163.1,
+   171.8
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "san_antonio": {
+  "titles": [
+   "Insomnia",
+   "Tracks To Nowhere"
+  ],
+  "albums": [
+   "City Nights 3",
+   "Night Train"
+  ],
+  "files": [
+   "work/music_lib/Insomnia.mp3",
+   "work/music_lib/Tracks_To_Nowhere.mp3"
+  ],
+  "durations_s": [
+   179.2,
+   165.4
+  ],
+  "licence": "CC BY 4.0"
+ },
+ "singapore": {
+  "titles": [
+   "3 A M Radio",
+   "Cable Car"
+  ],
+  "albums": [
+   "City Nights 3",
+   "City Nights 3"
+  ],
+  "files": [
+   "work/music_lib/3_A_M_Radio.mp3",
+   "work/music_lib/Cable_Car.mp3"
+  ],
+  "durations_s": [
+   180.3,
+   151.9
+  ],
+  "licence": "CC BY 4.0"
  }
 }

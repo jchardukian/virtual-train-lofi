@@ -1,0 +1,180 @@
+{
+ "city": "San Antonio, Texas",
+ "next": "Singapore",
+ "version": 3,
+ "season": "San Antonio on a festive winter night, warm string lights over the River Walk, glowing reflections, colourful papel picado, cozy and joyful",
+ "sky": "work/cities_v3/san_antonio/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/san_antonio/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    57.185462951660156,
+    71.7192611694336,
+    80.39348602294922
+   ],
+   [
+    47.65455627441406,
+    59.766056060791016,
+    66.99457550048828
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/san_antonio/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 99
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_antonio/sprites/local_2.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_antonio/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 644,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_0.png",
+     "scale": 0.9259259259259259,
+     "base": 808
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_0.png",
+     "scale": 1.7,
+     "base": 783
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_5.png",
+     "scale": 0.6896551724137931,
+     "base": 808
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 783
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_antonio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_6.png",
+     "scale": 0.8264462809917356,
+     "base": 808
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_1.png",
+     "scale": 0.9322314049586777,
+     "base": 783
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_1.png",
+     "scale": 1.1952191235059761,
+     "base": 808
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_antonio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_2.png",
+     "scale": 1.7,
+     "base": 783
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_2.png",
+     "scale": 1.6981132075471699,
+     "base": 808
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_antonio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_3.png",
+     "scale": 1.2566844919786095,
+     "base": 783
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_3.png",
+     "scale": 1.4150943396226414,
+     "base": 808
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_antonio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/san_antonio/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 783
+    },
+    {
+     "src": "work/cities_v3/san_antonio/sprites/local_4.png",
+     "scale": 1.3888888888888888,
+     "base": 808
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/san_antonio/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

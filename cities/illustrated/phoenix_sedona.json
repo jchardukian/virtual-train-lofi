@@ -1,0 +1,180 @@
+{
+ "city": "Phoenix and Sedona, Arizona",
+ "next": "London, England",
+ "version": 3,
+ "season": "the Arizona desert at a glowing sunrise, red rocks blazing orange, soft purple shadows, saguaros, clear and warm",
+ "sky": "work/cities_v3/phoenix_sedona/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/phoenix_sedona/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    44.32401657104492,
+    81.5176773071289,
+    158.2418212890625
+   ],
+   [
+    36.93667984008789,
+    67.93140411376953,
+    131.86817932128906
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/phoenix_sedona/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 6
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/phoenix_sedona/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/phoenix_sedona/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 832,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_0.png",
+     "scale": 0.9933774834437086,
+     "base": 879
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_0.png",
+     "scale": 1.5161290322580645,
+     "base": 854
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_5.png",
+     "scale": 0.9183673469387755,
+     "base": 879
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 854
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_6.png",
+     "scale": 0.8333333333333334,
+     "base": 879
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_1.png",
+     "scale": 1.7,
+     "base": 854
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_1.png",
+     "scale": 0.7481296758104738,
+     "base": 879
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_2.png",
+     "scale": 1.540983606557377,
+     "base": 854
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 879
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_3.png",
+     "scale": 1.4779874213836477,
+     "base": 854
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_3.png",
+     "scale": 1.408450704225352,
+     "base": 879
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 854
+    },
+    {
+     "src": "work/cities_v3/phoenix_sedona/sprites/local_4.png",
+     "scale": 1.4851485148514851,
+     "base": 879
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}

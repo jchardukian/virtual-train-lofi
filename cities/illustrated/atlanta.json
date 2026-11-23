@@ -1,0 +1,180 @@
+{
+ "city": "Atlanta, Georgia",
+ "next": "Barcelona, Spain",
+ "version": 3,
+ "season": "Atlanta on a humid summer dusk, peach and lilac sky, lush green canopy, warm city lights, fireflies, relaxed southern evening",
+ "sky": "work/cities_v3/atlanta/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/atlanta/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "fireflies",
+ "ground_src": {
+  "colour": [
+   [
+    41.668704986572266,
+    68.87567138671875,
+    68.54535675048828
+   ],
+   [
+    34.72392272949219,
+    57.39639663696289,
+    57.12113571166992
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/atlanta/sprites/near_0.png",
+  "scale": 0.85,
+  "base": -9
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/atlanta/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/atlanta/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 607,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_0.png",
+     "scale": 1.2295081967213115,
+     "base": 794
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_0.png",
+     "scale": 0.9096774193548387,
+     "base": 769
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_5.png",
+     "scale": 1.2195121951219512,
+     "base": 794
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_5.png",
+     "scale": 1.119047619047619,
+     "base": 769
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/atlanta/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_6.png",
+     "scale": 0.9900990099009901,
+     "base": 794
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_1.png",
+     "scale": 0.9161793372319688,
+     "base": 769
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_1.png",
+     "scale": 0.9036144578313253,
+     "base": 794
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/atlanta/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_2.png",
+     "scale": 1.1809045226130652,
+     "base": 769
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_2.png",
+     "scale": 1.7,
+     "base": 794
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/atlanta/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_3.png",
+     "scale": 1.143552311435523,
+     "base": 769
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_3.png",
+     "scale": 1.3574660633484164,
+     "base": 794
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/atlanta/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/atlanta/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 769
+    },
+    {
+     "src": "work/cities_v3/atlanta/sprites/local_4.png",
+     "scale": 1.4423076923076923,
+     "base": 794
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/atlanta/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ]
+}
