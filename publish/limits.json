@@ -13,23 +13,32 @@
   "TikTok is deferred: zero TikTok posts until the owner re-enables it. The two vertical clips per city are YouTube Shorts.",
   "No AI label on videos and no mention of AI in titles or descriptions (owner decision 2026-11-22, standing until the owner changes it). Descriptions say the artwork is illustrated and not real footage.",
   "Every description has, in order: a one or two sentence description of that video, the channel blurb, the 'illustrated, not real footage' line, the music credit, hashtags.",
-  "Thumbnails: use YouTube's automatic frame, no custom thumbnail (owner decision 2026-11-23: likes the train-window frame)."
+  "Thumbnails: use YouTube's automatic frame, no custom thumbnail (owner decision 2026-11-23: likes the train-window frame).",
+  "Owner 2026-11-23: finished cities are scheduled without asking, one per day: long-form 11:00 CT (YouTube API), Short 1 14:30 CT and Short 2 20:30 CT (Buffer), each Short's description links to that day's long-form."
  ],
  "queue": [
   {
    "city": "chicago",
-   "status": "Short 1 scheduled 2026-11-22 20:30 CT (Buffer); long-form uploaded to YouTube, private, publishes 2026-11-23 18:00 CT (video OkkV7ZHbda0); Short 2 scheduled 2026-11-23 20:30 CT (Buffer)"
+   "status": "released 2026-11-22/23"
   },
   {
-   "city": "denver",
-   "status": "built; awaiting owner review"
+   "city": "london",
+   "date": "2026-11-24"
   },
   {
-   "city": "paris",
-   "status": "building"
+   "city": "san_francisco",
+   "date": "2026-11-25"
   },
   {
-   "city": "tokyo",
+   "city": "amsterdam",
+   "date": "2026-11-26"
+  },
+  {
+   "city": "new_orleans",
+   "date": "2026-11-27"
+  },
+  {
+   "city": "cairo",
    "status": "building"
   }
  ],
