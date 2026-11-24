@@ -139,7 +139,9 @@
   "publish_at": "2026-11-26T11:00:00-06:00",
   "media_sha256": "e2d7122d474f3ccd8b493325b146a88300c9e083682c13eeba275982d58460e5",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "5thAZ2gtRCo",
+  "status": "deleted 2026-11-24T15:32:30Z: replaced by the rebuilt version"
  },
  {
   "city": "amsterdam",
@@ -148,11 +150,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-26T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "4b6393c2b5e35add1d5a563775430d7d66dff919d98af6abf66d0e24e4662ad3",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/f93bfc3a6c7a899f41c91c18/amsterdam_short_1.mp4",
-  "links_to": "https://youtu.be/hryvGF8ZHqA",
+  "media_sha256": "ae9091ca93f7e286a1c4a57f6ecae401fa0d5c2944a393ab310d69b6d147e772",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/8323f8a043ffddc7296a4ce6/amsterdam_short_1.mp4",
+  "links_to": "https://youtu.be/5thAZ2gtRCo",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T15:32:30Z with the rebuilt version"
  },
  {
   "city": "amsterdam",
@@ -161,11 +164,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-26T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "7266c6f0e9c255fe41123009cc274a4915dd4055e0f0a0577db560603785be5a",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/ca43ed6f131620cd3db22df7/amsterdam_short_2.mp4",
-  "links_to": "https://youtu.be/hryvGF8ZHqA",
+  "media_sha256": "a2fc479a9d040a8b18e27ec54dc2ce9f051d6a34429cab5163e93e6a41852ac5",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/1e1800442af316b9b3e4045d/amsterdam_short_2.mp4",
+  "links_to": "https://youtu.be/5thAZ2gtRCo",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T15:32:30Z with the rebuilt version"
  },
  {
   "city": "new_orleans",
@@ -312,5 +316,19 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "tx2xgJe84CQ"
+ },
+ {
+  "city": "amsterdam",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "5thAZ2gtRCo",
+  "url": "https://youtu.be/5thAZ2gtRCo",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-26T11:00:00-06:00",
+  "media_sha256": "c8c46fd6002c3fb7e11c01cf8dfdd3a21f1f8143178bda24cade5e8a3d2725a9",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "hryvGF8ZHqA"
  }
 ]

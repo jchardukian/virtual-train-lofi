@@ -10,7 +10,11 @@ T=$(mktemp -d); i=0
 if [ "$(curl -sS "$U/${C}_illustrated_master.mp4.part00" -H "Authorization: Bearer dummy" -o "$T/p00" -w "%{http_code}")" = "200" ]; then
   while :; do i=$((i+1)); n=$(printf %02d $i)
     [ "$(curl -sS --retry 3 "$U/${C}_illustrated_master.mp4.part$n" -H "Authorization: Bearer dummy" -o "$T/p$n" -w "%{http_code}")" = "200" ] || { rm -f "$T/p$n"; break; }; done
-  cat "$T"/p* > "$F"
+  want=$(grep "_master.mp4" "$D/SHA256SUMS" | cut -d' ' -f1)
+  parts=$(ls "$T"/p* | sort)
+  n=$(echo "$parts" | wc -l)
+  # a rebuilt master can need fewer parts than the one before it; ignore stale trailing parts
+  while [ $n -gt 0 ]; do cat $(echo "$parts" | head -n $n) > "$F"; [ "$(sha256sum "$F" | cut -d' ' -f1)" = "$want" ] && break; n=$((n-1)); done
 else
   curl -sS --retry 3 "$U/${C}_illustrated_master.mp4" -H "Authorization: Bearer dummy" -o "$F"
 fi
