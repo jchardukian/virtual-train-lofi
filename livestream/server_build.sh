@@ -22,13 +22,18 @@ for C in "$@"; do
   exists control/built/$C.json && { echo "$C already built"; continue; }
   if exists control/claim/$C; then get control/claim/$C /tmp/who; [ "$(cat /tmp/who)" = server ] || { echo "$C claimed by the agent"; continue; }; fi
   echo server > /tmp/claim; put /tmp/claim control/claim/$C
-  python3 pipeline/upscale_art.py $C --threads 4 | tail -1 || { echo "$C UPSCALE FAILED"; continue; }
-  read A B < <(python3 -c "import json;u=json.load(open('data/music/used.json'))['$C']['files'];print(u[0],u[1])")
-  OUT=$(RENDER_SCALE=2 pipeline/illustrated_build.sh $C $A $B 2 150 2>&1); echo "$OUT" | tail -3
-  echo "$OUT" | grep -q "BUILT OK" || { echo "$C FAILED"; continue; }
-  D=output/cities/$C/illustrated; ok=1
+  D=output/cities/$C/illustrated
+  if [ -f $D/RESOLUTION ] && [ -f $D/${C}_illustrated_master.mp4 ] && [ $D/RESOLUTION -nt cities/illustrated/$C.json ]; then
+    echo "$C already rendered here; uploading"
+  else
+    python3 pipeline/upscale_art.py $C --threads 4 | tail -1 || { echo "$C UPSCALE FAILED"; continue; }
+    read A B < <(python3 -c "import json;u=json.load(open('data/music/used.json'))['$C']['files'];print(u[0],u[1])")
+    OUT=$(RENDER_SCALE=2 pipeline/illustrated_build.sh $C $A $B 2 150 2>&1); echo "$OUT" | tail -3
+    echo "$OUT" | grep -q "BUILT OK" || { echo "$C FAILED"; continue; }
+  fi
+  ok=1
   for f in $D/${C}_illustrated_vertical_1.mp4 $D/${C}_illustrated_vertical_2.mp4 $D/SHA256SUMS $D/*.audio.json $D/*.contact.jpg $D/RESOLUTION $D/${C}_illustrated_video.render.json; do put $f $C/$(basename $f) || ok=0; done
-  T=$(mktemp -d); split -b 200M -d $D/${C}_illustrated_master.mp4 $T/${C}_illustrated_master.mp4.part
+  T=$(mktemp -d); split -b 90M -d $D/${C}_illustrated_master.mp4 $T/${C}_illustrated_master.mp4.part
   for p in $T/*; do put $p $C/$(basename $p) || ok=0; done; rm -rf $T
   for f in output/samples/${C}_illustrated_*; do put $f $C/samples/$(basename $f) || ok=0; done
   [ $ok = 1 ] || { echo "$C UPLOAD FAILED"; continue; }
