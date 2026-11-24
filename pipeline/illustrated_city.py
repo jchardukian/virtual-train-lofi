@@ -135,14 +135,32 @@ class City:
         self.mid_front = cfg.get("mid_front", False)
         self.ground_first = cfg.get("ground_first", False)
         self.band_off = {}
+        # owner 2026-11-24: no separate foreground strip; the street row runs down to the window sill instead
+        self.keep_near = cfg.get("keep_near", False)
+        self.mid_speed = MID
+        SILL = 1040                                    # just below the window's lower edge at 1080p
         for k, sc in enumerate(cfg["sections"]):
             far = [self.far_layer(L) for L in sc.get("far", [])]
             band = None
+            zoom = None
             if sc.get("band"):
-                b = sc["band"]
+                b = dict(sc["band"])
+                drop = 0
+                if not self.keep_near and sc.get("ground", "lawn") != "river":
+                    # bring the row closer: its top stays where it was, its street now meets the window sill
+                    hh = cv2.imread(str(ROOT / b["src"]), cv2.IMREAD_UNCHANGED).shape[0] * b.get("scale", 1.0)
+                    top = b.get("base", 850) - hh
+                    f = (SILL - top) / max(1.0, b.get("base", 850) - top)
+                    zoom = (top, f)
+                    b["scale"], b["base"], b["feather_bottom"] = b.get("scale", 1.0) * f, SILL, 0
+                    b["speed"] = b.get("speed", BAND / S) * f
+                    self.mid_speed = b["speed"] * S
                 bkey = ("band", b["src"], b.get("scale", 1.0), b.get("flip", False), b.get("feather_top", 90), b.get("feather_bottom", 45))
                 if bkey not in self.cache:            # sections that share a strip share one copy of it (4K memory)
-                    self.cache[bkey] = loop(self.feather(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False)), b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S)
+                    lay = self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))
+                    if zoom:
+                        lay = self.fill_down(lay)
+                    self.cache[bkey] = loop(self.feather(lay, b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S)
                 band = (self.cache[bkey], b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)
             self.sections.append({"ground": sc.get("ground", "lawn"), "far": far, "band": band})
             if band is not None:                       # one row, one position: the first section's offset wins
@@ -150,9 +168,14 @@ class City:
             items = sc.get("mid", [])
             for i, m in enumerate(items):
                 tau = k * self.sect + (i + 0.5) / len(items) * self.sect
-                self.mid.append((self.load(m["src"], m.get("scale", 1.0), m.get("flip", False)), tau, m.get("base", 775 if sc.get("ground", "lawn") != "river" else 722) * S))
+                mb, ms = m.get("base", 775 if sc.get("ground", "lawn") != "river" else 722), m.get("scale", 1.0)
+                if zoom:                                       # landmarks on the street come closer with it
+                    mb, ms = zoom[0] + (mb - zoom[0]) * zoom[1], ms * zoom[1]
+                self.mid.append((self.load(m["src"], ms, m.get("flip", False)), tau, int(round(mb * S))))
 
     def draw_ground(self, img, t, bob, w):
+        if not self.keep_near:            # the street row now reaches the sill; a plain ground only showed through roof gaps
+            return
         land = min(sum(w[k] for k, sc in enumerate(self.sections) if sc["ground"] == "lawn"), 1.0)
         if land > 0:
             rgb, _, period = self.lawn
@@ -162,7 +185,7 @@ class City:
 
     def draw_mids(self, img, t, bob):
         for (rgb, a), tau, base in self.mid:
-            x = int(round(W / 2 + MID * (tau - t) - a.shape[1] / 2))
+            x = int(round(W / 2 + self.mid_speed * (tau - t) - a.shape[1] / 2))   # at the street's own speed
             if -a.shape[1] < x < W:
                 over(img, rgb, a, x, base - a.shape[0] + bob)
 
@@ -172,6 +195,23 @@ class City:
             L = rgba(*art(src, scale), flip)
             self.cache[key] = tint(L, HAZE, haze) if haze else L
         return self.cache[key]
+
+    @staticmethod
+    def fill_down(layer):
+        """make everything below a column's first solid pixel solid, continuing the colour downwards, so the street
+        row reaches the sill with no see-through wedges under a sloping street (premultiplied rgb, alpha)"""
+        rgb, a = layer
+        rgb, a = rgb.copy(), a.copy()
+        seen = np.zeros(a.shape[1], bool)
+        for y in range(a.shape[0]):
+            row = a[y, :, 0]
+            seen |= row > 0.6
+            hole = seen & (row < 0.98)
+            if y and hole.any():
+                k = (1 - row[hole])[:, None]
+                rgb[y, hole] = rgb[y, hole] + rgb[y - 1, hole] / np.maximum(a[y - 1, hole], 1e-3) * k
+                a[y, hole, 0] = 1.0
+        return rgb, a
 
     def feather(self, layer, top, bottom):
         """Soften a strip's straight top and bottom edges so it melts into the layer behind it instead of
@@ -268,7 +308,8 @@ class City:
             strip(img, lp, off + speed * t, base + bob, k)
         if self.mid_front:                 # landmarks stand on the street in front of the row, not perched behind it
             self.draw_mids(img, t, bob)
-        strip(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)
+        if self.keep_near:
+            strip(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)
         for k in range(1, self.n):
             x = int(W + 150 * S - 620 * S * (t - (k * self.sect - 3.4)))
             if -self.treewall[1].shape[1] < x < W:
