@@ -72,6 +72,11 @@
   "approved_monthly_cost": "about USD 10-11 (EUR 9.99 incl. VAT list price; EUR ~8.39 + ~0.50 IPv4 without VAT)",
   "approved": "owner, in the agent session, 2026-11-24: 'Yes that's fine, go with the CX33'",
   "create_when": "after the YouTube channel's phone verification clears (live streaming enabled), so no idle billing",
-  "credential": "api.hetzner.cloud token saved as a proxy-injected network secret; never printed"
+  "credential": "api.hetzner.cloud token saved as a proxy-injected network secret; never printed",
+  "created": "2026-11-24, Hetzner server 177414097 'lofitrain-stream', CX33, Helsinki (hel1); German locations had no capacity",
+  "actual_price": "EUR 9.99/month (no VAT charged) + IPv4 ~EUR 0.50 = ~EUR 10.50 (~USD 12); told the owner",
+  "access": "no inbound ports (Hetzner firewall 'lofitrain-no-inbound' has no rules); the server polls the private control Worker lofitrain-control.jchardukian.workers.dev (shared key in work/secrets, never committed)",
+  "checks": "ffmpeg 6.1.1, 4 cores, 7 GB RAM, 69 GB free; YouTube RTMP/RTMPS ingest reachable; archive download ~13 MB/s; YouTube token has the youtube scope needed for live broadcasts",
+  "youtube_verification": "phone verified 2026-11-24 (longUploadsStatus allowed); live streaming enabled ~24 h later"
  }
 }
