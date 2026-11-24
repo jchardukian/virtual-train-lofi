@@ -60,11 +60,6 @@
      "base": 895
     },
     {
-     "src": "work/cities_v3/nashville/sprites/landmarks_0.png",
-     "scale": 0.9185667752442996,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/nashville/sprites/local_5.png",
      "scale": 1.0273972602739727,
      "base": 895
@@ -165,6 +160,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2a.png (the steel pedestrian truss bridge); landmarks_2b.png (the steel pedestrian truss bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2a.png (the steel pedestrian truss bridge); landmarks_2b.png (the steel pedestrian truss bridge)",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png"
  ]
 }

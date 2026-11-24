@@ -60,18 +60,8 @@
      "base": 880
     },
     {
-     "src": "work/cities_v3/venice/sprites/landmarks_0.png",
-     "scale": 0.8571428571428571,
-     "base": 880
-    },
-    {
      "src": "work/cities_v3/venice/sprites/local_5.png",
      "scale": 0.783289817232376,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/venice/sprites/landmarks_5.png",
-     "scale": 1.4156626506024097,
      "base": 880
     }
    ],
@@ -153,6 +143,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Rialto Bridge); local_2.png (a small arched footbridge); landmarks_4.png (the Bridge of Sighs)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Rialto Bridge); local_2.png (a small arched footbridge); landmarks_4.png (the Bridge of Sighs)",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png, landmarks_5.png"
  ]
 }

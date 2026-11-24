@@ -60,11 +60,6 @@
      "base": 800
     },
     {
-     "src": "work/cities_v3/sydney/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 800
-    },
-    {
      "src": "work/cities_v3/sydney/sprites/local_5.png",
      "scale": 0.55,
      "base": 800
@@ -148,6 +143,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_1a.png, landmarks_1b.png, landmarks_3.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_1a.png, landmarks_1b.png, landmarks_3.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png"
  ]
 }

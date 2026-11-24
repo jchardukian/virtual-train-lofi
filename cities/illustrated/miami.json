@@ -114,13 +114,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/miami/sprites/landmarks_2b.png",
-     "scale": 1.7,
-     "base": 875
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/miami/sprites/far_1.png",
     "scale": 0.95,
@@ -142,5 +136,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png"
+ ]
 }
