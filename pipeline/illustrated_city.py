@@ -140,6 +140,8 @@ class City:
         self.mid_speed = MID
         SILL = 1040                                    # just below the window's lower edge at 1080p
         self.band_tops = []
+        self.row_tops = []
+        self.seam2 = bool(cfg.get("backdrop")) and cfg.get("seam_v2", True)   # owner 2026-11-24: no hazy strip between layers
         for k, sc in enumerate(cfg["sections"]):
             far = [self.far_layer(L) for L in sc.get("far", [])]
             band = None
@@ -159,6 +161,7 @@ class City:
                 im = cv2.imread(str(ROOT / b["src"]), cv2.IMREAD_UNCHANGED)
                 rows = np.where((im[..., 3] > 200).mean(1) > 0.5)[0] if im.shape[2] == 4 else np.array([0])
                 r0 = int(rows[0]) if len(rows) else 0       # first solidly painted row (art often has empty rows on top)
+                self.row_tops.append(b.get("base", 850) - (im.shape[0] - r0) * b.get("scale", 1.0) + b.get("feather_top", 90))
                 flat = len(rows) and (im[r0 + 2, :, 3] > 200).mean() > 0.9 if im.shape[2] == 4 else True
                 if flat:                                    # straight-cut top: the skyline's edge would show above it
                     self.band_tops.append(b.get("base", 850) - (im.shape[0] - r0) * b.get("scale", 1.0) + b.get("feather_top", 90))
@@ -167,7 +170,7 @@ class City:
                     lay = self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))
                     if zoom:
                         lay = self.fill_down(lay)
-                    self.cache[bkey] = loop(self.feather(lay, b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S)
+                    self.cache[bkey] = loop(self.feather(lay, b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S, 0.0 if self.seam2 else 0.35), 140 * S)
                 band = (self.cache[bkey], b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)
             self.sections.append({"ground": sc.get("ground", "lawn"), "far": far, "band": band})
             if band is not None:                       # one row, one position: the first section's offset wins
@@ -182,6 +185,9 @@ class City:
 
         # owner 2026-11-24 (Boston, Atlanta): the skyline picture's faded bottom edge showed as a blurry strip above the
         # street row. Keep that edge (its last ~60 px) hidden behind the row's top.
+        if self.seam2 and self.row_tops and not cfg.get("hide_backdrop_edge"):
+            reach = max(self.row_tops) + 30
+            self.backdrop = [self.far_layer(L, reach) for L in cfg.get("backdrop", [])]
         if self.band_tops and cfg.get("hide_backdrop_edge"):
             need = max(self.band_tops) + cfg.get("backdrop_overlap", 75)
             self.backdrop = [self.far_layer(dict(L, base=int(round(max(L.get("base", 712), need))))) for L in cfg.get("backdrop", [])]
@@ -226,7 +232,7 @@ class City:
             a[y + 1:, x, 0] = 1.0
         return rgb, a
 
-    def feather(self, layer, top, bottom):
+    def feather(self, layer, top, bottom, mist_k=0.35):
         """Soften a strip's straight top and bottom edges so it melts into the layer behind it instead of
         ending in a ruled line, and mist its top into the sky colour the way distance does."""
         rgb, a = layer
@@ -241,13 +247,35 @@ class City:
         if bottom:
             k *= np.clip((b1 - rows) / bottom, 0, 1)
         k = (k * k * (3 - 2 * k))[:, None, None]
-        mist = np.clip(1 - (rows - t0) / max(1, top * 1.6), 0, 1)[:, None, None] * 0.35
+        mist = np.clip(1 - (rows - t0) / max(1, top * 1.6), 0, 1)[:, None, None] * mist_k
         rgb = rgb * (1 - mist) + self.horizon * a * mist
         return rgb * k, a * k
 
-    def far_layer(self, L):
+    def far_layer(self, L, reach=None):
         lay = self.load(L["src"], L.get("scale", 1.6), L.get("flip", False), L.get("haze", 0.4))
+        if reach is not None and L.get("base", 712) < reach + 60:
+            # seam v2: no fade-out at the bottom; the picture's lowest rows continue (mirrored, softened) down to
+            # below the street row's top, so the row's soft edge blends into scenery, never into a band of sky
+            rgb, a = lay
+            sol = np.where(a[..., 0].mean(axis=1) > 0.6)[0]
+            b1 = int(sol[-1]) + 1 if len(sol) else a.shape[0]
+            rgb, a = rgb[:b1], a[:b1]
+            ext = int(round((reach + 60 - L.get("base", 712)) * S))
+            m = min(ext, b1)
+            er, ea = rgb[b1 - m:][::-1], a[b1 - m:][::-1]
+            if ext > m:
+                er = np.concatenate([er, np.repeat(er[-1:], ext - m, 0)]); ea = np.concatenate([ea, np.repeat(ea[-1:], ext - m, 0)])
+            kb = odd(int(15 * S))
+            er = cv2.GaussianBlur(er, (kb, kb), 0) * 0.92
+            ea = np.ones_like(ea)
+            er = er.reshape(ea.shape[0], ea.shape[1], -1)
+            lay = (np.concatenate([rgb, er]), np.concatenate([a, ea]))
+            L = dict(L, base=int(round(L.get("base", 712) + ext / S)))
+            return self._far_tuple(L, lay)
         lay = self.feather(lay, 0, L.get("feather_bottom", 60) * S)
+        return self._far_tuple(L, lay)
+
+    def _far_tuple(self, L, lay):
         if L.get("tile"):
             return ("tile", loop(lay, 140 * S), L.get("base", 712) * S, L.get("speed", 8) * S, L.get("alpha", 0.9), L.get("offset", 200) * S)
         return ("one", lay, L.get("base", 712) * S, L.get("speed", 5) * S, L.get("alpha", 0.9), L.get("x0", -60) * S)
