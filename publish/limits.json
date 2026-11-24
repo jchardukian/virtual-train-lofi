@@ -87,5 +87,20 @@
    "Lofi Around the World 🌍🚆",
    "lofi train radio 🚆 beats to ride the world to"
   ]
+ },
+ "music": {
+  "owner_2026-11-24": "Likes the Purrple Cat tracks and the ElevenLabs songs; dislikes the locally composed ones (never use them) and any static, vinyl crackle or hiss. Favourite: ElevenLabs 'golden guitar' (el_2). Wants more like it, guitar or piano.",
+  "elevenlabs": {
+   "plan": "Creator (owner's existing subscription)",
+   "licence": "cleared for commercial use on paid plans (elevenlabs.io/music-api)",
+   "prompt_rule": "always add: no vinyl crackle, no tape hiss, no noise, clean warm mix, no vocals",
+   "used_credits": {
+    "test_3_songs": 4056,
+    "batch_10_songs_3min": 24475
+   },
+   "cost_per_3min_song": "about 2,450 credits",
+   "concurrency": 2,
+   "files": "work/music_el/ (gitignored) and archive bucket music/elevenlabs/"
+  }
  }
 }
