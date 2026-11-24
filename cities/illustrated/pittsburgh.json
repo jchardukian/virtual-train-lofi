@@ -60,11 +60,6 @@
      "base": 900
     },
     {
-     "src": "work/cities_v3/pittsburgh/sprites/landmarks_0.png",
-     "scale": 1.407185628742515,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/pittsburgh/sprites/local_5.png",
      "scale": 0.974025974025974,
      "base": 900
@@ -173,5 +168,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (a yellow suspension bridge)"
+ ]
 }

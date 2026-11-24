@@ -97,13 +97,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/savannah/sprites/landmarks_2.png",
-     "scale": 1.4417177914110428,
-     "base": 895
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/savannah/sprites/far_1.png",
     "scale": 0.95,
@@ -147,5 +141,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the cable-stayed river bridge)"
+ ]
 }

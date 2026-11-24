@@ -68,11 +68,6 @@
      "src": "work/cities_v3/lake_bled/sprites/local_4.png",
      "scale": 0.821917808219178,
      "base": 850
-    },
-    {
-     "src": "work/cities_v3/lake_bled/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 850
     }
    ],
    "band": {
@@ -162,5 +157,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Ljubljana dragon bridge)"
+ ]
 }

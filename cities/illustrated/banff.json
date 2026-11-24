@@ -137,11 +137,6 @@
    "name": "part 5",
    "mid": [
     {
-     "src": "work/cities_v3/banff/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 830
-    },
-    {
      "src": "work/cities_v3/banff/sprites/local_4.png",
      "scale": 1.0033444816053512,
      "base": 830
@@ -157,5 +152,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a wooden train trestle bridge)"
+ ]
 }

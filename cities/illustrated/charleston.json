@@ -77,11 +77,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/charleston/sprites/landmarks_1.png",
-     "scale": 1.1325301204819278,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/charleston/sprites/local_1.png",
      "scale": 0.6617647058823529,
      "base": 895
@@ -153,5 +148,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the cable-stayed harbour bridge)"
+ ]
 }

@@ -92,11 +92,6 @@
      "base": 880
     },
     {
-     "src": "work/cities_v3/venice/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 880
-    },
-    {
      "src": "work/cities_v3/venice/sprites/local_1.png",
      "scale": 0.6338028169014085,
      "base": 880
@@ -122,11 +117,6 @@
      "src": "work/cities_v3/venice/sprites/landmarks_2.png",
      "scale": 1.3055555555555556,
      "base": 880
-    },
-    {
-     "src": "work/cities_v3/venice/sprites/local_2.png",
-     "scale": 1.7,
-     "base": 880
     }
    ],
    "band": {
@@ -150,13 +140,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/venice/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 880
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/venice/sprites/far_1.png",
     "scale": 0.95,
@@ -167,5 +151,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Rialto Bridge); local_2.png (a small arched footbridge); landmarks_4.png (the Bridge of Sighs)"
+ ]
 }

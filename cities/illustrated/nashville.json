@@ -109,11 +109,6 @@
    "name": "part 3",
    "mid": [
     {
-     "src": "work/cities_v3/nashville/sprites/landmarks_2a.png",
-     "scale": 1.7,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/nashville/sprites/local_2.png",
      "scale": 1.5075376884422111,
      "base": 895
@@ -130,11 +125,6 @@
   {
    "name": "part 4",
    "mid": [
-    {
-     "src": "work/cities_v3/nashville/sprites/landmarks_2b.png",
-     "scale": 1.7,
-     "base": 895
-    },
     {
      "src": "work/cities_v3/nashville/sprites/local_3.png",
      "scale": 1.2765957446808511,
@@ -173,5 +163,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2a.png (the steel pedestrian truss bridge); landmarks_2b.png (the steel pedestrian truss bridge)"
+ ]
 }

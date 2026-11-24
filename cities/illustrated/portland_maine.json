@@ -111,11 +111,6 @@
    "name": "part 4",
    "mid": [
     {
-     "src": "work/cities_v3/portland_maine/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 845
-    },
-    {
      "src": "work/cities_v3/portland_maine/sprites/local_3.png",
      "scale": 1.0067114093959733,
      "base": 845
@@ -153,5 +148,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_3.png (a covered bridge)"
+ ]
 }

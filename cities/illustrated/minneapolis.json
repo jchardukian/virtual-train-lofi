@@ -60,11 +60,6 @@
      "base": 815
     },
     {
-     "src": "work/cities_v3/minneapolis/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 815
-    },
-    {
      "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
      "scale": 0.8071748878923767,
      "base": 815
@@ -165,6 +160,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: near strip scale 0.85 -> 1.295 (shown 141 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
+  "2026-11-24: near strip scale 0.85 -> 1.295 (shown 141 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Stone Arch Bridge)"
  ]
 }

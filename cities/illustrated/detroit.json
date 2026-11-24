@@ -102,13 +102,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/detroit/sprites/landmarks_2.png",
-     "scale": 1.0284463894967177,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/detroit/sprites/far_1.png",
     "scale": 0.95,
@@ -165,6 +159,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the Ambassador suspension bridge)"
  ]
 }

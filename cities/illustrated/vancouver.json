@@ -60,11 +60,6 @@
      "base": 865
     },
     {
-     "src": "work/cities_v3/vancouver/sprites/landmarks_0.png",
-     "scale": 0.9343936381709742,
-     "base": 865
-    },
-    {
      "src": "work/cities_v3/vancouver/sprites/local_5.png",
      "scale": 0.55,
      "base": 865
@@ -152,5 +147,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Lions Gate suspension bridge)"
+ ]
 }

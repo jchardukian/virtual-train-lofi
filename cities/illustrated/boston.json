@@ -68,11 +68,6 @@
      "src": "work/cities_v3/boston/sprites/local_5.png",
      "scale": 0.7957559681697612,
      "base": 890
-    },
-    {
-     "src": "work/cities_v3/boston/sprites/landmarks_5.png",
-     "scale": 1.1604938271604939,
-     "base": 890
     }
    ],
    "band": {
@@ -168,5 +163,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Zakim Bridge)"
+ ]
 }
