@@ -4,8 +4,9 @@ two Shorts in the delivery bucket, then print what the Shorts posts need (titles
 
   python3 pipeline/release_city.py <city> <YYYY-MM-DD>
 
-Reads publish/meta/<city>.json: {"long": {"title", "summary", "tags", "hashtags"},
-"short_1": {"title", "summary", "hashtags"}, "short_2": {...}}. The channel blurb, the 'not real footage' line and the
+Reads publish/meta/<city>.json: {"long": {"summary", "tags", "hashtags"}, "short_1": {"summary", "hashtags"},
+"short_2": {...}, optional "name" (display name, default from the spec), "hashtag", "emoji" (Short 2's emoji)}.
+Titles are always the owner's simple format: "<City> Chillhop 🚆", Shorts "<City> Chillhop 🚆 #lofi #<city> #shorts". The channel blurb, the 'not real footage' line and the
 music credit (from data/music/used.json) are added here, in the owner's order. Times are fixed, America/Chicago:
 long-form 11:00, Short 1 14:30, Short 2 20:30, so both Shorts can link to a video that is already public.
 The Shorts posts themselves are created through Buffer by the agent with the printed payload.
@@ -74,6 +75,14 @@ def main():
         sys.exit(f"{day} already has a long-form")
 
     L = meta["long"]
+    # titles: the owner's simple format (2026-11-24), e.g. "Chicago Chillhop 🚆" / "Chicago Chillhop 🚆 #lofi #chicago #shorts"
+    spec = next(x for f in sorted((ROOT / "cities/specs").glob("batch*.json")) for x in json.loads(f.read_text()) if x["id"] == city)
+    NAMES = {"washington_dc": "Washington DC", "portland_maine": "Portland Maine", "phoenix_sedona": "Sedona", "anchorage": "Anchorage"}
+    name = meta.get("name") or NAMES.get(city) or spec["name"].split(",")[0].strip()
+    tag = meta.get("hashtag") or "".join(ch for ch in name.lower() if ch.isalnum())
+    L["title"] = f"{name} Chillhop 🚆"
+    meta["short_1"]["title"] = f"{name} Chillhop 🚆 #lofi #{tag} #shorts"
+    meta["short_2"]["title"] = f"{name} Chillhop {meta.get('emoji', '🌆')} #lofi #{tag} #shorts"
     long_meta = {"title": L["title"], "tags": L["tags"], "publish_at": t_long.isoformat(),
                  "expected_sha256": sums[f"{city}_illustrated_master.mp4"],
                  "description": "\n\n".join([L["summary"], limits["channel_blurb"],

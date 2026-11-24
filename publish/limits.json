@@ -14,7 +14,8 @@
   "No AI label on videos and no mention of AI in titles or descriptions (owner decision 2026-11-22, standing until the owner changes it). Descriptions say the artwork is illustrated and not real footage.",
   "Every description has, in order: a one or two sentence description of that video, the channel blurb, the 'illustrated, not real footage' line, the music credit, hashtags.",
   "Thumbnails: use YouTube's automatic frame, no custom thumbnail (owner decision 2026-11-23: likes the train-window frame).",
-  "Owner 2026-11-23: finished cities are scheduled without asking, one per day: long-form 11:00 CT (YouTube API), Short 1 14:30 CT and Short 2 20:30 CT (Buffer), each Short's description links to that day's long-form."
+  "Owner 2026-11-23: finished cities are scheduled without asking, one per day: long-form 11:00 CT (YouTube API), Short 1 14:30 CT and Short 2 20:30 CT (Buffer), each Short's description links to that day's long-form.",
+  "Titles (owner 2026-11-24): simple, like the owner's 'Chicago Chillhop 🚆 #lofi #chicago #shorts'. Long-form '<City> Chillhop 🚆'; Short 1 '<City> Chillhop 🚆 #lofi #<city> #shorts'; Short 2 the same with a city emoji; livestreams equally short. No keyword-stuffed titles."
  ],
  "queue": [
   {
