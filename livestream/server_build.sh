@@ -20,7 +20,7 @@ fi
 shift; cd $R
 for C in "$@"; do
   exists control/built/$C.json && { echo "$C already built"; continue; }
-  exists control/claim/$C && { echo "$C claimed elsewhere"; continue; }
+  if exists control/claim/$C; then get control/claim/$C /tmp/who; [ "$(cat /tmp/who)" = server ] || { echo "$C claimed by the agent"; continue; }; fi
   echo server > /tmp/claim; put /tmp/claim control/claim/$C
   python3 pipeline/upscale_art.py $C --threads 4 | tail -1 || { echo "$C UPSCALE FAILED"; continue; }
   read A B < <(python3 -c "import json;u=json.load(open('data/music/used.json'))['$C']['files'];print(u[0],u[1])")
