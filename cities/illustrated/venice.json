@@ -97,18 +97,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/venice/sprites/local_7.png",
-     "scale": 0.861244019138756,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/venice/sprites/landmarks_2.png",
-     "scale": 1.3055555555555556,
-     "base": 880
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/venice/sprites/far_1.png",
     "scale": 0.95,

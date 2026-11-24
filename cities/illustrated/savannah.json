@@ -115,11 +115,6 @@
    "name": "part 5",
    "mid": [
     {
-     "src": "work/cities_v3/savannah/sprites/landmarks_4.png",
-     "scale": 1.309192200557103,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/savannah/sprites/local_4.png",
      "scale": 0.4909,
      "base": 895

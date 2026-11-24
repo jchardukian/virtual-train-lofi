@@ -107,18 +107,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/salt_lake_city/sprites/landmarks_2.png",
-     "scale": 0.4425,
-     "base": 860
-    },
-    {
-     "src": "work/cities_v3/salt_lake_city/sprites/local_2.png",
-     "scale": 0.3976,
-     "base": 860
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/salt_lake_city/sprites/far_1.png",
     "scale": 0.95,
@@ -130,11 +119,6 @@
   {
    "name": "part 4",
    "mid": [
-    {
-     "src": "work/cities_v3/salt_lake_city/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 860
-    },
     {
      "src": "work/cities_v3/salt_lake_city/sprites/local_3.png",
      "scale": 0.5233,

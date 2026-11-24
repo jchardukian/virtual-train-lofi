@@ -72,11 +72,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/cape_town/sprites/landmarks_1.png",
-     "scale": 1.2287581699346406,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/cape_town/sprites/local_1.png",
      "scale": 1.1152416356877324,
      "base": 895
@@ -109,13 +104,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/cape_town/sprites/local_3.png",
-     "scale": 1.7,
-     "base": 895
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/cape_town/sprites/far_1.png",
     "scale": 0.95,

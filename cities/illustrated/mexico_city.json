@@ -60,11 +60,6 @@
      "base": 780
     },
     {
-     "src": "work/cities_v3/mexico_city/sprites/landmarks_0.png",
-     "scale": 1.4641744548286604,
-     "base": 780
-    },
-    {
      "src": "work/cities_v3/mexico_city/sprites/local_0.png",
      "scale": 0.7792207792207793,
      "base": 780
@@ -130,13 +125,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/mexico_city/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 780
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/mexico_city/sprites/far_1.png",
     "scale": 0.95,

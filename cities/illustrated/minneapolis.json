@@ -82,11 +82,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/minneapolis/sprites/landmarks_1.png",
-     "scale": 1.0672,
-     "base": 815
-    },
-    {
      "src": "work/cities_v3/minneapolis/sprites/local_1.png",
      "scale": 0.7751937984496124,
      "base": 815
@@ -102,13 +97,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/minneapolis/sprites/landmarks_2.png",
-     "scale": 1.4461538461538461,
-     "base": 815
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/minneapolis/sprites/far_1.png",
     "scale": 0.95,

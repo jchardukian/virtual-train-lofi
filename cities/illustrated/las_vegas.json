@@ -63,11 +63,6 @@
      "src": "work/cities_v3/las_vegas/sprites/local_4.png",
      "scale": 0.9771986970684039,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/las_vegas/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 900
     }
    ],
    "band": {
@@ -119,13 +114,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/las_vegas/sprites/landmarks_3.png",
-     "scale": 1.4641744548286604,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/las_vegas/sprites/far_1.png",
     "scale": 0.95,

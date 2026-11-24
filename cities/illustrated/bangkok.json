@@ -92,13 +92,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/landmarks_2.png",
-     "scale": 1.6491228070175439,
-     "base": 840
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/bangkok/sprites/far_1.png",
     "scale": 0.95,
@@ -127,11 +121,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/landmarks_4.png",
-     "scale": 1.1628865979381444,
-     "base": 840
-    },
     {
      "src": "work/cities_v3/bangkok/sprites/local_3b.png",
      "scale": 0.8982035928143712,

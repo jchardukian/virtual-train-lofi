@@ -85,11 +85,6 @@
      "src": "work/cities_v3/nashville/sprites/landmarks_1.png",
      "scale": 1.4199395770392749,
      "base": 895
-    },
-    {
-     "src": "work/cities_v3/nashville/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 895
     }
    ],
    "band": {
@@ -137,11 +132,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/nashville/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 895
-    },
     {
      "src": "work/cities_v3/nashville/sprites/local_4.png",
      "scale": 1.1450381679389312,

@@ -77,11 +77,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/marrakech/sprites/landmarks_1.png",
-     "scale": 1.540983606557377,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/marrakech/sprites/local_1.png",
      "scale": 0.6622516556291391,
      "base": 900
@@ -97,13 +92,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/marrakech/sprites/landmarks_2.png",
-     "scale": 1.5460526315789473,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/marrakech/sprites/far_1.png",
     "scale": 0.95,

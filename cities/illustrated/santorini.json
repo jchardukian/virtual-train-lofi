@@ -129,18 +129,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/santorini/sprites/landmarks_3.png",
-     "scale": 1.4029850746268657,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/santorini/sprites/local_3.png",
-     "scale": 1.7,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/santorini/sprites/far_1.png",
     "scale": 0.95,

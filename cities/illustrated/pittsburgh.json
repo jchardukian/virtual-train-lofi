@@ -126,11 +126,6 @@
    "name": "part 4",
    "mid": [
     {
-     "src": "work/cities_v3/pittsburgh/sprites/landmarks_3.png",
-     "scale": 0.8867924528301887,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/pittsburgh/sprites/local_3.png",
      "scale": 0.7468879668049793,
      "base": 900
@@ -147,11 +142,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/pittsburgh/sprites/landmarks_4.png",
-     "scale": 0.684,
-     "base": 900
-    },
     {
      "src": "work/cities_v3/pittsburgh/sprites/local_4.png",
      "scale": 0.684931506849315,

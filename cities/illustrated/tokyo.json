@@ -54,11 +54,6 @@
    ],
    "mid": [
     {
-     "src": "work/cities/tokyo/sprites/landmarks_0.png",
-     "scale": 0.95,
-     "base": 705
-    },
-    {
      "src": "work/v2/tokyo2/sprites/local_0.png",
      "scale": 0.85,
      "base": 725
@@ -89,16 +84,8 @@
    ],
    "mid": [
     {
-     "src": "work/cities/tokyo/sprites/landmarks_3.png",
-     "scale": 1.05
-    },
-    {
      "src": "work/v2/tokyo2/sprites/local_1.png",
      "scale": 0.9
-    },
-    {
-     "src": "work/cities/tokyo/sprites/landmarks_4.png",
-     "scale": 1.15
     }
    ],
    "band": {
@@ -122,10 +109,6 @@
     {
      "src": "work/cities/tokyo/sprites/local_3.png",
      "scale": 1.2
-    },
-    {
-     "src": "work/cities/tokyo/sprites/landmarks_1a.png",
-     "scale": 1.05
     },
     {
      "src": "work/v2/tokyo2/sprites/local_7b.png",
@@ -163,10 +146,6 @@
     {
      "src": "work/cities/tokyo/sprites/local_2.png",
      "scale": 1.15
-    },
-    {
-     "src": "work/v2/tokyo2/sprites/local_2b.png",
-     "scale": 0.9
     },
     {
      "src": "work/cities/tokyo/sprites/local_1.png",

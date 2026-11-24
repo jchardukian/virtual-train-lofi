@@ -80,13 +80,7 @@
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/istanbul/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 790
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/istanbul/sprites/far_1.png",
     "scale": 0.95,

@@ -60,11 +60,6 @@
      "base": 850
     },
     {
-     "src": "work/cities_v3/lake_bled/sprites/landmarks_0.png",
-     "scale": 1.2806539509536785,
-     "base": 850
-    },
-    {
      "src": "work/cities_v3/lake_bled/sprites/local_4.png",
      "scale": 0.821917808219178,
      "base": 850
@@ -84,11 +79,6 @@
     {
      "src": "work/cities_v3/lake_bled/sprites/local_5.png",
      "scale": 0.8411214953271028,
-     "base": 850
-    },
-    {
-     "src": "work/cities_v3/lake_bled/sprites/landmarks_1.png",
-     "scale": 1.217616580310881,
      "base": 850
     }
    ],

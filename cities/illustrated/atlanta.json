@@ -60,11 +60,6 @@
      "base": 900
     },
     {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_0.png",
-     "scale": 0.9096774193548387,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/atlanta/sprites/local_5.png",
      "scale": 1.2195121951219512,
      "base": 900
@@ -112,13 +107,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_2.png",
-     "scale": 1.1809045226130652,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/atlanta/sprites/far_1.png",
     "scale": 0.95,
@@ -151,13 +140,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_4.png",
-     "scale": 1.4423076923076923,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/atlanta/sprites/far_1.png",
     "scale": 0.95,

@@ -60,11 +60,6 @@
      "base": 900
     },
     {
-     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_0.png",
-     "scale": 1.5161290322580645,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_5.png",
      "scale": 0.3061,
      "base": 900
@@ -92,11 +87,6 @@
      "base": 900
     },
     {
-     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_1.png",
      "scale": 0.7481296758104738,
      "base": 900
@@ -112,13 +102,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_2.png",
-     "scale": 1.540983606557377,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/phoenix_sedona/sprites/far_1.png",
     "scale": 0.95,
@@ -152,11 +136,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/phoenix_sedona/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 900
-    },
     {
      "src": "work/cities_v3/phoenix_sedona/sprites/local_4.png",
      "scale": 0.2673,

@@ -51,11 +51,6 @@
      "base": 760
     },
     {
-     "src": "work/v2/nyc/sprites/landmarks_4.png",
-     "scale": 1.2,
-     "base": 760
-    },
-    {
      "src": "work/v2/nyc/sprites/local_1.png",
      "scale": 0.95,
      "base": 760
@@ -76,18 +71,8 @@
    "name": "Midtown",
    "mid": [
     {
-     "src": "work/v2/nyc/sprites/landmarks_0.png",
-     "scale": 0.8,
-     "base": 760
-    },
-    {
      "src": "work/v2/nyc/sprites/local_2.png",
      "scale": 0.9,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/landmarks_1.png",
-     "scale": 0.85,
      "base": 760
     },
     {
@@ -115,16 +100,6 @@
      "src": "work/v2/nyc/sprites/local_5.png",
      "scale": 1.0,
      "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/landmarks_3.png",
-     "scale": 0.75,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/landmarks_5.png",
-     "scale": 0.85,
-     "base": 760
     }
    ],
    "band": {
@@ -141,11 +116,6 @@
      "src": "work/v2/nyc/sprites/local_1.png",
      "scale": 0.95,
      "flip": true,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_4a.png",
-     "scale": 1.0,
      "base": 760
     },
     {

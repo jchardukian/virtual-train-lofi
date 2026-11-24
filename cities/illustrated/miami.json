@@ -97,13 +97,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/miami/sprites/landmarks_2a.png",
-     "scale": 1.3428571428571427,
-     "base": 875
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/miami/sprites/far_1.png",
     "scale": 0.95,

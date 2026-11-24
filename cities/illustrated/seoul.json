@@ -68,11 +68,6 @@
      "src": "work/cities_v3/seoul/sprites/local_5.png",
      "scale": 0.9174311926605505,
      "base": 895
-    },
-    {
-     "src": "work/cities_v3/seoul/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 895
     }
    ],
    "band": {

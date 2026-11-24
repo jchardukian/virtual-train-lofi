@@ -104,13 +104,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/charleston/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 895
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/charleston/sprites/far_1.png",
     "scale": 0.95,

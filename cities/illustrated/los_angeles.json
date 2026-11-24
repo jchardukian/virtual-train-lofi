@@ -60,11 +60,6 @@
      "base": 880
     },
     {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 880
-    },
-    {
      "src": "work/cities_v3/los_angeles/sprites/local_4.png",
      "scale": 0.6109979633401222,
      "base": 880
@@ -87,11 +82,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 880
-    },
-    {
      "src": "work/cities_v3/los_angeles/sprites/local_1a.png",
      "scale": 1.3636363636363635,
      "base": 880
@@ -111,11 +101,6 @@
     {
      "src": "work/cities_v3/los_angeles/sprites/landmarks_2.png",
      "scale": 1.246684350132626,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_1b.png",
-     "scale": 0.6923,
      "base": 880
     }
    ],

@@ -108,13 +108,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/landmarks_3.png",
-     "scale": 1.1270983213429258,
-     "base": 840
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/hong_kong/sprites/far_1.png",
     "scale": 0.95,

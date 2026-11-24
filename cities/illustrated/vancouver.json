@@ -55,11 +55,6 @@
    "name": "part 1",
    "mid": [
     {
-     "src": "work/cities_v3/vancouver/sprites/local_0.png",
-     "scale": 0.55,
-     "base": 865
-    },
-    {
      "src": "work/cities_v3/vancouver/sprites/local_5.png",
      "scale": 0.55,
      "base": 865
@@ -81,11 +76,6 @@
   {
    "name": "part 2",
    "mid": [
-    {
-     "src": "work/cities_v3/vancouver/sprites/landmarks_1.png",
-     "scale": 1.165289256198347,
-     "base": 865
-    },
     {
      "src": "work/cities_v3/vancouver/sprites/local_1.png",
      "scale": 0.8746355685131195,

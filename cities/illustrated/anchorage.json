@@ -97,13 +97,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_6.png",
-     "scale": 0.931,
-     "base": 840
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/anchorage/sprites/far_1.png",
     "scale": 0.95,
@@ -125,13 +119,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/anchorage/sprites/landmarks_3.png",
-     "scale": 1.7,
-     "base": 840
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/anchorage/sprites/far_1.png",
     "scale": 0.95,

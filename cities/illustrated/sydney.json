@@ -63,11 +63,6 @@
      "src": "work/cities_v3/sydney/sprites/local_5.png",
      "scale": 0.55,
      "base": 800
-    },
-    {
-     "src": "work/cities_v3/sydney/sprites/landmarks_4.png",
-     "scale": 1.2433862433862435,
-     "base": 800
     }
    ],
    "band": {
@@ -84,11 +79,6 @@
     {
      "src": "work/cities_v3/sydney/sprites/local_1.png",
      "scale": 0.9036144578313253,
-     "base": 800
-    },
-    {
-     "src": "work/cities_v3/sydney/sprites/landmarks_5.png",
-     "scale": 1.7,
      "base": 800
     }
    ],

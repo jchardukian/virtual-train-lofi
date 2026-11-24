@@ -49,10 +49,6 @@
      "scale": 1.05
     },
     {
-     "src": "work/v2/kyoto/sprites/landmarks_2.png",
-     "scale": 1.45
-    },
-    {
      "src": "work/v2/kyoto/sprites/local_1.png",
      "scale": 1.05
     },
@@ -75,10 +71,6 @@
      "scale": 1.0
     },
     {
-     "src": "work/v2/kyoto/sprites/landmarks_0.png",
-     "scale": 1.45
-    },
-    {
      "src": "work/v2/kyoto/sprites/local_3c.png",
      "scale": 1.0
     }
@@ -96,10 +88,6 @@
     {
      "src": "work/v2/kyoto/sprites/local_4.png",
      "scale": 1.0
-    },
-    {
-     "src": "work/v2/kyoto/sprites/landmarks_1.png",
-     "scale": 1.4
     },
     {
      "src": "work/v2/kyoto/sprites/local_3b.png",

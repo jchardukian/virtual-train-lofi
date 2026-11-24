@@ -27,11 +27,6 @@
      "base": 700
     },
     {
-     "src": "work/cities/paris/sprites/landmarks_4.png",
-     "scale": 1.45,
-     "base": 700
-    },
-    {
      "src": "work/cities/paris/sprites/local_1.png",
      "scale": 0.8,
      "base": 700
@@ -97,10 +92,6 @@
      "src": "work/cities/paris/sprites/local_0.png",
      "scale": 0.8,
      "flip": true
-    },
-    {
-     "src": "work/cities/paris/sprites/landmarks_0.png",
-     "scale": 1.15
     },
     {
      "src": "work/cities/paris/sprites/local_4.png",

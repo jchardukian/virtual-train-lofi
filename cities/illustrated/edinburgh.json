@@ -58,11 +58,6 @@
      "src": "work/cities_v3/edinburgh/sprites/local_0.png",
      "scale": 0.5834683954619124,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/edinburgh/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 900
     }
    ],
    "band": {
@@ -76,11 +71,6 @@
   {
    "name": "part 2",
    "mid": [
-    {
-     "src": "work/cities_v3/edinburgh/sprites/landmarks_1.png",
-     "scale": 1.1823899371069182,
-     "base": 900
-    },
     {
      "src": "work/cities_v3/edinburgh/sprites/local_1.png",
      "scale": 0.7263922518159807,
@@ -139,11 +129,6 @@
    "mid": [
     {
      "src": "work/cities_v3/edinburgh/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/edinburgh/sprites/local_4.png",
      "scale": 1.7,
      "base": 900
     }
