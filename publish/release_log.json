@@ -225,7 +225,9 @@
   "publish_at": "2026-11-28T11:00:00-06:00",
   "media_sha256": "94dec41cf470632ccea16b18e2eb842fa6ee124dfbf7940c41a300924dd768f7",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "eE_uFAxBYUg",
+  "status": "deleted 2026-11-24T17:03:25Z: replaced by the rebuilt version"
  },
  {
   "city": "cairo",
@@ -234,11 +236,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-28T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "edebbf0999a8ee313c60e0e7d5a30c9ea8b31794d5306b3260e8119a24051555",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/d76b4b634b97dc6a2fe4b90d/cairo_short_1.mp4",
-  "links_to": "https://youtu.be/2-_XbWMD-b0",
+  "media_sha256": "7fc803e7b1f73acf49a22fd3d1e5d48333e41713e2afe18e92b990aca988b597",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/6c07402622d0ba1df28b1b16/cairo_short_1.mp4",
+  "links_to": "https://youtu.be/eE_uFAxBYUg",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T17:03:25Z with the rebuilt version"
  },
  {
   "city": "cairo",
@@ -247,11 +250,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-28T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "c0fbed797451790cedd55a58a4cff8d2fefcb05a11beb478333724872e851634",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/06afb4e39cd10b6cb7b26407/cairo_short_2.mp4",
-  "links_to": "https://youtu.be/2-_XbWMD-b0",
+  "media_sha256": "308804f3026d120fb6038b8b7092399c9bd04aaeb6217965d4460267c99acda8",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/9a275d941df10e5f692e748f/cairo_short_2.mp4",
+  "links_to": "https://youtu.be/eE_uFAxBYUg",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T17:03:25Z with the rebuilt version"
  },
  {
   "city": "seattle",
@@ -387,5 +391,19 @@
   "links_to": "https://youtu.be/GxuX1EgWidU",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed"
+ },
+ {
+  "city": "cairo",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "eE_uFAxBYUg",
+  "url": "https://youtu.be/eE_uFAxBYUg",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-28T11:00:00-06:00",
+  "media_sha256": "793c31d6bd6f11d4b9f59f3f7debb7b4c90560e0df243c58d974fce565bc6141",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "2-_XbWMD-b0"
  }
 ]
