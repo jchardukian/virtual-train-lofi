@@ -28,7 +28,10 @@
  "near": {
   "src": "work/cities_v3/san_francisco/sprites/near_0.png",
   "scale": 1.303,
-  "base": -49
+  "base": -49,
+  "focus": 3.5,
+  "shade": 0.35,
+  "feather_top": 25
  },
  "treewall_cfg": {
   "src": "work/cities_v3/san_francisco/sprites/local_3.png",

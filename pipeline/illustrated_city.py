@@ -78,7 +78,22 @@ class City:
         ncfg = cfg.get("near", {"src": "work/chi/sprites/strip_3.png", "scale": 1.7, "base": 40})
         emb = rgba(*art(ncfg["src"], ncfg.get("scale", 1.7)))
         nb = (int(ncfg.get("blur", 4)) | 1) if S == 1 else odd(int(ncfg.get("blur", 4)) * S)  # a light motion blur only; heavy blur read as out of focus
-        self.near = loop((cv2.blur(emb[0], (nb, 1)), cv2.blur(emb[1], (nb, 1))[..., None]), 140 * S)
+        nrgb, na = cv2.blur(emb[0], (nb, 1)), cv2.blur(emb[1], (nb, 1))
+        if ncfg.get("focus", 3.0):                    # the eye is on the city, so the nearest things are a little soft
+            sg = ncfg.get("focus", 3.0) * S
+            nrgb, na = cv2.GaussianBlur(nrgb, (0, 0), sg), cv2.GaussianBlur(na, (0, 0), sg)
+        if na.ndim == 2:
+            na = na[..., None]
+        if ncfg.get("shade", 0.3):                    # in the train's shadow: darker towards the window sill
+            ramp = np.linspace(1 - 0.4 * ncfg.get("shade", 0.3), 1 - ncfg.get("shade", 0.3), nrgb.shape[0], dtype=np.float32)[:, None, None]
+            nrgb = nrgb * ramp
+        if ncfg.get("feather_top", 20):              # no hard top edge across the street behind
+            ft = int(ncfg.get("feather_top", 20) * S)
+            ys = np.where(na[..., 0].max(1) > 0.05)[0]
+            if len(ys):
+                r = np.clip((np.arange(nrgb.shape[0]) - ys[0]) / max(1, ft), 0, 1).astype(np.float32)[:, None, None]
+                nrgb, na = nrgb * r, na * r
+        self.near = loop((nrgb, na), 140 * S)
         self.near_base = ncfg.get("base", 40) * S
         # close objects that sweep past at each change of scenery
         tcfg = cfg.get("treewall_cfg", {"src": cfg.get("treewall", "work/chi/sprites/strip_0.png"), "crop": [20, 470, 0, 0.76]})
