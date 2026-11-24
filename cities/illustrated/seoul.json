@@ -92,11 +92,6 @@
      "base": 895
     },
     {
-     "src": "work/cities_v3/seoul/sprites/landmarks_1.png",
-     "scale": 1.128,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/seoul/sprites/local_1.png",
      "scale": 1.023890784982935,
      "base": 895
@@ -153,11 +148,6 @@
    "name": "part 5",
    "mid": [
     {
-     "src": "work/cities_v3/seoul/sprites/landmarks_4.png",
-     "scale": 1.0972762645914398,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/seoul/sprites/local_4.png",
      "scale": 0.3017,
      "base": 895
@@ -173,5 +163,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

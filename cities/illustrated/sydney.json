@@ -92,11 +92,6 @@
      "base": 800
     },
     {
-     "src": "work/cities_v3/sydney/sprites/landmarks_1a.png",
-     "scale": 1.7,
-     "base": 800
-    },
-    {
      "src": "work/cities_v3/sydney/sprites/landmarks_5.png",
      "scale": 1.7,
      "base": 800
@@ -112,13 +107,7 @@
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/sydney/sprites/landmarks_1b.png",
-     "scale": 1.7,
-     "base": 800
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/sydney/sprites/far_1.png",
     "scale": 0.95,
@@ -142,11 +131,6 @@
    "name": "part 5",
    "mid": [
     {
-     "src": "work/cities_v3/sydney/sprites/landmarks_3.png",
-     "scale": 1.3557692307692308,
-     "base": 800
-    },
-    {
      "src": "work/cities_v3/sydney/sprites/local_4.png",
      "scale": 1.3688212927756653,
      "base": 800
@@ -162,5 +146,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1a.png, landmarks_1b.png, landmarks_3.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

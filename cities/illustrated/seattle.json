@@ -60,11 +60,6 @@
      "base": 860
     },
     {
-     "src": "work/cities_v3/seattle/sprites/landmarks_0.png",
-     "scale": 0.8481203007518797,
-     "base": 860
-    },
-    {
      "src": "work/cities_v3/seattle/sprites/local_5.png",
      "scale": 0.5778491171749599,
      "base": 860
@@ -163,5 +158,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

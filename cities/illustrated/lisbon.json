@@ -82,11 +82,6 @@
    "name": "part 2",
    "mid": [
     {
-     "src": "work/cities_v3/lisbon/sprites/landmarks_1.png",
-     "scale": 1.2806539509536785,
-     "base": 900
-    },
-    {
      "src": "work/cities_v3/lisbon/sprites/local_1.png",
      "scale": 0.7741935483870968,
      "base": 900
@@ -141,13 +136,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/lisbon/sprites/landmarks_4.png",
-     "scale": 1.5932203389830508,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/lisbon/sprites/far_1.png",
     "scale": 0.95,
@@ -158,5 +147,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

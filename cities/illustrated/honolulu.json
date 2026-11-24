@@ -55,11 +55,6 @@
    "name": "part 1",
    "mid": [
     {
-     "src": "work/cities_v3/honolulu/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 830
-    },
-    {
      "src": "work/cities_v3/honolulu/sprites/local_0.png",
      "scale": 0.967741935483871,
      "base": 830
@@ -148,5 +143,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

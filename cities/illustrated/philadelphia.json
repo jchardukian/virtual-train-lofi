@@ -92,11 +92,6 @@
      "base": 895
     },
     {
-     "src": "work/cities_v3/philadelphia/sprites/landmarks_1.png",
-     "scale": 1.0053475935828877,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/philadelphia/sprites/local_1.png",
      "scale": 0.7481296758104738,
      "base": 895
@@ -167,5 +162,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }

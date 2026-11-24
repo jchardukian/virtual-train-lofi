@@ -82,11 +82,6 @@
      "base": 860
     },
     {
-     "src": "work/cities_v3/san_antonio/sprites/landmarks_1.png",
-     "scale": 0.9322314049586777,
-     "base": 860
-    },
-    {
      "src": "work/cities_v3/san_antonio/sprites/local_1.png",
      "scale": 1.1952191235059761,
      "base": 860
@@ -153,5 +148,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
 }
