@@ -78,7 +78,12 @@
   "actual_price": "EUR 9.99/month (no VAT charged) + IPv4 ~EUR 0.50 = ~EUR 10.50 (~USD 12); told the owner",
   "access": "no inbound ports (Hetzner firewall 'lofitrain-no-inbound' has no rules); the server polls the private control Worker lofitrain-control.jchardukian.workers.dev (shared key in work/secrets, never committed)",
   "checks": "ffmpeg 6.1.1, 4 cores, 7 GB RAM, 69 GB free; YouTube RTMP/RTMPS ingest reachable; archive download ~13 MB/s; YouTube token has the youtube scope needed for live broadcasts",
-  "youtube_verification": "phone verified 2026-11-24 (longUploadsStatus allowed); live streaming enabled ~24 h later"
+  "youtube_verification": "phone verified 2026-11-24 (longUploadsStatus allowed); live streaming enabled ~24 h later",
+  "temporary_builder": {
+   "approved": "owner 2026-11-24: 'yes two servers if it's only around a dollar and finishes things about twice as fast'",
+   "server": "Hetzner 177531685 'lofitrain-build2', CX33 hel1, hourly billing; DELETE it as soon as its build list is done",
+   "command_channel": "control/cmd2.json, logs control/out2/, heartbeat control/status2.json"
+  }
  },
  "livestream_titles": {
   "decision": "owner 2026-11-24: rotate for the first three streams, keep the one with the most viewers",
@@ -101,6 +106,7 @@
    "cost_per_3min_song": "about 2,450 credits",
    "concurrency": 2,
    "files": "work/music_el/ (gitignored) and archive bucket music/elevenlabs/"
-  }
+  },
+  "elevenlabs_batch_2026_11_24": "owner approved all 10 (g01-g06 guitar, p01-p04 piano): 'All the songs are fine'"
  }
 }
