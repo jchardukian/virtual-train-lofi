@@ -139,6 +139,7 @@ class City:
         self.keep_near = cfg.get("keep_near", False)
         self.mid_speed = MID
         SILL = 1040                                    # just below the window's lower edge at 1080p
+        self.band_tops = []
         for k, sc in enumerate(cfg["sections"]):
             far = [self.far_layer(L) for L in sc.get("far", [])]
             band = None
@@ -155,6 +156,12 @@ class City:
                     b["scale"], b["base"], b["feather_bottom"] = b.get("scale", 1.0) * f, SILL, 0
                     b["speed"] = b.get("speed", BAND / S) * f
                     self.mid_speed = b["speed"] * S
+                im = cv2.imread(str(ROOT / b["src"]), cv2.IMREAD_UNCHANGED)
+                rows = np.where((im[..., 3] > 200).mean(1) > 0.5)[0] if im.shape[2] == 4 else np.array([0])
+                r0 = int(rows[0]) if len(rows) else 0       # first solidly painted row (art often has empty rows on top)
+                flat = len(rows) and (im[r0 + 2, :, 3] > 200).mean() > 0.9 if im.shape[2] == 4 else True
+                if flat:                                    # straight-cut top: the skyline's edge would show above it
+                    self.band_tops.append(b.get("base", 850) - (im.shape[0] - r0) * b.get("scale", 1.0) + b.get("feather_top", 90))
                 bkey = ("band", b["src"], b.get("scale", 1.0), b.get("flip", False), b.get("feather_top", 90), b.get("feather_bottom", 45))
                 if bkey not in self.cache:            # sections that share a strip share one copy of it (4K memory)
                     lay = self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))
@@ -173,6 +180,11 @@ class City:
                     mb, ms = zoom[0] + (mb - zoom[0]) * zoom[1], ms * zoom[1]
                 self.mid.append((self.load(m["src"], ms, m.get("flip", False)), tau, int(round(mb * S))))
 
+        # owner 2026-11-24 (Boston, Atlanta): the skyline picture's faded bottom edge showed as a blurry strip above the
+        # street row. Keep that edge (its last ~60 px) hidden behind the row's top.
+        if self.band_tops and cfg.get("hide_backdrop_edge"):
+            need = max(self.band_tops) + cfg.get("backdrop_overlap", 75)
+            self.backdrop = [self.far_layer(dict(L, base=int(round(max(L.get("base", 712), need))))) for L in cfg.get("backdrop", [])]
     def draw_ground(self, img, t, bob, w):
         if not self.keep_near:            # the street row now reaches the sill; a plain ground only showed through roof gaps
             return

@@ -75,7 +75,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 300,
-    "feather_top": 12
+    "feather_top": 40
    }
   },
   {
@@ -102,7 +102,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1000,
-    "feather_top": 12
+    "feather_top": 40
    }
   },
   {
@@ -113,7 +113,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1700,
-    "feather_top": 12
+    "feather_top": 40
    }
   },
   {
@@ -135,7 +135,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 2400,
-    "feather_top": 12
+    "feather_top": 40
    }
   },
   {
@@ -146,7 +146,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 3100,
-    "feather_top": 12
+    "feather_top": 40
    }
   }
  ],
@@ -154,5 +154,6 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
- ]
+ ],
+ "hide_backdrop_edge": true
 }
