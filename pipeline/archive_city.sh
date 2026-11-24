@@ -12,7 +12,9 @@ H="Authorization: Bearer dummy"
 ok=1
 put() {  # local file, object name
   local code got want
-  code=$(curl -sS --retry 3 -X PUT "$U/$2" -H "$H" -H "Content-Type: application/octet-stream" --data-binary @"$1" -o /dev/null -w "%{http_code}")
+  for try in 1 2 3 4 5; do   # Cloudflare sometimes answers 5xx on large parts; retry with a pause
+    code=$(curl -sS --retry 3 -X PUT "$U/$2" -H "$H" -H "Content-Type: application/octet-stream" --data-binary @"$1" -o /dev/null -w "%{http_code}")
+    [ "$code" = "200" ] && break; sleep $((try * 10)); done
   want=$(sha256sum "$1" | cut -d' ' -f1); got=$(curl -sS --retry 3 "$U/$2" -H "$H" | sha256sum | cut -d' ' -f1)
   [ "$code" = "200" ] && [ "$want" = "$got" ] && echo "  $2 ok" || { echo "  $2 FAILED ($code)"; ok=0; }
 }
