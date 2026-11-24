@@ -96,7 +96,9 @@
   "publish_at": "2026-11-25T11:00:00-06:00",
   "media_sha256": "51284e52f7164cbcf38ad4db075000267164e93fe00d185befc5865b43e3d9da",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "Eg6MOUeYeqY",
+  "status": "deleted 2026-11-24T14:48:56Z: replaced by the rebuilt version"
  },
  {
   "city": "san_francisco",
@@ -105,11 +107,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-25T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "a982e0370db55510a5bb6564ecfb9dd40217dca175ab3b56e4da197fe197ef4a",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/2ff543c51bd107935fdc92dc/san_francisco_short_1.mp4",
-  "links_to": "https://youtu.be/tx2xgJe84CQ",
+  "media_sha256": "fa0570b49d891c8cb13e51e642858f9c25e14119e93db96c6cdd35046dc795a1",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/64d6fcce497308ca45ea768c/san_francisco_short_1.mp4",
+  "links_to": "https://youtu.be/Eg6MOUeYeqY",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T14:48:56Z with the rebuilt version"
  },
  {
   "city": "san_francisco",
@@ -118,11 +121,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-25T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "0ba882d053fa4b08dd000d70e654e7c8b8578d5df753ebb8eba0bbdb8856ecc5",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/8e9f24e074e811a0d909d16f/san_francisco_short_2.mp4",
-  "links_to": "https://youtu.be/tx2xgJe84CQ",
+  "media_sha256": "d6fe8d9c62d4e35c68bd9f2e8e6338357a111ebb589441a5e1ce28e8d43bc81c",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/1a1f195597b803547cde9aa2/san_francisco_short_2.mp4",
+  "links_to": "https://youtu.be/Eg6MOUeYeqY",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-24T14:48:56Z with the rebuilt version"
  },
  {
   "city": "amsterdam",
@@ -294,5 +298,19 @@
   "preflight": "passed",
   "note": "moved from 18:00 so both Shorts can link to it (owner 2026-11-23)",
   "replaces": "YHUYkbEgrHo"
+ },
+ {
+  "city": "san_francisco",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "Eg6MOUeYeqY",
+  "url": "https://youtu.be/Eg6MOUeYeqY",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-25T11:00:00-06:00",
+  "media_sha256": "7b016b96c02a687f8ce1f66db57054e2e0eb53b1f333d0e099299853c2bb35bf",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "tx2xgJe84CQ"
  }
 ]
