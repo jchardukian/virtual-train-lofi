@@ -75,7 +75,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 300,
-    "feather_top": 35
+    "feather_top": 110
    }
   },
   {
@@ -97,7 +97,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1000,
-    "feather_top": 35
+    "feather_top": 110
    }
   },
   {
@@ -114,7 +114,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 1700,
-    "feather_top": 35
+    "feather_top": 110
    }
   },
   {
@@ -131,7 +131,7 @@
     "scale": 0.95,
     "base": 905,
     "offset": 2400,
-    "feather_top": 35
+    "feather_top": 110
    }
   },
   {
@@ -148,10 +148,13 @@
     "scale": 0.95,
     "base": 905,
     "offset": 3100,
-    "feather_top": 35
+    "feather_top": 110
    }
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: street row feather_top 35 -> 110: its straight snowy-forest top read as a hard stripe across the lake."
+ ]
 }
