@@ -1,8 +1,7 @@
 // lofitrain-control: private mailbox between the agent and the stream server, plus read access to the archive.
 // Every request must carry the shared key in X-Key. Nothing here is public.
 //   GET  /obj/<key>            read an archive object (masters, music, tunnel clips)
-//   PUT  /obj/control/<...>    write under control/ only (status, logs, command results)
-//   PUT  /obj/stream/<...>     write under stream/ only (prepared stream pieces)
+//   PUT  /obj/<key>            write results (control/, stream/, and finished cities under <city>/); build/ is read-only
 //   GET  /cmd                  the current command for the server (control/cmd.json)
 export default {
   async fetch(req, env) {
@@ -17,7 +16,7 @@ export default {
       if (!k || k.includes("..")) return new Response("bad key", { status: 400 });
       if (req.method === "GET") return get(env, k, req.headers.get("Range"));
       if (req.method === "PUT") {
-        if (!(k.startsWith("control/") || k.startsWith("stream/"))) return new Response("read-only", { status: 403 });
+        if (k.startsWith("build/")) return new Response("read-only", { status: 403 });   // the code bundle is written by the agent only
         await env.ARCHIVE.put(k, req.body, { httpMetadata: { contentType: req.headers.get("Content-Type") || "application/octet-stream" } });
         return new Response("ok");
       }
