@@ -65,5 +65,13 @@
  "routes": {
   "long_form": "YouTube Data API via pipeline/youtube_upload.py (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN in the environment)",
   "shorts": "Buffer, from the delivery bucket"
+ },
+ "livestream_server": {
+  "provider": "Hetzner Cloud (EU, project Default)",
+  "plan": "CX33: 4 vCPU, 8 GB RAM, 80 GB disk, 21 TB traffic",
+  "approved_monthly_cost": "about USD 10-11 (EUR 9.99 incl. VAT list price; EUR ~8.39 + ~0.50 IPv4 without VAT)",
+  "approved": "owner, in the agent session, 2026-11-24: 'Yes that's fine, go with the CX33'",
+  "create_when": "after the YouTube channel's phone verification clears (live streaming enabled), so no idle billing",
+  "credential": "api.hetzner.cloud token saved as a proxy-injected network secret; never printed"
  }
 }
