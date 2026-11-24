@@ -87,11 +87,6 @@
      "base": 890
     },
     {
-     "src": "work/cities_v3/london/sprites/landmarks_1.png",
-     "scale": 1.370262390670554,
-     "base": 890
-    },
-    {
      "src": "work/cities_v3/london/sprites/local_1.png",
      "scale": 0.6172839506172839,
      "base": 890
@@ -165,6 +160,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed the close-up St Paul's dome (landmarks_2); St Paul's is in the skyline."
+  "2026-11-24: removed the close-up St Paul's dome (landmarks_2); St Paul's is in the skyline.",
+  "2026-11-24: removed the close-up Tower Bridge (landmarks_1); Tower Bridge is in the skyline."
  ]
 }
