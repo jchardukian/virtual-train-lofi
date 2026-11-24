@@ -35,6 +35,7 @@ def main():
     cities = a.cities or (ROOT / "work/cities_v3/all50.txt").read_text().split()
     tiles = []
     for c in cities:
+        print('..', c, flush=True)
         cfg = json.loads((ROOT / f"cities/illustrated/{c}.json").read_text())
         backs = {L["src"] for L in cfg.get("backdrop", [])} | {L["src"] for s in cfg["sections"] for L in s.get("far", [])}
         mids = [m["src"] for s in cfg["sections"] for m in s.get("mid", []) if "landmarks_" in m["src"]]
@@ -44,10 +45,10 @@ def main():
         for b in backs:
             im = on_white(cv2.imread(str(ROOT / b), cv2.IMREAD_UNCHANGED))
             H, W = im.shape[:2]
-            for h in (int(H * 0.45), int(H * 0.7), H):
-                for w in (int(h * 0.6), h, int(h * 1.6)):
-                    for y in range(0, max(1, H - h + 1), max(1, h // 3)):
-                        for x in range(0, max(1, W - w + 1), max(1, w // 3)):
+            for h in (int(H * 0.6), H):
+                for w in (int(h * 0.7), int(h * 1.3)):
+                    for y in range(0, max(1, H - h + 1), max(1, h // 2)):
+                        for x in range(0, max(1, W - w + 1), max(1, w // 2)):
                             wins.append(im[y:y + h, x:x + w]); boxes.append((b, x, y, w, h))
         E = emb(wins)
         M = emb([on_white(cv2.imread(str(ROOT / m), cv2.IMREAD_UNCHANGED)) for m in mids])
