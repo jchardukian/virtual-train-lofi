@@ -60,11 +60,6 @@
      "base": 800
     },
     {
-     "src": "work/cities_v3/cairo/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 800
-    },
-    {
      "src": "work/cities_v3/cairo/sprites/local_5.png",
      "scale": 0.6289308176100629,
      "base": 800
@@ -158,5 +153,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the riverside Great Sphinx cut-out (landmarks_0): it stood in front of the Sphinx in the distant Giza backdrop, so two Sphinxes showed side by side."
+ ]
 }
