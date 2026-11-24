@@ -27,7 +27,7 @@
  },
  "near": {
   "src": "work/cities_v3/san_francisco/sprites/near_0.png",
-  "scale": 0.85,
+  "scale": 1.303,
   "base": -49
  },
  "treewall_cfg": {
@@ -81,11 +81,6 @@
   {
    "name": "part 2",
    "mid": [
-    {
-     "src": "work/cities_v3/san_francisco/sprites/landmarks_1.png",
-     "scale": 0.8430493273542601,
-     "base": 875
-    },
     {
      "src": "work/cities_v3/san_francisco/sprites/local_1.png",
      "scale": 0.6507592190889371,
@@ -152,5 +147,9 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.303 (shown 140 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-24: removed the close-up Transamerica Pyramid (landmarks_1), also in the skyline; made the fence pickets in near_0 opaque (backup near_0.bak.png)."
+ ]
 }

@@ -119,6 +119,7 @@ class City:
         self.mid = []
         self.mid_front = cfg.get("mid_front", False)
         self.ground_first = cfg.get("ground_first", False)
+        self.band_off = {}
         for k, sc in enumerate(cfg["sections"]):
             far = [self.far_layer(L) for L in sc.get("far", [])]
             band = None
@@ -129,6 +130,8 @@ class City:
                     self.cache[bkey] = loop(self.feather(self.load(b["src"], b.get("scale", 1.0), b.get("flip", False)), b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S), 140 * S)
                 band = (self.cache[bkey], b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)
             self.sections.append({"ground": sc.get("ground", "lawn"), "far": far, "band": band})
+            if band is not None:                       # one row, one position: the first section's offset wins
+                self.band_off.setdefault((id(band[0][0]), band[1], band[2]), band[3])
             items = sc.get("mid", [])
             for i, m in enumerate(items):
                 tau = k * self.sect + (i + 0.5) / len(items) * self.sect
@@ -187,6 +190,21 @@ class City:
         dn = 1.0 if k == self.n - 1 else np.clip(((b + fade) - t) / (2 * fade), 0, 1)
         return float(min(up, dn))
 
+    def bands(self, w, river):
+        """the street rows to draw now. Neighbouring sections that use the same row are one continuous row (same
+        offset, weights added): cross-fading two copies of one row at different offsets showed a ghostly double
+        exposure for ~6 s at every section change. Different rows still cross-fade."""
+        out = {}
+        for k, sc in enumerate(self.sections):
+            if w[k] > 0 and sc["band"] and (sc["ground"] == "river") == river:
+                lp, base, speed, _ = sc["band"]
+                key = (id(lp[0]), base, speed)
+                if key in out:
+                    out[key][4] = min(1.0, out[key][4] + w[k])
+                else:
+                    out[key] = [lp, base, speed, self.band_off[key], w[k]]
+        return out.values()
+
     def water(self, lp, t, speed, h):
         rgb, _, period = lp
         o = int(300 + speed * t) % period
@@ -225,18 +243,14 @@ class City:
         if not self.mid_front:
             self.draw_mids(img, t, bob)
         # river sections: the strip stands on the far bank, then the water in front of it
-        for k, sc in enumerate(self.sections):
-            if w[k] > 0 and sc["ground"] == "river" and sc["band"]:
-                lp, base, speed, off = sc["band"]
-                strip(img, lp, off + speed * t, base + bob, w[k])
+        for lp, base, speed, off, k in self.bands(w, river=True):
+            strip(img, lp, off + speed * t, base + bob, k)
         if riv > 0:
             y0 = 730 * S + bob
             rv = self.water(self.river, t, 62 * S, H - y0)
             img[y0:] = img[y0:] * (1 - riv) + rv * riv
-        for k, sc in enumerate(self.sections):
-            if w[k] > 0 and sc["ground"] != "river" and sc["band"]:
-                lp, base, speed, off = sc["band"]
-                strip(img, lp, off + speed * t, base + bob, w[k])
+        for lp, base, speed, off, k in self.bands(w, river=False):
+            strip(img, lp, off + speed * t, base + bob, k)
         if self.mid_front:                 # landmarks stand on the street in front of the row, not perched behind it
             self.draw_mids(img, t, bob)
         strip(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)

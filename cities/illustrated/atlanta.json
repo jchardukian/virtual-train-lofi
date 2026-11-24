@@ -27,7 +27,7 @@
  },
  "near": {
   "src": "work/cities_v3/atlanta/sprites/near_0.png",
-  "scale": 0.85,
+  "scale": 1.014,
   "base": -9
  },
  "treewall_cfg": {
@@ -168,5 +168,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
+ ]
 }
