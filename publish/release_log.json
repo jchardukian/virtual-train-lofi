@@ -48,10 +48,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-24T11:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "859589c444cb9d160ccaa39e024d3cd55cd0287a1071ed96f100342e624122ed",
+  "media_sha256": "7a9caf783521bc56f67c8af7e25c2f299a793e605c9fc3f9e9c2f436e90c06fe",
   "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
   "preflight": "passed",
-  "note": "description now links to the long-form https://youtu.be/YHUYkbEgrHo"
+  "note": "media and link replaced 2026-11-24 with the rebuilt version (MrITgGwkuoE); old delivery copies deleted",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/a723d15a5db165793d1bbe88/london_short_1.mp4",
+  "links_to": "https://youtu.be/MrITgGwkuoE"
  },
  {
   "city": "london",
@@ -65,7 +67,9 @@
   "media_sha256": "9d270908343924f28229232d83f7f6a7395407d7a902ba61e033e9312a87ba38",
   "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
   "preflight": "passed",
-  "note": "moved from 18:00 so both Shorts can link to it (owner 2026-11-23)"
+  "note": "moved from 18:00 so both Shorts can link to it (owner 2026-11-23)",
+  "replaced_by": "MrITgGwkuoE",
+  "status": "deleted 2026-11-24T06:03:37Z: replaced by the rebuilt version"
  },
  {
   "city": "london",
@@ -74,10 +78,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-24T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "52dbbbb7a5a742c45df00f1d7a8f02821daaee308099e42bb086442770f4647a",
+  "media_sha256": "a982473e8f8dd6e3837ca31364a12bddf767bc2587900cf858c763740c77e051",
   "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
   "preflight": "passed",
-  "note": "description now links to the long-form https://youtu.be/YHUYkbEgrHo"
+  "note": "media and link replaced 2026-11-24 with the rebuilt version (MrITgGwkuoE); old delivery copies deleted",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/15a41adb5700611db6d849ce/london_short_2.mp4",
+  "links_to": "https://youtu.be/MrITgGwkuoE"
  },
  {
   "city": "san_francisco",
@@ -273,5 +279,20 @@
   "links_to": "https://youtu.be/h0AmNDhScIA",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed"
+ },
+ {
+  "city": "london",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/youtube_upload.py), direct upload",
+  "youtube_video_id": "MrITgGwkuoE",
+  "url": "https://youtu.be/MrITgGwkuoE",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-24T11:00:00-06:00",
+  "media_sha256": "577568dd25abbc55fa8bc7a6c008e42568a67ef13e651149bfe6a157b496a52b",
+  "authorised": "owner, in the agent session: 'Looks good you can schedule and keep moving with the other cities'",
+  "preflight": "passed",
+  "note": "moved from 18:00 so both Shorts can link to it (owner 2026-11-23)",
+  "replaces": "YHUYkbEgrHo"
  }
 ]
