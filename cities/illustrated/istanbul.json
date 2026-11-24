@@ -60,11 +60,6 @@
      "base": 790
     },
     {
-     "src": "work/cities_v3/istanbul/sprites/landmarks_0.png",
-     "scale": 1.4733542319749215,
-     "base": 790
-    },
-    {
      "src": "work/cities_v3/istanbul/sprites/local_5.png",
      "scale": 0.6605504587155964,
      "base": 790
@@ -154,6 +149,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_2.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_2.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed the close-up Blue Mosque (landmarks_0.png); it is in the skyline art (dup_landmarks.py)."
  ]
 }

@@ -68,11 +68,6 @@
      "src": "work/cities_v3/singapore/sprites/landmarks_4.png",
      "scale": 1.7,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_0.png",
-     "scale": 1.236842105263158,
-     "base": 900
     }
    ],
    "band": {
@@ -163,5 +158,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up Marina Bay Sands (landmarks_0.png); it is in the skyline art (dup_landmarks.py)."
+ ]
 }
