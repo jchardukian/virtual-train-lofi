@@ -113,11 +113,6 @@
    "name": "part 4",
    "mid": [
     {
-     "src": "work/cities_v3/san_francisco/sprites/landmarks_3.png",
-     "scale": 1.1691542288557213,
-     "base": 875
-    },
-    {
      "src": "work/cities_v3/san_francisco/sprites/local_3.png",
      "scale": 0.8314087759815243,
      "base": 875
@@ -153,6 +148,7 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.303 (shown 140 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
-  "2026-11-24: removed the close-up Transamerica Pyramid (landmarks_1), also in the skyline; made the fence pickets in near_0 opaque (backup near_0.bak.png)."
+  "2026-11-24: removed the close-up Transamerica Pyramid (landmarks_1), also in the skyline; made the fence pickets in near_0 opaque (backup near_0.bak.png).",
+  "2026-11-24: removed the close-up Coit Tower (landmarks_3.png); it is in the skyline art."
  ]
 }

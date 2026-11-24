@@ -60,11 +60,6 @@
      "base": 895
     },
     {
-     "src": "work/cities_v3/new_orleans/sprites/landmarks_0.png",
-     "scale": 0.8687615526802218,
-     "base": 895
-    },
-    {
      "src": "work/cities_v3/new_orleans/sprites/local_5.png",
      "scale": 0.7228915662650602,
      "base": 895
@@ -158,5 +153,8 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up St. Louis Cathedral (landmarks_0.png); it is in the skyline art."
+ ]
 }
