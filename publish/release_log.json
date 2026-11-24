@@ -234,5 +234,44 @@
   "links_to": "https://youtu.be/2-_XbWMD-b0",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed"
+ },
+ {
+  "city": "seattle",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "h0AmNDhScIA",
+  "url": "https://youtu.be/h0AmNDhScIA",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-29T11:00:00-06:00",
+  "media_sha256": "cba0e1af851680976bfa7e893ae027cc856e2a44046434e95dc87e7e48936eb6",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
+ },
+ {
+  "city": "seattle",
+  "item": "short_1",
+  "buffer_post_id": "6b04ffb0bc151fa8ad1b39dd",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-11-29T14:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "21c247b5a33902e7d523f2bba35d40deac205897b151f7bc7f5a08fd46cf7b63",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/369fc9ef553c18f107f82f69/seattle_short_1.mp4",
+  "links_to": "https://youtu.be/h0AmNDhScIA",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
+ },
+ {
+  "city": "seattle",
+  "item": "short_2",
+  "buffer_post_id": "6b04ffb3c43c1f2f5c82ec32",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-11-29T20:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "38a2b839ef0ca780db6bfa863a376f40b69b15b997febe5ba63495f342d9e366",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/cfb5c2a62214024cf27a4c3b/seattle_short_2.mp4",
+  "links_to": "https://youtu.be/h0AmNDhScIA",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
  }
 ]
