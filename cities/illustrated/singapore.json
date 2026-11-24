@@ -63,11 +63,6 @@
      "src": "work/cities_v3/singapore/sprites/local_5a.png",
      "scale": 0.4122,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_4.png",
-     "scale": 1.7,
-     "base": 900
     }
    ],
    "band": {
@@ -124,13 +119,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/singapore/sprites/far_1.png",
     "scale": 0.95,
@@ -141,13 +130,7 @@
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_3.png",
-     "scale": 1.3544668587896254,
-     "base": 900
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/singapore/sprites/far_1.png",
     "scale": 0.95,
@@ -160,6 +143,7 @@
  "mid_front": true,
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed the close-up Marina Bay Sands (landmarks_0.png); it is in the skyline art (dup_landmarks.py)."
+  "2026-11-24: removed the close-up Marina Bay Sands (landmarks_0.png); it is in the skyline art (dup_landmarks.py).",
+  "2026-11-24: removed close-up lotus museum, observation wheel and glass dome (landmarks_2/3/4); all three are in the skyline."
  ]
 }
