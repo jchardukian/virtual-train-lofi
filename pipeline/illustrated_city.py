@@ -198,19 +198,20 @@ class City:
 
     @staticmethod
     def fill_down(layer):
-        """make everything below a column's first solid pixel solid, continuing the colour downwards, so the street
-        row reaches the sill with no see-through wedges under a sloping street (premultiplied rgb, alpha)"""
+        """continue each column's lowest solid pixel down to the bottom of the strip, so the street reaches the sill
+        with no see-through wedge under a sloping street; gaps higher up (between roofs, under palms) stay open"""
         rgb, a = layer
         rgb, a = rgb.copy(), a.copy()
-        seen = np.zeros(a.shape[1], bool)
-        for y in range(a.shape[0]):
-            row = a[y, :, 0]
-            seen |= row > 0.6
-            hole = seen & (row < 0.98)
-            if y and hole.any():
-                k = (1 - row[hole])[:, None]
-                rgb[y, hole] = rgb[y, hole] + rgb[y - 1, hole] / np.maximum(a[y - 1, hole], 1e-3) * k
-                a[y, hole, 0] = 1.0
+        solid = a[..., 0] > 0.6
+        h = a.shape[0]
+        has = solid.any(0)
+        last = np.where(has, h - 1 - np.argmax(solid[::-1], axis=0), -1)
+        cols = np.nonzero(has & (last < h - 1))[0]
+        for x in cols:
+            y = last[x]
+            c = rgb[y, x] / max(a[y, x, 0], 1e-3)
+            rgb[y + 1:, x] = c
+            a[y + 1:, x, 0] = 1.0
         return rgb, a
 
     def feather(self, layer, top, bottom):
