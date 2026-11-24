@@ -80,11 +80,6 @@
      "src": "work/cities_v3/singapore/sprites/local_5b.png",
      "scale": 1.0135135135135136,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/singapore/sprites/landmarks_1a.png",
-     "scale": 1.637630662020906,
-     "base": 900
     }
    ],
    "band": {

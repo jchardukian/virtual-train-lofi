@@ -98,13 +98,7 @@
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/rio/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 795
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/rio/sprites/far_1.png",
     "scale": 0.95,
