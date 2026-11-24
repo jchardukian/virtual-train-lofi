@@ -19,10 +19,13 @@
   "item": "short_2",
   "buffer_post_id": "6b038bc4d5eabfb8ccf12944",
   "due_at": "2026-11-23T20:30:00-06:00",
-  "status": "scheduled",
+  "status": "published",
   "media_sha256": "ddd221ea3761cd6df66d43647e047c6738dd5c5f19a84b964124fea98528b599",
   "authorised": "owner, in the agent session: 'get the other short and long form scheduled tomorrow'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "youtube_url": "https://www.youtube.com/shorts/fiDhCxQHDRg",
+  "sent_at": "2026-11-24T02:30:13Z",
+  "delivery_copy": "deleted 2026-11-24"
  },
  {
   "city": "chicago",
