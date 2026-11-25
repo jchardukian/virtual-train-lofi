@@ -435,5 +435,44 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "h0AmNDhScIA"
+ },
+ {
+  "city": "kansas_city",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "MarmRShRVBc",
+  "url": "https://youtu.be/MarmRShRVBc",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-12-01T11:00:00-06:00",
+  "media_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
+ },
+ {
+  "city": "kansas_city",
+  "item": "short_1",
+  "buffer_post_id": "6b076701a791bea1b232dc2c",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-12-01T14:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "b67aabfdd9f6a462db24df840ff952d91c45cf32a9e210798baf7937b54a94d2",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/743b5197378421f3ae5aabf2/kansas_city_short_1.mp4",
+  "links_to": "https://youtu.be/MarmRShRVBc",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
+ },
+ {
+  "city": "kansas_city",
+  "item": "short_2",
+  "buffer_post_id": "6b0767049f6dda31cca30175",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-12-01T20:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "8c66e1fc5b2b4ac3f60de1acac64aed0b003ca93f375dfb2e9a6c6318d665aa1",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/28c763c53cabb511dda96ccf/kansas_city_short_2.mp4",
+  "links_to": "https://youtu.be/MarmRShRVBc",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed"
  }
 ]
