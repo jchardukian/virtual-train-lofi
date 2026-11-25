@@ -18,7 +18,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
 SEC = 300
-STREET_SPEED = 7.0      # px/s at 1080p: owner 2026-11-25 wants the street almost at the skyline's pace (skyline 5)
+STREET_SPEED = 5.0      # px/s at 1080p: owner 2026-11-25 wants the street at the SAME speed as the skyline (one cohesive view)
 HAZE = (196, 208, 250)
 ART, ART_X2 = "work/cities_v3/", ROOT / "work/cities_x2"     # 4K renders use the 2x-upscaled art where it exists
 
@@ -140,7 +140,10 @@ class City:
         self.keep_near = cfg.get("keep_near", False)
         self.cfg_treewall = cfg.get("keep_treewall", False)
         self.cfg_mids = cfg.get("keep_mids", False)
-        self.mid_speed = min(MID, cfg.get("street_speed", STREET_SPEED) * S)   # close-ups move with the street
+        bd = cfg.get("backdrop") or []
+        street = cfg.get("street_speed", bd[0].get("speed", STREET_SPEED) if bd else STREET_SPEED)   # = skyline speed
+        cfg = dict(cfg, street_speed=street)
+        self.mid_speed = min(MID, street * S)   # close-ups move with the street
         SILL = 1040                                    # just below the window's lower edge at 1080p
         self.band_tops = []
         self.row_tops = []
