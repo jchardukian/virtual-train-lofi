@@ -8,3 +8,4 @@ output/*
 __pycache__/
 *.trf
 assets/
+work/stream/
