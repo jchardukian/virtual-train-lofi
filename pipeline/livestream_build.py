@@ -216,13 +216,17 @@ def audio(day):
     out = WORK / day / "audio.m4a"
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
                             "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "160k", str(out)], stdin=subprocess.PIPE)
-    XF = int(4 * SR)                                      # cross-fade between songs
+    XF = int(3 * SR)                                      # cross-fade between songs
     rng = np.random.default_rng(7)
     used, pos, carry, ti = [], 0, None, 0
 
     def dec(path):
         b = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
-        return np.frombuffer(b, np.float32).reshape(-1, 2).copy()
+        x = np.frombuffer(b, np.float32).reshape(-1, 2).copy()
+        # trim each song's silent/near-silent head and tail (fade-outs, dead air) so music never drops out
+        env = np.sqrt(np.convolve((x ** 2).mean(1), np.ones(SR // 10) / (SR // 10), "same"))
+        loud = np.where(env > 10 ** (-38 / 20))[0]
+        return x[loud[0]:loud[-1] + 1] if len(loud) else x[:0]
 
     def shape(x, at):
         """duck the music in the tunnels and add the rumble; at = sample index of x[0] in the stream"""
@@ -237,7 +241,7 @@ def audio(day):
             noise = np.cumsum(rng.normal(0, 1, (len(x), 2)), axis=0).astype(np.float32)
             noise -= np.linspace(noise[0], noise[-1], len(x)).astype(np.float32)
             noise /= np.abs(noise).max() + 1e-6
-            x = x * (1 - 0.75 * env)[:, None] + noise * (0.09 * env)[:, None]
+            x = x * (1 - 0.45 * env)[:, None] + noise * (0.07 * env)[:, None]   # music stays audible in the tunnel
         return x
 
     while pos < n:
@@ -248,8 +252,9 @@ def audio(day):
         if len(x) < 30 * SR:
             continue
         used.append(path)
-        x[:XF] *= np.linspace(0, 1, XF)[:, None]
-        x[-XF:] *= np.linspace(1, 0, XF)[:, None]
+        ramp = np.linspace(0, np.pi / 2, XF)                 # equal-power cross-fade: no dip between songs
+        x[:XF] *= np.sin(ramp)[:, None]
+        x[-XF:] *= np.cos(ramp)[:, None]
         if carry is not None:
             x[:XF] += carry
         body, carry = x[:-XF], x[-XF:].copy()
