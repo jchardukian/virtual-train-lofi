@@ -43,3 +43,10 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 - Renderer: street rows (incl. river rows) and close-ups capped at 32 px/s; the fast blurred tree sweep at section changes is OFF.
 - After ANY renderer change: verify on each server that builds already running started after the code file changed (ps lstart vs stat); restart those that didn't.
 - Before release: pull the city, watch a 20 s moving clip (pipeline output 720p preview) — not just the sheet.
+
+## 2026-11-25 21:40Z — SINGLE LAYER (owner): one picture per city, ~40-50% sky, no street row, no close-ups
+- pipeline/single_layer.py converted all 55 configs (backups *.two_layer.json). All rebuild.
+- Server 1: unit lofi-build-single (log lofi-build-single.log): kansas_city dubai detroit amsterdam new_orleans cairo seattle san_antonio san_francisco chicago london anchorage barcelona bangkok charleston boston vancouver austin san_diego savannah washington_dc paris nyc miami las_vegas atlanta banff
+- Server 2: lofi-stream-1126 (tonight) then lofi-build-single: singapore rio cape_town edinburgh hallstatt hong_kong honolulu istanbul kyoto lake_bled lisbon los_angeles marrakech mexico_city minneapolis nashville philadelphia phoenix_sedona pittsburgh portland_maine prague reykjavik salt_lake_city santorini seoul sydney tokyo venice
+- Tonight's stream uses the old two-layer versions; make its VOD private after it ends.
+- Swap scheduled long-forms (amsterdam..san_antonio) to single-layer versions as they finish.
