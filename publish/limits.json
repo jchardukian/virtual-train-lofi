@@ -120,6 +120,12 @@
    "amount_usd_cap": 0.5,
    "purpose": "Salt Lake City downtown skyline strip (1 image, 1 retry max)",
    "owner": "'Yes' to 'Do you approve up to $0.50 for this?'"
+  },
+  {
+   "date": "2026-11-25",
+   "amount_usd_cap": 1.3,
+   "purpose": "Chicago illustrated art set (6 images, ~$1.15) so it matches the other cities in livestreams",
+   "owner": "'Yes for Chicago' to the ~$1.15 ask"
   }
  ]
 }

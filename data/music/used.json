@@ -4,7 +4,10 @@
    "Warm Horizon",
    "Daydreams"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Warm_Horizon.mp3",
+   "work/music_lib/Daydreams.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "denver": {

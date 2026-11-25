@@ -1,0 +1,128 @@
+[
+ {
+  "city": "chicago",
+  "name": "opening",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Chicago skyline with Willis Tower and the John Hancock Center rising above the river and Lake Michigan, autumn trees along the lakefront The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1701,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 165
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7189
+  },
+  "est_cost_usd": 0.1778
+ },
+ {
+  "city": "chicago",
+  "name": "sky",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a clear autumn afternoon sky, deep blue above fading to warm pale gold near the bottom, a few soft white clouds. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1703,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 167
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7191
+  },
+  "est_cost_usd": 0.1778
+ },
+ {
+  "city": "chicago",
+  "name": "landmarks",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the elevated L train on its steel trestle, 2) Cloud Gate, the shiny bean sculpture, 3) the Chicago Water Tower, a small castle-like limestone tower, 4) the Wrigley Field red marquee sign, 5) a classic Chicago movie theatre with a vertical neon sign, 6) the Buckingham Fountain. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1858,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 322
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7346
+  },
+  "est_cost_usd": 0.1785
+ },
+ {
+  "city": "chicago",
+  "name": "local",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a red-brick corner tavern with a green awning, 2) a hot dog stand, 3) a brick three-flat with a bay window, 4) a blue Chicago mailbox and street lamp, 5) a red-brick church with a small steeple, 6) a newsstand, 7) an orange autumn maple tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1864,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 328
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7352
+  },
+  "est_cost_usd": 0.1786
+ },
+ {
+  "city": "chicago",
+  "name": "far",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the downtown Chicago skyline across the water: Willis Tower, the John Hancock Center, Trump Tower, Aon Center and many art-deco and modern towers, with the blue band of Lake Michigan and the river along the bottom. STRIP 2 (bottom): a continuous row of Chicago brick three-flat apartment buildings and corner shops with bay windows, fire escapes, green awnings and orange autumn street trees along the sidewalk, rooftops forming an irregular line at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1871,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 335
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7359
+  },
+  "est_cost_usd": 0.1786
+ },
+ {
+  "city": "chicago",
+  "name": "near",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Chicago, Illinois: Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, orange and red autumn maple trees behind a black iron fence with fallen leaves, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1786,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 250
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7274
+  },
+  "est_cost_usd": 0.1782
+ }
+]
