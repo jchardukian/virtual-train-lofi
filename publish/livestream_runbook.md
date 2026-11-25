@@ -31,3 +31,9 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 - Server 1: run10 (paris nyc kansas_city dubai detroit london anchorage barcelona bangkok charleston boston) -> run11 (vancouver austin san_diego savannah washington_dc) -> run12 (chicago miami las_vegas atlanta banff cape_town edinburgh hallstatt hong_kong honolulu istanbul kyoto lake_bled lisbon los_angeles marrakech)
 - Server 2: lofi-stream-1126 (stream 1, built from current versions) -> run9 (singapore rio san_francisco amsterdam new_orleans cairo seattle san_antonio) -> run10 (mexico_city minneapolis nashville philadelphia phoenix_sedona pittsburgh portland_maine prague reykjavik salt_lake_city santorini seoul sydney tokyo venice)
 - Releases from now on use the slowed versions (KC/Dubai/Detroit rebuild early in server 1 run10).
+
+## Decisions 2026-11-25 19:20Z (owner: figure it out, stop asking)
+- Stream 1 runs tonight 10:15pm CST as planned (current versions). After it ends, set its saved VOD to PRIVATE so only the corrected (slow-street) versions become evergreen.
+- From stream 2 on, streams use only rebuilt (slow-street) cities; stream_day.sh exclude list = cities not yet rebuilt.
+- Scheduled long-forms built at the old speed (amsterdam Nov 26, new_orleans Nov 27, cairo Nov 28, seattle Nov 29, san_antonio Nov 30) are swapped with replace_release.py as each rebuild finishes (server 2 run9), then their Buffer posts edited. Do not ask the owner.
+- Every city: render and review a moving clip (not only stills) before release.
