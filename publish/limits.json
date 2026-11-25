@@ -121,7 +121,16 @@
    "stream_1": "Wed Nov 25 10:15pm - Thu 2:15am CST (04:15-08:15Z Nov 26); start as soon as live streaming is active if activation runs a few minutes late",
    "stream_2": "Thu Nov 26 7-11pm CST (01:00-05:00Z Nov 27)",
    "after": "one ~4h stream per day, each with a different city order and music mix; vary start times to find the best viewers/engagement; log results in publish/livestream_log.json",
-   "go": "these streams are approved by the owner; tell the owner when each goes live"
+   "go": "these streams are approved by the owner; tell the owner when each goes live",
+   "twice_daily": {
+    "approved": "owner 2026-11-25: two ~4h streams per day, a morning one and a later-evening one, especially weekends",
+    "times_cst": {
+     "morning": "8:00am-12:00pm",
+     "evening": "8:00pm-12:00am"
+    },
+    "start": "Fri Nov 27 (once all cities are rebuilt); Thu Nov 26 keeps the approved 7-11pm evening stream",
+    "rule": "each stream a different city order + music mix; vary start times later based on viewer data; tell owner when each goes live"
+   }
   }
  },
  "openai_approvals": [
