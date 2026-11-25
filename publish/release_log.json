@@ -276,7 +276,9 @@
   "publish_at": "2026-11-29T11:00:00-06:00",
   "media_sha256": "cba0e1af851680976bfa7e893ae027cc856e2a44046434e95dc87e7e48936eb6",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "rTY6Rk84UxA",
+  "status": "deleted 2026-11-25T17:50:31Z: replaced by the rebuilt version"
  },
  {
   "city": "seattle",
@@ -285,11 +287,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-29T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "21c247b5a33902e7d523f2bba35d40deac205897b151f7bc7f5a08fd46cf7b63",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/369fc9ef553c18f107f82f69/seattle_short_1.mp4",
-  "links_to": "https://youtu.be/h0AmNDhScIA",
+  "media_sha256": "4fb0d20f4624996660ac9dbbb82b66bed701152aac54de115c5c6f5a490f371a",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/1c9b9cb8848a19e9ae756ac5/seattle_short_1.mp4",
+  "links_to": "https://youtu.be/rTY6Rk84UxA",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-25T17:50:31Z with the rebuilt version"
  },
  {
   "city": "seattle",
@@ -298,13 +301,14 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-29T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "38a2b839ef0ca780db6bfa863a376f40b69b15b997febe5ba63495f342d9e366",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/cfb5c2a62214024cf27a4c3b/seattle_short_2.mp4",
-  "links_to": "https://youtu.be/h0AmNDhScIA",
+  "media_sha256": "48ecf1278b0f6fbb71f09afd5ce285980ab3f5bebd4be8720e6bb63454027c5c",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/27196d883231e096521929a3/seattle_short_2.mp4",
+  "links_to": "https://youtu.be/rTY6Rk84UxA",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "title": "Seattle by Train 🚆 #lofi #seattle #shorts",
-  "title_style": "experiment"
+  "title_style": "experiment",
+  "note": "media replaced 2026-11-25T17:50:31Z with the rebuilt version"
  },
  {
   "city": "london",
@@ -417,5 +421,19 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "2-_XbWMD-b0"
+ },
+ {
+  "city": "seattle",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "rTY6Rk84UxA",
+  "url": "https://youtu.be/rTY6Rk84UxA",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-29T11:00:00-06:00",
+  "media_sha256": "fb1a0fd75b82f1c3c2e42d2b9c42f44165afe8952900c8ca9e337c678b0ce2cf",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "h0AmNDhScIA"
  }
 ]
