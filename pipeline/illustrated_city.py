@@ -18,6 +18,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
 SEC = 300
+STREET_SPEED = 32.0     # px/s at 1080p for the street row (was 58 x zoom, ~83)
 HAZE = (196, 208, 250)
 ART, ART_X2 = "work/cities_v3/", ROOT / "work/cities_x2"     # 4K renders use the 2x-upscaled art where it exists
 
@@ -156,7 +157,9 @@ class City:
                     f = (SILL - top) / max(1.0, b.get("base", 850) - top)
                     zoom = (top, f)
                     b["scale"], b["base"], b["feather_bottom"] = b.get("scale", 1.0) * f, SILL, 0
-                    b["speed"] = b.get("speed", BAND / S) * f
+                    # owner 2026-11-25: the street row raced past the skyline and read as a pasted layer. Keep it calm:
+                    # no extra speed for being closer, and capped so the row drifts rather than races.
+                    b["speed"] = min(b.get("speed", BAND / S), cfg.get("street_speed", STREET_SPEED))
                     self.mid_speed = b["speed"] * S
                 im = cv2.imread(str(ROOT / b["src"]), cv2.IMREAD_UNCHANGED)
                 cov = (im[..., 3] > 200).mean(1) if im.shape[2] == 4 else np.ones(im.shape[0])
