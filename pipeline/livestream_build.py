@@ -279,7 +279,14 @@ def assemble(day):
        "-c:v", "libx264", "-preset", "veryfast", "-b:v", "6000k", "-maxrate", "6800k", "-bufsize", "12000k",
        "-g", str(2 * FPS), "-keyint_min", str(2 * FPS), "-sc_threshold", "0", "-pix_fmt", "yuv420p", "-c:a", "copy",
        "-shortest", "-movflags", "+faststart", str(out))
-    print("stream file", out, round(probe(out) / 3600, 2), "h")
+    # owner: music must play the whole stream. Refuse a file with any silence longer than 3 s.
+    r = subprocess.run(["ffmpeg", "-v", "info", "-i", str(out), "-vn", "-af", "silencedetect=noise=-50dB:d=3", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    gaps = [l for l in r.splitlines() if "silence_start" in l]
+    if gaps:
+        out.rename(out.with_suffix(".SILENCE.mp4"))
+        sys.exit(f"stream file has {len(gaps)} silent gap(s): {gaps[:3]}")
+    print("stream file", out, round(probe(out) / 3600, 2), "h, no silent gaps")
 
 
 def credits(day):
