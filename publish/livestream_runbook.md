@@ -37,3 +37,9 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 - From stream 2 on, streams use only rebuilt (slow-street) cities; stream_day.sh exclude list = cities not yet rebuilt.
 - Scheduled long-forms built at the old speed (amsterdam Nov 26, new_orleans Nov 27, cairo Nov 28, seattle Nov 29, san_antonio Nov 30) are swapped with replace_release.py as each rebuild finishes (server 2 run9), then their Buffer posts edited. Do not ask the owner.
 - Every city: render and review a moving clip (not only stills) before release.
+
+## 2026-11-25 19:40Z — quality gates now enforced
+- preflight.py checks: art + music present, test render, street speed <= cap, see-through gaps (unless gaps_ok reviewed).
+- Renderer: street rows (incl. river rows) and close-ups capped at 32 px/s; the fast blurred tree sweep at section changes is OFF.
+- After ANY renderer change: verify on each server that builds already running started after the code file changed (ps lstart vs stat); restart those that didn't.
+- Before release: pull the city, watch a 20 s moving clip (pipeline output 720p preview) — not just the sheet.
