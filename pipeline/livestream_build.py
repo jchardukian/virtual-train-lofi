@@ -47,7 +47,7 @@ def _key():
 
 def get(obj, dest=None):
     """Read an archive object (through the control Worker). Returns bytes, or writes to dest; None if missing."""
-    r = urllib.request.Request(f"{WORKER}/obj/{obj}", headers={"X-Key": _key()})
+    r = urllib.request.Request(f"{WORKER}/obj/{obj}", headers={"X-Key": _key(), "User-Agent": "curl/8.5.0"})
     try:
         with urllib.request.urlopen(r, timeout=600) as f:
             if dest is None:
@@ -116,7 +116,7 @@ def prep(cities, src=None):
                 print("skip:", e); continue
         tmp = out.with_suffix(".tmp.mp4")
         sh("ffmpeg", "-v", "error", "-y", "-i", str(m), "-an", "-vf", f"scale={W}:{H}:flags=lanczos,fps={FPS}",
-           "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-g", str(2 * FPS), "-pix_fmt", "yuv420p", str(tmp))
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-g", str(2 * FPS), "-pix_fmt", "yuv420p", str(tmp))
         tmp.rename(out)
         if not src:
             m.unlink()
