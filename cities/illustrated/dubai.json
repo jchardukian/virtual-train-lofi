@@ -108,11 +108,6 @@
      "src": "work/cities_v3/dubai/sprites/landmarks_3.png",
      "scale": 1.5824915824915824,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/dubai/sprites/local_3.png",
-     "scale": 1.4634146341463414,
-     "base": 900
     }
    ],
    "band": {
@@ -126,11 +121,6 @@
   {
    "name": "part 5",
    "mid": [
-    {
-     "src": "work/cities_v3/dubai/sprites/landmarks_4a.png",
-     "scale": 1.2806539509536785,
-     "base": 900
-    },
     {
      "src": "work/cities_v3/dubai/sprites/local_4.png",
      "scale": 0.6928406466512702,

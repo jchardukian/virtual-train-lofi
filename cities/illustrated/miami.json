@@ -112,5 +112,6 @@
  "_notes": [
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png"
  ],
- "no_fill_down": true
+ "no_fill_down": true,
+ "gaps_ok": "water between the palms is intended (owner 2026-11-25)"
 }
