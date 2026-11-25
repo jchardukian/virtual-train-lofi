@@ -46,7 +46,7 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 630,
+   "base": 750,
    "alpha": 1.0
   }
  ],
