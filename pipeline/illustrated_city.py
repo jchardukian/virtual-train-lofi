@@ -18,7 +18,7 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
 SEC = 300
-STREET_SPEED = 32.0     # px/s at 1080p for the street row (was 58 x zoom, ~83)
+STREET_SPEED = 7.0      # px/s at 1080p: owner 2026-11-25 wants the street almost at the skyline's pace (skyline 5)
 HAZE = (196, 208, 250)
 ART, ART_X2 = "work/cities_v3/", ROOT / "work/cities_x2"     # 4K renders use the 2x-upscaled art where it exists
 
@@ -139,6 +139,7 @@ class City:
         # owner 2026-11-24: no separate foreground strip; the street row runs down to the window sill instead
         self.keep_near = cfg.get("keep_near", False)
         self.cfg_treewall = cfg.get("keep_treewall", False)
+        self.cfg_mids = cfg.get("keep_mids", False)
         self.mid_speed = min(MID, cfg.get("street_speed", STREET_SPEED) * S)   # close-ups move with the street
         SILL = 1040                                    # just below the window's lower edge at 1080p
         self.band_tops = []
@@ -212,6 +213,8 @@ class City:
             img[y0:] = img[y0:] * (1 - land) + rgb[:H - y0, o:o + W] * land
 
     def draw_mids(self, img, t, bob):
+        if self.mid_speed < 20 * S and not self.cfg_mids:   # too slow to pass by: close-ups would pile up
+            return
         for (rgb, a), tau, base in self.mid:
             x = int(round(W / 2 + self.mid_speed * (tau - t) - a.shape[1] / 2))   # at the street's own speed
             if -a.shape[1] < x < W:
