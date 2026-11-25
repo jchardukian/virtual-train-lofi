@@ -77,33 +77,33 @@
    "name": "part 3",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-    "scale": 0.95,
+    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
+    "scale": 0.783,
     "base": 905,
     "offset": 1700,
-    "feather_top": 40
+    "feather_top": 30
    }
   },
   {
    "name": "part 4",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-    "scale": 0.95,
+    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
+    "scale": 0.783,
     "base": 905,
     "offset": 2400,
-    "feather_top": 40
+    "feather_top": 30
    }
   },
   {
    "name": "part 5",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-    "scale": 0.95,
+    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
+    "scale": 0.783,
     "base": 905,
     "offset": 3100,
-    "feather_top": 40
+    "feather_top": 30
    }
   }
  ],

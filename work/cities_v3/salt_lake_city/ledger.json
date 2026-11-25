@@ -1,0 +1,150 @@
+[
+ {
+  "city": "salt_lake_city",
+  "name": "opening",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Salt Lake temple spires and the domed state capitol below the green Wasatch mountains, with the great salt lake shimmering in the distance The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1700,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 164
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7188
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "sky",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a clear summer morning sky, deep blue above fading to pale blue near the bottom, no clouds. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1694,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 158
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7182
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "landmarks",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a white temple with six spires, 2) the domed Utah State Capitol, 3) a golden spike railroad monument with two steam engines, 4) a delicate red rock arch, 5) a pioneer log cabin, 6) a ski lift. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1838,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 302
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7326
+  },
+  "est_cost_usd": 0.1784
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "local",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a brick pioneer house, 2) a red barn, 3) a beehive sculpture, 4) a covered wagon, 5) a bison, 6) a sagebrush clump, 7) a cottonwood tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1836,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 300
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7324
+  },
+  "est_cost_usd": 0.1784
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "far",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the Wasatch mountain range above the valley with a few snow patches on the highest peaks. STRIP 2 (bottom): the white salt flats and shimmering salt lake with distant islands. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1809,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 273
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7297
+  },
+  "est_cost_usd": 0.1783
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "near",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, sagebrush, wild sunflowers and a weathered ranch fence, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1779,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 243
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7267
+  },
+  "est_cost_usd": 0.1781
+ },
+ {
+  "city": "salt_lake_city",
+  "name": "citystrip",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Salt Lake City, Utah: Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, sage-green valleys, bright and open. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running continuously from the left edge to the right edge, filling the lower two thirds of the canvas: downtown Salt Lake City seen across a tree-lined street, a dense continuous row of buildings with no gaps: the white granite Salt Lake Temple with its six spires, the domed Utah State Capitol, modern glass and stone office towers of different heights, red-brick and sandstone low-rise buildings, and a continuous band of green cottonwood trees, lawns and a sidewalk along the whole bottom edge. The buildings' rooftops and spires form an irregular skyline silhouette at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1850,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 314
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7338
+  },
+  "est_cost_usd": 0.1785,
+  "approval": "owner 2026-11-25 cap $0.50"
+ }
+]
