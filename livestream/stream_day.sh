@@ -8,6 +8,8 @@ DAY=$1; START=$2; R=/home/user/virtual-train-lofi; cd $R
 K=$(cat /etc/lofitrain/key); U=https://lofitrain-control.jchardukian.workers.dev/obj/control/pkg
 curl -sf -H "X-Key: $K" $U/stream.tgz | tar xzf - || { echo "no stream package"; exit 1; }
 CITIES=$(ls cities/illustrated/*.json | xargs -n1 basename | sed 's/.json//' | grep -vE '^(denver_v1|tokyo_v1|street_lines|alps|denver)$')
+# cities whose fixed version is not built yet stay out of this stream (one name per line)
+[ -f livestream/exclude_$DAY.txt ] && CITIES=$(echo "$CITIES" | grep -vxF -f livestream/exclude_$DAY.txt)
 python3 pipeline/livestream_build.py prep $CITIES
 python3 pipeline/livestream_build.py plan $DAY --minutes 240
 python3 pipeline/livestream_build.py trans $DAY
