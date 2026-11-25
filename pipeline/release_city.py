@@ -82,7 +82,13 @@ def main():
     tag = meta.get("hashtag") or "".join(ch for ch in name.lower() if ch.isalnum())
     L["title"] = f"{name} Chillhop 🚆"
     meta["short_1"]["title"] = f"{name} Chillhop 🚆 #lofi #{tag} #shorts"
-    meta["short_2"]["title"] = f"{name} Chillhop {meta.get('emoji', '🌆')} #lofi #{tag} #shorts"
+    # owner 2026-11-25: Short 2 never repeats Short 1's title; it rotates simple lofi/train/window titles so we can see what works
+    em = meta.get('emoji', '🌆')
+    S2 = [f"{name} Lofi {em} #lofi #{tag} #shorts", f"Train Window: {name} {em} #lofi #{tag} #shorts",
+          f"Lofi Train to {name} {em} #lofi #{tag} #shorts", f"{name} Window Seat {em} #lofi #{tag} #shorts",
+          f"{name} by Train 🚆 #lofi #{tag} #shorts", f"Lofi Ride Through {name} {em} #lofi #{tag} #shorts"]
+    n_rel = len({e["city"] for e in log if e.get("item") == "long_form"})
+    meta["short_2"]["title"] = meta["short_2"].get("title_override") or S2[n_rel % len(S2)]
     long_meta = {"title": L["title"], "tags": L["tags"], "publish_at": t_long.isoformat(),
                  "expected_sha256": sums[f"{city}_illustrated_master.mp4"],
                  "description": "\n\n".join([L["summary"], limits["channel_blurb"],

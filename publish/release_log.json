@@ -126,7 +126,9 @@
   "links_to": "https://youtu.be/Eg6MOUeYeqY",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-24T14:48:56Z with the rebuilt version"
+  "note": "media replaced 2026-11-24T14:48:56Z with the rebuilt version",
+  "title": "San Francisco Lofi 🌁 #lofi #sanfrancisco #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "amsterdam",
@@ -169,7 +171,9 @@
   "links_to": "https://youtu.be/5thAZ2gtRCo",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-24T15:32:30Z with the rebuilt version"
+  "note": "media replaced 2026-11-24T15:32:30Z with the rebuilt version",
+  "title": "Train Window: Amsterdam 🌷 #lofi #amsterdam #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "new_orleans",
@@ -212,7 +216,9 @@
   "links_to": "https://youtu.be/-0YSG2AmwaQ",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-24T16:19:26Z with the rebuilt version"
+  "note": "media replaced 2026-11-24T16:19:26Z with the rebuilt version",
+  "title": "Lofi Train to New Orleans ✨ #lofi #neworleans #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "cairo",
@@ -255,7 +261,9 @@
   "links_to": "https://youtu.be/eE_uFAxBYUg",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-24T17:03:25Z with the rebuilt version"
+  "note": "media replaced 2026-11-24T17:03:25Z with the rebuilt version",
+  "title": "Cairo Window Seat 🌅 #lofi #cairo #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "seattle",
@@ -294,7 +302,9 @@
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/cfb5c2a62214024cf27a4c3b/seattle_short_2.mp4",
   "links_to": "https://youtu.be/h0AmNDhScIA",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "title": "Seattle by Train 🚆 #lofi #seattle #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "london",
@@ -390,7 +400,9 @@
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/2f970cc350bdc7de48f8309f/san_antonio_short_2.mp4",
   "links_to": "https://youtu.be/GxuX1EgWidU",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "title": "Lofi Ride Through San Antonio ✨ #lofi #sanantonio #shorts",
+  "title_style": "experiment"
  },
  {
   "city": "cairo",

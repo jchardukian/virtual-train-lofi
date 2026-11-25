@@ -143,5 +143,17 @@
   "phase_1": "Every day: one city = one 5-minute long-form (11:00 CT) + its two Shorts (14:30, 20:30 CT), plus one ~4h livestream (its saved VOD is the evergreen long-form). Continue daily, automatically, until every built city has been posted (~50 days).",
   "phase_2": "When all cities are posted: if a new batch of cities is being built, continue phase 1 with those. Otherwise stop the daily 5-minute long-form; focus on Shorts (new Shorts that end with the train entering the tunnel) + one livestream per day.",
   "order": "release cities in a varied order (not alphabetical); never two similar cities on consecutive days where avoidable"
+ },
+ "short_titles": {
+  "owner_2026-11-25": "Short 1 keeps '<City> Chillhop 🚆 #lofi #<city> #shorts'; Short 2 never repeats it and rotates simple lofi/train/window titles to test what works",
+  "short_2_rotation": [
+   "<City> Lofi <emoji>",
+   "Train Window: <City> <emoji>",
+   "Lofi Train to <City> <emoji>",
+   "<City> Window Seat <emoji>",
+   "<City> by Train 🚆",
+   "Lofi Ride Through <City> <emoji>"
+  ],
+  "suffix": "#lofi #<city> #shorts"
  }
 }
