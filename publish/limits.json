@@ -113,7 +113,14 @@
   "evergreen": "owner 2026-11-25 'Sounds good': each daily ~4-hour livestream is left as YouTube's automatic saved video (VOD) = the evergreen long-form; no separate compilation upload for now. Later, optionally upload a polished chaptered 4K compilation of the best-performing order.",
   "format": "~4 hours, all built cities, tunnel + next-stop countdown between cities, different city order and music mix each day; streamed from server 1 (177414097)",
   "start": "after all 50 cities are built; going live needs the owner's explicit go",
-  "activation": "owner started YouTube live-streaming activation ~04:10Z Nov 25 (24h countdown) -> available ~04:10Z Nov 26 (~10pm CST Nov 25). First stream: Nov 26 7-11pm CST unless owner says otherwise; check API liveBroadcasts list (liveStreamingNotEnabled until then)."
+  "activation": "owner started YouTube live-streaming activation ~04:10Z Nov 25 (24h countdown) -> available ~04:10Z Nov 26 (~10pm CST Nov 25). First stream: Nov 26 7-11pm CST unless owner says otherwise; check API liveBroadcasts list (liveStreamingNotEnabled until then).",
+  "schedule": {
+   "approved": "owner 2026-11-25: 'set up a stream for 10:15-2:15 and then we can schedule another at 7-11 Thursday. Then moving forward we can do one livestream per day and you can explore various times to see which gets the most viewers/engagement'",
+   "stream_1": "Wed Nov 25 10:15pm - Thu 2:15am CST (04:15-08:15Z Nov 26); start as soon as live streaming is active if activation runs a few minutes late",
+   "stream_2": "Thu Nov 26 7-11pm CST (01:00-05:00Z Nov 27)",
+   "after": "one ~4h stream per day, each with a different city order and music mix; vary start times to find the best viewers/engagement; log results in publish/livestream_log.json",
+   "go": "these streams are approved by the owner; tell the owner when each goes live"
+  }
  },
  "openai_approvals": [
   {
