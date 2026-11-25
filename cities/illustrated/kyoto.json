@@ -7,7 +7,7 @@
   "hold": 6,
   "fade": 3
  },
- "weather": "leaves",
+ "weather": "none",
  "ground_src": {
   "src": "work/v2/kyoto/sprites/far_1.png",
   "rows": [
