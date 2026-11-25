@@ -44,23 +44,7 @@
  "sections": [
   {
    "name": "Brooklyn rooftops and the bridge",
-   "mid": [
-    {
-     "src": "work/v2/nyc/sprites/local_0.png",
-     "scale": 0.95,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_1.png",
-     "scale": 0.95,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_3.png",
-     "scale": 0.85,
-     "base": 760
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/v2/nyc/sprites/far_1.png",
     "scale": 1.1,
@@ -69,18 +53,7 @@
   },
   {
    "name": "Midtown",
-   "mid": [
-    {
-     "src": "work/v2/nyc/sprites/local_2.png",
-     "scale": 0.9,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_4b.png",
-     "scale": 1.1,
-     "base": 760
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/v2/nyc/sprites/far_1.png",
     "scale": 1.1,
@@ -90,18 +63,7 @@
   },
   {
    "name": "Downtown and the harbour",
-   "mid": [
-    {
-     "src": "work/v2/nyc/sprites/landmarks_2.png",
-     "scale": 0.95,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_5.png",
-     "scale": 1.0,
-     "base": 760
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/v2/nyc/sprites/far_1.png",
     "scale": 1.1,
@@ -111,32 +73,7 @@
   },
   {
    "name": "Snowy brownstones",
-   "mid": [
-    {
-     "src": "work/v2/nyc/sprites/local_1.png",
-     "scale": 0.95,
-     "flip": true,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_0.png",
-     "scale": 0.95,
-     "flip": true,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_3.png",
-     "scale": 0.85,
-     "flip": true,
-     "base": 760
-    },
-    {
-     "src": "work/v2/nyc/sprites/local_5.png",
-     "scale": 1.0,
-     "flip": true,
-     "base": 760
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/v2/nyc/sprites/far_1.png",
     "scale": 1.1,
