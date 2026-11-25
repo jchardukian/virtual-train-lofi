@@ -15,7 +15,10 @@
    "Flying",
    "Sunlit Shore"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Flying.mp3",
+   "work/music_lib/Sunlit_Shore.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "paris": {
@@ -23,7 +26,10 @@
    "Bookworm",
    "Crescent Moon"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Bookworm.mp3",
+   "work/music_lib/Crescent_Moon.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "tokyo": {
@@ -31,7 +37,10 @@
    "Twilight Market",
    "Night Train"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Twilight_Market.mp3",
+   "work/music_lib/Night_Train.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "nyc": {
@@ -39,7 +48,10 @@
    "Streetlights",
    "Snow Angels"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Streetlights.mp3",
+   "work/music_lib/Snow_Angels.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "alps": {
@@ -55,7 +67,10 @@
    "Green Tea",
    "Morning Dew"
   ],
-  "files": [],
+  "files": [
+   "work/music_lib/Green_Tea.mp3",
+   "work/music_lib/Morning_Dew.mp3"
+  ],
   "licence": "CC BY 4.0"
  },
  "san_francisco": {
