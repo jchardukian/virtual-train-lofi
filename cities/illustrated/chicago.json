@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/chicago/sprites/near_0.png",
-  "scale": 0.85,
-  "base": -153
- },
  "treewall_cfg": {
   "src": "work/cities_v3/chicago/sprites/local_3.png",
   "crop": [
@@ -42,119 +37,48 @@
  "backdrop": [
   {
    "src": "work/cities_v3/chicago/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 1.903,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 774,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/chicago/sprites/local_0.png",
-     "scale": 0.6651884700665188,
-     "base": 838
-    },
-    {
-     "src": "work/cities_v3/chicago/sprites/local_5.png",
-     "scale": 0.7114624505928854,
-     "base": 838
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/chicago/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/chicago/sprites/local_6.png",
-     "scale": 0.6437768240343348,
-     "base": 838
-    },
-    {
-     "src": "work/cities_v3/chicago/sprites/local_1.png",
-     "scale": 1.271186440677966,
-     "base": 838
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/chicago/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/chicago/sprites/landmarks_2.png",
-     "scale": 1.2645739910313902,
-     "base": 813
-    },
-    {
-     "src": "work/cities_v3/chicago/sprites/local_2.png",
-     "scale": 0.6564551422319475,
-     "base": 838
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/chicago/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/chicago/sprites/local_3.png",
-     "scale": 0.9809264305177112,
-     "base": 838
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/chicago/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/chicago/sprites/landmarks_4.png",
-     "scale": 1.2876712328767124,
-     "base": 813
-    },
-    {
-     "src": "work/cities_v3/chicago/sprites/local_4.png",
-     "scale": 1.7,
-     "base": 838
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/chicago/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

@@ -1,0 +1,165 @@
+{
+ "city": "Tokyo, Japan",
+ "next": "coming soon",
+ "version": 2,
+ "season": "spring cherry blossom afternoon",
+ "sky": "work/v2/tokyo2/sky.png",
+ "sky_top": 0.05,
+ "opening": {
+  "src": "work/v2/tokyo2/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "petals",
+ "ground_src": {
+  "colour": [
+   [
+    120,
+    175,
+    130
+   ],
+   [
+    90,
+    150,
+    105
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/v2/tokyo2/sprites/near_0.png",
+  "scale": 0.75,
+  "base": 70
+ },
+ "treewall_cfg": {
+  "src": "work/v2/tokyo2/sprites/local_0.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "sections": [
+  {
+   "name": "Sumida River, Skytree and Senso-ji",
+   "ground": "river",
+   "far": [
+    {
+     "src": "work/v2/tokyo2/sprites/far_0.png",
+     "scale": 1.6,
+     "haze": 0.2,
+     "speed": 5,
+     "x0": -60
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/v2/tokyo2/sprites/local_0.png",
+     "scale": 0.85,
+     "base": 725
+    }
+   ],
+   "band": {
+    "src": "work/v2/tokyo2/sprites/far_1.png",
+    "scale": 0.7,
+    "base": 745
+   }
+  },
+  {
+   "name": "Shinjuku",
+   "far": [
+    {
+     "src": "work/v2/tokyo2/sprites/far_0.png",
+     "scale": 1.6,
+     "haze": 0.2,
+     "speed": 5,
+     "x0": -360,
+     "flip": true
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/v2/tokyo2/sprites/local_1.png",
+     "scale": 0.9
+    }
+   ],
+   "band": {
+    "src": "work/v2/tokyo2/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 890
+   }
+  },
+  {
+   "name": "Tokyo Tower and a shrine",
+   "far": [
+    {
+     "src": "work/v2/tokyo2/sprites/far_0.png",
+     "scale": 1.45,
+     "haze": 0.3,
+     "speed": 4,
+     "x0": -150
+    }
+   ],
+   "mid": [],
+   "band": {
+    "src": "work/v2/tokyo2/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 890,
+    "offset": 1100
+   }
+  },
+  {
+   "name": "Neighbourhoods",
+   "far": [
+    {
+     "src": "work/v2/tokyo2/sprites/far_0.png",
+     "scale": 1.45,
+     "haze": 0.35,
+     "speed": 4,
+     "x0": -380,
+     "flip": true
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/v2/tokyo2/sprites/local_2a.png",
+     "scale": 0.9
+    }
+   ],
+   "band": {
+    "src": "work/v2/tokyo2/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 890,
+    "offset": 1900
+   }
+  },
+  {
+   "name": "Suburbs and Mount Fuji",
+   "far": [
+    {
+     "src": "work/cities/tokyo/sprites/strips_0.png",
+     "scale": 1.5,
+     "haze": 0.18,
+     "speed": 4,
+     "base": 735,
+     "x0": -120,
+     "alpha": 1.0
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/v2/tokyo2/sprites/local_1.png",
+     "scale": 0.9,
+     "flip": true
+    }
+   ],
+   "band": {
+    "src": "work/v2/tokyo2/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 890,
+    "offset": 2600
+   }
+  }
+ ],
+ "gaps_ok": "river and cherry-tree rows: scenery shows through, intended"
+}

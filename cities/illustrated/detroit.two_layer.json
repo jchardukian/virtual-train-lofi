@@ -1,0 +1,165 @@
+{
+ "city": "Detroit, Michigan",
+ "next": "Dubai, UAE",
+ "version": 3,
+ "season": "Detroit on a snowy winter evening, deep blue dusk, warm Art Deco lights, snow on the river, cozy and resilient",
+ "sky": "work/cities_v3/detroit/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/detroit/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    110.15370178222656,
+    110.62547302246094,
+    128.9834442138672
+   ],
+   [
+    91.79475402832031,
+    92.18789672851562,
+    107.4862060546875
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/detroit/sprites/near_0.png",
+  "scale": 1.575,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/detroit/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/detroit/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 752,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/detroit/sprites/local_0.png",
+     "scale": 0.8955223880597015,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/detroit/sprites/local_5.png",
+     "scale": 0.8356545961002786,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/detroit/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/detroit/sprites/local_6.png",
+     "scale": 0.8595988538681948,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/detroit/sprites/landmarks_1.png",
+     "scale": 1.1628865979381444,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/detroit/sprites/local_1.png",
+     "scale": 1.639344262295082,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/detroit/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/detroit/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/detroit/sprites/landmarks_3.png",
+     "scale": 0.5172,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/detroit/sprites/local_3.png",
+     "scale": 1.1904761904761905,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/detroit/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/detroit/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/detroit/sprites/local_4.png",
+     "scale": 0.4839,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/detroit/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the Ambassador suspension bridge)"
+ ]
+}

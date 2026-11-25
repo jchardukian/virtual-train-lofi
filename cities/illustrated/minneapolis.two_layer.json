@@ -1,0 +1,155 @@
+{
+ "city": "Minneapolis, Minnesota",
+ "next": "Prague, Czech Republic",
+ "version": 3,
+ "season": "Minneapolis on a bright snowy winter morning, sparkling fresh snow, clear blue sky, frozen lakes, cozy cabins, crisp and cheerful",
+ "sky": "work/cities_v3/minneapolis/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/minneapolis/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    212.6036834716797,
+    178.76309204101562,
+    135.7778778076172
+   ],
+   [
+    177.16973876953125,
+    148.96925354003906,
+    113.14823913574219
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/minneapolis/sprites/near_0.png",
+  "scale": 1.295,
+  "base": -48
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/minneapolis/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 754,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/minneapolis/sprites/local_0.png",
+     "scale": 0.7792207792207793,
+     "base": 815
+    },
+    {
+     "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
+     "scale": 0.8071748878923767,
+     "base": 815
+    },
+    {
+     "src": "work/cities_v3/minneapolis/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 815
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/minneapolis/sprites/local_1.png",
+     "scale": 0.7751937984496124,
+     "base": 815
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/minneapolis/sprites/landmarks_3.png",
+     "scale": 1.3202247191011236,
+     "base": 815
+    },
+    {
+     "src": "work/cities_v3/minneapolis/sprites/local_3.png",
+     "scale": 0.2755,
+     "base": 815
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/minneapolis/sprites/local_4a.png",
+     "scale": 0.7317073170731707,
+     "base": 815
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.295 (shown 141 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Stone Arch Bridge)"
+ ]
+}

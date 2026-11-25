@@ -1,0 +1,144 @@
+{
+ "city": "Singapore",
+ "next": "coming soon",
+ "version": 3,
+ "season": "Singapore on a warm tropical night, deep blue sky, glowing supertrees and skyline, lush greenery, sparkling bay, futuristic and serene",
+ "sky": "work/cities_v3/singapore/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/singapore/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    43.53276824951172,
+    67.32015228271484,
+    79.5858383178711
+   ],
+   [
+    36.277305603027344,
+    56.10013198852539,
+    66.321533203125
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/singapore/sprites/near_0.png",
+  "scale": 2.0,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/singapore/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/singapore/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 648,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/local_0.png",
+     "scale": 0.8450704225352113,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_5a.png",
+     "scale": 0.4122,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/local_5b.png",
+     "scale": 1.0135135135135136,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/singapore/sprites/landmarks_1b.png",
+     "scale": 1.0157,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/singapore/sprites/local_2.png",
+     "scale": 1.1857707509881423,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/singapore/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up Marina Bay Sands (landmarks_0.png); it is in the skyline art (dup_landmarks.py).",
+  "2026-11-24: removed close-up lotus museum, observation wheel and glass dome (landmarks_2/3/4); all three are in the skyline."
+ ]
+}

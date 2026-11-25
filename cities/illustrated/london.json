@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/london/sprites/near_0.png",
-  "scale": 1.84,
-  "base": -5
- },
  "treewall_cfg": {
   "src": "work/cities_v3/london/sprites/local_4.png",
   "crop": [
@@ -42,125 +37,53 @@
  "backdrop": [
   {
    "src": "work/cities_v3/london/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.434,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 645,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/local_0.png",
-     "scale": 0.5882352941176471,
-     "base": 890
-    },
-    {
-     "src": "work/cities_v3/london/sprites/landmarks_0.png",
-     "scale": 0.9215686274509803,
-     "base": 890
-    },
-    {
-     "src": "work/cities_v3/london/sprites/local_5.png",
-     "scale": 0.6772009029345373,
-     "base": 890
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/london/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/local_6.png",
-     "scale": 0.6870229007633588,
-     "base": 890
-    },
-    {
-     "src": "work/cities_v3/london/sprites/local_1.png",
-     "scale": 0.6172839506172839,
-     "base": 890
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/london/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/local_2.png",
-     "scale": 0.3482,
-     "base": 890
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/london/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/local_3.png",
-     "scale": 0.3034,
-     "base": 890
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/london/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/london/sprites/landmarks_4.png",
-     "scale": 1.2144702842377262,
-     "base": 890
-    },
-    {
-     "src": "work/cities_v3/london/sprites/local_4.png",
-     "scale": 0.3375,
-     "base": 890
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/london/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed the close-up St Paul's dome (landmarks_2); St Paul's is in the skyline.",
   "2026-11-24: removed the close-up Tower Bridge (landmarks_1); Tower Bridge is in the skyline."
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

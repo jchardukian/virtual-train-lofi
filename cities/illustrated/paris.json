@@ -5,93 +5,27 @@
  "sections": [
   {
    "name": "The Seine, Notre-Dame and the Louvre",
-   "ground": "river",
+   "ground": "lawn",
    "far": [],
-   "mid": [
-    {
-     "src": "work/cities/paris/sprites/local_0.png",
-     "scale": 0.8,
-     "base": 700
-    },
-    {
-     "src": "work/cities/paris/sprites/local_1.png",
-     "scale": 0.8,
-     "base": 700
-    }
-   ],
-   "band": {
-    "src": "work/cities/paris/sprites/strips_1.png",
-    "scale": 0.62,
-    "base": 748
-   }
+   "mid": []
   },
   {
    "name": "Boulevards and the Arc de Triomphe",
-   "ground": "river",
+   "ground": "lawn",
    "far": [],
-   "mid": [
-    {
-     "src": "work/cities/paris/sprites/local_2.png",
-     "scale": 0.85,
-     "base": 700
-    },
-    {
-     "src": "work/cities/paris/sprites/local_3.png",
-     "scale": 0.85,
-     "base": 700
-    }
-   ],
-   "band": {
-    "src": "work/cities/paris/sprites/strips_1.png",
-    "scale": 0.62,
-    "base": 748,
-    "offset": 1100
-   }
+   "mid": []
   },
   {
    "name": "The Eiffel Tower",
    "ground": "lawn",
    "far": [],
-   "mid": [
-    {
-     "src": "work/cities/paris/sprites/local_0.png",
-     "scale": 0.8,
-     "flip": true
-    },
-    {
-     "src": "work/cities/paris/sprites/local_1.png",
-     "scale": 0.8,
-     "flip": true
-    }
-   ],
-   "band": {
-    "src": "work/cities/paris/sprites/strips_0.png",
-    "scale": 0.75,
-    "base": 850
-   }
+   "mid": []
   },
   {
    "name": "Montmartre",
    "ground": "lawn",
    "far": [],
-   "mid": [
-    {
-     "src": "work/cities/paris/sprites/local_2.png",
-     "scale": 0.85,
-     "flip": true
-    },
-    {
-     "src": "work/cities/paris/sprites/local_3.png",
-     "scale": 0.85,
-     "flip": true
-    }
-   ],
-   "band": {
-    "src": "work/cities/paris/sprites/strips_0.png",
-    "scale": 0.75,
-    "base": 850,
-    "offset": 1300
-   }
+   "mid": []
   }
  ],
  "grade": {
@@ -112,14 +46,16 @@
  "backdrop": [
   {
    "src": "work/cities/paris/sprites/skyline.png",
-   "scale": 1.65,
-   "haze": 0.35,
-   "speed": 5,
-   "x0": -60,
+   "scale": 2.218,
    "tile": true,
+   "speed": 5,
+   "haze": 0.0,
+   "base": 1072,
    "alpha": 1.0,
-   "base": 712
+   "feather_bottom": 0
   }
  ],
- "gaps_ok": "river sections show the Seine; lawn rows show the city between plane trees"
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 5
 }

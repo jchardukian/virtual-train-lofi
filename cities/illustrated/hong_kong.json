@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/hong_kong/sprites/near_0.png",
-  "scale": 1.917,
-  "base": -5
- },
  "treewall_cfg": {
   "src": "work/cities_v3/hong_kong/sprites/local_0.png",
   "crop": [
@@ -42,102 +37,52 @@
  "backdrop": [
   {
    "src": "work/cities_v3/hong_kong/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 1.95,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 624,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_0.png",
-     "scale": 0.6122448979591837,
-     "base": 840
-    },
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_4b.png",
-     "scale": 0.9009009009009009,
-     "base": 840
-    },
-    {
-     "src": "work/cities_v3/hong_kong/sprites/landmarks_5.png",
-     "scale": 0.929159802306425,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/hong_kong/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_1.png",
-     "scale": 0.8595988538681948,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/hong_kong/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/hong_kong/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/hong_kong/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/hong_kong/sprites/local_4a.png",
-     "scale": 0.6423982869379015,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/hong_kong/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png"
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

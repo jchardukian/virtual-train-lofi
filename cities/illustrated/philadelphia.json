@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/philadelphia/sprites/near_0.png",
-  "scale": 0.85,
-  "base": 100
- },
  "treewall_cfg": {
   "src": "work/cities_v3/philadelphia/sprites/local_2.png",
   "crop": [
@@ -42,124 +37,53 @@
  "backdrop": [
   {
    "src": "work/cities_v3/philadelphia/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.165,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 750,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_0.png",
-     "scale": 0.7725321888412017,
-     "base": 895
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/landmarks_0.png",
-     "scale": 0.8703703703703703,
-     "base": 895
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_4.png",
-     "scale": 0.2596,
-     "base": 895
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/philadelphia/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_5.png",
-     "scale": 0.9009009009009009,
-     "base": 895
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_1.png",
-     "scale": 0.7481296758104738,
-     "base": 895
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/philadelphia/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_6.png",
-     "scale": 0.6622516556291391,
-     "base": 895
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/landmarks_2.png",
-     "scale": 1.7,
-     "base": 895
-    },
-    {
-     "src": "work/cities_v3/philadelphia/sprites/local_2.png",
-     "scale": 0.3581,
-     "base": 895
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/philadelphia/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/philadelphia/sprites/landmarks_3.png",
-     "scale": 1.587837837837838,
-     "base": 895
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/philadelphia/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/philadelphia/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Ben Franklin Bridge)"
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

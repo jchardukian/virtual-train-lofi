@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/bangkok/sprites/near_0.png",
-  "scale": 1.503,
-  "base": -5
- },
  "treewall_cfg": {
   "src": "work/cities_v3/bangkok/sprites/local_3b.png",
   "crop": [
@@ -42,100 +37,49 @@
  "backdrop": [
   {
    "src": "work/cities_v3/bangkok/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.926,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 687,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/local_0.png",
-     "scale": 0.7556675062972292,
-     "base": 840
-    },
-    {
-     "src": "work/cities_v3/bangkok/sprites/landmarks_0.png",
-     "scale": 0.8362989323843416,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/bangkok/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/landmarks_1.png",
-     "scale": 1.3505747126436782,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/bangkok/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/bangkok/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/local_3a.png",
-     "scale": 0.8982035928143712,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/bangkok/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/bangkok/sprites/local_3b.png",
-     "scale": 0.8982035928143712,
-     "base": 840
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/bangkok/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

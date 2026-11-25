@@ -1,0 +1,85 @@
+{
+ "city": "New York City, New York",
+ "next": "the Swiss Alps",
+ "sky": "work/v2/nyc/sky.png",
+ "sky_top": 0.05,
+ "opening": {
+  "src": "work/v2/nyc/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "src": "work/v2/nyc/sprites/far_1.png",
+  "rows": [
+   200,
+   262
+  ]
+ },
+ "near": {
+  "src": "work/v2/nyc/sprites/near_0.png",
+  "scale": 0.9,
+  "base": 120
+ },
+ "treewall_cfg": {
+  "src": "work/v2/nyc/sprites/local_5.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/nyc/sprites/far_0.png",
+   "scale": 1.55,
+   "tile": true,
+   "speed": 6,
+   "haze": 0.05,
+   "base": 760,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Brooklyn rooftops and the bridge",
+   "mid": [],
+   "band": {
+    "src": "work/v2/nyc/sprites/far_1.png",
+    "scale": 1.1,
+    "base": 1000
+   }
+  },
+  {
+   "name": "Midtown",
+   "mid": [],
+   "band": {
+    "src": "work/v2/nyc/sprites/far_1.png",
+    "scale": 1.1,
+    "base": 1000,
+    "offset": 900
+   }
+  },
+  {
+   "name": "Downtown and the harbour",
+   "mid": [],
+   "band": {
+    "src": "work/v2/nyc/sprites/far_1.png",
+    "scale": 1.1,
+    "base": 1000,
+    "offset": 1700
+   }
+  },
+  {
+   "name": "Snowy brownstones",
+   "mid": [],
+   "band": {
+    "src": "work/v2/nyc/sprites/far_1.png",
+    "scale": 1.1,
+    "base": 1000,
+    "offset": 2500
+   }
+  }
+ ]
+}

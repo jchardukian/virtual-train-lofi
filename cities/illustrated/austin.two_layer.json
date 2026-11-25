@@ -1,0 +1,161 @@
+{
+ "city": "Austin, Texas",
+ "next": "Sydney, Australia",
+ "version": 3,
+ "season": "Austin on a hot summer sunset, orange and magenta sky, warm haze, live music glow, oak-covered Hill Country, relaxed and friendly",
+ "sky": "work/cities_v3/austin/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/austin/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "fireflies",
+ "ground_src": {
+  "colour": [
+   [
+    66.99230194091797,
+    93.58840942382812,
+    105.81059265136719
+   ],
+   [
+    55.82691955566406,
+    77.99034118652344,
+    88.17549896240234
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/austin/sprites/near_0.png",
+  "scale": 0.85,
+  "base": -3
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/austin/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/austin/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 637,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/austin/sprites/local_0.png",
+     "scale": 1.7,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/austin/sprites/local_5.png",
+     "scale": 1.0909090909090908,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/austin/sprites/far_1_keyed.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/austin/sprites/local_1.png",
+     "scale": 1.2765957446808511,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/austin/sprites/far_1_keyed.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/austin/sprites/landmarks_2.png",
+     "scale": 1.6785714285714286,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/austin/sprites/local_2.png",
+     "scale": 1.492537313432836,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/austin/sprites/far_1_keyed.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/austin/sprites/local_3.png",
+     "scale": 1.7,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/austin/sprites/far_1_keyed.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/austin/sprites/landmarks_4.png",
+     "scale": 1.7,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/austin/sprites/local_4.png",
+     "scale": 1.180327868852459,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/austin/sprites/far_1_keyed.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Congress Avenue bridge with a bat cloud); landmarks_3.png (the 360-style suspension bridge)"
+ ]
+}

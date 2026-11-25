@@ -1,0 +1,154 @@
+{
+ "city": "Banff, Canada",
+ "next": "San Diego, California",
+ "version": 3,
+ "season": "the Canadian Rockies on a clear cold winter dawn, pink alpenglow on snowy peaks, turquoise ice, deep green spruce, still and pristine",
+ "sky": "work/cities_v3/banff/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/banff/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    162.9029541015625,
+    156.6110382080078,
+    51.6483039855957
+   ],
+   [
+    135.75247192382812,
+    130.5092010498047,
+    43.04025650024414
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/banff/sprites/near_0.png",
+  "scale": 1.353,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/banff/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/banff/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 725,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/banff/sprites/local_0.png",
+     "scale": 0.8287292817679558,
+     "base": 830
+    },
+    {
+     "src": "work/cities_v3/banff/sprites/local_5.png",
+     "scale": 0.994475138121547,
+     "base": 830
+    },
+    {
+     "src": "work/cities_v3/banff/sprites/landmarks_5.png",
+     "scale": 1.7,
+     "base": 830
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/banff/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/banff/sprites/local_6.png",
+     "scale": 0.7392197125256673,
+     "base": 830
+    },
+    {
+     "src": "work/cities_v3/banff/sprites/local_1.png",
+     "scale": 1.1494252873563218,
+     "base": 830
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/banff/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/banff/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/banff/sprites/landmarks_3.png",
+     "scale": 1.2303664921465969,
+     "base": 830
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/banff/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/banff/sprites/local_4.png",
+     "scale": 1.0033444816053512,
+     "base": 830
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/banff/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a wooden train trestle bridge)"
+ ]
+}

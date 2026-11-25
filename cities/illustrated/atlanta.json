@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/atlanta/sprites/near_0.png",
-  "scale": 1.014,
-  "base": -9
- },
  "treewall_cfg": {
   "src": "work/cities_v3/atlanta/sprites/local_5.png",
   "crop": [
@@ -42,118 +37,52 @@
  "backdrop": [
   {
    "src": "work/cities_v3/atlanta/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 1.692,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 673,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_0.png",
-     "scale": 1.2295081967213115,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_5.png",
-     "scale": 1.2195121951219512,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_5.png",
-     "scale": 1.119047619047619,
-     "base": 900
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/atlanta/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_6.png",
-     "scale": 0.9900990099009901,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_1.png",
-     "scale": 0.9161793372319688,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_1.png",
-     "scale": 0.9036144578313253,
-     "base": 900
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/atlanta/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/atlanta/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 40
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/atlanta/sprites/landmarks_3.png",
-     "scale": 1.143552311435523,
-     "base": 900
-    },
-    {
-     "src": "work/cities_v3/atlanta/sprites/local_3.png",
-     "scale": 1.3574660633484164,
-     "base": 900
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/atlanta/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 40
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/atlanta/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 40
-   }
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
  ],
- "hide_backdrop_edge": true
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

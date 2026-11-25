@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/portland_maine/sprites/near_0.png",
-  "scale": 0.85,
-  "base": -2
- },
  "treewall_cfg": {
   "src": "work/cities_v3/portland_maine/sprites/local_5.png",
   "crop": [
@@ -39,107 +34,55 @@
    1.0
   ]
  },
- "backdrop": [],
+ "backdrop": [
+  {
+   "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+   "scale": 1.897,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_0.png",
-     "scale": 1.1070110701107012,
-     "base": 845
-    },
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_5.png",
-     "scale": 0.8633093525179856,
-     "base": 845
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/landmarks_1.png",
-     "scale": 1.7,
-     "base": 845
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_2.png",
-     "scale": 0.9646302250803859,
-     "base": 845
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_3.png",
-     "scale": 1.0067114093959733,
-     "base": 845
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/portland_maine/sprites/landmarks_4.png",
-     "scale": 1.124401913875598,
-     "base": 845
-    },
-    {
-     "src": "work/cities_v3/portland_maine/sprites/local_4.png",
-     "scale": 0.7731958762886598,
-     "base": 845
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_3.png (a covered bridge)"
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

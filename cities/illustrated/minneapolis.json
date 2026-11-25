@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/minneapolis/sprites/near_0.png",
-  "scale": 1.295,
-  "base": -48
- },
  "treewall_cfg": {
   "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
   "crop": [
@@ -42,114 +37,53 @@
  "backdrop": [
   {
    "src": "work/cities_v3/minneapolis/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.03,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 754,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/minneapolis/sprites/local_0.png",
-     "scale": 0.7792207792207793,
-     "base": 815
-    },
-    {
-     "src": "work/cities_v3/minneapolis/sprites/local_4b.png",
-     "scale": 0.8071748878923767,
-     "base": 815
-    },
-    {
-     "src": "work/cities_v3/minneapolis/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 815
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/minneapolis/sprites/local_1.png",
-     "scale": 0.7751937984496124,
-     "base": 815
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/minneapolis/sprites/landmarks_3.png",
-     "scale": 1.3202247191011236,
-     "base": 815
-    },
-    {
-     "src": "work/cities_v3/minneapolis/sprites/local_3.png",
-     "scale": 0.2755,
-     "base": 815
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/minneapolis/sprites/local_4a.png",
-     "scale": 0.7317073170731707,
-     "base": 815
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/minneapolis/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.295 (shown 141 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Stone Arch Bridge)"
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

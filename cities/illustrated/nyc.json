@@ -16,11 +16,6 @@
    262
   ]
  },
- "near": {
-  "src": "work/v2/nyc/sprites/near_0.png",
-  "scale": 0.9,
-  "base": 120
- },
  "treewall_cfg": {
   "src": "work/v2/nyc/sprites/local_5.png",
   "crop": [
@@ -33,53 +28,42 @@
  "backdrop": [
   {
    "src": "work/v2/nyc/sprites/far_0.png",
-   "scale": 1.55,
+   "scale": 2.764,
    "tile": true,
-   "speed": 6,
-   "haze": 0.05,
-   "base": 760,
-   "alpha": 1.0
+   "speed": 5,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "Brooklyn rooftops and the bridge",
    "mid": [],
-   "band": {
-    "src": "work/v2/nyc/sprites/far_1.png",
-    "scale": 1.1,
-    "base": 1000
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "Midtown",
    "mid": [],
-   "band": {
-    "src": "work/v2/nyc/sprites/far_1.png",
-    "scale": 1.1,
-    "base": 1000,
-    "offset": 900
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "Downtown and the harbour",
    "mid": [],
-   "band": {
-    "src": "work/v2/nyc/sprites/far_1.png",
-    "scale": 1.1,
-    "base": 1000,
-    "offset": 1700
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "Snowy brownstones",
    "mid": [],
-   "band": {
-    "src": "work/v2/nyc/sprites/far_1.png",
-    "scale": 1.1,
-    "base": 1000,
-    "offset": 2500
-   }
+   "far": [],
+   "ground": "lawn"
   }
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }

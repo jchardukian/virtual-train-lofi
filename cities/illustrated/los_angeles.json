@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/los_angeles/sprites/near_0.png",
-  "scale": 1.066,
-  "base": -5
- },
  "treewall_cfg": {
   "src": "work/cities_v3/los_angeles/sprites/local_4.png",
   "crop": [
@@ -42,122 +37,49 @@
  "backdrop": [
   {
    "src": "work/cities_v3/los_angeles/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.582,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 819,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_0.png",
-     "scale": 1.1320754716981132,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_4.png",
-     "scale": 0.6109979633401222,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 880
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/los_angeles/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_1a.png",
-     "scale": 1.3636363636363635,
-     "base": 880
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/los_angeles/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
-   "mid": [
-    {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_2.png",
-     "scale": 1.246684350132626,
-     "base": 880
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/los_angeles/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
-   "mid": [
-    {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_3.png",
-     "scale": 1.284738041002278,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_2.png",
-     "scale": 1.6483516483516483,
-     "base": 880
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/los_angeles/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
-   "mid": [
-    {
-     "src": "work/cities_v3/los_angeles/sprites/landmarks_4.png",
-     "scale": 1.5112540192926045,
-     "base": 880
-    },
-    {
-     "src": "work/cities_v3/los_angeles/sprites/local_3.png",
-     "scale": 1.5228426395939085,
-     "base": 880
-    }
-   ],
-   "band": {
-    "src": "work/cities_v3/los_angeles/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 35
-   }
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
- "gaps_ok": "city/bay scenery shows between palms/cacti; reviewed 2026-11-25"
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 5
 }

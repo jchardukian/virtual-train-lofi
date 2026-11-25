@@ -1,0 +1,148 @@
+{
+ "city": "Amsterdam, Netherlands",
+ "next": "New Orleans, Louisiana",
+ "version": 3,
+ "season": "Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light",
+ "sky": "work/cities_v3/amsterdam/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/amsterdam/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    80.32868957519531,
+    95.48106384277344,
+    116.535400390625
+   ],
+   [
+    66.9405746459961,
+    79.56755828857422,
+    97.11283874511719
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/amsterdam/sprites/near_0.png",
+  "scale": 1.353,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/amsterdam/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/amsterdam/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 706,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/amsterdam/sprites/local_0.png",
+     "scale": 0.6282722513089005,
+     "base": 860
+    },
+    {
+     "src": "work/cities_v3/amsterdam/sprites/local_5.png",
+     "scale": 0.55,
+     "base": 860
+    },
+    {
+     "src": "work/cities_v3/amsterdam/sprites/landmarks_0.png",
+     "scale": 1.2303664921465969,
+     "base": 860
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/amsterdam/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/amsterdam/sprites/landmarks_1.png",
+     "scale": 1.4826498422712935,
+     "base": 860
+    },
+    {
+     "src": "work/cities_v3/amsterdam/sprites/local_1.png",
+     "scale": 0.6716417910447762,
+     "base": 860
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/amsterdam/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/amsterdam/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/amsterdam/sprites/landmarks_3.png",
+     "scale": 1.2260869565217392,
+     "base": 860
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/amsterdam/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/amsterdam/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (a hump-backed canal bridge with flower boxes)"
+ ]
+}

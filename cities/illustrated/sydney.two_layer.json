@@ -1,0 +1,139 @@
+{
+ "city": "Sydney, Australia",
+ "next": "Philadelphia, Pennsylvania",
+ "version": 3,
+ "season": "Sydney on a bright blue summer day, sparkling harbour, crisp white and sandstone, green parks, cheerful sea breeze",
+ "sky": "work/cities_v3/sydney/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/sydney/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    159.29078674316406,
+    122.81885528564453,
+    35.837039947509766
+   ],
+   [
+    132.74232482910156,
+    102.34905242919922,
+    29.864200592041016
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/sydney/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 35
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/sydney/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/sydney/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 887,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/sydney/sprites/local_0.png",
+     "scale": 0.6711409395973155,
+     "base": 800
+    },
+    {
+     "src": "work/cities_v3/sydney/sprites/local_5.png",
+     "scale": 0.55,
+     "base": 800
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/sydney/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/sydney/sprites/local_1.png",
+     "scale": 0.9036144578313253,
+     "base": 800
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/sydney/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/sydney/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/sydney/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/sydney/sprites/local_4.png",
+     "scale": 1.3688212927756653,
+     "base": 800
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/sydney/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1a.png, landmarks_1b.png, landmarks_3.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png"
+ ]
+}

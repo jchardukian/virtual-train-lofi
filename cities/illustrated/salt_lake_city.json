@@ -25,11 +25,6 @@
    ]
   ]
  },
- "near": {
-  "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-  "scale": 1.569,
-  "base": -73
- },
  "treewall_cfg": {
   "src": "work/cities_v3/salt_lake_city/sprites/local_6.png",
   "crop": [
@@ -42,74 +37,52 @@
  "backdrop": [
   {
    "src": "work/cities_v3/salt_lake_city/sprites/far_0.png",
-   "scale": 1.5,
+   "scale": 2.091,
    "tile": true,
    "speed": 5,
-   "haze": 0.15,
-   "base": 863,
-   "alpha": 1.0
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
   }
  ],
  "sections": [
   {
    "name": "part 1",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 300,
-    "feather_top": 40
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 2",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/near_0.png",
-    "scale": 0.95,
-    "base": 905,
-    "offset": 1000,
-    "feather_top": 40
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 3",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
-    "scale": 0.783,
-    "base": 905,
-    "offset": 1700,
-    "feather_top": 30
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 4",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
-    "scale": 0.783,
-    "base": 905,
-    "offset": 2400,
-    "feather_top": 30
-   }
+   "far": [],
+   "ground": "lawn"
   },
   {
    "name": "part 5",
    "mid": [],
-   "band": {
-    "src": "work/cities_v3/salt_lake_city/sprites/city_1.png",
-    "scale": 0.783,
-    "base": 905,
-    "offset": 3100,
-    "feather_top": 30
-   }
+   "far": [],
+   "ground": "lawn"
   }
  ],
- "mid_front": true,
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.569 (shown 116 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
- ]
+ ],
+ "single_layer": true,
+ "street_speed": 5,
+ "gaps_ok": "single layer"
 }
