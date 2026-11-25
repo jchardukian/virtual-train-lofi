@@ -53,13 +53,7 @@
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/washington_dc/sprites/local_0.png",
-     "scale": 0.6754221388367729,
-     "base": 850
-    }
-   ],
+   "mid": [],
    "band": {
     "src": "work/cities_v3/washington_dc/sprites/far_1.png",
     "scale": 0.95,
