@@ -110,7 +110,10 @@ def prep(cities, src=None):
             print(c, "already prepared"); continue
         m = pathlib.Path(src) if src else VID / f"{c}_master.mp4"
         if not src:
-            fetch_master(c, m)
+            try:
+                fetch_master(c, m)
+            except SystemExit as e:                     # not built yet: leave it out of the stream
+                print("skip:", e); continue
         tmp = out.with_suffix(".tmp.mp4")
         sh("ffmpeg", "-v", "error", "-y", "-i", str(m), "-an", "-vf", f"scale={W}:{H}:flags=lanczos,fps={FPS}",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "17", "-g", str(2 * FPS), "-pix_fmt", "yuv420p", str(tmp))
