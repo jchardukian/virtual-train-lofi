@@ -282,11 +282,23 @@ class City:
             er = er.reshape(ext, a.shape[1], -1)
             # fill the gap between the picture's last solid row and the strip source (if the source sat higher)
             lay = (np.concatenate([rgb[:src_end], er]), np.concatenate([a[:src_end], ea.reshape(ext, a.shape[1], -1)]))
+            ft = self.flat_top(lay)
+            if ft:
+                lay = self.feather(lay, ft, 0)
             ext = ext - (b1 - src_end)
             L = dict(L, base=int(round(L.get("base", 712) + ext / S)))
             return self._far_tuple(L, lay)
-        lay = self.feather(lay, 0, L.get("feather_bottom", 60) * S)
+        lay = self.feather(lay, self.flat_top(lay), L.get("feather_bottom", 60) * S)
         return self._far_tuple(L, lay)
+
+    @staticmethod
+    def flat_top(lay):
+        """owner 2026-11-25 (Hallstatt): a skyline picture whose top edge is cut straight showed as a ruled line in the
+        sky. Such pictures get a soft fade at the top instead (pictures with an open silhouette get none)."""
+        a = lay[1][..., 0]
+        cov = (a > 0.8).mean(axis=1)
+        r = int(np.argmax(cov > 0.02))
+        return int(90 * S) if cov[r:r + 3].mean() > 0.6 else 0
 
     def _far_tuple(self, L, lay):
         if L.get("tile"):
