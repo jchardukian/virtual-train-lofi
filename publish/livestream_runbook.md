@@ -21,3 +21,7 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 3. Waiting systemd jobs read their script once at start: to change a queued list, rewrite the script AND restart the unit, then verify with pgrep.
 4. Every sheet is reviewed before release; anything questionable is fixed before it builds, not after.
 5. Morning report: facts only — what is done, what is not, the time it will be done.
+
+## Content plan (owner 2026-11-25) — see publish/limits.json content_plan
+- Daily until every city is posted (~50 days): 1 city long-form 11:00 CT + 2 Shorts 14:30/20:30 CT, plus 1 livestream.
+- After that: if a new city batch exists, keep going with it; otherwise no more 5-min long-forms — Shorts ending with the tunnel + 1 livestream per day.
