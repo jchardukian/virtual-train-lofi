@@ -46,86 +46,64 @@
    "tile": true,
    "speed": 5,
    "haze": 0.15,
-   "base": 800,
+   "base": 760,
    "alpha": 1.0
   }
  ],
  "sections": [
   {
    "name": "part 1",
-   "mid": [
-    {
-     "src": "work/cities_v3/miami/sprites/landmarks_0.png",
-     "scale": 1.7,
-     "base": 875
-    },
-    {
-     "src": "work/cities_v3/miami/sprites/local_0.png",
-     "scale": 0.6329113924050633,
-     "base": 875
-    }
-   ],
+   "mid": [],
    "band": {
-    "src": "work/cities_v3/miami/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
+    "src": "work/cities_v3/miami/sprites/palm_row.png",
+    "scale": 0.6,
+    "base": 1000,
     "offset": 300,
-    "feather_top": 35
+    "feather_top": 0
    }
   },
   {
    "name": "part 2",
-   "mid": [
-    {
-     "src": "work/cities_v3/miami/sprites/landmarks_1.png",
-     "scale": 1.3583815028901733,
-     "base": 875
-    },
-    {
-     "src": "work/cities_v3/miami/sprites/local_1.png",
-     "scale": 0.3482,
-     "base": 875
-    }
-   ],
+   "mid": [],
    "band": {
-    "src": "work/cities_v3/miami/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
+    "src": "work/cities_v3/miami/sprites/palm_row.png",
+    "scale": 0.6,
+    "base": 1000,
     "offset": 1000,
-    "feather_top": 35
+    "feather_top": 0
    }
   },
   {
    "name": "part 3",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/miami/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
+    "src": "work/cities_v3/miami/sprites/palm_row.png",
+    "scale": 0.6,
+    "base": 1000,
     "offset": 1700,
-    "feather_top": 35
+    "feather_top": 0
    }
   },
   {
    "name": "part 4",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/miami/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
+    "src": "work/cities_v3/miami/sprites/palm_row.png",
+    "scale": 0.6,
+    "base": 1000,
     "offset": 2400,
-    "feather_top": 35
+    "feather_top": 0
    }
   },
   {
    "name": "part 5",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/miami/sprites/far_1.png",
-    "scale": 0.95,
-    "base": 905,
+    "src": "work/cities_v3/miami/sprites/palm_row.png",
+    "scale": 0.6,
+    "base": 1000,
     "offset": 3100,
-    "feather_top": 35
+    "feather_top": 0
    }
   }
  ],
@@ -133,5 +111,6 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png"
- ]
+ ],
+ "no_fill_down": true
 }
