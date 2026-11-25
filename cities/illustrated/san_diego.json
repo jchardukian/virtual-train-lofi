@@ -61,7 +61,7 @@
     }
    ],
    "band": {
-    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "src": "work/cities_v3/san_diego/sprites/far_1_keyed.png",
     "scale": 0.95,
     "base": 905,
     "offset": 300,
@@ -83,7 +83,7 @@
     }
    ],
    "band": {
-    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "src": "work/cities_v3/san_diego/sprites/far_1_keyed.png",
     "scale": 0.95,
     "base": 905,
     "offset": 1000,
@@ -94,7 +94,7 @@
    "name": "part 3",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "src": "work/cities_v3/san_diego/sprites/far_1_keyed.png",
     "scale": 0.95,
     "base": 905,
     "offset": 1700,
@@ -111,7 +111,7 @@
     }
    ],
    "band": {
-    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "src": "work/cities_v3/san_diego/sprites/far_1_keyed.png",
     "scale": 0.95,
     "base": 905,
     "offset": 2400,
@@ -122,7 +122,7 @@
    "name": "part 5",
    "mid": [],
    "band": {
-    "src": "work/cities_v3/san_diego/sprites/far_1.png",
+    "src": "work/cities_v3/san_diego/sprites/far_1_keyed.png",
     "scale": 0.95,
     "base": 905,
     "offset": 3100,

@@ -41,7 +41,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/savannah/sprites/far_0.png",
+   "src": "work/cities_v3/savannah/sprites/far_0_trim.png",
    "scale": 1.5,
    "tile": true,
    "speed": 5,
