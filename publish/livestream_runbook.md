@@ -27,7 +27,7 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 - After that: if a new city batch exists, keep going with it; otherwise no more 5-min long-forms — Shorts ending with the tunnel + 1 livestream per day.
 
 ## 2026-11-25 19:10Z — street speed fix (owner: street row raced past the skyline, sky showing through in SF)
-- Renderer: STREET_SPEED 32 px/s cap (was ~83). Every city rebuilds with it.
+- Renderer: STREET_SPEED 7 px/s (owner: almost the skyline pace of 5); close-ups off at this speed. Every city rebuilds with it.
 - Server 1: run10 (paris nyc kansas_city dubai detroit london anchorage barcelona bangkok charleston boston) -> run11 (vancouver austin san_diego savannah washington_dc) -> run12 (chicago miami las_vegas atlanta banff cape_town edinburgh hallstatt hong_kong honolulu istanbul kyoto lake_bled lisbon los_angeles marrakech)
 - Server 2: lofi-stream-1126 (stream 1, built from current versions) -> run9 (singapore rio san_francisco amsterdam new_orleans cairo seattle san_antonio) -> run10 (mexico_city minneapolis nashville philadelphia phoenix_sedona pittsburgh portland_maine prague reykjavik salt_lake_city santorini seoul sydney tokyo venice)
 - Releases from now on use the slowed versions (KC/Dubai/Detroit rebuild early in server 1 run10).
