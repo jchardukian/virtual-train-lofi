@@ -108,7 +108,8 @@
    "files": "work/music_el/ (gitignored) and archive bucket music/elevenlabs/"
   },
   "elevenlabs_batch_2026_11_24": "owner approved all 10 (g01-g06 guitar, p01-p04 piano): 'All the songs are fine'",
-  "elevenlabs_batch_2026_11_25": "owner asked for 'gentle easy going vibe ... catchy melody' songs; generated d01-d04 (3 min each) for review"
+  "elevenlabs_batch_2026_11_25": "owner asked for 'gentle easy going vibe ... catchy melody' songs; generated d01-d04 (3 min each) for review",
+  "song_style_2026_11_25": "owner: study Lofi Girl-style chillhop; songs need a hook and melody like a song without words, not a 3-min loop. Method: pipeline/el_song.py composition plan Intro/Verse A/Verse B/Hook/Breakdown/Hook return/Outro, one named lead and one theme, ~2.75 min, 72-88 bpm, jazzy 7th/9th chords, swung boom-bap, never crackle/hiss/noise/vocals. Samples s01, s02 sent for review."
  },
  "livestream_plan": {
   "evergreen": "owner 2026-11-25 'Sounds good': each daily ~4-hour livestream is left as YouTube's automatic saved video (VOD) = the evergreen long-form; no separate compilation upload for now. Later, optionally upload a polished chaptered 4K compilation of the best-performing order.",
