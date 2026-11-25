@@ -152,5 +152,6 @@
   }
  ],
  "mid_front": true,
- "ground_first": true
+ "ground_first": true,
+ "gaps_ok": "city/bay scenery shows between palms/cacti; reviewed 2026-11-25"
 }

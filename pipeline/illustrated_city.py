@@ -138,7 +138,8 @@ class City:
         self.band_off = {}
         # owner 2026-11-24: no separate foreground strip; the street row runs down to the window sill instead
         self.keep_near = cfg.get("keep_near", False)
-        self.mid_speed = MID
+        self.cfg_treewall = cfg.get("keep_treewall", False)
+        self.mid_speed = min(MID, cfg.get("street_speed", STREET_SPEED) * S)   # close-ups move with the street
         SILL = 1040                                    # just below the window's lower edge at 1080p
         self.band_tops = []
         self.row_tops = []
@@ -171,6 +172,9 @@ class City:
                 flat = len(rows) and (im[r0 + 2, :, 3] > 200).mean() > 0.9 if im.shape[2] == 4 else True
                 if flat:                                    # straight-cut top: the skyline's edge would show above it
                     self.band_tops.append(b.get("base", 850) - (im.shape[0] - r0) * b.get("scale", 1.0) + b.get("feather_top", 90))
+                b["speed"] = min(b.get("speed", BAND / S), cfg.get("street_speed", STREET_SPEED))   # every row, river ones too
+                if zoom:
+                    self.mid_speed = b["speed"] * S
                 bkey = ("band", b["src"], b.get("scale", 1.0), b.get("flip", False), b.get("feather_top", 90), b.get("feather_bottom", 45))
                 if bkey not in self.cache:            # sections that share a strip share one copy of it (4K memory)
                     lay = self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))
@@ -379,7 +383,7 @@ class City:
             self.draw_mids(img, t, bob)
         if self.keep_near:
             strip(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)
-        for k in range(1, self.n):
+        for k in (range(1, self.n) if self.cfg_treewall else ()):   # owner 2026-11-25: no fast blurred foreground sweep
             x = int(W + 150 * S - 620 * S * (t - (k * self.sect - 3.4)))
             if -self.treewall[1].shape[1] < x < W:
                 over(img, *self.treewall, x, H + 60 * S - self.treewall[1].shape[0])

@@ -134,5 +134,6 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
- ]
+ ],
+ "gaps_ok": "city/bay scenery shows between palms/cacti; reviewed 2026-11-25"
 }
