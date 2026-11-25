@@ -63,11 +63,6 @@
      "src": "work/cities_v3/austin/sprites/local_5.png",
      "scale": 1.0909090909090908,
      "base": 900
-    },
-    {
-     "src": "work/cities_v3/austin/sprites/landmarks_5.png",
-     "scale": 1.7,
-     "base": 900
     }
    ],
    "band": {
