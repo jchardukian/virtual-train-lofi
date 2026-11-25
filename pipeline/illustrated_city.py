@@ -159,8 +159,11 @@ class City:
                     b["speed"] = b.get("speed", BAND / S) * f
                     self.mid_speed = b["speed"] * S
                 im = cv2.imread(str(ROOT / b["src"]), cv2.IMREAD_UNCHANGED)
-                rows = np.where((im[..., 3] > 200).mean(1) > 0.5)[0] if im.shape[2] == 4 else np.array([0])
-                r0 = int(rows[0]) if len(rows) else 0       # first solidly painted row (art often has empty rows on top)
+                cov = (im[..., 3] > 200).mean(1) if im.shape[2] == 4 else np.ones(im.shape[0])
+                thin = np.where(cov < 0.85)[0]               # top of the solid body (palms, spires above it don't count)
+                thin = thin[thin < len(cov) * 0.9]
+                r0 = int(thin[-1]) + 1 if len(thin) else 0
+                rows = np.array([r0])
                 self.row_tops.append(b.get("base", 850) - (im.shape[0] - r0) * b.get("scale", 1.0) + b.get("feather_top", 90))
                 flat = len(rows) and (im[r0 + 2, :, 3] > 200).mean() > 0.9 if im.shape[2] == 4 else True
                 if flat:                                    # straight-cut top: the skyline's edge would show above it
@@ -260,16 +263,26 @@ class City:
             sol = np.where(a[..., 0].mean(axis=1) > 0.6)[0]
             b1 = int(sol[-1]) + 1 if len(sol) else a.shape[0]
             rgb, a = rgb[:b1], a[:b1]
+            full = np.where(a[..., 0].mean(axis=1) > 0.97)[0]
             ext = int(round((reach + 60 - L.get("base", 712)) * S))
-            m = min(ext, b1)
-            er, ea = rgb[b1 - m:][::-1], a[b1 - m:][::-1]
-            if ext > m:
-                er = np.concatenate([er, np.repeat(er[-1:], ext - m, 0)]); ea = np.concatenate([ea, np.repeat(ea[-1:], ext - m, 0)])
-            kb = odd(int(15 * S))
-            er = cv2.GaussianBlur(er, (kb, kb), 0) * 0.92
-            ea = np.ones_like(ea)
-            er = er.reshape(ea.shape[0], ea.shape[1], -1)
-            lay = (np.concatenate([rgb, er]), np.concatenate([a, ea]))
+            # continue the picture's own lowest solid strip (ground, trees, water) by mirror-tiling a thin band of it,
+            # so it reads as more of the same scenery, not as an upside-down copy of the skyline
+            kk = max(4, int(28 * S))
+            src_end = int(full[-1]) + 1 if len(full) else b1
+            strip_r, strip_a = rgb[max(0, src_end - kk):src_end], np.clip(a[max(0, src_end - kk):src_end], 1e-3, 1)
+            strip = strip_r / strip_a                                   # un-premultiply: no dark holes
+            reps = []
+            i = 0
+            while sum(x.shape[0] for x in reps) < ext:
+                reps.append(strip[::-1] if i % 2 == 0 else strip); i += 1
+            er = np.concatenate(reps)[:ext]
+            kb = odd(int(9 * S))
+            er = cv2.GaussianBlur(er, (kb, kb), 0) * 0.94
+            ea = np.ones(er.shape[:2] + (1,), np.float32) if a.ndim == 3 else np.ones(er.shape[:2], np.float32)
+            er = er.reshape(ext, a.shape[1], -1)
+            # fill the gap between the picture's last solid row and the strip source (if the source sat higher)
+            lay = (np.concatenate([rgb[:src_end], er]), np.concatenate([a[:src_end], ea.reshape(ext, a.shape[1], -1)]))
+            ext = ext - (b1 - src_end)
             L = dict(L, base=int(round(L.get("base", 712) + ext / S)))
             return self._far_tuple(L, lay)
         lay = self.feather(lay, 0, L.get("feather_bottom", 60) * S)
