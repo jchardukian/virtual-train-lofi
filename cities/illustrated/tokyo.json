@@ -109,10 +109,6 @@
     {
      "src": "work/cities/tokyo/sprites/local_3.png",
      "scale": 1.2
-    },
-    {
-     "src": "work/v2/tokyo2/sprites/local_7b.png",
-     "scale": 0.9
     }
    ],
    "band": {
@@ -178,10 +174,6 @@
      "src": "work/cities/tokyo/sprites/local_0.png",
      "scale": 1.15,
      "flip": true
-    },
-    {
-     "src": "work/v2/tokyo2/sprites/local_7a.png",
-     "scale": 0.95
     },
     {
      "src": "work/v2/tokyo2/sprites/local_1.png",

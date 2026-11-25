@@ -171,7 +171,7 @@ class City:
                 bkey = ("band", b["src"], b.get("scale", 1.0), b.get("flip", False), b.get("feather_top", 90), b.get("feather_bottom", 45))
                 if bkey not in self.cache:            # sections that share a strip share one copy of it (4K memory)
                     lay = self.load(b["src"], b.get("scale", 1.0), b.get("flip", False))
-                    if zoom:
+                    if zoom and not cfg.get("no_fill_down"):
                         lay = self.fill_down(lay)
                     self.cache[bkey] = loop(self.feather(lay, b.get("feather_top", 90) * S, b.get("feather_bottom", 45) * S, 0.0 if self.seam2 else 0.35), 140 * S)
                 band = (self.cache[bkey], b.get("base", 850) * S, b.get("speed", BAND / S) * S, b.get("offset", 300) * S)

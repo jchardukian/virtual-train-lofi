@@ -6,15 +6,7 @@
   {
    "name": "The Seine, Notre-Dame and the Louvre",
    "ground": "river",
-   "far": [
-    {
-     "src": "work/cities/paris/sprites/skyline.png",
-     "scale": 1.65,
-     "haze": 0.35,
-     "speed": 5,
-     "x0": -60
-    }
-   ],
+   "far": [],
    "mid": [
     {
      "src": "work/cities/paris/sprites/landmarks_1.png",
@@ -41,16 +33,7 @@
   {
    "name": "Boulevards and the Arc de Triomphe",
    "ground": "river",
-   "far": [
-    {
-     "src": "work/cities/paris/sprites/skyline.png",
-     "scale": 1.65,
-     "haze": 0.35,
-     "speed": 5,
-     "x0": -420,
-     "flip": true
-    }
-   ],
+   "far": [],
    "mid": [
     {
      "src": "work/cities/paris/sprites/local_2.png",
@@ -78,15 +61,7 @@
   {
    "name": "The Eiffel Tower",
    "ground": "lawn",
-   "far": [
-    {
-     "src": "work/cities/paris/sprites/skyline.png",
-     "scale": 1.5,
-     "haze": 0.5,
-     "speed": 4,
-     "x0": -200
-    }
-   ],
+   "far": [],
    "mid": [
     {
      "src": "work/cities/paris/sprites/local_0.png",
@@ -112,16 +87,7 @@
   {
    "name": "Montmartre",
    "ground": "lawn",
-   "far": [
-    {
-     "src": "work/cities/paris/sprites/skyline.png",
-     "scale": 1.5,
-     "haze": 0.5,
-     "speed": 4,
-     "x0": -380,
-     "flip": true
-    }
-   ],
+   "far": [],
    "mid": [
     {
      "src": "work/cities/paris/sprites/landmarks_5.png",
@@ -164,5 +130,14 @@
   "saturation": 0.9,
   "gamma": 0.97,
   "note": "soft rose and lavender late afternoon"
- }
+ },
+ "backdrop": [
+  {
+   "src": "work/cities/paris/sprites/skyline.png",
+   "scale": 1.65,
+   "haze": 0.35,
+   "speed": 5,
+   "x0": -60
+  }
+ ]
 }
