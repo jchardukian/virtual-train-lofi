@@ -14,3 +14,10 @@ Stream 1: Wed Nov 25 10:15pm CST = 04:15Z Nov 26, built and sent from SERVER 2.
 - Tell the owner the watch link once live.
 Stream 2: Thu Nov 26 7-11pm CST = 01:00Z Nov 27 (day 2026-11-27): stream_day.sh on whichever server is free.
 Delete server 2 only after stream 1 ended and its rebuilds are done.
+
+## Standing rules (owner 2026-11-25: get it right the first time)
+1. Nothing is queued until `pipeline/preflight.py <city>` passes ON THE SERVER that will build it (art, music, test render).
+2. Every change to a running system is verified by reading back its actual state (running processes, file contents) — never assumed.
+3. Waiting systemd jobs read their script once at start: to change a queued list, rewrite the script AND restart the unit, then verify with pgrep.
+4. Every sheet is reviewed before release; anything questionable is fixed before it builds, not after.
+5. Morning report: facts only — what is done, what is not, the time it will be done.
