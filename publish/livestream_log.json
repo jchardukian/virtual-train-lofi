@@ -5,6 +5,12 @@
   "broadcast_id": "xAqPKcRV2ko",
   "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795666628867382",
   "scheduled_start": "2026-11-26T04:20:00Z",
-  "watch_url": "https://youtu.be/xAqPKcRV2ko"
+  "watch_url": "https://youtu.be/xAqPKcRV2ko",
+  "actual_start": "2026-11-26T04:18:04Z",
+  "actual_end": "2026-11-26T08:16:25Z",
+  "views_at_end": 3,
+  "likes": 1,
+  "notes": "no sound for first ~30 min (96 kHz AAC), restarted 04:50Z with 48 kHz; VOD set private 2026-11-26 (only corrected versions evergreen)",
+  "vod_privacy": "private"
  }
 ]
