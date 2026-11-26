@@ -36,7 +36,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/new_orleans/sprites/far_0.png",
+   "src": "work/cities_v3/new_orleans/sprites/far_0_seam.png",
    "scale": 1.786,
    "tile": true,
    "speed": 5,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed the close-up St. Louis Cathedral (landmarks_0.png); it is in the skyline art."
+  "2026-11-24: removed the close-up St. Louis Cathedral (landmarks_0.png); it is in the skyline art.",
+  "2026-11-26: far_0_seam.png = far_0 with the right end's sunset glow carried (mirrored, rows reflected down to the horizon, fading out over 190 px) into the open sky at the left end behind the steamboat, so the loop join has glow on both sides (the cut join had shown a diagonal edge)."
  ],
  "single_layer": true,
  "street_speed": 5,
