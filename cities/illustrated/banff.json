@@ -36,8 +36,8 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/banff/sprites/far_0.png",
-   "scale": 2.423,
+   "src": "work/cities_v3/banff/sprites/far_0_peaks.png",
+   "scale": 3.1,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a wooden train trestle bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a wooden train trestle bridge)",
+  "2026-11-26: far_0 was cut straight across the summits (the renderer faded that edge, reading as a flat mist line over every peak). far_0_peaks.png carves a jagged, seamlessly looping ridgeline into the painting. Scale 2.423 -> 3.1 so the range fills ~half the window."
  ],
  "single_layer": true,
  "street_speed": 5,
