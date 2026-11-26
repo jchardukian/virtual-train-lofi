@@ -39,7 +39,7 @@
    "src": "work/cities_v3/san_francisco/sprites/far_0.png",
    "scale": 4.135,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1306,
    "alpha": 1.0,
@@ -86,6 +86,6 @@
   "2026-11-24: removed the Golden Gate Bridge tower (landmarks_0) from the street; a bridge tower among houses looked wrong, and the opening already shows the bridge."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

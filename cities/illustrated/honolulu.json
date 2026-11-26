@@ -39,7 +39,7 @@
    "src": "work/cities_v3/honolulu/sprites/far_0_seam.png",
    "scale": 1.993,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-26: far_0_seam.png = far_0 cropped x170-1290 (no hotels at the loop ends) with the corner flowers painted out with water; the loop crossfade had ghosted the end hotels/flowers into each other."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

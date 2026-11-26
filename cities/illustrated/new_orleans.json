@@ -39,7 +39,7 @@
    "src": "work/cities_v3/new_orleans/sprites/far_0_seam.png",
    "scale": 1.786,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1072,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-26: far_0_seam.png = far_0 with the right end's sunset glow carried (mirrored, rows reflected down to the horizon, fading out over 190 px) into the open sky at the left end behind the steamboat, so the loop join has glow on both sides (the cut join had shown a diagonal edge)."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

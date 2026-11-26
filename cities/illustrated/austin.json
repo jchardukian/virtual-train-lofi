@@ -39,7 +39,7 @@
    "src": "work/cities_v3/austin/sprites/far_0.png",
    "scale": 2.132,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Congress Avenue bridge with a bat cloud); landmarks_3.png (the 360-style suspension bridge)"
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

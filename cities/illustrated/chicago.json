@@ -39,7 +39,7 @@
    "src": "work/cities_v3/chicago/sprites/far_0.png",
    "scale": 1.903,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -79,6 +79,6 @@
   }
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

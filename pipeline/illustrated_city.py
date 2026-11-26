@@ -18,7 +18,8 @@ sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
 SEC = 300
-STREET_SPEED = 5.0      # px/s at 1080p: owner 2026-11-25 wants the street at the SAME speed as the skyline (one cohesive view)
+STREET_SPEED = 25.0     # px/s at 1080p: owner 2026-11-26 picked 5x the old 5 px/s (one picture, so no street row to match;
+                        # at 5 px/s the view looked like a still photo). Crosses the window in ~70 s.
 HAZE = (196, 208, 250)
 ART, ART_X2 = "work/cities_v3/", ROOT / "work/cities_x2"     # 4K renders use the 2x-upscaled art where it exists
 
@@ -28,6 +29,26 @@ def art(src, scale=1.0):
     if S > 1 and src.startswith(ART) and (ART_X2 / src[len(ART):]).exists():
         return ART_X2 / src[len(ART):], scale * S / 2
     return ROOT / src, scale * S
+
+
+def best_crop(layer, frac=0.18):
+    """owner 2026-11-26 (5x speed: every city's loop point now shows): trim the picture's two ends so they match.
+    Searches the first and last `frac` of the width for the (start, end) pair whose neighbourhoods look most alike
+    (premultiplied colour + coverage, coarse grid), so loop_cut joins like with like (sky to sky, roofs to roofs)."""
+    rgb, a = layer
+    h, w = a.shape[:2]
+    st = 4 * S
+    rows = max(8, h // (12 * S))
+    f = cv2.resize(np.concatenate([rgb, a * 255.0], axis=2), (w // st, rows), interpolation=cv2.INTER_AREA)
+    f = f.transpose(1, 0, 2).reshape(w // st, -1)                  # one feature row per 4 px column strip
+    win, n = 12, int(frac * w / st)
+    A = np.stack([f[i:i + win].ravel() for i in range(0, n)])                       # candidate starts
+    B = np.stack([f[j - win:j].ravel() for j in range(len(f) - n, len(f) + 1)])      # candidate ends
+    # the end's last strips continue into the start's first strips: compare end window with start window
+    d = np.stack([np.abs(A - b).mean(axis=1) for b in B])         # row by row: keeps memory small at 4K
+    j, i = np.unravel_index(np.argmin(d), d.shape)
+    x0, x1 = i * st, (len(f) - n + j) * st
+    return (rgb[:, x0:x1], a[:, x0:x1]), x0, x1
 
 
 def loop_cut(layer, ov):
@@ -350,6 +371,8 @@ class City:
             elif L.get("seam") == "straight":       # art whose ends can't match: a clean vertical join at a building wall
                 lp = loop(lay, 16 * S)
             else:
+                if L.get("seam") != "nosearch":
+                    lay, _, _ = best_crop(lay)
                 lp = loop_cut(lay, 300 * S)
             return ("tile", lp, L.get("base", 712) * S, L.get("speed", 8) * S, L.get("alpha", 0.9), L.get("offset", 200) * S)
         return ("one", lay, L.get("base", 712) * S, L.get("speed", 5) * S, L.get("alpha", 0.9), L.get("x0", -60) * S)

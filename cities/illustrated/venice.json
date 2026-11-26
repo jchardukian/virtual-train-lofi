@@ -39,7 +39,7 @@
    "src": "work/cities_v3/venice/sprites/far_0.png",
    "scale": 3.125,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png, landmarks_5.png"
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

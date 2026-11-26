@@ -39,7 +39,7 @@
    "src": "work/cities_v3/cairo/sprites/far_0_seam.png",
    "scale": 2.301,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-26: far_0_seam.png = far_0 with the two palms at the right end removed (open sky; sand continued from the art's start, horizon ramped to meet the start's dune), so the loop join no longer cuts a palm/step-pyramid pair."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

@@ -39,7 +39,7 @@
    "src": "work/cities_v3/cape_town/sprites/far_0.png",
    "scale": 1.532,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -80,6 +80,6 @@
  ],
  "ground_first": true,
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

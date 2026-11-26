@@ -39,7 +39,7 @@
    "src": "work/cities_v3/nashville/sprites/far_0_seam.png",
    "scale": 2.2,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -85,6 +85,6 @@
   "2026-11-26: far_0_seam.png = far_0 with the pink cloud band thinned out over the left 320 px (bridge kept), so the loop join shows no straight edge in the sky."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

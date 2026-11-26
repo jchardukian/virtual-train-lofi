@@ -39,7 +39,7 @@
    "src": "work/cities_v3/savannah/sprites/far_0_capped.png",
    "scale": 2.821,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -85,6 +85,6 @@
   "2026-11-26: the bridge towers were cut flat at the top of the art. far_0_capped.png gives both towers pointed caps and removes the cable-fan fragments above them."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

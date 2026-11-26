@@ -39,7 +39,7 @@
    "src": "work/cities_v3/amsterdam/sprites/skyline2.png",
    "scale": 1.209,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -83,6 +83,6 @@
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (a hump-backed canal bridge with flower boxes)"
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

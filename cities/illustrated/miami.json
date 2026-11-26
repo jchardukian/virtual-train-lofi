@@ -39,7 +39,7 @@
    "src": "work/cities_v3/miami/sprites/far_0.png",
    "scale": 2.183,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1072,
    "alpha": 1.0,
@@ -84,5 +84,5 @@
  ],
  "gaps_ok": "single layer",
  "single_layer": true,
- "street_speed": 5
+ "street_speed": 25
 }

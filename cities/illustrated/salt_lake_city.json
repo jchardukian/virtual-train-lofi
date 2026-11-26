@@ -39,7 +39,7 @@
    "src": "work/cities_v3/salt_lake_city/sprites/far_0.png",
    "scale": 2.091,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1072,
    "alpha": 1.0,
@@ -83,6 +83,6 @@
   "2026-11-24: near strip scale 0.85 -> 1.569 (shown 116 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

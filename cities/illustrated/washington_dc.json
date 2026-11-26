@@ -39,7 +39,7 @@
    "src": "work/cities_v3/washington_dc/sprites/far_0_capped.png",
    "scale": 3.85,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -85,6 +85,6 @@
   "2026-11-26: the art cut the Washington Monument (and the Capitol statue) off at the top of the window. far_0_capped.png adds the monument's pyramid tip; scale 4.701 -> 3.85 so every top sits inside the window."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }

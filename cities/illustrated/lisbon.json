@@ -39,7 +39,7 @@
    "src": "work/cities_v3/lisbon/sprites/far_0_seam.png",
    "scale": 2.091,
    "tile": true,
-   "speed": 5,
+   "speed": 25,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
@@ -84,6 +84,6 @@
   "2026-11-26: far_0_seam.png = far_0 with the castle hill's straight left edge carved into a tree-canopy slope rising from the bridge deck, so the loop join shows no vertical wall/outline."
  ],
  "single_layer": true,
- "street_speed": 5,
+ "street_speed": 25,
  "gaps_ok": "single layer"
 }
