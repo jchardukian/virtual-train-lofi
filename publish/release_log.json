@@ -150,28 +150,28 @@
   "item": "short_1",
   "buffer_post_id": "6b04cb258165ce395ba62914",
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
-  "due_at": "2026-11-26T14:30:00-06:00",
+  "due_at": "2026-12-01T14:30:00-06:00",
   "status": "scheduled",
   "media_sha256": "8b6b67e65ccdee12d681ac0075c381d7cc2af6f4324c1e3687fbe3464e056b1f",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/b0b556c96057b809a84a94bd/amsterdam_short_1.mp4",
   "links_to": "https://youtu.be/UW0XgeTdJmQ",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T00:48:44Z with the rebuilt version"
+  "note": "moved to Dec 1; to be replaced once its art is fixed"
  },
  {
   "city": "amsterdam",
   "item": "short_2",
   "buffer_post_id": "6b04cb2b8165ce395ba62b03",
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
-  "due_at": "2026-11-26T20:30:00-06:00",
+  "due_at": "2026-12-01T20:30:00-06:00",
   "status": "scheduled",
   "media_sha256": "007cf0ff5b15a610fc8650989fd32a0454cef0bbfa8b9dbd77946f07da55530f",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/16685b37990cd6cf6744b905/amsterdam_short_2.mp4",
   "links_to": "https://youtu.be/UW0XgeTdJmQ",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T00:48:44Z with the rebuilt version",
+  "note": "moved to Dec 1; to be replaced once its art is fixed",
   "title": "Train Window: Amsterdam 🌷 #lofi #amsterdam #shorts",
   "title_style": "experiment"
  },
@@ -446,36 +446,39 @@
   "url": "https://youtu.be/MarmRShRVBc",
   "resolution": "3840x2160",
   "privacy": "private until publishAt",
-  "publish_at": "2026-12-01T11:00:00-06:00",
+  "publish_at": "2026-11-26T11:00:00-06:00",
   "media_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
  },
  {
   "city": "kansas_city",
   "item": "short_1",
   "buffer_post_id": "6b076701a791bea1b232dc2c",
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
-  "due_at": "2026-12-01T14:30:00-06:00",
+  "due_at": "2026-11-26T14:30:00-06:00",
   "status": "scheduled",
   "media_sha256": "b67aabfdd9f6a462db24df840ff952d91c45cf32a9e210798baf7937b54a94d2",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/743b5197378421f3ae5aabf2/kansas_city_short_1.mp4",
   "links_to": "https://youtu.be/MarmRShRVBc",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
  },
  {
   "city": "kansas_city",
   "item": "short_2",
   "buffer_post_id": "6b0767049f6dda31cca30175",
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
-  "due_at": "2026-12-01T20:30:00-06:00",
+  "due_at": "2026-11-26T20:30:00-06:00",
   "status": "scheduled",
   "media_sha256": "8c66e1fc5b2b4ac3f60de1acac64aed0b003ca93f375dfb2e9a6c6318d665aa1",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/28c763c53cabb511dda96ccf/kansas_city_short_2.mp4",
   "links_to": "https://youtu.be/MarmRShRVBc",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
  },
  {
   "city": "dubai",
@@ -563,10 +566,11 @@
   "url": "https://youtu.be/UW0XgeTdJmQ",
   "resolution": "3840x2160",
   "privacy": "private until publishAt",
-  "publish_at": "2026-11-26T11:00:00-06:00",
+  "publish_at": "2026-12-01T11:00:00-06:00",
   "media_sha256": "e6e229f9b8f7b7ae7a5904594932483d68aa3c6e50116abc8fbb5c583d3c7bff",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "replaces": "5thAZ2gtRCo"
+  "replaces": "5thAZ2gtRCo",
+  "note": "moved to Dec 1; to be replaced once its art is fixed"
  }
 ]
