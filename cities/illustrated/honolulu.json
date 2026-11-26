@@ -36,7 +36,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/honolulu/sprites/far_0.png",
+   "src": "work/cities_v3/honolulu/sprites/far_0_seam.png",
    "scale": 1.993,
    "tile": true,
    "speed": 5,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-26: far_0_seam.png = far_0 cropped x170-1290 (no hotels at the loop ends) with the corner flowers painted out with water; the loop crossfade had ghosted the end hotels/flowers into each other."
  ],
  "single_layer": true,
  "street_speed": 5,
