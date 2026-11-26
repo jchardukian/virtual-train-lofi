@@ -185,15 +185,25 @@ def plan(day, minutes=240, cities=None):
 def trans(day):
     p = json.loads((WORK / day / "plan.json").read_text())
     nm = names()
+    jobs = {}
     for a, b in zip(p["order"], p["order"][1:]):
         out = WORK / "t" / f"{a}__{b}.mp4"
         out.parent.mkdir(parents=True, exist_ok=True)
-        if out.exists():
+        # reuse a transition only if it was made from the current rides (owner 2026-11-26: cities get rebuilt)
+        if out.exists() and out.stat().st_mtime > max((VID / f"{a}.mp4").stat().st_mtime, (VID / f"{b}.mp4").stat().st_mtime):
             continue
+        jobs[out] = (a, b)
+
+    def one(item):
+        out, (a, b) = item
         n, where = nm(b)
         sh(sys.executable, str(ROOT / "pipeline/tunnel_transition.py"), str(VID / f"{a}.mp4"), str(VID / f"{b}.mp4"), str(out),
            "--next", n, "--where", where, "--tail", str(TAIL), "--head", str(HEAD), "--crf", "17")
-        print("transition", a, "->", b)
+        print("transition", a, "->", b, flush=True)
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(int(os.environ.get("TRANS_JOBS", "3"))) as ex:   # each one is mostly single-threaded
+        list(ex.map(one, jobs.items()))
 
 
 def pieces(day):
