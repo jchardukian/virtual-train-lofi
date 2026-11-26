@@ -9,3 +9,4 @@ __pycache__/
 *.trf
 assets/
 work/stream/
+output/samples/stream_preview_*
