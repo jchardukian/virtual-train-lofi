@@ -82,7 +82,9 @@
   "temporary_builder": {
    "approved": "owner 2026-11-24: 'yes two servers if it's only around a dollar and finishes things about twice as fast'",
    "server": "Hetzner 177531685 'lofitrain-build2', CX33 hel1, hourly billing; DELETE it as soon as its build list is done",
-   "command_channel": "control/cmd2.json, logs control/out2/, heartbeat control/status2.json"
+   "command_channel": "control/cmd2.json, logs control/out2/, heartbeat control/status2.json",
+   "now_permanent": "owner 2026-11-26: 'I'm fine with keeping both at least for a couple months to try it out' — keep server 2 (177531685), ~EUR 10.50/month, review after ~2 months (late Jan 2027)",
+   "do_not_delete": true
   }
  },
  "livestream_titles": {
@@ -130,6 +132,17 @@
     },
     "start": "Fri Nov 27 (once all cities are rebuilt); Thu Nov 26 keeps the approved 7-11pm evening stream",
     "rule": "each stream a different city order + music mix; vary start times later based on viewer data; tell owner when each goes live"
+   },
+   "three_daily": {
+    "approved": "owner 2026-11-26",
+    "start": "Sat Nov 28",
+    "slots_cst": [
+     "8:00am-4:00pm",
+     "4:00pm-12:00am",
+     "12:00am-8:00am"
+    ],
+    "length_h": 8,
+    "rule": "each stream its own city order + music mix; build on alternating servers; full go-live checklist every time; private-test 20 min before"
    }
   },
   "thumbnails": "owner 2026-11-26: custom thumbnail on every stream, fully automatic (pipeline/stream_thumbnail.py: most colourful clear city frame + small LIVE badge)",

@@ -13,7 +13,7 @@ Stream 1: Wed Nov 25 10:15pm CST = 04:15Z Nov 26, built and sent from SERVER 2.
   write the rtmp URL from work/stream/2026-11-26/broadcast.json to server 2 /var/lib/lofitrain/rtmp_2026-11-26 (never print/commit).
 - Tell the owner the watch link once live.
 Stream 2: Thu Nov 26 7-11pm CST = 01:00Z Nov 27 (day 2026-11-27): stream_day.sh on whichever server is free.
-Delete server 2 only after stream 1 ended and its rebuilds are done.
+Server 2 is now PERMANENT (owner 2026-11-26, review late Jan 2027). Never delete it.
 
 ## Standing rules (owner 2026-11-25: get it right the first time)
 1. Nothing is queued until `pipeline/preflight.py <city>` passes ON THE SERVER that will build it (art, music, test render).
@@ -60,3 +60,7 @@ Before the public start time:
 4. Create the public broadcast; start; within 2 minutes re-check API health has no configurationIssues.
 5. Only then tell the owner it is live, with the link.
 If any step fails: fix it before the start time, never after.
+
+## Streams from Sat Nov 28: three 8-hour streams per day, 24/7 (owner-approved, both servers kept)
+Slots CST: 8am-4pm, 4pm-12am, 12am-8am. Each needs its own file (~7-8 h build) — build each one at least 12 h ahead,
+alternate servers. Thu Nov 26 7pm stream and Fri Nov 27 streams: 8 h each from the rebuilt cities as available.
