@@ -20,5 +20,5 @@ echo "STREAM FILE READY"
 until [ -s /var/lib/lofitrain/rtmp_$DAY ]; do sleep 30; done
 T=$(( $(date -d "$START" +%s) - 60 )); while [ $(date +%s) -lt $T ]; do sleep 20; done
 echo "STREAMING $(date -u +%FT%TZ)"
-ffmpeg -v error -re -i work/stream/$DAY/stream.mp4 -c copy -f flv "$(cat /var/lib/lofitrain/rtmp_$DAY)"
+ffmpeg -v error -re -i work/stream/$DAY/stream.mp4 -c:v copy -c:a aac -ar 48000 -ac 2 -b:a 160k -f flv "$(cat /var/lib/lofitrain/rtmp_$DAY)"
 echo "STREAM ENDED $(date -u +%FT%TZ) exit $?"

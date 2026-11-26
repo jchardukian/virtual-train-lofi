@@ -215,7 +215,7 @@ def audio(day):
     n = int(round(total * SR))
     out = WORK / day / "audio.m4a"
     enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
-                            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-c:a", "aac", "-b:a", "160k", str(out)], stdin=subprocess.PIPE)
+                            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "160k", str(out)], stdin=subprocess.PIPE)
     XF = int(3 * SR)                                      # cross-fade between songs
     rng = np.random.default_rng(7)
     used, pos, carry, ti = [], 0, None, 0
@@ -283,6 +283,11 @@ def assemble(day):
     r = subprocess.run(["ffmpeg", "-v", "info", "-i", str(out), "-vn", "-af", "silencedetect=noise=-50dB:d=3", "-f", "null", "-"],
                        capture_output=True, text=True).stderr
     gaps = [l for l in r.splitlines() if "silence_start" in l]
+    sr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=sample_rate", "-of", "csv=p=0", str(out)],
+                        capture_output=True, text=True).stdout.strip()
+    if sr not in ("44100", "48000"):          # RTMP carries only 44.1/48 kHz: anything else streams silent
+        out.rename(out.with_suffix(".BADAUDIO.mp4"))
+        sys.exit(f"stream file audio is {sr} Hz; must be 48000")
     if gaps:
         out.rename(out.with_suffix(".SILENCE.mp4"))
         sys.exit(f"stream file has {len(gaps)} silent gap(s): {gaps[:3]}")
