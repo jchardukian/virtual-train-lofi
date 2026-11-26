@@ -50,3 +50,13 @@ Delete server 2 only after stream 1 ended and its rebuilds are done.
 - Server 2: lofi-stream-1126 (tonight) then lofi-build-single: singapore rio cape_town edinburgh hallstatt hong_kong honolulu istanbul kyoto lake_bled lisbon los_angeles marrakech mexico_city minneapolis nashville philadelphia phoenix_sedona pittsburgh portland_maine prague reykjavik salt_lake_city santorini seoul sydney tokyo venice
 - Tonight's stream uses the old two-layer versions; make its VOD private after it ends.
 - Swap scheduled long-forms (amsterdam..san_antonio) to single-layer versions as they finish.
+
+## GO-LIVE CHECKLIST (mandatory, every stream) — owner 2026-11-26: double check everything
+Before the public start time:
+1. Stream file: ffprobe shows h264 1920x1080 30fps AND aac 48000 Hz stereo; silencedetect finds no gap > 3 s.
+2. Watch 3 random 20 s clips from the file (incl. one tunnel): picture right, music audible.
+3. 20 minutes before start: run a PRIVATE test broadcast for 2 minutes from the same server/command; API must show
+   streamStatus active, health good, NO configurationIssues (audio sample rate, resolution, bitrate). Then end it and delete it.
+4. Create the public broadcast; start; within 2 minutes re-check API health has no configurationIssues.
+5. Only then tell the owner it is live, with the link.
+If any step fails: fix it before the start time, never after.
