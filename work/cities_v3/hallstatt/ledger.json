@@ -1,0 +1,150 @@
+[
+ {
+  "city": "hallstatt",
+  "name": "opening",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the lakeside village of Hallstatt with its slender church spire and snowy wooden houses reflected in a still lake below steep snowy mountains The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1698,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 162
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7186
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "hallstatt",
+  "name": "sky",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a snowy winter morning sky, soft pale blue with gentle clouds and light snow. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1691,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 155
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7179
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "hallstatt",
+  "name": "landmarks",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the Hallstatt church with a slender spire, 2) a wooden boathouse, 3) a traditional wooden lake boat, 4) a salt-mine funicular, 5) a mountain chapel, 6) a swan on the lake. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1839,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 303
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7327
+  },
+  "est_cost_usd": 0.1784
+ },
+ {
+  "city": "hallstatt",
+  "name": "local",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a wooden Alpine house with a snowy roof, 2) a pastel house with flower boxes, 3) a bakery with warm windows, 4) a sled, 5) a wood pile, 6) a snowy fir tree, 7) a snowy larch tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1843,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 307
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7331
+  },
+  "est_cost_usd": 0.1785
+ },
+ {
+  "city": "hallstatt",
+  "name": "far",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): steep snowy Alpine mountains plunging into a still lake. STRIP 2 (bottom): a continuous lakeside row of old wooden and pastel houses with snowy roofs and wooden balconies. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1809,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 273
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7297
+  },
+  "est_cost_usd": 0.1783
+ },
+ {
+  "city": "hallstatt",
+  "name": "near",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Hallstatt, Austria: Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, a snowy wooden lakeside fence with fir branches, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1777,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 241
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7265
+  },
+  "est_cost_usd": 0.1781
+ },
+ {
+  "city": "hallstatt",
+  "name": "skyline2",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Hallstatt: Hallstatt on a snowy winter morning, soft blue sky, gentle snowfall, white snow on every roof. All lighting, colours, season and weather must match this exactly. A single full-width horizontal landscape strip running continuously from the left edge to the right edge, filling the lower two thirds of the canvas: the lakeside village of Hallstatt: snow-covered wooden houses and the white church with its pointed spire at the water's edge, steep snowy forested mountain slopes rising behind the village with their full peaks visible against the sky, and the calm mirror-like lake along the whole bottom edge. Every building, roof, spire and mountain is complete, nothing cut off at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1825,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 289
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7313
+  },
+  "est_cost_usd": 0.1784,
+  "approval": "owner 2026-11-26 cap $0.75"
+ }
+]

@@ -1,0 +1,24 @@
+[
+ {
+  "city": "amsterdam",
+  "name": "skyline2",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Amsterdam: Amsterdam on a bright spring afternoon, clear blue sky with a few soft white clouds, warm sunlight. All lighting, colours, season and weather must match this exactly. A single full-width horizontal landscape strip running continuously from the left edge to the right edge, filling the lower two thirds of the canvas: a continuous row of tall narrow Amsterdam canal houses with their complete stepped and bell gables, rooftops and chimneys clearly visible against the sky, the Westerkerk tower rising behind them, green trees between some houses, bicycles leaning on the railing of the canal and the calm canal water along the whole bottom edge. Every building, roof, spire and mountain is complete, nothing cut off at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1827,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 291
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7315
+  },
+  "est_cost_usd": 0.1784,
+  "approval": "owner 2026-11-26 cap $0.75"
+ }
+]

@@ -36,12 +36,12 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/pittsburgh/sprites/far_1.png",
-   "scale": 1.576,
+   "src": "work/cities_v3/pittsburgh/sprites/skyline2.png",
+   "scale": 0.965,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
-   "base": 1072,
+   "base": 1070,
    "alpha": 1.0,
    "feather_bottom": 0
   }

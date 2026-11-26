@@ -6,7 +6,8 @@ fills ~55% of the window and its bottom sits just below the window sill; it scro
 import json, pathlib, shutil, sys
 import cv2, numpy as np
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-USE_ROW = {"amsterdam", "pittsburgh", "portland_maine", "reykjavik", "santorini", "hallstatt"}
+USE_ROW = {"portland_maine", "reykjavik", "santorini"}
+OVERRIDE = {c: f"work/cities_v3/{c}/sprites/skyline2.png" for c in ("amsterdam", "pittsburgh", "hallstatt")}
 WIN_TOP, SILL, LAND = 40, 1040, 0.55
 def dense_extent(path):
     a = cv2.imread(str(ROOT / path), cv2.IMREAD_UNCHANGED)
@@ -24,6 +25,7 @@ for c in sys.argv[1:]:
     bands = [s["band"]["src"] for s in d["sections"] if s.get("band")]
     bd = d.get("backdrop") or [f for s_ in d["sections"] for f in s_.get("far", [])][:1]
     src = bands[0] if (c in USE_ROW and bands) or not bd else bd[0]["src"]
+    src = OVERRIDE.get(c, src)
     top, bot, h = dense_extent(src)
     scale = LAND * (SILL - WIN_TOP) / max(1, bot - top)
     base = SILL + 30 + int(round((h - bot) * scale))          # art bottom just below the sill
@@ -31,6 +33,8 @@ for c in sys.argv[1:]:
     d["backdrop"] = [layer]
     for s in d["sections"]:
         s.pop("band", None); s["far"] = []; s["mid"] = []; s["ground"] = "lawn"
+    if d.get("weather") in ("leaves", "petals", "fireflies"):
+        d["weather"] = "none"          # owner 2026-11-25: nothing falls from the sky except rain and snow
     d["single_layer"] = True; d["street_speed"] = 5; d["gaps_ok"] = "single layer"
     for k in ("near", "mid_front", "hide_backdrop_edge", "no_fill_down"):
         d.pop(k, None)

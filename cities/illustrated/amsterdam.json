@@ -36,8 +36,8 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/amsterdam/sprites/far_1.png",
-   "scale": 2.022,
+   "src": "work/cities_v3/amsterdam/sprites/skyline2.png",
+   "scale": 1.209,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
