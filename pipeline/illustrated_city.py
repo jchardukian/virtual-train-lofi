@@ -30,6 +30,37 @@ def art(src, scale=1.0):
     return ROOT / src, scale * S
 
 
+def loop_cut(layer, ov):
+    """owner 2026-11-26 (Honolulu, London...): the 140 px cross-fade at a backdrop's loop point double-exposed the picture's
+    two ends (ghost towers, half-transparent flowers). Instead the end is joined to the start along the path through
+    the overlap where the two look most alike (open sky, water, gaps between buildings), with only a 2 px soft edge."""
+    rgb, a = layer
+    h, w = a.shape[:2]
+    E, B, Ea, Ba = rgb[:, w - ov:], rgb[:, :ov], a[:, w - ov:], a[:, :ov]
+    pe, pb = E * Ea, B * Ba                                  # premultiplied: transparent sky matches transparent sky
+    cost = cv2.blur(np.abs(pe - pb).sum(axis=2) + 255 * np.abs(Ea - Ba)[..., 0], (5 * S, 5 * S))
+    cost[:, :8 * S] += 1e6
+    cost[:, -8 * S:] += 1e6
+    D, P = cost.copy(), np.zeros((h, ov), np.int8)
+    for y in range(1, h):
+        prev = D[y - 1]
+        st = np.stack([np.r_[np.inf, prev[:-1]], prev, np.r_[prev[1:], np.inf]])
+        k = st.argmin(0)
+        D[y] += st[k, np.arange(ov)]
+        P[y] = k - 1
+    x = np.empty(h, int)
+    x[-1] = int(D[-1].argmin())
+    for y in range(h - 1, 0, -1):
+        x[y - 1] = np.clip(x[y] + P[y, x[y]], 0, ov - 1)
+    m = cv2.GaussianBlur((np.arange(ov)[None, :] >= x[:, None]).astype(np.float32), (0, 0), 2.0 * S)[..., None]
+    out_rgb, out_a = rgb[:, :w - ov].copy(), a[:, :w - ov].copy()
+    na = Ea * (1 - m) + Ba * m
+    out_rgb[:, :ov] = (pe * (1 - m) + pb * m) / np.maximum(na, 1e-4)
+    out_a[:, :ov] = na
+    reps = math.ceil(W / out_rgb.shape[1]) + 1
+    return np.tile(out_rgb, (1, reps, 1)), np.tile(out_a, (1, reps, 1)), out_rgb.shape[1]
+
+
 def odd(n):
     return int(round(n)) | 1
 
@@ -315,7 +346,8 @@ class City:
 
     def _far_tuple(self, L, lay):
         if L.get("tile"):
-            return ("tile", loop(lay, 140 * S), L.get("base", 712) * S, L.get("speed", 8) * S, L.get("alpha", 0.9), L.get("offset", 200) * S)
+            lp = loop(lay, 140 * S) if L.get("seam") == "blend" else loop_cut(lay, 300 * S)
+            return ("tile", lp, L.get("base", 712) * S, L.get("speed", 8) * S, L.get("alpha", 0.9), L.get("offset", 200) * S)
         return ("one", lay, L.get("base", 712) * S, L.get("speed", 5) * S, L.get("alpha", 0.9), L.get("x0", -60) * S)
 
     def weight(self, t, k, fade=3.0):
