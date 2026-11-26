@@ -28,7 +28,7 @@
  "backdrop": [
   {
    "src": "work/v2/nyc/sprites/far_0.png",
-   "scale": 2.764,
+   "scale": 3.2,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
@@ -65,5 +65,8 @@
  ],
  "single_layer": true,
  "street_speed": 5,
- "gaps_ok": "single layer"
+ "gaps_ok": "single layer",
+ "_notes": [
+  "2026-11-26: scale 2.764 -> 3.2: the skyline filled only the bottom third (~65% sky); now ~50% sky with One WTC's roof well inside the window."
+ ]
 }
