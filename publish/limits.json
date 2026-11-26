@@ -207,6 +207,7 @@
   "card": "'Departing daily' card burned into the uploaded long-form (last 10 s) and Shorts (last 4 s) by pipeline/promo_card.py at release/replace time; built city files and streams stay clean",
   "description_line": "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams",
   "description_line_note": "first line of every long-form description and Shorts caption",
-  "end_screen": "owner adds in YouTube Studio (the API cannot set end screens): Subscribe + the live-streams playlist; Studio 'Import from video' copies it"
+  "end_screen": "owner adds in YouTube Studio (the API cannot set end screens): Subscribe + playlist 'Live Train Rides 🚆 24/7 Lofi' (PLbQ1U8WIvfRE); Studio 'Import from video' copies it to the next video",
+  "streams_playlist": "PLbQ1U8WIvfRE"
  }
 }

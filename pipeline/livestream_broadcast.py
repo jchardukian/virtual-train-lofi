@@ -50,6 +50,14 @@ def main():
         print("thumbnail set", file=sys.stderr)
     except Exception as e:
         print("THUMBNAIL NOT SET:", e, file=sys.stderr)
+    pl = limits.get("promotion", {}).get("streams_playlist")     # owner 2026-11-26: end screens point at this playlist
+    if pl:
+        try:
+            call("POST", f"{API}/youtube/v3/playlistItems?part=snippet", tok,
+                 {"snippet": {"playlistId": pl, "resourceId": {"kind": "youtube#video", "videoId": b["id"]}}})
+            print("added to the streams playlist", file=sys.stderr)
+        except Exception as e:
+            print("NOT ADDED TO PLAYLIST:", e, file=sys.stderr)
     ing = s["cdn"]["ingestionInfo"]
     out = {"date": a.date, "title": title, "broadcast_id": b["id"], "stream_id": s["id"], "scheduled_start": start,
            "watch_url": f"https://youtu.be/{b['id']}", "rtmp": f"{ing['ingestionAddress']}/{ing['streamName']}"}

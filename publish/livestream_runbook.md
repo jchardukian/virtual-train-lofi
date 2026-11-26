@@ -73,3 +73,11 @@ approval of the total), song plan (structured songs via pipeline/el_song.py, Ele
 owner's OK), build time on the two servers.
 - Owner changed this: run everything for a week first. On ~Sun Dec 6 send a one-week summary (views, watch time,
   subscribers, best/worst cities, Short title styles, stream titles/times by viewers) before any new-cities plan.
+
+## Promotion (owner approved all three, 2026-11-26)
+- Card: pipeline/promo_card.py burns the 'Departing daily' card into the UPLOADED long-form (last 10 s) and Shorts
+  (last 4 s); release_city.py and replace_release.py do it automatically. Built city files and streams stay clean.
+- Description line (first line of every long-form description AND every Shorts caption in Buffer):
+  "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams"
+- End screens: owner adds in YouTube Studio (no API): Subscribe + playlist "Live Train Rides 🚆 24/7 Lofi"
+  (PLbQ1U8WIvfRE). livestream_broadcast.py adds every new broadcast to that playlist.
