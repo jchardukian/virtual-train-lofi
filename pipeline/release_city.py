@@ -43,12 +43,27 @@ def cf(method, path, data=None, ctype=None):
     return urllib.request.urlopen(r, timeout=600).status
 
 
+def carded(src, short=False):
+    """the uploaded copy carries the owner-approved 'Departing daily' card (pipeline/promo_card.py)"""
+    import promo_card
+    out = src.with_name(src.stem + ".card.mp4")
+    promo_card.apply(src, out, short)
+    return out
+
+
 def upload_long(city, D, mp):
     master = D / f"{city}_illustrated_master.mp4"
     if not master.exists():
         subprocess.run(["pipeline/fetch_master.sh", city], cwd=ROOT, check=True, stdout=sys.stderr)
-    out =subprocess.run([sys.executable, "pipeline/youtube_upload.py", str(master), str(mp)], cwd=ROOT,
+    meta = json.loads(mp.read_text())
+    if sha(master) != meta["expected_sha256"]:
+        sys.exit("master does not match its build hash")
+    cm = carded(master)
+    meta["expected_sha256"], meta["built_sha256"] = sha(cm), meta["expected_sha256"]
+    mp.write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n")
+    out = subprocess.run([sys.executable, "pipeline/youtube_upload.py", str(cm), str(mp)], cwd=ROOT,
                          capture_output=True, text=True)
+    cm.unlink()
     if out.returncode:
         sys.exit("long-form upload failed: " + out.stdout[-500:] + out.stderr[-500:])
     up = json.loads(out.stdout.strip().splitlines()[-1])
@@ -91,7 +106,7 @@ def main():
     meta["short_2"]["title"] = meta["short_2"].get("title_override") or S2[n_rel % len(S2)]
     long_meta = {"title": L["title"], "tags": L["tags"], "publish_at": t_long.isoformat(),
                  "expected_sha256": sums[f"{city}_illustrated_master.mp4"],
-                 "description": "\n\n".join([L["summary"], limits["channel_blurb"],
+                 "description": "\n\n".join([limits["promotion"]["description_line"], L["summary"], limits["channel_blurb"],
                                              FOOTAGE + "\n" + credit(music, "Tracks were trimmed and cross-faded."), L["hashtags"]])}
     mp = ROOT / f"publish/meta/{city}_long.json"
     mp.write_text(json.dumps(long_meta, indent=1, ensure_ascii=False) + "\n")
@@ -110,19 +125,22 @@ def main():
         f = D / f"{city}_illustrated_vertical_{i}.mp4"
         if sha(f) != sums[f.name]:
             sys.exit(f"{f.name} does not match its approved hash")
+        fc = carded(f, short=True)
+        want = sha(fc)
         key = f"{secrets.token_hex(12)}/{city}_short_{i}.mp4"
-        cf("PUT", f"lofitrain-delivery/objects/{key}", f.read_bytes(), "video/mp4")
+        cf("PUT", f"lofitrain-delivery/objects/{key}", fc.read_bytes(), "video/mp4")
+        fc.unlink()
         url = f"{DELIVERY}/{key}"
         got = hashlib.sha256(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "curl/8.5.0"}), timeout=300).read()).hexdigest()
-        if got != sums[f.name]:
+        if got != want:
             sys.exit(f"public copy of {f.name} does not match")
         cr = credit(music[:1] if i == 1 else music, "Trimmed.")
-        text = "\n\n".join([S["summary"] + f"\n▶ Watch the full 5-minute ride: {link}", limits["channel_blurb"],
+        text = "\n\n".join([limits["promotion"]["description_line"], S["summary"] + f"\n▶ Watch the full 5-minute ride: {link}", limits["channel_blurb"],
                             FOOTAGE + "\n" + cr, S["hashtags"]])
         if "AI" in (text + " " + S["title"]).replace("-", " ").split():
             sys.exit("Short text mentions AI")
         shorts.append({"item": f"short_{i}", "title": S["title"], "text": text, "url": url, "due_at": t.isoformat(),
-                       "media_sha256": sums[f.name]})
+                       "media_sha256": want, "built_sha256": sums[f.name]})
     print(json.dumps({"city": city, "long_form": {**up, "publish_at": t_long.isoformat(),
                                                    "media_sha256": long_meta["expected_sha256"]}, "shorts": shorts},
                      ensure_ascii=False, indent=1))

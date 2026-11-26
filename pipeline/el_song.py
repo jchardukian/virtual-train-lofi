@@ -11,6 +11,10 @@ chillhop -- not 3 minutes of the same 30-second beat. So every song gets the arr
 The same motif is named in every section so the model keeps one memorable theme. Never: vinyl crackle, hiss, noise,
 vocals (owner hates static). Output -> work/music_el/<name>.mp3 and a plan json beside it. Needs the owner's OK to spend
 ElevenLabs credits.
+
+Owner 2026-11-26: favourites are d02_morning_glow_guitar and s02_window_seat_guitar (warm, clean guitar carrying a
+gentle, catchy melody); also aim for the catchy lofi songs of the biggest lofi channels. Every new song must pass
+pipeline/song_check.py (no short loop on repeat) before it is offered to the owner or used.
 """
 import argparse, json, pathlib, subprocess, sys
 
@@ -35,7 +39,8 @@ def plan(lead, key, bpm, mood, minutes):
                      "duration_ms": int(total * frac), "lines": []})
     secs[-1]["duration_ms"] += total - sum(s["duration_ms"] for s in secs)
     return {"positive_global_styles": ["instrumental chillhop", "lofi hip hop", "jazzy", "clean warm mix", f"{bpm} bpm", key, mood,
-                                       f"{lead} lead melody", "catchy memorable hook", "song structure with development", "relaxing study beat"],
+                                       f"{lead} lead melody", "catchy memorable hook", "song structure with development", "relaxing study beat",
+                                       "warm clean guitar tone", "gentle singable melody that develops", "popular lofi hip hop channel style"],
             "negative_global_styles": NEVER, "sections": secs}
 
 
@@ -55,6 +60,11 @@ def main():
                            "-o", str(mp3), "-w", "%{http_code}"], capture_output=True, text=True).stdout
     if code != "200":
         sys.exit(f"{a.name}: HTTP {code} {mp3.read_text(errors='ignore')[:300] if mp3.exists() else ''}")
+    chk = subprocess.run([sys.executable, str(ROOT / "pipeline/song_check.py"), str(mp3)], capture_output=True, text=True)
+    print(chk.stdout.strip())
+    if chk.returncode:
+        mp3.rename(mp3.with_suffix(".loop_rejected.mp3"))
+        sys.exit(f"{a.name}: rejected, plays like a loop")
     print(a.name, "ok")
 
 

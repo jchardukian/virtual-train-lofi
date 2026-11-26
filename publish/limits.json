@@ -111,7 +111,23 @@
   },
   "elevenlabs_batch_2026_11_24": "owner approved all 10 (g01-g06 guitar, p01-p04 piano): 'All the songs are fine'",
   "elevenlabs_batch_2026_11_25": "owner asked for 'gentle easy going vibe ... catchy melody' songs; generated d01-d04 (3 min each) for review",
-  "song_style_2026_11_25": "owner: study Lofi Girl-style chillhop; songs need a hook and melody like a song without words, not a 3-min loop. Method: pipeline/el_song.py composition plan Intro/Verse A/Verse B/Hook/Breakdown/Hook return/Outro, one named lead and one theme, ~2.75 min, 72-88 bpm, jazzy 7th/9th chords, swung boom-bap, never crackle/hiss/noise/vocals. Samples s01, s02 sent for review."
+  "song_style_2026_11_25": "owner: study Lofi Girl-style chillhop; songs need a hook and melody like a song without words, not a 3-min loop. Method: pipeline/el_song.py composition plan Intro/Verse A/Verse B/Hook/Breakdown/Hook return/Outro, one named lead and one theme, ~2.75 min, 72-88 bpm, jazzy 7th/9th chords, swung boom-bap, never crackle/hiss/noise/vocals. Samples s01, s02 sent for review.",
+  "song_rules_2026_11_26": {
+   "owner": "songs must have a melody and a hook like a song without words, never a ~30 s sound repeated; references: d02_morning_glow_guitar and s02_window_seat_guitar (owner's favourites) and Lofi Girl's catchy lofi songs",
+   "check": "pipeline/song_check.py: reject a song when >50% of its 4 s windows are near-copies (>0.97) of another part of it (loops scored 65-96%, songs with a returning hook 30-45%)",
+   "dropped_as_loops": [
+    "g03_seaside_guitar 65%",
+    "g05_autumn_guitar 96%",
+    "d01_daybreak_bells 67%",
+    "d04_easy_morning_marimba 90%"
+   ],
+   "approved_new": [
+    "d02_morning_glow_guitar",
+    "d03_sunrise_piano",
+    "s01_golden_hour_rhodes",
+    "s02_window_seat_guitar"
+   ]
+  }
  },
  "livestream_plan": {
   "evergreen": "owner 2026-11-25 'Sounds good': each daily ~4-hour livestream is left as YouTube's automatic saved video (VOD) = the evergreen long-form; no separate compilation upload for now. Later, optionally upload a polished chaptered 4K compilation of the best-performing order.",
@@ -185,5 +201,12 @@
    "Lofi Ride Through <City> <emoji>"
   ],
   "suffix": "#lofi #<city> #shorts"
+ },
+ "promotion": {
+  "approved": "owner 2026-11-26: all three options approved",
+  "card": "'Departing daily' card burned into the uploaded long-form (last 10 s) and Shorts (last 4 s) by pipeline/promo_card.py at release/replace time; built city files and streams stay clean",
+  "description_line": "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams",
+  "description_line_note": "first line of every long-form description and Shorts caption",
+  "end_screen": "owner adds in YouTube Studio (the API cannot set end screens): Subscribe + the live-streams playlist; Studio 'Import from video' copies it"
  }
 }

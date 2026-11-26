@@ -25,8 +25,11 @@ FADE, TAIL, HEAD = 1.6, 60.0, 1.0      # must match tunnel_transition.py (FADE) 
 T_IN, T_DARK, T_OUT = 1.0, 3.0, 1.0
 WORKER = "https://lofitrain-control.jchardukian.workers.dev"
 EL_OK = ["el_1_rainy_rhodes", "el_2_golden_guitar", "el_3_night_train", "g01_golden_hour_guitar", "g02_morning_coffee_guitar",
-         "g03_seaside_guitar", "g04_city_lights_guitar", "g05_autumn_guitar", "g06_summer_drive_guitar", "p01_golden_piano",
-         "p02_rainy_window_piano", "p03_night_city_piano", "p04_sunny_rhodes"]
+         "g04_city_lights_guitar", "g06_summer_drive_guitar", "p01_golden_piano", "p02_rainy_window_piano",
+         "p03_night_city_piano", "p04_sunny_rhodes", "d02_morning_glow_guitar", "d03_sunrise_piano",
+         "s01_golden_hour_rhodes", "s02_window_seat_guitar"]
+# owner 2026-11-26: songs need a melody and a hook, never a short loop on repeat. Dropped as loops (near-copy check):
+# g03_seaside_guitar 65%, g05_autumn_guitar 96%, d01_daybreak_bells 67%, d04_easy_morning_marimba 90%.
 
 
 def sh(*a, **k):
