@@ -36,8 +36,8 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/washington_dc/sprites/far_0.png",
-   "scale": 4.701,
+   "src": "work/cities_v3/washington_dc/sprites/far_0_capped.png",
+   "scale": 3.85,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
@@ -81,7 +81,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_0.png, landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
-  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2.png"
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2.png",
+  "2026-11-26: the art cut the Washington Monument (and the Capitol statue) off at the top of the window. far_0_capped.png adds the monument's pyramid tip; scale 4.701 -> 3.85 so every top sits inside the window."
  ],
  "single_layer": true,
  "street_speed": 5,

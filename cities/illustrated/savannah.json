@@ -36,7 +36,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/savannah/sprites/far_0_trim.png",
+   "src": "work/cities_v3/savannah/sprites/far_0_capped.png",
    "scale": 2.821,
    "tile": true,
    "speed": 5,
@@ -81,7 +81,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the cable-stayed river bridge)",
-  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_1.png"
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_1.png",
+  "2026-11-26: the bridge towers were cut flat at the top of the art. far_0_capped.png gives both towers pointed caps and removes the cable-fan fragments above them."
  ],
  "single_layer": true,
  "street_speed": 5,
