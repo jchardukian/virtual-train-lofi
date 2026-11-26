@@ -81,3 +81,16 @@ owner's OK), build time on the two servers.
   "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams"
 - End screens: owner adds in YouTube Studio (no API): Subscribe + playlist "Live Train Rides 🚆 24/7 Lofi"
   (PLbQ1U8WIvfRE). livestream_broadcast.py adds every new broadcast to that playlist.
+
+## Automated stream schedule (set up 2026-11-26)
+Slots CST: Fri Nov 27 8am-4pm and 4pm-12am, then from Sat 12am: 12am-8am, 8am-4pm, 4pm-12am every day (24/7).
+Stream id = <date>-<HHMM CST> (e.g. 2026-11-27-0800). Scheduled task "Stream slot" fires at 05:25/13:25/21:25 UTC:
+ 1. go-live for the slot starting at the next :00 UTC (if one is planned): GO-LIVE CHECKLIST above, then
+    pipeline/livestream_broadcast.py <id> <start UTC> and write /var/lib/lofitrain/rtmp_<id> on the building server
+    (never print it); health check; message the owner the link only when the stream is healthy (first few days; later
+    only problems).
+ 2. start the build for the slot 16 h later (>= 12 h ahead): even slot index = server 1, odd = server 2 (slot index =
+    hours since 2026-11-27T14:00Z / 8). Exclude file = every city not in publish/stream_ok.json; rebuild stream.tgz if
+    pipeline/livestream_build.py changed. Unit lofi-stream-<id>: MINUTES=480 TRANS_JOBS=2 nice -n 10 stream_day.sh.
+ 3. clean up the stream that ended: delete work/stream/<id>/ on its server (keep the VOD on YouTube, public, evergreen),
+    delete /var/lib/lofitrain/rtmp_<id>; prune work/stream/t files older than 3 days.

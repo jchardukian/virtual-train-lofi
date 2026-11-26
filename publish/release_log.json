@@ -460,7 +460,9 @@
   "media_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
+  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)",
+  "replaced_by": "_ZBx0xlraNw",
+  "status": "deleted 2026-11-26T14:40:02Z: replaced by the rebuilt version"
  },
  {
   "city": "kansas_city",
@@ -469,12 +471,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-26T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "b67aabfdd9f6a462db24df840ff952d91c45cf32a9e210798baf7937b54a94d2",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/743b5197378421f3ae5aabf2/kansas_city_short_1.mp4",
-  "links_to": "https://youtu.be/MarmRShRVBc",
+  "media_sha256": "48f7a601d01e4a3c947cdd7917d8149b980d10d0961bc5f2b81a8aebb888513f",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/4ba5a9a92bb44a545fda09b6/kansas_city_short_1.mp4",
+  "links_to": "https://youtu.be/_ZBx0xlraNw",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
+  "note": "media replaced 2026-11-26T14:40:02Z with the rebuilt version"
  },
  {
   "city": "kansas_city",
@@ -483,12 +485,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-26T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "8c66e1fc5b2b4ac3f60de1acac64aed0b003ca93f375dfb2e9a6c6318d665aa1",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/28c763c53cabb511dda96ccf/kansas_city_short_2.mp4",
-  "links_to": "https://youtu.be/MarmRShRVBc",
+  "media_sha256": "698beffd1ab9d9401357b53726d398c9f6247989a03882aac5f647bfe73a9d07",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/656f4c530b45c5a33b921780/kansas_city_short_2.mp4",
+  "links_to": "https://youtu.be/_ZBx0xlraNw",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)"
+  "note": "media replaced 2026-11-26T14:40:02Z with the rebuilt version"
  },
  {
   "city": "dubai",
@@ -687,5 +689,21 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "GxuX1EgWidU"
+ },
+ {
+  "city": "kansas_city",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "_ZBx0xlraNw",
+  "url": "https://youtu.be/_ZBx0xlraNw",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-26T11:00:00-06:00",
+  "media_sha256": "7ea4efbdd6943bad098cbab6a87fdb1f8f47d9cfeb93f535a2445058d4654aa1",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "note": "moved from Dec 1 to Nov 26 (Amsterdam art had cut-off rooftops)",
+  "built_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b",
+  "replaces": "MarmRShRVBc"
  }
 ]

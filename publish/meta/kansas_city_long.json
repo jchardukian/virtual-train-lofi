@@ -19,5 +19,6 @@
   "train window"
  ],
  "publish_at": "2026-11-26T11:00:00-06:00",
- "expected_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b"
+ "expected_sha256": "7ea4efbdd6943bad098cbab6a87fdb1f8f47d9cfeb93f535a2445058d4654aa1",
+ "built_sha256": "ef1c8f532917a31fc822a7eea538fab537e3ba311e65d7a11490a86a96eec08b"
 }
