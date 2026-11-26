@@ -382,7 +382,9 @@
   "publish_at": "2026-11-30T11:00:00-06:00",
   "media_sha256": "fe46e4e6424ce9818f91b68a2aa16e66599de74e0491959480de07d2270f3706",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "3AQ4P4OPlGk",
+  "status": "deleted 2026-11-26T13:49:22Z: replaced by the rebuilt version"
  },
  {
   "city": "san_antonio",
@@ -391,11 +393,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-30T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "a39470ae38e4037b06f237d3f43227537ca0040bed46cefac10d5d6b3e865502",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/666d12476dedb11aae4e3452/san_antonio_short_1.mp4",
-  "links_to": "https://youtu.be/GxuX1EgWidU",
+  "media_sha256": "959a78f381c39f942737b1dab44da7d2158411b75d7e752be3d8f4b603d099ba",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/4f0c188483d35ce77f4678ad/san_antonio_short_1.mp4",
+  "links_to": "https://youtu.be/3AQ4P4OPlGk",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-26T13:49:22Z with the rebuilt version"
  },
  {
   "city": "san_antonio",
@@ -404,13 +407,14 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-30T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "93258e0a2a1fb11985f05dac25ae71846943d98db9ca39314282dfb760ca2206",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/2f970cc350bdc7de48f8309f/san_antonio_short_2.mp4",
-  "links_to": "https://youtu.be/GxuX1EgWidU",
+  "media_sha256": "94aea837899127b1637698c959ef9b631d9f4bab8ce3a5c1ccfb1f6bb63a70be",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/faaa6eb195dd4959f47ca619/san_antonio_short_2.mp4",
+  "links_to": "https://youtu.be/3AQ4P4OPlGk",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "title": "Lofi Ride Through San Antonio ✨ #lofi #sanantonio #shorts",
-  "title_style": "experiment"
+  "title_style": "experiment",
+  "note": "media replaced 2026-11-26T13:49:22Z with the rebuilt version"
  },
  {
   "city": "cairo",
@@ -669,5 +673,19 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "css3nJoVL3Q"
+ },
+ {
+  "city": "san_antonio",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "3AQ4P4OPlGk",
+  "url": "https://youtu.be/3AQ4P4OPlGk",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-30T11:00:00-06:00",
+  "media_sha256": "25a29f6b683718990de7cfacf68665fb62ebf11998e6886368bf2999253f2dd0",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "GxuX1EgWidU"
  }
 ]
