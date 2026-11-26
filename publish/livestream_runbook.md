@@ -94,3 +94,15 @@ Stream id = <date>-<HHMM CST> (e.g. 2026-11-27-0800). Scheduled task "Stream slo
     pipeline/livestream_build.py changed. Unit lofi-stream-<id>: MINUTES=480 TRANS_JOBS=2 nice -n 10 stream_day.sh.
  3. clean up the stream that ended: delete work/stream/<id>/ on its server (keep the VOD on YouTube, public, evergreen),
     delete /var/lib/lofitrain/rtmp_<id>; prune work/stream/t files older than 3 days.
+Lessons 2026-11-26 (first slot build):
+- A 4K city build uses ~7 GB of the 7.7 GB RAM: NEVER run a stream build next to one. Before starting a stream build
+  on a server, stop that server's city build units (waiters first, then the running one) and queue every city not yet
+  rebuilt (no control/built/<c>.json) on the OTHER server, after its current queue.
+- Each stream build runs a private copy: cp livestream/stream_day.sh /usr/local/bin/stream_day_<id>.sh and run that
+  (stream_day.sh re-extracts stream.tgz over the repo copy at start; a running bash must never have its file replaced).
+  The 2026-11-27-0800 run on server 1 still uses the repo path: do NOT change livestream/stream_day.sh before it ends
+  (2026-11-27T22:00Z).
+- Every stream gets a cleanup watcher (unit lofi-cleanup-<id>) that deletes work/stream/<id>/stream.mp4, audio.m4a and
+  /var/lib/lofitrain/rtmp_<id> 1 min after 'STREAM ENDED' (a 22 GB file per stream; server disk is ~75 GB).
+- Timing (server 2, 8 h stream): prep ~10 min/city if not cached, transitions ~34/h with 3 jobs, audio ~2.3 h,
+  assemble (full re-encode at 6 Mbps) ~2.5 h.
