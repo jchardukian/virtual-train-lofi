@@ -64,3 +64,10 @@ If any step fails: fix it before the start time, never after.
 ## Streams from Sat Nov 28: three 8-hour streams per day, 24/7 (owner-approved, both servers kept)
 Slots CST: 8am-4pm, 4pm-12am, 12am-8am. Each needs its own file (~7-8 h build) — build each one at least 12 h ahead,
 alternate servers. Thu Nov 26 7pm stream and Fri Nov 27 streams: 8 h each from the rebuilt cities as available.
+
+## Next phase (owner 2026-11-26): plan the next 50 cities + more songs, starting Sun Nov 29
+Only after: all 55 final cities built and checked, daily releases running hands-off, the three daily streams running
+24/7 without intervention for at least a day. Then bring the owner a short plan: proposed 50 cities (variety of
+regions, seasons, times of day; no repeats), art cost estimate (~$1.10 per city in OpenAI images, needs the owner's
+approval of the total), song plan (structured songs via pipeline/el_song.py, ElevenLabs credits remaining, needs the
+owner's OK), build time on the two servers.
