@@ -36,7 +36,7 @@ def main():
         "snippet": {"title": title, "description": desc, "scheduledStartTime": start},
         "status": {"privacyStatus": "public", "selfDeclaredMadeForKids": False},
         "contentDetails": {"enableAutoStart": True, "enableAutoStop": True, "enableDvr": True, "recordFromStart": True,
-                           "latencyPreference": "normal", "enableEmbed": True}})
+                           "latencyPreference": "normal", "enableEmbed": False}})
     s = call("POST", f"{API}/youtube/v3/liveStreams?part=snippet,cdn,contentDetails", tok, {
         "snippet": {"title": f"lofitrain {a.date}"},
         "cdn": {"ingestionType": "rtmp", "resolution": "1080p", "frameRate": "30fps"},
