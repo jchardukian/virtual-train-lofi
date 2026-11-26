@@ -36,7 +36,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/cairo/sprites/far_0.png",
+   "src": "work/cities_v3/cairo/sprites/far_0_seam.png",
    "scale": 2.301,
    "tile": true,
    "speed": 5,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed the riverside Great Sphinx cut-out (landmarks_0): it stood in front of the Sphinx in the distant Giza backdrop, so two Sphinxes showed side by side."
+  "2026-11-24: removed the riverside Great Sphinx cut-out (landmarks_0): it stood in front of the Sphinx in the distant Giza backdrop, so two Sphinxes showed side by side.",
+  "2026-11-26: far_0_seam.png = far_0 with the two palms at the right end removed (open sky; sand continued from the art's start, horizon ramped to meet the start's dune), so the loop join no longer cuts a palm/step-pyramid pair."
  ],
  "single_layer": true,
  "street_speed": 5,
