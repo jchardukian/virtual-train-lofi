@@ -37,7 +37,7 @@ def loop_cut(layer, ov):
     rgb, a = layer
     h, w = a.shape[:2]
     E, B, Ea, Ba = rgb[:, w - ov:], rgb[:, :ov], a[:, w - ov:], a[:, :ov]
-    pe, pb = E * Ea, B * Ba                                  # premultiplied: transparent sky matches transparent sky
+    pe, pb = E, B                                            # rgba() layers are premultiplied already
     cost = cv2.blur(np.abs(pe - pb).sum(axis=2) + 255 * np.abs(Ea - Ba)[..., 0], (5 * S, 5 * S))
     cost[:, :8 * S] += 1e6
     cost[:, -8 * S:] += 1e6
@@ -54,9 +54,8 @@ def loop_cut(layer, ov):
         x[y - 1] = np.clip(x[y] + P[y, x[y]], 0, ov - 1)
     m = cv2.GaussianBlur((np.arange(ov)[None, :] >= x[:, None]).astype(np.float32), (0, 0), 2.0 * S)[..., None]
     out_rgb, out_a = rgb[:, :w - ov].copy(), a[:, :w - ov].copy()
-    na = Ea * (1 - m) + Ba * m
-    out_rgb[:, :ov] = (pe * (1 - m) + pb * m) / np.maximum(na, 1e-4)
-    out_a[:, :ov] = na
+    out_rgb[:, :ov] = pe * (1 - m) + pb * m
+    out_a[:, :ov] = Ea * (1 - m) + Ba * m
     reps = math.ceil(W / out_rgb.shape[1]) + 1
     return np.tile(out_rgb, (1, reps, 1)), np.tile(out_a, (1, reps, 1)), out_rgb.shape[1]
 
@@ -346,7 +345,12 @@ class City:
 
     def _far_tuple(self, L, lay):
         if L.get("tile"):
-            lp = loop(lay, 140 * S) if L.get("seam") == "blend" else loop_cut(lay, 300 * S)
+            if L.get("seam") == "blend":
+                lp = loop(lay, 140 * S)
+            elif L.get("seam") == "straight":       # art whose ends can't match: a clean vertical join at a building wall
+                lp = loop(lay, 16 * S)
+            else:
+                lp = loop_cut(lay, 300 * S)
             return ("tile", lp, L.get("base", 712) * S, L.get("speed", 8) * S, L.get("alpha", 0.9), L.get("offset", 200) * S)
         return ("one", lay, L.get("base", 712) * S, L.get("speed", 5) * S, L.get("alpha", 0.9), L.get("x0", -60) * S)
 
@@ -394,7 +398,9 @@ class City:
         img = np.empty((H, W, 3), np.float32)
         o = int(40 + 3 * t) * S if S == 1 else int((40 + 3 * t) * S)
         img[:760 * S] = self.sky[:, o:o + W]
-        img[760 * S:] = self.sky[-1:, o:o + W]
+        # owner 2026-11-26 (Vancouver): below the sky picture, repeating its last row showed as vertical streaks wherever
+        # a low skyline left that band visible; continue the sky with its own lower rows, mirrored, instead
+        img[760 * S:] = self.sky[760 * S - (H - 760 * S):760 * S][::-1, o:o + W]
         if self.ground_first:                # ground lies behind the distant layers, which stand on it
             self.draw_ground(img, t, bob, w)
         for lay in self.backdrop:

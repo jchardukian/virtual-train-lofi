@@ -36,14 +36,15 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/vancouver/sprites/far_0.png",
+   "src": "work/cities_v3/vancouver/sprites/far_0_seam.png",
    "scale": 1.662,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
    "base": 1070,
    "alpha": 1.0,
-   "feather_bottom": 0
+   "feather_bottom": 0,
+   "seam": "straight"
   }
  ],
  "sections": [
@@ -81,7 +82,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Lions Gate suspension bridge)",
-  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_3.png"
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_3.png",
+  "2026-11-26 (owner: white line down a tower): the art's ends can't be matched (tall towers + opaque mountain haze at the end, low waterfront at the start), and the path-cut join sliced a tower diagonally. far_0_seam.png = far_0 x100-1346 (ends right after a building wall, past the last floatplane) joined with a straight 16 px soft seam."
  ],
  "single_layer": true,
  "street_speed": 5,
