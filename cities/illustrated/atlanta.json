@@ -37,7 +37,7 @@
  "backdrop": [
   {
    "src": "work/cities_v3/atlanta/sprites/far_0.png",
-   "scale": 1.692,
+   "scale": 2.5,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
+  "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-26: scale 1.692 -> 2.5: the skyline was small (~65% sky); now ~45% sky, spire tip still inside the window."
  ],
  "single_layer": true,
  "street_speed": 5,
