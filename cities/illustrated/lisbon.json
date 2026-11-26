@@ -36,7 +36,7 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/lisbon/sprites/far_0.png",
+   "src": "work/cities_v3/lisbon/sprites/far_0_seam.png",
    "scale": 2.091,
    "tile": true,
    "speed": 5,
@@ -80,7 +80,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-26: far_0_seam.png = far_0 with the castle hill's straight left edge carved into a tree-canopy slope rising from the bridge deck, so the loop join shows no vertical wall/outline."
  ],
  "single_layer": true,
  "street_speed": 5,
