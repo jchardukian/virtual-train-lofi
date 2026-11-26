@@ -86,11 +86,11 @@
   }
  },
  "livestream_titles": {
-  "decision": "owner 2026-11-24: rotate for the first three streams, keep the one with the most viewers",
+  "decision": "owner 2026-11-26: livestream titles may use searched keywords (Shorts unchanged); rotate and keep whichever gets the most viewers",
   "rotation": [
-   "Chillhop Train POV 🚆",
-   "Lofi Around the World 🌍🚆",
-   "lofi train radio 🚆 beats to ride the world to"
+   "Lofi Train Ride 🚆 Chill Beats to Study & Relax",
+   "Cozy Train Window 🚆 Lofi to Sleep, Study & Relax",
+   "Lofi Train Around the World 🌍🚆 Beats to Relax & Study"
   ]
  },
  "music": {
@@ -131,7 +131,9 @@
     "start": "Fri Nov 27 (once all cities are rebuilt); Thu Nov 26 keeps the approved 7-11pm evening stream",
     "rule": "each stream a different city order + music mix; vary start times later based on viewer data; tell owner when each goes live"
    }
-  }
+  },
+  "thumbnails": "owner 2026-11-26: custom thumbnail on every stream, fully automatic (pipeline/stream_thumbnail.py: most colourful clear city frame + small LIVE badge)",
+  "length": "owner 2026-11-26 wants longer streams: 8 h now (each city appears twice with different music and order); grow toward 24/7 as cities are added"
  },
  "openai_approvals": [
   {

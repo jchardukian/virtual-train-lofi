@@ -42,6 +42,14 @@ def main():
         "cdn": {"ingestionType": "rtmp", "resolution": "1080p", "frameRate": "30fps"},
         "contentDetails": {"isReusable": True}})
     call("POST", f"{API}/youtube/v3/liveBroadcasts/bind?id={b['id']}&part=id,contentDetails&streamId={s['id']}", tok)
+    import urllib.request                                 # automatic custom thumbnail made on the stream server
+    try:
+        img = urllib.request.urlopen(urllib.request.Request(f"{LB.WORKER}/obj/control/pkg/thumb_{a.date}.jpg",
+                                     headers={"X-Key": LB._key(), "User-Agent": "curl/8.5.0"}), timeout=120).read()
+        call("POST", f"{API}/upload/youtube/v3/thumbnails/set?videoId={b['id']}", tok, data=img, headers={"Content-Type": "image/jpeg"})
+        print("thumbnail set", file=sys.stderr)
+    except Exception as e:
+        print("THUMBNAIL NOT SET:", e, file=sys.stderr)
     ing = s["cdn"]["ingestionInfo"]
     out = {"date": a.date, "title": title, "broadcast_id": b["id"], "stream_id": s["id"], "scheduled_start": start,
            "watch_url": f"https://youtu.be/{b['id']}", "rtmp": f"{ing['ingestionAddress']}/{ing['streamName']}"}

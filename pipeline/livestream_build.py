@@ -150,7 +150,14 @@ def plan(day, minutes=240, cities=None):
     avail = cities or sorted(p.stem for p in VID.glob("*.mp4") if not p.stem.endswith(("_master", ".tmp")))
     rnd.shuffle(avail)
     per = 300 - 2 * FADE + T_IN + T_DARK                 # seconds each ride adds to the stream
-    order = avail[:max(2, min(len(avail), round(minutes * 60 / per)))]
+    want = max(2, round(minutes * 60 / per))
+    order = list(avail)
+    while len(order) < want:                     # longer than one pass: go round again in a new order, never the same city twice in a row
+        nxt = list(avail); rnd.shuffle(nxt)
+        if nxt[0] == order[-1]:
+            nxt.append(nxt.pop(0))
+        order += nxt
+    order = order[:want]
     pc, el = music_pool()
     rnd.shuffle(pc); rnd.shuffle(el)
     # mostly Purrple Cat, with an ElevenLabs song every third track (the owner's favourite, el_2, early on)

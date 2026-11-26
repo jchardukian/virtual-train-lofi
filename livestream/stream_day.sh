@@ -11,10 +11,12 @@ CITIES=$(ls cities/illustrated/*.json | xargs -n1 basename | sed 's/.json//' | g
 # cities whose fixed version is not built yet stay out of this stream (one name per line)
 [ -f livestream/exclude_$DAY.txt ] && CITIES=$(echo "$CITIES" | grep -vxF -f livestream/exclude_$DAY.txt)
 python3 pipeline/livestream_build.py prep $CITIES
-python3 pipeline/livestream_build.py plan $DAY --minutes 240
+python3 pipeline/livestream_build.py plan $DAY --minutes ${MINUTES:-480}
 python3 pipeline/livestream_build.py trans $DAY
 python3 pipeline/livestream_build.py audio $DAY
 python3 pipeline/livestream_build.py assemble $DAY || { echo "ASSEMBLE FAILED"; exit 1; }
+python3 -c "import sys;sys.path.insert(0,'pipeline');import stream_thumbnail as T;T.make('work/stream/$DAY/stream.mp4','/tmp/thumb_$DAY.jpg')" && curl -sf -X PUT -H "X-Key: $K" --data-binary @/tmp/thumb_$DAY.jpg https://lofitrain-control.jchardukian.workers.dev/obj/control/pkg/thumb_$DAY.jpg
+for f in plan.json music_used.json; do curl -sf -X PUT -H "X-Key: $K" --data-binary @work/stream/$DAY/$f https://lofitrain-control.jchardukian.workers.dev/obj/control/pkg/${DAY}_$f; done
 echo "STREAM FILE READY"
 # wait for the key and the start time
 until [ -s /var/lib/lofitrain/rtmp_$DAY ]; do sleep 30; done
