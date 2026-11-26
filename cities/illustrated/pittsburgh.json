@@ -37,7 +37,7 @@
  "backdrop": [
   {
    "src": "work/cities_v3/pittsburgh/sprites/skyline2.png",
-   "scale": 0.965,
+   "scale": 2.511,
    "tile": true,
    "speed": 5,
    "haze": 0.0,
