@@ -174,7 +174,11 @@ def music_pool():
 
 def plan(day, minutes=240, cities=None):
     rnd = random.Random(f"lofitrain-{day}")
-    avail = cities or sorted(p.stem for p in VID.glob("*.mp4") if not p.stem.endswith(("_master", ".tmp")))
+    # only the cities given (stream_day.sh passes the stream list); v/ also holds rides of excluded cities
+    avail = [c for c in cities if (VID / f"{c}.mp4").exists()] if cities else \
+        sorted(p.stem for p in VID.glob("*.mp4") if not p.stem.endswith(("_master", ".tmp")))
+    if cities:
+        print("plan cities:", " ".join(sorted(avail)), "| missing:", " ".join(sorted(set(cities) - set(avail))) or "none", flush=True)
     rnd.shuffle(avail)
     # rides can differ in length (owner 2026-11-27: new rides are 3 min, older ones 5 min): add rides until the
     # stream is long enough, each adding its own length minus the cross-fades plus the tunnel

@@ -144,3 +144,6 @@ Lessons 2026-11-26 (first slot build):
     when that stream ends).
   * City rebuild queue: server 1 unit lofi-build-q1x (47 cities, waits for its 0000 stream file). The 05:25Z slot run must
     move what is left to server 2 AFTER server 2's 2026-11-28-0800 STREAM FILE READY (its assembly waits for disk until ~06:01Z).
+- 2026-11-27 23:50Z: the plan step ignored the exclude list (it used every ride in work/stream/v), so excluded cities
+  (old Dubai on Fri 8am, Detroit/Kansas City/... in the Fri 4pm and Sat 12am files) still aired. Fixed: stream_day.sh passes
+  the stream list to `plan`, which logs "plan cities: ... | missing: ...". Check that line in every stream log.

@@ -11,7 +11,7 @@ CITIES=$(ls cities/illustrated/*.json | xargs -n1 basename | sed 's/.json//' | g
 # cities whose fixed version is not built yet stay out of this stream (one name per line)
 [ -f livestream/exclude_$DAY.txt ] && CITIES=$(echo "$CITIES" | grep -vxF -f livestream/exclude_$DAY.txt)
 python3 pipeline/livestream_build.py prep $CITIES
-python3 pipeline/livestream_build.py plan $DAY --minutes ${MINUTES:-480}
+python3 pipeline/livestream_build.py plan $DAY $CITIES --minutes ${MINUTES:-480}
 python3 pipeline/livestream_build.py trans $DAY
 python3 pipeline/livestream_build.py audio $DAY
 # the finished file is ~22 GB; the server's previous stream file is only deleted when that stream ends

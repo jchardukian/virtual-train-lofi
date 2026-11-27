@@ -1,6 +1,5 @@
 anchorage
 atlanta
-austin
 banff
 bangkok
 barcelona
