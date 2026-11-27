@@ -113,3 +113,6 @@ Lessons 2026-11-26 (first slot build):
   stream 2 stopped 2.5 h early, a city build was OOM-killed, the 0800 stream build restarted. Disabled on BOTH servers:
   unattended-upgrades.service, apt-daily.timer, apt-daily-upgrade.timer; needrestart set to list-only
   (/etc/needrestart/conf.d/99-lofitrain.conf). Any new server needs the same before it runs anything.
+- 2026-11-27: a trickling download hung stream prep for 2 h (urllib timeout is per read). get() now uses curl with
+  --max-time 900 and 4 attempts. Never list server processes with full arguments (ps args / --forest): the agent's
+  own curl carries the control key; list by name only (pgrep -c, ps -o comm).

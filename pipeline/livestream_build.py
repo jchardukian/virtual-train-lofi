@@ -15,7 +15,7 @@ is H.264 1080p30 at a steady ~6 Mbit/s with a keyframe every 2 s and AAC audio, 
 Music: Purrple Cat (CC BY, credited) and the owner-approved ElevenLabs songs, shuffled per day, cross-faded; never
 the locally composed tracks. The day's date seeds every choice, so a day's stream is reproducible and days differ.
 """
-import argparse, datetime, hashlib, json, os, pathlib, random, re, subprocess, sys, urllib.request
+import argparse, datetime, hashlib, json, os, pathlib, random, re, subprocess, sys, time, urllib.request
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 WORK = ROOT / "work/stream"
@@ -49,24 +49,32 @@ def _key():
 
 
 def get(obj, dest=None):
-    """Read an archive object (through the control Worker). Returns bytes, or writes to dest; None if missing."""
-    r = urllib.request.Request(f"{WORKER}/obj/{obj}", headers={"X-Key": _key(), "User-Agent": "curl/8.5.0"})
-    try:
-        with urllib.request.urlopen(r, timeout=600) as f:
-            if dest is None:
-                return f.read()
-            with open(dest, "wb") as o:
-                while True:
-                    b = f.read(1 << 22)
-                    if not b:
-                        break
-                    o.write(b)
-            return True
-    except urllib.error.HTTPError as e:
-        if e.code == 404:
-            return None
-        raise
-
+    """Read an archive object (through the control Worker). Returns bytes, or writes to dest; None if missing.
+    curl with a hard time limit per attempt and retries: a slow, trickling connection once hung prep for 2 h."""
+    out = str(dest) if dest is not None else "-"
+    for attempt in range(4):
+        r = subprocess.run(["curl", "-sS", "--fail-with-body", "--max-time", "900", "--connect-timeout", "30",
+                            "-H", f"X-Key: {_key()}", "-A", "curl/8.5.0", "-o", out, "-w", "%{http_code}",
+                            f"{WORKER}/obj/{obj}"] if dest is not None else
+                           ["curl", "-sS", "--max-time", "300", "--connect-timeout", "30", "-H", f"X-Key: {_key()}",
+                            "-A", "curl/8.5.0", f"{WORKER}/obj/{obj}", "-w", "\n%{http_code}"],
+                           capture_output=True)
+        if dest is not None:
+            code = r.stdout.decode().strip()[-3:]
+            if code == "200":
+                return True
+            if code == "404":
+                pathlib.Path(dest).unlink(missing_ok=True)
+                return None
+        else:
+            body, _, code = r.stdout.rpartition(b"\n")
+            if code == b"200":
+                return body
+            if code == b"404":
+                return None
+        print(f"get {obj}: attempt {attempt + 1} failed ({r.stdout[-3:]!r} {r.stderr[-120:]!r})", file=sys.stderr, flush=True)
+        time.sleep(10 * (attempt + 1))
+    sys.exit(f"could not fetch {obj}")
 
 def fetch_master(city, dest):
     sums = get(f"{city}/SHA256SUMS")
