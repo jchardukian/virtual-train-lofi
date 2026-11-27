@@ -123,3 +123,11 @@ Lessons 2026-11-26 (first slot build):
 - 2026-11-27: tunnel_transition.py never deleted its temp dir (~70 MB each; 7-17 GB per server). Fixed (rmtree).
   Cleaning /tmp: NEVER `find /tmp -maxdepth 1 -name 'tmp*'` (it matches /tmp itself and deletes it); use
   `find /tmp -mindepth 1 -maxdepth 1 -name 'tmp*' ...`. /tmp was deleted on both servers by that and recreated (1777).
+
+## 2026-11-27 evening: streams were stuck on old rides
+- Stream prep reused any ride already in work/stream/v, so cities rebuilt at 5x / 3 min kept streaming their old 5-minute ride
+  (the 1600 and 0000 streams on Nov 27 are mostly old rides). Fixed: prep now stores the archive master's sha next to each ride
+  (v/<city>.sha) and refetches when the archive holds a different master. The first build after the fix refetches every ride once.
+- Worker downloads are fast again (20:50Z test: server 2 ~3 MB/s, server 1 ~0.7 MB/s), so normal stream.tgz refresh + fetching works;
+  time a download before each build anyway and fall back to cached rides only if it is slow again.
+- City builds on server 2 take ~25 min each (Detroit 1509 s).

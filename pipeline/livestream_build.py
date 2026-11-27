@@ -76,11 +76,18 @@ def get(obj, dest=None):
         time.sleep(10 * (attempt + 1))
     sys.exit(f"could not fetch {obj}")
 
-def fetch_master(city, dest):
+def archive_sha(city):
+    """sha256 of the city's current master in the archive (None if the city is not built)"""
     sums = get(f"{city}/SHA256SUMS")
     if not sums:
+        return None
+    return next((l.split()[0] for l in sums.decode().splitlines() if l.strip().endswith("_master.mp4")), None)
+
+
+def fetch_master(city, dest, want=None):
+    want = want or archive_sha(city)
+    if not want:
         sys.exit(f"{city}: no SHA256SUMS in the archive")
-    want = next(l.split()[0] for l in sums.decode().splitlines() if l.strip().endswith("_master.mp4"))
     parts, i = [], 0
     while True:
         p = dest.with_suffix(f".part{i:02d}")
@@ -117,20 +124,29 @@ def prep(cities, src=None):
     VID.mkdir(parents=True, exist_ok=True)
     for c in cities:
         out = VID / f"{c}.mp4"
-        if out.exists():
+        stamp = VID / f"{c}.sha"                        # archive master this ride was made from
+        want = None if src else archive_sha(c)
+        # A ride is reused only while the archive still holds the same master. Without this check a city
+        # rebuilt in the archive (e.g. the 2026-11-26 switch to 5x / 3-minute rides) kept streaming its old ride.
+        if out.exists() and (src or (want and stamp.exists() and stamp.read_text().strip() == want)):
             print(c, "already prepared"); continue
+        if out.exists() and not want:
+            print(c, "not in the archive; keeping the ride already here"); continue
         m = pathlib.Path(src) if src else VID / f"{c}_master.mp4"
         if not src:
             try:
-                fetch_master(c, m)
+                fetch_master(c, m, want)
             except SystemExit as e:                     # not built yet: leave it out of the stream
                 print("skip:", e); continue
+            if out.exists():
+                print(c, "newer master in the archive; replacing the old ride")
         tmp = out.with_suffix(".tmp.mp4")
         sh("ffmpeg", "-v", "error", "-y", "-i", str(m), "-an", "-vf", f"scale={W}:{H}:flags=lanczos,fps={FPS}",
            "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-g", str(2 * FPS), "-pix_fmt", "yuv420p", str(tmp))
         tmp.rename(out)
         if not src:
             m.unlink()
+            stamp.write_text(want + "\n")
         print(c, "prepared", round(probe(out), 1), "s")
 
 
