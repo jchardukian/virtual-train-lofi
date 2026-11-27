@@ -1,6 +1,31 @@
 {
- "_note": "cities whose FINAL build has been checked in motion; only these go into livestreams. Add a city when its final build passes the check; remove it while it is being rebuilt. Reset 2026-11-27 for 3-min/5x rides: only cities checked at the new length.",
+ "_note": "cities whose FINAL build has been checked in motion; only these go into livestreams. Add a city when its final build passes the check; remove it while it is being rebuilt.",
  "cities": [
-  "new_orleans"
+  "anchorage",
+  "austin",
+  "bangkok",
+  "barcelona",
+  "boston",
+  "cairo",
+  "charleston",
+  "detroit",
+  "dubai",
+  "edinburgh",
+  "istanbul",
+  "kansas_city",
+  "kyoto",
+  "lake_bled",
+  "las_vegas",
+  "los_angeles",
+  "marrakech",
+  "mexico_city",
+  "miami",
+  "new_orleans",
+  "paris",
+  "rio",
+  "san_antonio",
+  "san_diego",
+  "san_francisco",
+  "seattle"
  ]
 }
