@@ -5,11 +5,6 @@
  "season": "Boston on a crisp autumn morning, clear cool blue sky, red brick glowing in low sunlight, orange and red maples, cozy New England feel",
  "sky": "work/cities_v3/boston/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/boston/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "colour": [
@@ -80,7 +75,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Zakim Bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Zakim Bridge)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

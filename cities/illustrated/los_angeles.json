@@ -5,11 +5,6 @@
  "season": "Los Angeles on a golden summer evening, warm orange and pink sky, long soft shadows, palm silhouettes, dreamy and relaxed",
  "sky": "work/cities_v3/los_angeles/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/los_angeles/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": null,
  "ground_src": {
   "colour": [
@@ -82,5 +77,8 @@
  "gaps_ok": "single layer",
  "single_layer": true,
  "street_speed": 25,
- "ride_s": 180
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
 }

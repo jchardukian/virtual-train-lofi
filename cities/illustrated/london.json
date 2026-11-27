@@ -5,11 +5,6 @@
  "season": "London on a cozy rainy winter evening, soft blue dusk, warm golden lamps and windows, glistening wet streets, red buses, festive lights",
  "sky": "work/cities_v3/london/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/london/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "rain",
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed the close-up St Paul's dome (landmarks_2); St Paul's is in the skyline.",
-  "2026-11-24: removed the close-up Tower Bridge (landmarks_1); Tower Bridge is in the skyline."
+  "2026-11-24: removed the close-up Tower Bridge (landmarks_1); Tower Bridge is in the skyline.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

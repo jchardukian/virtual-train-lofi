@@ -5,11 +5,6 @@
  "season": "Minneapolis on a bright snowy winter morning, sparkling fresh snow, clear blue sky, frozen lakes, cozy cabins, crisp and cheerful",
  "sky": "work/cities_v3/minneapolis/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/minneapolis/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: near strip scale 0.85 -> 1.295 (shown 141 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Stone Arch Bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (the Stone Arch Bridge)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

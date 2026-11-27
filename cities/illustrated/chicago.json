@@ -5,11 +5,6 @@
  "season": "Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling",
  "sky": "work/cities_v3/chicago/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/chicago/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "colour": [
@@ -81,5 +76,8 @@
  "single_layer": true,
  "street_speed": 25,
  "gaps_ok": "single layer",
- "ride_s": 180
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
 }

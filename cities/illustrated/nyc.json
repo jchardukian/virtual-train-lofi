@@ -3,11 +3,6 @@
  "next": "the Swiss Alps",
  "sky": "work/v2/nyc/sky.png",
  "sky_top": 0.05,
- "opening": {
-  "src": "work/v2/nyc/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "src": "work/v2/nyc/sprites/far_1.png",
@@ -67,7 +62,8 @@
  "street_speed": 25,
  "gaps_ok": "single layer",
  "_notes": [
-  "2026-11-26: scale 2.764 -> 3.2: the skyline filled only the bottom third (~65% sky); now ~50% sky with One WTC's roof well inside the window."
+  "2026-11-26: scale 2.764 -> 3.2: the skyline filled only the bottom third (~65% sky); now ~50% sky with One WTC's roof well inside the window.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "ride_s": 180
 }

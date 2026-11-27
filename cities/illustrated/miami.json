@@ -5,11 +5,6 @@
  "season": "Miami on a bright sunny morning, pastel Art Deco colours, turquoise ocean, tall palms, warm and breezy",
  "sky": "work/cities_v3/miami/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/miami/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": null,
  "ground_src": {
   "colour": [
@@ -80,7 +75,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png"
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "gaps_ok": "single layer",
  "single_layer": true,

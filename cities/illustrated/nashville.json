@@ -5,11 +5,6 @@
  "season": "Nashville on a warm spring evening, violet dusk sky, neon-like warm glows (no readable text), lit honky-tonk windows, the Cumberland River, cozy and musical",
  "sky": "work/cities_v3/nashville/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/nashville/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "colour": [
@@ -82,7 +77,8 @@
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2a.png (the steel pedestrian truss bridge); landmarks_2b.png (the steel pedestrian truss bridge)",
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png",
-  "2026-11-26: far_0_seam.png = far_0 with the pink cloud band thinned out over the left 320 px (bridge kept), so the loop join shows no straight edge in the sky."
+  "2026-11-26: far_0_seam.png = far_0 with the pink cloud band thinned out over the left 320 px (bridge kept), so the loop join shows no straight edge in the sky.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

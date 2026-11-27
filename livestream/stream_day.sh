@@ -14,6 +14,8 @@ python3 pipeline/livestream_build.py prep $CITIES
 python3 pipeline/livestream_build.py plan $DAY --minutes ${MINUTES:-480}
 python3 pipeline/livestream_build.py trans $DAY
 python3 pipeline/livestream_build.py audio $DAY
+# the finished file is ~22 GB; the server's previous stream file is only deleted when that stream ends
+until [ $(df --output=avail -B1G / | tail -1) -ge ${ASSEMBLE_FREE_GB:-25} ]; do echo "waiting for disk $(date -u +%T)"; sleep 300; done
 python3 pipeline/livestream_build.py assemble $DAY || { echo "ASSEMBLE FAILED"; exit 1; }
 python3 -c "import sys;sys.path.insert(0,'pipeline');import stream_thumbnail as T;T.make('work/stream/$DAY/stream.mp4','/tmp/thumb_$DAY.jpg')" && curl -sf -X PUT -H "X-Key: $K" --data-binary @/tmp/thumb_$DAY.jpg https://lofitrain-control.jchardukian.workers.dev/obj/control/pkg/thumb_$DAY.jpg
 for f in plan.json music_used.json; do curl -sf -X PUT -H "X-Key: $K" --data-binary @work/stream/$DAY/$f https://lofitrain-control.jchardukian.workers.dev/obj/control/pkg/${DAY}_$f; done

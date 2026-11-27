@@ -5,11 +5,6 @@
  "season": "Alaska on a snowy winter midday, low golden sun, pale blue and gold light, vast snowy mountains, frozen inlet, wild and peaceful",
  "sky": "work/cities_v3/anchorage/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/anchorage/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "colour": [
@@ -82,5 +77,8 @@
  "single_layer": true,
  "street_speed": 25,
  "gaps_ok": "single layer",
- "ride_s": 180
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
 }

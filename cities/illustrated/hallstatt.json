@@ -5,11 +5,6 @@
  "season": "Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet",
  "sky": "work/cities_v3/hallstatt/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/hallstatt/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "colour": [
@@ -80,7 +75,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: street row feather_top 35 -> 110: its straight snowy-forest top read as a hard stripe across the lake."
+  "2026-11-24: street row feather_top 35 -> 110: its straight snowy-forest top read as a hard stripe across the lake.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

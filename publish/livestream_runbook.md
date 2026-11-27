@@ -131,3 +131,16 @@ Lessons 2026-11-26 (first slot build):
 - Worker downloads are fast again (20:50Z test: server 2 ~3 MB/s, server 1 ~0.7 MB/s), so normal stream.tgz refresh + fetching works;
   time a download before each build anyway and fall back to cached rides only if it is slow again.
 - City builds on server 2 take ~25 min each (Detroit 1509 s).
+- 2026-11-27 ~21:50Z lessons:
+  * The agent loop on a server can take 2-3 minutes per pass (it re-uploads every log). A second PUT to cmd.json/cmd2.json
+    before the first command was picked up REPLACES it silently (the private test broadcast got lost that way). Have each
+    command PUT a control/out<n>/<id>.start marker first and wait for it before sending the next command.
+  * Opening paintings: the renderer scales them to 2200 px wide and crops ~13% top and bottom; the window frame hides a bit
+    more, so the top ~16% of the painting is never seen. 36 of 46 openings had towers/spires/peaks/palms crossing that line
+    (Anchorage, Atlanta, Austin and Detroit made it into builds). Removed from 36 configs; kept: cape_town, edinburgh,
+    istanbul, lake_bled, las_vegas, reykjavik, salt_lake_city, san_diego, singapore, sydney. Check any new opening this way.
+  * stream_ok cut to 13 cities whose openings are fine; re-add each city after its rebuild passes the in-motion check.
+  * stream_day.sh now waits for >= 25 GB free before assembling (the previous stream file on that server is only deleted
+    when that stream ends).
+  * City rebuild queue: server 1 unit lofi-build-q1x (47 cities, waits for its 0000 stream file). The 05:25Z slot run must
+    move what is left to server 2 AFTER server 2's 2026-11-28-0800 STREAM FILE READY (its assembly waits for disk until ~06:01Z).

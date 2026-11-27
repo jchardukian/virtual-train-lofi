@@ -5,11 +5,6 @@
  "season": "Philadelphia on a snowy winter afternoon, soft white snowfall, warm amber window glow, red brick and white trim, cozy holiday feel",
  "sky": "work/cities_v3/philadelphia/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/philadelphia/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Ben Franklin Bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Ben Franklin Bridge)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

@@ -5,11 +5,6 @@
  "season": "Kansas City on a late-summer sunset, warm gold and rose, fountains sparkling, prairie grasses, easygoing and warm",
  "sky": "work/cities_v3/kansas_city/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/kansas_city/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "colour": [
@@ -80,7 +75,8 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

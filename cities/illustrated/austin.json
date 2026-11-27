@@ -5,11 +5,6 @@
  "season": "Austin on a hot summer sunset, orange and magenta sky, warm haze, live music glow, oak-covered Hill Country, relaxed and friendly",
  "sky": "work/cities_v3/austin/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/austin/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Congress Avenue bridge with a bat cloud); landmarks_3.png (the 360-style suspension bridge)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Congress Avenue bridge with a bat cloud); landmarks_3.png (the 360-style suspension bridge)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

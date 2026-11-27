@@ -5,11 +5,6 @@
  "season": "Seoul on a snowy winter dusk, soft blue light, warm lanterns and windows, snow on curved palace roofs, misty mountains, calm and cozy",
  "sky": "work/cities_v3/seoul/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/seoul/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "snow",
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice.",
-  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_3.png (a Han River bridge with lights)"
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_3.png (a Han River bridge with lights)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

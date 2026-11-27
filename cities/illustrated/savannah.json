@@ -5,11 +5,6 @@
  "season": "Savannah on a soft spring morning, dappled light through live oaks, Spanish moss, azaleas in bloom, pastel historic houses, gentle and graceful",
  "sky": "work/cities_v3/savannah/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/savannah/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": null,
  "ground_src": {
   "colour": [
@@ -82,7 +77,8 @@
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the cable-stayed river bridge)",
   "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_1.png",
-  "2026-11-26: the bridge towers were cut flat at the top of the art. far_0_capped.png gives both towers pointed caps and removes the cable-fan fragments above them."
+  "2026-11-26: the bridge towers were cut flat at the top of the art. far_0_capped.png gives both towers pointed caps and removes the cable-fan fragments above them.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

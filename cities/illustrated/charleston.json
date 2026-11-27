@@ -5,11 +5,6 @@
  "season": "Charleston on a warm spring afternoon, soft sunshine, pastel houses, palmettos, harbour breeze, gentle and elegant",
  "sky": "work/cities_v3/charleston/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/charleston/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": null,
  "ground_src": {
   "colour": [
@@ -81,7 +76,8 @@
  "ground_first": true,
  "_notes": [
   "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the cable-stayed harbour bridge)",
-  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png"
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
  ],
  "single_layer": true,
  "street_speed": 25,

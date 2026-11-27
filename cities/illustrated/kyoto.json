@@ -2,11 +2,6 @@
  "city": "Kyoto, Japan",
  "next": "coming soon",
  "sky_flip": true,
- "opening": {
-  "src": "work/v2/kyoto/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": "none",
  "ground_src": {
   "src": "work/v2/kyoto/sprites/far_1.png",
@@ -71,5 +66,8 @@
  "single_layer": true,
  "street_speed": 25,
  "gaps_ok": "single layer",
- "ride_s": 180
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
 }
