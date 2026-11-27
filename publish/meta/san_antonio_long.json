@@ -1,6 +1,6 @@
 {
  "title": "San Antonio Chillhop 🚆",
- "description": "Settle into a window seat for a cozy train ride past an illustrated San Antonio on a clear winter night: the Tower of the Americas and the glowing downtown towers under a starry sky, warm lights in every window, with mellow chillhop the whole way.\n\nLofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.\n\nStylised illustrated artwork; not real footage.\nMusic: \"Insomnia\" and \"Tracks To Nowhere\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.\n\n#lofi #sanantonio #trainride #chillhop #riverwalk",
+ "description": "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams\n\nSettle into a window seat for a cozy train ride past an illustrated San Antonio on a clear winter night: the Tower of the Americas and the glowing downtown towers under a starry sky, warm lights in every window, with mellow chillhop the whole way.\n\nLofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.\n\nStylised illustrated artwork; not real footage.\nMusic: \"Insomnia\" and \"Tracks To Nowhere\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.\n\n#lofi #sanantonio #trainride #chillhop #riverwalk",
  "tags": [
   "chillhop",
   "cozy",
@@ -19,5 +19,6 @@
   "winter"
  ],
  "publish_at": "2026-11-30T11:00:00-06:00",
- "expected_sha256": "25a29f6b683718990de7cfacf68665fb62ebf11998e6886368bf2999253f2dd0"
+ "expected_sha256": "047b655480580182f808681a04b927ceac353c13cd346c5c929653dc414ee7ff",
+ "built_sha256": "564319d2c88357f3c757c8dee3372c24fab4322a472e90b789677ee25d11b4b9"
 }
