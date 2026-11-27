@@ -106,3 +106,6 @@ Lessons 2026-11-26 (first slot build):
   /var/lib/lofitrain/rtmp_<id> 1 min after 'STREAM ENDED' (a 22 GB file per stream; server disk is ~75 GB).
 - Timing (server 2, 8 h stream): prep ~10 min/city if not cached, transitions ~34/h with 3 jobs, audio ~2.3 h,
   assemble (full re-encode at 6 Mbps) ~2.5 h.
+- Before livestream_broadcast.py: fetch control/pkg/<id>_plan.json and <id>_music_used.json into work/stream/<id>/
+  (the description is built from them). Python requests to the Worker need a 'User-Agent: curl/8.5.0' header.
+- Private test broadcasts need recordFromStart True (new channels may not disable recording).
