@@ -39,6 +39,8 @@ def main():
     mp = ROOT / f"publish/meta/{city}_long.json"
     mp.write_text(json.dumps(meta, indent=1, ensure_ascii=False) + "\n")
     master = D / f"{city}_illustrated_master.mp4"
+    if master.exists() and sha(master) != meta["expected_sha256"]:
+        master.unlink()                                   # left over from an earlier attempt (older build): fetch the current one
     if not master.exists():
         subprocess.run(["pipeline/fetch_master.sh", city], cwd=ROOT, check=True, stdout=sys.stderr)
     if sha(master) != meta["expected_sha256"]:
