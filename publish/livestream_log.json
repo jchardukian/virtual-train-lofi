@@ -12,5 +12,13 @@
   "likes": 1,
   "notes": "no sound for first ~30 min (96 kHz AAC), restarted 04:50Z with 48 kHz; VOD set private 2026-11-26 (only corrected versions evergreen)",
   "vod_privacy": "private"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "Cozy Train Window 🚆 Lofi to Sleep, Study & Relax",
+  "broadcast_id": "HKhTVQdDDMg",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795739462973100",
+  "scheduled_start": "2026-11-27T01:00:00Z",
+  "watch_url": "https://youtu.be/HKhTVQdDDMg"
  }
 ]

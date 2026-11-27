@@ -322,9 +322,13 @@ def credits(day):
     nm = names()
     pc = sorted({pathlib.Path(u).stem.replace("_", " ") for u in used if "/music_lib/" in u})
     limits = json.loads((ROOT / "publish/limits.json").read_text())
-    stops = ", ".join(nm(c)[0] for c in p["order"])
-    summary = (f"Ride the train around the world for four hours of lofi and chillhop. Settle in by the window as the train "
-               f"rolls through {len(p['order'])} cities, with a tunnel and a 'next stop' countdown between each one.\n\nTonight's route: {stops}.")
+    uniq = list(dict.fromkeys(p["order"]))               # each city once, in the order it first appears
+    stops = ", ".join(nm(c)[0] for c in uniq)
+    hours = round(len(p["order"]) * (300 - 2 * FADE + T_IN + T_DARK) / 3600)
+    words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
+    summary = (f"Ride the train around the world for {words.get(hours, str(hours))} hours of lofi and chillhop. Settle in by "
+               f"the window as the train rolls through {len(uniq)} cities, with a tunnel and a 'next stop' countdown between "
+               f"each one.\n\nThe route: {stops}.")
     credit = ("Music: " + ", ".join(f'"{t}"' for t in pc) + " by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 "
               "(creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.")
     tags = "#lofi #chillhop #studymusic #trainride #lofihiphop"
