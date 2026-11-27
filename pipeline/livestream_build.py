@@ -52,8 +52,8 @@ def get(obj, dest=None):
     """Read an archive object (through the control Worker). Returns bytes, or writes to dest; None if missing.
     curl with a hard time limit per attempt and retries: a slow, trickling connection once hung prep for 2 h."""
     out = str(dest) if dest is not None else "-"
-    for attempt in range(4):
-        r = subprocess.run(["curl", "-sS", "--fail-with-body", "--max-time", "900", "--connect-timeout", "30",
+    for attempt in range(8):
+        r = subprocess.run(["curl", "-sS", "--fail-with-body", "--max-time", "900", "--connect-timeout", "30", "--speed-limit", "200000", "--speed-time", "30",
                             "-H", f"X-Key: {_key()}", "-A", "curl/8.5.0", "-o", out, "-w", "%{http_code}",
                             f"{WORKER}/obj/{obj}"] if dest is not None else
                            ["curl", "-sS", "--max-time", "300", "--connect-timeout", "30", "-H", f"X-Key: {_key()}",
