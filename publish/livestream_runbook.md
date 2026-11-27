@@ -116,3 +116,7 @@ Lessons 2026-11-26 (first slot build):
 - 2026-11-27: a trickling download hung stream prep for 2 h (urllib timeout is per read). get() now uses curl with
   --max-time 900 and 4 attempts. Never list server processes with full arguments (ps args / --forest): the agent's
   own curl carries the control key; list by name only (pgrep -c, ps -o comm).
+- 2026-11-27 ~10:00Z: server 2's downloads THROUGH THE WORKER dropped to ~30 KB/s (server 1: 74 MB/s; server 2's general
+  internet: 87 MB/s). Before starting a stream build on a server, time one 90 MB part download through the Worker; if it
+  is under 5 MB/s, build that slot on the other server, or start it with only the rides already in work/stream/v
+  (exclude everything else) and a stream_day copy without the stream.tgz download line. The 1600 build ran that way.
