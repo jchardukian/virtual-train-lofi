@@ -503,7 +503,9 @@
   "publish_at": "2026-12-02T11:00:00-06:00",
   "media_sha256": "f534c720aca9f8fd8ae5ab9baaff524c7f400815589974413299aa2496693d73",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "replaced_by": "5MonBqR4iYg",
+  "status": "deleted 2026-11-27T14:10:44Z: replaced by the rebuilt version"
  },
  {
   "city": "dubai",
@@ -512,11 +514,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-12-02T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "3f42268c6c7834f7a90cdae3c7ca2eda84fef7b3dccec8fd2efb3f74bc756483",
+  "media_sha256": "09775dbe1eced163b250882528753bc313470b597a7649baf4ce9b550e35ee01",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/955ffc16aee47ef7913262ba/dubai_short_1.mp4",
-  "links_to": "https://youtu.be/ulZKnseJQ_w",
+  "links_to": "https://youtu.be/5MonBqR4iYg",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-27T14:10:44Z with the rebuilt version"
  },
  {
   "city": "dubai",
@@ -525,11 +528,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-12-02T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "c04613ce02de9a5b0e489ab7680f2d6250afc17e35e76c609adb97fefd6b4f08",
+  "media_sha256": "af1a09b80b103dc2e9fc5817e705aab3f501471640c8f7b0cd01fb37b432e020",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/84647ac1c30803d0d360e01d/dubai_short_2.mp4",
-  "links_to": "https://youtu.be/ulZKnseJQ_w",
+  "links_to": "https://youtu.be/5MonBqR4iYg",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
-  "preflight": "passed"
+  "preflight": "passed",
+  "note": "media replaced 2026-11-27T14:10:44Z with the rebuilt version"
  },
  {
   "city": "detroit",
@@ -808,5 +812,20 @@
   "preflight": "passed",
   "replaces": "3AQ4P4OPlGk",
   "built_sha256": "564319d2c88357f3c757c8dee3372c24fab4322a472e90b789677ee25d11b4b9"
+ },
+ {
+  "city": "dubai",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "5MonBqR4iYg",
+  "url": "https://youtu.be/5MonBqR4iYg",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-12-02T11:00:00-06:00",
+  "media_sha256": "769bc03a223e43443e5dcd9f177dcb983dda718619008256b9b1f3e906f3be66",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "built_sha256": "32ecc5222ecc919ba018981489df777573d12a632ea4778631cdc79a312d7448",
+  "replaces": "ulZKnseJQ_w"
  }
 ]

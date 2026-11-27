@@ -1,23 +1,24 @@
 {
  "title": "Dubai Chillhop 🚆",
+ "description": "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams\n\nSettle into a window seat for a calm train ride past an illustrated Dubai at golden hour: the Burj Khalifa rising above a forest of glass and gold towers under a soft peach sky, set to mellow chillhop the whole way.\n\nLofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.\n\nStylised illustrated artwork; not real footage.\nMusic: \"Until Dawn\" and \"Lets Go Shopping\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.\n\n#lofi #dubai #trainride #chillhop #goldenhour",
  "tags": [
-  "lofi",
-  "chillhop",
-  "dubai",
-  "train window",
-  "train ride",
-  "cozy",
-  "golden hour",
   "burj khalifa",
-  "study music",
-  "relaxing music",
-  "illustrated",
-  "skyline",
-  "lofi train",
+  "chillhop",
+  "cozy",
   "desert city",
-  "sunset"
+  "dubai",
+  "golden hour",
+  "illustrated",
+  "lofi",
+  "lofi train",
+  "relaxing music",
+  "skyline",
+  "study music",
+  "sunset",
+  "train ride",
+  "train window"
  ],
  "publish_at": "2026-12-02T11:00:00-06:00",
- "expected_sha256": "f534c720aca9f8fd8ae5ab9baaff524c7f400815589974413299aa2496693d73",
- "description": "Settle into a window seat for a calm train ride past an illustrated Dubai at golden hour: the Burj Khalifa rising above a forest of glass and gold towers under a soft peach sky, set to mellow chillhop the whole way.\n\nLofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.\n\nStylised illustrated artwork; not real footage.\nMusic: \"Until Dawn\" and \"Lets Go Shopping\" by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 (creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.\n\n#lofi #dubai #trainride #chillhop #goldenhour"
+ "expected_sha256": "769bc03a223e43443e5dcd9f177dcb983dda718619008256b9b1f3e906f3be66",
+ "built_sha256": "32ecc5222ecc919ba018981489df777573d12a632ea4778631cdc79a312d7448"
 }
