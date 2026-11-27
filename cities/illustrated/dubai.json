@@ -5,11 +5,6 @@
  "season": "Dubai at a soft desert dawn, pale gold and rose light, glittering glass towers, rippling dunes, calm and grand",
  "sky": "work/cities_v3/dubai/sky.png",
  "sky_top": 0.25,
- "opening": {
-  "src": "work/cities_v3/dubai/opening.png",
-  "hold": 6,
-  "fade": 3
- },
  "weather": null,
  "ground_src": {
   "colour": [
@@ -36,8 +31,8 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/dubai/sprites/far_0.png",
-   "scale": 3.354,
+   "src": "work/cities_v3/dubai/sprites/far_0_spire.png",
+   "scale": 2.28,
    "tile": true,
    "speed": 25,
    "haze": 0.0,
@@ -80,7 +75,9 @@
  ],
  "ground_first": true,
  "_notes": [
-  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-27: the art cut the Burj Khalifa flat at its top edge and the spire ran off the window. far_0_spire.png paints the tapering spire (80 px); scale 3.354 -> 2.28 so it fits.",
+  "2026-11-27: opening painting removed (the Burj Khalifa ran off its top edge too)."
  ],
  "single_layer": true,
  "street_speed": 25,

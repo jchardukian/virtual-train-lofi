@@ -1,6 +1,7 @@
 {
  "_note": "cities whose FINAL build has been checked in motion; only these go into livestreams. Add a city when its final build passes the check; remove it while it is being rebuilt.",
  "cities": [
+  "amsterdam",
   "anchorage",
   "austin",
   "bangkok",
@@ -9,7 +10,6 @@
   "cairo",
   "charleston",
   "detroit",
-  "dubai",
   "edinburgh",
   "istanbul",
   "kansas_city",
@@ -23,7 +23,6 @@
   "new_orleans",
   "paris",
   "rio",
-  "san_antonio",
   "san_diego",
   "san_francisco",
   "seattle"
