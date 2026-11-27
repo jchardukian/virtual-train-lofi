@@ -109,3 +109,7 @@ Lessons 2026-11-26 (first slot build):
 - Before livestream_broadcast.py: fetch control/pkg/<id>_plan.json and <id>_music_used.json into work/stream/<id>/
   (the description is built from them). Python requests to the Worker need a 'User-Agent: curl/8.5.0' header.
 - Private test broadcasts need recordFromStart True (new channels may not disable recording).
+- 2026-11-27: Ubuntu's daily unattended upgrade (06:16Z/06:30Z) restarted our systemd-run units through needrestart:
+  stream 2 stopped 2.5 h early, a city build was OOM-killed, the 0800 stream build restarted. Disabled on BOTH servers:
+  unattended-upgrades.service, apt-daily.timer, apt-daily-upgrade.timer; needrestart set to list-only
+  (/etc/needrestart/conf.d/99-lofitrain.conf). Any new server needs the same before it runs anything.
