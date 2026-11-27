@@ -152,15 +152,18 @@ def plan(day, minutes=240, cities=None):
     rnd = random.Random(f"lofitrain-{day}")
     avail = cities or sorted(p.stem for p in VID.glob("*.mp4") if not p.stem.endswith(("_master", ".tmp")))
     rnd.shuffle(avail)
-    per = 300 - 2 * FADE + T_IN + T_DARK                 # seconds each ride adds to the stream
-    want = max(2, round(minutes * 60 / per))
-    order = list(avail)
-    while len(order) < want:                     # longer than one pass: go round again in a new order, never the same city twice in a row
+    # rides can differ in length (owner 2026-11-27: new rides are 3 min, older ones 5 min): add rides until the
+    # stream is long enough, each adding its own length minus the cross-fades plus the tunnel
+    add = {c: probe(VID / f"{c}.mp4") - 2 * FADE + T_IN + T_DARK for c in avail}
+    order, total = [], 0.0
+    while total < minutes * 60 or len(order) < 2:  # go round again in a new order, never the same city twice in a row
         nxt = list(avail); rnd.shuffle(nxt)
-        if nxt[0] == order[-1]:
+        if order and nxt[0] == order[-1]:
             nxt.append(nxt.pop(0))
-        order += nxt
-    order = order[:want]
+        for c in nxt:
+            if total >= minutes * 60 and len(order) >= 2:
+                break
+            order.append(c); total += add[c]
     pc, el = music_pool()
     rnd.shuffle(pc); rnd.shuffle(el)
     # mostly Purrple Cat, with an ElevenLabs song every third track (the owner's favourite, el_2, early on)
@@ -176,7 +179,7 @@ def plan(day, minutes=240, cities=None):
     tracks.insert(1, gold)
     d = WORK / day
     d.mkdir(parents=True, exist_ok=True)
-    p = {"date": day, "order": order, "tracks": tracks}
+    p = {"date": day, "order": order, "tracks": tracks, "minutes": minutes}
     (d / "plan.json").write_text(json.dumps(p, indent=1) + "\n")
     print(day, len(order), "cities:", " ".join(order))
     return p
@@ -324,7 +327,8 @@ def credits(day):
     limits = json.loads((ROOT / "publish/limits.json").read_text())
     uniq = list(dict.fromkeys(p["order"]))               # each city once, in the order it first appears
     stops = ", ".join(nm(c)[0] for c in uniq)
-    hours = round(len(p["order"]) * (300 - 2 * FADE + T_IN + T_DARK) / 3600)
+    hours = round(sum(probe(VID / f"{c}.mp4") - 2 * FADE + T_IN + T_DARK for c in p["order"]) / 3600) \
+        if all((VID / f"{c}.mp4").exists() for c in p["order"]) else round(p.get("minutes", 480) / 60)
     words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
     summary = (f"Ride the train around the world for {words.get(hours, str(hours))} hours of lofi and chillhop. Settle in by "
                f"the window as the train rolls through {len(uniq)} cities, with a tunnel and a 'next stop' countdown between "

@@ -5,6 +5,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 C=$1; A=$2; B=$3; V1=$4; V2=$5
+DUR=${RIDE_S:-180}                              # owner 2026-11-27: 3-minute rides (was 300)
 export RENDER_SCALE=${RENDER_SCALE:-2}          # 2 = 4K long-form (the standard since 23 Nov); 1 = the old 1080p
 MW=$((1920 * RENDER_SCALE)); MH=$((1080 * RENDER_SCALE))
 D=output/cities/$C/illustrated; O=output/samples; mkdir -p "$D"
@@ -22,8 +23,8 @@ else
 fi
 [ -s "$D/${C}_illustrated_video.mp4" ] || { echo "RENDER FAILED for $C"; exit 1; }
 N=$(ffprobe -v error -count_packets -select_streams v -show_entries stream=nb_read_packets -of csv=p=0 "$D/${C}_illustrated_video.mp4")
-[ "$N" = "9000" ] || { echo "$C: expected 9000 frames, got $N"; exit 1; }
-ffmpeg -hide_banner -loglevel error -y -i "$D/${C}_illustrated_video.mp4" -i "$A" -i "$B" -filter_complex "[1:a]silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.3,areverse[ta];[2:a]silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.3,areverse[tb];[ta][tb]acrossfade=d=4:c1=tri:c2=tri[y];[y]atrim=0:300,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.6:level=false,afade=t=in:d=1.5,afade=t=out:st=297:d=3,aresample=48000[au];[0:v]fade=t=in:d=1.5,fade=t=out:st=298.5:d=1.5[v]" -map "[v]" -map "[au]" -t 300 -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -g 60 -c:a aac -b:a 192k -movflags +faststart "$D/${C}_illustrated_master.mp4"
+[ "$N" = "$((DUR * 30))" ] || { echo "$C: expected $((DUR * 30)) frames, got $N"; exit 1; }
+ffmpeg -hide_banner -loglevel error -y -i "$D/${C}_illustrated_video.mp4" -i "$A" -i "$B" -filter_complex "[1:a]silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.3,areverse[ta];[2:a]silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.1,areverse,silenceremove=start_periods=1:start_threshold=-45dB:start_silence=0.3,areverse[tb];[ta][tb]acrossfade=d=4:c1=tri:c2=tri[y];[y]atrim=0:$DUR,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.6:level=false,afade=t=in:d=1.5,afade=t=out:st=$((DUR - 3)):d=3,aresample=48000[au];[0:v]fade=t=in:d=1.5,fade=t=out:st=$((DUR - 2)).5:d=1.5[v]" -map "[v]" -map "[au]" -t $DUR -c:v libx264 -preset medium -crf 18 -pix_fmt yuv420p -g 60 -c:a aac -b:a 192k -movflags +faststart "$D/${C}_illustrated_master.mp4"
 i=1; for SS in $V1 $V2; do
   ffmpeg -hide_banner -loglevel error -y -ss $SS -i "$D/${C}_illustrated_master.mp4" -t 25 -filter_complex "[0:v]crop=$((608 * RENDER_SCALE)):$MH:$((656 * RENDER_SCALE)):0,scale=1080:1920:flags=lanczos,fade=t=in:d=0.5,fade=t=out:st=24.3:d=0.7[v];[0:a]afade=t=in:d=0.5,afade=t=out:st=24:d=1,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.6:level=false,aresample=48000[a]" -map "[v]" -map "[a]" -c:v libx264 -preset medium -crf 19 -pix_fmt yuv420p -c:a aac -b:a 160k -movflags +faststart "$D/${C}_illustrated_vertical_$i.mp4"; i=$((i+1)); done
 for f in master vertical_1 vertical_2; do pipeline/fix_peak.sh "$D/${C}_illustrated_$f.mp4"; python3 pipeline/audio_gate.py "$D/${C}_illustrated_$f.mp4" > "$D/${C}_illustrated_$f.audio.json" || { echo "$C $f: AUDIO GATE FAILED"; exit 1; }; done

@@ -17,7 +17,7 @@ import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
-SEC = 300
+SEC = 180               # owner 2026-11-27: 3-minute rides at 5x speed (was 300)
 STREET_SPEED = 25.0     # px/s at 1080p: owner 2026-11-26 picked 5x the old 5 px/s (one picture, so no street row to match;
                         # at 5 px/s the view looked like a still photo). Crosses the window in ~70 s.
 HAZE = (196, 208, 250)

@@ -135,7 +135,7 @@ def main():
         if got != want:
             sys.exit(f"public copy of {f.name} does not match")
         cr = credit(music[:1] if i == 1 else music, "Trimmed.")
-        text = "\n\n".join([limits["promotion"]["description_line"], S["summary"] + f"\n▶ Watch the full 5-minute ride: {link}", limits["channel_blurb"],
+        text = "\n\n".join([limits["promotion"]["description_line"], S["summary"] + f"\n▶ Watch the full ride: {link}", limits["channel_blurb"],
                             FOOTAGE + "\n" + cr, S["hashtags"]])
         if "AI" in (text + " " + S["title"]).replace("-", " ").split():
             sys.exit("Short text mentions AI")

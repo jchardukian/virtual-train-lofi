@@ -229,5 +229,6 @@
    ]
   }
  ],
- "street_speed": 25
+ "street_speed": 25,
+ "ride_s": 180
 }

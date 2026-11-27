@@ -81,5 +81,6 @@
  "ground_first": true,
  "single_layer": true,
  "street_speed": 25,
- "gaps_ok": "single layer"
+ "gaps_ok": "single layer",
+ "ride_s": 180
 }

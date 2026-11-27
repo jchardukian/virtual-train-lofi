@@ -28,7 +28,7 @@ for C in "$@"; do
   else
     python3 pipeline/upscale_art.py $C --threads 4 | tail -1 || { echo "$C UPSCALE FAILED"; continue; }
     read A B < <(python3 -c "import json;u=json.load(open('data/music/used.json'))['$C']['files'];print(u[0],u[1])")
-    OUT=$(RENDER_SCALE=2 pipeline/illustrated_build.sh $C $A $B 2 150 2>&1); echo "$OUT" | tail -3
+    OUT=$(RENDER_SCALE=2 pipeline/illustrated_build.sh $C $A $B 2 100 2>&1); echo "$OUT" | tail -3
     echo "$OUT" | grep -q "BUILT OK" || { echo "$C FAILED"; continue; }
   fi
   ok=1
