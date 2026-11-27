@@ -14,7 +14,7 @@ During the last --countdown seconds of A a small 'Next stop' card with a running
 of the window; in the tunnel the next city's name is shown large. Music fades into the tunnel's rumble and
 the next city's music fades up as the train comes out.
 """
-import argparse, pathlib, subprocess, sys, tempfile
+import argparse, pathlib, shutil, subprocess, sys, tempfile
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -261,6 +261,7 @@ def main():
     np.clip(mix, -1, 1).astype(np.float32).tofile(wav)
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", f"{tmp}/v.mp4", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", wav,
                     "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", a.out], check=True)
+    shutil.rmtree(tmp, ignore_errors=True)      # ~70 MB per transition; left behind, they filled the servers' disks
     print(f"wrote {a.out}: {total:.1f} s, tunnel at {t_tun:.1f}-{t_tun + T:.1f} s")
 
 

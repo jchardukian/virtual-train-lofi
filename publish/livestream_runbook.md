@@ -120,3 +120,6 @@ Lessons 2026-11-26 (first slot build):
   internet: 87 MB/s). Before starting a stream build on a server, time one 90 MB part download through the Worker; if it
   is under 5 MB/s, build that slot on the other server, or start it with only the rides already in work/stream/v
   (exclude everything else) and a stream_day copy without the stream.tgz download line. The 1600 build ran that way.
+- 2026-11-27: tunnel_transition.py never deleted its temp dir (~70 MB each; 7-17 GB per server). Fixed (rmtree).
+  Cleaning /tmp: NEVER `find /tmp -maxdepth 1 -name 'tmp*'` (it matches /tmp itself and deletes it); use
+  `find /tmp -mindepth 1 -maxdepth 1 -name 'tmp*' ...`. /tmp was deleted on both servers by that and recreated (1777).
