@@ -1,8 +1,8 @@
-amsterdam
 atlanta
 banff
 cape_town
 chicago
+dubai
 hallstatt
 hong_kong
 honolulu
@@ -18,6 +18,7 @@ portland_maine
 prague
 reykjavik
 salt_lake_city
+san_antonio
 santorini
 savannah
 seoul
