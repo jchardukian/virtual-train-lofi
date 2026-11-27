@@ -197,12 +197,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-27T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "fed22376e6ad75998897d6c71fb01c5451a868d950e9d1dd817d247d79df7a9c",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/4f91e65ac9c6724b8381c1ed/new_orleans_short_1.mp4",
-  "links_to": "https://youtu.be/9j1jeVEgXtA",
+  "media_sha256": "b268770a45cae09920807e02b0a09b80ace1ad3220381c8cad6e7b2c1e41fe44",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/a6b6e89bab57a253a0fb6872/new_orleans_short_1.mp4",
+  "links_to": "https://youtu.be/yuAWFdd3cdE",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T14:58:24Z with the rebuilt version"
+  "note": "media replaced 2026-11-27T04:54:16Z with the rebuilt version"
  },
  {
   "city": "new_orleans",
@@ -211,12 +211,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-27T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "461f8dc9b883b15e58a148c8386b1ce7428bb65d73036e5aa45ec9f5d601193a",
-  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/063c8a52276640fb91765e31/new_orleans_short_2.mp4",
-  "links_to": "https://youtu.be/9j1jeVEgXtA",
+  "media_sha256": "2081165c1bfc8d80afe58180acb486674212373f479096461d005c142c8d6e08",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/81c37c976a45beaeb523f9ea/new_orleans_short_2.mp4",
+  "links_to": "https://youtu.be/yuAWFdd3cdE",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T14:58:24Z with the rebuilt version",
+  "note": "media replaced 2026-11-27T04:54:16Z with the rebuilt version",
   "title": "Lofi Train to New Orleans ✨ #lofi #neworleans #shorts",
   "title_style": "experiment"
  },
@@ -721,6 +721,23 @@
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "replaces": "VsiE07Q6RB0",
-  "built_sha256": "67873ab9ab826ca46504b39c42711428e99f4b9f540227d27ba96ae724e67f97"
+  "built_sha256": "67873ab9ab826ca46504b39c42711428e99f4b9f540227d27ba96ae724e67f97",
+  "replaced_by": "yuAWFdd3cdE",
+  "status": "deleted 2026-11-27T04:54:16Z: replaced by the rebuilt version"
+ },
+ {
+  "city": "new_orleans",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "yuAWFdd3cdE",
+  "url": "https://youtu.be/yuAWFdd3cdE",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-27T11:00:00-06:00",
+  "media_sha256": "846ebee1f53ebc5eca4ec02ad260fcadd5d48d57a1fb8fc7d684b1de298b3f78",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "9j1jeVEgXtA",
+  "built_sha256": "5f26c805ffb897fdfd87eb368fc2073793679df00904bc2a0582335def3aced7"
  }
 ]
