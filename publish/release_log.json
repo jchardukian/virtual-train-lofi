@@ -242,12 +242,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-28T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "869b271cdf35a211c53697ed1f811b431c64e21d46d76fde3b26bcb2545da04f",
+  "media_sha256": "51873e5cd8c15c814e3680d346e6168661a088844758b982e567d8f46da1ab5b",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/61e65375f7b3b769d0d92828/cairo_short_1.mp4",
-  "links_to": "https://youtu.be/zuYNuA3Olao",
+  "links_to": "https://youtu.be/vry2qHuQKok",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T12:54:37Z with the rebuilt version"
+  "note": "media replaced 2026-11-27T06:01:03Z with the rebuilt version"
  },
  {
   "city": "cairo",
@@ -256,12 +256,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-28T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "6331b9575c920c521badd1dca49b1511f5a4e4433ad9523a1fdb63a268cf60f3",
+  "media_sha256": "161344b04c005cf9409da64570a4e10e93e77c66437d6941575d05ba2b7bf158",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/5d39a038f71882d1c605187f/cairo_short_2.mp4",
-  "links_to": "https://youtu.be/zuYNuA3Olao",
+  "links_to": "https://youtu.be/vry2qHuQKok",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T12:54:37Z with the rebuilt version",
+  "note": "media replaced 2026-11-27T06:01:03Z with the rebuilt version",
   "title": "Cairo Window Seat 🌅 #lofi #cairo #shorts",
   "title_style": "experiment"
  },
@@ -287,12 +287,12 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-29T14:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "a30fabc861c68476baeda0f82e33a133c4aa9770cda5399055a11ddb685bf09a",
+  "media_sha256": "cea19b82f0d6baf8db8fe9ef5bfca2ce61ccf8e114c94a6c1ea2a6ebefadd411",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/c0db06d03f8cfa302cae8520/seattle_short_1.mp4",
-  "links_to": "https://youtu.be/UG4HgXMsWOE",
+  "links_to": "https://youtu.be/xz0aoxOX4ts",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "note": "media replaced 2026-11-26T03:51:40Z with the rebuilt version"
+  "note": "media replaced 2026-11-27T06:12:52Z with the rebuilt version"
  },
  {
   "city": "seattle",
@@ -301,14 +301,14 @@
   "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
   "due_at": "2026-11-29T20:30:00-06:00",
   "status": "scheduled",
-  "media_sha256": "5835067a8144b08c9e76e6e393f94d5b5eb5e9bb845c156661dec1c18efd63f4",
+  "media_sha256": "5e650593fe7e0f46e44ee01c0a70ef9a06232689c68cab41b1df753edfc2cae0",
   "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/b4db7febd644b1198be55989/seattle_short_2.mp4",
-  "links_to": "https://youtu.be/UG4HgXMsWOE",
+  "links_to": "https://youtu.be/xz0aoxOX4ts",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
   "title": "Seattle by Train 🚆 #lofi #seattle #shorts",
   "title_style": "experiment",
-  "note": "media replaced 2026-11-26T03:51:40Z with the rebuilt version"
+  "note": "media replaced 2026-11-27T06:12:52Z with the rebuilt version"
  },
  {
   "city": "london",
@@ -631,7 +631,9 @@
   "media_sha256": "5b1c9f37a7e8501f6fa38da5737603cff4071a3cefd4dc8438fd801ba53a01e3",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "replaces": "rTY6Rk84UxA"
+  "replaces": "rTY6Rk84UxA",
+  "replaced_by": "xz0aoxOX4ts",
+  "status": "deleted 2026-11-27T06:12:52Z: replaced by the rebuilt version"
  },
  {
   "city": "amsterdam",
@@ -676,7 +678,9 @@
   "media_sha256": "d7cdc8ba0f8b7bbb6c9f13b3018f15faed5381967685c550fb3f6ef428c25a0b",
   "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
   "preflight": "passed",
-  "replaces": "css3nJoVL3Q"
+  "replaces": "css3nJoVL3Q",
+  "replaced_by": "vry2qHuQKok",
+  "status": "deleted 2026-11-27T06:01:03Z: replaced by the rebuilt version"
  },
  {
   "city": "san_antonio",
@@ -739,5 +743,35 @@
   "preflight": "passed",
   "replaces": "9j1jeVEgXtA",
   "built_sha256": "5f26c805ffb897fdfd87eb368fc2073793679df00904bc2a0582335def3aced7"
+ },
+ {
+  "city": "cairo",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "vry2qHuQKok",
+  "url": "https://youtu.be/vry2qHuQKok",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-28T11:00:00-06:00",
+  "media_sha256": "70bbeb19d564ea0ae2911a886d00f2b75c0b2c8df32d2c9d9de425a78127ee9b",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "zuYNuA3Olao",
+  "built_sha256": "dde04ae4970ef5edfc22022049258d89512f663f38fd8aaed9b637d7743e12f4"
+ },
+ {
+  "city": "seattle",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "xz0aoxOX4ts",
+  "url": "https://youtu.be/xz0aoxOX4ts",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-11-29T11:00:00-06:00",
+  "media_sha256": "58e65ace4840510c10aa7be8af17354818cfa3cc36c76c6a461dc422353024b8",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "replaces": "UG4HgXMsWOE",
+  "built_sha256": "1d5b2615e2f70910a276adeaa596067bdb1d84aa9ca288201ee888a52824de46"
  }
 ]

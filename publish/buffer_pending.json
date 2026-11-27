@@ -1,0 +1,23 @@
+{
+ "_note": "Buffer caption edits waiting for an approval (the Short files are already correct): change the YouTube link and '5-minute ride' text.",
+ "edits": [
+  {
+   "city": "cairo",
+   "posts": [
+    "6b04f585c43c1f2f5c7f0917",
+    "6b04f588c43c1f2f5c7f09bd"
+   ],
+   "old_link": "https://youtu.be/zuYNuA3Olao",
+   "new_link": "https://youtu.be/vry2qHuQKok"
+  },
+  {
+   "city": "seattle",
+   "posts": [
+    "6b04ffb0bc151fa8ad1b39dd",
+    "6b04ffb3c43c1f2f5c82ec32"
+   ],
+   "old_link": "https://youtu.be/UG4HgXMsWOE",
+   "new_link": "https://youtu.be/xz0aoxOX4ts"
+  }
+ ]
+}

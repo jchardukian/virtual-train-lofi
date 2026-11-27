@@ -67,18 +67,15 @@ def main():
             sys.exit(f"{f.name} does not match its build hash")
         fc = carded(f, short=True)
         want = sha(fc)
-        key = f"{secrets.token_hex(12)}/{city}_short_{i}.mp4"
+        # write over the file the scheduled Buffer post already points at, so the post never loses its video
+        # (Buffer edits can wait for approval; the caption link is updated when they go through)
+        key = S["delivery_url"].split(".r2.dev/")[1] if S.get("delivery_url") else f"{secrets.token_hex(12)}/{city}_short_{i}.mp4"
         cf("PUT", f"lofitrain-delivery/objects/{key}", fc.read_bytes(), "video/mp4")
         fc.unlink()
         url = f"{DELIVERY}/{key}"
         got = hashlib.sha256(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "curl/8.5.0"}), timeout=300).read()).hexdigest()
         if got != want:
             sys.exit(f"public copy of {f.name} does not match")
-        if S.get("delivery_url"):
-            try:
-                cf("DELETE", "lofitrain-delivery/objects/" + S["delivery_url"].split(".r2.dev/")[1])
-            except Exception as e:  # an old copy that is already gone is fine
-                print("old copy:", e, file=sys.stderr)
         S["delivery_url"], S["media_sha256"], S["links_to"] = url, want, new_link
         S["note"] = f"media replaced {now} with the rebuilt version"
         res["shorts"].append({"item": f"short_{i}", "buffer_post_id": S["buffer_post_id"], "url": url, "old_link": L["url"], "new_link": new_link})
