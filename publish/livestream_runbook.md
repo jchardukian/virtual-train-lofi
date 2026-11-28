@@ -147,3 +147,5 @@ Lessons 2026-11-26 (first slot build):
 - 2026-11-27 23:50Z: the plan step ignored the exclude list (it used every ride in work/stream/v), so excluded cities
   (old Dubai on Fri 8am, Detroit/Kansas City/... in the Fri 4pm and Sat 12am files) still aired. Fixed: stream_day.sh passes
   the stream list to `plan`, which logs "plan cities: ... | missing: ...". Check that line in every stream log.
+- 2026-11-28 03:50Z: Hallstatt 3-min passes for streams (sky ~55%), but the church sprite shows twice in one window at
+  times; consider an art touch-up (one church) before its own daily release.
