@@ -161,3 +161,11 @@ Lessons 2026-11-26 (first slot build):
   Owner 2026-11-28 ~15:00Z: "get all the cities finished so we can have the new live streams all done and then work on
   the smooth ride after". Queue is now lofi-build-q1w: the 22 never-rebuilt cities first (they get the smooth renderer, no
   extra time), THEN the smooth redo of the other 33 and the swaps of the 7 scheduled videos.
+
+## NEXT (owner 2026-11-28 ~16:00Z): growth research as soon as all 55 cities are done and in the streams
+"Analyze other popular channels in this space ... figure out how to make the channel more successful and engaging ...
+more viewers and subscribers ... figure out how we replicate the success of these other channels."
+Study: Lofi Girl, Chillhop Music, Lofi Records, College Music + train-window / rainy-window / cozy-ambience / train POV
+channels. Compare titles, thumbnails, stream format/length/chat, Shorts, upload cadence/times, playlists/channel page,
+branding (mascot/recognisable look), community features. Include our own numbers (merges with the Dec 6 review).
+Deliver a short ranked report (impact on views/subs, effort); owner decides branding/mascot/money items; apply the rest.
