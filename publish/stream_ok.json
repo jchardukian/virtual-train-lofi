@@ -34,6 +34,7 @@
   "paris",
   "san_antonio",
   "san_diego",
+  "san_francisco",
   "seattle"
  ],
  "_note2": "2026-11-27: cities whose opening painting ran off the top of the window are out until rebuilt without it (re-add after the in-motion check)."
