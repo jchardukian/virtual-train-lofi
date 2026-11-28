@@ -154,3 +154,7 @@ Lessons 2026-11-26 (first slot build):
   illustrated_city.py: sub-pixel scrolling (strip_s/over_s, premultiplied column blend) for backdrop, bands, landmarks and
   sky; bob off by default ("bob": true in a config turns it back on). Measured after: dx std 0.06 px (was 0.31), dy 0.
   Every city needs a re-render to get it; publish/smoothness_before_after.mp4 shows the difference.
+  Rollout: built markers cleared for all 55; server 1 unit lofi-build-q1z rebuilds all 55 smooth (scheduled releases first:
+  seattle san_antonio amsterdam dubai detroit austin anchorage, then the 21 never rebuilt, then the rest). Swap each
+  scheduled video (replace_release.py + both Buffer posts) as its smooth build passes; Seattle publishes Nov 29 17:00Z.
+  The next slot runs move the remaining queue between servers as usual.
