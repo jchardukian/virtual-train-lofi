@@ -158,3 +158,6 @@ Lessons 2026-11-26 (first slot build):
   seattle san_antonio amsterdam dubai detroit austin anchorage, then the 21 never rebuilt, then the rest). Swap each
   scheduled video (replace_release.py + both Buffer posts) as its smooth build passes; Seattle publishes Nov 29 17:00Z.
   The next slot runs move the remaining queue between servers as usual.
+  Owner 2026-11-28 ~15:00Z: "get all the cities finished so we can have the new live streams all done and then work on
+  the smooth ride after". Queue is now lofi-build-q1w: the 22 never-rebuilt cities first (they get the smooth renderer, no
+  extra time), THEN the smooth redo of the other 33 and the swaps of the 7 scheduled videos.
