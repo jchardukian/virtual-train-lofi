@@ -32,7 +32,7 @@ for C in "$@"; do
     echo "$OUT" | grep -q "BUILT OK" || { echo "$C FAILED"; continue; }
   fi
   ok=1
-  for f in $D/${C}_illustrated_vertical_1.mp4 $D/${C}_illustrated_vertical_2.mp4 $D/SHA256SUMS $D/*.audio.json $D/*.contact.jpg $D/RESOLUTION $D/${C}_illustrated_video.render.json; do put $f $C/$(basename $f) || ok=0; done
+  for f in $D/${C}_illustrated_vertical_1.mp4 $D/${C}_illustrated_vertical_2.mp4 $D/SHA256SUMS $D/*.audio.json $D/*.contact.jpg $D/RESOLUTION $D/SHORT2_START $D/${C}_illustrated_video.render.json; do [ -e $f ] || continue; put $f $C/$(basename $f) || ok=0; done
   T=$(mktemp -d); split -b 90M -d $D/${C}_illustrated_master.mp4 $T/${C}_illustrated_master.mp4.part
   for p in $T/*; do put $p $C/$(basename $p) || ok=0; done; rm -rf $T
   for f in output/samples/${C}_illustrated_*; do put $f $C/samples/$(basename $f) || ok=0; done

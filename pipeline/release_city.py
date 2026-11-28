@@ -134,7 +134,10 @@ def main():
         got = hashlib.sha256(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "curl/8.5.0"}), timeout=300).read()).hexdigest()
         if got != want:
             sys.exit(f"public copy of {f.name} does not match")
-        cr = credit(music[:1] if i == 1 else music, "Trimmed.")
+        # credit only the songs that play in this Short: song A runs to about its length minus the 4 s cross-fade
+        start = 2.0 if i == 1 else float((D / "SHORT2_START").read_text()) if (D / "SHORT2_START").exists() else 100.0
+        dur_a = json.loads((ROOT / "data/music/used.json").read_text())[city].get("durations_s", [999])[0]
+        cr = credit(music[:1] if start + 25 <= dur_a - 4 else music, "Trimmed.")
         text = "\n\n".join([limits["promotion"]["description_line"], S["summary"] + f"\n▶ Watch the full ride: {link}", limits["channel_blurb"],
                             FOOTAGE + "\n" + cr, S["hashtags"]])
         if "AI" in (text + " " + S["title"]).replace("-", " ").split():
