@@ -149,3 +149,8 @@ Lessons 2026-11-26 (first slot build):
   the stream list to `plan`, which logs "plan cities: ... | missing: ...". Check that line in every stream log.
 - 2026-11-28 03:50Z: Hallstatt 3-min passes for streams (sky ~55%), but the church sprite shows twice in one window at
   times; consider an art touch-up (one church) before its own daily release.
+- 2026-11-28 ~14:50Z: owner saw the videos as "kinda shaky". Measured: the scenery moved in whole-pixel steps (1, 1, 0.35 px
+  per frame at 1080p, a stutter 10x a second) plus a deliberate up-and-down "train bob" (~4.6 px range). Fixed in
+  illustrated_city.py: sub-pixel scrolling (strip_s/over_s, premultiplied column blend) for backdrop, bands, landmarks and
+  sky; bob off by default ("bob": true in a config turns it back on). Measured after: dx std 0.06 px (was 0.31), dy 0.
+  Every city needs a re-render to get it; publish/smoothness_before_after.mp4 shows the difference.

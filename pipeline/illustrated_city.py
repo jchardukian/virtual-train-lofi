@@ -17,6 +17,50 @@ import numpy as np
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from illustrated_journey import rgba, tint, loop, over, strip, S, W, H, FPS, MID, BAND, NEAR, ROOT, ILL, CHI  # noqa: E402
 
+# owner 2026-11-28: "it appears kinda shaky... I thought it would be things passing by smoothly". The scenery moved in
+# whole-pixel steps (1, 1, 0 px per frame at 1080p: a stutter ten times a second) and the view bobbed up and down.
+# These draw at fractional positions (linear blend of neighbouring columns, premultiplied so edges stay clean).
+def _blend_cols(arr, fr):
+    """arr[:, j] * (1 - fr) + arr[:, j + 1] * fr  (one column narrower)"""
+    return arr[:, :-1] * (1.0 - fr) + arr[:, 1:] * fr if fr > 1e-4 else arr[:, :-1]
+
+
+def strip_s(img, lp, off, base_y, k=1.0):
+    rgb, a, period = lp
+    o = off % period
+    o0 = int(o)
+    fr = o - o0
+    a1 = a[:, o0:o0 + W + 1]
+    P = _blend_cols(rgb[:, o0:o0 + W + 1] * a1, fr)
+    A = _blend_cols(a1, fr)
+    y = int(round(base_y - rgb.shape[0]))
+    ya, yb = max(0, y), min(H, y + rgb.shape[0])
+    if yb <= ya or k <= 0:
+        return
+    Ak, Pk = A[ya - y:yb - y] * k, P[ya - y:yb - y] * k
+    img[ya:yb, :Pk.shape[1]] = img[ya:yb, :Pk.shape[1]] * (1 - Ak) + Pk
+
+
+def over_s(img, rgb, a, x, y, k=1.0):
+    """over() at a fractional x: the sprite is shifted right by the fraction, one column wider"""
+    xi = math.floor(x)
+    fr = x - xi
+    if fr <= 1e-4:
+        return over(img, rgb, a, int(xi), int(y), k)
+    h, w = a.shape[:2]
+    P = np.zeros((h, w + 1, 3), np.float32)
+    A = np.zeros((h, w + 1, 1), np.float32)
+    pm = rgb * a
+    P[:, :w] += pm * (1 - fr); P[:, 1:] += pm * fr
+    A[:, :w] += a * (1 - fr); A[:, 1:] += a * fr
+    y = int(y)
+    xa, xb, ya, yb = max(0, xi), min(W, xi + w + 1), max(0, y), min(H, y + h)
+    if xb <= xa or yb <= ya or k <= 0:
+        return
+    Ak = A[ya - y:yb - y, xa - xi:xb - xi] * k
+    img[ya:yb, xa:xb] = img[ya:yb, xa:xb] * (1 - Ak) + P[ya - y:yb - y, xa - xi:xb - xi] * k
+
+
 SEC = 180               # owner 2026-11-27: 3-minute rides at 5x speed (was 300)
 STREET_SPEED = 25.0     # px/s at 1080p: owner 2026-11-26 picked 5x the old 5 px/s (one picture, so no street row to match;
                         # at 5 px/s the view looked like a still photo). Crosses the window in ~70 s.
@@ -189,6 +233,7 @@ class City:
         self.band_off = {}
         # owner 2026-11-24: no separate foreground strip; the street row runs down to the window sill instead
         self.keep_near = cfg.get("keep_near", False)
+        self.cfg_bob = cfg.get("bob", False)
         self.cfg_treewall = cfg.get("keep_treewall", False)
         self.cfg_mids = cfg.get("keep_mids", False)
         bd = cfg.get("backdrop") or []
@@ -270,9 +315,9 @@ class City:
         if self.mid_speed < 20 * S and not self.cfg_mids:   # too slow to pass by: close-ups would pile up
             return
         for (rgb, a), tau, base in self.mid:
-            x = int(round(W / 2 + self.mid_speed * (tau - t) - a.shape[1] / 2))   # at the street's own speed
+            x = W / 2 + self.mid_speed * (tau - t) - a.shape[1] / 2   # at the street's own speed
             if -a.shape[1] < x < W:
-                over(img, rgb, a, x, base - a.shape[0] + bob)
+                over_s(img, rgb, a, x, base - a.shape[0] + bob)
 
     def load(self, src, scale=1.0, flip=False, haze=0.0):
         key = (src, scale, flip, haze)
@@ -410,20 +455,23 @@ class City:
     def draw_far(self, img, lay, t, t0, bob, k):
         kind, L, base, speed, alpha, x = lay
         if kind == "tile":
-            strip(img, L, x + speed * t, base + bob, alpha * k)
+            strip_s(img, L, x + speed * t, base + bob, alpha * k)
         else:
-            over(img, L[0], L[1], int(x - speed * (t - t0)), base - L[0].shape[0] + bob, alpha * k)
+            over_s(img, L[0], L[1], x - speed * (t - t0), base - L[0].shape[0] + bob, alpha * k)
 
     def render(self, f):
         t = f / FPS
-        bob = int(round((1.6 * math.sin(2 * math.pi * 0.9 * t) + 0.9 * math.sin(2 * math.pi * 2.3 * t + 1)) * S))
+        # owner 2026-11-28: no up-and-down bob (it read as shaking); a city can opt back in with "bob": true
+        bob = int(round((1.6 * math.sin(2 * math.pi * 0.9 * t) + 0.9 * math.sin(2 * math.pi * 2.3 * t + 1)) * S)) if self.cfg_bob else 0
         w = [self.weight(t, k) for k in range(self.n)]
         img = np.empty((H, W, 3), np.float32)
-        o = int(40 + 3 * t) * S if S == 1 else int((40 + 3 * t) * S)
-        img[:760 * S] = self.sky[:, o:o + W]
+        so = (40 + 3 * t) * S
+        o, sf = int(so), so - int(so)
+        sky = self.sky[:, o:o + W] * (1 - sf) + self.sky[:, o + 1:o + 1 + W] * sf if sf > 1e-4 else self.sky[:, o:o + W]
+        img[:760 * S] = sky
         # owner 2026-11-26 (Vancouver): below the sky picture, repeating its last row showed as vertical streaks wherever
         # a low skyline left that band visible; continue the sky with its own lower rows, mirrored, instead
-        img[760 * S:] = self.sky[760 * S - (H - 760 * S):760 * S][::-1, o:o + W]
+        img[760 * S:] = sky[760 * S - (H - 760 * S):760 * S][::-1]
         if self.ground_first:                # ground lies behind the distant layers, which stand on it
             self.draw_ground(img, t, bob, w)
         for lay in self.backdrop:
@@ -439,17 +487,17 @@ class City:
             self.draw_mids(img, t, bob)
         # river sections: the strip stands on the far bank, then the water in front of it
         for lp, base, speed, off, k in self.bands(w, river=True):
-            strip(img, lp, off + speed * t, base + bob, k)
+            strip_s(img, lp, off + speed * t, base + bob, k)
         if riv > 0:
             y0 = 730 * S + bob
             rv = self.water(self.river, t, 62 * S, H - y0)
             img[y0:] = img[y0:] * (1 - riv) + rv * riv
         for lp, base, speed, off, k in self.bands(w, river=False):
-            strip(img, lp, off + speed * t, base + bob, k)
+            strip_s(img, lp, off + speed * t, base + bob, k)
         if self.mid_front:                 # landmarks stand on the street in front of the row, not perched behind it
             self.draw_mids(img, t, bob)
         if self.keep_near:
-            strip(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)
+            strip_s(img, self.near, 400 * S + NEAR * t, H + self.near_base, 1.0)
         for k in (range(1, self.n) if self.cfg_treewall else ()):   # owner 2026-11-25: no fast blurred foreground sweep
             x = int(W + 150 * S - 620 * S * (t - (k * self.sect - 3.4)))
             if -self.treewall[1].shape[1] < x < W:
