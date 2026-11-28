@@ -1,0 +1,89 @@
+{
+ "city": "Seattle, Washington",
+ "next": "Rio de Janeiro, Brazil",
+ "version": 3,
+ "season": "Seattle on a cozy rainy autumn afternoon, soft grey-blue clouds, gentle drizzle, glistening wet streets, deep evergreens and orange maples, warm window lights",
+ "sky": "work/cities_v3/seattle/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/seattle/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    93.85279846191406,
+    79.94270324707031,
+    68.4758071899414
+   ],
+   [
+    78.2106704711914,
+    66.6189193725586,
+    57.06317901611328
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/seattle/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/seattle/sprites/far_0.png",
+   "scale": 2.778,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

@@ -1,0 +1,145 @@
+{
+ "city": "Portland, Maine",
+ "next": "Banff, Canada",
+ "version": 3,
+ "season": "coastal Maine on a foggy autumn morning, soft silver fog lifting, cool sea, red and gold maples, weathered shingles, quiet and cozy",
+ "sky": "work/cities_v3/portland_maine/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/portland_maine/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    78.91295623779297,
+    86.6231918334961,
+    75.83790588378906
+   ],
+   [
+    65.76080322265625,
+    72.18599700927734,
+    63.19825744628906
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/portland_maine/sprites/near_0.png",
+  "scale": 0.85,
+  "base": -2
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/portland_maine/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/portland_maine/sprites/local_0.png",
+     "scale": 1.1070110701107012,
+     "base": 845
+    },
+    {
+     "src": "work/cities_v3/portland_maine/sprites/local_5.png",
+     "scale": 0.8633093525179856,
+     "base": 845
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/portland_maine/sprites/landmarks_1.png",
+     "scale": 1.7,
+     "base": 845
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/portland_maine/sprites/local_2.png",
+     "scale": 0.9646302250803859,
+     "base": 845
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/portland_maine/sprites/local_3.png",
+     "scale": 1.0067114093959733,
+     "base": 845
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [
+    {
+     "src": "work/cities_v3/portland_maine/sprites/landmarks_4.png",
+     "scale": 1.124401913875598,
+     "base": 845
+    },
+    {
+     "src": "work/cities_v3/portland_maine/sprites/local_4.png",
+     "scale": 0.7731958762886598,
+     "base": 845
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/portland_maine/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_3.png (a covered bridge)"
+ ]
+}

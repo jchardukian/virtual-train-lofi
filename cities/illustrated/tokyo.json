@@ -1,0 +1,83 @@
+{
+ "city": "Tokyo, Japan",
+ "next": "coming soon",
+ "version": 2,
+ "season": "spring cherry blossom afternoon",
+ "sky": "work/v2/tokyo2/sky.png",
+ "sky_top": 0.05,
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    120,
+    175,
+    130
+   ],
+   [
+    90,
+    150,
+    105
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/v2/tokyo2/sprites/local_0.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "sections": [
+  {
+   "name": "Sumida River, Skytree and Senso-ji",
+   "ground": "lawn",
+   "far": [],
+   "mid": []
+  },
+  {
+   "name": "Shinjuku",
+   "far": [],
+   "mid": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Tokyo Tower and a shrine",
+   "far": [],
+   "mid": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Neighbourhoods",
+   "far": [],
+   "mid": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Suburbs and Mount Fuji",
+   "far": [],
+   "mid": [],
+   "ground": "lawn"
+  }
+ ],
+ "gaps_ok": "single layer",
+ "backdrop": [
+  {
+   "src": "work/v2/tokyo2/sprites/far_0.png",
+   "scale": 3.642,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1074,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

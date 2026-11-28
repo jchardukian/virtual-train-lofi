@@ -1,0 +1,30 @@
+[{
+ "id": "chicago",
+ "name": "Chicago, Illinois",
+ "next": "London, England",
+ "weather": "leaves",
+ "mood": "Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling",
+ "opening": "the Chicago skyline with Willis Tower and the John Hancock Center rising above the river and Lake Michigan, autumn trees along the lakefront",
+ "sky": "a clear autumn afternoon sky, deep blue above fading to warm pale gold near the bottom, a few soft white clouds.",
+ "skyline": "the downtown Chicago skyline across the water: Willis Tower, the John Hancock Center, Trump Tower, Aon Center and many art-deco and modern towers, with the blue band of Lake Michigan and the river along the bottom.",
+ "ground_band": "a continuous row of Chicago brick three-flat apartment buildings and corner shops with bay windows, fire escapes, green awnings and orange autumn street trees along the sidewalk, rooftops forming an irregular line at the top.",
+ "near": "orange and red autumn maple trees behind a black iron fence with fallen leaves",
+ "landmarks": [
+  "the elevated L train on its steel trestle",
+  "Cloud Gate, the shiny bean sculpture",
+  "the Chicago Water Tower, a small castle-like limestone tower",
+  "the Wrigley Field red marquee sign",
+  "a classic Chicago movie theatre with a vertical neon sign",
+  "the Buckingham Fountain"
+ ],
+ "local": [
+  "a red-brick corner tavern with a green awning",
+  "a hot dog stand",
+  "a brick three-flat with a bay window",
+  "a blue Chicago mailbox and street lamp",
+  "a red-brick church with a small steeple",
+  "a newsstand",
+  "an orange autumn maple tree"
+ ],
+ "music": ["Warm Horizon", "Daydreams"]
+}]

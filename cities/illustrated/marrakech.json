@@ -1,0 +1,84 @@
+{
+ "city": "Marrakech, Morocco",
+ "next": "Austin, Texas",
+ "version": 3,
+ "season": "Marrakech on a warm late spring afternoon, red-ochre walls glowing in low sun, deep blue sky, palm groves, snowy Atlas peaks far away, warm and inviting",
+ "sky": "work/cities_v3/marrakech/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    64.61347961425781,
+    115.79649353027344,
+    214.21278381347656
+   ],
+   [
+    53.84457015991211,
+    96.49708557128906,
+    178.5106658935547
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/marrakech/sprites/local_1.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/marrakech/sprites/far_0.png",
+   "scale": 2.091,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

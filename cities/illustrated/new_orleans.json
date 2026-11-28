@@ -1,0 +1,93 @@
+{
+ "city": "New Orleans, Louisiana",
+ "next": "Cairo, Egypt",
+ "version": 3,
+ "season": "New Orleans on a warm summer evening at dusk, a peach and violet sky, warm lamplight glowing from wrought-iron balconies, humid soft air, cozy and musical",
+ "sky": "work/cities_v3/new_orleans/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/new_orleans/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    53.19968795776367,
+    53.296051025390625,
+    71.72785949707031
+   ],
+   [
+    44.33307647705078,
+    44.41337585449219,
+    59.77322006225586
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/new_orleans/sprites/local_2.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/new_orleans/sprites/far_0_seam.png",
+   "scale": 2.35,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0,
+   "seam": "nosearch"
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up St. Louis Cathedral (landmarks_0.png); it is in the skyline art.",
+  "2026-11-26: far_0_seam.png = far_0 with the right end's sunset glow carried (mirrored, rows reflected down to the horizon, fading out over 190 px) into the open sky at the left end behind the steamboat, so the loop join has glow on both sides (the cut join had shown a diagonal edge).",
+  "2026-11-27: scale 1.786 -> 2.35 (sky was ~60% of the window; now ~45%).",
+  "2026-11-27: seam 'nosearch': the automatic end trimming moved the cut onto the steamboat's paddle wheel; the plain matched cut joins glow to glow as designed."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

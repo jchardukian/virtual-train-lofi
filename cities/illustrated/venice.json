@@ -1,0 +1,86 @@
+{
+ "city": "Venice, Italy",
+ "next": "Los Angeles, California",
+ "version": 3,
+ "season": "Venice on a misty winter morning, soft pearl-grey and pale gold light, mist over the lagoon, muted pastel palazzi, calm and romantic",
+ "sky": "work/cities_v3/venice/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    136.26805114746094,
+    140.46800231933594,
+    140.88966369628906
+   ],
+   [
+    113.55671691894531,
+    117.05667114257812,
+    117.4080581665039
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/venice/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/venice/sprites/far_0.png",
+   "scale": 3.125,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the Rialto Bridge); local_2.png (a small arched footbridge); landmarks_4.png (the Bridge of Sighs)",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png, landmarks_5.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

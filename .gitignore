@@ -1,0 +1,12 @@
+# Large or reproducible files are never committed
+footage/
+work/
+data/osm_raw/
+output/*
+!output/samples/
+!output/masters/
+__pycache__/
+*.trf
+assets/
+work/stream/
+output/samples/stream_preview_*

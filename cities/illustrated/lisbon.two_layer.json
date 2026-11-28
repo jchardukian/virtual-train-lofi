@@ -1,0 +1,149 @@
+{
+ "city": "Lisbon, Portugal",
+ "next": "Detroit, Michigan",
+ "version": 3,
+ "season": "Lisbon on a golden spring evening, honeyed light on tiled facades, terracotta roofs, the Tagus river glowing, nostalgic and warm",
+ "sky": "work/cities_v3/lisbon/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/lisbon/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    85.78469848632812,
+    119.16594696044922,
+    150.64622497558594
+   ],
+   [
+    71.48725128173828,
+    99.30496215820312,
+    125.53852844238281
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/lisbon/sprites/near_0.png",
+  "scale": 1.353,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/lisbon/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/lisbon/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 741,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/lisbon/sprites/local_0.png",
+     "scale": 0.782608695652174,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/lisbon/sprites/landmarks_5.png",
+     "scale": 1.2239583333333333,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lisbon/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 300,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/lisbon/sprites/local_1.png",
+     "scale": 0.7741935483870968,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lisbon/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1000,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/lisbon/sprites/local_2.png",
+     "scale": 0.9523809523809523,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lisbon/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 1700,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/lisbon/sprites/landmarks_3.png",
+     "scale": 1.1533742331288344,
+     "base": 900
+    },
+    {
+     "src": "work/cities_v3/lisbon/sprites/local_3.png",
+     "scale": 0.7741935483870968,
+     "base": 900
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/lisbon/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 2400,
+    "feather_top": 35
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/lisbon/sprites/far_1.png",
+    "scale": 0.95,
+    "base": 905,
+    "offset": 3100,
+    "feather_top": 35
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png, landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
+ ]
+}

@@ -1,0 +1,86 @@
+{
+ "city": "Reykjavik, Iceland",
+ "next": "Miami, Florida",
+ "version": 3,
+ "season": "Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical",
+ "sky": "work/cities_v3/reykjavik/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/reykjavik/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    235,
+    215,
+    200
+   ],
+   [
+    205,
+    180,
+    165
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/reykjavik/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+   "scale": 3.073,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

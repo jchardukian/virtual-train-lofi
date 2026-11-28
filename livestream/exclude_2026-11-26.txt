@@ -1,0 +1,6 @@
+nyc
+vancouver
+austin
+san_diego
+savannah
+washington_dc

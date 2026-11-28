@@ -1,0 +1,391 @@
+#!/usr/bin/env python3
+"""Build a ~4-hour livestream file: city rides joined by the 'next stop' countdown and the tunnel, over one continuous
+music mix. Runs on a stream server (reads the private archive through the control Worker) or here (Cloudflare API).
+
+  python3 pipeline/livestream_build.py plan <date> [--minutes 240]        # city order + playlist for that day -> work/stream/<date>/plan.json
+  python3 pipeline/livestream_build.py prep <city> [<city> ...] [--src FILE] # master -> 1080p30 ride (video only)
+  python3 pipeline/livestream_build.py trans <date>                        # tunnel transitions for the day's order
+  python3 pipeline/livestream_build.py audio <date>                        # music mix with tunnel rumble -> audio.m4a
+  python3 pipeline/livestream_build.py assemble <date>                     # -> work/stream/<date>/stream.mp4 (stream-ready)
+  python3 pipeline/livestream_build.py all <date>                          # every step
+
+Each ride shows from just after its fade-in to the start of the countdown; the transition clip (tunnel_transition.py)
+covers the last 60 s of a ride, the tunnel and the first second of the next, so pieces meet exactly. The stream file
+is H.264 1080p30 at a steady ~6 Mbit/s with a keyframe every 2 s and AAC audio, so streaming is `ffmpeg -re -c copy`.
+Music: Purrple Cat (CC BY, credited) and the owner-approved ElevenLabs songs, shuffled per day, cross-faded; never
+the locally composed tracks. The day's date seeds every choice, so a day's stream is reproducible and days differ.
+"""
+import argparse, datetime, hashlib, json, os, pathlib, random, re, subprocess, sys, time, urllib.request
+
+ROOT = pathlib.Path(__file__).resolve().parent.parent
+WORK = ROOT / "work/stream"
+VID = WORK / "v"                       # 1080p rides, shared by every day's stream
+W, H, FPS, SR = 1920, 1080, 30, 48000
+FADE, TAIL, HEAD = 1.6, 60.0, 1.0      # must match tunnel_transition.py (FADE) and the trans call below
+T_IN, T_DARK, T_OUT = 1.0, 3.0, 1.0
+WORKER = "https://lofitrain-control.jchardukian.workers.dev"
+EL_OK = ["el_1_rainy_rhodes", "el_2_golden_guitar", "el_3_night_train", "g01_golden_hour_guitar", "g02_morning_coffee_guitar",
+         "g04_city_lights_guitar", "g06_summer_drive_guitar", "p01_golden_piano", "p02_rainy_window_piano",
+         "p03_night_city_piano", "p04_sunny_rhodes", "d02_morning_glow_guitar", "d03_sunrise_piano",
+         "s01_golden_hour_rhodes", "s02_window_seat_guitar"]
+# owner 2026-11-26: songs need a melody and a hook, never a short loop on repeat. Dropped as loops (near-copy check):
+# g03_seaside_guitar 65%, g05_autumn_guitar 96%, d01_daybreak_bells 67%, d04_easy_morning_marimba 90%.
+
+
+def sh(*a, **k):
+    return subprocess.run(a, check=True, **k)
+
+
+def probe(p):
+    out = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(p)],
+                         capture_output=True, text=True).stdout
+    return float(out.strip())
+
+
+# ---------- archive access ----------
+def _key():
+    p = pathlib.Path("/etc/lofitrain/key")
+    return p.read_text().strip() if p.exists() else (ROOT / "work/secrets/control_key").read_text().strip()
+
+
+def get(obj, dest=None):
+    """Read an archive object (through the control Worker). Returns bytes, or writes to dest; None if missing.
+    curl with a hard time limit per attempt and retries: a slow, trickling connection once hung prep for 2 h."""
+    out = str(dest) if dest is not None else "-"
+    for attempt in range(8):
+        r = subprocess.run(["curl", "-sS", "--fail-with-body", "--max-time", "900", "--connect-timeout", "30", "--speed-limit", "200000", "--speed-time", "30",
+                            "-H", f"X-Key: {_key()}", "-A", "curl/8.5.0", "-o", out, "-w", "%{http_code}",
+                            f"{WORKER}/obj/{obj}"] if dest is not None else
+                           ["curl", "-sS", "--max-time", "300", "--connect-timeout", "30", "-H", f"X-Key: {_key()}",
+                            "-A", "curl/8.5.0", f"{WORKER}/obj/{obj}", "-w", "\n%{http_code}"],
+                           capture_output=True)
+        if dest is not None:
+            code = r.stdout.decode().strip()[-3:]
+            if code == "200":
+                return True
+            if code == "404":
+                pathlib.Path(dest).unlink(missing_ok=True)
+                return None
+        else:
+            body, _, code = r.stdout.rpartition(b"\n")
+            if code == b"200":
+                return body
+            if code == b"404":
+                return None
+        print(f"get {obj}: attempt {attempt + 1} failed ({r.stdout[-3:]!r} {r.stderr[-120:]!r})", file=sys.stderr, flush=True)
+        time.sleep(10 * (attempt + 1))
+    sys.exit(f"could not fetch {obj}")
+
+def archive_sha(city):
+    """sha256 of the city's current master in the archive (None if the city is not built)"""
+    sums = get(f"{city}/SHA256SUMS")
+    if not sums:
+        return None
+    return next((l.split()[0] for l in sums.decode().splitlines() if l.strip().endswith("_master.mp4")), None)
+
+
+def fetch_master(city, dest, want=None):
+    want = want or archive_sha(city)
+    if not want:
+        sys.exit(f"{city}: no SHA256SUMS in the archive")
+    parts, i = [], 0
+    while True:
+        p = dest.with_suffix(f".part{i:02d}")
+        if not get(f"{city}/{city}_illustrated_master.mp4.part{i:02d}", p):
+            break
+        parts.append(p); i += 1
+    if not parts:
+        if not get(f"{city}/{city}_illustrated_master.mp4", dest):
+            sys.exit(f"{city}: master not in the archive")
+    else:
+        for n in range(len(parts), 0, -1):              # a rebuilt master can need fewer parts: ignore stale ones
+            with open(dest, "wb") as o:
+                for p in parts[:n]:
+                    o.write(p.read_bytes())
+            if sha(dest) == want:
+                break
+        for p in parts:
+            p.unlink()
+    if sha(dest) != want:
+        dest.unlink(missing_ok=True)
+        sys.exit(f"{city}: master failed verification")
+
+
+def sha(p):
+    h = hashlib.sha256()
+    with open(p, "rb") as f:
+        for b in iter(lambda: f.read(1 << 22), b""):
+            h.update(b)
+    return h.hexdigest()
+
+
+# ---------- steps ----------
+def prep(cities, src=None):
+    VID.mkdir(parents=True, exist_ok=True)
+    for c in cities:
+        out = VID / f"{c}.mp4"
+        stamp = VID / f"{c}.sha"                        # archive master this ride was made from
+        want = None if src else archive_sha(c)
+        # A ride is reused only while the archive still holds the same master. Without this check a city
+        # rebuilt in the archive (e.g. the 2026-11-26 switch to 5x / 3-minute rides) kept streaming its old ride.
+        if out.exists() and (src or (want and stamp.exists() and stamp.read_text().strip() == want)):
+            print(c, "already prepared"); continue
+        if out.exists() and not want:
+            print(c, "not in the archive; keeping the ride already here"); continue
+        m = pathlib.Path(src) if src else VID / f"{c}_master.mp4"
+        if not src:
+            try:
+                fetch_master(c, m, want)
+            except SystemExit as e:                     # not built yet: leave it out of the stream
+                print("skip:", e); continue
+            if out.exists():
+                print(c, "newer master in the archive; replacing the old ride")
+        tmp = out.with_suffix(".tmp.mp4")
+        sh("ffmpeg", "-v", "error", "-y", "-i", str(m), "-an", "-vf", f"scale={W}:{H}:flags=lanczos,fps={FPS}",
+           "-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-g", str(2 * FPS), "-pix_fmt", "yuv420p", str(tmp))
+        tmp.rename(out)
+        if not src:
+            m.unlink()
+            stamp.write_text(want + "\n")
+        print(c, "prepared", round(probe(out), 1), "s")
+
+
+def names():
+    spec = {}
+    for f in sorted((ROOT / "cities/specs").glob("*.json")):
+        for x in json.loads(f.read_text()):
+            spec[x["id"]] = x["name"]
+    fix = {"washington_dc": ("Washington DC", "USA"), "portland_maine": ("Portland", "Maine, USA"), "phoenix_sedona": ("Sedona", "Arizona, USA"),
+           "nyc": ("New York City", "USA")}
+    def nm(c):
+        if c in fix:
+            return fix[c]
+        n = spec.get(c, c.replace("_", " ").title())
+        a, _, b = n.partition(",")
+        return a.strip(), b.strip()
+    return nm
+
+
+def music_pool():
+    pc = sorted((ROOT / "work/music_lib").glob("*.mp3"))
+    el = [ROOT / f"work/music_el/{n}.mp3" for n in EL_OK]
+    return [str(p) for p in pc], [str(p) for p in el]
+
+
+def plan(day, minutes=240, cities=None):
+    rnd = random.Random(f"lofitrain-{day}")
+    # only the cities given (stream_day.sh passes the stream list); v/ also holds rides of excluded cities
+    avail = [c for c in cities if (VID / f"{c}.mp4").exists()] if cities else \
+        sorted(p.stem for p in VID.glob("*.mp4") if not p.stem.endswith(("_master", ".tmp")))
+    if cities:
+        print("plan cities:", " ".join(sorted(avail)), "| missing:", " ".join(sorted(set(cities) - set(avail))) or "none", flush=True)
+    rnd.shuffle(avail)
+    # rides can differ in length (owner 2026-11-27: new rides are 3 min, older ones 5 min): add rides until the
+    # stream is long enough, each adding its own length minus the cross-fades plus the tunnel
+    add = {c: probe(VID / f"{c}.mp4") - 2 * FADE + T_IN + T_DARK for c in avail}
+    order, total = [], 0.0
+    while total < minutes * 60 or len(order) < 2:  # go round again in a new order, never the same city twice in a row
+        nxt = list(avail); rnd.shuffle(nxt)
+        if order and nxt[0] == order[-1]:
+            nxt.append(nxt.pop(0))
+        for c in nxt:
+            if total >= minutes * 60 and len(order) >= 2:
+                break
+            order.append(c); total += add[c]
+    pc, el = music_pool()
+    rnd.shuffle(pc); rnd.shuffle(el)
+    # mostly Purrple Cat, with an ElevenLabs song every third track (the owner's favourite, el_2, early on)
+    tracks, i, j = [], 0, 0
+    while len(tracks) < 120:
+        if len(tracks) % 3 == 2 and el:
+            tracks.append(el[j % len(el)]); j += 1
+        else:
+            tracks.append(pc[i % len(pc)]); i += 1
+    gold = str(ROOT / "work/music_el/el_2_golden_guitar.mp3")
+    if gold in tracks:
+        tracks.remove(gold)
+    tracks.insert(1, gold)
+    d = WORK / day
+    d.mkdir(parents=True, exist_ok=True)
+    p = {"date": day, "order": order, "tracks": tracks, "minutes": minutes}
+    (d / "plan.json").write_text(json.dumps(p, indent=1) + "\n")
+    print(day, len(order), "cities:", " ".join(order))
+    return p
+
+
+def trans(day):
+    p = json.loads((WORK / day / "plan.json").read_text())
+    nm = names()
+    jobs = {}
+    for a, b in zip(p["order"], p["order"][1:]):
+        out = WORK / "t" / f"{a}__{b}.mp4"
+        out.parent.mkdir(parents=True, exist_ok=True)
+        # reuse a transition only if it was made from the current rides (owner 2026-11-26: cities get rebuilt)
+        if out.exists() and out.stat().st_mtime > max((VID / f"{a}.mp4").stat().st_mtime, (VID / f"{b}.mp4").stat().st_mtime):
+            continue
+        jobs[out] = (a, b)
+
+    def one(item):
+        out, (a, b) = item
+        n, where = nm(b)
+        sh(sys.executable, str(ROOT / "pipeline/tunnel_transition.py"), str(VID / f"{a}.mp4"), str(VID / f"{b}.mp4"), str(out),
+           "--next", n, "--where", where, "--tail", str(TAIL), "--head", str(HEAD), "--crf", "17")
+        print("transition", a, "->", b, flush=True)
+
+    from concurrent.futures import ThreadPoolExecutor
+    with ThreadPoolExecutor(int(os.environ.get("TRANS_JOBS", "3"))) as ex:   # each one is mostly single-threaded
+        list(ex.map(one, jobs.items()))
+
+
+def pieces(day):
+    """[(file, inpoint, outpoint, kind)], with exact cut points (the cuts are re-encoded in assemble)."""
+    p = json.loads((WORK / day / "plan.json").read_text())
+    o, out = p["order"], []
+    for k, c in enumerate(o):
+        f = VID / f"{c}.mp4"
+        d = probe(f)
+        start = FADE if k == 0 else FADE + HEAD
+        end = d - FADE - TAIL if k < len(o) - 1 else d
+        out.append((f, start, end, "ride"))
+        if k < len(o) - 1:
+            t = WORK / "t" / f"{c}__{o[k + 1]}.mp4"
+            out.append((t, 0.0, probe(t), "trans"))
+    return out
+
+
+def audio(day):
+    import numpy as np
+    p = json.loads((WORK / day / "plan.json").read_text())
+    ps = pieces(day)
+    total = sum(b - a for _, a, b, _ in ps)
+    tunnels, t = [], 0.0
+    for f, a, b, kind in ps:
+        if kind == "trans":
+            tunnels.append(t + TAIL - 0.4)                # the tunnel mouth arrives 0.4 s before the ride ends
+        t += b - a
+    n = int(round(total * SR))
+    out = WORK / day / "audio.m4a"
+    enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "f32le", "-ar", str(SR), "-ac", "2", "-i", "-",
+                            "-af", "loudnorm=I=-16:TP=-1.5:LRA=11", "-ar", "48000", "-c:a", "aac", "-b:a", "160k", str(out)], stdin=subprocess.PIPE)
+    XF = int(3 * SR)                                      # cross-fade between songs
+    rng = np.random.default_rng(7)
+    used, pos, carry, ti = [], 0, None, 0
+
+    def dec(path):
+        b = subprocess.run(["ffmpeg", "-v", "error", "-i", path, "-f", "f32le", "-ac", "2", "-ar", str(SR), "-"], capture_output=True).stdout
+        x = np.frombuffer(b, np.float32).reshape(-1, 2).copy()
+        # trim each song's silent/near-silent head and tail (fade-outs, dead air) so music never drops out
+        env = np.sqrt(np.convolve((x ** 2).mean(1), np.ones(SR // 10) / (SR // 10), "same"))
+        loud = np.where(env > 10 ** (-38 / 20))[0]
+        return x[loud[0]:loud[-1] + 1] if len(loud) else x[:0]
+
+    def shape(x, at):
+        """duck the music in the tunnels and add the rumble; at = sample index of x[0] in the stream"""
+        tt = (at + np.arange(len(x))) / SR
+        env = np.zeros(len(x), np.float32)
+        for s in tunnels:
+            if s - 1 > tt[-1] or s + 8 < tt[0]:
+                continue
+            u = tt - s
+            env = np.maximum(env, np.clip(u / 0.4, 0, 1) * np.clip((T_IN + T_DARK + 0.6 - u) / 0.8, 0, 1))
+        if env.max() > 0:
+            noise = np.cumsum(rng.normal(0, 1, (len(x), 2)), axis=0).astype(np.float32)
+            noise -= np.linspace(noise[0], noise[-1], len(x)).astype(np.float32)
+            noise /= np.abs(noise).max() + 1e-6
+            x = x * (1 - 0.45 * env)[:, None] + noise * (0.07 * env)[:, None]   # music stays audible in the tunnel
+        return x
+
+    while pos < n:
+        path = p["tracks"][ti % len(p["tracks"])]; ti += 1
+        if not os.path.exists(path):
+            continue
+        x = dec(path)
+        if len(x) < 30 * SR:
+            continue
+        used.append(path)
+        ramp = np.linspace(0, np.pi / 2, XF)                 # equal-power cross-fade: no dip between songs
+        x[:XF] *= np.sin(ramp)[:, None]
+        x[-XF:] *= np.cos(ramp)[:, None]
+        if carry is not None:
+            x[:XF] += carry
+        body, carry = x[:-XF], x[-XF:].copy()
+        body = body[:n - pos]
+        enc.stdin.write(shape(body, pos).astype(np.float32).tobytes())
+        pos += len(body)
+    enc.stdin.close(); enc.wait()
+    (WORK / day / "music_used.json").write_text(json.dumps(used, indent=1) + "\n")
+    print("audio", round(total / 60, 1), "min,", len(used), "songs")
+
+
+def assemble(day):
+    d = WORK / day
+    lst = d / "list.txt"
+    with open(lst, "w") as f:
+        for path, a, b, _ in pieces(day):
+            f.write(f"file '{path}'\ninpoint {a:.4f}\noutpoint {b:.4f}\n")
+    out = d / "stream.mp4"
+    # re-encoding through the concat filter graph makes every cut frame-exact; steady bitrate for streaming
+    sh("ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-segment_time_metadata", "1", "-i", str(lst), "-i", str(d / "audio.m4a"),
+       "-map", "0:v", "-map", "1:a", "-vf", f"select=concatdec_select,setpts=N/{FPS}/TB,fps={FPS}",
+       "-c:v", "libx264", "-preset", "veryfast", "-b:v", "6000k", "-maxrate", "6800k", "-bufsize", "12000k",
+       "-g", str(2 * FPS), "-keyint_min", str(2 * FPS), "-sc_threshold", "0", "-pix_fmt", "yuv420p", "-c:a", "copy",
+       "-shortest", "-movflags", "+faststart", str(out))
+    # owner: music must play the whole stream. Refuse a file with any silence longer than 3 s.
+    r = subprocess.run(["ffmpeg", "-v", "info", "-i", str(out), "-vn", "-af", "silencedetect=noise=-50dB:d=3", "-f", "null", "-"],
+                       capture_output=True, text=True).stderr
+    gaps = [l for l in r.splitlines() if "silence_start" in l]
+    sr = subprocess.run(["ffprobe", "-v", "error", "-select_streams", "a", "-show_entries", "stream=sample_rate", "-of", "csv=p=0", str(out)],
+                        capture_output=True, text=True).stdout.strip()
+    if sr not in ("44100", "48000"):          # RTMP carries only 44.1/48 kHz: anything else streams silent
+        out.rename(out.with_suffix(".BADAUDIO.mp4"))
+        sys.exit(f"stream file audio is {sr} Hz; must be 48000")
+    if gaps:
+        out.rename(out.with_suffix(".SILENCE.mp4"))
+        sys.exit(f"stream file has {len(gaps)} silent gap(s): {gaps[:3]}")
+    print("stream file", out, round(probe(out) / 3600, 2), "h, no silent gaps")
+
+
+def credits(day):
+    """Description text in the owner's order: summary, channel blurb, footage line + music credit, hashtags."""
+    d = WORK / day
+    p = json.loads((d / "plan.json").read_text())
+    used = json.loads((d / "music_used.json").read_text())
+    nm = names()
+    pc = sorted({pathlib.Path(u).stem.replace("_", " ") for u in used if "/music_lib/" in u})
+    limits = json.loads((ROOT / "publish/limits.json").read_text())
+    uniq = list(dict.fromkeys(p["order"]))               # each city once, in the order it first appears
+    stops = ", ".join(nm(c)[0] for c in uniq)
+    hours = round(sum(probe(VID / f"{c}.mp4") - 2 * FADE + T_IN + T_DARK for c in p["order"]) / 3600) \
+        if all((VID / f"{c}.mp4").exists() for c in p["order"]) else round(p.get("minutes", 480) / 60)
+    words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight"}
+    summary = (f"Ride the train around the world for {words.get(hours, str(hours))} hours of lofi and chillhop. Settle in by "
+               f"the window as the train rolls through {len(uniq)} cities, with a tunnel and a 'next stop' countdown between "
+               f"each one.\n\nThe route: {stops}.")
+    credit = ("Music: " + ", ".join(f'"{t}"' for t in pc) + " by Purrple Cat (purrplecat.com), licensed under CC BY 4.0 "
+              "(creativecommons.org/licenses/by/4.0/). Tracks were trimmed and cross-faded.")
+    tags = "#lofi #chillhop #studymusic #trainride #lofihiphop"
+    return "\n\n".join([summary, limits["channel_blurb"], "Stylised illustrated artwork; not real footage.\n" + credit, tags])
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("step"); ap.add_argument("args", nargs="*")
+    ap.add_argument("--minutes", type=float, default=240); ap.add_argument("--src")
+    a = ap.parse_intermixed_args()
+    if a.step == "prep":
+        prep(a.args, a.src)
+    elif a.step == "plan":
+        plan(a.args[0], a.minutes, a.args[1:] or None)
+    elif a.step in ("trans", "audio", "assemble"):
+        globals()[a.step](a.args[0])
+    elif a.step == "credits":
+        print(credits(a.args[0]))
+    elif a.step == "all":
+        day = a.args[0]
+        plan(day, a.minutes); trans(day); audio(day); assemble(day)
+    else:
+        sys.exit("unknown step")
+
+
+if __name__ == "__main__":
+    main()

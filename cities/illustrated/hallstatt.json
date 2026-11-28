@@ -1,0 +1,85 @@
+{
+ "city": "Hallstatt, Austria",
+ "next": "San Antonio, Texas",
+ "version": 3,
+ "season": "Hallstatt on a snowy winter morning, soft blue light, mirror-still lake, wooden houses with snow, steep mountains, fairy-tale and quiet",
+ "sky": "work/cities_v3/hallstatt/sky.png",
+ "sky_top": 0.25,
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    148.97824096679688,
+    123.38999938964844,
+    98.69465637207031
+   ],
+   [
+    124.1485366821289,
+    102.82500457763672,
+    82.24555206298828
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/hallstatt/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/hallstatt/sprites/skyline2.png",
+   "scale": 0.921,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: street row feather_top 35 -> 110: its straight snowy-forest top read as a hard stripe across the lake.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

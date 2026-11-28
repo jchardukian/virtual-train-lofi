@@ -1,0 +1,86 @@
+{
+ "city": "London, England",
+ "next": "Minneapolis, Minnesota",
+ "version": 3,
+ "season": "London on a cozy rainy winter evening, soft blue dusk, warm golden lamps and windows, glistening wet streets, red buses, festive lights",
+ "sky": "work/cities_v3/london/sky.png",
+ "sky_top": 0.25,
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    47.55157470703125,
+    61.70573425292969,
+    84.08214569091797
+   ],
+   [
+    39.626312255859375,
+    51.42144775390625,
+    70.0684585571289
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/london/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/london/sprites/far_0.png",
+   "scale": 2.434,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up St Paul's dome (landmarks_2); St Paul's is in the skyline.",
+  "2026-11-24: removed the close-up Tower Bridge (landmarks_1); Tower Bridge is in the skyline.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

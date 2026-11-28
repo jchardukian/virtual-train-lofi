@@ -1,0 +1,166 @@
+{
+ "city": "the Swiss Alps",
+ "next": "Kyoto, Japan",
+ "sky": "work/v2/alps/sky.png",
+ "sky_top": 0.0,
+ "opening": {
+  "src": "work/v2/alps/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "ground_src": {
+  "colour": [
+   [
+    246,
+    243,
+    240
+   ],
+   [
+    232,
+    222,
+    214
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/v2/alps/sprites/near_0.png",
+  "scale": 0.95,
+  "base": 0
+ },
+ "treewall_cfg": {
+  "src": "work/v2/alps/sprites/local_6.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/alps/sprites/far_0.png",
+   "scale": 1.6,
+   "tile": true,
+   "speed": 3,
+   "haze": 0.12,
+   "base": 790,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Viaduct and village church",
+   "mid": [
+    {
+     "src": "work/v2/alps/sprites/landmarks_0.png",
+     "scale": 1.35,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/landmarks_1.png",
+     "scale": 1.25,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_6.png",
+     "scale": 1.3,
+     "base": 705
+    }
+   ],
+   "band": {
+    "src": "work/v2/alps/sprites/far_1.png",
+    "scale": 0.8,
+    "base": 900
+   }
+  },
+  {
+   "name": "Chalet village",
+   "mid": [
+    {
+     "src": "work/v2/alps/sprites/local_0.png",
+     "scale": 1.15,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_3.png",
+     "scale": 1.2,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_1.png",
+     "scale": 1.2,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_5.png",
+     "scale": 1.1,
+     "base": 705
+    }
+   ],
+   "band": {
+    "src": "work/v2/alps/sprites/far_1.png",
+    "scale": 0.8,
+    "base": 900,
+    "offset": 900
+   }
+  },
+  {
+   "name": "Mountain hotel and cable car",
+   "mid": [
+    {
+     "src": "work/v2/alps/sprites/landmarks_2.png",
+     "scale": 1.35,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/landmarks_4.png",
+     "scale": 1.5,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/landmarks_3.png",
+     "scale": 1.3,
+     "base": 705
+    }
+   ],
+   "band": {
+    "src": "work/v2/alps/sprites/far_1.png",
+    "scale": 0.8,
+    "base": 900,
+    "offset": 1700
+   }
+  },
+  {
+   "name": "Forest and farm",
+   "mid": [
+    {
+     "src": "work/v2/alps/sprites/landmarks_5.png",
+     "scale": 1.4,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_2.png",
+     "scale": 1.15,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_4.png",
+     "scale": 1.0,
+     "base": 705
+    },
+    {
+     "src": "work/v2/alps/sprites/local_6.png",
+     "scale": 1.3,
+     "flip": true,
+     "base": 705
+    }
+   ],
+   "band": {
+    "src": "work/v2/alps/sprites/far_1.png",
+    "scale": 0.8,
+    "base": 900,
+    "offset": 2500
+   }
+  }
+ ]
+}

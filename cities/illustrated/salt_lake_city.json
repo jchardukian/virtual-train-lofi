@@ -1,0 +1,89 @@
+{
+ "city": "Salt Lake City, Utah",
+ "next": "Cape Town, South Africa",
+ "version": 3,
+ "season": "Utah on a clear summer morning, crisp blue sky, sunlit Wasatch peaks, white salt flats, sage-green valleys, bright and open",
+ "sky": "work/cities_v3/salt_lake_city/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/salt_lake_city/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    215.45968627929688,
+    219.6474609375,
+    223.77499389648438
+   ],
+   [
+    179.54974365234375,
+    183.03956604003906,
+    186.4791717529297
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/salt_lake_city/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/salt_lake_city/sprites/far_0.png",
+   "scale": 2.091,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.569 (shown 116 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

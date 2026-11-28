@@ -1,0 +1,86 @@
+{
+ "city": "Atlanta, Georgia",
+ "next": "Barcelona, Spain",
+ "version": 3,
+ "season": "Atlanta on a humid summer dusk, peach and lilac sky, lush green canopy, warm city lights, fireflies, relaxed southern evening",
+ "sky": "work/cities_v3/atlanta/sky.png",
+ "sky_top": 0.25,
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    41.668704986572266,
+    68.87567138671875,
+    68.54535675048828
+   ],
+   [
+    34.72392272949219,
+    57.39639663696289,
+    57.12113571166992
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/atlanta/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/atlanta/sprites/far_0.png",
+   "scale": 2.5,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.014 (shown 180 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-26: scale 1.692 -> 2.5: the skyline was small (~65% sky); now ~45% sky, spire tip still inside the window.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

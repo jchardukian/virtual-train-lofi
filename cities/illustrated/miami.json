@@ -1,0 +1,85 @@
+{
+ "city": "Miami, Florida",
+ "next": "Venice, Italy",
+ "version": 3,
+ "season": "Miami on a bright sunny morning, pastel Art Deco colours, turquoise ocean, tall palms, warm and breezy",
+ "sky": "work/cities_v3/miami/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    117.81416320800781,
+    159.6650390625,
+    185.6417694091797
+   ],
+   [
+    98.17847442626953,
+    133.05419921875,
+    154.70147705078125
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/miami/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/miami/sprites/far_0.png",
+   "scale": 2.183,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2b.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180
+}

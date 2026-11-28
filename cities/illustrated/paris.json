@@ -1,0 +1,62 @@
+{
+ "city": "Paris, France",
+ "next": "Tokyo, Japan",
+ "sky_flip": true,
+ "sections": [
+  {
+   "name": "The Seine, Notre-Dame and the Louvre",
+   "ground": "lawn",
+   "far": [],
+   "mid": []
+  },
+  {
+   "name": "Boulevards and the Arc de Triomphe",
+   "ground": "lawn",
+   "far": [],
+   "mid": []
+  },
+  {
+   "name": "The Eiffel Tower",
+   "ground": "lawn",
+   "far": [],
+   "mid": []
+  },
+  {
+   "name": "Montmartre",
+   "ground": "lawn",
+   "far": [],
+   "mid": []
+  }
+ ],
+ "grade": {
+  "shadows": [
+   1.1,
+   0.94,
+   1.03
+  ],
+  "highlights": [
+   1.05,
+   0.95,
+   1.04
+  ],
+  "saturation": 0.9,
+  "gamma": 0.97,
+  "note": "soft rose and lavender late afternoon"
+ },
+ "backdrop": [
+  {
+   "src": "work/cities/paris/sprites/skyline.png",
+   "scale": 2.218,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180
+}

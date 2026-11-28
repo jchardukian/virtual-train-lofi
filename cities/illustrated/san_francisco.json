@@ -1,0 +1,89 @@
+{
+ "city": "San Francisco, California",
+ "next": "Amsterdam, Netherlands",
+ "version": 3,
+ "season": "San Francisco on a fresh spring morning with soft fog lifting off the bay, pastel light, pale blue sky breaking through, green hills, cheerful and airy",
+ "sky": "work/cities_v3/san_francisco/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    120.89855194091797,
+    140.80943298339844,
+    160.3284912109375
+   ],
+   [
+    100.74879455566406,
+    117.34119415283203,
+    133.60708618164062
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_francisco/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_francisco/sprites/far_0_clean.png",
+   "scale": 3.95,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1306,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: near strip scale 0.85 -> 1.303 (shown 140 -> 215 px at 1080p): drawn small it read as distant while moving at foreground speed (owner: bottom layer too fast).",
+  "2026-11-24: removed the close-up Transamerica Pyramid (landmarks_1), also in the skyline; made the fence pickets in near_0 opaque (backup near_0.bak.png).",
+  "2026-11-24: removed the close-up Coit Tower (landmarks_3.png); it is in the skyline art.",
+  "2026-11-24: removed the Golden Gate Bridge tower (landmarks_0) from the street; a bridge tower among houses looked wrong, and the opening already shows the bridge.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area).",
+  "2026-11-28: Salesforce Tower ran off the window top (skyline top at y=-5): scale 4.135 -> 3.95 (top ~y=54). far_0_clean.png: removed a floating grey fog wisp above the hill/downtown gap and filled a see-through hole."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

@@ -1,0 +1,85 @@
+{
+ "city": "Rio de Janeiro, Brazil",
+ "next": "Boston, Massachusetts",
+ "version": 3,
+ "season": "Rio de Janeiro on a bright, hot summer midday, vivid turquoise sea, lush green mountains, strong sunshine and crisp shadows, joyful and tropical",
+ "sky": "work/cities_v3/rio/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    169.8735809326172,
+    178.67172241210938,
+    3.0960805416107178
+   ],
+   [
+    141.5613250732422,
+    148.8931121826172,
+    2.5800673961639404
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/rio/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/rio/sprites/far_0.png",
+   "scale": 2.477,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0a.png, landmarks_0b.png, landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

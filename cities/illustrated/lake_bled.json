@@ -1,0 +1,89 @@
+{
+ "city": "Lake Bled, Slovenia",
+ "next": "Phoenix and Sedona, Arizona",
+ "version": 3,
+ "season": "Lake Bled on a misty autumn morning, gold and orange forests, calm emerald lake, soft mist, Alpine peaks, fairy-tale and peaceful",
+ "sky": "work/cities_v3/lake_bled/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/lake_bled/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    86.51075744628906,
+    102.1937026977539,
+    77.11843872070312
+   ],
+   [
+    72.09230041503906,
+    85.16142272949219,
+    64.26537322998047
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/lake_bled/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/lake_bled/sprites/far_0.png",
+   "scale": 1.803,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_5.png (the Ljubljana dragon bridge)"
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

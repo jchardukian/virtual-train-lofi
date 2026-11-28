@@ -1,0 +1,154 @@
+{
+ "city": "Kyoto, Japan",
+ "next": "coming soon",
+ "sky_flip": true,
+ "opening": {
+  "src": "work/v2/kyoto/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "leaves",
+ "ground_src": {
+  "src": "work/v2/kyoto/sprites/far_1.png",
+  "rows": [
+   175,
+   215
+  ]
+ },
+ "near": {
+  "src": "work/v2/kyoto/sprites/near_0.png",
+  "scale": 0.8,
+  "base": 90
+ },
+ "treewall_cfg": {
+  "src": "work/v2/kyoto/sprites/local_3b.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/kyoto/sprites/far_0.png",
+   "scale": 1.55,
+   "tile": true,
+   "speed": 7,
+   "haze": 0.18,
+   "base": 800,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Higashiyama lanes and Yasaka pagoda",
+   "mid": [
+    {
+     "src": "work/v2/kyoto/sprites/local_0.png",
+     "scale": 1.05
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_1.png",
+     "scale": 1.05
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_2.png",
+     "scale": 1.0
+    }
+   ],
+   "band": {
+    "src": "work/v2/kyoto/sprites/far_1.png",
+    "scale": 1.25,
+    "base": 885
+   }
+  },
+  {
+   "name": "Kinkaku-ji",
+   "mid": [
+    {
+     "src": "work/v2/kyoto/sprites/local_3b.png",
+     "scale": 1.0
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_3c.png",
+     "scale": 1.0
+    }
+   ],
+   "band": {
+    "src": "work/v2/kyoto/sprites/far_1.png",
+    "scale": 1.25,
+    "base": 885,
+    "offset": 800
+   }
+  },
+  {
+   "name": "Fushimi Inari",
+   "mid": [
+    {
+     "src": "work/v2/kyoto/sprites/local_4.png",
+     "scale": 1.0
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_3b.png",
+     "scale": 1.0,
+     "flip": true
+    }
+   ],
+   "band": {
+    "src": "work/v2/kyoto/sprites/far_1.png",
+    "scale": 1.25,
+    "base": 885,
+    "offset": 1500
+   }
+  },
+  {
+   "name": "Kiyomizu-dera",
+   "mid": [
+    {
+     "src": "work/v2/kyoto/sprites/local_3a.png",
+     "scale": 1.2
+    },
+    {
+     "src": "work/v2/kyoto/sprites/landmarks_3a.png",
+     "scale": 1.45
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_2.png",
+     "scale": 1.0,
+     "flip": true
+    }
+   ],
+   "band": {
+    "src": "work/v2/kyoto/sprites/far_1.png",
+    "scale": 1.25,
+    "base": 885,
+    "offset": 2200
+   }
+  },
+  {
+   "name": "Heian Shrine and the bamboo grove",
+   "mid": [
+    {
+     "src": "work/v2/kyoto/sprites/landmarks_3b.png",
+     "scale": 1.3
+    },
+    {
+     "src": "work/v2/kyoto/sprites/landmarks_4.png",
+     "scale": 1.35
+    },
+    {
+     "src": "work/v2/kyoto/sprites/local_0.png",
+     "scale": 1.05,
+     "flip": true
+    }
+   ],
+   "band": {
+    "src": "work/v2/kyoto/sprites/far_1.png",
+    "scale": 1.25,
+    "base": 885,
+    "offset": 2900
+   }
+  }
+ ]
+}

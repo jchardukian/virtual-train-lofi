@@ -1,0 +1,85 @@
+{
+ "city": "Prague, Czech Republic",
+ "next": "Charleston, South Carolina",
+ "version": 3,
+ "season": "Prague on a snowy Christmas-market evening, deep blue dusk, warm golden lights, snow on red roofs and spires, magical and cozy",
+ "sky": "work/cities_v3/prague/sky.png",
+ "sky_top": 0.25,
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    47.755035400390625,
+    80.25796508789062,
+    122.25479125976562
+   ],
+   [
+    39.79586410522461,
+    66.88163757324219,
+    101.87899780273438
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/prague/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/prague/sprites/far_0.png",
+   "scale": 2.263,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

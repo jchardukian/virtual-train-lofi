@@ -1,0 +1,86 @@
+{
+ "city": "Charleston, South Carolina",
+ "next": "Bangkok, Thailand",
+ "version": 3,
+ "season": "Charleston on a warm spring afternoon, soft sunshine, pastel houses, palmettos, harbour breeze, gentle and elegant",
+ "sky": "work/cities_v3/charleston/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    104.01219177246094,
+    144.133056640625,
+    177.1629638671875
+   ],
+   [
+    86.67683410644531,
+    120.11087799072266,
+    147.63580322265625
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/charleston/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/charleston/sprites/far_0.png",
+   "scale": 3.107,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1073,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_1.png (the cable-stayed harbour bridge)",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_0.png",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

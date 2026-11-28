@@ -1,0 +1,85 @@
+{
+ "city": "Pittsburgh, Pennsylvania",
+ "next": "Vancouver, Canada",
+ "version": 3,
+ "season": "Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud",
+ "sky": "work/cities_v3/pittsburgh/sky.png",
+ "sky_top": 0.25,
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    39.73811721801758,
+    78.2122573852539,
+    125.21665954589844
+   ],
+   [
+    33.11509704589844,
+    65.17688751220703,
+    104.34722137451172
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/pittsburgh/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/pittsburgh/sprites/skyline2.png",
+   "scale": 2.511,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_0.png (a yellow suspension bridge)",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

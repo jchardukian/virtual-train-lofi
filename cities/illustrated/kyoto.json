@@ -1,0 +1,73 @@
+{
+ "city": "Kyoto, Japan",
+ "next": "coming soon",
+ "sky_flip": true,
+ "weather": "none",
+ "ground_src": {
+  "src": "work/v2/kyoto/sprites/far_1.png",
+  "rows": [
+   175,
+   215
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/v2/kyoto/sprites/local_3b.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/kyoto/sprites/far_0.png",
+   "scale": 2.477,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Higashiyama lanes and Yasaka pagoda",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Kinkaku-ji",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Fushimi Inari",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Kiyomizu-dera",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Heian Shrine and the bamboo grove",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

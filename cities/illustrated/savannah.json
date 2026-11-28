@@ -1,0 +1,87 @@
+{
+ "city": "Savannah, Georgia",
+ "next": "Seoul, South Korea",
+ "version": 3,
+ "season": "Savannah on a soft spring morning, dappled light through live oaks, Spanish moss, azaleas in bloom, pastel historic houses, gentle and graceful",
+ "sky": "work/cities_v3/savannah/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    75.52030944824219,
+    100.06546783447266,
+    115.02723693847656
+   ],
+   [
+    62.93359375,
+    83.38789367675781,
+    95.85603332519531
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/savannah/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/savannah/sprites/far_0_capped.png",
+   "scale": 2.821,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the cable-stayed river bridge)",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_1.png",
+  "2026-11-26: the bridge towers were cut flat at the top of the art. far_0_capped.png gives both towers pointed caps and removes the cable-fan fragments above them.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

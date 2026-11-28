@@ -1,0 +1,83 @@
+{
+ "city": "Chicago, Illinois",
+ "next": "London, England",
+ "version": 3,
+ "season": "Chicago on a crisp golden autumn afternoon, clear deep blue sky with a few soft clouds, warm low sunlight on brick and steel, orange and red maples, Lake Michigan sparkling",
+ "sky": "work/cities_v3/chicago/sky.png",
+ "sky_top": 0.25,
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    47.460594177246094,
+    56.63130569458008,
+    73.28919219970703
+   ],
+   [
+    39.55049514770508,
+    47.19275665283203,
+    61.0743293762207
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/chicago/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/chicago/sprites/far_0.png",
+   "scale": 1.903,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

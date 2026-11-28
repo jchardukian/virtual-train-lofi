@@ -1,0 +1,84 @@
+{
+ "city": "Los Angeles, California",
+ "next": "Edinburgh, Scotland",
+ "version": 3,
+ "season": "Los Angeles on a golden summer evening, warm orange and pink sky, long soft shadows, palm silhouettes, dreamy and relaxed",
+ "sky": "work/cities_v3/los_angeles/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    58.21010208129883,
+    87.23963928222656,
+    112.77877807617188
+   ],
+   [
+    48.5084228515625,
+    72.69970703125,
+    93.98231506347656
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/los_angeles/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/los_angeles/sprites/far_0.png",
+   "scale": 2.582,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

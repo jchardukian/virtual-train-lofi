@@ -1,0 +1,69 @@
+{
+ "city": "New York City, New York",
+ "next": "the Swiss Alps",
+ "sky": "work/v2/nyc/sky.png",
+ "sky_top": 0.05,
+ "weather": "snow",
+ "ground_src": {
+  "src": "work/v2/nyc/sprites/far_1.png",
+  "rows": [
+   200,
+   262
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/v2/nyc/sprites/local_5.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/nyc/sprites/far_0.png",
+   "scale": 3.2,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Brooklyn rooftops and the bridge",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Midtown",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Downtown and the harbour",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "Snowy brownstones",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "_notes": [
+  "2026-11-26: scale 2.764 -> 3.2: the skyline filled only the bottom third (~65% sky); now ~50% sky with One WTC's roof well inside the window.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "ride_s": 180
+}

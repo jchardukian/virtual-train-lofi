@@ -1,0 +1,85 @@
+{
+ "city": "Barcelona, Spain",
+ "next": "Anchorage, Alaska",
+ "version": 3,
+ "season": "Barcelona on a sunny Mediterranean afternoon, warm golden light, blue sea, colourful mosaic, palms, joyful and lively",
+ "sky": "work/cities_v3/barcelona/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    91.39093017578125,
+    126.8115463256836,
+    150.77880859375
+   ],
+   [
+    76.15911102294922,
+    105.6762924194336,
+    125.64900970458984
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/barcelona/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/barcelona/sprites/far_0.png",
+   "scale": 2.489,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

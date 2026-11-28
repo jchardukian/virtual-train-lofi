@@ -1,0 +1,90 @@
+{
+ "city": "Banff, Canada",
+ "next": "San Diego, California",
+ "version": 3,
+ "season": "the Canadian Rockies on a clear cold winter dawn, pink alpenglow on snowy peaks, turquoise ice, deep green spruce, still and pristine",
+ "sky": "work/cities_v3/banff/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/banff/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    162.9029541015625,
+    156.6110382080078,
+    51.6483039855957
+   ],
+   [
+    135.75247192382812,
+    130.5092010498047,
+    43.04025650024414
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/banff/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/banff/sprites/far_0_peaks.png",
+   "scale": 3.1,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a wooden train trestle bridge)",
+  "2026-11-26: far_0 was cut straight across the summits (the renderer faded that edge, reading as a flat mist line over every peak). far_0_peaks.png carves a jagged, seamlessly looping ridgeline into the painting. Scale 2.423 -> 3.1 so the range fills ~half the window."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

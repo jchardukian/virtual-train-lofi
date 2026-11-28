@@ -1,0 +1,170 @@
+[
+ {
+  "city": "pittsburgh",
+  "name": "opening",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. A wide illustrated view seen from a train window: the Pittsburgh skyline at the point where three rivers meet, yellow steel bridges, the fountain at the point, autumn hills and an incline railway The scene fills the whole canvas edge to edge. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1695,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 159
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7183
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "pittsburgh",
+  "name": "sky",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. A very wide sky only, filling the entire canvas edge to edge: a golden autumn afternoon sky, soft blue with warm gold near the bottom and a few clouds. No land, no buildings, no mountains. No readable text or lettering anywhere, no watermark, no border, no train window frame.",
+  "usage": {
+   "input_tokens": 1690,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 154
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7178
+  },
+  "est_cost_usd": 0.1777
+ },
+ {
+  "city": "pittsburgh",
+  "name": "landmarks",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. A sprite sheet of six separate landmarks standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a yellow suspension bridge, 2) the Duquesne-style incline railway car, 3) the gothic Cathedral of Learning tower, 4) the glass castle-like PPG tower, 5) the point fountain, 6) a riverboat. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1832,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 296
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7320
+  },
+  "est_cost_usd": 0.1784
+ },
+ {
+  "city": "pittsburgh",
+  "name": "local",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. A sprite sheet of seven separate local elements standing side by side in one row with a clear wide green gap between each, every one complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) a brick row house on a hill, 2) a wooden hillside staircase, 3) a corner pierogi shop, 4) a steel mill chimney, 5) a church with onion domes, 6) a red oak tree in autumn, 7) a yellow maple tree. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1842,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 306
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7330
+  },
+  "est_cost_usd": 0.1785
+ },
+ {
+  "city": "pittsburgh",
+  "name": "far",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. Two separate full-width horizontal landscape strips stacked one above the other, each running continuously from the left edge to the right edge, separated by a band of flat green: STRIP 1 (top): the Pittsburgh skyline with glass towers at the meeting of three rivers, and wooded hills. STRIP 2 (bottom): steep autumn hillsides with stacked houses and staircases, orange and red trees. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1809,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 273
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7297
+  },
+  "est_cost_usd": 0.1783
+ },
+ {
+  "city": "pittsburgh",
+  "name": "near",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, warm sunlight, steep wooded hills in orange and red, yellow bridges over three rivers, cozy and proud. All lighting, colours, season and weather must match this exactly. A single full-width horizontal strip running from the left edge to the right edge, in the lower part of the canvas: right beside the train, autumn leaves, a stone retaining wall and a yellow-painted steel railing, all in the foreground. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1777,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 241
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7265
+  },
+  "est_cost_usd": 0.1781
+ },
+ {
+  "city": "pittsburgh",
+  "name": "skyline2",
+  "model": "gpt-image-2",
+  "quality": "high",
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh: Pittsburgh on a golden autumn afternoon, blue sky with warm clouds, orange and red fall trees. All lighting, colours, season and weather must match this exactly. A single full-width horizontal landscape strip running continuously from the left edge to the right edge, filling the lower two thirds of the canvas: the downtown Pittsburgh skyline across the river: glass and stone towers of different heights including PPG Place's glass spires, yellow steel bridges crossing the river, autumn-coloured hills with houses on both sides, and the blue river water along the whole bottom edge. Every building, roof, spire and mountain is complete, nothing cut off at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "usage": {
+   "input_tokens": 1816,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 280
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7304
+  },
+  "est_cost_usd": 0.1783,
+  "approval": "owner 2026-11-26 cap $0.75"
+ },
+ {
+  "city": "pittsburgh",
+  "name": "skyline3",
+  "est_cost_usd": 0.1785,
+  "usage": {
+   "input_tokens": 1851,
+   "input_tokens_details": {
+    "image_tokens": 1536,
+    "text_tokens": 315
+   },
+   "output_tokens": 5488,
+   "output_tokens_details": {
+    "image_tokens": 5488,
+    "text_tokens": 0
+   },
+   "total_tokens": 7339
+  },
+  "prompt": "Use the attached illustration ONLY as the art-style reference: match exactly its anime-inspired hand-painted look, clean linework, soft cel shading and rich detail. Do not copy its composition, buildings, season or lighting. Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Pittsburgh, Pennsylvania: Pittsburgh on a golden autumn afternoon, blue sky with warm clouds, orange and red fall trees. All lighting, colours, season and weather must match this exactly. One single very wide panoramic horizontal strip running continuously from the left edge to the right edge, about one third of the canvas tall, in the vertical middle of the canvas: the downtown Pittsburgh skyline seen across the river, a long evenly spread row of glass and stone towers of many different heights including the glass spires of PPG Place, several yellow steel bridges spanning the river at intervals, low autumn-coloured trees and houses along the riverbank, and the blue river along the whole bottom edge of the strip. No big hills, no mountains; the skyline continues all the way to both edges. Every building is complete, nothing cut off at the top. Everything that is not part of the described artwork must be a single flat solid pure chroma green colour (#00FF00) with clean sharp edges against it: no ground plane, no cast shadows on the green, no sky, no readable text or lettering anywhere, no watermark, no border.",
+  "approval": "owner 2026-11-26 cap $0.75"
+ }
+]

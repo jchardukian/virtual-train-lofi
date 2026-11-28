@@ -1,0 +1,56 @@
+[
+ {
+  "date": "2026-11-26",
+  "title": "Chillhop Train POV 🚆",
+  "broadcast_id": "xAqPKcRV2ko",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795666628867382",
+  "scheduled_start": "2026-11-26T04:20:00Z",
+  "watch_url": "https://youtu.be/xAqPKcRV2ko",
+  "actual_start": "2026-11-26T04:18:04Z",
+  "actual_end": "2026-11-26T08:16:25Z",
+  "views_at_end": 3,
+  "likes": 1,
+  "notes": "no sound for first ~30 min (96 kHz AAC), restarted 04:50Z with 48 kHz; VOD set private 2026-11-26 (only corrected versions evergreen)",
+  "vod_privacy": "private"
+ },
+ {
+  "date": "2026-11-27",
+  "title": "Cozy Train Window 🚆 Lofi to Sleep, Study & Relax",
+  "broadcast_id": "HKhTVQdDDMg",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795739462973100",
+  "scheduled_start": "2026-11-27T01:00:00Z",
+  "watch_url": "https://youtu.be/HKhTVQdDDMg"
+ },
+ {
+  "date": "2026-11-27-0800",
+  "title": "Lofi Train Around the World 🌍🚆 Beats to Relax & Study",
+  "broadcast_id": "nHjdAL-85HQ",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795786837433298",
+  "scheduled_start": "2026-11-27T14:00:00Z",
+  "watch_url": "https://youtu.be/nHjdAL-85HQ"
+ },
+ {
+  "date": "2026-11-27-1600",
+  "title": "Lofi Train Ride 🚆 Chill Beats to Study & Relax",
+  "broadcast_id": "gB-M3U6OfVk",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795816538994027",
+  "scheduled_start": "2026-11-27T22:00:00Z",
+  "watch_url": "https://youtu.be/gB-M3U6OfVk"
+ },
+ {
+  "date": "2026-11-28-0000",
+  "title": "Cozy Train Window 🚆 Lofi to Sleep, Study & Relax",
+  "broadcast_id": "vUlWBGOrLhU",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795843851748263",
+  "scheduled_start": "2026-11-28T06:00:00Z",
+  "watch_url": "https://youtu.be/vUlWBGOrLhU"
+ },
+ {
+  "date": "2026-11-28-0800",
+  "title": "Lofi Train Around the World 🌍🚆 Beats to Relax & Study",
+  "broadcast_id": "Un5QfDaiCbw",
+  "stream_id": "LjE-J4o5HSXz1cCokDdZbQ1795872926902434",
+  "scheduled_start": "2026-11-28T14:00:00Z",
+  "watch_url": "https://youtu.be/Un5QfDaiCbw"
+ }
+]

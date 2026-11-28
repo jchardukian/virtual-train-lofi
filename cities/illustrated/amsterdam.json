@@ -1,0 +1,89 @@
+{
+ "city": "Amsterdam, Netherlands",
+ "next": "New Orleans, Louisiana",
+ "version": 3,
+ "season": "Amsterdam on a breezy spring afternoon in tulip season, puffy white clouds on bright blue, fresh green trees, colourful tulips, soft bright light",
+ "sky": "work/cities_v3/amsterdam/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/amsterdam/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    80.32868957519531,
+    95.48106384277344,
+    116.535400390625
+   ],
+   [
+    66.9405746459961,
+    79.56755828857422,
+    97.11283874511719
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/amsterdam/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/amsterdam/sprites/skyline2.png",
+   "scale": 1.209,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (a hump-backed canal bridge with flower boxes)"
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

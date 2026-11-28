@@ -1,0 +1,87 @@
+{
+ "city": "Washington, D.C.",
+ "next": "Marrakech, Morocco",
+ "version": 3,
+ "season": "Washington, D.C. on a fresh spring morning in cherry-blossom season, soft blue sky, white marble glowing, pink blossoms everywhere, calm and dignified",
+ "sky": "work/cities_v3/washington_dc/sky.png",
+ "sky_top": 0.25,
+ "weather": "none",
+ "ground_src": {
+  "colour": [
+   [
+    132.48281860351562,
+    113.14616394042969,
+    92.86344909667969
+   ],
+   [
+    110.40235137939453,
+    94.2884750366211,
+    77.38621520996094
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/washington_dc/sprites/local_3.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/washington_dc/sprites/far_0_capped.png",
+   "scale": 3.85,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png, landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-ups that repeat a skyline landmark or sit oddly on the street (reviewed by eye): landmarks_2.png",
+  "2026-11-26: the art cut the Washington Monument (and the Capitol statue) off at the top of the window. far_0_capped.png adds the monument's pyramid tip; scale 4.701 -> 3.85 so every top sits inside the window.",
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

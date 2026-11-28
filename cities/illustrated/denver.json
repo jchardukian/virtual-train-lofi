@@ -1,0 +1,234 @@
+{
+ "city": "Denver, Colorado",
+ "next": "Paris, France",
+ "version": 2,
+ "season": "early summer morning",
+ "sky": "work/v2/denver2/sky.png",
+ "sky_top": 0.32,
+ "opening": {
+  "src": "work/v2/denver2/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "ground_src": {
+  "src": "work/v2/denver2/sprites/far_1.png",
+  "rows": [
+   270,
+   292
+  ],
+  "tile": true,
+  "scale": 1.4
+ },
+ "near": {
+  "src": "work/v2/denver2/sprites/near_0.png",
+  "scale": 0.85,
+  "base": 40
+ },
+ "treewall_cfg": {
+  "src": "work/v2/denver2/sprites/local_0.png",
+  "crop": [
+   0,
+   2000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/v2/denver2/sprites/far_0.png",
+   "scale": 1.55,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.15,
+   "base": 740,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "Union Station and LoDo",
+   "far": [
+    {
+     "src": "work/cities/denver/sprites/skyline.png",
+     "scale": 1.5,
+     "haze": 0.3,
+     "speed": 5,
+     "x0": -60,
+     "base": 760
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/cities/denver/sprites/landmarks_0.png",
+     "scale": 1.4
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_0.png",
+     "scale": 0.9
+    },
+    {
+     "src": "work/cities/denver/sprites/landmarks_4.png",
+     "scale": 1.2
+    },
+    {
+     "src": "work/cities/denver/sprites/local_1.png",
+     "scale": 0.85
+    },
+    {
+     "src": "work/cities/denver/sprites/landmarks_2.png",
+     "scale": 1.05
+    }
+   ],
+   "band": {
+    "src": "work/v2/denver2/sprites/far_1.png",
+    "scale": 0.75,
+    "base": 880,
+    "speed": 40
+   }
+  },
+  {
+   "name": "Downtown",
+   "far": [
+    {
+     "src": "work/cities/denver/sprites/skyline.png",
+     "scale": 1.5,
+     "haze": 0.3,
+     "speed": 5,
+     "x0": -320,
+     "flip": true,
+     "base": 760
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/cities/denver/sprites/landmarks_5.png",
+     "scale": 1.25
+    },
+    {
+     "src": "work/cities/denver/sprites/landmarks_1.png",
+     "scale": 1.25
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_3.png",
+     "scale": 0.9
+    },
+    {
+     "src": "work/cities/denver/sprites/landmarks_3.png",
+     "scale": 1.35
+    },
+    {
+     "src": "work/cities/denver/sprites/landmarks_6.png",
+     "scale": 1.25
+    }
+   ],
+   "band": {
+    "src": "work/v2/denver2/sprites/far_1.png",
+    "scale": 0.75,
+    "base": 880,
+    "speed": 40
+   }
+  },
+  {
+   "name": "Neighbourhoods",
+   "mid": [
+    {
+     "src": "work/cities/denver/sprites/local_2.png",
+     "scale": 1.0,
+     "base": 840
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_1.png",
+     "scale": 0.85,
+     "base": 840
+    },
+    {
+     "src": "work/cities/denver/sprites/local_3.png",
+     "scale": 1.25,
+     "base": 840
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_3.png",
+     "scale": 0.9,
+     "flip": true,
+     "base": 840
+    }
+   ],
+   "band": {
+    "src": "work/v2/denver2/sprites/far_1.png",
+    "scale": 1.0,
+    "base": 800,
+    "speed": 30
+   }
+  },
+  {
+   "name": "Foothills and red rocks",
+   "far": [
+    {
+     "src": "work/v2/denver2/sprites/far_1.png",
+     "scale": 1.3,
+     "tile": true,
+     "speed": 22,
+     "haze": 0.05,
+     "base": 820,
+     "alpha": 1.0
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/cities/denver/sprites/local_5b.png",
+     "scale": 1.15
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_2.png",
+     "scale": 0.85
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_4.png",
+     "scale": 0.95
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_1.png",
+     "scale": 0.85,
+     "flip": true
+    }
+   ]
+  },
+  {
+   "name": "Farm under the Front Range",
+   "far": [
+    {
+     "src": "work/v2/denver2/sprites/far_1.png",
+     "scale": 1.3,
+     "tile": true,
+     "speed": 22,
+     "haze": 0.05,
+     "base": 820,
+     "alpha": 1.0,
+     "offset": 900
+    }
+   ],
+   "mid": [
+    {
+     "src": "work/v2/denver2/sprites/local_5a.png",
+     "scale": 1.05
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_0.png",
+     "scale": 0.9,
+     "flip": true
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_5b.png",
+     "scale": 0.95
+    },
+    {
+     "src": "work/v2/denver2/sprites/local_4.png",
+     "scale": 0.95,
+     "flip": true
+    }
+   ]
+  }
+ ],
+ "street_speed": 25,
+ "ride_s": 180
+}

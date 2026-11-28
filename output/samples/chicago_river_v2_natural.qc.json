@@ -1,0 +1,41 @@
+{
+  "file": "output/chicago_river_v2_natural.mp4",
+  "probe": {
+    "codec": "h264",
+    "width": 1920,
+    "height": 1080,
+    "fps": 30.0,
+    "pix_fmt": "yuv420p",
+    "duration_s": 10.0,
+    "bytes": 22661339,
+    "mbps": 18.13
+  },
+  "black_intervals": [],
+  "freeze_starts": [],
+  "motion": {
+    "frames_analysed": 299,
+    "mean_flow_px_per_frame": [
+      0.99,
+      -0.24
+    ],
+    "jitter_rms_px": [
+      0.19,
+      0.19
+    ],
+    "jitter_p99_px": 1.32,
+    "rotation_jitter_rms_deg": 0.005,
+    "max_frame_jump_px": 2.11
+  },
+  "checks": {
+    "h264": true,
+    "1920x1080": true,
+    "fps>=30": true,
+    "yuv420p": true,
+    "no_black_frames_mid_clip": true,
+    "no_frozen_frames": true,
+    "jitter_rms<1.5px": true,
+    "rotation_jitter<0.05deg": true
+  },
+  "pass": true,
+  "contact_sheet": "output/chicago_river_v2_natural.contact.jpg"
+}

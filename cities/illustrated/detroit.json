@@ -1,0 +1,86 @@
+{
+ "city": "Detroit, Michigan",
+ "next": "Dubai, UAE",
+ "version": 3,
+ "season": "Detroit on a snowy winter evening, deep blue dusk, warm Art Deco lights, snow on the river, cozy and resilient",
+ "sky": "work/cities_v3/detroit/sky.png",
+ "sky_top": 0.25,
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    110.15370178222656,
+    110.62547302246094,
+    128.9834442138672
+   ],
+   [
+    91.79475402832031,
+    92.18789672851562,
+    107.4862060546875
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/detroit/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/detroit/sprites/far_0.png",
+   "scale": 2.466,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_0.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_2.png (the Ambassador suspension bridge)",
+  "2026-11-27: opening painting removed (the Renaissance Center towers ran off its top edge)."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

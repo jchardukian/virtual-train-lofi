@@ -1,0 +1,90 @@
+{
+ "city": "Singapore",
+ "next": "coming soon",
+ "version": 3,
+ "season": "Singapore on a warm tropical night, deep blue sky, glowing supertrees and skyline, lush greenery, sparkling bay, futuristic and serene",
+ "sky": "work/cities_v3/singapore/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/singapore/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    43.53276824951172,
+    67.32015228271484,
+    79.5858383178711
+   ],
+   [
+    36.277305603027344,
+    56.10013198852539,
+    66.321533203125
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/singapore/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/singapore/sprites/far_0.png",
+   "scale": 2.14,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1072,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed the close-up Marina Bay Sands (landmarks_0.png); it is in the skyline art (dup_landmarks.py).",
+  "2026-11-24: removed close-up lotus museum, observation wheel and glass dome (landmarks_2/3/4); all three are in the skyline."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

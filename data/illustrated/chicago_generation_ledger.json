@@ -1,0 +1,185 @@
+{
+ "date": "2026-11-22",
+ "approval": "Owner confirmed a one-time 4 USD ceiling for new Chicago image charges in the agent session; stage 1 limit 2 USD",
+ "pricing_source": "https://developers.openai.com/api/docs/pricing read 2026-11-22: gpt-image-2 image output 30 USD/1M tokens, image input 8 USD/1M, text input 5 USD/1M",
+ "note": "Costs are computed from API-reported token usage at published rates. The billed amount has not been read from the billing page.",
+ "cap_usd": 4.0,
+ "stage1_limit_usd": 2.0,
+ "calls_made": 7,
+ "rejected_images": 0,
+ "computed_spend_usd": 1.2483,
+ "chicago_specific_usd": 0.7135,
+ "reusable_library_usd": 0.5348,
+ "remaining_under_cap_usd": 2.7517,
+ "stage2_used": false,
+ "calls": [
+  {
+   "name": "edge",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate elements from the outer edge of Chicago side by side in one row with a clear green gap between each, bases aligned on one level line near the bottom edge: 1) a tall municipal water tower on steel legs, 2) a large brick factory with sawtooth roof and a chimney, 3) a row of concrete grain elevator silos, 4) a steel railway signal gantry, 5) a small suburban commuter rail station with a peaked roof and platform lamp, 6) a pair of large autumn oak trees in orange and gold, 7) a small white farmhouse with a red barn.",
+   "usage": {
+    "input_tokens": 1823,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 287
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7311
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "bec62f413c8fd5c13040376078a3fe0e4112e3ced3459d6b3498215e12b8088a",
+   "category": "reusable library"
+  },
+  {
+   "name": "hood",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Chicago neighbourhood buildings side by side in one row with a clear green gap between each, bases aligned on one level line near the bottom edge: 1) a brick three-flat apartment house with a bay window and stone steps, 2) a greystone two-flat, 3) a brick bungalow with a porch and a maple tree beside it, 4) a red-brick corner store with striped awning and apartments above, 5) a neighbourhood stone church with a tall copper-green steeple, 6) a brick warehouse with a wooden water tank on the roof, 7) a row of three wooden back porches with stairs behind a brick apartment block.",
+   "usage": {
+    "input_tokens": 1834,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 298
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7322
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "01ba6c9e6876002430ce4b0aed7e67c87d1d3b5efe7eb99e9139101b491da323",
+   "category": "chicago-specific (reusable for other brick Midwest cities)"
+  },
+  {
+   "name": "lake",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of six separate Chicago lakefront elements side by side in one row with a clear green gap between each, bases aligned on one level line near the bottom edge: 1) the Navy Pier Centennial Ferris wheel with its support structure, 2) the tiered Buckingham Fountain with water jets, 3) the domed Adler Planetarium, 4) the neoclassical Field Museum facade with columns, 5) a small white lighthouse on a stone breakwater, 6) a cluster of three sailboats with white sails and masts.",
+   "usage": {
+    "input_tokens": 1805,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 269
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7293
+   },
+   "est_cost_usd": 0.1783,
+   "sha256": "09791ba8e7102b1fcb1f008036943698ef82ad1511845d105ac3fad082fb4b1a",
+   "category": "chicago-specific"
+  },
+  {
+   "name": "loop",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. A sprite sheet of seven separate Chicago Loop buildings standing side by side in one row with a clear green gap between each, every building complete from its base to its top, all bases aligned on one level line near the bottom edge of the canvas: 1) the dark stepped Willis Tower with two white antennas (tallest), 2) the white terracotta Wrigley Building with its clock tower, 3) the gothic Tribune Tower with flying buttress crown, 4) the Chicago Board of Trade art-deco tower with a statue on its pyramid roof, 5) the green-glass 333 Wacker curved building, 6) a classic Chicago School brick office block with a rooftop wooden water tank, 7) an elevated 'L' train station platform on steel stilts with a small canopy.",
+   "usage": {
+    "input_tokens": 1857,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 321
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7345
+   },
+   "est_cost_usd": 0.1785,
+   "sha256": "9f534c74bc848f297f0e919c62591a45a4870a2fcfe5a2c242a63bc84c6cabe9",
+   "category": "chicago-specific"
+  },
+  {
+   "name": "sky",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "A very wide golden-hour sky filling the entire canvas edge to edge with no green at all: soft gradient from blue-violet at the top through pink to warm peach at the bottom, with scattered fluffy painted cumulus clouds lit pink and gold, evenly distributed across the whole width, slightly more open sky toward the bottom. No sun disc, no birds, no buildings, no land. (Ignore the instruction about green for this image: the whole canvas is sky.)",
+   "usage": {
+    "input_tokens": 1744,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 208
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7232
+   },
+   "est_cost_usd": 0.178,
+   "sha256": "c751aba2059812e853c58eebdac3d317c779cd9cb22a8ebd0d72564059e64168",
+   "category": "reusable library"
+  },
+  {
+   "name": "skyline",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. One continuous, very wide panorama strip of the distant downtown Chicago skyline spanning the full width of the canvas, softened and slightly hazy with distance: many towers of varied heights including the dark stepped Willis Tower with its two antennas, the tapered dark John Hancock Center with X-bracing and antennas, the Aon Center, Two Prudential Plaza with its pointed top, and the Trump tower, with lower buildings filling between them so the strip has no gaps. The bottom edge of the skyline is a straight level line placed in the lower third of the canvas; below it and above the rooftops is flat green.",
+   "usage": {
+    "input_tokens": 1812,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 276
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7300
+   },
+   "est_cost_usd": 0.1783,
+   "sha256": "064427c0210bc31d5bd33b0f8f59b79af109fa98726c5dfbfba4e08e1e9ad872",
+   "category": "chicago-specific"
+  },
+  {
+   "name": "strips",
+   "model": "gpt-image-2",
+   "quality": "high",
+   "size": "1536x1024",
+   "endpoint": "images/edits",
+   "prompt": "Draw it as a flat side-on elevation, as seen from the window of a train passing by, like the background art of a side-scrolling animation: no perspective convergence, verticals perfectly vertical. Four separate full-width horizontal landscape strips stacked one above another, each running continuously from the left edge to the right edge of the canvas, separated by bands of flat green: STRIP 1 (top): a continuous line of park trees in autumn orange, gold and red with a low stone balustrade in front. STRIP 2: a continuous row of back-garden wooden fences, hedges, shrubs, small garages and washing lines. STRIP 3: a continuous edge of tall prairie grass, wildflowers, shrubs and occasional wooden telegraph poles. STRIP 4 (bottom): a continuous grassy railway embankment slope with gravel, low weeds and a simple iron railing along its top edge.",
+   "usage": {
+    "input_tokens": 1835,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 299
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7323
+   },
+   "est_cost_usd": 0.1784,
+   "sha256": "9391bcf4d1aba0471c7a146c62b7d2def217d4dc83780dc5f80e2ce98b25bbc2",
+   "category": "reusable library"
+  }
+ ]
+}

@@ -1,0 +1,156 @@
+{
+ "city": "Reykjavik, Iceland",
+ "next": "Miami, Florida",
+ "version": 3,
+ "season": "Reykjavik on a calm winter night under green and violet northern lights, deep navy sky full of stars, snow glowing softly, warm yellow windows, peaceful and magical",
+ "sky": "work/cities_v3/reykjavik/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/reykjavik/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    235,
+    215,
+    200
+   ],
+   [
+    205,
+    180,
+    165
+   ]
+  ]
+ },
+ "near": {
+  "src": "work/cities_v3/reykjavik/sprites/near_0.png",
+  "scale": 1.9,
+  "base": -5
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/reykjavik/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/reykjavik/sprites/far_0.png",
+   "scale": 1.5,
+   "tile": true,
+   "speed": 5,
+   "haze": 0.15,
+   "base": 732,
+   "alpha": 1.0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [
+    {
+     "src": "work/cities_v3/reykjavik/sprites/local_0.png",
+     "scale": 0.79,
+     "base": 820
+    },
+    {
+     "src": "work/cities_v3/reykjavik/sprites/landmarks_0.png",
+     "scale": 0.83,
+     "base": 820
+    },
+    {
+     "src": "work/cities_v3/reykjavik/sprites/landmarks_5.png",
+     "scale": 1.37,
+     "base": 820
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+    "scale": 1.35,
+    "base": 930,
+    "offset": 300,
+    "feather_top": 45
+   }
+  },
+  {
+   "name": "part 2",
+   "mid": [
+    {
+     "src": "work/cities_v3/reykjavik/sprites/local_6.png",
+     "scale": 1.31,
+     "base": 820
+    },
+    {
+     "src": "work/cities_v3/reykjavik/sprites/landmarks_1.png",
+     "scale": 1.37,
+     "base": 820
+    },
+    {
+     "src": "work/cities_v3/reykjavik/sprites/local_1.png",
+     "scale": 0.7,
+     "base": 820
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+    "scale": 1.35,
+    "base": 930,
+    "offset": 1000,
+    "feather_top": 45
+   }
+  },
+  {
+   "name": "part 3",
+   "mid": [
+    {
+     "src": "work/cities_v3/reykjavik/sprites/local_2.png",
+     "scale": 0.79,
+     "base": 820
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+    "scale": 1.35,
+    "base": 930,
+    "offset": 1700,
+    "feather_top": 45
+   }
+  },
+  {
+   "name": "part 4",
+   "mid": [
+    {
+     "src": "work/cities_v3/reykjavik/sprites/landmarks_3.png",
+     "scale": 1.08,
+     "base": 820
+    }
+   ],
+   "band": {
+    "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+    "scale": 1.35,
+    "base": 930,
+    "offset": 2400,
+    "feather_top": 45
+   }
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "band": {
+    "src": "work/cities_v3/reykjavik/sprites/far_1.png",
+    "scale": 1.35,
+    "base": 930,
+    "offset": 3100,
+    "feather_top": 45
+   }
+  }
+ ],
+ "mid_front": true,
+ "ground_first": true
+}

@@ -1,0 +1,91 @@
+{
+ "city": "San Antonio, Texas",
+ "next": "Singapore",
+ "version": 3,
+ "season": "San Antonio on a festive winter night, warm string lights over the River Walk, glowing reflections, colourful papel picado, cozy and joyful",
+ "sky": "work/cities_v3/san_antonio/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/san_antonio/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    57.185462951660156,
+    71.7192611694336,
+    80.39348602294922
+   ],
+   [
+    47.65455627441406,
+    59.766056060791016,
+    66.99457550048828
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_antonio/sprites/local_2.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_antonio/sprites/far_0.png",
+   "scale": 2.75,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1073,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_1.png: the same landmark is in the distant skyline, so it showed twice.",
+  "2026-11-24: removed close-up bridges standing on the street with no water under them: landmarks_4.png (a stone arched bridge)",
+  "2026-11-27: scale 3.354 -> 2.75: the Tower of the Americas' top ran off the top of the window."
+ ],
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

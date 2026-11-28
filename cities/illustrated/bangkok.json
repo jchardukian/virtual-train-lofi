@@ -1,0 +1,84 @@
+{
+ "city": "Bangkok, Thailand",
+ "next": "Salt Lake City, Utah",
+ "version": 3,
+ "season": "Bangkok at a warm monsoon dusk after a light shower, glowing temples, golden spires, river boats with lights, humid and cozy",
+ "sky": "work/cities_v3/bangkok/sky.png",
+ "sky_top": 0.25,
+ "weather": "rain",
+ "ground_src": {
+  "colour": [
+   [
+    60.33899688720703,
+    85.5642318725586,
+    106.55364990234375
+   ],
+   [
+    50.282501220703125,
+    71.30352783203125,
+    88.79470825195312
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/bangkok/sprites/local_3b.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/bangkok/sprites/far_0.png",
+   "scale": 2.926,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

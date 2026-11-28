@@ -1,0 +1,74 @@
+{
+ "note": "Production queue. A city is a list of shots (scene files); each shot is rendered in resumable frame chunks, finished, then the shots are assembled into the city master. Order = priority. Only cities whose scenes exist can run.",
+ "cities": [
+  {
+   "id": "chicago",
+   "name": "Chicago, Illinois",
+   "next": "Tokyo, Japan",
+   "shots": [
+    {
+     "scene": "scenes/chicago_v3_lake.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/lake"
+    },
+    {
+     "scene": "scenes/chicago_v3_combined.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/v3"
+    },
+    {
+     "scene": "scenes/chicago_v3_wells_south.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/wells_south"
+    },
+    {
+     "scene": "scenes/chicago_v3_lake_south.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/lake_south"
+    },
+    {
+     "scene": "scenes/chicago_v3_riverfront.json",
+     "style": "illustrated",
+     "frames_dir": "work/frames/riverfront"
+    }
+   ],
+   "edit_order": [
+    "scenes/chicago_v3_lake_south.json",
+    "scenes/chicago_v3_lake.json",
+    "scenes/chicago_v3_riverfront.json",
+    "scenes/chicago_v3_wells_south.json",
+    "scenes/chicago_v3_combined.json"
+   ],
+   "music": [
+    "https://purrplecat-audio.pages.dev/audio/mellow-skies/01-warm-horizon.mp3",
+    "https://purrplecat-audio.pages.dev/audio/happy-place/01-daydreams.mp3",
+    "https://purrplecat-audio.pages.dev/audio/above-the-clouds/01-flying.mp3"
+   ],
+   "verticals": [
+    [
+     60.0,
+     0.45,
+     25.0
+    ],
+    [
+     150.0,
+     0.45,
+     25.0
+    ]
+   ],
+   "route_note": "The long riverfront shot follows an invented elevated alignment along the south bank; no such CTA line exists. Other shots follow real track."
+  },
+  {
+   "id": "tokyo",
+   "name": "Tokyo, Japan",
+   "next": "London, United Kingdom",
+   "shots": []
+  },
+  {
+   "id": "london",
+   "name": "London, United Kingdom",
+   "next": "Chicago, Illinois",
+   "shots": []
+  }
+ ]
+}

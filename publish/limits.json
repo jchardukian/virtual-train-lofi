@@ -1,0 +1,213 @@
+{
+ "_comment": "HARD publishing limits set by the owner (PR #1, 2026-11-22). Any scheduling code or agent must refuse to exceed these. Nothing is published without the owner's explicit go-live for an identified channel.",
+ "per_calendar_day": {
+  "youtube_long_form_max": 1,
+  "youtube_shorts_max": 2,
+  "youtube_regular_uploads_total_max": 3,
+  "tiktok_posts_max": 0
+ },
+ "rules": [
+  "Extra finished cities wait in the backlog; one city per day.",
+  "Livestreams are additional and need their own authorisation; they never replace or add to the three regular uploads.",
+  "Only the owner's LofiTrain channels, once connected and named by the owner. Never an unrelated account.",
+  "TikTok is deferred: zero TikTok posts until the owner re-enables it. The two vertical clips per city are YouTube Shorts.",
+  "No AI label on videos and no mention of AI in titles or descriptions (owner decision 2026-11-22, standing until the owner changes it). Descriptions say the artwork is illustrated and not real footage.",
+  "Every description has, in order: a one or two sentence description of that video, the channel blurb, the 'illustrated, not real footage' line, the music credit, hashtags.",
+  "Thumbnails: use YouTube's automatic frame, no custom thumbnail (owner decision 2026-11-23: likes the train-window frame).",
+  "Owner 2026-11-23: finished cities are scheduled without asking, one per day: long-form 11:00 CT (YouTube API), Short 1 14:30 CT and Short 2 20:30 CT (Buffer), each Short's description links to that day's long-form.",
+  "Titles (owner 2026-11-24): simple, like the owner's 'Chicago Chillhop 🚆 #lofi #chicago #shorts'. Long-form '<City> Chillhop 🚆'; Short 1 '<City> Chillhop 🚆 #lofi #<city> #shorts'; Short 2 the same with a city emoji; livestreams equally short. No keyword-stuffed titles."
+ ],
+ "queue": [
+  {
+   "city": "chicago",
+   "status": "released 2026-11-22/23"
+  },
+  {
+   "city": "london",
+   "date": "2026-11-24"
+  },
+  {
+   "city": "san_francisco",
+   "date": "2026-11-25"
+  },
+  {
+   "city": "amsterdam",
+   "date": "2026-11-26"
+  },
+  {
+   "city": "new_orleans",
+   "date": "2026-11-27"
+  },
+  {
+   "city": "cairo",
+   "status": "building"
+  }
+ ],
+ "platforms": {
+  "youtube": "launch platform",
+  "tiktok": "deferred; not a launch requirement; no TikTok posting until the owner asks"
+ },
+ "channel": {
+  "expected_handle": "@lofitrainpov",
+  "buffer_channel_id": "6b037e988541f09ecb6cd063",
+  "buffer_name": "Lofi Train POV",
+  "youtube_channel_url": "https://www.youtube.com/channel/UCLjE-J4o5HSXz1cCokDdZbQ",
+  "timezone": "America/Chicago",
+  "verified": "2026-11-22: connected in the owner's Buffer organisation, queue empty. Identity confirmed as @LofiTrainPOV by the owner, relayed on PR #1 (comment 7087969125). Not a publishing authorisation.",
+  "go_live": "per release only: the owner approves each first-time action in the agent session"
+ },
+ "storage": {
+  "archive_bucket": "lofitrain-archive (private)",
+  "delivery_bucket": "lofitrain-delivery (public read via r2.dev; release files only, random key prefix)",
+  "monthly_charge_ceiling_usd": 3,
+  "approved": "owner, in the agent session, 2026-11-22"
+ },
+ "channel_blurb": "Lofi Train POV: cozy illustrated train-window journeys through the world's cities, set to relaxing chillhop. A new city every day. Sit back, look out the window, and stay as long as you like.",
+ "routes": {
+  "long_form": "YouTube Data API via pipeline/youtube_upload.py (YT_CLIENT_ID, YT_CLIENT_SECRET, YT_REFRESH_TOKEN in the environment)",
+  "shorts": "Buffer, from the delivery bucket"
+ },
+ "livestream_server": {
+  "provider": "Hetzner Cloud (EU, project Default)",
+  "plan": "CX33: 4 vCPU, 8 GB RAM, 80 GB disk, 21 TB traffic",
+  "approved_monthly_cost": "about USD 10-11 (EUR 9.99 incl. VAT list price; EUR ~8.39 + ~0.50 IPv4 without VAT)",
+  "approved": "owner, in the agent session, 2026-11-24: 'Yes that's fine, go with the CX33'",
+  "create_when": "after the YouTube channel's phone verification clears (live streaming enabled), so no idle billing",
+  "credential": "api.hetzner.cloud token saved as a proxy-injected network secret; never printed",
+  "created": "2026-11-24, Hetzner server 177414097 'lofitrain-stream', CX33, Helsinki (hel1); German locations had no capacity",
+  "actual_price": "EUR 9.99/month (no VAT charged) + IPv4 ~EUR 0.50 = ~EUR 10.50 (~USD 12); told the owner",
+  "access": "no inbound ports (Hetzner firewall 'lofitrain-no-inbound' has no rules); the server polls the private control Worker lofitrain-control.jchardukian.workers.dev (shared key in work/secrets, never committed)",
+  "checks": "ffmpeg 6.1.1, 4 cores, 7 GB RAM, 69 GB free; YouTube RTMP/RTMPS ingest reachable; archive download ~13 MB/s; YouTube token has the youtube scope needed for live broadcasts",
+  "youtube_verification": "phone verified 2026-11-24 (longUploadsStatus allowed); live streaming enabled ~24 h later",
+  "temporary_builder": {
+   "approved": "owner 2026-11-24: 'yes two servers if it's only around a dollar and finishes things about twice as fast'",
+   "server": "Hetzner 177531685 'lofitrain-build2', CX33 hel1, hourly billing; DELETE it as soon as its build list is done",
+   "command_channel": "control/cmd2.json, logs control/out2/, heartbeat control/status2.json",
+   "now_permanent": "owner 2026-11-26: 'I'm fine with keeping both at least for a couple months to try it out' — keep server 2 (177531685), ~EUR 10.50/month, review after ~2 months (late Jan 2027)",
+   "do_not_delete": true
+  }
+ },
+ "livestream_titles": {
+  "decision": "owner 2026-11-26: livestream titles may use searched keywords (Shorts unchanged); rotate and keep whichever gets the most viewers",
+  "rotation": [
+   "Lofi Train Ride 🚆 Chill Beats to Study & Relax",
+   "Cozy Train Window 🚆 Lofi to Sleep, Study & Relax",
+   "Lofi Train Around the World 🌍🚆 Beats to Relax & Study"
+  ]
+ },
+ "music": {
+  "owner_2026-11-24": "Likes the Purrple Cat tracks and the ElevenLabs songs; dislikes the locally composed ones (never use them) and any static, vinyl crackle or hiss. Favourite: ElevenLabs 'golden guitar' (el_2). Wants more like it, guitar or piano.",
+  "elevenlabs": {
+   "plan": "Creator (owner's existing subscription)",
+   "licence": "cleared for commercial use on paid plans (elevenlabs.io/music-api)",
+   "prompt_rule": "always add: no vinyl crackle, no tape hiss, no noise, clean warm mix, no vocals",
+   "used_credits": {
+    "test_3_songs": 4056,
+    "batch_10_songs_3min": 24475
+   },
+   "cost_per_3min_song": "about 2,450 credits",
+   "concurrency": 2,
+   "files": "work/music_el/ (gitignored) and archive bucket music/elevenlabs/"
+  },
+  "elevenlabs_batch_2026_11_24": "owner approved all 10 (g01-g06 guitar, p01-p04 piano): 'All the songs are fine'",
+  "elevenlabs_batch_2026_11_25": "owner asked for 'gentle easy going vibe ... catchy melody' songs; generated d01-d04 (3 min each) for review",
+  "song_style_2026_11_25": "owner: study Lofi Girl-style chillhop; songs need a hook and melody like a song without words, not a 3-min loop. Method: pipeline/el_song.py composition plan Intro/Verse A/Verse B/Hook/Breakdown/Hook return/Outro, one named lead and one theme, ~2.75 min, 72-88 bpm, jazzy 7th/9th chords, swung boom-bap, never crackle/hiss/noise/vocals. Samples s01, s02 sent for review.",
+  "song_rules_2026_11_26": {
+   "owner": "songs must have a melody and a hook like a song without words, never a ~30 s sound repeated; references: d02_morning_glow_guitar and s02_window_seat_guitar (owner's favourites) and Lofi Girl's catchy lofi songs",
+   "check": "pipeline/song_check.py: reject a song when >50% of its 4 s windows are near-copies (>0.97) of another part of it (loops scored 65-96%, songs with a returning hook 30-45%)",
+   "dropped_as_loops": [
+    "g03_seaside_guitar 65%",
+    "g05_autumn_guitar 96%",
+    "d01_daybreak_bells 67%",
+    "d04_easy_morning_marimba 90%"
+   ],
+   "approved_new": [
+    "d02_morning_glow_guitar",
+    "d03_sunrise_piano",
+    "s01_golden_hour_rhodes",
+    "s02_window_seat_guitar"
+   ]
+  }
+ },
+ "livestream_plan": {
+  "evergreen": "owner 2026-11-25 'Sounds good': each daily ~4-hour livestream is left as YouTube's automatic saved video (VOD) = the evergreen long-form; no separate compilation upload for now. Later, optionally upload a polished chaptered 4K compilation of the best-performing order.",
+  "format": "~4 hours, all built cities, tunnel + next-stop countdown between cities, different city order and music mix each day; streamed from server 1 (177414097)",
+  "start": "after all 50 cities are built; going live needs the owner's explicit go",
+  "activation": "owner started YouTube live-streaming activation ~04:10Z Nov 25 (24h countdown) -> available ~04:10Z Nov 26 (~10pm CST Nov 25). First stream: Nov 26 7-11pm CST unless owner says otherwise; check API liveBroadcasts list (liveStreamingNotEnabled until then).",
+  "schedule": {
+   "approved": "owner 2026-11-25: 'set up a stream for 10:15-2:15 and then we can schedule another at 7-11 Thursday. Then moving forward we can do one livestream per day and you can explore various times to see which gets the most viewers/engagement'",
+   "stream_1": "Wed Nov 25 10:15pm - Thu 2:15am CST (04:15-08:15Z Nov 26); start as soon as live streaming is active if activation runs a few minutes late",
+   "stream_2": "Thu Nov 26 7-11pm CST (01:00-05:00Z Nov 27)",
+   "after": "one ~4h stream per day, each with a different city order and music mix; vary start times to find the best viewers/engagement; log results in publish/livestream_log.json",
+   "go": "these streams are approved by the owner; tell the owner when each goes live",
+   "twice_daily": {
+    "approved": "owner 2026-11-25: two ~4h streams per day, a morning one and a later-evening one, especially weekends",
+    "times_cst": {
+     "morning": "8:00am-12:00pm",
+     "evening": "8:00pm-12:00am"
+    },
+    "start": "Fri Nov 27 (once all cities are rebuilt); Thu Nov 26 keeps the approved 7-11pm evening stream",
+    "rule": "each stream a different city order + music mix; vary start times later based on viewer data; tell owner when each goes live"
+   },
+   "three_daily": {
+    "approved": "owner 2026-11-26",
+    "start": "Sat Nov 28",
+    "slots_cst": [
+     "8:00am-4:00pm",
+     "4:00pm-12:00am",
+     "12:00am-8:00am"
+    ],
+    "length_h": 8,
+    "rule": "each stream its own city order + music mix; build on alternating servers; full go-live checklist every time; private-test 20 min before"
+   }
+  },
+  "thumbnails": "owner 2026-11-26: custom thumbnail on every stream, fully automatic (pipeline/stream_thumbnail.py: most colourful clear city frame + small LIVE badge)",
+  "length": "owner 2026-11-26 wants longer streams: 8 h now (each city appears twice with different music and order); grow toward 24/7 as cities are added"
+ },
+ "openai_approvals": [
+  {
+   "date": "2026-11-25",
+   "amount_usd_cap": 0.5,
+   "purpose": "Salt Lake City downtown skyline strip (1 image, 1 retry max)",
+   "owner": "'Yes' to 'Do you approve up to $0.50 for this?'"
+  },
+  {
+   "date": "2026-11-25",
+   "amount_usd_cap": 1.3,
+   "purpose": "Chicago illustrated art set (6 images, ~$1.15) so it matches the other cities in livestreams",
+   "owner": "'Yes for Chicago' to the ~$1.15 ask"
+  },
+  {
+   "date": "2026-11-26",
+   "amount_usd_cap": 0.75,
+   "purpose": "new full skyline strips for Amsterdam, Pittsburgh, Hallstatt (cut-off tops)",
+   "owner": "'Yes' to up to $0.75"
+  }
+ ],
+ "content_plan": {
+  "approved": "owner 2026-11-25",
+  "phase_1": "Every day: one city = one 5-minute long-form (11:00 CT) + its two Shorts (14:30, 20:30 CT), plus one ~4h livestream (its saved VOD is the evergreen long-form). Continue daily, automatically, until every built city has been posted (~50 days).",
+  "phase_2": "When all cities are posted: if a new batch of cities is being built, continue phase 1 with those. Otherwise stop the daily 5-minute long-form; focus on Shorts (new Shorts that end with the train entering the tunnel) + one livestream per day.",
+  "order": "release cities in a varied order (not alphabetical); never two similar cities on consecutive days where avoidable"
+ },
+ "short_titles": {
+  "owner_2026-11-25": "Short 1 keeps '<City> Chillhop 🚆 #lofi #<city> #shorts'; Short 2 never repeats it and rotates simple lofi/train/window titles to test what works",
+  "short_2_rotation": [
+   "<City> Lofi <emoji>",
+   "Train Window: <City> <emoji>",
+   "Lofi Train to <City> <emoji>",
+   "<City> Window Seat <emoji>",
+   "<City> by Train 🚆",
+   "Lofi Ride Through <City> <emoji>"
+  ],
+  "suffix": "#lofi #<city> #shorts"
+ },
+ "promotion": {
+  "approved": "owner 2026-11-26: all three options approved",
+  "card": "'Departing daily' card burned into the uploaded long-form (last 10 s) and Shorts (last 4 s) by pipeline/promo_card.py at release/replace time; built city files and streams stay clean",
+  "description_line": "Departing daily: live train rides around the world, 24/7 → youtube.com/@LofiTrainPOV/streams",
+  "description_line_note": "first line of every long-form description and Shorts caption",
+  "end_screen": "owner adds in YouTube Studio (the API cannot set end screens): Subscribe + playlist 'Live Train Rides 🚆 24/7 Lofi' (PLbQ1U8WIvfRE); Studio 'Import from video' copies it to the next video",
+  "streams_playlist": "PLbQ1U8WIvfRE"
+ }
+}

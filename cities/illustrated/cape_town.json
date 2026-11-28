@@ -1,0 +1,86 @@
+{
+ "city": "Cape Town, South Africa",
+ "next": "Pittsburgh, Pennsylvania",
+ "version": 3,
+ "season": "Cape Town on a bright summer day, deep blue sky, flat-topped Table Mountain with a cloud tablecloth, turquoise sea, colourful houses, fresh and vivid",
+ "sky": "work/cities_v3/cape_town/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/cape_town/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    127.22589874267578,
+    141.64759826660156,
+    162.41015625
+   ],
+   [
+    106.02159118652344,
+    118.03966522216797,
+    135.341796875
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/cape_town/sprites/local_4.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/cape_town/sprites/far_0.png",
+   "scale": 1.532,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180
+}

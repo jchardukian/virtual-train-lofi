@@ -1,0 +1,84 @@
+{
+ "city": "Phoenix and Sedona, Arizona",
+ "next": "London, England",
+ "version": 3,
+ "season": "the Arizona desert at a glowing sunrise, red rocks blazing orange, soft purple shadows, saguaros, clear and warm",
+ "sky": "work/cities_v3/phoenix_sedona/sky.png",
+ "sky_top": 0.25,
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    44.32401657104492,
+    81.5176773071289,
+    158.2418212890625
+   ],
+   [
+    36.93667984008789,
+    67.93140411376953,
+    131.86817932128906
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/phoenix_sedona/sprites/local_5.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/phoenix_sedona/sprites/far_0.png",
+   "scale": 2.523,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}

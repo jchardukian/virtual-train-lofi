@@ -1,0 +1,89 @@
+{
+ "city": "San Diego, California",
+ "next": "Mexico City, Mexico",
+ "version": 3,
+ "season": "San Diego on a sunny spring day, clear blue sky, ocean sparkle, Spanish colonial white walls, purple jacaranda, breezy and bright",
+ "sky": "work/cities_v3/san_diego/sky.png",
+ "sky_top": 0.25,
+ "opening": {
+  "src": "work/cities_v3/san_diego/opening.png",
+  "hold": 6,
+  "fade": 3
+ },
+ "weather": null,
+ "ground_src": {
+  "colour": [
+   [
+    78.78617095947266,
+    108.07600402832031,
+    111.37936401367188
+   ],
+   [
+    65.6551513671875,
+    90.06333923339844,
+    92.8161392211914
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/san_diego/sprites/local_0.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/san_diego/sprites/far_0.png",
+   "scale": 2.423,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "_notes": [
+  "2026-11-24: removed close-up landmarks_4.png: the same landmark is in the distant skyline, so it showed twice."
+ ],
+ "gaps_ok": "single layer",
+ "single_layer": true,
+ "street_speed": 25,
+ "ride_s": 180
+}

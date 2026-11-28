@@ -1,0 +1,98 @@
+{
+ "date": "2026-11-22",
+ "purpose": "Style C illustrated 2.5D Chicago proof (not approved for production or publication)",
+ "provider": "OpenAI images API",
+ "model_requested": "gpt-image-2",
+ "size": "1536x1024",
+ "quality": "high",
+ "reference": "Owner supplied a photo of a lofi animation on a TV as a quality reference only. It was not sent to the API and nothing from it was reproduced.",
+ "actual_charge": "unknown until confirmed from the owner's OpenAI billing page",
+ "commercial_terms_verified": false,
+ "calls": [
+  {
+   "name": "plate1",
+   "endpoint": "images/generations",
+   "prompt": "A beautiful, detailed anime-inspired 2D illustration in the warm cozy style of professional lofi animation channels: hand-painted look, clean confident linework, soft cel shading, rich painterly textures, golden-hour light with a peach, pink and soft blue sky and fluffy stylised clouds. View from a seat inside an elevated train looking out through a large rounded train window (soft cream window frame and a narrow sill in the foreground, slightly out of focus, framing the picture) over the Chicago River in downtown Chicago. Recognisable Chicago: the twin corncob towers of Marina City, a red steel bascule drawbridge with its small stone bridge houses crossing the green river, the Riverwalk with autumn trees in orange and gold, brick and terracotta buildings, and tall glass and stone skyscrapers of the Loop behind, fading into warm atmospheric haze. A small tour boat on the water with gentle reflections and sparkles. Strong separation of foreground (window frame, nearby treetops and railing), middle ground (bridge, river, riverwalk) and background (skyline, sky). Cheerful, relaxing, inviting. No text, no people in the foreground, no watermark.",
+   "usage": {
+    "input_tokens": 243,
+    "input_tokens_details": {
+     "image_tokens": 0,
+     "text_tokens": 243
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 5731
+   },
+   "sha256": "04656208bf769e01f39d14abc80f57833a33556e209b84f249adb263139feef4"
+  },
+  {
+   "name": "scene",
+   "endpoint": "images/edits",
+   "input_image": "plate1",
+   "prompt": "Repaint this exact illustration in exactly the same art style, colours, lighting and with the same buildings, bridge, river and boat in the same positions, but remove the train window frame and interior completely so the city scene fills the whole canvas edge to edge, and remove the large orange foreground trees on the left, the street lamp and the curved railing in the lower right foreground. Continue the river, riverwalk, buildings and sky naturally into the areas that were covered. No window, no frame, no text.",
+   "usage": {
+    "input_tokens": 1645,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 109
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7133
+   },
+   "sha256": "48e538ff68e03a04a9e5d1fc073585607e60059b007cfef02d3a59a40395dccb"
+  },
+  {
+   "name": "frame",
+   "endpoint": "images/edits",
+   "input_image": "plate1",
+   "prompt": "Keep the train window frame, interior wall and window sill exactly as they are, unchanged, but replace everything visible through the window glass with a single flat solid pure chroma green colour (#00FF00), with a clean sharp edge where the glass meets the frame. No scenery, no reflections, only flat green inside the window.",
+   "usage": {
+    "input_tokens": 1608,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 72
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7096
+   },
+   "sha256": "05968fe803e0fc0500a6bbb928abf2d773a4d90f9d687a218421ebfc1412c853"
+  },
+  {
+   "name": "fg",
+   "endpoint": "images/edits",
+   "input_image": "plate1",
+   "prompt": "Create a foreground overlay layer in exactly the same art style and golden-hour lighting as this illustration: only the large orange and gold autumn tree branches and foliage (as on the left of the picture) arranged as three separate clusters of treetops rising from the bottom edge, spaced apart across the full width, plus one vintage street lamp. Everything else must be a single flat solid pure chroma green colour (#00FF00): no buildings, no river, no sky, no window frame.",
+   "usage": {
+    "input_tokens": 1640,
+    "input_tokens_details": {
+     "image_tokens": 1536,
+     "text_tokens": 104
+    },
+    "output_tokens": 5488,
+    "output_tokens_details": {
+     "image_tokens": 5488,
+     "text_tokens": 0
+    },
+    "total_tokens": 7128
+   },
+   "sha256": "5b97923214042e786c94a8a4b8f450c8231c62fdafac7c7fdf1875becf9a2882"
+  }
+ ],
+ "music_in_clip": {
+  "artist": "Purrple Cat",
+  "track": "Warm Horizon",
+  "licence": "CC BY 4.0",
+  "note": "attribution required; clip not cleared for release"
+ }
+}

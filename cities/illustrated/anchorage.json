@@ -1,0 +1,84 @@
+{
+ "city": "Anchorage and the Alaska Railroad",
+ "next": "Lisbon, Portugal",
+ "version": 3,
+ "season": "Alaska on a snowy winter midday, low golden sun, pale blue and gold light, vast snowy mountains, frozen inlet, wild and peaceful",
+ "sky": "work/cities_v3/anchorage/sky.png",
+ "sky_top": 0.25,
+ "weather": "snow",
+ "ground_src": {
+  "colour": [
+   [
+    177.0120086669922,
+    167.8872528076172,
+    149.74998474121094
+   ],
+   [
+    147.510009765625,
+    139.9060516357422,
+    124.79166412353516
+   ]
+  ]
+ },
+ "treewall_cfg": {
+  "src": "work/cities_v3/anchorage/sprites/local_6.png",
+  "crop": [
+   0,
+   4000,
+   0,
+   1.0
+  ]
+ },
+ "backdrop": [
+  {
+   "src": "work/cities_v3/anchorage/sprites/far_0.png",
+   "scale": 2.67,
+   "tile": true,
+   "speed": 25,
+   "haze": 0.0,
+   "base": 1070,
+   "alpha": 1.0,
+   "feather_bottom": 0
+  }
+ ],
+ "sections": [
+  {
+   "name": "part 1",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 2",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 3",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 4",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  },
+  {
+   "name": "part 5",
+   "mid": [],
+   "far": [],
+   "ground": "lawn"
+  }
+ ],
+ "ground_first": true,
+ "single_layer": true,
+ "street_speed": 25,
+ "gaps_ok": "single layer",
+ "ride_s": 180,
+ "_notes": [
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+ ]
+}
