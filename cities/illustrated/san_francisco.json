@@ -31,8 +31,8 @@
  },
  "backdrop": [
   {
-   "src": "work/cities_v3/san_francisco/sprites/far_0.png",
-   "scale": 4.135,
+   "src": "work/cities_v3/san_francisco/sprites/far_0_clean.png",
+   "scale": 3.95,
    "tile": true,
    "speed": 25,
    "haze": 0.0,
@@ -79,7 +79,8 @@
   "2026-11-24: removed the close-up Transamerica Pyramid (landmarks_1), also in the skyline; made the fence pickets in near_0 opaque (backup near_0.bak.png).",
   "2026-11-24: removed the close-up Coit Tower (landmarks_3.png); it is in the skyline art.",
   "2026-11-24: removed the Golden Gate Bridge tower (landmarks_0) from the street; a bridge tower among houses looked wrong, and the opening already shows the bridge.",
-  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area)."
+  "2026-11-27: opening painting removed (its top was cut off by the window: towers/spires/peaks ran off the visible area).",
+  "2026-11-28: Salesforce Tower ran off the window top (skyline top at y=-5): scale 4.135 -> 3.95 (top ~y=54). far_0_clean.png: removed a floating grey fog wisp above the hill/downtown gap and filled a see-through hole."
  ],
  "single_layer": true,
  "street_speed": 25,
