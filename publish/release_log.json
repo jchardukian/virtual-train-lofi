@@ -846,5 +846,47 @@
   "preflight": "passed",
   "built_sha256": "97a9923c98bb21fa45325343405df49d23af0a201fa2f20dd2e50eb46dfb656e",
   "replaces": "FbrcUcIK8ZQ"
+ },
+ {
+  "city": "austin",
+  "item": "long_form",
+  "route": "YouTube Data API (pipeline/release_city.py)",
+  "youtube_video_id": "0I7s31N89cs",
+  "url": "https://youtu.be/0I7s31N89cs",
+  "resolution": "3840x2160",
+  "privacy": "private until publishAt",
+  "publish_at": "2026-12-04T11:00:00-06:00",
+  "media_sha256": "f1bba9c86c3655d5f8654622ddecb1117aa9eb17bdfb9b97947fe77f07eb503d",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "built_sha256": "f1bba9c86c3655d5f8654622ddecb1117aa9eb17bdfb9b97947fe77f07eb503d"
+ },
+ {
+  "city": "austin",
+  "item": "short_1",
+  "buffer_post_id": "6b0ae494b8ec87c6ced0373e",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-12-04T14:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "8d9d8cce72728e3ef9dde666752ce67e7b31cf9f0345933f627ff46618b93e2e",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/e5b9f9a5759aaa08779bd0a8/austin_short_1.mp4",
+  "links_to": "https://youtu.be/0I7s31N89cs",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "built_sha256": "af9a5aaf38e24c605884855aa35401d3d5d8e2ce4ee4f5b21d8ea7f177540adf"
+ },
+ {
+  "city": "austin",
+  "item": "short_2",
+  "buffer_post_id": "6b0ae4a6c6d7f1e7224c7b28",
+  "channel": "Lofi Train POV (UCLjE-J4o5HSXz1cCokDdZbQ)",
+  "due_at": "2026-12-04T20:30:00-06:00",
+  "status": "scheduled",
+  "media_sha256": "900c23cbcb0d7eb0cca3588fe4ff5f94d749b121ccdddac25d86ecb8828d73f0",
+  "delivery_url": "https://pub-a7aa0de9fe59416c8b4a6db9cefd6a22.r2.dev/57672ed93ace403644fda3bf/austin_short_2.mp4",
+  "links_to": "https://youtu.be/0I7s31N89cs",
+  "authorised": "owner, in the agent session: 'You can schedule cities when they're done. I want 1 city per day (one long form and two shorts)'",
+  "preflight": "passed",
+  "built_sha256": "53733aa1bd2dbac8795c46fcb792cff8ce8faf9b5f4fda9479e928343ad5e86b"
  }
 ]
